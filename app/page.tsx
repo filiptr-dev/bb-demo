@@ -32,7 +32,7 @@ const why = [
   ["Сертификати", "Документација и сертификати за секој производ."],
 ];
 
-const bg = "linear-gradient(180deg, #1a1a1a 0%, #1e1d1c 15%, #201f1d 50%, #1e1d1c 85%, #1a1a1a 100%)";
+const bg = "linear-gradient(180deg, var(--surface-a) 0%, var(--surface-b) 15%, var(--surface-c) 50%, var(--surface-b) 85%, var(--surface-a) 100%)";
 
 // Vary each grid item's entrance direction by column so cards don't all slide in from the same spot.
 const dir3 = [
@@ -60,7 +60,7 @@ export default function Home() {
           </SectionHeading>
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
             <Reveal x={-50} y={0} duration={1} className="relative">
-              <div className="relative overflow-hidden rounded-2xl h-[320px] lg:h-[380px] bg-gradient-to-br from-[#2a2826] to-[#161514] border border-white/[0.06] flex items-center justify-center">
+              <div className="relative overflow-hidden rounded-2xl h-[320px] lg:h-[380px] bg-gradient-to-br from-[var(--about-img-a)] to-[var(--about-img-b)] border border-foreground/[0.06] flex items-center justify-center">
                 <BearingIcon className="w-56 h-56 opacity-90" spin />
                 <div className="absolute inset-0 bg-gradient-to-t from-surface/70 to-transparent" />
               </div>
@@ -70,26 +70,26 @@ export default function Home() {
               </div>
             </Reveal>
             <Reveal x={50} y={0} duration={1} delay={0.2}>
-              <p className="text-white/65 leading-relaxed mb-4">
+              <p className="text-foreground/65 leading-relaxed mb-4">
                 Б&amp;Б Уникооп е официјален SKF дистрибутер за Македонија. Веќе 35 години ги снабдуваме индустриите со лежишта, куќишта, заптивки, ремени, ланци и системи за мазење.
               </p>
-              <p className="text-white/65 leading-relaxed mb-6">
+              <p className="text-foreground/65 leading-relaxed mb-6">
                 Нашата мисија е да го намалиме времето на застој и да обезбедиме континуитет во работењето на нашите клиенти – со оригинални производи и стручна поддршка 24/7.
               </p>
               <ul className="flex flex-wrap gap-2 mb-6">
                 {["Официјален SKF дистрибутер", "Сертификати", "Проверка на автентичност"].map((b) => (
-                  <li key={b} className="px-3 py-1.5 rounded-full border border-white/10 bg-white/[0.03] text-xs text-white/70">{b}</li>
+                  <li key={b} className="px-3 py-1.5 rounded-full border border-foreground/10 bg-foreground/[0.03] text-xs text-foreground/70">{b}</li>
                 ))}
               </ul>
               <Link href="/catalog" className="text-brand-2 text-sm font-semibold uppercase tracking-wide hover:underline">Погледни го каталогот →</Link>
             </Reveal>
           </div>
 
-          <dl className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-white/[0.07] pt-10">
+          <dl className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-foreground/[0.07] pt-10">
             {stats.map(([n, s, l], i) => (
               <Reveal key={l} delay={i * 0.1} className="text-center" {...dir4[i % 4]}>
                 <dt className="font-numbers text-5xl lg:text-6xl tracking-wider"><CountUp to={n} suffix={s} /></dt>
-                <dd className="text-white/55 text-xs mt-1.5 tracking-wide uppercase">{l}</dd>
+                <dd className="text-foreground/55 text-xs mt-1.5 tracking-wide uppercase">{l}</dd>
               </Reveal>
             ))}
           </dl>
@@ -104,10 +104,10 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {categories.map(([t, d, href], i) => (
               <Reveal key={t} delay={i * 0.08} {...dir3[i % 3]}>
-                <Link href={href} className="group block h-full p-6 rounded-2xl border border-white/[0.07] bg-white/[0.025] hover:bg-white/[0.05] hover:border-brand-1/25 transition-all duration-500">
+                <Link href={href} className="group block h-full p-6 rounded-2xl border border-foreground/[0.07] bg-foreground/[0.025] hover:bg-foreground/[0.05] hover:border-brand-1/25 transition-all duration-500">
                   <span className="font-numbers text-3xl text-brand-1/60 group-hover:text-brand-2 transition-colors">0{i + 1}</span>
                   <h3 className="font-display font-bold text-lg mt-2 mb-1.5 group-hover:text-brand-2 transition-colors">{t}</h3>
-                  <p className="text-sm text-white/55 leading-relaxed">{d}</p>
+                  <p className="text-sm text-foreground/55 leading-relaxed">{d}</p>
                   <span className="inline-block mt-3 text-xs text-brand-2 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all">Дознај повеќе →</span>
                 </Link>
               </Reveal>
@@ -117,7 +117,7 @@ export default function Home() {
       </section>
 
       <section id="industries" className="relative scroll-mt-16 py-16 lg:py-20 overflow-hidden">
-        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, #1a1a1a 0%, rgba(30,28,26,0.92) 15%, rgba(30,28,26,0.88) 50%, rgba(30,28,26,0.92) 85%, #1a1a1a 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, var(--surface-solid) 0%, rgba(var(--surface-tint),0.92) 15%, rgba(var(--surface-tint),0.88) 50%, rgba(var(--surface-tint),0.92) 85%, var(--surface-solid) 100%)" }} />
         <ParallaxLayer range={90} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-1/[0.03] rounded-full blur-[200px] pointer-events-none" />
         <div className="relative container mx-auto px-6 lg:px-10">
           <SectionHeading eyebrow="Индустрии што ги опслужуваме" num="03" center>
@@ -128,18 +128,19 @@ export default function Home() {
               <Reveal key={i.slug} delay={idx * 0.05} {...dir4[idx % 4]}>
                 <Link
                   href={`/catalog?industry=${i.slug}`}
-                  className="group relative h-36 rounded-xl overflow-hidden border border-white/[0.07] hover:border-brand-1/30 flex flex-col items-center justify-center gap-2 p-4 text-center transition-all duration-300 hover:-translate-y-1 hover:scale-[1.03]"
+                  className="group relative h-36 rounded-xl overflow-hidden border border-foreground/[0.07] hover:border-brand-1/30 flex flex-col items-center justify-center gap-2 p-4 text-center transition-all duration-300 hover:-translate-y-1 hover:scale-[1.03]"
                 >
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ backgroundImage: i.image }} />
-                  <div className="absolute inset-0 bg-white/[0.03] group-hover:bg-black/45 transition-colors" />
-                  <span className="relative font-numbers text-2xl text-white/40 group-hover:text-white transition-colors">0{idx + 1}</span>
-                  <span className="relative text-xs uppercase tracking-wide text-white/65 group-hover:text-white group-hover:font-semibold transition-all">{i.name}</span>
+                  {/* dark scrim + literal white text: always overlaid on a real photo, so it stays theme-independent for legibility */}
+                  <div className="absolute inset-0 bg-foreground/[0.03] group-hover:bg-black/45 transition-colors" />
+                  <span className="relative font-numbers text-2xl text-foreground/40 group-hover:text-white transition-colors">0{idx + 1}</span>
+                  <span className="relative text-xs uppercase tracking-wide text-foreground/65 group-hover:text-white group-hover:font-semibold transition-all">{i.name}</span>
                 </Link>
               </Reveal>
             ))}
           </div>
           <Reveal delay={0.3} className="text-center mt-8">
-            <Link href="/catalog" className="inline-block px-7 py-3 border border-white/25 rounded-full text-xs uppercase tracking-wide hover:bg-white/10 transition-colors">Отвори го каталогот</Link>
+            <Link href="/catalog" className="inline-block px-7 py-3 border border-foreground/25 rounded-full text-xs uppercase tracking-wide hover:bg-foreground/10 transition-colors">Отвори го каталогот</Link>
           </Reveal>
         </div>
       </section>
@@ -150,11 +151,11 @@ export default function Home() {
             Доверба од <span className="text-gradient-brand">светски бранд</span>
           </SectionHeading>
           <Reveal>
-            <div className="rounded-2xl border border-white/[0.07] bg-white/[0.025] p-8 lg:p-10 grid md:grid-cols-[auto_1fr] gap-8 items-center">
+            <div className="rounded-2xl border border-foreground/[0.07] bg-foreground/[0.025] p-8 lg:p-10 grid md:grid-cols-[auto_1fr] gap-8 items-center">
               <div className="font-display font-extrabold text-6xl lg:text-7xl tracking-tighter text-gradient-brand">SKF</div>
               <div>
                 <h3 className="font-display font-bold text-xl mb-2">Светски лидер во лежишта и заптивки</h3>
-                <p className="text-white/60 leading-relaxed">Како официјален дистрибутер, нудиме целосен SKF асортиман: лежишта, куќишта, заптивки, системи за мазење и алатки за одржување, заедно со SKF Mount и DialSet.</p>
+                <p className="text-foreground/60 leading-relaxed">Како официјален дистрибутер, нудиме целосен SKF асортиман: лежишта, куќишта, заптивки, системи за мазење и алатки за одржување, заедно со SKF Mount и DialSet.</p>
               </div>
             </div>
           </Reveal>
@@ -169,10 +170,10 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {why.map(([t, d], i) => (
               <Reveal key={t} delay={i * 0.08} {...dir3[i % 3]}>
-                <div className="group h-full p-6 rounded-2xl border border-white/[0.07] bg-white/[0.025] hover:bg-white/[0.05] hover:border-brand-1/25 transition-all duration-500">
+                <div className="group h-full p-6 rounded-2xl border border-foreground/[0.07] bg-foreground/[0.025] hover:bg-foreground/[0.05] hover:border-brand-1/25 transition-all duration-500">
                   <div className="w-11 h-11 rounded-xl bg-brand-1/10 group-hover:bg-brand-1/20 flex items-center justify-center font-numbers text-xl text-brand-1 group-hover:text-brand-2 mb-4 transition-colors">{i + 1}</div>
                   <h3 className="font-display font-bold text-lg mb-2 group-hover:text-brand-2 transition-colors">{t}</h3>
-                  <p className="text-sm text-white/55 leading-relaxed">{d}</p>
+                  <p className="text-sm text-foreground/55 leading-relaxed">{d}</p>
                 </div>
               </Reveal>
             ))}
@@ -181,7 +182,7 @@ export default function Home() {
       </section>
 
       <section className="relative py-16 lg:py-24 overflow-hidden">
-        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(255,90,50,0.12) 0%, #1a1a1a 30%, #1e1d1c 50%, #1a1a1a 70%, rgba(255,170,34,0.06) 100%)" }} />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(var(--brand-glow-1-rgb),0.12) 0%, var(--surface-a) 30%, var(--surface-b) 50%, var(--surface-a) 70%, rgba(var(--brand-glow-2-rgb),0.06) 100%)" }} />
         <ParallaxLayer range={60} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-brand-1/10 rounded-full blur-[150px] pointer-events-none" />
         <div className="relative container mx-auto px-6 lg:px-10 text-center">
           <Reveal>
@@ -190,11 +191,11 @@ export default function Home() {
             </h2>
           </Reveal>
           <Reveal delay={0.15}>
-            <p className="text-white/60 max-w-xl mx-auto mb-8">Побарајте понуда денес. Нашиот тим е подготвен да ви помогне да го најдете вистинското решение.</p>
+            <p className="text-foreground/60 max-w-xl mx-auto mb-8">Побарајте понуда денес. Нашиот тим е подготвен да ви помогне да го најдете вистинското решение.</p>
           </Reveal>
           <Reveal delay={0.3} className="flex flex-wrap justify-center gap-3">
-            <a href="#contact" className="px-7 py-3.5 bg-brand-gradient font-semibold rounded-full hover:shadow-[0_0_45px_rgba(255,90,50,0.5)] transition-shadow text-xs tracking-wide uppercase">Стапи во контакт →</a>
-            <Link href="/catalog" className="px-7 py-3.5 border border-white/25 rounded-full hover:bg-white/10 transition-colors text-xs tracking-wide uppercase">Каталог</Link>
+            <a href="#contact" className="px-7 py-3.5 bg-brand-gradient font-semibold rounded-full hover:shadow-[0_0_45px_rgba(var(--brand-glow-1-rgb),0.5)] transition-shadow text-xs tracking-wide uppercase">Стапи во контакт →</a>
+            <Link href="/catalog" className="px-7 py-3.5 border border-foreground/25 rounded-full hover:bg-foreground/10 transition-colors text-xs tracking-wide uppercase">Каталог</Link>
           </Reveal>
         </div>
       </section>

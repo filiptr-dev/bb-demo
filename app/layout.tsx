@@ -3,6 +3,7 @@ import { Montserrat, Syne, Bebas_Neue, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import ThemeVariantToggle from "@/components/ThemeVariantToggle";
 import { cn } from "@/lib/utils";
 import { site } from "@/lib/site";
 
@@ -39,12 +40,18 @@ const jsonLd = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="mk" className={cn("dark antialiased", montserrat.variable, syne.variable, bebas.variable, geistMono.variable, "font-sans")}>
+    <html lang="mk" suppressHydrationWarning className={cn("dark antialiased", montserrat.variable, syne.variable, bebas.variable, geistMono.variable, "font-sans")}>
       <body className="min-h-screen flex flex-col font-sans">
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `try{if(localStorage.getItem('theme-variant')==='client'){document.documentElement.dataset.theme='client'}}catch(e){}`,
+          }}
+        />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <ThemeVariantToggle />
       </body>
     </html>
   );

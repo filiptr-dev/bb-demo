@@ -49,7 +49,7 @@ export default function ContactForm() {
       <div className="space-y-1.5"><Label htmlFor="message">Порака *</Label><Textarea id="message" name="message" required minLength={5} maxLength={3000} placeholder="Ознака на лежиште, количина, индустрија…" /></div>
       <input name="website" tabIndex={-1} autoComplete="off" aria-hidden className="hidden" />
       <label className="flex items-start gap-2 text-xs text-muted-foreground">
-        <input type="checkbox" name="consent" required className="mt-0.5 size-4 accent-[#FF5A32]" />
+        <input type="checkbox" name="consent" required className="mt-0.5 size-4 accent-brand-1" />
         <span>Се согласувам моите податоци да се обработат за одговор на барањето, согласно <a href="/privacy" className="text-brand-2 underline">Политиката за приватност</a>. *</span>
       </label>
       {error && <p role="alert" className="text-sm text-destructive">{error}</p>}

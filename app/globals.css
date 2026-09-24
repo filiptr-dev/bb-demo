@@ -5,10 +5,10 @@
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
-  --color-brand-1: #FF5A32;
-  --color-brand-2: #FFAA22;
-  --color-brand-3: #FF7A2B;
-  --color-surface: #201f1d;
+  --color-brand-1: var(--brand-1);
+  --color-brand-2: var(--brand-2);
+  --color-brand-3: var(--brand-3);
+  --color-surface: var(--surface);
   --font-sans: var(--font-montserrat), system-ui, sans-serif;
   --font-display: var(--font-syne), var(--font-montserrat), sans-serif;
   --font-numbers: var(--font-bebas), sans-serif;
@@ -123,6 +123,10 @@ html { scroll-behavior: smooth; }
 
 /* dark-only theme (navy + blue/cyan/violet) */
 :root, .dark {
+  --brand-1: #FF5A32;
+  --brand-2: #FFAA22;
+  --brand-3: #FF7A2B;
+  --surface: #201f1d;
   --background: #1a1a1a;
   --foreground: #f5f5f4;
   --card: #222120;
@@ -146,10 +150,102 @@ html { scroll-behavior: smooth; }
   --sidebar: #222120; --sidebar-foreground: #f5f5f4; --sidebar-primary: #FF5A32;
   --sidebar-primary-foreground: #fff; --sidebar-accent: #2e2b28; --sidebar-accent-foreground: #f5f5f4;
   --sidebar-border: rgba(255,255,255,.16); --sidebar-ring: #FF5A32;
+
+  --brand-glow-1-rgb: 255,90,50;
+  --brand-glow-2-rgb: 255,170,34;
+  --surface-a: #1a1a1a;
+  --surface-b: #1e1d1c;
+  --surface-c: #201f1d;
+  --surface-solid: #1a1a1a;
+  --surface-tint: 30,28,26;
+  --about-img-a: #2a2826;
+  --about-img-b: #161514;
 }
 
 @layer base {
   * { @apply border-border outline-ring/50; }
   body { @apply bg-background text-foreground; }
   html { @apply font-sans; }
+}
+
+/* ---------- client-site color variant (bbunikoop.com.mk palette: white + SKF blue) ---------- */
+/* The real client site is a light theme: white/near-white surfaces, dark navy text,
+   SKF blue accent (#008EF4 / #86BADD / #008FD0) — no orange anywhere. Component
+   classes that reference --foreground / --background / brand-* tokens (rather than
+   hardcoded white/black) automatically follow this block. */
+[data-theme="client"] {
+  --brand-1: #008EF4;
+  --brand-2: #86BADD;
+  --brand-3: #008FD0;
+  --surface: #F7FAFC;
+
+  --background: #F7FAFC;
+  --foreground: #1A202C;
+  --card: #ffffff;
+  --card-foreground: #1A202C;
+  --popover: #ffffff;
+  --popover-foreground: #1A202C;
+  --primary: #008EF4;
+  --primary-foreground: #ffffff;
+  --secondary: #EDF2F7;
+  --secondary-foreground: #1A202C;
+  --muted: #EDF2F7;
+  --muted-foreground: #4A5568;
+  --accent: #86BADD;
+  --accent-foreground: #1A202C;
+  --destructive: #cf2e2e;
+  --border: rgba(26,32,44,.14);
+  --input: rgba(26,32,44,.18);
+  --ring: #008EF4;
+  --chart-1: #008EF4; --chart-2: #86BADD; --chart-3: #008FD0; --chart-4: #2D3748; --chart-5: #4A5568;
+  --sidebar: #ffffff; --sidebar-foreground: #1A202C; --sidebar-primary: #008EF4;
+  --sidebar-primary-foreground: #fff; --sidebar-accent: #EDF2F7; --sidebar-accent-foreground: #1A202C;
+  --sidebar-border: rgba(26,32,44,.14); --sidebar-ring: #008EF4;
+
+  --brand-glow-1-rgb: 0,142,244;
+  --brand-glow-2-rgb: 134,186,221;
+  --surface-a: #F7FAFC;
+  --surface-b: #ffffff;
+  --surface-c: #F7FAFC;
+  --surface-solid: #F7FAFC;
+  --surface-tint: 247,250,252;
+  --about-img-a: #EDF2F7;
+  --about-img-b: #ffffff;
+}
+
+[data-theme="client"] ::selection { background: #008EF4; color: #fff; }
+
+[data-theme="client"] .text-gradient-brand {
+  background: linear-gradient(110deg, #008EF4 0%, #37AEF0 45%, #86BADD 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+[data-theme="client"] .glow-text { filter: drop-shadow(0 0 28px rgba(0,142,244,.35)); }
+[data-theme="client"] .bg-brand-gradient { background-image: linear-gradient(120deg, #0074C2 0%, #008EF4 35%, #86BADD 100%); }
+[data-theme="client"] .bg-brand-gradient-soft { background-image: linear-gradient(120deg, rgba(0,142,244,.14), rgba(134,186,221,.10) 55%, rgba(0,143,208,.10)); }
+
+[data-theme="client"] .mesh {
+  background:
+    radial-gradient(60% 50% at 15% 20%, rgba(0,142,244,.12) 0%, transparent 60%),
+    radial-gradient(45% 45% at 85% 25%, rgba(0,143,208,.10) 0%, transparent 60%),
+    radial-gradient(50% 50% at 70% 90%, rgba(134,186,221,.14) 0%, transparent 60%),
+    #F7FAFC;
+}
+[data-theme="client"] .mesh-soft {
+  background:
+    radial-gradient(50% 60% at 90% 10%, rgba(0,142,244,.07) 0%, transparent 60%),
+    radial-gradient(45% 50% at 5% 90%, rgba(0,143,208,.06) 0%, transparent 60%),
+    linear-gradient(180deg, #F7FAFC 0%, #ffffff 50%, #F7FAFC 100%);
+}
+[data-theme="client"] .grid-lines {
+  background-image:
+    linear-gradient(to right, rgba(26,32,44,.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(26,32,44,.05) 1px, transparent 1px);
+}
+[data-theme="client"] .gradient-border::before {
+  background: linear-gradient(140deg, rgba(26,32,44,.10), rgba(26,32,44,.02) 40%, rgba(0,142,244,.0) 60%, rgba(0,143,208,.2));
+}
+[data-theme="client"] .gradient-border:hover::before {
+  background: linear-gradient(140deg, #008EF4, #86BADD 50%, #008FD0);
 }

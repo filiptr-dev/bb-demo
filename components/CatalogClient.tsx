@@ -163,7 +163,7 @@ export default function CatalogClient() {
 
   return (
     <div className="container mx-auto px-6 lg:px-10 pb-16">
-      <div className="sticky top-16 z-30 -mx-6 px-6 lg:-mx-10 lg:px-10 py-3 bg-background/95 backdrop-blur-xl border-b border-white/[0.06]">
+      <div className="sticky top-16 z-30 -mx-6 px-6 lg:-mx-10 lg:px-10 py-3 bg-background/95 backdrop-blur-xl border-b border-foreground/[0.06]">
         <div className="flex gap-2">
           <Input
             type="search"
@@ -197,7 +197,7 @@ export default function CatalogClient() {
 
         <AnimatePresence initial={false}>
           {open && (
-            <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden rounded-xl border border-white/[0.07] bg-white/[0.02] px-5 pb-4 mt-4">
+            <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden rounded-xl border border-foreground/[0.07] bg-foreground/[0.02] px-5 pb-4 mt-4">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-3">
                 <div>
                   <Label className={label}>Класификација</Label>
@@ -236,17 +236,17 @@ export default function CatalogClient() {
         </AnimatePresence>
 
       <div className="flex items-center justify-between py-4 text-sm">
-        <p className="text-white/50" aria-live="polite">
-          Прикажани <span className="text-white font-semibold">{results.length}</span> {results.length === 1 ? "производ" : "производи"}
-          {filterCount > 0 && <span className="text-white/35"> (филтрирано)</span>}
+        <p className="text-foreground/50" aria-live="polite">
+          Прикажани <span className="text-foreground font-semibold">{results.length}</span> {results.length === 1 ? "производ" : "производи"}
+          {filterCount > 0 && <span className="text-foreground/35"> (филтрирано)</span>}
         </p>
-        <p className="text-white/40">Страна {cur} од {pages}</p>
+        <p className="text-foreground/40">Страна {cur} од {pages}</p>
       </div>
 
       {results.length === 0 ? (
-        <div className="rounded-xl border border-dashed border-white/15 p-10 text-center">
+        <div className="rounded-xl border border-dashed border-foreground/15 p-10 text-center">
           <p className="text-lg font-semibold">Нема пронајдени производи</p>
-          <p className="text-white/50 mt-1 text-sm">Проверете ја ознаката или ресетирајте ги филтрите. Јавете ни се – ќе го најдеме лежиштето за вас.</p>
+          <p className="text-foreground/50 mt-1 text-sm">Проверете ја ознаката или ресетирајте ги филтрите. Јавете ни се – ќе го најдеме лежиштето за вас.</p>
         </div>
       ) : view === "table" ? (
         <div className="rounded-xl border bg-card/50 overflow-hidden">
@@ -288,14 +288,14 @@ export default function CatalogClient() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {rows.map((p, i) => (
             <motion.div key={p.slug} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.02 }}>
-              <Link href={`/catalog/${p.slug}`} className="group block rounded-xl bg-white/[0.03] border border-white/5 p-5 hover:border-brand-1/20 hover:bg-white/[0.05] transition-all">
+              <Link href={`/catalog/${p.slug}`} className="group block rounded-xl bg-foreground/[0.03] border border-foreground/5 p-5 hover:border-brand-1/20 hover:bg-foreground/[0.05] transition-all">
                 <h3 className="font-mono font-bold text-sm mb-3 group-hover:text-brand-2 transition-colors">{p.designation}</h3>
                 <Badge variant="secondary" className="text-brand-2 mb-3">{getType(p.type)?.name}</Badge>
-                <div className="space-y-1.5 text-xs text-white/45">
+                <div className="space-y-1.5 text-xs text-foreground/45">
                   {([["d ⌀", p.d], ["D ⌀", p.D], ["B", p.B]] as const).map(([k, v]) => (
-                    <div key={k} className="flex justify-between"><span>{k}</span><span className="font-mono text-white/70">{v} mm</span></div>
+                    <div key={k} className="flex justify-between"><span>{k}</span><span className="font-mono text-foreground/70">{v} mm</span></div>
                   ))}
-                  <div className="flex justify-between"><span>Заптивање</span><span className="text-white/70 truncate ml-2">{p.seal}</span></div>
+                  <div className="flex justify-between"><span>Заптивање</span><span className="text-foreground/70 truncate ml-2">{p.seal}</span></div>
                 </div>
               </Link>
             </motion.div>
@@ -308,7 +308,7 @@ export default function CatalogClient() {
           <Button variant="outline" size="icon" disabled={cur === 1} onClick={() => update({ page: String(cur - 1) })} aria-label="Претходна">‹</Button>
           {pageNums.map((n, i) =>
             n === "…" ? (
-              <span key={`d${i}`} className="px-1 text-white/30">…</span>
+              <span key={`d${i}`} className="px-1 text-foreground/30">…</span>
             ) : (
               <Button key={n} size="icon" variant="outline" onClick={() => update({ page: String(n) })} aria-current={n === cur} className={n === cur ? "bg-brand-gradient text-white border-transparent hover:opacity-90" : ""}>{n}</Button>
             )

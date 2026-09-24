@@ -68,27 +68,27 @@ export default async function ProductPage({ params }: PageProps<"/catalog/[slug]
   return (
     <div className="container mx-auto px-6 lg:px-10 pt-24 pb-14">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
-      <nav aria-label="Breadcrumb" className="text-sm text-white/45">
-        <Link href="/" className="hover:text-brand-2">Почетна</Link> / <Link href="/catalog" className="hover:text-brand-2">Каталог</Link> / <span className="text-white">{p.designation}</span>
+      <nav aria-label="Breadcrumb" className="text-sm text-foreground/45">
+        <Link href="/" className="hover:text-brand-2">Почетна</Link> / <Link href="/catalog" className="hover:text-brand-2">Каталог</Link> / <span className="text-foreground">{p.designation}</span>
       </nav>
 
       <div className="mt-5 grid md:grid-cols-[300px_1fr] gap-8">
-        <div className="rounded-2xl bg-white/[0.03] border border-white/[0.07] p-8 flex items-center justify-center">
+        <div className="rounded-2xl bg-foreground/[0.03] border border-foreground/[0.07] p-8 flex items-center justify-center">
           <BearingIcon className="w-56 h-56" spin />
         </div>
         <div>
           <p className="text-brand-2 font-semibold text-sm">{p.brand}</p>
           <h1 className="font-mono text-3xl md:text-4xl font-extrabold">{p.designation}</h1>
-          <p className="mt-1 text-lg text-white/60">{t.name}</p>
-          <p className="mt-4 text-white/65 max-w-2xl">{p.description}</p>
+          <p className="mt-1 text-lg text-foreground/60">{t.name}</p>
+          <p className="mt-4 text-foreground/65 max-w-2xl">{p.description}</p>
 
 
           <h2 className="mt-10 font-display text-xl font-bold">Технички карактеристики</h2>
-          <table className="mt-3 w-full max-w-2xl text-sm bg-white/[0.03] rounded-xl overflow-hidden border border-white/[0.07]">
+          <table className="mt-3 w-full max-w-2xl text-sm bg-foreground/[0.03] rounded-xl overflow-hidden border border-foreground/[0.07]">
             <tbody>
               {specs.map(([k, v]) => (
-                <tr key={k} className="border-b last:border-0 border-white/[0.06]">
-                  <th scope="row" className="text-left font-medium text-white/50 px-4 py-2.5 w-1/2">{k}</th>
+                <tr key={k} className="border-b last:border-0 border-foreground/[0.06]">
+                  <th scope="row" className="text-left font-medium text-foreground/50 px-4 py-2.5 w-1/2">{k}</th>
                   <td className="px-4 py-2.5 font-semibold">{v}</td>
                 </tr>
               ))}
@@ -98,7 +98,7 @@ export default async function ProductPage({ params }: PageProps<"/catalog/[slug]
           <h2 className="mt-10 font-display text-xl font-bold">Примена по индустрии</h2>
           <div className="mt-3 flex flex-wrap gap-2">
             {p.industries.map((s) => (
-              <Link key={s} href={`/catalog?industry=${s}`} className="rounded-full bg-white/5 border border-white/10 px-4 py-1.5 text-sm hover:border-brand-1/50 hover:text-brand-2">
+              <Link key={s} href={`/catalog?industry=${s}`} className="rounded-full bg-foreground/5 border border-foreground/10 px-4 py-1.5 text-sm hover:border-brand-1/50 hover:text-brand-2">
                 {getIndustry(s)?.name}
               </Link>
             ))}

@@ -20,10 +20,10 @@ export default function Hero() {
       >
         <div className="hero-bearing-float">
           <div className="hero-bearing-spin">
-            <BearingIcon className="w-full h-auto" style={{ filter: "drop-shadow(0 0 80px rgba(255,90,50,0.25)) drop-shadow(0 0 160px rgba(255,170,34,0.12))" }} />
+            <BearingIcon className="w-full h-auto" style={{ filter: "drop-shadow(0 0 80px rgba(var(--brand-glow-1-rgb),0.25)) drop-shadow(0 0 160px rgba(var(--brand-glow-2-rgb),0.12))" }} />
           </div>
         </div>
-        <div className="hero-bearing-glow absolute inset-0 -z-10 rounded-full" style={{ background: "radial-gradient(circle, rgba(255,90,50,0.15) 0%, rgba(255,170,34,0.08) 35%, transparent 60%)" }} />
+        <div className="hero-bearing-glow absolute inset-0 -z-10 rounded-full" style={{ background: "radial-gradient(circle, rgba(var(--brand-glow-1-rgb),0.15) 0%, rgba(var(--brand-glow-2-rgb),0.08) 35%, transparent 60%)" }} />
         <div className="hero-particle-ring absolute inset-[-15%] -z-10">
           {Array.from({ length: 6 }, (_, b) => (
             <div
@@ -37,7 +37,7 @@ export default function Hero() {
 
       <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/85 to-transparent z-[1]" />
       <div className="absolute inset-0 bg-gradient-to-b from-ink/30 via-transparent to-ink/60 z-[1]" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_50%,rgba(255,90,50,0.07)_0%,transparent_50%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_50%,rgba(var(--brand-glow-1-rgb),0.07)_0%,transparent_50%)] pointer-events-none" />
 
       <div className="relative z-20 container mx-auto px-6 lg:px-10">
         <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex items-center gap-3 mb-5">
@@ -59,22 +59,22 @@ export default function Hero() {
           ))}
         </h1>
 
-        <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1 }} className="text-white/70 text-base lg:text-lg max-w-xl leading-relaxed mb-8">
+        <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1 }} className="text-foreground/70 text-base lg:text-lg max-w-xl leading-relaxed mb-8">
           Б&amp;Б Уникооп обезбедува индустриски лежишта, опрема за пренос на моќност и решенија за одржување низ Македонија. Како официјален SKF дистрибутер, испорачуваме 100% оригинални производи.
         </motion.p>
 
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1.2 }} className="flex flex-wrap gap-3">
-          <a href="#contact" className="px-7 py-3.5 bg-brand-gradient font-semibold rounded-full hover:shadow-[0_0_40px_rgba(255,90,50,0.5)] transition-all duration-300 text-xs tracking-wide uppercase">
+          <a href="#contact" className="px-7 py-3.5 bg-brand-gradient font-semibold rounded-full hover:shadow-[0_0_40px_rgba(var(--brand-glow-1-rgb),0.5)] transition-all duration-300 text-xs tracking-wide uppercase">
             Побарај понуда
           </a>
-          <a href="#about" className="px-7 py-3.5 border border-white/25 font-medium rounded-full hover:bg-white/10 hover:border-white/40 transition-all duration-300 text-xs tracking-wide uppercase">
+          <a href="#about" className="px-7 py-3.5 border border-foreground/25 font-medium rounded-full hover:bg-foreground/10 hover:border-foreground/40 transition-all duration-300 text-xs tracking-wide uppercase">
             Дознај повеќе
           </a>
         </motion.div>
       </div>
 
       <motion.a href="#about" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.5 }} className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 z-10" aria-label="Скролај надолу">
-        <span className="text-white/50 text-[10px] tracking-[0.2em] uppercase">Скролај</span>
+        <span className="text-foreground/50 text-[10px] tracking-[0.2em] uppercase">Скролај</span>
         <span className="hero-scroll-bounce text-brand-2/60">↓</span>
       </motion.a>
     </section>

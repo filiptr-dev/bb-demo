@@ -7,7 +7,7 @@ export default function SectionHeading({
   return (
     <div className={`relative mb-10 ${center ? "text-center" : ""}`}>
       {num && (
-        <span className="absolute -top-8 left-0 font-numbers text-[110px] md:text-[150px] text-white/[0.03] leading-none select-none pointer-events-none">
+        <span className="absolute -top-8 left-0 font-numbers text-[110px] md:text-[150px] text-foreground/[0.03] leading-none select-none pointer-events-none">
           {num}
         </span>
       )}
