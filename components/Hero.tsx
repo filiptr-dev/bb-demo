@@ -1,13 +1,19 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, useScroll, useTransform } from "motion/react";
+import { useRef } from "react";
 import BearingIcon from "./BearingIcon";
 
 export default function Hero() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end start"] });
+  const bearingY = useTransform(scrollYProgress, [0, 1], [0, 140]);
+
   return (
-    <section className="relative min-h-[88vh] w-full overflow-hidden bg-background flex items-center pt-16">
+    <section ref={sectionRef} className="relative min-h-[88vh] w-full overflow-hidden bg-background flex items-center pt-16">
       <motion.div
         className="absolute right-[-8%] md:right-[0%] lg:right-[4%] top-1/2 -translate-y-1/2 w-[70%] sm:w-[52%] lg:w-[42%] xl:w-[38%]"
+        style={{ y: bearingY }}
         initial={{ opacity: 0, scale: 0.3, rotate: -90, filter: "blur(30px)" }}
         animate={{ opacity: 1, scale: 1, rotate: 0, filter: "blur(0px)" }}
         transition={{ duration: 2.2, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}

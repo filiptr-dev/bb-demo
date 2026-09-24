@@ -4,6 +4,7 @@ import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import CountUp from "@/components/CountUp";
 import BearingIcon from "@/components/BearingIcon";
+import ParallaxLayer from "@/components/ParallaxLayer";
 import { industries } from "@/lib/data";
 
 const stats: [number, string, string][] = [
@@ -33,13 +34,26 @@ const why = [
 
 const bg = "linear-gradient(180deg, #1a1a1a 0%, #1e1d1c 15%, #201f1d 50%, #1e1d1c 85%, #1a1a1a 100%)";
 
+// Vary each grid item's entrance direction by column so cards don't all slide in from the same spot.
+const dir3 = [
+  { x: -45, y: 15, rotate: -2 },
+  { x: 0, y: 45, rotate: 0 },
+  { x: 45, y: 15, rotate: 2 },
+];
+const dir4 = [
+  { x: -35, y: 22 },
+  { x: -12, y: 34 },
+  { x: 12, y: 34 },
+  { x: 35, y: 22 },
+];
+
 export default function Home() {
   return (
     <>
       <Hero />
 
       <section id="about" className="relative scroll-mt-16 py-16 lg:py-20 overflow-hidden" style={{ background: bg }}>
-        <div className="absolute top-1/4 right-0 w-[420px] h-[420px] bg-brand-1/[0.03] rounded-full blur-[180px] pointer-events-none" />
+        <ParallaxLayer range={70} className="absolute top-1/4 right-0 w-[420px] h-[420px] bg-brand-1/[0.03] rounded-full blur-[180px] pointer-events-none" />
         <div className="relative container mx-auto px-6 lg:px-10">
           <SectionHeading eyebrow="За нас" num="01">
             Кои <span className="text-gradient-brand">сме ние</span>
@@ -73,7 +87,7 @@ export default function Home() {
 
           <dl className="mt-14 grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-white/[0.07] pt-10">
             {stats.map(([n, s, l], i) => (
-              <Reveal key={l} delay={i * 0.1} className="text-center">
+              <Reveal key={l} delay={i * 0.1} className="text-center" {...dir4[i % 4]}>
                 <dt className="font-numbers text-5xl lg:text-6xl tracking-wider"><CountUp to={n} suffix={s} /></dt>
                 <dd className="text-white/55 text-xs mt-1.5 tracking-wide uppercase">{l}</dd>
               </Reveal>
@@ -89,7 +103,7 @@ export default function Home() {
           </SectionHeading>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {categories.map(([t, d, href], i) => (
-              <Reveal key={t} delay={i * 0.08}>
+              <Reveal key={t} delay={i * 0.08} {...dir3[i % 3]}>
                 <Link href={href} className="group block h-full p-6 rounded-2xl border border-white/[0.07] bg-white/[0.025] hover:bg-white/[0.05] hover:border-brand-1/25 transition-all duration-500">
                   <span className="font-numbers text-3xl text-brand-1/60 group-hover:text-brand-2 transition-colors">0{i + 1}</span>
                   <h3 className="font-display font-bold text-lg mt-2 mb-1.5 group-hover:text-brand-2 transition-colors">{t}</h3>
@@ -104,14 +118,14 @@ export default function Home() {
 
       <section id="industries" className="relative scroll-mt-16 py-16 lg:py-20 overflow-hidden">
         <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, #1a1a1a 0%, rgba(30,28,26,0.92) 15%, rgba(30,28,26,0.88) 50%, rgba(30,28,26,0.92) 85%, #1a1a1a 100%)" }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-1/[0.03] rounded-full blur-[200px] pointer-events-none" />
+        <ParallaxLayer range={90} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-1/[0.03] rounded-full blur-[200px] pointer-events-none" />
         <div className="relative container mx-auto px-6 lg:px-10">
           <SectionHeading eyebrow="Индустрии што ги опслужуваме" num="03" center>
             Го придвижуваме <span className="text-gradient-brand">секој сектор</span>
           </SectionHeading>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             {industries.map((i, idx) => (
-              <Reveal key={i.slug} delay={idx * 0.05} y={20}>
+              <Reveal key={i.slug} delay={idx * 0.05} {...dir4[idx % 4]}>
                 <Link
                   href={`/catalog?industry=${i.slug}`}
                   className="group relative h-36 rounded-xl overflow-hidden border border-white/[0.07] hover:border-brand-1/30 flex flex-col items-center justify-center gap-2 p-4 text-center transition-all duration-300 hover:-translate-y-1 hover:scale-[1.03]"
@@ -154,7 +168,7 @@ export default function Home() {
           </SectionHeading>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {why.map(([t, d], i) => (
-              <Reveal key={t} delay={i * 0.08}>
+              <Reveal key={t} delay={i * 0.08} {...dir3[i % 3]}>
                 <div className="group h-full p-6 rounded-2xl border border-white/[0.07] bg-white/[0.025] hover:bg-white/[0.05] hover:border-brand-1/25 transition-all duration-500">
                   <div className="w-11 h-11 rounded-xl bg-brand-1/10 group-hover:bg-brand-1/20 flex items-center justify-center font-numbers text-xl text-brand-1 group-hover:text-brand-2 mb-4 transition-colors">{i + 1}</div>
                   <h3 className="font-display font-bold text-lg mb-2 group-hover:text-brand-2 transition-colors">{t}</h3>
@@ -168,7 +182,7 @@ export default function Home() {
 
       <section className="relative py-16 lg:py-24 overflow-hidden">
         <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(255,90,50,0.12) 0%, #1a1a1a 30%, #1e1d1c 50%, #1a1a1a 70%, rgba(255,170,34,0.06) 100%)" }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-brand-1/10 rounded-full blur-[150px] pointer-events-none" />
+        <ParallaxLayer range={60} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-brand-1/10 rounded-full blur-[150px] pointer-events-none" />
         <div className="relative container mx-auto px-6 lg:px-10 text-center">
           <Reveal>
             <h2 className="font-display font-bold text-3xl md:text-5xl leading-tight mb-4">

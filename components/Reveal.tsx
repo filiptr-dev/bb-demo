@@ -8,16 +8,18 @@ type Props = {
   className?: string;
   x?: number;
   y?: number;
+  scale?: number;
+  rotate?: number;
   delay?: number;
   duration?: number;
 };
 
-export default function Reveal({ children, className, x = 0, y = 30, delay = 0, duration = 0.7 }: Props) {
+export default function Reveal({ children, className, x = 0, y = 30, scale = 1, rotate = 0, delay = 0, duration = 0.7 }: Props) {
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, x, y }}
-      whileInView={{ opacity: 1, x: 0, y: 0 }}
+      initial={{ opacity: 0, x, y, scale, rotate }}
+      whileInView={{ opacity: 1, x: 0, y: 0, scale: 1, rotate: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration, delay, ease: [0.22, 1, 0.36, 1] }}
     >
