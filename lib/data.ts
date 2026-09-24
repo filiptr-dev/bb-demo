@@ -21,6 +21,7 @@ export type Product = {
   D: number;
   B: number;
   seal: string;
+  boreType: string;
   industries: string[];
   description: string;
 };
@@ -70,7 +71,12 @@ const raw: Raw[] = [
   ["1207 ETN9", SA, 35, 72, 17, "Отворено", ["paper", "power", "food"]],
   ["2208 ETN9", SA, 40, 80, 23, "Отворено", ["paper", "recycling", "cement"]],
   ["1310 ETN9", SA, 50, 110, 27, "Отворено", ["mining", "metallurgy", "cement"]],
+  ["1210 EKTN9", SA, 50, 90, 20, "Отворено", ["paper", "cement", "recycling"]],
+  ["1310 EKTN9", SA, 50, 110, 27, "Отворено", ["mining", "metallurgy", "cement"]],
   ["22212 E", SR, 60, 110, 28, "Отворено", ["paper", "power", "food"]],
+  ["22212 EK", SR, 60, 110, 28, "Отворено", ["paper", "power", "food"]],
+  ["22220 EK", SR, 100, 180, 46, "Отворено", ["cement", "mining", "paper", "recycling"]],
+  ["23124 CCK/W33", SR, 120, 200, 62, "Отворено", ["cement", "metallurgy", "mining", "paper"]],
   ["22220 E", SR, 100, 180, 46, "Отворено", ["cement", "mining", "paper", "recycling"]],
   ["22314 E", SR, 70, 150, 51, "Отворено", ["mining", "recycling", "metallurgy"]],
   ["22316 E", SR, 80, 170, 58, "Отворено", ["mining", "cement", "recycling"]],
@@ -112,6 +118,7 @@ export const products: Product[] = raw.map(([designation, type, d, D, B, seal, i
   D,
   B,
   seal,
+  boreType: /(EK|CCK)/.test(designation) ? "Конусен" : "Цилиндричен",
   industries: inds,
   description: `${typeBlurb[type]} Димензии ${d} × ${D} × ${B} mm.`,
 }));

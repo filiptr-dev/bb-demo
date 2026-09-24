@@ -1,7 +1,7 @@
 export default function BearingIcon({ className = "", spin = false, style }: { className?: string; spin?: boolean; style?: React.CSSProperties }) {
   const balls = Array.from({ length: 10 }, (_, i) => {
     const a = (i / 10) * Math.PI * 2;
-    return { x: 100 + Math.cos(a) * 62, y: 100 + Math.sin(a) * 62 };
+    return { x: +(100 + Math.cos(a) * 62).toFixed(2), y: +(100 + Math.sin(a) * 62).toFixed(2) };
   });
   return (
     <svg viewBox="0 0 200 200" className={className} style={style} role="img" aria-label="Лежиште">

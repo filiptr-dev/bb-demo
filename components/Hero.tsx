@@ -23,7 +23,7 @@ export default function Hero() {
             <div
               key={b}
               className="hero-light-particle absolute w-1.5 h-1.5 rounded-full bg-amber"
-              style={{ top: `${50 + 45 * Math.sin((b * 2 * Math.PI) / 6)}%`, left: `${50 + 45 * Math.cos((b * 2 * Math.PI) / 6)}%`, animationDelay: `${b * 0.5}s` }}
+              style={{ top: `${(50 + 45 * Math.sin((b * 2 * Math.PI) / 6)).toFixed(2)}%`, left: `${(50 + 45 * Math.cos((b * 2 * Math.PI) / 6)).toFixed(2)}%`, animationDelay: `${b * 0.5}s` }}
             />
           ))}
         </div>

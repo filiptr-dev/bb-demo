@@ -17,7 +17,7 @@ export default function CatalogPage() {
           <h1 className="font-display font-black text-3xl md:text-5xl tracking-tighter mb-2">
             КАТАЛОГ <span className="text-gradient-brand">ПРОИЗВОДИ</span>
           </h1>
-          <p className="text-white/55 max-w-2xl text-sm md:text-base">Пребарувајте по ознака, тип, димензии или индустрија – и пронајдете го точно она што ви треба.</p>
+          <p className="text-white/55 max-w-2xl text-sm md:text-base">Пребарувајте по ознака (6205), димензии (25x52x15), тип, заптивање или индустрија – и пронајдете го точно она што ви треба.</p>
         </div>
       </section>
       <Suspense fallback={<p className="container mx-auto px-6 text-white/50">Се вчитува…</p>}>
