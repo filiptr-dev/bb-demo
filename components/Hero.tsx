@@ -5,7 +5,7 @@ import BearingIcon from "./BearingIcon";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[88vh] w-full overflow-hidden bg-ink flex items-center pt-16">
+    <section className="relative min-h-[88vh] w-full overflow-hidden bg-background flex items-center pt-16">
       <motion.div
         className="absolute right-[-8%] md:right-[0%] lg:right-[4%] top-1/2 -translate-y-1/2 w-[70%] sm:w-[52%] lg:w-[42%] xl:w-[38%]"
         initial={{ opacity: 0, scale: 0.3, rotate: -90, filter: "blur(30px)" }}
@@ -22,7 +22,7 @@ export default function Hero() {
           {Array.from({ length: 6 }, (_, b) => (
             <div
               key={b}
-              className="hero-light-particle absolute w-1.5 h-1.5 rounded-full bg-amber"
+              className="hero-light-particle absolute w-1.5 h-1.5 rounded-full bg-brand-2"
               style={{ top: `${(50 + 45 * Math.sin((b * 2 * Math.PI) / 6)).toFixed(2)}%`, left: `${(50 + 45 * Math.cos((b * 2 * Math.PI) / 6)).toFixed(2)}%`, animationDelay: `${b * 0.5}s` }}
             />
           ))}
@@ -35,8 +35,8 @@ export default function Hero() {
 
       <div className="relative z-20 container mx-auto px-6 lg:px-10">
         <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex items-center gap-3 mb-5">
-          <div className="w-10 h-[2px] bg-gradient-to-r from-flame to-amber" />
-          <span className="text-amber text-xs tracking-[0.3em] uppercase font-semibold">Од 1991 · SKF дистрибутер</span>
+          <div className="w-10 h-[2px] bg-brand-gradient" />
+          <span className="text-brand-2 text-xs tracking-[0.3em] uppercase font-semibold">Од 1991 · SKF дистрибутер</span>
         </motion.div>
 
         <h1 className="font-display font-extrabold text-[2rem] sm:text-5xl lg:text-6xl xl:text-7xl leading-[0.98] tracking-tighter mb-6">
@@ -58,7 +58,7 @@ export default function Hero() {
         </motion.p>
 
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1.2 }} className="flex flex-wrap gap-3">
-          <a href="#contact" className="px-7 py-3.5 bg-gradient-to-r from-flame to-amber font-semibold rounded-full hover:shadow-[0_0_40px_rgba(255,90,50,0.5)] transition-all duration-300 text-xs tracking-wide uppercase">
+          <a href="#contact" className="px-7 py-3.5 bg-brand-gradient font-semibold rounded-full hover:shadow-[0_0_40px_rgba(255,90,50,0.5)] transition-all duration-300 text-xs tracking-wide uppercase">
             Побарај понуда
           </a>
           <a href="#about" className="px-7 py-3.5 border border-white/25 font-medium rounded-full hover:bg-white/10 hover:border-white/40 transition-all duration-300 text-xs tracking-wide uppercase">
@@ -69,7 +69,7 @@ export default function Hero() {
 
       <motion.a href="#about" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.5 }} className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 z-10" aria-label="Скролај надолу">
         <span className="text-white/50 text-[10px] tracking-[0.2em] uppercase">Скролај</span>
-        <span className="hero-scroll-bounce text-amber/60">↓</span>
+        <span className="hero-scroll-bounce text-brand-2/60">↓</span>
       </motion.a>
     </section>
   );

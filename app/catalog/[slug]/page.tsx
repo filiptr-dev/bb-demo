@@ -69,7 +69,7 @@ export default async function ProductPage({ params }: PageProps<"/catalog/[slug]
     <div className="container mx-auto px-6 lg:px-10 pt-24 pb-14">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <nav aria-label="Breadcrumb" className="text-sm text-white/45">
-        <Link href="/" className="hover:text-amber">Почетна</Link> / <Link href="/catalog" className="hover:text-amber">Каталог</Link> / <span className="text-white">{p.designation}</span>
+        <Link href="/" className="hover:text-brand-2">Почетна</Link> / <Link href="/catalog" className="hover:text-brand-2">Каталог</Link> / <span className="text-white">{p.designation}</span>
       </nav>
 
       <div className="mt-5 grid md:grid-cols-[300px_1fr] gap-8">
@@ -77,7 +77,7 @@ export default async function ProductPage({ params }: PageProps<"/catalog/[slug]
           <BearingIcon className="w-56 h-56" spin />
         </div>
         <div>
-          <p className="text-amber font-semibold text-sm">{p.brand}</p>
+          <p className="text-brand-2 font-semibold text-sm">{p.brand}</p>
           <h1 className="font-mono text-3xl md:text-4xl font-extrabold">{p.designation}</h1>
           <p className="mt-1 text-lg text-white/60">{t.name}</p>
           <p className="mt-4 text-white/65 max-w-2xl">{p.description}</p>
@@ -98,7 +98,7 @@ export default async function ProductPage({ params }: PageProps<"/catalog/[slug]
           <h2 className="mt-10 font-display text-xl font-bold">Примена по индустрии</h2>
           <div className="mt-3 flex flex-wrap gap-2">
             {p.industries.map((s) => (
-              <Link key={s} href={`/catalog?industry=${s}`} className="rounded-full bg-white/5 border border-white/10 px-4 py-1.5 text-sm hover:border-flame/50 hover:text-amber">
+              <Link key={s} href={`/catalog?industry=${s}`} className="rounded-full bg-white/5 border border-white/10 px-4 py-1.5 text-sm hover:border-brand-1/50 hover:text-brand-2">
                 {getIndustry(s)?.name}
               </Link>
             ))}

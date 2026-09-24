@@ -28,7 +28,7 @@ export default async function IndustryPage({ params }: PageProps<"/industries/[s
     <div className="container mx-auto px-6 lg:px-10 pt-24 pb-14">
       <h1 className="font-display text-3xl md:text-4xl font-bold">Лежишта за {i.name.toLowerCase()}</h1>
       <p className="mt-2 text-white/60 max-w-2xl">{i.blurb}</p>
-      <Link href={`/catalog?industry=${i.slug}`} className="mt-4 inline-block text-amber font-semibold hover:underline">
+      <Link href={`/catalog?industry=${i.slug}`} className="mt-4 inline-block text-brand-2 font-semibold hover:underline">
         Отвори во каталог со филтри →
       </Link>
       <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">

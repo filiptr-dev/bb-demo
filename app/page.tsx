@@ -39,7 +39,7 @@ export default function Home() {
       <Hero />
 
       <section id="about" className="relative scroll-mt-16 py-16 lg:py-20 overflow-hidden" style={{ background: bg }}>
-        <div className="absolute top-1/4 right-0 w-[420px] h-[420px] bg-flame/[0.03] rounded-full blur-[180px] pointer-events-none" />
+        <div className="absolute top-1/4 right-0 w-[420px] h-[420px] bg-brand-1/[0.03] rounded-full blur-[180px] pointer-events-none" />
         <div className="relative container mx-auto px-6 lg:px-10">
           <SectionHeading eyebrow="За нас" num="01">
             Кои <span className="text-gradient-brand">сме ние</span>
@@ -48,9 +48,9 @@ export default function Home() {
             <Reveal x={-50} y={0} duration={1} className="relative">
               <div className="relative overflow-hidden rounded-2xl h-[320px] lg:h-[380px] bg-gradient-to-br from-[#2a2826] to-[#161514] border border-white/[0.06] flex items-center justify-center">
                 <BearingIcon className="w-56 h-56 opacity-90" spin />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink-2/70 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-surface/70 to-transparent" />
               </div>
-              <div className="absolute -bottom-5 -right-3 md:-right-5 bg-gradient-to-br from-flame to-amber rounded-2xl p-5 shadow-2xl shadow-flame/20">
+              <div className="absolute -bottom-5 -right-3 md:-right-5 bg-brand-gradient rounded-2xl p-5 shadow-2xl shadow-brand-1/20">
                 <div className="font-numbers text-4xl">35+</div>
                 <div className="text-white/90 text-xs">Години<br />искуство</div>
               </div>
@@ -67,7 +67,7 @@ export default function Home() {
                   <li key={b} className="px-3 py-1.5 rounded-full border border-white/10 bg-white/[0.03] text-xs text-white/70">{b}</li>
                 ))}
               </ul>
-              <Link href="/catalog" className="text-amber text-sm font-semibold uppercase tracking-wide hover:underline">Погледни го каталогот →</Link>
+              <Link href="/catalog" className="text-brand-2 text-sm font-semibold uppercase tracking-wide hover:underline">Погледни го каталогот →</Link>
             </Reveal>
           </div>
 
@@ -90,11 +90,11 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {categories.map(([t, d, href], i) => (
               <Reveal key={t} delay={i * 0.08}>
-                <Link href={href} className="group block h-full p-6 rounded-2xl border border-white/[0.07] bg-white/[0.025] hover:bg-white/[0.05] hover:border-flame/25 transition-all duration-500">
-                  <span className="font-numbers text-3xl text-flame/60 group-hover:text-amber transition-colors">0{i + 1}</span>
-                  <h3 className="font-display font-bold text-lg mt-2 mb-1.5 group-hover:text-amber transition-colors">{t}</h3>
+                <Link href={href} className="group block h-full p-6 rounded-2xl border border-white/[0.07] bg-white/[0.025] hover:bg-white/[0.05] hover:border-brand-1/25 transition-all duration-500">
+                  <span className="font-numbers text-3xl text-brand-1/60 group-hover:text-brand-2 transition-colors">0{i + 1}</span>
+                  <h3 className="font-display font-bold text-lg mt-2 mb-1.5 group-hover:text-brand-2 transition-colors">{t}</h3>
                   <p className="text-sm text-white/55 leading-relaxed">{d}</p>
-                  <span className="inline-block mt-3 text-xs text-amber opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all">Дознај повеќе →</span>
+                  <span className="inline-block mt-3 text-xs text-brand-2 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all">Дознај повеќе →</span>
                 </Link>
               </Reveal>
             ))}
@@ -103,8 +103,8 @@ export default function Home() {
       </section>
 
       <section id="industries" className="relative scroll-mt-16 py-16 lg:py-20 overflow-hidden">
-        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, #1a1a1a 0%, rgba(30,28,26,0.92) 15%, rgba(28,26,24,0.88) 50%, rgba(30,28,26,0.92) 85%, #1a1a1a 100%)" }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-flame/[0.03] rounded-full blur-[200px] pointer-events-none" />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, #1a1a1a 0%, rgba(30,28,26,0.92) 15%, rgba(30,28,26,0.88) 50%, rgba(30,28,26,0.92) 85%, #1a1a1a 100%)" }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-1/[0.03] rounded-full blur-[200px] pointer-events-none" />
         <div className="relative container mx-auto px-6 lg:px-10">
           <SectionHeading eyebrow="Индустрии што ги опслужуваме" num="03" center>
             Го придвижуваме <span className="text-gradient-brand">секој сектор</span>
@@ -114,7 +114,7 @@ export default function Home() {
               <Reveal key={i.slug} delay={idx * 0.05} y={20}>
                 <Link
                   href={`/catalog?industry=${i.slug}`}
-                  className="group relative h-36 rounded-xl overflow-hidden border border-white/[0.07] hover:border-flame/30 flex flex-col items-center justify-center gap-2 p-4 text-center transition-all duration-300 hover:-translate-y-1 hover:scale-[1.03]"
+                  className="group relative h-36 rounded-xl overflow-hidden border border-white/[0.07] hover:border-brand-1/30 flex flex-col items-center justify-center gap-2 p-4 text-center transition-all duration-300 hover:-translate-y-1 hover:scale-[1.03]"
                 >
                   <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" style={{ backgroundImage: i.image }} />
                   <div className="absolute inset-0 bg-white/[0.03] group-hover:bg-black/45 transition-colors" />
@@ -155,9 +155,9 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
             {why.map(([t, d], i) => (
               <Reveal key={t} delay={i * 0.08}>
-                <div className="group h-full p-6 rounded-2xl border border-white/[0.07] bg-white/[0.025] hover:bg-white/[0.05] hover:border-flame/25 transition-all duration-500">
-                  <div className="w-11 h-11 rounded-xl bg-flame/10 group-hover:bg-flame/20 flex items-center justify-center font-numbers text-xl text-flame group-hover:text-amber mb-4 transition-colors">{i + 1}</div>
-                  <h3 className="font-display font-bold text-lg mb-2 group-hover:text-amber transition-colors">{t}</h3>
+                <div className="group h-full p-6 rounded-2xl border border-white/[0.07] bg-white/[0.025] hover:bg-white/[0.05] hover:border-brand-1/25 transition-all duration-500">
+                  <div className="w-11 h-11 rounded-xl bg-brand-1/10 group-hover:bg-brand-1/20 flex items-center justify-center font-numbers text-xl text-brand-1 group-hover:text-brand-2 mb-4 transition-colors">{i + 1}</div>
+                  <h3 className="font-display font-bold text-lg mb-2 group-hover:text-brand-2 transition-colors">{t}</h3>
                   <p className="text-sm text-white/55 leading-relaxed">{d}</p>
                 </div>
               </Reveal>
@@ -167,8 +167,8 @@ export default function Home() {
       </section>
 
       <section className="relative py-16 lg:py-24 overflow-hidden">
-        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(255,90,50,0.12) 0%, #1a1a1a 30%, #1c1b19 50%, #1a1a1a 70%, rgba(255,170,34,0.06) 100%)" }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-flame/10 rounded-full blur-[150px] pointer-events-none" />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(135deg, rgba(255,90,50,0.12) 0%, #1a1a1a 30%, #1e1d1c 50%, #1a1a1a 70%, rgba(255,170,34,0.06) 100%)" }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-brand-1/10 rounded-full blur-[150px] pointer-events-none" />
         <div className="relative container mx-auto px-6 lg:px-10 text-center">
           <Reveal>
             <h2 className="font-display font-bold text-3xl md:text-5xl leading-tight mb-4">
@@ -179,7 +179,7 @@ export default function Home() {
             <p className="text-white/60 max-w-xl mx-auto mb-8">Побарајте понуда денес. Нашиот тим е подготвен да ви помогне да го најдете вистинското решение.</p>
           </Reveal>
           <Reveal delay={0.3} className="flex flex-wrap justify-center gap-3">
-            <a href="#contact" className="px-7 py-3.5 bg-gradient-to-r from-flame to-amber font-semibold rounded-full hover:shadow-[0_0_45px_rgba(255,90,50,0.5)] transition-shadow text-xs tracking-wide uppercase">Стапи во контакт →</a>
+            <a href="#contact" className="px-7 py-3.5 bg-brand-gradient font-semibold rounded-full hover:shadow-[0_0_45px_rgba(255,90,50,0.5)] transition-shadow text-xs tracking-wide uppercase">Стапи во контакт →</a>
             <Link href="/catalog" className="px-7 py-3.5 border border-white/25 rounded-full hover:bg-white/10 transition-colors text-xs tracking-wide uppercase">Каталог</Link>
           </Reveal>
         </div>

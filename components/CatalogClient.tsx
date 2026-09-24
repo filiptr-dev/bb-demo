@@ -6,6 +6,13 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { bearingTypes, getType, industries, products, Product } from "@/lib/data";
 import { searchProducts } from "@/lib/search";
+import { ShoppingCart } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Badge } from "@/components/ui/badge";
+import { Label } from "@/components/ui/label";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 const PAGE = 15;
 const list = (v: string | null) => (v ? v.split(",").filter(Boolean) : []);
@@ -26,17 +33,27 @@ const columns: { key: SortKey; label: string; cls?: string; num?: boolean }[] = 
   { key: "type", label: "Класификација" },
   { key: "boreType", label: "Тип на отвор" },
   { key: "seal", label: "Заптивање" },
-  { key: "d", label: "Отвор d ⌀ (mm)", num: true },
-  { key: "D", label: "Надворешен D ⌀ (mm)", num: true },
+  { key: "d", label: "Отвор d (mm)", num: true },
+  { key: "D", label: "Надв. D (mm)", num: true },
   { key: "B", label: "Ширина B (mm)", num: true },
 ];
 
 const chip = (on: boolean) =>
-  `shrink-0 rounded-full border px-3.5 py-1.5 text-xs uppercase tracking-wide transition-all ${
-    on ? "bg-gradient-to-r from-flame to-amber border-transparent text-white" : "bg-white/5 border-white/10 text-white/60 hover:text-white hover:border-white/25"
-  }`;
-const field = "w-full py-2.5 px-3 bg-white/5 border border-white/10 rounded-lg text-sm text-white placeholder-white/30 focus:outline-none focus:border-flame/50";
-const label = "text-[11px] text-white/45 uppercase tracking-wider mb-1.5 block";
+  `shrink-0 rounded-full px-3.5 text-xs uppercase tracking-wide ${on ? "bg-brand-gradient text-white border-transparent hover:opacity-90" : ""}`;
+const label = "text-[11px] text-muted-foreground uppercase tracking-wider mb-1.5 block";
+const ALL = "__all";
+
+function Pick({ value, onChange, allLabel, options }: { value: string; onChange: (v: string) => void; allLabel: string; options: { value: string; label: string }[] }) {
+  const items = [{ value: ALL, label: allLabel }, ...options];
+  return (
+    <Select items={items} value={value || ALL} onValueChange={(v) => onChange(!v || v === ALL ? "" : String(v))}>
+      <SelectTrigger className="w-full h-10"><SelectValue /></SelectTrigger>
+      <SelectContent>
+        {items.map((o) => <SelectItem key={o.value} value={o.value}>{o.label}</SelectItem>)}
+      </SelectContent>
+    </Select>
+  );
+}
 
 function sortVal(p: Product, k: SortKey): string | number {
   if (k === "type") return getType(p.type)?.name ?? "";
@@ -135,46 +152,44 @@ export default function CatalogClient() {
 
   const range = (lab: string, lo: string, hi: string, kLo: string, kHi: string) => (
     <div>
-      <label className={label}>{lab}</label>
+      <Label className={label}>{lab}</Label>
       <div className="flex items-center gap-2">
-        <input type="number" placeholder="Мин" value={lo} onChange={(e) => update({ [kLo]: e.target.value })} className={field} />
-        <span className="text-white/30">—</span>
-        <input type="number" placeholder="Макс" value={hi} onChange={(e) => update({ [kHi]: e.target.value })} className={field} />
+        <Input type="number" placeholder="Мин" value={lo} onChange={(e) => update({ [kLo]: e.target.value })} className="h-10" />
+        <span className="text-muted-foreground">—</span>
+        <Input type="number" placeholder="Макс" value={hi} onChange={(e) => update({ [kHi]: e.target.value })} className="h-10" />
       </div>
     </div>
   );
 
   return (
     <div className="container mx-auto px-6 lg:px-10 pb-16">
-      <div className="sticky top-16 z-30 -mx-6 px-6 lg:-mx-10 lg:px-10 py-3 bg-ink/95 backdrop-blur-xl border-b border-white/[0.06]">
+      <div className="sticky top-16 z-30 -mx-6 px-6 lg:-mx-10 lg:px-10 py-3 bg-background/95 backdrop-blur-xl border-b border-white/[0.06]">
         <div className="flex gap-2">
-          <input
+          <Input
             type="search"
             value={q}
             autoFocus={!!urlSearch}
             onChange={(e) => { setQ(e.target.value); update({ search: e.target.value }); }}
             placeholder="Ознака (6205, 22220), димензии (25x52x15), број (25) или збор (цемент, конусни)…"
             aria-label="Пребарај по ознака"
-            className="flex-1 min-w-0 rounded-xl bg-white/5 border border-white/10 px-4 py-3 text-sm placeholder:text-white/35 focus:outline-none focus:border-flame/50 focus:ring-1 focus:ring-flame/30 transition-all"
+            className="flex-1 min-w-0 h-12 rounded-xl px-4 text-sm"
           />
-          <button onClick={() => setOpen(!open)} aria-expanded={open} className={`flex items-center gap-2 px-4 rounded-xl border text-sm transition-all ${open ? "bg-flame/15 border-flame/40 text-flame" : "bg-white/5 border-white/10 text-white/60 hover:text-white"}`}>
+          <Button variant={open ? "secondary" : "outline"} onClick={() => setOpen(!open)} aria-expanded={open} className="h-12 rounded-xl px-4">
             Филтри
-            {filterCount > 0 && <span className="w-5 h-5 rounded-full bg-flame text-white text-[10px] font-bold flex items-center justify-center">{filterCount}</span>}
-          </button>
-          <button onClick={() => update({ view: view === "table" ? "grid" : "" })} aria-label="Промени приказ" title={view === "table" ? "Мрежа" : "Табела"} className="px-4 rounded-xl bg-white/5 border border-white/10 text-white/60 hover:text-white transition-all">
+            {filterCount > 0 && <Badge className="h-5 min-w-5 rounded-full px-1.5 text-[10px]">{filterCount}</Badge>}
+          </Button>
+          <Button variant="outline" onClick={() => update({ view: view === "table" ? "grid" : "" })} aria-label="Промени приказ" title={view === "table" ? "Мрежа" : "Табела"} className="h-12 rounded-xl px-4">
             {view === "table" ? "▦" : "☰"}
-          </button>
+          </Button>
           {(filterCount > 0 || q) && (
-            <button onClick={reset} className="px-4 rounded-xl bg-white/5 border border-white/10 text-white/60 hover:text-white text-sm transition-all">
-              Ресетирај
-            </button>
+            <Button variant="outline" onClick={reset} className="h-12 rounded-xl px-4">Ресетирај</Button>
           )}
         </div>
 
         <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
-          <button onClick={() => update({ industry: "" })} className={chip(inds.length === 0)}>Сите индустрии</button>
+          <Button size="sm" variant="outline" onClick={() => update({ industry: "" })} className={chip(inds.length === 0)}>Сите индустрии</Button>
           {industries.map((i) => (
-            <button key={i.slug} onClick={() => toggleInd(i.slug)} aria-pressed={inds.includes(i.slug)} className={chip(inds.includes(i.slug))}>{i.name}</button>
+            <Button key={i.slug} size="sm" variant="outline" onClick={() => toggleInd(i.slug)} aria-pressed={inds.includes(i.slug)} className={chip(inds.includes(i.slug))}>{i.name}</Button>
           ))}
         </div>
 
@@ -185,35 +200,24 @@ export default function CatalogClient() {
             <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden rounded-xl border border-white/[0.07] bg-white/[0.02] px-5 pb-4 mt-4">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-3">
                 <div>
-                  <label className={label}>Класификација</label>
-                  <select value={type} onChange={(e) => update({ type: e.target.value })} className={field}>
-                    <option value="" className="bg-ink">Сите класификации</option>
-                    {bearingTypes.map((t) => <option key={t.slug} value={t.slug} className="bg-ink">{t.name}</option>)}
-                  </select>
+                  <Label className={label}>Класификација</Label>
+                  <Pick value={type} onChange={(v) => update({ type: v })} allLabel="Сите класификации" options={bearingTypes.map((t) => ({ value: t.slug, label: t.name }))} />
                 </div>
                 <div>
-                  <label className={label}>Тип на отвор</label>
-                  <select value={bore} onChange={(e) => update({ bore: e.target.value })} className={field}>
-                    <option value="" className="bg-ink">Сите типови</option>
-                    {boreTypes.map((t) => <option key={t} value={t} className="bg-ink">{t}</option>)}
-                  </select>
+                  <Label className={label}>Тип на отвор</Label>
+                  <Pick value={bore} onChange={(v) => update({ bore: v })} allLabel="Сите типови" options={boreTypes.map((t) => ({ value: t, label: t }))} />
                 </div>
                 <div>
-                  <label className={label}>Тип на заптивање</label>
-                  <select value={seal} onChange={(e) => update({ seal: e.target.value })} className={field}>
-                    <option value="" className="bg-ink">Сите видови</option>
-                    {sealTypes.map((t) => <option key={t} value={t} className="bg-ink">{t}</option>)}
-                  </select>
+                  <Label className={label}>Тип на заптивање</Label>
+                  <Pick value={seal} onChange={(v) => update({ seal: v })} allLabel="Сите видови" options={sealTypes.map((t) => ({ value: t, label: t }))} />
                 </div>
                 <div>
-                  <label className={label}>Брз опсег на отвор (mm)</label>
+                  <Label className={label}>Брз опсег на отвор (mm)</Label>
                   <div className="flex flex-wrap gap-1.5">
                     {boreRanges.map((r) => {
                       const on = dmin === r.min && dmax === r.max;
                       return (
-                        <button key={r.label} onClick={() => update({ dmin: r.min, dmax: r.max })} className={`px-2 py-1 text-[11px] rounded-md border transition-all ${on ? "bg-flame/20 border-flame/40 text-flame" : "bg-white/5 border-white/10 text-white/50 hover:text-white"}`}>
-                          {r.label}
-                        </button>
+                        <Button key={r.label} size="xs" variant={on ? "secondary" : "outline"} onClick={() => update({ dmin: r.min, dmax: r.max })} className={on ? "text-brand-2 border-brand-1/50" : ""}>{r.label}</Button>
                       );
                     })}
                   </div>
@@ -225,9 +229,7 @@ export default function CatalogClient() {
                 {range("Ширина B (mm)", Bmin, Bmax, "Bmin", "Bmax")}
               </div>
               <div className="mt-4 mb-1">
-                <button onClick={reset} disabled={filterCount === 0 && !q} className="px-5 py-2.5 rounded-lg border border-flame/40 text-flame text-xs uppercase tracking-wide hover:bg-flame/10 disabled:opacity-30 disabled:cursor-not-allowed transition-all">
-                  ✕ Исчисти ги сите филтри
-                </button>
+                <Button variant="outline" onClick={reset} disabled={filterCount === 0 && !q}>✕ Исчисти ги сите филтри</Button>
               </div>
             </motion.div>
           )}
@@ -247,47 +249,49 @@ export default function CatalogClient() {
           <p className="text-white/50 mt-1 text-sm">Проверете ја ознаката или ресетирајте ги филтрите. Јавете ни се – ќе го најдеме лежиштето за вас.</p>
         </div>
       ) : view === "table" ? (
-        <div className="overflow-x-auto rounded-xl border border-white/[0.07]">
-          <table className="w-full text-sm">
-            <thead>
-              <tr className="bg-white/[0.04] text-left text-[11px] uppercase tracking-wider text-white/45">
+        <div className="rounded-xl border bg-card/50 overflow-hidden">
+          <Table>
+            <TableHeader>
+              <TableRow className="bg-muted/60 hover:bg-muted/60 text-[11px] uppercase tracking-wider">
                 {columns.map((c) => (
-                  <th key={c.key} onClick={() => toggleSort(c.key)} aria-sort={sort === c.key ? (dir === "asc" ? "ascending" : "descending") : "none"} className={`px-4 py-3 font-medium cursor-pointer select-none hover:text-white transition-colors whitespace-nowrap ${c.num ? "text-right" : ""}`}>
+                  <TableHead key={c.key} onClick={() => toggleSort(c.key)} aria-sort={sort === c.key ? (dir === "asc" ? "ascending" : "descending") : "none"} className={`px-2.5 py-3 cursor-pointer select-none hover:text-foreground whitespace-nowrap ${c.num ? "text-right" : ""}`}>
                     {c.label}
-                    {sort === c.key && <span className="ml-1 text-flame">{dir === "asc" ? "▲" : "▼"}</span>}
-                  </th>
+                    {sort === c.key && <span className="ml-1 text-brand-1">{dir === "asc" ? "▲" : "▼"}</span>}
+                  </TableHead>
                 ))}
-                <th className="px-4 py-3 w-8" />
-              </tr>
-            </thead>
-            <tbody>
+                <TableHead className="w-8" />
+              </TableRow>
+            </TableHeader>
+            <TableBody>
               {rows.map((p, i) => (
-                <motion.tr key={p.slug} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.02 }} className="group border-t border-white/[0.05] hover:bg-white/[0.04] transition-colors">
-                  <td className="px-4 py-3">
-                    <Link href={`/catalog/${p.slug}`} className="font-mono font-bold hover:text-amber transition-colors">{p.designation}</Link>
+                <motion.tr key={p.slug} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.02 }} className="group border-b transition-colors hover:bg-accent/40">
+                  <TableCell className="px-2.5 py-3">
+                    <Link href={`/catalog/${p.slug}`} className="font-mono font-bold hover:text-brand-2 transition-colors">{p.designation}</Link>
                     
-                  </td>
-                  <td className="px-4 py-3">
-                    <span className="inline-block px-2 py-0.5 rounded-md bg-flame/10 text-flame text-[11px] font-medium whitespace-nowrap">{getType(p.type)?.name}</span>
-                  </td>
-                  <td className="px-4 py-3 text-white/55 text-xs whitespace-nowrap">{p.boreType}</td>
-                  <td className="px-4 py-3 text-white/55 text-xs whitespace-nowrap">{p.seal}</td>
-                  <td className="px-4 py-3 text-right font-mono text-white/75">{p.d}</td>
-                  <td className="px-4 py-3 text-right font-mono text-white/75">{p.D}</td>
-                  <td className="px-4 py-3 text-right font-mono text-white/75">{p.B}</td>
-                  <td className="px-4 py-3 text-white/30 group-hover:text-amber transition-colors">→</td>
+                  </TableCell>
+                  <TableCell className="px-2.5 py-3">
+                    <Badge variant="secondary" className="text-brand-2 whitespace-nowrap">{getType(p.type)?.name}</Badge>
+                  </TableCell>
+                  <TableCell className="px-2.5 py-3 text-muted-foreground text-xs whitespace-nowrap">{p.boreType}</TableCell>
+                  <TableCell className="px-2.5 py-3 text-muted-foreground text-xs whitespace-nowrap">{p.seal}</TableCell>
+                  <TableCell className="px-2.5 py-3 text-right font-mono text-foreground/80">{p.d}</TableCell>
+                  <TableCell className="px-2.5 py-3 text-right font-mono text-foreground/80">{p.D}</TableCell>
+                  <TableCell className="px-2.5 py-3 text-right font-mono text-foreground/80">{p.B}</TableCell>
+                  <TableCell className="px-2.5 py-3">
+                    <Link href={`/catalog/${p.slug}`} aria-label={`Погледни: ${p.designation}`} className="text-muted-foreground group-hover:text-brand-2 transition-colors"><ShoppingCart className="size-[18px]" /></Link>
+                  </TableCell>
                 </motion.tr>
               ))}
-            </tbody>
-          </table>
+            </TableBody>
+          </Table>
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {rows.map((p, i) => (
             <motion.div key={p.slug} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.02 }}>
-              <Link href={`/catalog/${p.slug}`} className="group block rounded-xl bg-white/[0.03] border border-white/5 p-5 hover:border-flame/20 hover:bg-white/[0.05] transition-all">
-                <h3 className="font-mono font-bold text-sm mb-3 group-hover:text-amber transition-colors">{p.designation}</h3>
-                <span className="inline-block px-2 py-0.5 rounded-md bg-flame/10 text-flame text-[10px] font-medium mb-3">{getType(p.type)?.name}</span>
+              <Link href={`/catalog/${p.slug}`} className="group block rounded-xl bg-white/[0.03] border border-white/5 p-5 hover:border-brand-1/20 hover:bg-white/[0.05] transition-all">
+                <h3 className="font-mono font-bold text-sm mb-3 group-hover:text-brand-2 transition-colors">{p.designation}</h3>
+                <Badge variant="secondary" className="text-brand-2 mb-3">{getType(p.type)?.name}</Badge>
                 <div className="space-y-1.5 text-xs text-white/45">
                   {([["d ⌀", p.d], ["D ⌀", p.D], ["B", p.B]] as const).map(([k, v]) => (
                     <div key={k} className="flex justify-between"><span>{k}</span><span className="font-mono text-white/70">{v} mm</span></div>
@@ -302,15 +306,15 @@ export default function CatalogClient() {
 
       {pages > 1 && (
         <nav aria-label="Страници" className="flex items-center justify-center gap-2 mt-6">
-          <button disabled={cur === 1} onClick={() => update({ page: String(cur - 1) })} className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 text-white/60 hover:text-white disabled:opacity-30" aria-label="Претходна">‹</button>
+          <Button variant="outline" size="icon" disabled={cur === 1} onClick={() => update({ page: String(cur - 1) })} aria-label="Претходна">‹</Button>
           {pageNums.map((n, i) =>
             n === "…" ? (
               <span key={`d${i}`} className="px-1 text-white/30">…</span>
             ) : (
-              <button key={n} onClick={() => update({ page: String(n) })} aria-current={n === cur} className={`w-10 h-10 rounded-lg text-sm font-medium ${n === cur ? "bg-gradient-to-r from-flame to-amber" : "bg-white/5 border border-white/10 text-white/60 hover:text-white"}`}>{n}</button>
+              <Button key={n} size="icon" variant="outline" onClick={() => update({ page: String(n) })} aria-current={n === cur} className={n === cur ? "bg-brand-gradient text-white border-transparent hover:opacity-90" : ""}>{n}</Button>
             )
           )}
-          <button disabled={cur === pages} onClick={() => update({ page: String(cur + 1) })} className="w-10 h-10 rounded-lg bg-white/5 border border-white/10 text-white/60 hover:text-white disabled:opacity-30" aria-label="Следна">›</button>
+          <Button variant="outline" size="icon" disabled={cur === pages} onClick={() => update({ page: String(cur + 1) })} aria-label="Следна">›</Button>
         </nav>
       )}
     </div>
