@@ -155,7 +155,7 @@ export default function CatalogClient() {
       <Label className={label}>{lab}</Label>
       <div className="flex items-center gap-2">
         <Input type="number" placeholder="Мин" value={lo} onChange={(e) => update({ [kLo]: e.target.value })} className="h-10" />
-        <span className="text-muted-foreground">—</span>
+        <span className="text-muted-foreground">-</span>
         <Input type="number" placeholder="Макс" value={hi} onChange={(e) => update({ [kHi]: e.target.value })} className="h-10" />
       </div>
     </div>
@@ -267,7 +267,6 @@ export default function CatalogClient() {
                 <motion.tr key={p.slug} initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.02 }} className="group border-b transition-colors hover:bg-accent/40">
                   <TableCell className="px-2.5 py-3">
                     <Link href={`/catalog/${p.slug}`} className="font-mono font-bold hover:text-brand-2 transition-colors">{p.designation}</Link>
-                    
                   </TableCell>
                   <TableCell className="px-2.5 py-3">
                     <Badge variant="secondary" className="text-brand-2 whitespace-nowrap">{getType(p.type)?.name}</Badge>

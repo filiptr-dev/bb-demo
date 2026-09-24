@@ -22,7 +22,7 @@ export async function POST(req: Request) {
         to: [to],
         reply_to: email,
         subject: `Ново барање од ${name}`,
-        html: `<p><b>Име:</b> ${esc(name)}<br><b>Е-пошта:</b> ${esc(email)}<br><b>Телефон:</b> ${esc(phone) || "—"}</p><p>${esc(message).replace(/\n/g, "<br>")}</p>`,
+        html: `<p><b>Име:</b> ${esc(name)}<br><b>Е-пошта:</b> ${esc(email)}<br><b>Телефон:</b> ${esc(phone) || "-"}</p><p>${esc(message).replace(/\n/g, "<br>")}</p>`,
       }),
     });
     if (!r.ok) return NextResponse.json({ error: "Пораката не може да се испрати. Обидете се повторно." }, { status: 502 });
