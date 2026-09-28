@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# local-only load-testing data, never ship to the repo
+/scripts/generate-dummy-products.mts

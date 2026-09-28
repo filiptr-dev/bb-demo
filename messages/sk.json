@@ -33,6 +33,10 @@
     "terms": {
       "title": "Podmienky používania",
       "description": "Podmienky používania webovej stránky B&B Unikoop."
+    },
+    "decoder": {
+      "title": "Dekodér označení SKF",
+      "description": "Dekódujte akékoľvek označenie ložiska SKF — vysvetlená séria, priemer otvoru a kódy prípon. Bezplatný nástroj od B&B Unikoop, oficiálneho distribútora SKF."
     }
   },
   "Nav": {
@@ -45,7 +49,8 @@
     "eCatalog": "E-katalóg",
     "menu": "Menu",
     "searchNoResults": "Žiadne zodpovedajúce produkty.",
-    "searchViewAll": "Zobraziť všetky výsledky ({count})"
+    "searchViewAll": "Zobraziť všetky výsledky ({count})",
+    "decoder": "Dekodér"
   },
   "Footer": {
     "tagline": "Oficiálny distribútor SKF pre Severné Macedónsko už 35 rokov. Ložiská, tesnenia, prenos výkonu a mazivá.",
@@ -621,5 +626,64 @@
   },
   "LanguageSwitcher": {
     "label": "Jazyk"
+  },
+  "Decoder": {
+    "title": "Dekodér označení",
+    "subtitle": "Zadajte označenie SKF a zistite, čo znamená každá časť.",
+    "placeholder": "napr. 6205-2RSH/C3",
+    "empty": "Začnite písať označenie vyššie.",
+    "notFound": "Toto označenie sa nepodarilo rozpoznať — skontrolujte zápis.",
+    "boreLabel": "Priemer otvoru",
+    "kinds": {
+      "prefix": "Predpona",
+      "series": "Séria",
+      "bore": "Kód otvoru",
+      "suffix": "Prípona",
+      "unknown": "Nerozpoznané"
+    },
+    "codes": {
+      "nup": "NUP – valčekové ložisko s valčekmi, dva pevné okraje + jeden voľný okraj, vedie hriadeľ v oboch smeroch",
+      "nj": "NJ – valčekové ložisko, jeden pevný okraj + jeden voľný okraj, vedie v jednom smere",
+      "nu": "NU – valčekové ložisko, bez okrajov, voľný axiálny posun",
+      "nn": "NN – dvojradové valčekové ložisko, vysoká presnosť a tuhosť",
+      "qj": "QJ – guľkové ložisko so štyrmi bodmi styku",
+      "ge": "GE – radiálne sférické klzné ložisko",
+      "n": "N – valčekové ložisko, okraj len na vonkajšom krúžku",
+      "w-stainless": "W – konštrukcia z nehrdzavejúcej ocele",
+      "deep-groove": "Guľkové ložisko s hlbokou drážkou",
+      "angular-contact": "Guľkové ložisko so šikmým stykom",
+      "tapered-roller": "Kužeľové valčekové ložisko",
+      "self-aligning": "Naklápacie guľkové ložisko",
+      "spherical-roller": "Naklápacie valčekové ložisko",
+      "thrust-ball": "Axiálne guľkové ložisko",
+      "unknown-series": "Séria nebola rozpoznaná",
+      "dimension-series": "Číslice rozmerovej série",
+      "z": "Z – kryt na jednej strane",
+      "2z": "2Z – kryty na oboch stranách",
+      "rs1": "RS1 – kontaktné tesnenie na jednej strane",
+      "2rs1": "2RS1 – kontaktné tesnenia na oboch stranách",
+      "rsh": "RSH – nízkotrecové tesnenie na jednej strane",
+      "2rsh": "2RSH – nízkotrecové tesnenia na oboch stranách",
+      "rsl": "RSL – ľahké kontaktné tesnenie na jednej strane",
+      "2rsl": "2RSL – ľahké kontaktné tesnenia na oboch stranách",
+      "snap-ring-groove": "N – drážka pre poistný krúžok vo vonkajšom krúžku",
+      "snap-ring": "NR – drážka s namontovaným poistným krúžkom",
+      "brass-cage": "M – obrábaná mosadzná klietka",
+      "brass-cage-outer": "MA – mosadzná klietka vedená vonkajším krúžkom",
+      "tn9-cage": "TN9 – vstrekovaná polyamidová klietka",
+      "p6": "P6 – trieda tolerancie ISO 6 (vyššia presnosť)",
+      "p5": "P5 – trieda tolerancie ISO 5",
+      "p4": "P4 – trieda tolerancie ISO 4",
+      "c2": "C2 – radiálna vôľa pod normálom",
+      "c3": "C3 – radiálna vôľa nad normálom",
+      "c4": "C4 – radiálna vôľa väčšia ako C3",
+      "c5": "C5 – radiálna vôľa väčšia ako C4",
+      "e-design": "E – zosilnená vnútorná konštrukcia, vyššia nosnosť",
+      "ht": "HT – tepelne stabilizované pre vysoké teploty",
+      "va201": "VA201 – vysokoteplotné ložisko pre indukčné motory",
+      "va208": "VA208 – variant odolný voči vysokým teplotám a korózii",
+      "w64": "W64 – špeciálna náplň mazivom",
+      "w203": "W203 – plnené tuhým mazivom"
+    }
   }
 }

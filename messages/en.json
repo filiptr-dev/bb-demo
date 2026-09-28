@@ -33,6 +33,10 @@
     "terms": {
       "title": "Terms of use",
       "description": "Terms of use for the B&B Unikoop website."
+    },
+    "decoder": {
+      "title": "Bearing designation decoder",
+      "description": "Decode any SKF bearing designation — series, bore size and suffix codes explained. Free tool from B&B Unikoop, official SKF distributor."
     }
   },
   "Nav": {
@@ -45,7 +49,8 @@
     "eCatalog": "E-catalog",
     "menu": "Menu",
     "searchNoResults": "No matching products.",
-    "searchViewAll": "View all {count} results"
+    "searchViewAll": "View all {count} results",
+    "decoder": "Decoder"
   },
   "Footer": {
     "tagline": "Official SKF distributor for North Macedonia for 35 years. Bearings, seals, power transmission and lubricants.",
@@ -621,5 +626,64 @@
   },
   "LanguageSwitcher": {
     "label": "Language"
+  },
+  "Decoder": {
+    "title": "Designation decoder",
+    "subtitle": "Type an SKF designation to see what each part means.",
+    "placeholder": "e.g. 6205-2RSH/C3",
+    "empty": "Start typing a designation above.",
+    "notFound": "Couldn't parse this designation — check the spelling.",
+    "boreLabel": "Bore diameter",
+    "kinds": {
+      "prefix": "Prefix",
+      "series": "Series",
+      "bore": "Bore code",
+      "suffix": "Suffix",
+      "unknown": "Unrecognized"
+    },
+    "codes": {
+      "nup": "NUP – cylindrical roller bearing, two integral flanges + one loose flange, locates the shaft both ways",
+      "nj": "NJ – cylindrical roller bearing, one integral flange + one loose flange, locates the shaft one way",
+      "nu": "NU – cylindrical roller bearing, no flanges, free axial displacement",
+      "nn": "NN – double row cylindrical roller bearing, high precision and stiffness",
+      "qj": "QJ – four-point contact ball bearing",
+      "ge": "GE – radial spherical plain bearing",
+      "n": "N – cylindrical roller bearing, flange on the outer ring only",
+      "w-stainless": "W – stainless steel construction",
+      "deep-groove": "Deep groove ball bearing",
+      "angular-contact": "Angular contact ball bearing",
+      "tapered-roller": "Tapered roller bearing",
+      "self-aligning": "Self-aligning ball bearing",
+      "spherical-roller": "Spherical roller bearing",
+      "thrust-ball": "Thrust ball bearing",
+      "unknown-series": "Series not recognized",
+      "dimension-series": "Dimension series digits",
+      "z": "Z – shield on one side",
+      "2z": "2Z – shields on both sides",
+      "rs1": "RS1 – contact seal on one side",
+      "2rs1": "2RS1 – contact seals on both sides",
+      "rsh": "RSH – low-friction seal on one side",
+      "2rsh": "2RSH – low-friction seals on both sides",
+      "rsl": "RSL – light-contact seal on one side",
+      "2rsl": "2RSL – light-contact seals on both sides",
+      "snap-ring-groove": "N – snap ring groove in the outer ring",
+      "snap-ring": "NR – snap ring groove with snap ring fitted",
+      "brass-cage": "M – machined brass cage",
+      "brass-cage-outer": "MA – machined brass cage, outer ring guided",
+      "tn9-cage": "TN9 – injection-moulded polyamide cage",
+      "p6": "P6 – ISO tolerance class 6 (higher precision)",
+      "p5": "P5 – ISO tolerance class 5",
+      "p4": "P4 – ISO tolerance class 4",
+      "c2": "C2 – radial clearance below normal",
+      "c3": "C3 – radial clearance above normal",
+      "c4": "C4 – radial clearance greater than C3",
+      "c5": "C5 – radial clearance greater than C4",
+      "e-design": "E – reinforced internal design, higher load rating",
+      "ht": "HT – heat stabilized for high temperature",
+      "va201": "VA201 – high-temperature bearing for induction motors",
+      "va208": "VA208 – high-temperature, corrosion-resistant variant",
+      "w64": "W64 – special grease fill",
+      "w203": "W203 – solid oil filled"
+    }
   }
 }

@@ -33,6 +33,10 @@
     "terms": {
       "title": "Condizioni d'uso",
       "description": "Condizioni d'uso del sito web di B&B Unikoop."
+    },
+    "decoder": {
+      "title": "Decodificatore sigle SKF",
+      "description": "Decodifica qualsiasi sigla cuscinetto SKF — serie, diametro del foro e codici suffisso spiegati. Strumento gratuito di B&B Unikoop, distributore ufficiale SKF."
     }
   },
   "Nav": {
@@ -45,7 +49,8 @@
     "eCatalog": "Catalogo online",
     "menu": "Menu",
     "searchNoResults": "Nessun prodotto corrispondente.",
-    "searchViewAll": "Vedi tutti i {count} risultati"
+    "searchViewAll": "Vedi tutti i {count} risultati",
+    "decoder": "Decoder"
   },
   "Footer": {
     "tagline": "Da 35 anni distributore ufficiale SKF per la Macedonia del Nord. Cuscinetti, tenute, trasmissione di potenza e lubrificanti.",
@@ -621,5 +626,64 @@
   },
   "LanguageSwitcher": {
     "label": "Lingua"
+  },
+  "Decoder": {
+    "title": "Decodificatore sigle",
+    "subtitle": "Digita una sigla SKF per vedere cosa significa ogni parte.",
+    "placeholder": "es. 6205-2RSH/C3",
+    "empty": "Inizia a digitare una sigla qui sopra.",
+    "notFound": "Sigla non riconosciuta — controlla la scrittura.",
+    "boreLabel": "Diametro del foro",
+    "kinds": {
+      "prefix": "Prefisso",
+      "series": "Serie",
+      "bore": "Codice foro",
+      "suffix": "Suffisso",
+      "unknown": "Non riconosciuto"
+    },
+    "codes": {
+      "nup": "NUP – cuscinetto a rulli cilindrici, due bordini integrali + un bordino sciolto, blocca l'albero in entrambe le direzioni",
+      "nj": "NJ – cuscinetto a rulli cilindrici, un bordino integrale + un bordino sciolto, blocca in una direzione",
+      "nu": "NU – cuscinetto a rulli cilindrici, senza bordini, libero spostamento assiale",
+      "nn": "NN – cuscinetto a rulli cilindrici a doppia corona, alta precisione e rigidità",
+      "qj": "QJ – cuscinetto a sfere a quattro punti di contatto",
+      "ge": "GE – cuscinetto radiale orientabile a strisciamento",
+      "n": "N – cuscinetto a rulli cilindrici, bordino solo sull'anello esterno",
+      "w-stainless": "W – costruzione in acciaio inossidabile",
+      "deep-groove": "Cuscinetto a sfere a gola profonda",
+      "angular-contact": "Cuscinetto a sfere a contatto obliquo",
+      "tapered-roller": "Cuscinetto a rulli conici",
+      "self-aligning": "Cuscinetto a sfere orientabile",
+      "spherical-roller": "Cuscinetto a rulli orientabile",
+      "thrust-ball": "Cuscinetto assiale a sfere",
+      "unknown-series": "Serie non riconosciuta",
+      "dimension-series": "Cifre della serie dimensionale",
+      "z": "Z – schermo da un lato",
+      "2z": "2Z – schermi su entrambi i lati",
+      "rs1": "RS1 – tenuta a contatto da un lato",
+      "2rs1": "2RS1 – tenute a contatto su entrambi i lati",
+      "rsh": "RSH – tenuta a basso attrito da un lato",
+      "2rsh": "2RSH – tenute a basso attrito su entrambi i lati",
+      "rsl": "RSL – tenuta a contatto leggero da un lato",
+      "2rsl": "2RSL – tenute a contatto leggero su entrambi i lati",
+      "snap-ring-groove": "N – gola per anello elastico sull'anello esterno",
+      "snap-ring": "NR – gola con anello elastico montato",
+      "brass-cage": "M – gabbia in ottone lavorata",
+      "brass-cage-outer": "MA – gabbia in ottone, guidata dall'anello esterno",
+      "tn9-cage": "TN9 – gabbia in poliammide stampata a iniezione",
+      "p6": "P6 – classe di tolleranza ISO 6 (precisione maggiore)",
+      "p5": "P5 – classe di tolleranza ISO 5",
+      "p4": "P4 – classe di tolleranza ISO 4",
+      "c2": "C2 – gioco radiale inferiore al normale",
+      "c3": "C3 – gioco radiale superiore al normale",
+      "c4": "C4 – gioco radiale maggiore di C3",
+      "c5": "C5 – gioco radiale maggiore di C4",
+      "e-design": "E – costruzione interna rinforzata, capacità di carico maggiore",
+      "ht": "HT – stabilizzato termicamente per alte temperature",
+      "va201": "VA201 – cuscinetto per alte temperature per motori a induzione",
+      "va208": "VA208 – variante resistente ad alte temperature e corrosione",
+      "w64": "W64 – lubrificante speciale",
+      "w203": "W203 – riempito con lubrificante solido"
+    }
   }
 }

@@ -33,6 +33,10 @@
     "terms": {
       "title": "Nutzungsbedingungen",
       "description": "Nutzungsbedingungen für die Website von B&B Unikoop."
+    },
+    "decoder": {
+      "title": "SKF-Bezeichnungsdecoder",
+      "description": "Jede SKF-Lagerbezeichnung entschlüsseln — Baureihe, Bohrungsdurchmesser und Suffixcodes erklärt. Kostenloses Tool von B&B Unikoop, offizieller SKF-Vertriebspartner."
     }
   },
   "Nav": {
@@ -45,7 +49,8 @@
     "eCatalog": "E-Katalog",
     "menu": "Menü",
     "searchNoResults": "Keine passenden Produkte.",
-    "searchViewAll": "Alle {count} Ergebnisse anzeigen"
+    "searchViewAll": "Alle {count} Ergebnisse anzeigen",
+    "decoder": "Decoder"
   },
   "Footer": {
     "tagline": "Seit 35 Jahren offizieller SKF-Vertragshändler für Nordmazedonien. Wälzlager, Dichtungen, Antriebstechnik und Schmierstoffe.",
@@ -621,5 +626,64 @@
   },
   "LanguageSwitcher": {
     "label": "Sprache"
+  },
+  "Decoder": {
+    "title": "Bezeichnungsdecoder",
+    "subtitle": "Geben Sie eine SKF-Bezeichnung ein, um zu sehen, was jeder Teil bedeutet.",
+    "placeholder": "z. B. 6205-2RSH/C3",
+    "empty": "Beginnen Sie oben mit der Eingabe einer Bezeichnung.",
+    "notFound": "Diese Bezeichnung konnte nicht erkannt werden — Schreibweise prüfen.",
+    "boreLabel": "Bohrungsdurchmesser",
+    "kinds": {
+      "prefix": "Präfix",
+      "series": "Baureihe",
+      "bore": "Bohrungscode",
+      "suffix": "Suffix",
+      "unknown": "Unbekannt"
+    },
+    "codes": {
+      "nup": "NUP – Zylinderrollenlager, zwei feste Borde + ein loser Bord, führt die Welle in beide Richtungen",
+      "nj": "NJ – Zylinderrollenlager, ein fester Bord + ein loser Bord, führt in eine Richtung",
+      "nu": "NU – Zylinderrollenlager, ohne Borde, freie axiale Verschiebung",
+      "nn": "NN – zweireihiges Zylinderrollenlager, hohe Präzision und Steifigkeit",
+      "qj": "QJ – Vierpunktlager",
+      "ge": "GE – radiales Gelenklager",
+      "n": "N – Zylinderrollenlager, Bord nur am Außenring",
+      "w-stainless": "W – Ausführung aus rostfreiem Stahl",
+      "deep-groove": "Rillenkugellager",
+      "angular-contact": "Schrägkugellager",
+      "tapered-roller": "Kegelrollenlager",
+      "self-aligning": "Pendelkugellager",
+      "spherical-roller": "Pendelrollenlager",
+      "thrust-ball": "Axial-Rillenkugellager",
+      "unknown-series": "Baureihe nicht erkannt",
+      "dimension-series": "Ziffern der Maßreihe",
+      "z": "Z – Deckscheibe auf einer Seite",
+      "2z": "2Z – Deckscheiben auf beiden Seiten",
+      "rs1": "RS1 – Berührungsdichtung auf einer Seite",
+      "2rs1": "2RS1 – Berührungsdichtungen auf beiden Seiten",
+      "rsh": "RSH – reibungsarme Dichtung auf einer Seite",
+      "2rsh": "2RSH – reibungsarme Dichtungen auf beiden Seiten",
+      "rsl": "RSL – leichte Berührungsdichtung auf einer Seite",
+      "2rsl": "2RSL – leichte Berührungsdichtungen auf beiden Seiten",
+      "snap-ring-groove": "N – Sprengringnut im Außenring",
+      "snap-ring": "NR – Sprengringnut mit montiertem Sprengring",
+      "brass-cage": "M – spangefertigter Messingkäfig",
+      "brass-cage-outer": "MA – Messingkäfig, außenringgeführt",
+      "tn9-cage": "TN9 – spritzgegossener Polyamidkäfig",
+      "p6": "P6 – ISO-Toleranzklasse 6 (höhere Präzision)",
+      "p5": "P5 – ISO-Toleranzklasse 5",
+      "p4": "P4 – ISO-Toleranzklasse 4",
+      "c2": "C2 – Radialluft unter normal",
+      "c3": "C3 – Radialluft über normal",
+      "c4": "C4 – Radialluft größer als C3",
+      "c5": "C5 – Radialluft größer als C4",
+      "e-design": "E – verstärkte Innenkonstruktion, höhere Tragfähigkeit",
+      "ht": "HT – wärmestabilisiert für hohe Temperaturen",
+      "va201": "VA201 – Hochtemperaturlager für Induktionsmotoren",
+      "va208": "VA208 – hochtemperatur- und korrosionsbeständige Variante",
+      "w64": "W64 – Spezialfettfüllung",
+      "w203": "W203 – mit Festöl gefüllt"
+    }
   }
 }

@@ -33,6 +33,10 @@
     "terms": {
       "title": "Kushtet e përdorimit",
       "description": "Kushtet e përdorimit të faqes së internetit të B&B Unikoop."
+    },
+    "decoder": {
+      "title": "Dekodues i shenjave SKF",
+      "description": "Dekodoni çdo shenjë kushineti SKF — seria, diametri i vrimës dhe kodet e prapashtesave të shpjeguara. Mjet falas nga B&B Unikoop, distributor zyrtar i SKF."
     }
   },
   "Nav": {
@@ -45,7 +49,8 @@
     "eCatalog": "E-katalog",
     "menu": "Menyja",
     "searchNoResults": "Nuk u gjetën produkte.",
-    "searchViewAll": "Shiko të gjitha {count} rezultatet"
+    "searchViewAll": "Shiko të gjitha {count} rezultatet",
+    "decoder": "Dekoduesi"
   },
   "Footer": {
     "tagline": "Distributor zyrtar i SKF për Maqedoninë e Veriut prej 35 vitesh. Rulmane, guarnicione, transmetim fuqie dhe lubrifikantë.",
@@ -621,5 +626,64 @@
   },
   "LanguageSwitcher": {
     "label": "Gjuha"
+  },
+  "Decoder": {
+    "title": "Dekoduesi i shenjave",
+    "subtitle": "Shkruani një shenjë SKF për të parë çfarë do të thotë secila pjesë.",
+    "placeholder": "p.sh. 6205-2RSH/C3",
+    "empty": "Filloni të shkruani një shenjë më lart.",
+    "notFound": "Kjo shenjë nuk u kuptua — kontrolloni shkrimin.",
+    "boreLabel": "Diametri i vrimës",
+    "kinds": {
+      "prefix": "Parashtesë",
+      "series": "Seri",
+      "bore": "Kod vrime",
+      "suffix": "Prapashtesë",
+      "unknown": "I panjohur"
+    },
+    "codes": {
+      "nup": "NUP – kushinet cilindrik me rula, dy buzë integrale + një buzë e lirshme, e fikson boshtin në të dy drejtimet",
+      "nj": "NJ – kushinet cilindrik me rula, një buzë integrale + një buzë e lirshme, fikson në një drejtim",
+      "nu": "NU – kushinet cilindrik me rula, pa buzë, zhvendosje boshtore e lirë",
+      "nn": "NN – kushinet cilindrik me rula me dy rreshta, precizion dhe ngurtësi e lartë",
+      "qj": "QJ – kushinet me topa me katër pika kontakti",
+      "ge": "GE – kushinet rrëshqitës sferik radial",
+      "n": "N – kushinet cilindrik me rula, buzë vetëm në unazën e jashtme",
+      "w-stainless": "W – konstruksion nga çeliku inox",
+      "deep-groove": "Kushinet me topa me gropë të thellë",
+      "angular-contact": "Kushinet me topa me kontakt këndor",
+      "tapered-roller": "Kushinet konik me rula",
+      "self-aligning": "Kushinet me topa vetëpërqendrues",
+      "spherical-roller": "Kushinet sferik me rula",
+      "thrust-ball": "Kushinet aksial me topa",
+      "unknown-series": "Seria nuk u njoh",
+      "dimension-series": "Shifrat e serisë së përmasave",
+      "z": "Z – mbrojtëse në njërën anë",
+      "2z": "2Z – mbrojtëse në të dyja anët",
+      "rs1": "RS1 – vulë kontakti në njërën anë",
+      "2rs1": "2RS1 – vula kontakti në të dyja anët",
+      "rsh": "RSH – vulë me fërkim të ulët në njërën anë",
+      "2rsh": "2RSH – vula me fërkim të ulët në të dyja anët",
+      "rsl": "RSL – vulë e lehtë kontakti në njërën anë",
+      "2rsl": "2RSL – vula të lehta kontakti në të dyja anët",
+      "snap-ring-groove": "N – gropë unaze siguruese në unazën e jashtme",
+      "snap-ring": "NR – gropë me unazë siguruese të montuar",
+      "brass-cage": "M – kafaz prej bronzi i përpunuar",
+      "brass-cage-outer": "MA – kafaz prej bronzi, i udhëhequr nga unaza e jashtme",
+      "tn9-cage": "TN9 – kafaz poliamidi i formuar me injektim",
+      "p6": "P6 – klasë toleranca ISO 6 (precizion më i lartë)",
+      "p5": "P5 – klasë toleranca ISO 5",
+      "p4": "P4 – klasë toleranca ISO 4",
+      "c2": "C2 – lojë radiale nën normalen",
+      "c3": "C3 – lojë radiale mbi normalen",
+      "c4": "C4 – lojë radiale më e madhe se C3",
+      "c5": "C5 – lojë radiale më e madhe se C4",
+      "e-design": "E – konstruksion i brendshëm i përforcuar, ngarkesë më e lartë",
+      "ht": "HT – i stabilizuar termikisht për temperatura të larta",
+      "va201": "VA201 – kushinet për temperatura të larta për motorë induksioni",
+      "va208": "VA208 – variant rezistent ndaj temperaturës së lartë dhe korrozionit",
+      "w64": "W64 – yndyrë speciale",
+      "w203": "W203 – i mbushur me vaj të ngurtë"
+    }
   }
 }

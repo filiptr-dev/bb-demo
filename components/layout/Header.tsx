@@ -13,6 +13,7 @@ const nav = [
   { href: "/#about", key: "about" },
   { href: "/#products", key: "products" },
   { href: "/#industries", key: "industries" },
+  { href: "/decoder", key: "decoder" },
   { href: "/contact", key: "contact" },
 ] as const;
 

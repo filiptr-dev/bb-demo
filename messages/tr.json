@@ -33,6 +33,10 @@
     "terms": {
       "title": "Kullanım koşulları",
       "description": "B&B Unikoop web sitesinin kullanım koşulları."
+    },
+    "decoder": {
+      "title": "SKF kod çözücü",
+      "description": "Herhangi bir SKF rulman kodunu çözün — seri, iç çap ve son ek kodları açıklanır. B&B Unikoop'tan, resmi SKF distribütöründen ücretsiz araç."
     }
   },
   "Nav": {
@@ -45,7 +49,8 @@
     "eCatalog": "E-katalog",
     "menu": "Menü",
     "searchNoResults": "Eşleşen ürün bulunamadı.",
-    "searchViewAll": "{count} sonucun tümünü görüntüle"
+    "searchViewAll": "{count} sonucun tümünü görüntüle",
+    "decoder": "Kod Çözücü"
   },
   "Footer": {
     "tagline": "35 yıldır Kuzey Makedonya'nın resmi SKF distribütörü. Rulmanlar, keçeler, güç aktarımı ve yağlayıcılar.",
@@ -621,5 +626,64 @@
   },
   "LanguageSwitcher": {
     "label": "Dil"
+  },
+  "Decoder": {
+    "title": "Kod çözücü",
+    "subtitle": "Her bir parçanın ne anlama geldiğini görmek için bir SKF kodu yazın.",
+    "placeholder": "örn. 6205-2RSH/C3",
+    "empty": "Yukarıya bir kod yazmaya başlayın.",
+    "notFound": "Bu kod çözümlenemedi — yazımı kontrol edin.",
+    "boreLabel": "İç çap",
+    "kinds": {
+      "prefix": "Önek",
+      "series": "Seri",
+      "bore": "Çap kodu",
+      "suffix": "Son ek",
+      "unknown": "Tanınmadı"
+    },
+    "codes": {
+      "nup": "NUP – silindirik makaralı rulman, iki sabit bilezik + bir gevşek bilezik, mili her iki yönde konumlandırır",
+      "nj": "NJ – silindirik makaralı rulman, bir sabit bilezik + bir gevşek bilezik, tek yönde konumlandırır",
+      "nu": "NU – silindirik makaralı rulman, bileziksiz, serbest eksenel kayma",
+      "nn": "NN – çift sıra silindirik makaralı rulman, yüksek hassasiyet ve rijitlik",
+      "qj": "QJ – dört nokta temaslı bilyeli rulman",
+      "ge": "GE – radyal küresel kaymalı yatak",
+      "n": "N – silindirik makaralı rulman, bilezik sadece dış bilezikte",
+      "w-stainless": "W – paslanmaz çelik yapı",
+      "deep-groove": "Sabit bilyeli rulman",
+      "angular-contact": "Açılı temaslı bilyeli rulman",
+      "tapered-roller": "Konik makaralı rulman",
+      "self-aligning": "Oynak bilyeli rulman",
+      "spherical-roller": "Oynak makaralı rulman",
+      "thrust-ball": "Eksenel bilyeli rulman",
+      "unknown-series": "Seri tanınmadı",
+      "dimension-series": "Boyut serisi rakamları",
+      "z": "Z – tek taraflı siper saç",
+      "2z": "2Z – iki taraflı siper saç",
+      "rs1": "RS1 – tek taraflı temaslı keçe",
+      "2rs1": "2RS1 – iki taraflı temaslı keçe",
+      "rsh": "RSH – tek taraflı düşük sürtünmeli keçe",
+      "2rsh": "2RSH – iki taraflı düşük sürtünmeli keçe",
+      "rsl": "RSL – tek taraflı hafif temaslı keçe",
+      "2rsl": "2RSL – iki taraflı hafif temaslı keçe",
+      "snap-ring-groove": "N – dış bilezikte seğer yayı kanalı",
+      "snap-ring": "NR – takılı seğer yaylı kanal",
+      "brass-cage": "M – işlenmiş pirinç kafes",
+      "brass-cage-outer": "MA – dış bilezikle kılavuzlanan pirinç kafes",
+      "tn9-cage": "TN9 – enjeksiyonla kalıplanmış poliamid kafes",
+      "p6": "P6 – ISO tolerans sınıfı 6 (daha yüksek hassasiyet)",
+      "p5": "P5 – ISO tolerans sınıfı 5",
+      "p4": "P4 – ISO tolerans sınıfı 4",
+      "c2": "C2 – normalin altında radyal boşluk",
+      "c3": "C3 – normalin üzerinde radyal boşluk",
+      "c4": "C4 – C3'ten büyük radyal boşluk",
+      "c5": "C5 – C4'ten büyük radyal boşluk",
+      "e-design": "E – güçlendirilmiş iç tasarım, daha yüksek yük kapasitesi",
+      "ht": "HT – yüksek sıcaklık için ısıl kararlı",
+      "va201": "VA201 – indüksiyon motorları için yüksek sıcaklık rulmanı",
+      "va208": "VA208 – yüksek sıcaklık ve korozyona dayanıklı varyant",
+      "w64": "W64 – özel gres dolgusu",
+      "w203": "W203 – katı yağ dolgulu"
+    }
   }
 }
