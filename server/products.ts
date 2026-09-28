@@ -1,7 +1,7 @@
 import "server-only";
 import { cache } from "react";
 import type { Fragment } from "postgres";
-import { sql } from "./db";
+import { sql, whenDatabase } from "./db";
 import { boreCodes, sealCodes, type Product } from "@/lib/domain/product";
 import { bearingTypes, industries } from "@/lib/domain/taxonomy";
 import { normalize, parseDims } from "@/lib/search";
@@ -62,6 +62,7 @@ const sortCols = { designation: natural, type: sql`type`, boreType: sql`bore_typ
 const rangeCols = { d: sql`d`, D: sql`outer_d`, B: sql`width` };
 
 export async function searchProducts(o: ProductQuery): Promise<{ rows: Product[]; total: number; page: number }> {
+  await whenDatabase();
   const { score, match } = scoreFor(o.q?.trim() ?? "", await loadMessages(o.locale));
   const where: Fragment[] = [match];
   if (o.type) where.push(sql`type = ${o.type}`);
@@ -90,23 +91,23 @@ export async function searchProducts(o: ProductQuery): Promise<{ rows: Product[]
 }
 
 export const getProduct = cache(async (slug: string) => {
+  await whenDatabase();
   const [p] = await sql<Product[]>`select ${columns} from products where slug = ${slug}`;
   return p;
 });
 
 // same type, closest bore first
-export const relatedProducts = (p: Product, limit = 4) => sql<Product[]>`
+export const relatedProducts = async (p: Product, limit = 4) => (await whenDatabase(), sql<Product[]>`
   select ${columns} from products where type = ${p.type} and slug <> ${p.slug}
-  order by abs(coalesce(d, 0) - ${p.d ?? 0}), ${natural} limit ${limit}`;
+  order by abs(coalesce(d, 0) - ${p.d ?? 0}), ${natural} limit ${limit}`);
 
 // our curated picks first
-export const productsByIndustry = (slug: string, limit: number) => sql<Product[]>`
+export const productsByIndustry = async (slug: string, limit: number) => (await whenDatabase(), sql<Product[]>`
   select ${columns} from products where ${slug} = any(industries)
-  order by source = 'bearingworld', ${natural} limit ${limit}`;
+  order by source = 'bearingworld', ${natural} limit ${limit}`);
 
-export const productCount = cache(async () => (await sql<{ n: number }[]>`select count(*)::int as n from products`)[0].n);
+export const productCount = cache(async () => (await whenDatabase(), await sql<{ n: number }[]>`select count(*)::int as n from products`)[0].n);
 
 // One sitemap chunk: slugs in catalog order with their last import time.
-export const productSitemapRows = (offset: number, limit: number) =>
-  sql<{ slug: string; updated_at: Date }[]>`select slug, updated_at from products order by ${natural} offset ${offset} limit ${limit}`;
-export const productsUpdatedAt = cache(async () => (await sql<{ t: Date | null }[]>`select max(updated_at) as t from products`)[0].t);
+export const productSitemapRows = async (offset: number, limit: number) => (await whenDatabase(), sql<{ slug: string; updated_at: Date }[]>`select slug, updated_at from products order by ${natural} offset ${offset} limit ${limit}`);
+export const productsUpdatedAt = cache(async () => (await whenDatabase(), await sql<{ t: Date | null }[]>`select max(updated_at) as t from products`)[0].t);

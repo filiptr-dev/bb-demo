@@ -7,9 +7,18 @@ import { site } from "@/lib/site";
 // Products per sitemap file. Each URL carries hreflang links for every locale, so 5,000 keeps a file around 2 MB.
 export const productChunk = 5000;
 
+// Used when the product count can't be read (e.g. a build without database access): enough ids for 50,000
+// products. Chunks past the real data render as empty (valid) sitemaps until the next revalidation.
+const fallbackChunks = 10;
+
 // id "0" holds the static pages, "1".."n" the product chunks
 export async function sitemapIds() {
-  const chunks = Math.ceil((await productCount()) / productChunk);
+  let chunks = fallbackChunks;
+  try {
+    chunks = Math.ceil((await productCount()) / productChunk);
+  } catch (e) {
+    console.warn(`sitemap: product count unavailable, assuming ${fallbackChunks} chunks`, e instanceof Error ? e.message : e);
+  }
   return Array.from({ length: chunks + 1 }, (_, i) => ({ id: String(i) }));
 }
 
