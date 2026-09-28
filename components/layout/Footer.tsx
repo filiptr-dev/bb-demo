@@ -8,6 +8,7 @@ export default async function Footer() {
   const t = await getTranslations("Footer");
   const tc = await getTranslations("Common");
   const ti = await getTranslations("Industries");
+  const th = await getTranslations("Hero");
   return (
     <footer id="contact" className="relative scroll-mt-16 bg-background border-t border-foreground/[0.06] overflow-hidden">
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[260px] bg-brand-1/[0.05] rounded-full blur-[130px] pointer-events-none" />
@@ -15,6 +16,8 @@ export default async function Footer() {
         <Reveal>
           <h3 className="font-display font-extrabold text-xl mb-3">{tc("brandFirst")} <span className="text-gradient-brand">{tc("brandSecond")}</span></h3>
           <p className="text-sm text-foreground/55 leading-relaxed">{t("tagline")}</p>
+          <img src="/images/brand/skf-authorized-distributor.png" alt={th("badgeAlt")} loading="lazy" className="mt-5 w-28 h-auto" />
+
         </Reveal>
         <Reveal delay={0.1}>
           <h4 className="text-brand-2 text-xs tracking-[0.25em] uppercase font-semibold mb-4">{t("industriesHeading")}</h4>

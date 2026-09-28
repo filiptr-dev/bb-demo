@@ -25,6 +25,7 @@ export default async function AuthenticityPage({ params }: PageProps<"/[locale]/
   const { locale } = await params;
   setRequestLocale(locale as Locale);
   const t = await getTranslations("Authenticity");
+  const th = await getTranslations("Hero");
   const stats = t.raw("stats") as { value: string; label: string }[];
   const photos = t.raw("photos.items") as string[];
   const steps = t.raw("steps.items") as string[];
@@ -61,13 +62,16 @@ export default async function AuthenticityPage({ params }: PageProps<"/[locale]/
           <p className="mt-3 text-xs text-muted-foreground">{t("risk.source")}</p>
         </section>
 
-        <section className="rounded-2xl border border-border bg-brand-gradient-soft p-6 md:p-8">
-          <h2 className={heading}>{t("source.h")}</h2>
-          <p className={`max-w-2xl mb-6 ${body}`}>{t("source.p")}</p>
-          <div className="flex flex-wrap gap-3">
-            <Button nativeButton={false} render={<Link href="/catalog" />} className="rounded-full bg-brand-gradient text-white">{t("source.catalog")}</Button>
-            <Button nativeButton={false} render={<Link href="/contact" />} variant="outline" className="rounded-full">{t("source.contact")}</Button>
+        <section className="flex flex-col-reverse gap-6 md:flex-row md:items-center rounded-2xl border border-border bg-brand-gradient-soft p-6 md:p-8">
+          <div className="flex-1">
+            <h2 className={heading}>{t("source.h")}</h2>
+            <p className={`max-w-2xl mb-6 ${body}`}>{t("source.p")}</p>
+            <div className="flex flex-wrap gap-3">
+              <Button nativeButton={false} render={<Link href="/catalog" />} className="rounded-full bg-brand-gradient text-white">{t("source.catalog")}</Button>
+              <Button nativeButton={false} render={<Link href="/contact" />} variant="outline" className="rounded-full">{t("source.contact")}</Button>
+            </div>
           </div>
+          <img src="/images/brand/skf-authorized-distributor.png" alt={th("badgeAlt")} className="w-28 md:w-36 h-auto shrink-0" />
         </section>
 
         <section>
