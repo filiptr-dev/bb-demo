@@ -32,8 +32,8 @@ export default function Hero() {
         transition={{ duration: 0.9, delay: 1.4, ease: [0.22, 1, 0.36, 1] }}
       />
 
-      <div className="absolute inset-0 bg-gradient-to-r from-ink via-ink/90 lg:via-ink/70 to-ink/10 z-[1]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-ink/30 via-transparent to-ink/60 z-[1]" />
+      <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/90 lg:via-surface/70 to-surface/10 z-[1]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-surface/30 via-transparent to-surface/60 z-[1]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_50%,rgba(var(--brand-glow-1-rgb),0.07)_0%,transparent_50%)] pointer-events-none" />
 
       <div className="relative z-20 container mx-auto px-6 lg:px-10">
