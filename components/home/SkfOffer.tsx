@@ -15,7 +15,7 @@ export default async function SkfOffer() {
     <section id="skf-offer" className="relative scroll-mt-16 py-16 lg:py-24 overflow-hidden">
       <ParallaxLayer range={60} className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[720px] h-[420px] bg-brand-1/[0.035] rounded-full blur-[200px] pointer-events-none" />
       <div className="relative container mx-auto px-6 lg:px-10">
-        <SectionHeading eyebrow={t("skfOffer.eyebrow")} num="03" center>
+        <SectionHeading eyebrow={t("skfOffer.eyebrow")} num="02" center>
           {t("skfOffer.headingPrefix")} <span className="text-gradient-brand">{t("skfOffer.headingHighlight")}</span>
         </SectionHeading>
         <Reveal delay={0.2}>

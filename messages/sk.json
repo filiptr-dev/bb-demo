@@ -125,44 +125,6 @@
         }
       ]
     },
-    "products": {
-      "eyebrow": "Naše produkty",
-      "headingPrefix": "Komplexné",
-      "headingHighlight": "priemyselné riešenia",
-      "more": "Viac informácií →",
-      "categories": [
-        {
-          "name": "Ložiská",
-          "blurb": "Guľkové, valčekové a axiálne ložiská a ložiskové jednotky.",
-          "href": "/catalog"
-        },
-        {
-          "name": "Ložiskové telesá",
-          "blurb": "Telesá a ložiskové jednotky pre každú aplikáciu.",
-          "href": "#contact"
-        },
-        {
-          "name": "Tesnenia",
-          "blurb": "Priemyselné tesnenia a tesniace systémy.",
-          "href": "#contact"
-        },
-        {
-          "name": "Remene a reťaze",
-          "blurb": "Komponenty na prenos výkonu.",
-          "href": "#contact"
-        },
-        {
-          "name": "Mazacie systémy",
-          "blurb": "Automatické mazanie, ktoré predlžuje životnosť zariadení.",
-          "href": "#contact"
-        },
-        {
-          "name": "Nástroje na údržbu",
-          "blurb": "Nástroje na montáž, demontáž a diagnostiku.",
-          "href": "#contact"
-        }
-      ]
-    },
     "skfOffer": {
       "eyebrow": "Originálna ponuka SKF",
       "headingPrefix": "Kompletný",

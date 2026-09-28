@@ -15,7 +15,7 @@ export default async function Industries() {
       <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, var(--surface-solid) 0%, rgba(var(--surface-tint),0.92) 15%, rgba(var(--surface-tint),0.88) 50%, rgba(var(--surface-tint),0.92) 85%, var(--surface-solid) 100%)" }} />
       <ParallaxLayer range={90} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-brand-1/[0.03] rounded-full blur-[200px] pointer-events-none" />
       <div className="relative container mx-auto px-6 lg:px-10">
-        <SectionHeading eyebrow={t("industries.eyebrow")} num="04" center>
+        <SectionHeading eyebrow={t("industries.eyebrow")} num="03" center>
           {t("industries.headingPrefix")} <span className="text-gradient-brand">{t("industries.headingHighlight")}</span>
         </SectionHeading>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3">

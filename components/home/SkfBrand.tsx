@@ -13,7 +13,7 @@ export default async function SkfBrand() {
   return (
     <section id="brands" className="relative py-16 lg:py-20 overflow-hidden" style={{ background: sectionBg }}>
       <div className="relative container mx-auto px-6 lg:px-10">
-        <SectionHeading eyebrow={t("brands.eyebrow")} num="05">
+        <SectionHeading eyebrow={t("brands.eyebrow")} num="04">
           {t("brands.headingPrefix")} <span className="text-gradient-brand">{t("brands.headingHighlight")}</span>
         </SectionHeading>
         <Reveal>

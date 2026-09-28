@@ -125,44 +125,6 @@
         }
       ]
     },
-    "products": {
-      "eyebrow": "Produktet tona",
-      "headingPrefix": "Zgjidhje industriale",
-      "headingHighlight": "të plota",
-      "more": "Mëso më shumë →",
-      "categories": [
-        {
-          "name": "Rulmane",
-          "blurb": "Rulmane me bila, me rula, aksiale dhe njësi rulmanesh.",
-          "href": "/catalog"
-        },
-        {
-          "name": "Kuti rulmanesh",
-          "blurb": "Kuti rulmanesh dhe njësi për çdo aplikim.",
-          "href": "#contact"
-        },
-        {
-          "name": "Guarnicione",
-          "blurb": "Guarnicione industriale dhe sisteme izolimi.",
-          "href": "#contact"
-        },
-        {
-          "name": "Rripa dhe zinxhirë",
-          "blurb": "Komponentë për transmetim fuqie.",
-          "href": "#contact"
-        },
-        {
-          "name": "Sisteme lubrifikimi",
-          "blurb": "Lubrifikim automatik që zgjat jetën e pajisjeve.",
-          "href": "#contact"
-        },
-        {
-          "name": "Mjete mirëmbajtjeje",
-          "blurb": "Mjete për montim, çmontim dhe diagnostikim.",
-          "href": "#contact"
-        }
-      ]
-    },
     "skfOffer": {
       "eyebrow": "Oferta origjinale SKF",
       "headingPrefix": "Asortimani i plotë",

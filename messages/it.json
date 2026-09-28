@@ -125,44 +125,6 @@
         }
       ]
     },
-    "products": {
-      "eyebrow": "I nostri prodotti",
-      "headingPrefix": "Soluzioni",
-      "headingHighlight": "industriali complete",
-      "more": "Scopri di più →",
-      "categories": [
-        {
-          "name": "Cuscinetti",
-          "blurb": "Cuscinetti a sfere, a rulli, assiali e unità cuscinetto.",
-          "href": "/catalog"
-        },
-        {
-          "name": "Supporti",
-          "blurb": "Supporti e unità cuscinetto per ogni applicazione.",
-          "href": "#contact"
-        },
-        {
-          "name": "Tenute",
-          "blurb": "Tenute industriali e sistemi di tenuta.",
-          "href": "#contact"
-        },
-        {
-          "name": "Cinghie e catene",
-          "blurb": "Componenti per la trasmissione di potenza.",
-          "href": "#contact"
-        },
-        {
-          "name": "Sistemi di lubrificazione",
-          "blurb": "Lubrificazione automatica che prolunga la vita delle macchine.",
-          "href": "#contact"
-        },
-        {
-          "name": "Utensili per la manutenzione",
-          "blurb": "Utensili per montaggio, smontaggio e diagnostica.",
-          "href": "#contact"
-        }
-      ]
-    },
     "skfOffer": {
       "eyebrow": "Offerta originale SKF",
       "headingPrefix": "La gamma",

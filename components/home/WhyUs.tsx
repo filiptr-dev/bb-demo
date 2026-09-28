@@ -12,7 +12,7 @@ export default async function WhyUs() {
   return (
     <section id="why" className="relative py-16 lg:py-20 overflow-hidden">
       <div className="relative container mx-auto px-6 lg:px-10">
-        <SectionHeading eyebrow={t("why.eyebrow")} num="06" center>
+        <SectionHeading eyebrow={t("why.eyebrow")} num="05" center>
           {t("why.headingPrefix")} <span className="text-gradient-brand">{t("why.headingHighlight1")}</span>{t("why.headingMiddle")} <span className="text-gradient-brand">{t("why.headingHighlight2")}</span>
         </SectionHeading>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">

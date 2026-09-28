@@ -125,44 +125,6 @@
         }
       ]
     },
-    "products": {
-      "eyebrow": "Our products",
-      "headingPrefix": "Complete",
-      "headingHighlight": "industrial solutions",
-      "more": "Learn more →",
-      "categories": [
-        {
-          "name": "Bearings",
-          "blurb": "Ball, roller, thrust and bearing units.",
-          "href": "/catalog"
-        },
-        {
-          "name": "Housings",
-          "blurb": "Housings and bearing units for every application.",
-          "href": "#contact"
-        },
-        {
-          "name": "Seals",
-          "blurb": "Industrial seals and sealing systems.",
-          "href": "#contact"
-        },
-        {
-          "name": "Belts and chains",
-          "blurb": "Power transmission components.",
-          "href": "#contact"
-        },
-        {
-          "name": "Lubrication systems",
-          "blurb": "Automatic lubrication that extends equipment life.",
-          "href": "#contact"
-        },
-        {
-          "name": "Maintenance tools",
-          "blurb": "Tools for mounting, dismounting and diagnostics.",
-          "href": "#contact"
-        }
-      ]
-    },
     "skfOffer": {
       "eyebrow": "Original SKF offer",
       "headingPrefix": "Complete",

@@ -125,44 +125,6 @@
         }
       ]
     },
-    "products": {
-      "eyebrow": "Ürünlerimiz",
-      "headingPrefix": "Eksiksiz",
-      "headingHighlight": "endüstriyel çözümler",
-      "more": "Daha fazla bilgi →",
-      "categories": [
-        {
-          "name": "Rulmanlar",
-          "blurb": "Bilyalı, makaralı, eksenel rulmanlar ve rulman üniteleri.",
-          "href": "/catalog"
-        },
-        {
-          "name": "Rulman yatakları",
-          "blurb": "Her uygulama için rulman yatakları ve rulman üniteleri.",
-          "href": "#contact"
-        },
-        {
-          "name": "Keçeler",
-          "blurb": "Endüstriyel keçeler ve sızdırmazlık sistemleri.",
-          "href": "#contact"
-        },
-        {
-          "name": "Kayışlar ve zincirler",
-          "blurb": "Güç aktarım bileşenleri.",
-          "href": "#contact"
-        },
-        {
-          "name": "Yağlama sistemleri",
-          "blurb": "Ekipman ömrünü uzatan otomatik yağlama.",
-          "href": "#contact"
-        },
-        {
-          "name": "Bakım aletleri",
-          "blurb": "Montaj, demontaj ve arıza teşhisi için aletler.",
-          "href": "#contact"
-        }
-      ]
-    },
     "skfOffer": {
       "eyebrow": "Orijinal SKF ürünleri",
       "headingPrefix": "Eksiksiz",

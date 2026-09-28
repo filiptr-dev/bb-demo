@@ -125,44 +125,6 @@
         }
       ]
     },
-    "products": {
-      "eyebrow": "Unsere Produkte",
-      "headingPrefix": "Komplette",
-      "headingHighlight": "Industrielösungen",
-      "more": "Mehr erfahren →",
-      "categories": [
-        {
-          "name": "Wälzlager",
-          "blurb": "Kugellager, Rollenlager, Axiallager und Lagereinheiten.",
-          "href": "/catalog"
-        },
-        {
-          "name": "Gehäuse",
-          "blurb": "Lagergehäuse und Lagereinheiten für jede Anwendung.",
-          "href": "#contact"
-        },
-        {
-          "name": "Dichtungen",
-          "blurb": "Industriedichtungen und Dichtungssysteme.",
-          "href": "#contact"
-        },
-        {
-          "name": "Riemen und Ketten",
-          "blurb": "Komponenten der Antriebstechnik.",
-          "href": "#contact"
-        },
-        {
-          "name": "Schmiersysteme",
-          "blurb": "Automatische Schmierung, die die Lebensdauer Ihrer Anlagen verlängert.",
-          "href": "#contact"
-        },
-        {
-          "name": "Instandhaltungswerkzeuge",
-          "blurb": "Werkzeuge für Montage, Demontage und Diagnose.",
-          "href": "#contact"
-        }
-      ]
-    },
     "skfOffer": {
       "eyebrow": "Original SKF-Angebot",
       "headingPrefix": "Das komplette",
