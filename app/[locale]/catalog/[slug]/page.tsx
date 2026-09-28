@@ -9,6 +9,7 @@ import { dim, dims } from "@/lib/domain/product";
 import { getProduct, relatedProducts } from "@/server/products";
 import ProductTypeImage from "@/components/product/ProductTypeImage";
 import ProductCard from "@/components/product/ProductCard";
+import AddToQuoteButton from "@/components/quote/AddToQuoteButton";
 
 // ~15k products: render each on first visit, then serve it cached for an hour
 export const revalidate = 3600;
@@ -96,6 +97,7 @@ export default async function ProductPage({ params }: PageProps<"/[locale]/catal
           <h1 className="font-mono text-3xl md:text-4xl font-extrabold">{p.designation}</h1>
           <p className="mt-1 text-lg text-foreground/60">{typeName}</p>
           <p className="mt-4 text-foreground/65 max-w-2xl">{description}</p>
+          <div className="mt-6"><AddToQuoteButton p={{ slug: p.slug, designation: p.designation }} /></div>
 
           <h2 className="mt-10 font-display text-xl font-bold">{t("specsHeading")}</h2>
           <table className="mt-3 w-full max-w-2xl text-sm bg-foreground/[0.03] rounded-xl overflow-hidden border border-foreground/[0.07]">

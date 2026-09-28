@@ -480,7 +480,6 @@
       "pagination": "Strany",
       "prev": "Predchádzajúca",
       "next": "Ďalšia",
-      "viewAria": "Zobraziť: {designation}",
       "loading": "Načítava sa…"
     }
   },
@@ -558,7 +557,10 @@
         "invalid": "Neplatná požiadavka.",
         "required": "Vyplňte prosím všetky povinné polia.",
         "send": "Správu sa nepodarilo odoslať. Skúste to prosím znova."
-      }
+      },
+      "messageOptional": "Správa",
+      "quotePlaceholder": "Miesto dodania, termín, použitie…",
+      "submitQuote": "Odoslať žiadosť o ponuku"
     }
   },
   "Privacy": {
@@ -704,5 +706,23 @@
     "noneTryTolerance": "Žiadna presná zhoda — skúste väčšiu toleranciu.",
     "found": "{count, plural, one {Vyhovuje # ložisko} few {Vyhovujú # ložiská} other {Vyhovuje # ložísk}}",
     "viewAll": "Všetkých {count} v katalógu →"
+  },
+  "Quote": {
+    "title": "Žiadosť o cenovú ponuku",
+    "subtitle": "Vyberte potrebné ložiská, zadajte množstvá a odošlite jednu žiadosť. Odpovieme s cenami a dostupnosťou.",
+    "add": "Pridať do žiadosti o ponuku",
+    "added": "Vo vašej žiadosti o ponuku",
+    "view": "Zobraziť žiadosť →",
+    "addAria": "Pridať {designation} do žiadosti o ponuku",
+    "removeAria": "Odstrániť {designation} zo žiadosti o ponuku",
+    "basketAria": "Žiadosť o ponuku, {count, plural, one {# položka} few {# položky} other {# položiek}}",
+    "empty": "Vaša žiadosť o ponuku je prázdna. Pridajte ložiská z katalógu alebo zo stránok produktov.",
+    "browseCatalog": "Do katalógu",
+    "findBySize": "Hľadať podľa rozmeru",
+    "itemsHeading": "{count, plural, one {# položka} few {# položky} other {# položiek}}",
+    "clear": "Vymazať všetko",
+    "quantity": "Množstvo",
+    "pcs": "ks",
+    "note": "Ceny a sklad sa online nezobrazujú — potvrdíme ich v odpovedi."
   }
 }

@@ -480,7 +480,6 @@
       "pagination": "Pagine",
       "prev": "Precedente",
       "next": "Successiva",
-      "viewAria": "Vedi: {designation}",
       "loading": "Caricamento…"
     }
   },
@@ -558,7 +557,10 @@
         "invalid": "Richiesta non valida.",
         "required": "Compila tutti i campi obbligatori.",
         "send": "Impossibile inviare il messaggio. Riprova."
-      }
+      },
+      "messageOptional": "Messaggio",
+      "quotePlaceholder": "Luogo di consegna, scadenza, applicazione…",
+      "submitQuote": "Invia richiesta di preventivo"
     }
   },
   "Privacy": {
@@ -704,5 +706,23 @@
     "noneTryTolerance": "Nessuna corrispondenza esatta — prova una tolleranza più ampia.",
     "found": "{count, plural, one {# cuscinetto corrisponde} other {# cuscinetti corrispondono}}",
     "viewAll": "Vedi tutti i {count} nel catalogo →"
+  },
+  "Quote": {
+    "title": "Richiesta di preventivo",
+    "subtitle": "Raccogli i cuscinetti che ti servono, indica le quantità e invia un'unica richiesta. Rispondiamo con prezzi e disponibilità.",
+    "add": "Aggiungi alla richiesta di preventivo",
+    "added": "Nella tua richiesta di preventivo",
+    "view": "Vedi richiesta →",
+    "addAria": "Aggiungi {designation} alla richiesta di preventivo",
+    "removeAria": "Rimuovi {designation} dalla richiesta di preventivo",
+    "basketAria": "Richiesta di preventivo, {count, plural, one {# articolo} other {# articoli}}",
+    "empty": "La tua richiesta di preventivo è vuota. Aggiungi cuscinetti dal catalogo o dalle pagine prodotto.",
+    "browseCatalog": "Vai al catalogo",
+    "findBySize": "Cerca per misura",
+    "itemsHeading": "{count, plural, one {# articolo} other {# articoli}}",
+    "clear": "Svuota",
+    "quantity": "Quantità",
+    "pcs": "pz",
+    "note": "Prezzi e disponibilità non sono mostrati online — li confermiamo nella nostra risposta."
   }
 }

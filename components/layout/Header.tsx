@@ -7,6 +7,7 @@ import LanguageSwitcher from "@/components/layout/LanguageSwitcher";
 import BearingIcon from "@/components/brand/BearingIcon";
 import { Button } from "@/components/ui/button";
 import HeaderSearch from "@/components/search/HeaderSearch";
+import QuoteHeaderLink from "@/components/quote/QuoteHeaderLink";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 
 const nav = [
@@ -46,13 +47,16 @@ export default function Header() {
           ))}
         </nav>
 
-        <HeaderSearch placeholder={t("searchPlaceholder")} className="ml-auto hidden md:block w-64 2xl:w-56 shrink-0" inputClassName="h-9 rounded-full px-4" />
+        <span className="flex-1 md:hidden" />
+        <HeaderSearch placeholder={t("searchPlaceholder")} className="ml-auto hidden md:block w-64 2xl:w-44 shrink-0" inputClassName="h-9 rounded-full px-4" />
 
-        <LanguageSwitcher className="ml-auto md:ml-0 hidden sm:inline-flex" />
+        <LanguageSwitcher className="hidden sm:inline-flex" />
 
         <Button nativeButton={false} render={<Link href="/catalog" />} className="hidden sm:inline-flex rounded-full bg-brand-gradient text-white text-xs font-semibold uppercase tracking-wide h-9 px-5 hover:shadow-[0_0_30px_rgba(var(--brand-glow-1-rgb),0.45)] transition-shadow">{t("eCatalog")}</Button>
 
-        <button className="2xl:hidden ml-auto sm:ml-0 p-2" aria-label={t("menu")} aria-expanded={open} onClick={() => setOpen(!open)}>
+        <QuoteHeaderLink onClick={() => setOpen(false)} />
+
+        <button className="2xl:hidden p-2" aria-label={t("menu")} aria-expanded={open} onClick={() => setOpen(!open)}>
           <span className="block w-6 h-0.5 bg-foreground mb-1.5" /><span className="block w-6 h-0.5 bg-foreground mb-1.5" /><span className="block w-6 h-0.5 bg-foreground" />
         </button>
       </div>

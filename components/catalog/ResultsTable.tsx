@@ -2,13 +2,13 @@
 
 import { useTranslations } from "next-intl";
 import { motion } from "motion/react";
-import { ShoppingCart } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { dim, type Product } from "@/lib/domain/product";
 import type { SortKey } from "@/lib/catalog-query";
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { useProductLabels } from "@/components/product/useProductLabels";
+import AddToQuoteButton from "@/components/quote/AddToQuoteButton";
 
 const columns: { key: SortKey; label: string; num?: boolean }[] = [
   { key: "designation", label: "designation" },
@@ -59,7 +59,7 @@ export default function ResultsTable({ rows, sort, dir, onSort, dimmed }: {
               <TableCell className="px-2.5 py-3 text-right font-mono text-foreground/80">{dim(p.D)}</TableCell>
               <TableCell className="px-2.5 py-3 text-right font-mono text-foreground/80">{dim(p.B)}</TableCell>
               <TableCell className="px-2.5 py-3">
-                <Link href={`/catalog/${p.slug}`} aria-label={t("viewAria", { designation: p.designation })} className="text-muted-foreground group-hover:text-brand-2 transition-colors"><ShoppingCart className="size-[18px]" /></Link>
+                <AddToQuoteButton p={p} variant="icon" />
               </TableCell>
             </motion.tr>
           ))}

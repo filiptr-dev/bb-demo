@@ -480,7 +480,6 @@
       "pagination": "Sayfalar",
       "prev": "Önceki",
       "next": "Sonraki",
-      "viewAria": "Görüntüle: {designation}",
       "loading": "Yükleniyor…"
     }
   },
@@ -558,7 +557,10 @@
         "invalid": "Geçersiz talep.",
         "required": "Lütfen tüm zorunlu alanları doldurun.",
         "send": "Mesaj gönderilemedi. Lütfen tekrar deneyin."
-      }
+      },
+      "messageOptional": "Mesaj",
+      "quotePlaceholder": "Teslimat yeri, termin, uygulama…",
+      "submitQuote": "Teklif talebini gönder"
     }
   },
   "Privacy": {
@@ -704,5 +706,23 @@
     "noneTryTolerance": "Tam eşleşme yok — daha geniş bir tolerans deneyin.",
     "found": "{count, plural, one {# rulman uyuyor} other {# rulman uyuyor}}",
     "viewAll": "Katalogdaki {count} rulmanın tümü →"
+  },
+  "Quote": {
+    "title": "Teklif talebi",
+    "subtitle": "İhtiyacınız olan rulmanları toplayın, adetleri girin ve tek bir talep gönderin. Fiyat ve stok bilgisiyle yanıt veririz.",
+    "add": "Teklif talebine ekle",
+    "added": "Teklif talebinizde",
+    "view": "Talebi görüntüle →",
+    "addAria": "{designation} ürününü teklif talebine ekle",
+    "removeAria": "{designation} ürününü teklif talebinden çıkar",
+    "basketAria": "Teklif talebi, {count, plural, one {# ürün} other {# ürün}}",
+    "empty": "Teklif talebiniz boş. Katalogdan veya ürün sayfalarından rulman ekleyin.",
+    "browseCatalog": "Kataloğa git",
+    "findBySize": "Ölçüye göre bul",
+    "itemsHeading": "{count, plural, one {# ürün} other {# ürün}}",
+    "clear": "Tümünü temizle",
+    "quantity": "Adet",
+    "pcs": "adet",
+    "note": "Fiyatlar ve stok çevrimiçi gösterilmez — yanıtımızda onaylarız."
   }
 }
