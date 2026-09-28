@@ -2,11 +2,13 @@
 
 import { useEffect, useState } from "react";
 import { Palette } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 
 const STORAGE_KEY = "theme-variant";
 
 export default function ThemeVariantToggle() {
+  const t = useTranslations("ThemeToggle");
   const [isClientTheme, setIsClientTheme] = useState(false);
 
   useEffect(() => {
@@ -35,7 +37,7 @@ export default function ThemeVariantToggle() {
       aria-pressed={isClientTheme}
     >
       <Palette className="size-4" />
-      {isClientTheme ? "Client site colors" : "Demo colors"}
+      {isClientTheme ? t("client") : t("demo")}
     </button>
   );
 }

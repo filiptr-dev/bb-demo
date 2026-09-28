@@ -1,8 +1,10 @@
-import Link from "next/link";
-import { Product, getType } from "@/lib/data";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
+import type { Product } from "@/lib/data";
 import BearingIcon from "./BearingIcon";
 
 export default function ProductCard({ p }: { p: Product }) {
+  const tt = useTranslations("BearingTypes");
   return (
     <Link
       href={`/catalog/${p.slug}`}
@@ -12,7 +14,7 @@ export default function ProductCard({ p }: { p: Product }) {
         <BearingIcon className="w-12 h-12 shrink-0 group-hover:rotate-45 transition-transform duration-500" />
         <div className="min-w-0">
           <h3 className="font-mono font-bold text-sm truncate group-hover:text-brand-2 transition-colors">{p.designation}</h3>
-          <p className="text-xs text-foreground/50 truncate">{getType(p.type)?.name}</p>
+          <p className="text-xs text-foreground/50 truncate">{tt(`${p.type}.name`)}</p>
         </div>
       </div>
       <p className="mt-3 text-xs font-mono text-foreground/60">{p.d} × {p.D} × {p.B} mm</p>

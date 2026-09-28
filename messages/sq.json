@@ -1,0 +1,579 @@
+{
+  "Common": {
+    "brandFirst": "B&B",
+    "brandSecond": "UNIKOOP",
+    "brandName": "B&B Unikoop",
+    "cities": {
+      "prilep": "Prilep",
+      "skopje": "Shkup"
+    },
+    "hours": "Hën–Pre 09:00–16:00",
+    "updated": "24 shtator 2026",
+    "scrollAria": "Lëviz poshtë",
+    "searchShort": "Kërko emërtimin…"
+  },
+  "Metadata": {
+    "site": {
+      "title": "B&B UNIKOOP – Rulmane SKF dhe zgjidhje industriale",
+      "titleTemplate": "%s | B&B UNIKOOP",
+      "description": "Distributor zyrtar i SKF në Maqedoninë e Veriut. Katalog rulmanesh me kërkim sipas shenjës dhe filtrim sipas industrisë."
+    },
+    "catalog": {
+      "title": "Katalogu i rulmaneve",
+      "description": "Kërkoni rulmane SKF sipas shenjës ose dimensioneve dhe filtroni sipas industrisë."
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Kontaktoni B&B Unikoop – distributor zyrtar i SKF në Maqedoninë e Veriut. Telefon 24/7, Manastir dhe Shkup."
+    },
+    "privacy": {
+      "title": "Politika e privatësisë",
+      "description": "Si B&B Unikoop mbledh, përdor dhe mbron të dhënat tuaja personale."
+    },
+    "terms": {
+      "title": "Kushtet e përdorimit",
+      "description": "Kushtet e përdorimit të faqes së internetit të B&B Unikoop."
+    }
+  },
+  "Nav": {
+    "about": "Rreth nesh",
+    "products": "Produktet",
+    "industries": "Industritë",
+    "contact": "Kontakt",
+    "searchPlaceholder": "Kërko shenjën, p.sh. 6205…",
+    "searchLabel": "Kërko rulman",
+    "eCatalog": "E-katalog",
+    "menu": "Menyja"
+  },
+  "Footer": {
+    "tagline": "Distributor zyrtar i SKF për Maqedoninë e Veriut prej 35 vitesh. Rulmane, guarnicione, transmetim fuqie dhe lubrifikantë.",
+    "industriesHeading": "Industritë",
+    "contactHeading": "Kontakt · 24/7",
+    "officeHours": "Zyra në Shkup: e hënë–e premte 09:00–16:00",
+    "sendMessage": "Dërgo mesazh →",
+    "copyright": "B&B Unikoop · Version demo",
+    "privacy": "Politika e privatësisë",
+    "terms": "Kushtet e përdorimit"
+  },
+  "Hero": {
+    "eyebrow": "Që nga 1991 · Distributor i SKF",
+    "heading": [
+      "ZGJIDHJE",
+      "INDUSTRIALE",
+      "TË INTEGRUARA"
+    ],
+    "description": "B&B Unikoop furnizon rulmane industriale, pajisje për transmetim fuqie dhe zgjidhje mirëmbajtjeje në të gjithë Maqedoninë e Veriut. Si distributor zyrtar i SKF, ofrojmë produkte 100% origjinale.",
+    "ctaQuote": "Kërko ofertë",
+    "ctaAbout": "Mëso më shumë",
+    "scroll": "Zbrit"
+  },
+  "Home": {
+    "about": {
+      "eyebrow": "Rreth nesh",
+      "headingPrefix": "Kush",
+      "headingHighlight": "jemi ne",
+      "years": "35+",
+      "yearsLabel": "Vite përvojë",
+      "p1": "B&B Unikoop është distributor zyrtar i SKF për Maqedoninë e Veriut. Prej 35 vitesh furnizojmë industritë me rulmane, kuti rulmanesh, guarnicione, rripa, zinxhirë dhe sisteme lubrifikimi.",
+      "p2": "Misioni ynë është të zvogëlojmë kohën e ndalimit dhe të sigurojmë vazhdimësi në punën e klientëve tanë – me produkte origjinale dhe mbështetje profesionale 24/7.",
+      "badges": [
+        "Distributor zyrtar i SKF",
+        "Certifikata",
+        "Verifikim autenticiteti"
+      ],
+      "ctaCatalog": "Shiko katalogun →",
+      "stats": [
+        {
+          "value": 35,
+          "suffix": "+",
+          "label": "Vite përvojë"
+        },
+        {
+          "value": 2,
+          "suffix": "",
+          "label": "Lokacione"
+        },
+        {
+          "value": 24,
+          "suffix": "/7",
+          "label": "Shërbim mobil"
+        },
+        {
+          "value": 100,
+          "suffix": "%",
+          "label": "Produkte origjinale"
+        }
+      ]
+    },
+    "products": {
+      "eyebrow": "Produktet tona",
+      "headingPrefix": "Zgjidhje industriale",
+      "headingHighlight": "të plota",
+      "more": "Mëso më shumë →",
+      "categories": [
+        {
+          "name": "Rulmane",
+          "blurb": "Rulmane me bila, me rula, aksiale dhe njësi rulmanesh.",
+          "href": "/catalog"
+        },
+        {
+          "name": "Kuti rulmanesh",
+          "blurb": "Kuti rulmanesh dhe njësi për çdo aplikim.",
+          "href": "#contact"
+        },
+        {
+          "name": "Guarnicione",
+          "blurb": "Guarnicione industriale dhe sisteme izolimi.",
+          "href": "#contact"
+        },
+        {
+          "name": "Rripa dhe zinxhirë",
+          "blurb": "Komponentë për transmetim fuqie.",
+          "href": "#contact"
+        },
+        {
+          "name": "Sisteme lubrifikimi",
+          "blurb": "Lubrifikim automatik që zgjat jetën e pajisjeve.",
+          "href": "#contact"
+        },
+        {
+          "name": "Mjete mirëmbajtjeje",
+          "blurb": "Mjete për montim, çmontim dhe diagnostikim.",
+          "href": "#contact"
+        }
+      ]
+    },
+    "skfOffer": {
+      "eyebrow": "Oferta origjinale SKF",
+      "headingPrefix": "Asortimani i plotë",
+      "headingHighlight": "SKF"
+    },
+    "industries": {
+      "eyebrow": "Industritë që i shërbejmë",
+      "headingPrefix": "Lëvizim",
+      "headingHighlight": "çdo sektor",
+      "openCatalog": "Hap katalogun"
+    },
+    "brands": {
+      "eyebrow": "Distributor i autorizuar",
+      "headingPrefix": "Besim nga një",
+      "headingHighlight": "markë botërore",
+      "title": "Lider botëror në rulmane dhe guarnicione",
+      "blurb": "Si distributor zyrtar, ofrojmë asortimanin e plotë SKF: rulmane, kuti rulmanesh, guarnicione, sisteme lubrifikimi dhe mjete mirëmbajtjeje, së bashku me SKF Mount dhe DialSet."
+    },
+    "why": {
+      "eyebrow": "Pse B&B Unikoop",
+      "headingPrefix": "Ndërtuar mbi",
+      "headingHighlight1": "besim",
+      "headingMiddle": ", udhëhequr nga",
+      "headingHighlight2": "cilësia",
+      "items": [
+        {
+          "title": "Produkte origjinale",
+          "blurb": "100% rulmane origjinale SKF me verifikim autenticiteti."
+        },
+        {
+          "title": "Disponueshmëri e gjerë",
+          "blurb": "Rulmane, kuti rulmanesh, guarnicione, rripa, zinxhirë dhe lubrifikantë në një vend."
+        },
+        {
+          "title": "Mbështetje profesionale",
+          "blurb": "Inxhinierë që ju ndihmojnë të zgjidhni zgjidhjen e duhur."
+        },
+        {
+          "title": "Dërgesë e shpejtë",
+          "blurb": "Dërgesë në të gjithë Maqedoninë e Veriut, me shërbim urgjent 24/7."
+        },
+        {
+          "title": "35 vite përvojë",
+          "blurb": "Partneritet afatgjatë me industritë më të mëdha në vend."
+        },
+        {
+          "title": "Certifikata",
+          "blurb": "Dokumentacion dhe certifikata për çdo produkt."
+        }
+      ]
+    },
+    "cta": {
+      "heading1": "Kërkoni zgjidhje industriale",
+      "headingHighlight": "të besueshme?",
+      "blurb": "Kërkoni ofertë sot. Ekipi ynë është gati t'ju ndihmojë të gjeni zgjidhjen e duhur.",
+      "contact": "Na kontaktoni →",
+      "catalog": "Katalogu"
+    }
+  },
+  "Industries": {
+    "cement": {
+      "name": "Çimento",
+      "blurb": "Rulmane për furra rrotulluese, mullinj dhe ventilatorë – rezistente ndaj pluhurit dhe temperaturave të larta."
+    },
+    "metallurgy": {
+      "name": "Metalurgji",
+      "blurb": "Zgjidhje për rula, derdhje të vazhdueshme dhe ngarkesa të rënda në kushte ekstreme."
+    },
+    "paper": {
+      "name": "Letër",
+      "blurb": "Rulmane precize për makina letre, tharëse dhe kalandra."
+    },
+    "power": {
+      "name": "Energjetikë",
+      "blurb": "Rulmane të besueshme për gjeneratorë, turbina, pompa dhe motorë elektrikë."
+    },
+    "mining": {
+      "name": "Minierat",
+      "blurb": "Rulmane të fuqishme për ekskavatorë, transportues, thërrmues dhe sita vibruese."
+    },
+    "chemical": {
+      "name": "Industria kimike",
+      "blurb": "Rulmane dhe guarnicione për pompa, përzierës dhe kompresorë në mjedise agresive."
+    },
+    "food": {
+      "name": "Industria ushqimore",
+      "blurb": "Rulmane të vulosura me lubrifikantë të sigurt për ushqim – pastrim i lehtë dhe jetëgjatësi."
+    },
+    "recycling": {
+      "name": "Riciklimi",
+      "blurb": "Rulmane për thërrmues, grimçues dhe shtypëse me ngarkesa goditëse."
+    }
+  },
+  "ProductCategories": {
+    "bearings": {
+      "name": "Rulmane",
+      "blurb": "Asortimani i plotë i rulmaneve SKF – radiale, këndore, vetëpërqendrues, sferike, konike, cilindrike dhe aksiale."
+    },
+    "housings": {
+      "name": "Kuti rulmanesh",
+      "blurb": "Kuti SNH, SNL dhe SSNHD për njësi rulmanesh – asortiment, dimensione dhe materiale."
+    },
+    "cooper": {
+      "name": "Cooper",
+      "blurb": "Rulmane me rula të ndashme nga Cooper Bearings – montim pa çmontuar boshtin."
+    },
+    "seals": {
+      "name": "Guarnicione",
+      "blurb": "Guarnicione radiale për bosht (CR Seals) dhe unaza V për një gamë të gjerë aplikimesh industriale."
+    },
+    "sleeves": {
+      "name": "Bushona përshtatës",
+      "blurb": "Bushona përshtatës me konicitet për montimin e rulmaneve në bosht të lëmuar."
+    },
+    "belts-chains": {
+      "name": "Rripa, zinxhirë",
+      "blurb": "Rripa, pulexha, zinxhirë, rrota dhëmbëzore, bushona dhe kuplime – komponentë për transmetim fuqie."
+    },
+    "bushings": {
+      "name": "Bushona",
+      "blurb": "Bushona për transmetim fuqie, përfshirë dado dhe zgjidhje SKF Speedi-Sleeve."
+    },
+    "nuts": {
+      "name": "Dado kyçëse",
+      "blurb": "Seri dadosh kyçëse për sigurimin e rulmaneve në bosht."
+    },
+    "speedi-sleeve": {
+      "name": "SKF Speedi-Sleeve",
+      "blurb": "Bushon me mur të hollë për rikuperimin e sipërfaqeve të konsumuara të boshtit nën guarnicion."
+    },
+    "food-industry": {
+      "name": "Produkte për industrinë ushqimore",
+      "blurb": "Rulmane, lubrifikantë dhe guarnicione të sigurt për ushqim – në përputhje me kërkesat e industrisë ushqimore."
+    },
+    "pulley-alignment": {
+      "name": "Pajisje për centrim pulexhash",
+      "blurb": "Pajisje për centrim precize të pulexhave – konsum më i ulët i lëndës dhe energjisë."
+    },
+    "monitoring-instruments": {
+      "name": "Instrumente monitorimi",
+      "blurb": "Endoskopë, monitorë vaji, termometra, taçometra, mjete akustike dhe sisteme analize (Microlog, IMx)."
+    },
+    "mounting-tools": {
+      "name": "Montim dhe çmontim",
+      "blurb": "Komplete mjetesh për montim dhe çmontim të sigurt të rulmaneve."
+    },
+    "maintenance": {
+      "name": "Mirëmbajtje",
+      "blurb": "Ngrohës induksioni dhe burime edukative për ciklin jetësor të rulmaneve."
+    },
+    "shim-packs": {
+      "name": "Pako pllakash – SKF TMAS",
+      "blurb": "Pllaka precize në dimensione dhe trashësi të shumta për centrim të saktë."
+    },
+    "greases": {
+      "name": "Yndyra",
+      "blurb": "Yndyra SKF, përfshirë seritë e sigurta për ushqim (LGFP, LGFQ, LGFG) – zgjedhje sipas kushteve të punës."
+    },
+    "lubrication-systems": {
+      "name": "Sisteme lubrifikimi",
+      "blurb": "Sisteme lubrifikimi të centralizuara që zgjasin jetën e pajisjeve."
+    },
+    "automatic-lubricators": {
+      "name": "Lubrifikues automatikë",
+      "blurb": "Lubrifikues automatikë për dozim të vazhdueshëm dhe të saktë të yndyrës."
+    },
+    "vibracon": {
+      "name": "SKF VIBRACON",
+      "blurb": "Mbështetës të rregullueshëm për centrim precize të pajisjeve të rënda."
+    },
+    "composite-housing-units": {
+      "name": "Njësi me kuti kompozite",
+      "blurb": "Njësi rulmanesh me bila në kuti kompozite – të lehta dhe rezistente ndaj korrozionit."
+    },
+    "y-bearings": {
+      "name": "Rulmane dhe njësi Y",
+      "blurb": "Rulmane dhe njësi Y – asortiment, tolerancë, lëvizshmëri e brendshme dhe kafaze."
+    }
+  },
+  "BearingTypes": {
+    "deep-groove": {
+      "name": "Rulmane radiale me bila",
+      "short": "Deep groove ball",
+      "blurb": "Rulman radial me bila për përdorim të përgjithshëm me ngarkesa të lehta deri mesatare."
+    },
+    "angular-contact": {
+      "name": "Rulmane këndore me bila",
+      "short": "Angular contact ball",
+      "blurb": "Rulman këndor me bila për ngarkesa të kombinuara radiale dhe aksiale."
+    },
+    "self-aligning": {
+      "name": "Rulmane vetëpërqendrues me bila",
+      "short": "Self-aligning ball",
+      "blurb": "Rulman vetëpërqendrues që kompenson keqrreshtimin e boshtit."
+    },
+    "spherical-roller": {
+      "name": "Rulmane sferike me rula",
+      "short": "Spherical roller",
+      "blurb": "Rulman sferik me rula për ngarkesa të rënda dhe keqrreshtim."
+    },
+    "tapered-roller": {
+      "name": "Rulmane konike me rula",
+      "short": "Tapered roller",
+      "blurb": "Rulman konik me rula për ngarkesa të kombinuara radiale dhe aksiale."
+    },
+    "cylindrical-roller": {
+      "name": "Rulmane cilindrike me rula",
+      "short": "Cylindrical roller",
+      "blurb": "Rulman cilindrik me rula për ngarkesa të larta radiale."
+    },
+    "thrust-ball": {
+      "name": "Rulmane aksiale me bila",
+      "short": "Thrust ball",
+      "blurb": "Rulman aksial me bila për ngarkesa thjesht aksiale."
+    },
+    "unit": {
+      "name": "Njësi rulmanesh",
+      "short": "Ball bearing units",
+      "blurb": "Njësi rulmani me kuti, gati për montim."
+    }
+  },
+  "ProductAttrs": {
+    "seal": {
+      "open": "I hapur",
+      "shields": "Mbrojtëse në të dyja anët",
+      "both": "Guarnicion në të dyja anët"
+    },
+    "boreType": {
+      "tapered": "Konik",
+      "cylindrical": "Cilindrik"
+    },
+    "dimensionsLabel": "Dimensione"
+  },
+  "Catalog": {
+    "page": {
+      "titlePrefix": "KATALOGU I",
+      "titleHighlight": "PRODUKTEVE",
+      "subtitle": "Kërkoni sipas shenjës (6205), dimensioneve (25x52x15), tipit, izolimit ose industrisë – dhe gjeni saktësisht atë që ju nevojitet.",
+      "loading": "Duke u ngarkuar…"
+    },
+    "client": {
+      "searchPlaceholder": "Shenja (6205, 22220), dimensione (25x52x15), numër (25) ose fjalë (çimento, konik)…",
+      "searchLabel": "Kërko sipas shenjës",
+      "filters": "Filtra",
+      "viewToggleLabel": "Ndrysho pamjen",
+      "viewGrid": "Rrjetë",
+      "viewTable": "Tabelë",
+      "resetFilters": "Rivendos",
+      "allIndustries": "Të gjitha industritë",
+      "classification": "Klasifikimi",
+      "allClassifications": "Të gjitha klasifikimet",
+      "boreTypeLabel": "Tipi i vrimës",
+      "allBoreTypes": "Të gjitha tipet",
+      "sealLabel": "Tipi i izolimit",
+      "allSeals": "Të gjitha llojet",
+      "quickBoreRange": "Diapazoni i shpejtë i vrimës (mm)",
+      "boreRangeAll": "Të gjitha",
+      "dInner": "Diametri i brendshëm d (mm)",
+      "dOuter": "Diametri i jashtëm D (mm)",
+      "width": "Gjerësia B (mm)",
+      "min": "Min",
+      "max": "Maks",
+      "clearAllFilters": "✕ Pastro të gjitha filtrat",
+      "showing": "Duke shfaqur",
+      "productSingular": "produkt",
+      "productPlural": "produkte",
+      "filteredSuffix": "(filtruar)",
+      "pageLabel": "Faqja",
+      "of": "nga",
+      "noResultsTitle": "Nuk u gjetën produkte",
+      "noResultsHint": "Kontrolloni shenjën ose rivendosni filtrat. Na telefononi – do ta gjejmë rulmanin e duhur për ju.",
+      "columns": {
+        "designation": "Shenja",
+        "classification": "Klasifikimi",
+        "boreType": "Tipi i vrimës",
+        "seal": "Izolimi",
+        "dInner": "Vrima d (mm)",
+        "dOuter": "Jashtë D (mm)",
+        "width": "Gjerësia B (mm)"
+      },
+      "viewProduct": "Shiko",
+      "pagination": "Faqet",
+      "prev": "Mbrapa",
+      "next": "Përpara",
+      "viewAria": "Shiko: {designation}"
+    }
+  },
+  "ProductDetail": {
+    "breadcrumbHome": "Ballina",
+    "breadcrumbCatalog": "Katalogu",
+    "specsHeading": "Karakteristika teknike",
+    "specs": {
+      "designation": "Shenja",
+      "brand": "Marka",
+      "type": "Tipi",
+      "dInner": "Diametri i brendshëm (d)",
+      "dOuter": "Diametri i jashtëm (D)",
+      "width": "Gjerësia (B)",
+      "seal": "Izolimi"
+    },
+    "industriesHeading": "Përdorimi sipas industrive",
+    "relatedHeading": "Produkte të ngjashme",
+    "metaTitle": "Rulman {designation} {brand} – {d}×{D}×{B} mm",
+    "metaDescription": "{brand} {designation}: {type}, vrima ø {d} mm, diametri i jashtëm ø {D} mm, gjerësia {B} mm. I disponueshëm te B&B Unikoop."
+  },
+  "IndustryDetail": {
+    "titlePrefix": "Rulmane për",
+    "catalogLink": "Hap në katalog me filtra →"
+  },
+  "ProductCategoryDetail": {
+    "back": "← Kthehu në ballinë",
+    "contactIntro": "Kjo kategori është pjesë e ofertës së plotë SKF të B&B Unikoop. Për specifikime teknike, disponueshmëri dhe ofertë, na kontaktoni.",
+    "contactCta": "Na kontaktoni →"
+  },
+  "CompanyValues": {
+    "items": [
+      {
+        "title": "Ndershmëri dhe integritet",
+        "blurb": "Punojmë me transparencë dhe përgjegjësi ndaj çdo klienti."
+      },
+      {
+        "title": "Transparencë",
+        "blurb": "Kushte të qarta, produkte origjinale dhe dokumentacion i verifikueshëm."
+      },
+      {
+        "title": "Lidhje të forta",
+        "blurb": "Partneritete afatgjata të ndërtuara mbi besim."
+      },
+      {
+        "title": "Përgjegjësi personale",
+        "blurb": "Çdo anëtar i ekipit qëndron pas cilësisë së punës së tij."
+      }
+    ],
+    "mobileService": "Shërbim mobil 24/7"
+  },
+  "Contact": {
+    "titlePrefix": "NA",
+    "titleHighlight": "KONTAKTONI",
+    "subtitle": "Kërkoni ofertë ose këshillim për zgjedhjen e rulmanit. Përgjigjemi sa më shpejt.",
+    "availability": "24/7",
+    "office": "Zyra në Shkup",
+    "locations": "Lokacione",
+    "locationsValue": "Manastir · Shkup, Maqedonia e Veriut",
+    "form": {
+      "name": "Emri dhe mbiemri *",
+      "email": "E-mail *",
+      "phone": "Telefoni",
+      "message": "Mesazhi *",
+      "messagePlaceholder": "Shenja e rulmanit, sasia, industria…",
+      "consent": "Pajtohem që të dhënat e mia të përpunohen për t'iu përgjigjur kësaj kërkese, në përputhje me <link>Politikën e privatësisë</link>. *",
+      "submit": "Dërgo",
+      "sending": "Duke dërguar…",
+      "thanksTitle": "Faleminderit!",
+      "thanksBody": "Mesazhi u dërgua. Do t'ju përgjigjemi sa më shpejt.",
+      "genericError": "Gabim. Provoni përsëri.",
+      "errors": {
+        "invalid": "Kërkesë e pavlefshme.",
+        "required": "Plotësoni të gjitha fushat e detyrueshme.",
+        "send": "Mesazhi nuk mund të dërgohej. Provoni përsëri."
+      }
+    }
+  },
+  "Privacy": {
+    "title": "Politika e privatësisë",
+    "updatedLabel": "Përditësuar së fundmi:",
+    "sections": [
+      {
+        "h": "1. Kontrolluesi i të dhënave",
+        "p": "B&B Unikoop (\"ne\") është kontrolluesi i të dhënave personale të mbledhura përmes kësaj faqeje interneti. Kontakt: <link>/contact</link>."
+      },
+      {
+        "h": "2. Cilat të dhëna mbledhim",
+        "p": "Kur na shkruani përmes formularit të kontaktit: emri, e-mail, telefoni (opsional) dhe përmbajtja e mesazhit. Nuk kërkojmë dhe nuk mbledhim të dhëna sensitive."
+      },
+      {
+        "h": "3. Qëllimi dhe baza ligjore",
+        "p": "I përdorim të dhënat vetëm për t'iu përgjigjur kërkesës suaj dhe për përgatitjen e një oferte, bazuar në pëlqimin tuaj dhe interesin tonë legjitim për komunikim biznesi."
+      },
+      {
+        "h": "4. Afati i ruajtjes",
+        "p": "I ruajmë të dhënat vetëm sa kohë është e nevojshme për komunikimin dhe detyrimet ligjore, pas së cilës fshihen."
+      },
+      {
+        "h": "5. Ndarja",
+        "p": "Nuk i shesim të dhënat tuaja. Ato mund të përpunohen nga ofrues shërbimesh (hosting, dërgim e-mail) vetëm sipas udhëzimeve tona."
+      },
+      {
+        "h": "6. Cookies",
+        "p": "Kjo faqe interneti nuk përdor cookies për gjurmim ose reklamim. Mund të përdoren cookies teknikisht të nevojshme."
+      },
+      {
+        "h": "7. Të drejtat tuaja",
+        "p": "Keni të drejtë qasjeje, korrigjimi, fshirjeje, kufizimi, transferueshmërie dhe kundërshtimi, si dhe të drejtën për ankesë pranë Agjencisë për Mbrojtjen e të Dhënave Personale. Kërkesat dërgojini përmes faqes së kontaktit."
+      }
+    ]
+  },
+  "Terms": {
+    "title": "Kushtet e përdorimit",
+    "updatedLabel": "Përditësuar së fundmi:",
+    "sections": [
+      {
+        "h": "1. Pranimi",
+        "p": "Duke përdorur këtë faqe interneti, ju pranoni këto kushte. Nëse nuk pajtoheni, ju lutemi mos e përdorni."
+      },
+      {
+        "h": "2. Karakteri informativ",
+        "p": "Katalogu ka qëllim informativ. Dimensionet, shenjat dhe përshkrimet jepen me qëllim të mirë, por mund të përmbajnë gabime. Para porosisë verifikoni të dhënat me ne. Informacioni në faqe nuk përbën ofertë detyruese."
+      },
+      {
+        "h": "3. Çmimet dhe disponueshmëria",
+        "p": "Çmimet dhe stoku nuk publikohen në faqe dhe negociohen individualisht përmes një oferte."
+      },
+      {
+        "h": "4. Pronësia intelektuale",
+        "p": "Përmbajtja e faqes është pronë e B&B Unikoop ose e mbajtësve të saj të të drejtave. SKF dhe markat e tjera i përkasin pronarëve të tyre. Kopjimi pa pëlqimin tonë nuk lejohet."
+      },
+      {
+        "h": "5. Kufizimi i përgjegjësisë",
+        "p": "Nuk marrim përgjegjësi për dëme që rrjedhin nga përdorimi i informacionit në faqe, brenda kufijve të lejuar me ligj."
+      },
+      {
+        "h": "6. Ndryshimet dhe ligji i zbatueshëm",
+        "p": "Kushtet mund të ndryshojnë; vlen versioni i publikuar në faqe. I zbatueshëm është ligji i Republikës së Maqedonisë së Veriut."
+      }
+    ]
+  },
+  "ThemeToggle": {
+    "client": "Ngjyrat e klientit",
+    "demo": "Ngjyra demo"
+  },
+  "LanguageSwitcher": {
+    "label": "Gjuha"
+  }
+}

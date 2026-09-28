@@ -2,9 +2,12 @@
 
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
+import { useTranslations } from "next-intl";
 import BearingIcon from "./BearingIcon";
 
 export default function Hero() {
+  const t = useTranslations("Hero");
+  const tc = useTranslations("Common");
   const sectionRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start start", "end start"] });
   const bearingY = useTransform(scrollYProgress, [0, 1], [0, 140]);
@@ -42,11 +45,11 @@ export default function Hero() {
       <div className="relative z-20 container mx-auto px-6 lg:px-10">
         <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.8, delay: 0.3 }} className="flex items-center gap-3 mb-5">
           <div className="w-10 h-[2px] bg-brand-gradient" />
-          <span className="text-brand-2 text-xs tracking-[0.3em] uppercase font-semibold">Од 1991 · SKF дистрибутер</span>
+          <span className="text-brand-2 text-xs tracking-[0.3em] uppercase font-semibold">{t("eyebrow")}</span>
         </motion.div>
 
         <h1 className="font-display font-extrabold text-[2rem] sm:text-5xl lg:text-6xl xl:text-7xl leading-[0.98] tracking-tighter mb-6">
-          {["ИНТЕГРИРАНИ", "ИНДУСТРИСКИ", "РЕШЕНИЈА"].map((w, i) => (
+          {(t.raw("heading") as string[]).map((w, i) => (
             <motion.span
               key={w}
               className={`block mb-1.5 ${i === 2 ? "text-gradient-brand glow-text" : ""}`}
@@ -60,21 +63,21 @@ export default function Hero() {
         </h1>
 
         <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1 }} className="text-foreground/70 text-base lg:text-lg max-w-xl leading-relaxed mb-8">
-          Б&amp;Б Уникооп обезбедува индустриски лежишта, опрема за пренос на моќност и решенија за одржување низ Македонија. Како официјален SKF дистрибутер, испорачуваме 100% оригинални производи.
+          {t("description")}
         </motion.p>
 
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1.2 }} className="flex flex-wrap gap-3">
           <a href="#contact" className="px-7 py-3.5 bg-brand-gradient font-semibold rounded-full hover:shadow-[0_0_40px_rgba(var(--brand-glow-1-rgb),0.5)] transition-all duration-300 text-xs tracking-wide uppercase">
-            Побарај понуда
+            {t("ctaQuote")}
           </a>
           <a href="#about" className="px-7 py-3.5 border border-foreground/25 font-medium rounded-full hover:bg-foreground/10 hover:border-foreground/40 transition-all duration-300 text-xs tracking-wide uppercase">
-            Дознај повеќе
+            {t("ctaAbout")}
           </a>
         </motion.div>
       </div>
 
-      <motion.a href="#about" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.5 }} className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 z-10" aria-label="Скролај надолу">
-        <span className="text-foreground/50 text-[10px] tracking-[0.2em] uppercase">Скролај</span>
+      <motion.a href="#about" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.5 }} className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 z-10" aria-label={tc("scrollAria")}>
+        <span className="text-foreground/50 text-[10px] tracking-[0.2em] uppercase">{t("scroll")}</span>
         <span className="hero-scroll-bounce text-brand-2/60">↓</span>
       </motion.a>
     </section>

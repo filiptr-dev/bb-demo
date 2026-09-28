@@ -1,0 +1,579 @@
+{
+  "Common": {
+    "brandFirst": "B&B",
+    "brandSecond": "UNIKOOP",
+    "brandName": "B&B Unikoop",
+    "cities": {
+      "prilep": "Prilep",
+      "skopje": "Skopje"
+    },
+    "hours": "Mon–Fri 09:00–16:00",
+    "updated": "24 September 2026",
+    "scrollAria": "Scroll down",
+    "searchShort": "Search designation…"
+  },
+  "Metadata": {
+    "site": {
+      "title": "B&B UNIKOOP – SKF bearings and industrial solutions",
+      "titleTemplate": "%s | B&B UNIKOOP",
+      "description": "Official SKF distributor in North Macedonia. Bearing catalog with search by designation and filtering by industry."
+    },
+    "catalog": {
+      "title": "Bearing catalog",
+      "description": "Search SKF bearings by designation or dimensions and filter by industry."
+    },
+    "contact": {
+      "title": "Contact",
+      "description": "Contact B&B Unikoop – official SKF distributor in North Macedonia. 24/7 phone support, Prilep and Skopje."
+    },
+    "privacy": {
+      "title": "Privacy policy",
+      "description": "How B&B Unikoop collects, uses and protects your personal data."
+    },
+    "terms": {
+      "title": "Terms of use",
+      "description": "Terms of use for the B&B Unikoop website."
+    }
+  },
+  "Nav": {
+    "about": "About us",
+    "products": "Products",
+    "industries": "Industries",
+    "contact": "Contact",
+    "searchPlaceholder": "Search designation, e.g. 6205…",
+    "searchLabel": "Search bearing",
+    "eCatalog": "E-catalog",
+    "menu": "Menu"
+  },
+  "Footer": {
+    "tagline": "Official SKF distributor for North Macedonia for 35 years. Bearings, seals, power transmission and lubricants.",
+    "industriesHeading": "Industries",
+    "contactHeading": "Contact · 24/7",
+    "officeHours": "Skopje office: Mon–Fri 09:00–16:00",
+    "sendMessage": "Send a message →",
+    "copyright": "B&B Unikoop · Demo version",
+    "privacy": "Privacy policy",
+    "terms": "Terms of use"
+  },
+  "Hero": {
+    "eyebrow": "Since 1991 · SKF distributor",
+    "heading": [
+      "INTEGRATED",
+      "INDUSTRIAL",
+      "SOLUTIONS"
+    ],
+    "description": "B&B Unikoop supplies industrial bearings, power transmission equipment and maintenance solutions across North Macedonia. As an official SKF distributor, we deliver 100% genuine products.",
+    "ctaQuote": "Request a quote",
+    "ctaAbout": "Learn more",
+    "scroll": "Scroll"
+  },
+  "Home": {
+    "about": {
+      "eyebrow": "About us",
+      "headingPrefix": "Who",
+      "headingHighlight": "we are",
+      "years": "35+",
+      "yearsLabel": "Years of experience",
+      "p1": "B&B Unikoop is the official SKF distributor for North Macedonia. For 35 years we have supplied industries with bearings, housings, seals, belts, chains and lubrication systems.",
+      "p2": "Our mission is to reduce downtime and ensure continuity in our clients' operations – with genuine products and expert support, 24/7.",
+      "badges": [
+        "Official SKF distributor",
+        "Certificates",
+        "Authenticity verification"
+      ],
+      "ctaCatalog": "View the catalog →",
+      "stats": [
+        {
+          "value": 35,
+          "suffix": "+",
+          "label": "Years of experience"
+        },
+        {
+          "value": 2,
+          "suffix": "",
+          "label": "Locations"
+        },
+        {
+          "value": 24,
+          "suffix": "/7",
+          "label": "Mobile service"
+        },
+        {
+          "value": 100,
+          "suffix": "%",
+          "label": "Genuine products"
+        }
+      ]
+    },
+    "products": {
+      "eyebrow": "Our products",
+      "headingPrefix": "Complete",
+      "headingHighlight": "industrial solutions",
+      "more": "Learn more →",
+      "categories": [
+        {
+          "name": "Bearings",
+          "blurb": "Ball, roller, thrust and bearing units.",
+          "href": "/catalog"
+        },
+        {
+          "name": "Housings",
+          "blurb": "Housings and bearing units for every application.",
+          "href": "#contact"
+        },
+        {
+          "name": "Seals",
+          "blurb": "Industrial seals and sealing systems.",
+          "href": "#contact"
+        },
+        {
+          "name": "Belts and chains",
+          "blurb": "Power transmission components.",
+          "href": "#contact"
+        },
+        {
+          "name": "Lubrication systems",
+          "blurb": "Automatic lubrication that extends equipment life.",
+          "href": "#contact"
+        },
+        {
+          "name": "Maintenance tools",
+          "blurb": "Tools for mounting, dismounting and diagnostics.",
+          "href": "#contact"
+        }
+      ]
+    },
+    "skfOffer": {
+      "eyebrow": "Original SKF offer",
+      "headingPrefix": "Complete",
+      "headingHighlight": "SKF range"
+    },
+    "industries": {
+      "eyebrow": "Industries we serve",
+      "headingPrefix": "Keeping",
+      "headingHighlight": "every sector moving",
+      "openCatalog": "Open the catalog"
+    },
+    "brands": {
+      "eyebrow": "Authorized distributor",
+      "headingPrefix": "Trusted by a",
+      "headingHighlight": "world-class brand",
+      "title": "World leader in bearings and seals",
+      "blurb": "As an official distributor, we offer the complete SKF range: bearings, housings, seals, lubrication systems and maintenance tools, together with SKF Mount and DialSet."
+    },
+    "why": {
+      "eyebrow": "Why B&B Unikoop",
+      "headingPrefix": "Built on",
+      "headingHighlight1": "trust",
+      "headingMiddle": ", driven by",
+      "headingHighlight2": "quality",
+      "items": [
+        {
+          "title": "Genuine products",
+          "blurb": "100% genuine SKF bearings with authenticity verification."
+        },
+        {
+          "title": "Wide availability",
+          "blurb": "Bearings, housings, seals, belts, chains and lubricants in one place."
+        },
+        {
+          "title": "Expert support",
+          "blurb": "Engineers who help you choose the right solution."
+        },
+        {
+          "title": "Fast delivery",
+          "blurb": "Delivery across North Macedonia, with 24/7 emergency service."
+        },
+        {
+          "title": "35 years of experience",
+          "blurb": "Long-standing partnerships with the country's largest industries."
+        },
+        {
+          "title": "Certificates",
+          "blurb": "Documentation and certificates for every product."
+        }
+      ]
+    },
+    "cta": {
+      "heading1": "Looking for reliable",
+      "headingHighlight": "industrial solutions?",
+      "blurb": "Request a quote today. Our team is ready to help you find the right solution.",
+      "contact": "Get in touch →",
+      "catalog": "Catalog"
+    }
+  },
+  "Industries": {
+    "cement": {
+      "name": "Cement",
+      "blurb": "Bearings for rotary kilns, mills and fans – resistant to dust and high temperatures."
+    },
+    "metallurgy": {
+      "name": "Metallurgy",
+      "blurb": "Solutions for rolls, continuous casting and heavy loads in extreme conditions."
+    },
+    "paper": {
+      "name": "Paper",
+      "blurb": "Precision bearings for paper machines, dryers and calenders."
+    },
+    "power": {
+      "name": "Power generation",
+      "blurb": "Reliable bearings for generators, turbines, pumps and electric motors."
+    },
+    "mining": {
+      "name": "Mining",
+      "blurb": "Rugged bearings for excavators, conveyors, crushers and vibrating screens."
+    },
+    "chemical": {
+      "name": "Chemical",
+      "blurb": "Bearings and seals for pumps, mixers and compressors in aggressive environments."
+    },
+    "food": {
+      "name": "Food & beverage",
+      "blurb": "Sealed bearings with food-safe lubricants – easy cleaning and long service life."
+    },
+    "recycling": {
+      "name": "Recycling",
+      "blurb": "Bearings for crushers, shredders and presses under shock loads."
+    }
+  },
+  "ProductCategories": {
+    "bearings": {
+      "name": "Bearings",
+      "blurb": "Full SKF bearing range – deep groove, angular contact, self-aligning, spherical, tapered, cylindrical and thrust."
+    },
+    "housings": {
+      "name": "Housings",
+      "blurb": "SNH, SNL and SSNHD housings for bearing units – range, dimensions and materials."
+    },
+    "cooper": {
+      "name": "Cooper",
+      "blurb": "Split roller bearings by Cooper Bearings – mounting without dismounting the shaft."
+    },
+    "seals": {
+      "name": "Seals",
+      "blurb": "Radial shaft seals (CR Seals) and V-rings for a wide range of industrial applications."
+    },
+    "sleeves": {
+      "name": "Adapter sleeves",
+      "blurb": "Adapter sleeves with a tapered bore for mounting bearings on plain shafts."
+    },
+    "belts-chains": {
+      "name": "Belts, chains",
+      "blurb": "Belts, pulleys, chains, sprockets, bushings and couplings – power transmission components."
+    },
+    "bushings": {
+      "name": "Bushings",
+      "blurb": "Power transmission bushings, including lock nuts and SKF Speedi-Sleeve solutions."
+    },
+    "nuts": {
+      "name": "Lock nuts",
+      "blurb": "Lock nut series for securing bearings on a shaft."
+    },
+    "speedi-sleeve": {
+      "name": "SKF Speedi-Sleeve",
+      "blurb": "Thin-walled sleeve for restoring worn shaft surfaces under a seal."
+    },
+    "food-industry": {
+      "name": "Food industry products",
+      "blurb": "Bearings, lubricants and seals safe for food – compliant with food industry requirements."
+    },
+    "pulley-alignment": {
+      "name": "Pulley alignment tools",
+      "blurb": "Tools for precise pulley alignment – reduced wear and energy consumption."
+    },
+    "monitoring-instruments": {
+      "name": "Monitoring instruments",
+      "blurb": "Endoscopes, oil monitors, thermometers, tachometers, acoustic tools and analysis systems (Microlog, IMx)."
+    },
+    "mounting-tools": {
+      "name": "Mounting and dismounting tools",
+      "blurb": "Tool kits for safe bearing mounting and dismounting."
+    },
+    "maintenance": {
+      "name": "Maintenance",
+      "blurb": "Induction heaters and educational resources on bearing lifecycle."
+    },
+    "shim-packs": {
+      "name": "SKF TMAS shim packs",
+      "blurb": "Precision shims in multiple sizes and thicknesses for precise alignment."
+    },
+    "greases": {
+      "name": "Greases",
+      "blurb": "SKF greases, including food-safe series (LGFP, LGFQ, LGFG) – selection by operating conditions."
+    },
+    "lubrication-systems": {
+      "name": "Lubrication systems",
+      "blurb": "Centralized lubrication systems that extend equipment life."
+    },
+    "automatic-lubricators": {
+      "name": "Automatic lubricators",
+      "blurb": "Automatic lubricators for continuous, precise grease dosing."
+    },
+    "vibracon": {
+      "name": "SKF VIBRACON",
+      "blurb": "Adjustable chocks for precise alignment of heavy equipment."
+    },
+    "composite-housing-units": {
+      "name": "Composite housing units",
+      "blurb": "Ball bearing units in composite housings – lightweight and corrosion resistant."
+    },
+    "y-bearings": {
+      "name": "Y-bearings and units",
+      "blurb": "Y-bearings and bearing units – range, tolerances, internal clearance and cages."
+    }
+  },
+  "BearingTypes": {
+    "deep-groove": {
+      "name": "Deep groove ball bearings",
+      "short": "Deep groove ball",
+      "blurb": "A radial ball bearing for general use with light to moderate loads."
+    },
+    "angular-contact": {
+      "name": "Angular contact ball bearings",
+      "short": "Angular contact ball",
+      "blurb": "An angular contact ball bearing for combined radial and axial loads."
+    },
+    "self-aligning": {
+      "name": "Self-aligning ball bearings",
+      "short": "Self-aligning ball",
+      "blurb": "A self-aligning bearing that compensates for shaft misalignment."
+    },
+    "spherical-roller": {
+      "name": "Spherical roller bearings",
+      "short": "Spherical roller",
+      "blurb": "A spherical roller bearing for heavy loads and misalignment."
+    },
+    "tapered-roller": {
+      "name": "Tapered roller bearings",
+      "short": "Tapered roller",
+      "blurb": "A tapered roller bearing for combined radial and axial loads."
+    },
+    "cylindrical-roller": {
+      "name": "Cylindrical roller bearings",
+      "short": "Cylindrical roller",
+      "blurb": "A cylindrical roller bearing for high radial loads."
+    },
+    "thrust-ball": {
+      "name": "Thrust ball bearings",
+      "short": "Thrust ball",
+      "blurb": "A thrust ball bearing for purely axial loads."
+    },
+    "unit": {
+      "name": "Bearing units",
+      "short": "Ball bearing units",
+      "blurb": "A bearing unit with housing, ready for mounting."
+    }
+  },
+  "ProductAttrs": {
+    "seal": {
+      "open": "Open",
+      "shields": "Shields on both sides",
+      "both": "Seal on both sides"
+    },
+    "boreType": {
+      "tapered": "Tapered",
+      "cylindrical": "Cylindrical"
+    },
+    "dimensionsLabel": "Dimensions"
+  },
+  "Catalog": {
+    "page": {
+      "titlePrefix": "BEARING",
+      "titleHighlight": "CATALOG",
+      "subtitle": "Search by designation (6205), dimensions (25x52x15), type, sealing or industry – and find exactly what you need.",
+      "loading": "Loading…"
+    },
+    "client": {
+      "searchPlaceholder": "Designation (6205, 22220), dimensions (25x52x15), a number (25) or a word (cement, tapered)…",
+      "searchLabel": "Search by designation",
+      "filters": "Filters",
+      "viewToggleLabel": "Change view",
+      "viewGrid": "Grid",
+      "viewTable": "Table",
+      "resetFilters": "Reset",
+      "allIndustries": "All industries",
+      "classification": "Classification",
+      "allClassifications": "All classifications",
+      "boreTypeLabel": "Bore type",
+      "allBoreTypes": "All types",
+      "sealLabel": "Seal type",
+      "allSeals": "All types",
+      "quickBoreRange": "Quick bore range (mm)",
+      "boreRangeAll": "All",
+      "dInner": "Bore diameter d (mm)",
+      "dOuter": "Outer diameter D (mm)",
+      "width": "Width B (mm)",
+      "min": "Min",
+      "max": "Max",
+      "clearAllFilters": "✕ Clear all filters",
+      "showing": "Showing",
+      "productSingular": "product",
+      "productPlural": "products",
+      "filteredSuffix": "(filtered)",
+      "pageLabel": "Page",
+      "of": "of",
+      "noResultsTitle": "No products found",
+      "noResultsHint": "Check the designation or reset the filters. Give us a call – we'll find the right bearing for you.",
+      "columns": {
+        "designation": "Designation",
+        "classification": "Classification",
+        "boreType": "Bore type",
+        "seal": "Sealing",
+        "dInner": "Bore d (mm)",
+        "dOuter": "Outer D (mm)",
+        "width": "Width B (mm)"
+      },
+      "viewProduct": "View",
+      "pagination": "Pages",
+      "prev": "Previous",
+      "next": "Next",
+      "viewAria": "View: {designation}"
+    }
+  },
+  "ProductDetail": {
+    "breadcrumbHome": "Home",
+    "breadcrumbCatalog": "Catalog",
+    "specsHeading": "Technical specifications",
+    "specs": {
+      "designation": "Designation",
+      "brand": "Brand",
+      "type": "Type",
+      "dInner": "Bore diameter (d)",
+      "dOuter": "Outer diameter (D)",
+      "width": "Width (B)",
+      "seal": "Sealing"
+    },
+    "industriesHeading": "Used across industries",
+    "relatedHeading": "Related products",
+    "metaTitle": "{designation} {brand} bearing – {d}×{D}×{B} mm",
+    "metaDescription": "{brand} {designation}: {type}, bore ø {d} mm, outer ø {D} mm, width {B} mm. Available from B&B Unikoop."
+  },
+  "IndustryDetail": {
+    "titlePrefix": "Bearings for",
+    "catalogLink": "Open in catalog with filters →"
+  },
+  "ProductCategoryDetail": {
+    "back": "← Back to home",
+    "contactIntro": "This category is part of B&B Unikoop's complete SKF offer. For technical specifications, availability and a quote, contact us.",
+    "contactCta": "Contact us →"
+  },
+  "CompanyValues": {
+    "items": [
+      {
+        "title": "Honesty and integrity",
+        "blurb": "We work transparently and responsibly with every client."
+      },
+      {
+        "title": "Transparency",
+        "blurb": "Clear terms, genuine products and verifiable documentation."
+      },
+      {
+        "title": "Strong relationships",
+        "blurb": "Long-standing partnerships built on trust."
+      },
+      {
+        "title": "Personal accountability",
+        "blurb": "Every team member stands behind the quality of their work."
+      }
+    ],
+    "mobileService": "24/7 mobile service"
+  },
+  "Contact": {
+    "titlePrefix": "GET IN",
+    "titleHighlight": "TOUCH",
+    "subtitle": "Request a quote or advice on choosing a bearing. We respond as soon as possible.",
+    "availability": "24/7",
+    "office": "Skopje office",
+    "locations": "Locations",
+    "locationsValue": "Prilep · Skopje, North Macedonia",
+    "form": {
+      "name": "Full name *",
+      "email": "Email *",
+      "phone": "Phone",
+      "message": "Message *",
+      "messagePlaceholder": "Bearing designation, quantity, industry…",
+      "consent": "I agree that my data will be processed to respond to this request, in accordance with the <link>Privacy policy</link>. *",
+      "submit": "Send",
+      "sending": "Sending…",
+      "thanksTitle": "Thank you!",
+      "thanksBody": "Your message has been sent. We'll get back to you as soon as possible.",
+      "genericError": "Something went wrong. Please try again.",
+      "errors": {
+        "invalid": "Invalid request.",
+        "required": "Please fill in all required fields.",
+        "send": "The message could not be sent. Please try again."
+      }
+    }
+  },
+  "Privacy": {
+    "title": "Privacy policy",
+    "updatedLabel": "Last updated:",
+    "sections": [
+      {
+        "h": "1. Data controller",
+        "p": "B&B Unikoop (\"we\") is the controller of personal data collected through this website. Contact: <link>/contact</link>."
+      },
+      {
+        "h": "2. What data we collect",
+        "p": "When you write to us via the contact form: name, email, phone (optional) and the message content. We do not request or collect sensitive data."
+      },
+      {
+        "h": "3. Purpose and legal basis",
+        "p": "We use the data only to respond to your request and prepare a quote, based on your consent and our legitimate interest in business communication."
+      },
+      {
+        "h": "4. Retention period",
+        "p": "We keep the data only as long as needed for the communication and legal obligations, after which it is deleted."
+      },
+      {
+        "h": "5. Sharing",
+        "p": "We do not sell your data. It may be processed by service providers (hosting, email delivery) only on our instructions."
+      },
+      {
+        "h": "6. Cookies",
+        "p": "This website does not use tracking or advertising cookies. Technically necessary cookies may be used."
+      },
+      {
+        "h": "7. Your rights",
+        "p": "You have the right to access, rectify, erase, restrict, port and object, as well as the right to lodge a complaint with the Personal Data Protection Agency. Send requests via the contact page."
+      }
+    ]
+  },
+  "Terms": {
+    "title": "Terms of use",
+    "updatedLabel": "Last updated:",
+    "sections": [
+      {
+        "h": "1. Acceptance",
+        "p": "By using this website you accept these terms. If you do not agree, please do not use it."
+      },
+      {
+        "h": "2. Informational purpose",
+        "p": "The catalog is for informational purposes. Dimensions, designations and descriptions are provided in good faith but may contain errors. Verify the details with us before ordering. Information on the site does not constitute a binding offer."
+      },
+      {
+        "h": "3. Prices and availability",
+        "p": "Prices and stock are not published on the site and are agreed individually through a quote."
+      },
+      {
+        "h": "4. Intellectual property",
+        "p": "The site's content is owned by B&B Unikoop or its rights holders. SKF and other brands belong to their respective owners. Copying without our consent is not permitted."
+      },
+      {
+        "h": "5. Limitation of liability",
+        "p": "We accept no liability for damage arising from use of the information on the site, to the extent permitted by law."
+      },
+      {
+        "h": "6. Changes and applicable law",
+        "p": "The terms may change; the version published on the site applies. The law of the Republic of North Macedonia is applicable."
+      }
+    ]
+  },
+  "ThemeToggle": {
+    "client": "Client site colors",
+    "demo": "Demo colors"
+  },
+  "LanguageSwitcher": {
+    "label": "Language"
+  }
+}

@@ -1,10 +1,11 @@
 "use client";
 
-import Link from "next/link";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { bearingTypes, getType, industries, products, Product } from "@/lib/data";
+import { bearingTypes, industries, products, type Product, type SealCode, type BoreCode } from "@/lib/data";
 import { searchProducts } from "@/lib/search";
 import { ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -19,7 +20,7 @@ const list = (v: string | null) => (v ? v.split(",").filter(Boolean) : []);
 const num = (v: string) => (v === "" || isNaN(Number(v)) ? null : Number(v));
 
 const boreRanges = [
-  { label: "Сите", min: "", max: "" },
+  { label: "", min: "", max: "" }, // "all" - label comes from translations
   { label: "≤ 30", min: "0", max: "30" },
   { label: "30–50", min: "30", max: "50" },
   { label: "50–80", min: "50", max: "80" },
@@ -28,14 +29,14 @@ const boreRanges = [
 ];
 
 type SortKey = "designation" | "type" | "boreType" | "seal" | "d" | "D" | "B";
-const columns: { key: SortKey; label: string; cls?: string; num?: boolean }[] = [
-  { key: "designation", label: "Ознака" },
-  { key: "type", label: "Класификација" },
-  { key: "boreType", label: "Тип на отвор" },
-  { key: "seal", label: "Заптивање" },
-  { key: "d", label: "Отвор d (mm)", num: true },
-  { key: "D", label: "Надв. D (mm)", num: true },
-  { key: "B", label: "Ширина B (mm)", num: true },
+const columns: { key: SortKey; label: string; num?: boolean }[] = [
+  { key: "designation", label: "designation" },
+  { key: "type", label: "classification" },
+  { key: "boreType", label: "boreType" },
+  { key: "seal", label: "seal" },
+  { key: "d", label: "dInner", num: true },
+  { key: "D", label: "dOuter", num: true },
+  { key: "B", label: "width", num: true },
 ];
 
 const chip = (on: boolean) =>
@@ -55,12 +56,19 @@ function Pick({ value, onChange, allLabel, options }: { value: string; onChange:
   );
 }
 
-function sortVal(p: Product, k: SortKey): string | number {
-  if (k === "type") return getType(p.type)?.name ?? "";
-  return p[k];
-}
-
 export default function CatalogClient() {
+  const t = useTranslations("Catalog.client");
+  const tt = useTranslations("BearingTypes");
+  const ta = useTranslations("ProductAttrs");
+  const ti = useTranslations("Industries");
+  const typeName = (p: Product) => tt(`${p.type}.name`);
+  const sealName = (c: SealCode) => ta(`seal.${c}`);
+  const boreName = (c: BoreCode) => ta(`boreType.${c}`);
+  // localized text a free-word search matches against (slugs keep English keywords working in every locale)
+  const wordsFor = (p: Product) =>
+    [p.brand, p.type, typeName(p), tt(`${p.type}.short`), sealName(p.seal), boreName(p.boreType), ...p.industries, ...p.industries.map((s) => ti(`${s}.name`))].join(" ");
+  const sortVal = (p: Product, k: SortKey): string | number =>
+    k === "type" ? typeName(p) : k === "seal" ? sealName(p.seal) : k === "boreType" ? boreName(p.boreType) : p[k];
   const sp = useSearchParams();
   const g = (k: string) => sp.get(k) ?? "";
   const urlSearch = g("search");
@@ -118,7 +126,7 @@ export default function CatalogClient() {
   const boreTypes = useMemo(() => [...new Set(products.map((p) => p.boreType))], []);
 
   const results = useMemo(() => {
-    let r = searchProducts(products, q);
+    let r = searchProducts(products, q, wordsFor);
     if (inds.length) r = r.filter((p) => p.industries.some((i) => inds.includes(i)));
     if (type) r = r.filter((p) => p.type === type);
     if (bore) r = r.filter((p) => p.boreType === bore);
@@ -129,7 +137,7 @@ export default function CatalogClient() {
       const k = sort as SortKey;
       r = [...r].sort((a, b) => {
         const x = sortVal(a, k), y = sortVal(b, k);
-        const c = typeof x === "number" && typeof y === "number" ? x - y : String(x).localeCompare(String(y), "mk", { numeric: true });
+        const c = typeof x === "number" && typeof y === "number" ? x - y : String(x).localeCompare(String(y), undefined, { numeric: true });
         return dir === "desc" ? -c : c;
       });
     }
@@ -154,9 +162,9 @@ export default function CatalogClient() {
     <div>
       <Label className={label}>{lab}</Label>
       <div className="flex items-center gap-2">
-        <Input type="number" placeholder="Мин" value={lo} onChange={(e) => update({ [kLo]: e.target.value })} className="h-10" />
+        <Input type="number" placeholder={t("min")} value={lo} onChange={(e) => update({ [kLo]: e.target.value })} className="h-10" />
         <span className="text-muted-foreground">-</span>
-        <Input type="number" placeholder="Макс" value={hi} onChange={(e) => update({ [kHi]: e.target.value })} className="h-10" />
+        <Input type="number" placeholder={t("max")} value={hi} onChange={(e) => update({ [kHi]: e.target.value })} className="h-10" />
       </div>
     </div>
   );
@@ -170,26 +178,26 @@ export default function CatalogClient() {
             value={q}
             autoFocus={!!urlSearch}
             onChange={(e) => { setQ(e.target.value); update({ search: e.target.value }); }}
-            placeholder="Ознака (6205, 22220), димензии (25x52x15), број (25) или збор (цемент, конусни)…"
-            aria-label="Пребарај по ознака"
+            placeholder={t("searchPlaceholder")}
+            aria-label={t("searchLabel")}
             className="flex-1 min-w-0 h-12 rounded-xl px-4 text-sm"
           />
           <Button variant={open ? "secondary" : "outline"} onClick={() => setOpen(!open)} aria-expanded={open} className="h-12 rounded-xl px-4">
-            Филтри
+            {t("filters")}
             {filterCount > 0 && <Badge className="h-5 min-w-5 rounded-full px-1.5 text-[10px]">{filterCount}</Badge>}
           </Button>
-          <Button variant="outline" onClick={() => update({ view: view === "table" ? "grid" : "" })} aria-label="Промени приказ" title={view === "table" ? "Мрежа" : "Табела"} className="h-12 rounded-xl px-4">
+          <Button variant="outline" onClick={() => update({ view: view === "table" ? "grid" : "" })} aria-label={t("viewToggleLabel")} title={view === "table" ? t("viewGrid") : t("viewTable")} className="h-12 rounded-xl px-4">
             {view === "table" ? "▦" : "☰"}
           </Button>
           {(filterCount > 0 || q) && (
-            <Button variant="outline" onClick={reset} className="h-12 rounded-xl px-4">Ресетирај</Button>
+            <Button variant="outline" onClick={reset} className="h-12 rounded-xl px-4">{t("resetFilters")}</Button>
           )}
         </div>
 
         <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
-          <Button size="sm" variant="outline" onClick={() => update({ industry: "" })} className={chip(inds.length === 0)}>Сите индустрии</Button>
+          <Button size="sm" variant="outline" onClick={() => update({ industry: "" })} className={chip(inds.length === 0)}>{t("allIndustries")}</Button>
           {industries.map((i) => (
-            <Button key={i.slug} size="sm" variant="outline" onClick={() => toggleInd(i.slug)} aria-pressed={inds.includes(i.slug)} className={chip(inds.includes(i.slug))}>{i.name}</Button>
+            <Button key={i.slug} size="sm" variant="outline" onClick={() => toggleInd(i.slug)} aria-pressed={inds.includes(i.slug)} className={chip(inds.includes(i.slug))}>{ti(`${i.slug}.name`)}</Button>
           ))}
         </div>
 
@@ -200,36 +208,36 @@ export default function CatalogClient() {
             <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }} exit={{ height: 0, opacity: 0 }} transition={{ duration: 0.3 }} className="overflow-hidden rounded-xl border border-foreground/[0.07] bg-foreground/[0.02] px-5 pb-4 mt-4">
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-3">
                 <div>
-                  <Label className={label}>Класификација</Label>
-                  <Pick value={type} onChange={(v) => update({ type: v })} allLabel="Сите класификации" options={bearingTypes.map((t) => ({ value: t.slug, label: t.name }))} />
+                  <Label className={label}>{t("classification")}</Label>
+                  <Pick value={type} onChange={(v) => update({ type: v })} allLabel={t("allClassifications")} options={bearingTypes.map((b) => ({ value: b.slug, label: tt(`${b.slug}.name`) }))} />
                 </div>
                 <div>
-                  <Label className={label}>Тип на отвор</Label>
-                  <Pick value={bore} onChange={(v) => update({ bore: v })} allLabel="Сите типови" options={boreTypes.map((t) => ({ value: t, label: t }))} />
+                  <Label className={label}>{t("boreTypeLabel")}</Label>
+                  <Pick value={bore} onChange={(v) => update({ bore: v })} allLabel={t("allBoreTypes")} options={boreTypes.map((b) => ({ value: b, label: boreName(b) }))} />
                 </div>
                 <div>
-                  <Label className={label}>Тип на заптивање</Label>
-                  <Pick value={seal} onChange={(v) => update({ seal: v })} allLabel="Сите видови" options={sealTypes.map((t) => ({ value: t, label: t }))} />
+                  <Label className={label}>{t("sealLabel")}</Label>
+                  <Pick value={seal} onChange={(v) => update({ seal: v })} allLabel={t("allSeals")} options={sealTypes.map((c) => ({ value: c, label: sealName(c) }))} />
                 </div>
                 <div>
-                  <Label className={label}>Брз опсег на отвор (mm)</Label>
+                  <Label className={label}>{t("quickBoreRange")}</Label>
                   <div className="flex flex-wrap gap-1.5">
                     {boreRanges.map((r) => {
                       const on = dmin === r.min && dmax === r.max;
                       return (
-                        <Button key={r.label} size="xs" variant={on ? "secondary" : "outline"} onClick={() => update({ dmin: r.min, dmax: r.max })} className={on ? "text-brand-2 border-brand-1/50" : ""}>{r.label}</Button>
+                        <Button key={r.label || "all"} size="xs" variant={on ? "secondary" : "outline"} onClick={() => update({ dmin: r.min, dmax: r.max })} className={on ? "text-brand-2 border-brand-1/50" : ""}>{r.label || t("boreRangeAll")}</Button>
                       );
                     })}
                   </div>
                 </div>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
-                {range("Внатрешен дијаметар d (mm)", dmin, dmax, "dmin", "dmax")}
-                {range("Надворешен дијаметар D (mm)", Dmin, Dmax, "Dmin", "Dmax")}
-                {range("Ширина B (mm)", Bmin, Bmax, "Bmin", "Bmax")}
+                {range(t("dInner"), dmin, dmax, "dmin", "dmax")}
+                {range(t("dOuter"), Dmin, Dmax, "Dmin", "Dmax")}
+                {range(t("width"), Bmin, Bmax, "Bmin", "Bmax")}
               </div>
               <div className="mt-4 mb-1">
-                <Button variant="outline" onClick={reset} disabled={filterCount === 0 && !q}>✕ Исчисти ги сите филтри</Button>
+                <Button variant="outline" onClick={reset} disabled={filterCount === 0 && !q}>{t("clearAllFilters")}</Button>
               </div>
             </motion.div>
           )}
@@ -237,16 +245,16 @@ export default function CatalogClient() {
 
       <div className="flex items-center justify-between py-4 text-sm">
         <p className="text-foreground/50" aria-live="polite">
-          Прикажани <span className="text-foreground font-semibold">{results.length}</span> {results.length === 1 ? "производ" : "производи"}
-          {filterCount > 0 && <span className="text-foreground/35"> (филтрирано)</span>}
+          {t("showing")} <span className="text-foreground font-semibold">{results.length}</span> {results.length === 1 ? t("productSingular") : t("productPlural")}
+          {filterCount > 0 && <span className="text-foreground/35"> {t("filteredSuffix")}</span>}
         </p>
-        <p className="text-foreground/40">Страна {cur} од {pages}</p>
+        <p className="text-foreground/40">{t("pageLabel")} {cur} {t("of")} {pages}</p>
       </div>
 
       {results.length === 0 ? (
         <div className="rounded-xl border border-dashed border-foreground/15 p-10 text-center">
-          <p className="text-lg font-semibold">Нема пронајдени производи</p>
-          <p className="text-foreground/50 mt-1 text-sm">Проверете ја ознаката или ресетирајте ги филтрите. Јавете ни се – ќе го најдеме лежиштето за вас.</p>
+          <p className="text-lg font-semibold">{t("noResultsTitle")}</p>
+          <p className="text-foreground/50 mt-1 text-sm">{t("noResultsHint")}</p>
         </div>
       ) : view === "table" ? (
         <div className="rounded-xl border bg-card/50 overflow-hidden">
@@ -255,7 +263,7 @@ export default function CatalogClient() {
               <TableRow className="bg-muted/60 hover:bg-muted/60 text-[11px] uppercase tracking-wider">
                 {columns.map((c) => (
                   <TableHead key={c.key} onClick={() => toggleSort(c.key)} aria-sort={sort === c.key ? (dir === "asc" ? "ascending" : "descending") : "none"} className={`px-2.5 py-3 cursor-pointer select-none hover:text-foreground whitespace-nowrap ${c.num ? "text-right" : ""}`}>
-                    {c.label}
+                    {t(`columns.${c.label}`)}
                     {sort === c.key && <span className="ml-1 text-brand-1">{dir === "asc" ? "▲" : "▼"}</span>}
                   </TableHead>
                 ))}
@@ -269,15 +277,15 @@ export default function CatalogClient() {
                     <Link href={`/catalog/${p.slug}`} className="font-mono font-bold hover:text-brand-2 transition-colors">{p.designation}</Link>
                   </TableCell>
                   <TableCell className="px-2.5 py-3">
-                    <Badge variant="secondary" className="text-brand-2 whitespace-nowrap">{getType(p.type)?.name}</Badge>
+                    <Badge variant="secondary" className="text-brand-2 whitespace-nowrap">{typeName(p)}</Badge>
                   </TableCell>
-                  <TableCell className="px-2.5 py-3 text-muted-foreground text-xs whitespace-nowrap">{p.boreType}</TableCell>
-                  <TableCell className="px-2.5 py-3 text-muted-foreground text-xs whitespace-nowrap">{p.seal}</TableCell>
+                  <TableCell className="px-2.5 py-3 text-muted-foreground text-xs whitespace-nowrap">{boreName(p.boreType)}</TableCell>
+                  <TableCell className="px-2.5 py-3 text-muted-foreground text-xs whitespace-nowrap">{sealName(p.seal)}</TableCell>
                   <TableCell className="px-2.5 py-3 text-right font-mono text-foreground/80">{p.d}</TableCell>
                   <TableCell className="px-2.5 py-3 text-right font-mono text-foreground/80">{p.D}</TableCell>
                   <TableCell className="px-2.5 py-3 text-right font-mono text-foreground/80">{p.B}</TableCell>
                   <TableCell className="px-2.5 py-3">
-                    <Link href={`/catalog/${p.slug}`} aria-label={`Погледни: ${p.designation}`} className="text-muted-foreground group-hover:text-brand-2 transition-colors"><ShoppingCart className="size-[18px]" /></Link>
+                    <Link href={`/catalog/${p.slug}`} aria-label={t("viewAria", { designation: p.designation })} className="text-muted-foreground group-hover:text-brand-2 transition-colors"><ShoppingCart className="size-[18px]" /></Link>
                   </TableCell>
                 </motion.tr>
               ))}
@@ -290,12 +298,12 @@ export default function CatalogClient() {
             <motion.div key={p.slug} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.02 }}>
               <Link href={`/catalog/${p.slug}`} className="group block rounded-xl bg-foreground/[0.03] border border-foreground/5 p-5 hover:border-brand-1/20 hover:bg-foreground/[0.05] transition-all">
                 <h3 className="font-mono font-bold text-sm mb-3 group-hover:text-brand-2 transition-colors">{p.designation}</h3>
-                <Badge variant="secondary" className="text-brand-2 mb-3">{getType(p.type)?.name}</Badge>
+                <Badge variant="secondary" className="text-brand-2 mb-3">{typeName(p)}</Badge>
                 <div className="space-y-1.5 text-xs text-foreground/45">
                   {([["d ⌀", p.d], ["D ⌀", p.D], ["B", p.B]] as const).map(([k, v]) => (
                     <div key={k} className="flex justify-between"><span>{k}</span><span className="font-mono text-foreground/70">{v} mm</span></div>
                   ))}
-                  <div className="flex justify-between"><span>Заптивање</span><span className="text-foreground/70 truncate ml-2">{p.seal}</span></div>
+                  <div className="flex justify-between"><span>{t("columns.seal")}</span><span className="text-foreground/70 truncate ml-2">{sealName(p.seal)}</span></div>
                 </div>
               </Link>
             </motion.div>
@@ -304,8 +312,8 @@ export default function CatalogClient() {
       )}
 
       {pages > 1 && (
-        <nav aria-label="Страници" className="flex items-center justify-center gap-2 mt-6">
-          <Button variant="outline" size="icon" disabled={cur === 1} onClick={() => update({ page: String(cur - 1) })} aria-label="Претходна">‹</Button>
+        <nav aria-label={t("pagination")} className="flex items-center justify-center gap-2 mt-6">
+          <Button variant="outline" size="icon" disabled={cur === 1} onClick={() => update({ page: String(cur - 1) })} aria-label={t("prev")}>‹</Button>
           {pageNums.map((n, i) =>
             n === "…" ? (
               <span key={`d${i}`} className="px-1 text-foreground/30">…</span>
@@ -313,7 +321,7 @@ export default function CatalogClient() {
               <Button key={n} size="icon" variant="outline" onClick={() => update({ page: String(n) })} aria-current={n === cur} className={n === cur ? "bg-brand-gradient text-white border-transparent hover:opacity-90" : ""}>{n}</Button>
             )
           )}
-          <Button variant="outline" size="icon" disabled={cur === pages} onClick={() => update({ page: String(cur + 1) })} aria-label="Следна">›</Button>
+          <Button variant="outline" size="icon" disabled={cur === pages} onClick={() => update({ page: String(cur + 1) })} aria-label={t("next")}>›</Button>
         </nav>
       )}
     </div>
