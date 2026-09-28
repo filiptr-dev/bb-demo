@@ -31,6 +31,7 @@ export default async function Footer() {
               <li key={p.tel}>{tc(`cities.${p.city}`)}: <a className="text-foreground hover:text-brand-2" href={`tel:${p.tel}`}>{p.label}</a></li>
             ))}
             <li>{t("officeHours")}</li>
+            <li><Link className="hover:text-foreground transition-colors" href="/authenticity">{t("authenticity")}</Link></li>
             <li><Link className="text-brand-2 hover:underline" href="/contact">{t("sendMessage")}</Link></li>
           </ul>
         </Reveal>

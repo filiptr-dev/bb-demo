@@ -41,6 +41,10 @@
     "sizeFinder": {
       "title": "Rulman ölçü bulucu",
       "description": "Ölçülen iç çap, dış çap ve genişliğe (mm) göre SKF rulmanı bulun. Resmi SKF distribütörü B&B Unikoop'tan ücretsiz araç."
+    },
+    "authenticity": {
+      "title": "SKF rulmanınız orijinal mi?",
+      "description": "Sahte SKF rulmanlarını nasıl tanıyacağınızı ve SKF Authenticate uygulamasıyla nasıl kontrol edeceğinizi öğrenin. B&B Unikoop, Kuzey Makedonya'daki resmi SKF distribütörü."
     }
   },
   "Nav": {
@@ -55,7 +59,8 @@
     "searchNoResults": "Eşleşen ürün bulunamadı.",
     "searchViewAll": "{count} sonucun tümünü görüntüle",
     "decoder": "Kod Çözücü",
-    "sizeFinder": "Ölçüye göre bul"
+    "sizeFinder": "Ölçüye göre bul",
+    "authenticity": "Orijinallik kontrolü"
   },
   "Footer": {
     "tagline": "35 yıldır Kuzey Makedonya'nın resmi SKF distribütörü. Rulmanlar, keçeler, güç aktarımı ve yağlayıcılar.",
@@ -65,7 +70,8 @@
     "sendMessage": "Mesaj gönderin →",
     "copyright": "B&B Unikoop · Demo sürümü",
     "privacy": "Gizlilik politikası",
-    "terms": "Kullanım koşulları"
+    "terms": "Kullanım koşulları",
+    "authenticity": "Orijinallik kontrolü"
   },
   "Hero": {
     "eyebrow": "1991'den beri · SKF distribütörü",
@@ -724,5 +730,64 @@
     "quantity": "Adet",
     "pcs": "adet",
     "note": "Fiyatlar ve stok çevrimiçi gösterilmez — yanıtımızda onaylarız."
+  },
+  "Authenticity": {
+    "eyebrow": "SKF orijinalliği",
+    "title": "SKF rulmanınız orijinal mi?",
+    "subtitle": "Sahte rulmanlar ikna edici görünür ve erken arızalanır. Elinizdeki bir rulmanı nasıl kontrol edeceğiniz ve sorundan tamamen nasıl kaçınacağınız burada.",
+    "bannerAlt": "Ele geçirilen sahte SKF rulmanları",
+    "risk": {
+      "h": "Neden önemli",
+      "p": "Sahteciler ucuz ISO ölçülü rulmanlar satın alıp üzerlerine sahte SKF işaretleri ve kutuları ekler. Deneyimsiz bir göze aynı görünürler, ancak makinenizin yük, güvenlik ve kullanım ömrü gereksinimlerini karşılayıp karşılamadıklarını kimse bilemez. Arızalı bir rulman en iyi ihtimalle plansız duruş, en kötü ihtimalle hasarlı dişliler, miller ve yataklar demektir.",
+      "source": "Kaynak: SKF, 2019."
+    },
+    "stats": [
+      {
+        "value": "15 t",
+        "label": "sahte rulman SKF tarafından 2017'de kolluk kuvvetleriyle birlikte imha edildi"
+      },
+      {
+        "value": "17.000",
+        "label": "sahte ürün yalnızca o ele geçirmede vardı ve olağan tedarik zincirlerine gidiyordu"
+      },
+      {
+        "value": "%50",
+        "label": "Yöneticilerin yarısına kadarı bilmeden sahte parça satın almış olabilir"
+      }
+    ],
+    "source": {
+      "h": "En güvenli kontrol: yetkili distribütörden satın alın",
+      "p": "B&B Unikoop, Kuzey Makedonya'nın resmi SKF distribütörüdür. Sattığımız her rulman doğrudan SKF tedarik zincirinden gelir, yani doğrulanacak bir şey yoktur.",
+      "catalog": "Kataloğa göz atın",
+      "contact": "Bize ulaşın"
+    },
+    "app": {
+      "h": "SKF Authenticate ile rulman kontrolü",
+      "p": "SKF ürünlerini başka bir yerden aldınız ve şüpheleriniz mi var? SKF'nin ücretsiz uygulaması fotoğraflarınızı doğrudan SKF uzmanlarına gönderir, onlar da e-postayla yanıt verir.",
+      "ios": "App Store (iPhone, iPad)",
+      "android": "Google Play (Android)"
+    },
+    "photos": {
+      "h": "Neyi fotoğraflamalı",
+      "p": "Kutunun ve rulmanın her yönden 5–10 net fotoğrafını çekin. Ne kadar çok ayrıntı, o kadar iyi.",
+      "items": [
+        "Kutunun üst yüzü",
+        "Barkod etiketi",
+        "Kutunun arka yüzü",
+        "Ambalajındaki rulman",
+        "Rulmanın yakın çekimi"
+      ]
+    },
+    "steps": {
+      "h": "Kontrol nasıl gönderilir",
+      "items": [
+        "SKF Authenticate'i App Store veya Google Play'den yükleyin.",
+        "Yukarıda listelenen fotoğrafları çekin.",
+        "Uygulamayı açın, Start'a dokunun ve “Use existing photos”u seçin (veya yenilerini çekin). Fotoğraflarınızı seçip Next'e dokunun.",
+        "Ürünü kimden aldığınızı, “Lütfen bu SKF ürününün orijinal olup olmadığını kontrol edin” gibi kısa bir yorumu ve iletişim bilgilerinizi girin. SKF bu e-posta adresine yanıt verir, bu yüzden doğru olduğundan emin olun.",
+        "Send'e dokunup onaylayın. Hemen otomatik bir alındı bildirimi, birkaç saat ile birkaç gün içinde de SKF'nin kararını alırsınız."
+      ]
+    },
+    "more": "Elinizdeki bir rulmandan emin değil misiniz? <contact>Bize fotoğraf gönderin</contact>, teknik servisimiz yardımcı olsun ya da <skf>SKF marka koruması</skf> hakkında daha fazla okuyun."
   }
 }

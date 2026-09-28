@@ -9,6 +9,9 @@ const pages = [
   "/contact",
   "/privacy",
   "/terms",
+  "/decoder",
+  "/size-finder",
+  "/authenticity",
   ...industries.map((i) => `/industries/${i.slug}`),
   ...productCategories.map((c) => `/products/${c.slug}`),
 ];

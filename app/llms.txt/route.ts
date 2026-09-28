@@ -34,6 +34,7 @@ export async function GET() {
 - Dimension ranges (mm): ${link("/catalog")}?dmin=&dmax=&Dmin=&Dmax=&Bmin=&Bmax=
 - [Designation decoder](${link("/decoder")}): ${en.Metadata.decoder.description}
 - [Bearing size finder](${link("/size-finder")}): ${en.Metadata.sizeFinder.description}
+- [SKF authenticity check](${link("/authenticity")}): ${en.Metadata.authenticity.description}
 
 ### Bearing types
 

@@ -18,7 +18,12 @@ const nav = [
   { href: "/contact", key: "contact" },
 ] as const;
 // the desktop bar has no room for more; the tool pages link to each other
-const mobileNav = [...nav.slice(0, 4), { href: "/size-finder", key: "sizeFinder" }, nav[4]] as const;
+const mobileNav = [
+  ...nav.slice(0, 4),
+  { href: "/size-finder", key: "sizeFinder" },
+  { href: "/authenticity", key: "authenticity" },
+  nav[4],
+] as const;
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);

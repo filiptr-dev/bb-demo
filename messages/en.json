@@ -41,6 +41,10 @@
     "sizeFinder": {
       "title": "Bearing size finder",
       "description": "Find an SKF bearing by its measured bore, outside diameter and width in mm. Free tool from B&B Unikoop, official SKF distributor."
+    },
+    "authenticity": {
+      "title": "Is your SKF bearing genuine?",
+      "description": "How to spot counterfeit SKF bearings and check yours with the SKF Authenticate app. B&B Unikoop, official SKF distributor in North Macedonia."
     }
   },
   "Nav": {
@@ -55,7 +59,8 @@
     "searchNoResults": "No matching products.",
     "searchViewAll": "View all {count} results",
     "decoder": "Decoder",
-    "sizeFinder": "Size finder"
+    "sizeFinder": "Size finder",
+    "authenticity": "Authenticity check"
   },
   "Footer": {
     "tagline": "Official SKF distributor for North Macedonia for 35 years. Bearings, seals, power transmission and lubricants.",
@@ -65,7 +70,8 @@
     "sendMessage": "Send a message →",
     "copyright": "B&B Unikoop · Demo version",
     "privacy": "Privacy policy",
-    "terms": "Terms of use"
+    "terms": "Terms of use",
+    "authenticity": "Authenticity check"
   },
   "Hero": {
     "eyebrow": "Since 1991 · SKF distributor",
@@ -724,5 +730,64 @@
     "quantity": "Quantity",
     "pcs": "pcs",
     "note": "Prices and stock are not shown online — we confirm them in our reply."
+  },
+  "Authenticity": {
+    "eyebrow": "SKF authenticity",
+    "title": "Is your SKF bearing genuine?",
+    "subtitle": "Counterfeit bearings look convincing and fail early. Here is how to check a bearing you already have, and how to avoid the problem altogether.",
+    "bannerAlt": "Seized counterfeit SKF bearings",
+    "risk": {
+      "h": "Why it matters",
+      "p": "Counterfeiters buy cheap ISO-standard bearings and add fake SKF markings and boxes. To an untrained eye they look identical, but nobody knows whether they meet the load, safety or service-life requirements of your machine. A failed bearing means unplanned downtime at best, and damaged gears, shafts and housings at worst.",
+      "source": "Source: SKF, 2019."
+    },
+    "stats": [
+      {
+        "value": "15 t",
+        "label": "of counterfeit bearings destroyed by SKF together with law enforcement in 2017"
+      },
+      {
+        "value": "17,000",
+        "label": "fake items in that single seizure, headed for ordinary supply chains"
+      },
+      {
+        "value": "50%",
+        "label": "Up to half of company managers may have bought counterfeit parts without knowing"
+      }
+    ],
+    "source": {
+      "h": "The surest check: buy from an authorised distributor",
+      "p": "B&B Unikoop is the official SKF distributor for North Macedonia. Every bearing we sell comes straight from SKF's supply chain, so there is nothing to verify.",
+      "catalog": "Browse the catalog",
+      "contact": "Contact us"
+    },
+    "app": {
+      "h": "Check a bearing with SKF Authenticate",
+      "p": "Bought SKF products elsewhere and have doubts? SKF's free app sends your photos directly to SKF experts, who reply by email.",
+      "ios": "App Store (iPhone, iPad)",
+      "android": "Google Play (Android)"
+    },
+    "photos": {
+      "h": "What to photograph",
+      "p": "Take 5–10 sharp photos of the box and the bearing from every side. The more detail, the better.",
+      "items": [
+        "Top of the box",
+        "Barcode label",
+        "Back of the box",
+        "Bearing in its wrapping",
+        "Close-up of the bearing"
+      ]
+    },
+    "steps": {
+      "h": "How to send a check",
+      "items": [
+        "Install SKF Authenticate from the App Store or Google Play.",
+        "Take the photos listed above.",
+        "Open the app, tap Start and choose “Use existing photos” (or take new ones). Select your photos and tap Next.",
+        "Enter who you bought the product from, a short comment such as “Please check whether this SKF product is genuine”, and your contact details. SKF replies to that email address, so double-check it.",
+        "Tap Send and confirm. You get an automatic receipt right away, and SKF's verdict within a few hours to a few days."
+      ]
+    },
+    "more": "Unsure about a bearing you already have? <contact>Send us photos</contact> and our technical service will help, or read more about <skf>SKF brand protection</skf>."
   }
 }

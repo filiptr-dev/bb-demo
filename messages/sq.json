@@ -41,6 +41,10 @@
     "sizeFinder": {
       "title": "Kërkimi i kushinetave sipas masës",
       "description": "Gjeni një kushinetë SKF sipas diametrit të brendshëm, diametrit të jashtëm dhe gjerësisë së matur në mm. Mjet falas nga B&B Unikoop, distributor zyrtar i SKF."
+    },
+    "authenticity": {
+      "title": "A është kushineta juaj SKF origjinale?",
+      "description": "Si t'i dalloni kushinetat e falsifikuara SKF dhe t'i kontrolloni me aplikacionin SKF Authenticate. B&B Unikoop, distributor zyrtar i SKF në Maqedoninë e Veriut."
     }
   },
   "Nav": {
@@ -55,7 +59,8 @@
     "searchNoResults": "Nuk u gjetën produkte.",
     "searchViewAll": "Shiko të gjitha {count} rezultatet",
     "decoder": "Dekoduesi",
-    "sizeFinder": "Kërko sipas masës"
+    "sizeFinder": "Kërko sipas masës",
+    "authenticity": "Kontroll origjinaliteti"
   },
   "Footer": {
     "tagline": "Distributor zyrtar i SKF për Maqedoninë e Veriut prej 35 vitesh. Rulmane, guarnicione, transmetim fuqie dhe lubrifikantë.",
@@ -65,7 +70,8 @@
     "sendMessage": "Dërgo mesazh →",
     "copyright": "B&B Unikoop · Version demo",
     "privacy": "Politika e privatësisë",
-    "terms": "Kushtet e përdorimit"
+    "terms": "Kushtet e përdorimit",
+    "authenticity": "Kontroll origjinaliteti"
   },
   "Hero": {
     "eyebrow": "Që nga 1991 · Distributor i SKF",
@@ -724,5 +730,64 @@
     "quantity": "Sasia",
     "pcs": "copë",
     "note": "Çmimet dhe stoku nuk shfaqen online — i konfirmojmë në përgjigjen tonë."
+  },
+  "Authenticity": {
+    "eyebrow": "Autenticiteti SKF",
+    "title": "A është kushineta juaj SKF origjinale?",
+    "subtitle": "Kushinetat e falsifikuara duken bindëse dhe prishen herët. Ja si ta kontrolloni një kushinetë që e keni tashmë dhe si ta shmangni plotësisht problemin.",
+    "bannerAlt": "Kushineta të falsifikuara SKF të sekuestruara",
+    "risk": {
+      "h": "Pse ka rëndësi",
+      "p": "Falsifikuesit blejnë kushineta të lira me përmasa ISO dhe u shtojnë shenja e kuti të rreme SKF. Për një sy të pastërvitur duken njësoj, por askush nuk e di nëse i plotësojnë kërkesat për ngarkesë, siguri dhe jetëgjatësi të makinës suaj. Një kushinetë e prishur në rastin më të mirë do të thotë ndalesë e paplanifikuar, dhe në më të keqin ingranazhe, boshte dhe shtëpiza të dëmtuara.",
+      "source": "Burimi: SKF, 2019."
+    },
+    "stats": [
+      {
+        "value": "15 t",
+        "label": "kushineta të falsifikuara u shkatërruan nga SKF së bashku me organet e ligjit në vitin 2017"
+      },
+      {
+        "value": "17.000",
+        "label": "artikuj të rremë vetëm në atë sekuestrim, të destinuar për zinxhirë të zakonshëm furnizimi"
+      },
+      {
+        "value": "50%",
+        "label": "Deri në gjysma e menaxherëve mund të kenë blerë pjesë të falsifikuara pa e ditur"
+      }
+    ],
+    "source": {
+      "h": "Kontrolli më i sigurt: blini nga një distributor i autorizuar",
+      "p": "B&B Unikoop është distributori zyrtar i SKF për Maqedoninë e Veriut. Çdo kushinetë që shesim vjen drejtpërdrejt nga zinxhiri i furnizimit të SKF, ndaj nuk ka asgjë për të verifikuar.",
+      "catalog": "Shfleto katalogun",
+      "contact": "Na kontaktoni"
+    },
+    "app": {
+      "h": "Kontrolloni një kushinetë me SKF Authenticate",
+      "p": "Keni blerë produkte SKF diku tjetër dhe keni dyshime? Aplikacioni falas i SKF i dërgon fotot tuaja direkt te ekspertët e SKF, të cilët përgjigjen me email.",
+      "ios": "App Store (iPhone, iPad)",
+      "android": "Google Play (Android)"
+    },
+    "photos": {
+      "h": "Çfarë të fotografoni",
+      "p": "Bëni 5–10 foto të qarta të kutisë dhe kushinetës nga të gjitha anët. Sa më shumë detaje, aq më mirë.",
+      "items": [
+        "Pjesa e sipërme e kutisë",
+        "Etiketa me barkod",
+        "Pjesa e pasme e kutisë",
+        "Kushineta në paketim",
+        "Kushineta nga afër"
+      ]
+    },
+    "steps": {
+      "h": "Si të dërgoni një kontroll",
+      "items": [
+        "Instaloni SKF Authenticate nga App Store ose Google Play.",
+        "Bëni fotot e listuara më sipër.",
+        "Hapni aplikacionin, prekni Start dhe zgjidhni „Use existing photos“ (ose bëni foto të reja). Zgjidhni fotot dhe prekni Next.",
+        "Shkruani nga kush e keni blerë produktin, një koment të shkurtër si „Ju lutem kontrolloni nëse ky produkt SKF është origjinal“ dhe të dhënat tuaja të kontaktit. SKF përgjigjet në atë email, ndaj kontrollojeni mirë.",
+        "Prekni Send dhe konfirmoni. Merrni menjëherë një konfirmim automatik, dhe vendimin e SKF brenda disa orëve deri në disa ditë."
+      ]
+    },
+    "more": "Nuk jeni të sigurt për një kushinetë që e keni tashmë? <contact>Na dërgoni foto</contact> dhe shërbimi ynë teknik do t'ju ndihmojë, ose lexoni më shumë për <skf>mbrojtjen e markës SKF</skf>."
   }
 }

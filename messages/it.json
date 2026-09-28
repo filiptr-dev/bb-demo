@@ -41,6 +41,10 @@
     "sizeFinder": {
       "title": "Ricerca cuscinetti per misura",
       "description": "Trova un cuscinetto SKF in base a foro, diametro esterno e larghezza misurati in mm. Strumento gratuito di B&B Unikoop, distributore ufficiale SKF."
+    },
+    "authenticity": {
+      "title": "Il tuo cuscinetto SKF è originale?",
+      "description": "Come riconoscere i cuscinetti SKF contraffatti e verificarli con l'app SKF Authenticate. B&B Unikoop, distributore ufficiale SKF in Macedonia del Nord."
     }
   },
   "Nav": {
@@ -55,7 +59,8 @@
     "searchNoResults": "Nessun prodotto corrispondente.",
     "searchViewAll": "Vedi tutti i {count} risultati",
     "decoder": "Decoder",
-    "sizeFinder": "Cerca per misura"
+    "sizeFinder": "Cerca per misura",
+    "authenticity": "Verifica autenticità"
   },
   "Footer": {
     "tagline": "Da 35 anni distributore ufficiale SKF per la Macedonia del Nord. Cuscinetti, tenute, trasmissione di potenza e lubrificanti.",
@@ -65,7 +70,8 @@
     "sendMessage": "Invia un messaggio →",
     "copyright": "B&B Unikoop · Versione demo",
     "privacy": "Informativa sulla privacy",
-    "terms": "Condizioni d'uso"
+    "terms": "Condizioni d'uso",
+    "authenticity": "Verifica autenticità"
   },
   "Hero": {
     "eyebrow": "Dal 1991 · Distributore SKF",
@@ -724,5 +730,64 @@
     "quantity": "Quantità",
     "pcs": "pz",
     "note": "Prezzi e disponibilità non sono mostrati online — li confermiamo nella nostra risposta."
+  },
+  "Authenticity": {
+    "eyebrow": "Autenticità SKF",
+    "title": "Il tuo cuscinetto SKF è originale?",
+    "subtitle": "I cuscinetti contraffatti sembrano convincenti e si guastano presto. Ecco come verificare un cuscinetto che hai già e come evitare del tutto il problema.",
+    "bannerAlt": "Cuscinetti SKF contraffatti sequestrati",
+    "risk": {
+      "h": "Perché è importante",
+      "p": "I contraffattori acquistano cuscinetti economici in dimensioni ISO e aggiungono marchi e scatole SKF falsi. A un occhio inesperto sembrano identici, ma nessuno sa se soddisfano i requisiti di carico, sicurezza e durata della tua macchina. Un cuscinetto guasto significa nel migliore dei casi un fermo non pianificato, nel peggiore ingranaggi, alberi e alloggiamenti danneggiati.",
+      "source": "Fonte: SKF, 2019."
+    },
+    "stats": [
+      {
+        "value": "15 t",
+        "label": "di cuscinetti contraffatti distrutti da SKF insieme alle forze dell'ordine nel 2017"
+      },
+      {
+        "value": "17.000",
+        "label": "articoli falsi in quel solo sequestro, destinati a normali catene di fornitura"
+      },
+      {
+        "value": "50%",
+        "label": "Fino alla metà dei manager potrebbe aver acquistato parti contraffatte senza saperlo"
+      }
+    ],
+    "source": {
+      "h": "La verifica più sicura: acquista da un distributore autorizzato",
+      "p": "B&B Unikoop è il distributore ufficiale SKF per la Macedonia del Nord. Ogni cuscinetto che vendiamo arriva direttamente dalla catena di fornitura SKF, quindi non c'è nulla da verificare.",
+      "catalog": "Sfoglia il catalogo",
+      "contact": "Contattaci"
+    },
+    "app": {
+      "h": "Verifica un cuscinetto con SKF Authenticate",
+      "p": "Hai acquistato prodotti SKF altrove e hai dei dubbi? L'app gratuita di SKF invia le tue foto direttamente agli esperti SKF, che rispondono via email.",
+      "ios": "App Store (iPhone, iPad)",
+      "android": "Google Play (Android)"
+    },
+    "photos": {
+      "h": "Cosa fotografare",
+      "p": "Scatta 5–10 foto nitide della scatola e del cuscinetto da ogni lato. Più dettagli, meglio è.",
+      "items": [
+        "Lato superiore della scatola",
+        "Etichetta con codice a barre",
+        "Retro della scatola",
+        "Cuscinetto nella confezione",
+        "Primo piano del cuscinetto"
+      ]
+    },
+    "steps": {
+      "h": "Come inviare una verifica",
+      "items": [
+        "Installa SKF Authenticate da App Store o Google Play.",
+        "Scatta le foto elencate sopra.",
+        "Apri l'app, tocca Start e scegli “Use existing photos” (oppure scattane di nuove). Seleziona le foto e tocca Next.",
+        "Indica da chi hai acquistato il prodotto, un breve commento come “Vi prego di verificare se questo prodotto SKF è originale” e i tuoi dati di contatto. SKF risponde a quell'indirizzo email, quindi controllalo bene.",
+        "Tocca Send e conferma. Ricevi subito una conferma automatica e il responso di SKF entro poche ore o qualche giorno."
+      ]
+    },
+    "more": "Hai dubbi su un cuscinetto che hai già? <contact>Inviaci delle foto</contact> e il nostro servizio tecnico ti aiuterà, oppure leggi di più sulla <skf>tutela del marchio SKF</skf>."
   }
 }

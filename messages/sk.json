@@ -41,6 +41,10 @@
     "sizeFinder": {
       "title": "Vyhľadávanie ložísk podľa rozmeru",
       "description": "Nájdite ložisko SKF podľa nameraného vnútorného priemeru, vonkajšieho priemeru a šírky v mm. Bezplatný nástroj od B&B Unikoop, oficiálneho distribútora SKF."
+    },
+    "authenticity": {
+      "title": "Je vaše ložisko SKF originálne?",
+      "description": "Ako rozpoznať falošné ložiská SKF a overiť ich v aplikácii SKF Authenticate. B&B Unikoop, oficiálny distribútor SKF v Severnom Macedónsku."
     }
   },
   "Nav": {
@@ -55,7 +59,8 @@
     "searchNoResults": "Žiadne zodpovedajúce produkty.",
     "searchViewAll": "Zobraziť všetky výsledky ({count})",
     "decoder": "Dekodér",
-    "sizeFinder": "Hľadať podľa rozmeru"
+    "sizeFinder": "Hľadať podľa rozmeru",
+    "authenticity": "Overenie pravosti"
   },
   "Footer": {
     "tagline": "Oficiálny distribútor SKF pre Severné Macedónsko už 35 rokov. Ložiská, tesnenia, prenos výkonu a mazivá.",
@@ -65,7 +70,8 @@
     "sendMessage": "Poslať správu →",
     "copyright": "B&B Unikoop · Demo verzia",
     "privacy": "Zásady ochrany osobných údajov",
-    "terms": "Podmienky používania"
+    "terms": "Podmienky používania",
+    "authenticity": "Overenie pravosti"
   },
   "Hero": {
     "eyebrow": "Od roku 1991 · Distribútor SKF",
@@ -724,5 +730,64 @@
     "quantity": "Množstvo",
     "pcs": "ks",
     "note": "Ceny a sklad sa online nezobrazujú — potvrdíme ich v odpovedi."
+  },
+  "Authenticity": {
+    "eyebrow": "Pravosť SKF",
+    "title": "Je vaše ložisko SKF originálne?",
+    "subtitle": "Falošné ložiská vyzerajú presvedčivo a zlyhávajú skoro. Takto overíte ložisko, ktoré už máte, a takto sa problému úplne vyhnete.",
+    "bannerAlt": "Zaistené falošné ložiská SKF",
+    "risk": {
+      "h": "Prečo na tom záleží",
+      "p": "Falšovatelia kupujú lacné ložiská v rozmeroch ISO a pridávajú k nim falošné označenia a krabice SKF. Neškolenému oku sa zdajú rovnaké, no nikto nevie, či spĺňajú požiadavky vášho stroja na zaťaženie, bezpečnosť a životnosť. Porucha ložiska v lepšom prípade znamená neplánovanú odstávku, v horšom poškodené ozubené kolesá, hriadele a telesá.",
+      "source": "Zdroj: SKF, 2019."
+    },
+    "stats": [
+      {
+        "value": "15 t",
+        "label": "falošných ložísk zničila spoločnosť SKF spolu s orgánmi činnými v trestnom konaní v roku 2017"
+      },
+      {
+        "value": "17 000",
+        "label": "falošných kusov len v tomto zaistení, určených pre bežné dodávateľské reťazce"
+      },
+      {
+        "value": "50%",
+        "label": "Až polovica manažérov mohla nevedomky kúpiť falošné diely"
+      }
+    ],
+    "source": {
+      "h": "Najistejšie overenie: nakupujte u autorizovaného distribútora",
+      "p": "B&B Unikoop je oficiálny distribútor SKF pre Severné Macedónsko. Každé ložisko, ktoré predávame, pochádza priamo z dodávateľského reťazca SKF, takže nie je čo overovať.",
+      "catalog": "Prezrieť katalóg",
+      "contact": "Kontaktujte nás"
+    },
+    "app": {
+      "h": "Overte ložisko v aplikácii SKF Authenticate",
+      "p": "Kúpili ste produkty SKF inde a máte pochybnosti? Bezplatná aplikácia SKF pošle vaše fotografie priamo expertom SKF, ktorí odpovedajú e-mailom.",
+      "ios": "App Store (iPhone, iPad)",
+      "android": "Google Play (Android)"
+    },
+    "photos": {
+      "h": "Čo fotografovať",
+      "p": "Urobte 5–10 ostrých fotografií krabice a ložiska zo všetkých strán. Čím viac detailov, tým lepšie.",
+      "items": [
+        "Vrch krabice",
+        "Štítok s čiarovým kódom",
+        "Zadná strana krabice",
+        "Ložisko v obale",
+        "Ložisko zblízka"
+      ]
+    },
+    "steps": {
+      "h": "Ako odoslať overenie",
+      "items": [
+        "Nainštalujte si SKF Authenticate z App Store alebo Google Play.",
+        "Urobte fotografie uvedené vyššie.",
+        "Otvorte aplikáciu, ťuknite na Start a zvoľte „Use existing photos“ (alebo urobte nové). Vyberte fotografie a ťuknite na Next.",
+        "Uveďte, od koho ste produkt kúpili, krátky komentár ako „Prosím, overte, či je tento produkt SKF originálny“ a svoje kontaktné údaje. SKF odpovedá na tento e-mail, preto ho skontrolujte.",
+        "Ťuknite na Send a potvrďte. Hneď dostanete automatické potvrdenie a verdikt SKF do niekoľkých hodín až dní."
+      ]
+    },
+    "more": "Nie ste si istí ložiskom, ktoré už máte? <contact>Pošlite nám fotografie</contact> a náš technický servis pomôže, alebo si prečítajte viac o <skf>ochrane značky SKF</skf>."
   }
 }

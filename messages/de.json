@@ -41,6 +41,10 @@
     "sizeFinder": {
       "title": "Lager-Größensuche",
       "description": "Finden Sie ein SKF-Lager anhand von gemessenem Bohrungsdurchmesser, Außendurchmesser und Breite in mm. Kostenloses Tool von B&B Unikoop, offizieller SKF-Vertriebspartner."
+    },
+    "authenticity": {
+      "title": "Ist Ihr SKF-Lager echt?",
+      "description": "So erkennen Sie gefälschte SKF-Lager und prüfen sie mit der App SKF Authenticate. B&B Unikoop, offizieller SKF-Distributor in Nordmazedonien."
     }
   },
   "Nav": {
@@ -55,7 +59,8 @@
     "searchNoResults": "Keine passenden Produkte.",
     "searchViewAll": "Alle {count} Ergebnisse anzeigen",
     "decoder": "Decoder",
-    "sizeFinder": "Größensuche"
+    "sizeFinder": "Größensuche",
+    "authenticity": "Echtheitsprüfung"
   },
   "Footer": {
     "tagline": "Seit 35 Jahren offizieller SKF-Vertragshändler für Nordmazedonien. Wälzlager, Dichtungen, Antriebstechnik und Schmierstoffe.",
@@ -65,7 +70,8 @@
     "sendMessage": "Nachricht senden →",
     "copyright": "B&B Unikoop · Demoversion",
     "privacy": "Datenschutzerklärung",
-    "terms": "Nutzungsbedingungen"
+    "terms": "Nutzungsbedingungen",
+    "authenticity": "Echtheitsprüfung"
   },
   "Hero": {
     "eyebrow": "Seit 1991 · SKF-Vertragshändler",
@@ -724,5 +730,64 @@
     "quantity": "Menge",
     "pcs": "Stk.",
     "note": "Preise und Bestand werden nicht online angezeigt — wir bestätigen sie in unserer Antwort."
+  },
+  "Authenticity": {
+    "eyebrow": "SKF-Echtheit",
+    "title": "Ist Ihr SKF-Lager echt?",
+    "subtitle": "Gefälschte Lager sehen überzeugend aus und fallen früh aus. So prüfen Sie ein Lager, das Sie bereits haben, und so vermeiden Sie das Problem ganz.",
+    "bannerAlt": "Beschlagnahmte gefälschte SKF-Lager",
+    "risk": {
+      "h": "Warum das wichtig ist",
+      "p": "Fälscher kaufen billige Lager in ISO-Abmessungen und versehen sie mit falschen SKF-Markierungen und Verpackungen. Für das ungeschulte Auge sehen sie identisch aus, doch niemand weiß, ob sie die Anforderungen Ihrer Maschine an Belastung, Sicherheit und Lebensdauer erfüllen. Ein Lagerausfall bedeutet im besten Fall ungeplanten Stillstand, im schlimmsten Fall beschädigte Zahnräder, Wellen und Gehäuse.",
+      "source": "Quelle: SKF, 2019."
+    },
+    "stats": [
+      {
+        "value": "15 t",
+        "label": "gefälschte Lager hat SKF 2017 gemeinsam mit den Behörden vernichtet"
+      },
+      {
+        "value": "17.000",
+        "label": "gefälschte Artikel allein in dieser Beschlagnahme, bestimmt für reguläre Lieferketten"
+      },
+      {
+        "value": "50%",
+        "label": "Bis zu die Hälfte der Manager hat womöglich unwissentlich gefälschte Teile gekauft"
+      }
+    ],
+    "source": {
+      "h": "Die sicherste Prüfung: beim autorisierten Distributor kaufen",
+      "p": "B&B Unikoop ist der offizielle SKF-Distributor für Nordmazedonien. Jedes Lager, das wir verkaufen, stammt direkt aus der SKF-Lieferkette. Es gibt also nichts zu prüfen.",
+      "catalog": "Zum Katalog",
+      "contact": "Kontakt aufnehmen"
+    },
+    "app": {
+      "h": "Lager mit SKF Authenticate prüfen",
+      "p": "SKF-Produkte anderswo gekauft und Zweifel? Die kostenlose SKF-App sendet Ihre Fotos direkt an SKF-Experten, die per E-Mail antworten.",
+      "ios": "App Store (iPhone, iPad)",
+      "android": "Google Play (Android)"
+    },
+    "photos": {
+      "h": "Was Sie fotografieren sollten",
+      "p": "Machen Sie 5–10 scharfe Fotos von Verpackung und Lager von allen Seiten. Je mehr Details, desto besser.",
+      "items": [
+        "Oberseite der Verpackung",
+        "Barcode-Etikett",
+        "Rückseite der Verpackung",
+        "Lager in der Folie",
+        "Nahaufnahme des Lagers"
+      ]
+    },
+    "steps": {
+      "h": "So senden Sie eine Prüfung",
+      "items": [
+        "Installieren Sie SKF Authenticate aus dem App Store oder Google Play.",
+        "Machen Sie die oben aufgeführten Fotos.",
+        "Öffnen Sie die App, tippen Sie auf Start und wählen Sie „Use existing photos“ (oder machen Sie neue). Wählen Sie Ihre Fotos aus und tippen Sie auf Next.",
+        "Geben Sie an, bei wem Sie das Produkt gekauft haben, einen kurzen Kommentar wie „Bitte prüfen Sie, ob dieses SKF-Produkt echt ist“ und Ihre Kontaktdaten. SKF antwortet an diese E-Mail-Adresse, prüfen Sie sie also genau.",
+        "Tippen Sie auf Send und bestätigen Sie. Sie erhalten sofort eine automatische Eingangsbestätigung und das Ergebnis von SKF innerhalb von wenigen Stunden bis einigen Tagen."
+      ]
+    },
+    "more": "Unsicher bei einem Lager, das Sie schon haben? <contact>Schicken Sie uns Fotos</contact>, unser technischer Service hilft Ihnen, oder lesen Sie mehr zum <skf>SKF-Markenschutz</skf>."
   }
 }
