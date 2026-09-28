@@ -4,8 +4,8 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { alternatesFor } from "@/i18n/metadata";
 import type { Locale } from "@/i18n/routing";
-import { productCategories, getProductCategory } from "@/lib/data";
-import CompanyValuesFooter from "@/components/CompanyValuesFooter";
+import { productCategories, getProductCategory } from "@/lib/domain/taxonomy";
+import CompanyValuesFooter from "@/components/layout/CompanyValuesFooter";
 
 export function generateStaticParams() {
   return productCategories.map((c) => ({ slug: c.slug }));

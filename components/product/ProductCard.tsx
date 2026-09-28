@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import { dims, type Product } from "@/lib/data";
-import BearingIcon from "./BearingIcon";
+import { dims, type Product } from "@/lib/domain/product";
+import BearingIcon from "@/components/brand/BearingIcon";
 
 export default function ProductCard({ p }: { p: Product }) {
   const tt = useTranslations("BearingTypes");

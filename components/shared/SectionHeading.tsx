@@ -1,4 +1,4 @@
-import Reveal from "./Reveal";
+import Reveal from "@/components/motion/Reveal";
 import type { ReactNode } from "react";
 
 export default function SectionHeading({

@@ -1,7 +1,7 @@
 import { Phone } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { site } from "@/lib/site";
-import Reveal from "./Reveal";
+import Reveal from "@/components/motion/Reveal";
 
 export default async function CompanyValuesFooter() {
   const t = await getTranslations("CompanyValues");

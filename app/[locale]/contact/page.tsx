@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Phone, Clock, MapPin } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import ContactForm from "@/components/ContactForm";
+import ContactForm from "@/components/contact/ContactForm";
 import { site } from "@/lib/site";
 import { alternatesFor } from "@/i18n/metadata";
 import type { Locale } from "@/i18n/routing";

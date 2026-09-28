@@ -5,10 +5,10 @@ import { Link, getPathname } from "@/i18n/navigation";
 import { alternatesFor } from "@/i18n/metadata";
 import type { Locale } from "@/i18n/routing";
 import { site } from "@/lib/site";
-import { dim, dims } from "@/lib/data";
-import { getProduct, relatedProducts } from "@/lib/products";
-import BearingIcon from "@/components/BearingIcon";
-import ProductCard from "@/components/ProductCard";
+import { dim, dims } from "@/lib/domain/product";
+import { getProduct, relatedProducts } from "@/server/products";
+import BearingIcon from "@/components/brand/BearingIcon";
+import ProductCard from "@/components/product/ProductCard";
 
 // ~15k products: render each on first visit, then serve it cached for an hour
 export const revalidate = 3600;

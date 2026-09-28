@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
-import { industries, productCategories } from "@/lib/data";
-import { productSitemapRows } from "@/lib/products";
-import { productChunk, sitemapIds, withAlternates } from "@/lib/sitemap";
+import { industries, productCategories } from "@/lib/domain/taxonomy";
+import { productSitemapRows } from "@/server/products";
+import { productChunk, sitemapIds, withAlternates } from "@/server/sitemap";
 
 const pages = [
   "/",

@@ -1,10 +1,10 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import CatalogClient from "@/components/CatalogClient";
+import CatalogClient from "@/components/catalog/CatalogClient";
 import { alternatesFor } from "@/i18n/metadata";
 import type { Locale } from "@/i18n/routing";
-import { productCount } from "@/lib/products";
+import { productCount } from "@/server/products";
 
 export const revalidate = 3600;
 

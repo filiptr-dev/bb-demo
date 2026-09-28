@@ -1,0 +1,624 @@
+{
+  "Common": {
+    "brandFirst": "B&B",
+    "brandSecond": "UNIKOOP",
+    "brandName": "B&B Unikoop",
+    "cities": {
+      "prilep": "Prilep",
+      "skopje": "Skopje"
+    },
+    "hours": "Lun–Ven 09:00–16:00",
+    "updated": "24 settembre 2026",
+    "scrollAria": "Scorri verso il basso",
+    "searchShort": "Cerca appellativo…"
+  },
+  "Metadata": {
+    "site": {
+      "title": "B&B UNIKOOP – Cuscinetti SKF e soluzioni industriali",
+      "titleTemplate": "%s | B&B UNIKOOP",
+      "description": "Distributore ufficiale SKF in Macedonia del Nord. Catalogo cuscinetti con ricerca per appellativo e filtro per settore."
+    },
+    "catalog": {
+      "title": "Catalogo cuscinetti",
+      "description": "Cerca cuscinetti SKF per appellativo o dimensioni e filtra per settore."
+    },
+    "contact": {
+      "title": "Contatti",
+      "description": "Contatta B&B Unikoop – distributore ufficiale SKF in Macedonia del Nord. Assistenza telefonica 24/7, Prilep e Skopje."
+    },
+    "privacy": {
+      "title": "Informativa sulla privacy",
+      "description": "Come B&B Unikoop raccoglie, utilizza e protegge i tuoi dati personali."
+    },
+    "terms": {
+      "title": "Condizioni d'uso",
+      "description": "Condizioni d'uso del sito web di B&B Unikoop."
+    }
+  },
+  "Nav": {
+    "about": "Chi siamo",
+    "products": "Prodotti",
+    "industries": "Settori",
+    "contact": "Contatti",
+    "searchPlaceholder": "Cerca appellativo, es. 6205…",
+    "searchLabel": "Cerca cuscinetto",
+    "eCatalog": "Catalogo online",
+    "menu": "Menu",
+    "searchNoResults": "Nessun prodotto corrispondente.",
+    "searchViewAll": "Vedi tutti i {count} risultati"
+  },
+  "Footer": {
+    "tagline": "Da 35 anni distributore ufficiale SKF per la Macedonia del Nord. Cuscinetti, tenute, trasmissione di potenza e lubrificanti.",
+    "industriesHeading": "Settori",
+    "contactHeading": "Contatti · 24/7",
+    "officeHours": "Sede di Skopje: Lun–Ven 09:00–16:00",
+    "sendMessage": "Invia un messaggio →",
+    "copyright": "B&B Unikoop · Versione demo",
+    "privacy": "Informativa sulla privacy",
+    "terms": "Condizioni d'uso"
+  },
+  "Hero": {
+    "eyebrow": "Dal 1991 · Distributore SKF",
+    "heading": [
+      "SOLUZIONI",
+      "INDUSTRIALI",
+      "INTEGRATE"
+    ],
+    "description": "B&B Unikoop fornisce cuscinetti industriali, componenti per la trasmissione di potenza e soluzioni per la manutenzione in tutta la Macedonia del Nord. In qualità di distributore ufficiale SKF, forniamo prodotti originali al 100%.",
+    "ctaQuote": "Richiedi un preventivo",
+    "ctaAbout": "Scopri di più",
+    "scroll": "Scorri",
+    "badgeAlt": "B&B Unikoop – distributore autorizzato SKF"
+  },
+  "Home": {
+    "about": {
+      "imageAlt": "Il team di B&B Unikoop",
+      "eyebrow": "Chi siamo",
+      "headingPrefix": "Chi",
+      "headingHighlight": "siamo",
+      "years": "35+",
+      "yearsLabel": "Anni di esperienza",
+      "p1": "B&B Unikoop è il distributore ufficiale SKF per la Macedonia del Nord. Da 35 anni forniamo all'industria cuscinetti, supporti, tenute, cinghie, catene e sistemi di lubrificazione.",
+      "p2": "La nostra missione è ridurre i fermi macchina e garantire la continuità operativa dei nostri clienti, con prodotti originali e supporto qualificato 24/7.",
+      "badges": [
+        "Distributore ufficiale SKF",
+        "Certificati",
+        "Verifica di autenticità"
+      ],
+      "ctaCatalog": "Consulta il catalogo →",
+      "stats": [
+        {
+          "value": 35,
+          "suffix": "+",
+          "label": "Anni di esperienza"
+        },
+        {
+          "value": 2,
+          "suffix": "",
+          "label": "Sedi"
+        },
+        {
+          "value": 24,
+          "suffix": "/7",
+          "label": "Assistenza mobile"
+        },
+        {
+          "value": 100,
+          "suffix": "%",
+          "label": "Prodotti originali"
+        }
+      ]
+    },
+    "products": {
+      "eyebrow": "I nostri prodotti",
+      "headingPrefix": "Soluzioni",
+      "headingHighlight": "industriali complete",
+      "more": "Scopri di più →",
+      "categories": [
+        {
+          "name": "Cuscinetti",
+          "blurb": "Cuscinetti a sfere, a rulli, assiali e unità cuscinetto.",
+          "href": "/catalog"
+        },
+        {
+          "name": "Supporti",
+          "blurb": "Supporti e unità cuscinetto per ogni applicazione.",
+          "href": "#contact"
+        },
+        {
+          "name": "Tenute",
+          "blurb": "Tenute industriali e sistemi di tenuta.",
+          "href": "#contact"
+        },
+        {
+          "name": "Cinghie e catene",
+          "blurb": "Componenti per la trasmissione di potenza.",
+          "href": "#contact"
+        },
+        {
+          "name": "Sistemi di lubrificazione",
+          "blurb": "Lubrificazione automatica che prolunga la vita delle macchine.",
+          "href": "#contact"
+        },
+        {
+          "name": "Utensili per la manutenzione",
+          "blurb": "Utensili per montaggio, smontaggio e diagnostica.",
+          "href": "#contact"
+        }
+      ]
+    },
+    "skfOffer": {
+      "eyebrow": "Offerta originale SKF",
+      "headingPrefix": "La gamma",
+      "headingHighlight": "SKF completa",
+      "lead": "Cuscinetti, supporti, tenute, lubrificazione, allineamento e monitoraggio delle condizioni: tutte le linee di prodotto SKF, direttamente da un distributore autorizzato.",
+      "view": "Vedi"
+    },
+    "industries": {
+      "eyebrow": "Settori che serviamo",
+      "headingPrefix": "Manteniamo",
+      "headingHighlight": "ogni settore in movimento",
+      "openCatalog": "Apri il catalogo"
+    },
+    "brands": {
+      "eyebrow": "Distributore autorizzato",
+      "headingPrefix": "Scelti da un",
+      "headingHighlight": "marchio di livello mondiale",
+      "title": "Leader mondiale nei cuscinetti e nelle tenute",
+      "blurb": "In qualità di distributore ufficiale, offriamo l'intera gamma SKF: cuscinetti, supporti, tenute, sistemi di lubrificazione e utensili per la manutenzione, oltre a SKF Mount e DialSet."
+    },
+    "why": {
+      "eyebrow": "Perché B&B Unikoop",
+      "headingPrefix": "Fondati sulla",
+      "headingHighlight1": "fiducia",
+      "headingMiddle": ", guidati dalla",
+      "headingHighlight2": "qualità",
+      "items": [
+        {
+          "title": "Prodotti originali",
+          "blurb": "Cuscinetti SKF originali al 100% con verifica di autenticità."
+        },
+        {
+          "title": "Ampia disponibilità",
+          "blurb": "Cuscinetti, supporti, tenute, cinghie, catene e lubrificanti in un unico fornitore."
+        },
+        {
+          "title": "Supporto qualificato",
+          "blurb": "Ingegneri che vi aiutano a scegliere la soluzione giusta."
+        },
+        {
+          "title": "Consegna rapida",
+          "blurb": "Consegne in tutta la Macedonia del Nord, con servizio di emergenza 24/7."
+        },
+        {
+          "title": "35 anni di esperienza",
+          "blurb": "Collaborazioni di lunga data con le maggiori industrie del Paese."
+        },
+        {
+          "title": "Certificati",
+          "blurb": "Documentazione e certificati per ogni prodotto."
+        }
+      ]
+    },
+    "cta": {
+      "heading1": "Cercate soluzioni",
+      "headingHighlight": "industriali affidabili?",
+      "blurb": "Richiedete oggi stesso un preventivo. Il nostro team è pronto ad aiutarvi a trovare la soluzione giusta.",
+      "contact": "Contattateci →",
+      "catalog": "Catalogo"
+    }
+  },
+  "Industries": {
+    "cement": {
+      "name": "Cemento",
+      "blurb": "Cuscinetti per forni rotativi, mulini e ventilatori, resistenti alla polvere e alle alte temperature."
+    },
+    "metallurgy": {
+      "name": "Metallurgia",
+      "blurb": "Soluzioni per cilindri di laminazione, colata continua e carichi pesanti in condizioni estreme."
+    },
+    "paper": {
+      "name": "Carta",
+      "blurb": "Cuscinetti di precisione per macchine continue, seccherie e calandre."
+    },
+    "power": {
+      "name": "Produzione di energia",
+      "blurb": "Cuscinetti affidabili per generatori, turbine, pompe e motori elettrici."
+    },
+    "mining": {
+      "name": "Settore minerario",
+      "blurb": "Cuscinetti robusti per escavatori, nastri trasportatori, frantoi e vagli vibranti."
+    },
+    "chemical": {
+      "name": "Chimica",
+      "blurb": "Cuscinetti e tenute per pompe, miscelatori e compressori in ambienti aggressivi."
+    },
+    "food": {
+      "name": "Alimentare e bevande",
+      "blurb": "Cuscinetti schermati con lubrificanti per uso alimentare: pulizia facile e lunga durata."
+    },
+    "recycling": {
+      "name": "Riciclaggio",
+      "blurb": "Cuscinetti per frantoi, trituratori e presse soggetti a carichi d'urto."
+    }
+  },
+  "ProductCategories": {
+    "bearings": {
+      "name": "Cuscinetti",
+      "blurb": "Gamma completa di cuscinetti SKF: radiali a sfere, a sfere a contatto obliquo, orientabili a sfere, orientabili a rulli, a rulli conici, a rulli cilindrici e assiali."
+    },
+    "housings": {
+      "name": "Supporti",
+      "blurb": "Supporti SNH, SNL e SSNHD per unità cuscinetto: gamma, dimensioni e materiali."
+    },
+    "cooper": {
+      "name": "Cooper",
+      "blurb": "Cuscinetti a rulli scomponibili Cooper Bearings: montaggio senza smontare l'albero."
+    },
+    "seals": {
+      "name": "Tenute",
+      "blurb": "Anelli di tenuta radiali per alberi (CR Seals) e anelli V-ring per un'ampia gamma di applicazioni industriali."
+    },
+    "sleeves": {
+      "name": "Bussole di trazione",
+      "blurb": "Bussole di trazione con foro conico per il montaggio di cuscinetti su alberi lisci."
+    },
+    "belts-chains": {
+      "name": "Cinghie, catene",
+      "blurb": "Cinghie, pulegge, catene, pignoni, bussole e giunti: componenti per la trasmissione di potenza."
+    },
+    "bushings": {
+      "name": "Bussole",
+      "blurb": "Bussole per la trasmissione di potenza, incluse ghiere di bloccaggio e soluzioni SKF Speedi-Sleeve."
+    },
+    "nuts": {
+      "name": "Ghiere di bloccaggio",
+      "blurb": "Serie di ghiere di bloccaggio per il fissaggio dei cuscinetti sull'albero."
+    },
+    "speedi-sleeve": {
+      "name": "SKF Speedi-Sleeve",
+      "blurb": "Bussola a parete sottile per ripristinare le superfici usurate dell'albero sotto la tenuta."
+    },
+    "food-industry": {
+      "name": "Prodotti per l'industria alimentare",
+      "blurb": "Cuscinetti, lubrificanti e tenute sicuri per uso alimentare, conformi ai requisiti del settore."
+    },
+    "pulley-alignment": {
+      "name": "Strumenti per l'allineamento delle pulegge",
+      "blurb": "Strumenti per un allineamento preciso delle pulegge: minore usura e consumo energetico ridotto."
+    },
+    "monitoring-instruments": {
+      "name": "Strumenti di monitoraggio",
+      "blurb": "Endoscopi, analizzatori d'olio, termometri, tachimetri, strumenti acustici e sistemi di analisi (Microlog, IMx)."
+    },
+    "mounting-tools": {
+      "name": "Utensili di montaggio e smontaggio",
+      "blurb": "Kit di utensili per il montaggio e lo smontaggio sicuro dei cuscinetti."
+    },
+    "maintenance": {
+      "name": "Manutenzione",
+      "blurb": "Riscaldatori a induzione e materiale formativo sul ciclo di vita del cuscinetto."
+    },
+    "shim-packs": {
+      "name": "Spessori calibrati SKF TMAS",
+      "blurb": "Spessori di precisione in diverse misure e spessori per un allineamento accurato."
+    },
+    "greases": {
+      "name": "Grassi",
+      "blurb": "Grassi SKF, incluse le serie per uso alimentare (LGFP, LGFQ, LGFG): scelta in base alle condizioni di esercizio."
+    },
+    "lubrication-systems": {
+      "name": "Sistemi di lubrificazione",
+      "blurb": "Sistemi di lubrificazione centralizzata che prolungano la vita delle macchine."
+    },
+    "automatic-lubricators": {
+      "name": "Lubrificatori automatici",
+      "blurb": "Lubrificatori automatici per un dosaggio del grasso continuo e preciso."
+    },
+    "vibracon": {
+      "name": "SKF VIBRACON",
+      "blurb": "Zeppe regolabili per l'allineamento preciso di macchinari pesanti."
+    },
+    "composite-housing-units": {
+      "name": "Unità con supporto in composito",
+      "blurb": "Unità cuscinetto a sfere con supporto in materiale composito: leggere e resistenti alla corrosione."
+    },
+    "y-bearings": {
+      "name": "Cuscinetti Y e unità",
+      "blurb": "Cuscinetti Y e unità cuscinetto: gamma, tolleranze, gioco interno e gabbie."
+    }
+  },
+  "BearingTypes": {
+    "deep-groove": {
+      "name": "Cuscinetti radiali a sfere",
+      "short": "Radiali a sfere",
+      "blurb": "Cuscinetto radiale a sfere per impieghi generici con carichi da leggeri a moderati."
+    },
+    "angular-contact": {
+      "name": "Cuscinetti a sfere a contatto obliquo",
+      "short": "A sfere a contatto obliquo",
+      "blurb": "Cuscinetto a sfere a contatto obliquo per carichi combinati radiali e assiali."
+    },
+    "self-aligning": {
+      "name": "Cuscinetti orientabili a sfere",
+      "short": "Orientabili a sfere",
+      "blurb": "Cuscinetto orientabile che compensa il disallineamento dell'albero."
+    },
+    "spherical-roller": {
+      "name": "Cuscinetti orientabili a rulli",
+      "short": "Orientabili a rulli",
+      "blurb": "Cuscinetto orientabile a rulli per carichi elevati e disallineamenti."
+    },
+    "tapered-roller": {
+      "name": "Cuscinetti a rulli conici",
+      "short": "A rulli conici",
+      "blurb": "Cuscinetto a rulli conici per carichi combinati radiali e assiali."
+    },
+    "cylindrical-roller": {
+      "name": "Cuscinetti a rulli cilindrici",
+      "short": "A rulli cilindrici",
+      "blurb": "Cuscinetto a rulli cilindrici per elevati carichi radiali."
+    },
+    "thrust-ball": {
+      "name": "Cuscinetti assiali a sfere",
+      "short": "Assiali a sfere",
+      "blurb": "Cuscinetto assiale a sfere per carichi puramente assiali."
+    },
+    "unit": {
+      "name": "Unità cuscinetto",
+      "short": "Unità cuscinetto a sfere",
+      "blurb": "Unità cuscinetto con supporto, pronta per il montaggio."
+    },
+    "toroidal": {
+      "name": "Cuscinetti toroidali a rulli CARB",
+      "short": "Toroidali a rulli CARB",
+      "blurb": "Cuscinetto toroidale a rulli CARB che assorbe sia il disallineamento sia lo spostamento assiale."
+    },
+    "needle-roller": {
+      "name": "Cuscinetti a rullini",
+      "short": "A rullini",
+      "blurb": "Cuscinetto a rullini con sezione ridotta per carichi elevati in spazi ristretti."
+    },
+    "track-runner": {
+      "name": "Rotelle di appoggio",
+      "short": "Rotelle di appoggio",
+      "blurb": "Rotella di appoggio (rotella a perno) con anello esterno a parete spessa per il rotolamento su piste."
+    },
+    "plain": {
+      "name": "Cuscinetti radenti, boccole e teste a snodo",
+      "short": "Cuscinetti radenti",
+      "blurb": "Cuscinetto radente, boccola o testa a snodo per movimenti oscillanti lenti e carichi elevati."
+    },
+    "housing": {
+      "name": "Supporti e accessori",
+      "short": "Supporti",
+      "blurb": "Supporto per cuscinetti o accessorio per il montaggio e la protezione del cuscinetto."
+    },
+    "sleeve-nut": {
+      "name": "Bussole e ghiere di bloccaggio",
+      "short": "Bussole e ghiere",
+      "blurb": "Bussola di trazione o di smontaggio, ghiera o dispositivo di bloccaggio per il fissaggio dei cuscinetti sull'albero."
+    },
+    "seal": {
+      "name": "Anelli di tenuta radiali",
+      "short": "Tenute",
+      "blurb": "Anello di tenuta radiale che trattiene il lubrificante e tiene lontani i contaminanti."
+    }
+  },
+  "ProductAttrs": {
+    "seal": {
+      "open": "Aperto",
+      "shields": "Schermi su entrambi i lati",
+      "both": "Tenute su entrambi i lati",
+      "one-side": "Tenuta o schermo su un lato",
+      "other": "Altra tenuta"
+    },
+    "boreType": {
+      "tapered": "Conico",
+      "cylindrical": "Cilindrico"
+    },
+    "dimensionsLabel": "Dimensioni"
+  },
+  "Catalog": {
+    "page": {
+      "titlePrefix": "CATALOGO",
+      "titleHighlight": "CUSCINETTI",
+      "subtitle": "Sfoglia il nostro catalogo completo di {count} prodotti. Cerca per appellativo, filtra per tipo, dimensioni o tenuta e trova esattamente ciò che ti serve.",
+      "loading": "Caricamento…"
+    },
+    "client": {
+      "searchPlaceholder": "Appellativo (6205, 22220), dimensioni (25x52x15), un numero (25) o una parola (cemento, conico)…",
+      "searchLabel": "Cerca per appellativo",
+      "filters": "Filtri",
+      "viewToggleLabel": "Cambia vista",
+      "viewGrid": "Griglia",
+      "viewTable": "Tabella",
+      "resetFilters": "Reimposta",
+      "allIndustries": "Tutti i settori",
+      "classification": "Classificazione",
+      "allClassifications": "Tutte le classificazioni",
+      "boreTypeLabel": "Tipo di foro",
+      "allBoreTypes": "Tutti i tipi",
+      "sealLabel": "Tipo di tenuta",
+      "allSeals": "Tutti i tipi",
+      "quickBoreRange": "Selezione rapida foro (mm)",
+      "boreRangeAll": "Tutti",
+      "dInner": "Diametro foro d (mm)",
+      "dOuter": "Diametro esterno D (mm)",
+      "width": "Larghezza B (mm)",
+      "min": "Min",
+      "max": "Max",
+      "clearAllFilters": "✕ Cancella tutti i filtri",
+      "resultCount": "{count, plural, one {Visualizzato <b>#</b> prodotto} other {Visualizzati <b>#</b> prodotti}}",
+      "resultCountOf": "Visualizzati <b>{count, number}</b> di <n>{total, number}</n> {total, plural, one {prodotto} other {prodotti}}",
+      "filteredSuffix": "(filtrati)",
+      "pageLabel": "Pagina",
+      "of": "di",
+      "noResultsTitle": "Nessun prodotto trovato",
+      "noResultsHint": "Controlla l'appellativo o reimposta i filtri. Chiamaci: troveremo il cuscinetto giusto per te.",
+      "columns": {
+        "designation": "Appellativo",
+        "classification": "Classificazione",
+        "boreType": "Tipo di foro",
+        "seal": "Tenuta",
+        "dInner": "Foro d (mm)",
+        "dOuter": "Esterno D (mm)",
+        "width": "Larghezza B (mm)"
+      },
+      "viewProduct": "Vedi",
+      "pagination": "Pagine",
+      "prev": "Precedente",
+      "next": "Successiva",
+      "viewAria": "Vedi: {designation}",
+      "loading": "Caricamento…"
+    }
+  },
+  "ProductDetail": {
+    "breadcrumbHome": "Home",
+    "breadcrumbCatalog": "Catalogo",
+    "specsHeading": "Specifiche tecniche",
+    "specs": {
+      "designation": "Appellativo",
+      "brand": "Marchio",
+      "type": "Tipo",
+      "dInner": "Diametro foro (d)",
+      "dOuter": "Diametro esterno (D)",
+      "width": "Larghezza (B)",
+      "seal": "Tenuta"
+    },
+    "industriesHeading": "Impiegato nei settori",
+    "relatedHeading": "Prodotti correlati",
+    "metaTitle": "Cuscinetto {designation} {brand} – {d}×{D}×{B} mm",
+    "metaDescription": "{brand} {designation}: {type}, foro ø {d} mm, esterno ø {D} mm, larghezza {B} mm. Disponibile presso B&B Unikoop.",
+    "metaTitlePlain": "{designation} {brand} – {type}",
+    "metaDescriptionPlain": "{brand} {designation}: {type}. Disponibile presso B&B Unikoop."
+  },
+  "IndustryDetail": {
+    "titlePrefix": "Cuscinetti per il settore",
+    "catalogLink": "Apri nel catalogo con i filtri →"
+  },
+  "ProductCategoryDetail": {
+    "back": "← Torna alla home",
+    "contactIntro": "Questa categoria fa parte dell'offerta SKF completa di B&B Unikoop. Per specifiche tecniche, disponibilità e preventivi, contattateci.",
+    "contactCta": "Contattaci →"
+  },
+  "CompanyValues": {
+    "items": [
+      {
+        "title": "Onestà e integrità",
+        "blurb": "Lavoriamo con trasparenza e responsabilità con ogni cliente."
+      },
+      {
+        "title": "Trasparenza",
+        "blurb": "Condizioni chiare, prodotti originali e documentazione verificabile."
+      },
+      {
+        "title": "Relazioni solide",
+        "blurb": "Collaborazioni di lunga data basate sulla fiducia."
+      },
+      {
+        "title": "Responsabilità personale",
+        "blurb": "Ogni membro del team risponde della qualità del proprio lavoro."
+      }
+    ],
+    "mobileService": "Assistenza mobile 24/7"
+  },
+  "Contact": {
+    "titlePrefix": "METTITI IN",
+    "titleHighlight": "CONTATTO",
+    "subtitle": "Richiedi un preventivo o una consulenza sulla scelta del cuscinetto. Rispondiamo il prima possibile.",
+    "availability": "24/7",
+    "office": "Sede di Skopje",
+    "locations": "Sedi",
+    "locationsValue": "Prilep · Skopje, Macedonia del Nord",
+    "form": {
+      "name": "Nome e cognome *",
+      "email": "Email *",
+      "phone": "Telefono",
+      "message": "Messaggio *",
+      "messagePlaceholder": "Appellativo del cuscinetto, quantità, settore…",
+      "consent": "Acconsento al trattamento dei miei dati per rispondere a questa richiesta, in conformità con l'<link>Informativa sulla privacy</link>. *",
+      "submit": "Invia",
+      "sending": "Invio in corso…",
+      "thanksTitle": "Grazie!",
+      "thanksBody": "Il tuo messaggio è stato inviato. Ti risponderemo il prima possibile.",
+      "genericError": "Si è verificato un errore. Riprova.",
+      "errors": {
+        "invalid": "Richiesta non valida.",
+        "required": "Compila tutti i campi obbligatori.",
+        "send": "Impossibile inviare il messaggio. Riprova."
+      }
+    }
+  },
+  "Privacy": {
+    "title": "Informativa sulla privacy",
+    "updatedLabel": "Ultimo aggiornamento:",
+    "sections": [
+      {
+        "h": "1. Titolare del trattamento",
+        "p": "B&B Unikoop (\"noi\") è il titolare del trattamento dei dati personali raccolti tramite questo sito web. Contatti: <link>/contact</link>."
+      },
+      {
+        "h": "2. Quali dati raccogliamo",
+        "p": "Quando ci scrivi tramite il modulo di contatto: nome, email, telefono (facoltativo) e il contenuto del messaggio. Non richiediamo né raccogliamo dati sensibili."
+      },
+      {
+        "h": "3. Finalità e base giuridica",
+        "p": "Utilizziamo i dati esclusivamente per rispondere alla tua richiesta e preparare un preventivo, sulla base del tuo consenso e del nostro legittimo interesse alla comunicazione commerciale."
+      },
+      {
+        "h": "4. Periodo di conservazione",
+        "p": "Conserviamo i dati solo per il tempo necessario alla comunicazione e agli obblighi di legge, dopodiché vengono cancellati."
+      },
+      {
+        "h": "5. Condivisione",
+        "p": "Non vendiamo i tuoi dati. Possono essere trattati da fornitori di servizi (hosting, invio email) esclusivamente su nostre istruzioni."
+      },
+      {
+        "h": "6. Cookie",
+        "p": "Questo sito non utilizza cookie di tracciamento o pubblicitari. Possono essere utilizzati cookie tecnici necessari."
+      },
+      {
+        "h": "7. I tuoi diritti",
+        "p": "Hai il diritto di accesso, rettifica, cancellazione, limitazione, portabilità e opposizione, nonché il diritto di proporre reclamo all'Agenzia per la protezione dei dati personali. Invia le richieste tramite la pagina dei contatti."
+      }
+    ]
+  },
+  "Terms": {
+    "title": "Condizioni d'uso",
+    "updatedLabel": "Ultimo aggiornamento:",
+    "sections": [
+      {
+        "h": "1. Accettazione",
+        "p": "Utilizzando questo sito accetti le presenti condizioni. Se non le accetti, ti preghiamo di non utilizzarlo."
+      },
+      {
+        "h": "2. Finalità informativa",
+        "p": "Il catalogo ha finalità puramente informative. Dimensioni, appellativi e descrizioni sono forniti in buona fede ma possono contenere errori. Verifica i dati con noi prima di ordinare. Le informazioni presenti sul sito non costituiscono un'offerta vincolante."
+      },
+      {
+        "h": "3. Prezzi e disponibilità",
+        "p": "Prezzi e giacenze non sono pubblicati sul sito e vengono concordati individualmente tramite preventivo."
+      },
+      {
+        "h": "4. Proprietà intellettuale",
+        "p": "I contenuti del sito sono di proprietà di B&B Unikoop o dei rispettivi titolari dei diritti. SKF e gli altri marchi appartengono ai rispettivi proprietari. Non è consentita la riproduzione senza il nostro consenso."
+      },
+      {
+        "h": "5. Limitazione di responsabilità",
+        "p": "Nei limiti consentiti dalla legge, non rispondiamo di danni derivanti dall'uso delle informazioni presenti sul sito."
+      },
+      {
+        "h": "6. Modifiche e legge applicabile",
+        "p": "Le condizioni possono essere modificate; si applica la versione pubblicata sul sito. La legge applicabile è quella della Repubblica di Macedonia del Nord."
+      }
+    ]
+  },
+  "ThemeToggle": {
+    "client": "Colori del sito cliente",
+    "demo": "Colori demo"
+  },
+  "LanguageSwitcher": {
+    "label": "Lingua"
+  }
+}

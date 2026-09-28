@@ -1,24 +1,19 @@
+import "server-only";
 import { cache } from "react";
 import type { Fragment } from "postgres";
 import { sql } from "./db";
-import { bearingTypes, boreCodes, industries, sealCodes, type Product } from "./data";
-import { normalize, parseDims } from "./search";
-import type { Locale } from "@/i18n/routing";
-import mk from "@/messages/mk.json";
-import en from "@/messages/en.json";
-import sq from "@/messages/sq.json";
-import de from "@/messages/de.json";
-import tr from "@/messages/tr.json";
-
-const messages = { mk, en, sq, de, tr } as const;
+import { boreCodes, sealCodes, type Product } from "@/lib/domain/product";
+import { bearingTypes, industries } from "@/lib/domain/taxonomy";
+import { normalize, parseDims } from "@/lib/search";
+import { MAX_LIMIT, PAGE_SIZE, type ProductQuery } from "@/lib/catalog-query";
+import { loadMessages, type Messages } from "@/i18n/messages";
 
 const columns = sql`slug, designation, brand, type, classification, d, outer_d as "D", width as "B", seal, bore_type as "boreType", industries`;
 const natural = sql`designation collate natural_sort`;
 const and = (conds: Fragment[]) => conds.reduce((a, c) => sql`${a} and ${c}`, sql`true`);
 
 // Which type/seal/bore/industry codes a free word points at, in this locale's wording (slugs keep English working everywhere).
-function wordMatches(locale: Locale, word: string) {
-  const m = messages[locale] ?? messages.en;
+function wordMatches(m: Messages, word: string) {
   const has = (...s: string[]) => s.some((x) => x.toLowerCase().includes(word));
   return {
     types: bearingTypes.map((t) => t.slug).filter((s) => {
@@ -32,7 +27,7 @@ function wordMatches(locale: Locale, word: string) {
 }
 
 // Mirrors the old in-memory ranking (lib/search.ts score): exact designation > prefix > contains > dimension > word match.
-function scoreFor(q: string, locale: Locale): { score: Fragment; match: Fragment } {
+function scoreFor(q: string, m: Messages): { score: Fragment; match: Fragment } {
   const dimsQ = parseDims(q);
   if (dimsQ) {
     const [d, D, B] = dimsQ;
@@ -54,34 +49,20 @@ function scoreFor(q: string, locale: Locale): { score: Fragment; match: Fragment
     }
   }
   const wordConds = words.map((w) => {
-    const m = wordMatches(locale, w);
-    return sql`(brand ilike ${w} or classification ilike ${"%" + w + "%"} or type = any(${m.types})
-      or seal = any(${m.seals}) or bore_type = any(${m.bores}) or industries && ${m.industries}::text[])`;
+    const hit = wordMatches(m, w);
+    return sql`(brand ilike ${w} or classification ilike ${"%" + w + "%"} or type = any(${hit.types})
+      or seal = any(${hit.seals}) or bore_type = any(${hit.bores}) or industries && ${hit.industries}::text[])`;
   });
   parts.push(sql`case when ${and(wordConds)} then 10 else 0 end`);
   const score = parts.reduce((a, p) => sql`greatest(${a}, ${p})`);
   return { score, match: sql`true` };
 }
 
-export type ProductQuery = {
-  q?: string;
-  locale: Locale;
-  type?: string;
-  bore?: string;
-  seal?: string;
-  industries?: string[];
-  ranges?: Partial<Record<"d" | "D" | "B", [number | null, number | null]>>;
-  sort?: "designation" | "type" | "boreType" | "seal" | "d" | "D" | "B";
-  dir?: "asc" | "desc";
-  page?: number;
-  limit?: number;
-};
-
 const sortCols = { designation: natural, type: sql`type`, boreType: sql`bore_type`, seal: sql`seal`, d: sql`d`, D: sql`outer_d`, B: sql`width` };
 const rangeCols = { d: sql`d`, D: sql`outer_d`, B: sql`width` };
 
 export async function searchProducts(o: ProductQuery): Promise<{ rows: Product[]; total: number; page: number }> {
-  const { score, match } = scoreFor(o.q?.trim() ?? "", o.locale);
+  const { score, match } = scoreFor(o.q?.trim() ?? "", await loadMessages(o.locale));
   const where: Fragment[] = [match];
   if (o.type) where.push(sql`type = ${o.type}`);
   if (o.bore) where.push(sql`bore_type = ${o.bore}`);
@@ -93,7 +74,7 @@ export async function searchProducts(o: ProductQuery): Promise<{ rows: Product[]
   }
   const dir = o.dir === "desc" ? sql`desc` : sql`asc`;
   const order = o.sort ? sql`${sortCols[o.sort]} ${dir} nulls last, ${natural}` : sql`score desc, ${natural}`;
-  const limit = Math.min(o.limit ?? 15, 100);
+  const limit = Math.min(o.limit ?? PAGE_SIZE, MAX_LIMIT);
   const offset = (Math.max(1, o.page ?? 1) - 1) * limit;
 
   const rows = await sql<(Product & { total: number })[]>`

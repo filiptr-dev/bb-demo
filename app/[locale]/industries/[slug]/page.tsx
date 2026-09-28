@@ -4,9 +4,9 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { alternatesFor } from "@/i18n/metadata";
 import type { Locale } from "@/i18n/routing";
-import { industries, getIndustry } from "@/lib/data";
-import { productsByIndustry } from "@/lib/products";
-import ProductCard from "@/components/ProductCard";
+import { industries, getIndustry } from "@/lib/domain/taxonomy";
+import { productsByIndustry } from "@/server/products";
+import ProductCard from "@/components/product/ProductCard";
 
 export const revalidate = 3600;
 

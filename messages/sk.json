@@ -1,0 +1,624 @@
+{
+  "Common": {
+    "brandFirst": "B&B",
+    "brandSecond": "UNIKOOP",
+    "brandName": "B&B Unikoop",
+    "cities": {
+      "prilep": "Prilep",
+      "skopje": "Skopje"
+    },
+    "hours": "Po–Pi 09:00–16:00",
+    "updated": "24. septembra 2026",
+    "scrollAria": "Posunúť nadol",
+    "searchShort": "Hľadať označenie…"
+  },
+  "Metadata": {
+    "site": {
+      "title": "B&B UNIKOOP – ložiská SKF a priemyselné riešenia",
+      "titleTemplate": "%s | B&B UNIKOOP",
+      "description": "Oficiálny distribútor SKF v Severnom Macedónsku. Katalóg ložísk s vyhľadávaním podľa označenia a filtrovaním podľa odvetvia."
+    },
+    "catalog": {
+      "title": "Katalóg ložísk",
+      "description": "Vyhľadávajte ložiská SKF podľa označenia alebo rozmerov a filtrujte podľa odvetvia."
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Kontaktujte B&B Unikoop – oficiálneho distribútora SKF v Severnom Macedónsku. Telefonická podpora 24/7, Prilep a Skopje."
+    },
+    "privacy": {
+      "title": "Zásady ochrany osobných údajov",
+      "description": "Ako B&B Unikoop zhromažďuje, používa a chráni vaše osobné údaje."
+    },
+    "terms": {
+      "title": "Podmienky používania",
+      "description": "Podmienky používania webovej stránky B&B Unikoop."
+    }
+  },
+  "Nav": {
+    "about": "O nás",
+    "products": "Produkty",
+    "industries": "Odvetvia",
+    "contact": "Kontakt",
+    "searchPlaceholder": "Hľadať označenie, napr. 6205…",
+    "searchLabel": "Hľadať ložisko",
+    "eCatalog": "E-katalóg",
+    "menu": "Menu",
+    "searchNoResults": "Žiadne zodpovedajúce produkty.",
+    "searchViewAll": "Zobraziť všetky výsledky ({count})"
+  },
+  "Footer": {
+    "tagline": "Oficiálny distribútor SKF pre Severné Macedónsko už 35 rokov. Ložiská, tesnenia, prenos výkonu a mazivá.",
+    "industriesHeading": "Odvetvia",
+    "contactHeading": "Kontakt · 24/7",
+    "officeHours": "Kancelária Skopje: Po–Pi 09:00–16:00",
+    "sendMessage": "Poslať správu →",
+    "copyright": "B&B Unikoop · Demo verzia",
+    "privacy": "Zásady ochrany osobných údajov",
+    "terms": "Podmienky používania"
+  },
+  "Hero": {
+    "eyebrow": "Od roku 1991 · Distribútor SKF",
+    "heading": [
+      "KOMPLEXNÉ",
+      "PRIEMYSELNÉ",
+      "RIEŠENIA"
+    ],
+    "description": "B&B Unikoop dodáva priemyselné ložiská, zariadenia na prenos výkonu a riešenia údržby po celom Severnom Macedónsku. Ako oficiálny distribútor SKF dodávame 100 % originálne produkty.",
+    "ctaQuote": "Vyžiadať ponuku",
+    "ctaAbout": "Viac informácií",
+    "scroll": "Posunúť",
+    "badgeAlt": "B&B Unikoop - autorizovaný distribútor SKF"
+  },
+  "Home": {
+    "about": {
+      "imageAlt": "Tím B&B Unikoop",
+      "eyebrow": "O nás",
+      "headingPrefix": "Kto",
+      "headingHighlight": "sme",
+      "years": "35+",
+      "yearsLabel": "Rokov skúseností",
+      "p1": "B&B Unikoop je oficiálnym distribútorom SKF pre Severné Macedónsko. Už 35 rokov zásobujeme priemysel ložiskami, ložiskovými telesami, tesneniami, remeňmi, reťazami a mazacími systémami.",
+      "p2": "Naším poslaním je znižovať prestoje a zabezpečiť nepretržitú prevádzku našich zákazníkov – s originálnymi produktmi a odbornou podporou, 24/7.",
+      "badges": [
+        "Oficiálny distribútor SKF",
+        "Certifikáty",
+        "Overenie pravosti"
+      ],
+      "ctaCatalog": "Prezrieť katalóg →",
+      "stats": [
+        {
+          "value": 35,
+          "suffix": "+",
+          "label": "Rokov skúseností"
+        },
+        {
+          "value": 2,
+          "suffix": "",
+          "label": "Pobočky"
+        },
+        {
+          "value": 24,
+          "suffix": "/7",
+          "label": "Mobilný servis"
+        },
+        {
+          "value": 100,
+          "suffix": "%",
+          "label": "Originálne produkty"
+        }
+      ]
+    },
+    "products": {
+      "eyebrow": "Naše produkty",
+      "headingPrefix": "Komplexné",
+      "headingHighlight": "priemyselné riešenia",
+      "more": "Viac informácií →",
+      "categories": [
+        {
+          "name": "Ložiská",
+          "blurb": "Guľkové, valčekové a axiálne ložiská a ložiskové jednotky.",
+          "href": "/catalog"
+        },
+        {
+          "name": "Ložiskové telesá",
+          "blurb": "Telesá a ložiskové jednotky pre každú aplikáciu.",
+          "href": "#contact"
+        },
+        {
+          "name": "Tesnenia",
+          "blurb": "Priemyselné tesnenia a tesniace systémy.",
+          "href": "#contact"
+        },
+        {
+          "name": "Remene a reťaze",
+          "blurb": "Komponenty na prenos výkonu.",
+          "href": "#contact"
+        },
+        {
+          "name": "Mazacie systémy",
+          "blurb": "Automatické mazanie, ktoré predlžuje životnosť zariadení.",
+          "href": "#contact"
+        },
+        {
+          "name": "Nástroje na údržbu",
+          "blurb": "Nástroje na montáž, demontáž a diagnostiku.",
+          "href": "#contact"
+        }
+      ]
+    },
+    "skfOffer": {
+      "eyebrow": "Originálna ponuka SKF",
+      "headingPrefix": "Kompletný",
+      "headingHighlight": "sortiment SKF",
+      "lead": "Ložiská, telesá, tesnenia, mazanie, ustavovanie a monitorovanie stavu: všetky produktové rady SKF priamo od autorizovaného distribútora.",
+      "view": "Zobraziť"
+    },
+    "industries": {
+      "eyebrow": "Odvetvia, ktorým slúžime",
+      "headingPrefix": "Udržiavame",
+      "headingHighlight": "každé odvetvie v pohybe",
+      "openCatalog": "Otvoriť katalóg"
+    },
+    "brands": {
+      "eyebrow": "Autorizovaný distribútor",
+      "headingPrefix": "S dôverou",
+      "headingHighlight": "svetovej značky",
+      "title": "Svetový líder v oblasti ložísk a tesnení",
+      "blurb": "Ako oficiálny distribútor ponúkame kompletný sortiment SKF: ložiská, telesá, tesnenia, mazacie systémy a nástroje na údržbu, ako aj SKF Mount a DialSet."
+    },
+    "why": {
+      "eyebrow": "Prečo B&B Unikoop",
+      "headingPrefix": "Postavené na",
+      "headingHighlight1": "dôvere",
+      "headingMiddle": ", poháňané",
+      "headingHighlight2": "kvalitou",
+      "items": [
+        {
+          "title": "Originálne produkty",
+          "blurb": "100 % originálne ložiská SKF s overením pravosti."
+        },
+        {
+          "title": "Široká dostupnosť",
+          "blurb": "Ložiská, telesá, tesnenia, remene, reťaze a mazivá na jednom mieste."
+        },
+        {
+          "title": "Odborná podpora",
+          "blurb": "Inžinieri, ktorí vám pomôžu vybrať správne riešenie."
+        },
+        {
+          "title": "Rýchle dodanie",
+          "blurb": "Dodanie po celom Severnom Macedónsku s havarijným servisom 24/7."
+        },
+        {
+          "title": "35 rokov skúseností",
+          "blurb": "Dlhoročné partnerstvá s najväčšími priemyselnými podnikmi v krajine."
+        },
+        {
+          "title": "Certifikáty",
+          "blurb": "Dokumentácia a certifikáty ku každému produktu."
+        }
+      ]
+    },
+    "cta": {
+      "heading1": "Hľadáte spoľahlivé",
+      "headingHighlight": "priemyselné riešenia?",
+      "blurb": "Vyžiadajte si ponuku ešte dnes. Náš tím je pripravený pomôcť vám nájsť správne riešenie.",
+      "contact": "Kontaktujte nás →",
+      "catalog": "Katalóg"
+    }
+  },
+  "Industries": {
+    "cement": {
+      "name": "Cementárne",
+      "blurb": "Ložiská pre rotačné pece, mlyny a ventilátory – odolné voči prachu a vysokým teplotám."
+    },
+    "metallurgy": {
+      "name": "Hutníctvo",
+      "blurb": "Riešenia pre valce, plynulé odlievanie a vysoké zaťaženie v extrémnych podmienkach."
+    },
+    "paper": {
+      "name": "Papierenský priemysel",
+      "blurb": "Presné ložiská pre papierenské stroje, sušiarne a kalandre."
+    },
+    "power": {
+      "name": "Energetika",
+      "blurb": "Spoľahlivé ložiská pre generátory, turbíny, čerpadlá a elektromotory."
+    },
+    "mining": {
+      "name": "Baníctvo",
+      "blurb": "Odolné ložiská pre rýpadlá, dopravníky, drviče a vibračné sitá."
+    },
+    "chemical": {
+      "name": "Chemický priemysel",
+      "blurb": "Ložiská a tesnenia pre čerpadlá, miešadlá a kompresory v agresívnom prostredí."
+    },
+    "food": {
+      "name": "Potraviny a nápoje",
+      "blurb": "Utesnené ložiská s mazivami bezpečnými pre potraviny – jednoduché čistenie a dlhá životnosť."
+    },
+    "recycling": {
+      "name": "Recyklácia",
+      "blurb": "Ložiská pre drviče, šrédre a lisy pri rázovom zaťažení."
+    }
+  },
+  "ProductCategories": {
+    "bearings": {
+      "name": "Ložiská",
+      "blurb": "Kompletný sortiment ložísk SKF – jednoradové guľkové, s kosouhlým stykom, naklápacie guľkové, súdkové, kužeľové, valčekové a axiálne."
+    },
+    "housings": {
+      "name": "Ložiskové telesá",
+      "blurb": "Telesá SNH, SNL a SSNHD pre ložiskové jednotky – sortiment, rozmery a materiály."
+    },
+    "cooper": {
+      "name": "Cooper",
+      "blurb": "Delené valčekové ložiská Cooper Bearings – montáž bez demontáže hriadeľa."
+    },
+    "seals": {
+      "name": "Tesnenia",
+      "blurb": "Radiálne hriadeľové tesnenia (CR Seals) a V-krúžky pre široké spektrum priemyselných aplikácií."
+    },
+    "sleeves": {
+      "name": "Upínacie puzdrá",
+      "blurb": "Upínacie puzdrá s kužeľovým otvorom na montáž ložísk na hladké hriadele."
+    },
+    "belts-chains": {
+      "name": "Remene, reťaze",
+      "blurb": "Remene, remenice, reťaze, reťazové kolesá, puzdrá a spojky – komponenty na prenos výkonu."
+    },
+    "bushings": {
+      "name": "Puzdrá",
+      "blurb": "Puzdrá na prenos výkonu vrátane poistných matíc a riešení SKF Speedi-Sleeve."
+    },
+    "nuts": {
+      "name": "Poistné matice",
+      "blurb": "Rady poistných matíc na zaistenie ložísk na hriadeli."
+    },
+    "speedi-sleeve": {
+      "name": "SKF Speedi-Sleeve",
+      "blurb": "Tenkostenné puzdro na obnovu opotrebovaných povrchov hriadeľa pod tesnením."
+    },
+    "food-industry": {
+      "name": "Produkty pre potravinársky priemysel",
+      "blurb": "Ložiská, mazivá a tesnenia bezpečné pre potraviny – v súlade s požiadavkami potravinárskeho priemyslu."
+    },
+    "pulley-alignment": {
+      "name": "Nástroje na ustavovanie remeníc",
+      "blurb": "Nástroje na presné ustavenie remeníc – menšie opotrebenie a nižšia spotreba energie."
+    },
+    "monitoring-instruments": {
+      "name": "Monitorovacie prístroje",
+      "blurb": "Endoskopy, monitory oleja, teplomery, otáčkomery, akustické prístroje a analytické systémy (Microlog, IMx)."
+    },
+    "mounting-tools": {
+      "name": "Nástroje na montáž a demontáž",
+      "blurb": "Súpravy nástrojov na bezpečnú montáž a demontáž ložísk."
+    },
+    "maintenance": {
+      "name": "Údržba",
+      "blurb": "Indukčné ohrievače a vzdelávacie materiály o životnom cykle ložísk."
+    },
+    "shim-packs": {
+      "name": "Súpravy podložiek SKF TMAS",
+      "blurb": "Presné podložky v rôznych veľkostiach a hrúbkach na presné ustavenie."
+    },
+    "greases": {
+      "name": "Plastické mazivá",
+      "blurb": "Plastické mazivá SKF vrátane radov bezpečných pre potraviny (LGFP, LGFQ, LGFG) – výber podľa prevádzkových podmienok."
+    },
+    "lubrication-systems": {
+      "name": "Mazacie systémy",
+      "blurb": "Centrálne mazacie systémy, ktoré predlžujú životnosť zariadení."
+    },
+    "automatic-lubricators": {
+      "name": "Automatické maznice",
+      "blurb": "Automatické maznice na nepretržité a presné dávkovanie plastického maziva."
+    },
+    "vibracon": {
+      "name": "SKF VIBRACON",
+      "blurb": "Nastaviteľné podpery na presné ustavenie ťažkých zariadení."
+    },
+    "composite-housing-units": {
+      "name": "Jednotky s kompozitným telesom",
+      "blurb": "Guľkové ložiskové jednotky v kompozitných telesách – ľahké a odolné voči korózii."
+    },
+    "y-bearings": {
+      "name": "Ložiská Y a jednotky",
+      "blurb": "Ložiská Y a ložiskové jednotky – sortiment, tolerancie, vnútorná vôľa a klietky."
+    }
+  },
+  "BearingTypes": {
+    "deep-groove": {
+      "name": "Jednoradové guľkové ložiská",
+      "short": "Jednoradové guľkové",
+      "blurb": "Radiálne guľkové ložisko na všeobecné použitie pri ľahkom až strednom zaťažení."
+    },
+    "angular-contact": {
+      "name": "Guľkové ložiská s kosouhlým stykom",
+      "short": "S kosouhlým stykom",
+      "blurb": "Guľkové ložisko s kosouhlým stykom pre kombinované radiálne a axiálne zaťaženie."
+    },
+    "self-aligning": {
+      "name": "Naklápacie guľkové ložiská",
+      "short": "Naklápacie guľkové",
+      "blurb": "Naklápacie ložisko, ktoré vyrovnáva nesúosovosť hriadeľa."
+    },
+    "spherical-roller": {
+      "name": "Súdkové ložiská",
+      "short": "Súdkové",
+      "blurb": "Súdkové ložisko pre vysoké zaťaženie a nesúosovosť."
+    },
+    "tapered-roller": {
+      "name": "Kužeľové valčekové ložiská",
+      "short": "Kužeľové valčekové",
+      "blurb": "Kužeľové valčekové ložisko pre kombinované radiálne a axiálne zaťaženie."
+    },
+    "cylindrical-roller": {
+      "name": "Valčekové ložiská",
+      "short": "Valčekové",
+      "blurb": "Valčekové ložisko pre vysoké radiálne zaťaženie."
+    },
+    "thrust-ball": {
+      "name": "Axiálne guľkové ložiská",
+      "short": "Axiálne guľkové",
+      "blurb": "Axiálne guľkové ložisko pre čisto axiálne zaťaženie."
+    },
+    "unit": {
+      "name": "Ložiskové jednotky",
+      "short": "Guľkové ložiskové jednotky",
+      "blurb": "Ložisková jednotka s telesom, pripravená na montáž."
+    },
+    "toroidal": {
+      "name": "Toroidné valčekové ložiská CARB",
+      "short": "Toroidné CARB",
+      "blurb": "Toroidné valčekové ložisko CARB, ktoré zachytí nesúosovosť aj axiálny posuv."
+    },
+    "needle-roller": {
+      "name": "Ihlové ložiská",
+      "short": "Ihlové",
+      "blurb": "Ihlové ložisko s nízkym prierezom pre vysoké zaťaženie v stiesnenom priestore."
+    },
+    "track-runner": {
+      "name": "Vodiace kladky",
+      "short": "Vodiace kladky",
+      "blurb": "Vodiaca kladka (kladka s čapom) s hrubým vonkajším krúžkom na odvaľovanie po dráhach."
+    },
+    "plain": {
+      "name": "Klzné ložiská, puzdrá a kĺbové hlavy",
+      "short": "Klzné ložiská",
+      "blurb": "Klzné ložisko, puzdro alebo kĺbová hlava pre pomalé kývavé pohyby a vysoké zaťaženie."
+    },
+    "housing": {
+      "name": "Telesá a príslušenstvo",
+      "short": "Telesá",
+      "blurb": "Ložiskové teleso alebo príslušenstvo telesa na montáž a ochranu ložiska."
+    },
+    "sleeve-nut": {
+      "name": "Puzdrá a poistné matice",
+      "short": "Puzdrá a matice",
+      "blurb": "Upínacie alebo sťahovacie puzdro, poistná matica alebo poistný prvok na zaistenie ložísk na hriadeli."
+    },
+    "seal": {
+      "name": "Radiálne hriadeľové tesnenia",
+      "short": "Tesnenia",
+      "blurb": "Radiálne hriadeľové tesnenie, ktoré udrží mazivo vnútri a nečistoty vonku."
+    }
+  },
+  "ProductAttrs": {
+    "seal": {
+      "open": "Otvorené",
+      "shields": "Krycie plechy na oboch stranách",
+      "both": "Tesnenie na oboch stranách",
+      "one-side": "Tesnenie alebo krycí plech na jednej strane",
+      "other": "Iné utesnenie"
+    },
+    "boreType": {
+      "tapered": "Kužeľový",
+      "cylindrical": "Valcový"
+    },
+    "dimensionsLabel": "Rozmery"
+  },
+  "Catalog": {
+    "page": {
+      "titlePrefix": "KATALÓG",
+      "titleHighlight": "LOŽÍSK",
+      "subtitle": "Prezrite si náš kompletný katalóg s {count} produktmi. Vyhľadávajte podľa označenia, filtrujte podľa typu, rozmerov alebo utesnenia – a nájdite presne to, čo potrebujete.",
+      "loading": "Načítava sa…"
+    },
+    "client": {
+      "searchPlaceholder": "Označenie (6205, 22220), rozmery (25x52x15), číslo (25) alebo slovo (cement, kužeľové)…",
+      "searchLabel": "Hľadať podľa označenia",
+      "filters": "Filtre",
+      "viewToggleLabel": "Zmeniť zobrazenie",
+      "viewGrid": "Mriežka",
+      "viewTable": "Tabuľka",
+      "resetFilters": "Obnoviť",
+      "allIndustries": "Všetky odvetvia",
+      "classification": "Klasifikácia",
+      "allClassifications": "Všetky klasifikácie",
+      "boreTypeLabel": "Typ otvoru",
+      "allBoreTypes": "Všetky typy",
+      "sealLabel": "Typ utesnenia",
+      "allSeals": "Všetky typy",
+      "quickBoreRange": "Rýchly výber rozsahu otvoru (mm)",
+      "boreRangeAll": "Všetky",
+      "dInner": "Priemer otvoru d (mm)",
+      "dOuter": "Vonkajší priemer D (mm)",
+      "width": "Šírka B (mm)",
+      "min": "Min.",
+      "max": "Max.",
+      "clearAllFilters": "✕ Zrušiť všetky filtre",
+      "resultCount": "{count, plural, one {Zobrazený <b>#</b> produkt} few {Zobrazené <b>#</b> produkty} other {Zobrazených <b>#</b> produktov}}",
+      "resultCountOf": "Zobrazené <b>{count, number}</b> z <n>{total, number}</n> {total, plural, one {produktu} other {produktov}}",
+      "filteredSuffix": "(filtrované)",
+      "pageLabel": "Strana",
+      "of": "z",
+      "noResultsTitle": "Nenašli sa žiadne produkty",
+      "noResultsHint": "Skontrolujte označenie alebo obnovte filtre. Zavolajte nám – nájdeme pre vás správne ložisko.",
+      "columns": {
+        "designation": "Označenie",
+        "classification": "Klasifikácia",
+        "boreType": "Typ otvoru",
+        "seal": "Utesnenie",
+        "dInner": "Otvor d (mm)",
+        "dOuter": "Vonk. D (mm)",
+        "width": "Šírka B (mm)"
+      },
+      "viewProduct": "Zobraziť",
+      "pagination": "Strany",
+      "prev": "Predchádzajúca",
+      "next": "Ďalšia",
+      "viewAria": "Zobraziť: {designation}",
+      "loading": "Načítava sa…"
+    }
+  },
+  "ProductDetail": {
+    "breadcrumbHome": "Domov",
+    "breadcrumbCatalog": "Katalóg",
+    "specsHeading": "Technické parametre",
+    "specs": {
+      "designation": "Označenie",
+      "brand": "Značka",
+      "type": "Typ",
+      "dInner": "Priemer otvoru (d)",
+      "dOuter": "Vonkajší priemer (D)",
+      "width": "Šírka (B)",
+      "seal": "Utesnenie"
+    },
+    "industriesHeading": "Použitie v odvetviach",
+    "relatedHeading": "Súvisiace produkty",
+    "metaTitle": "Ložisko {designation} {brand} – {d}×{D}×{B} mm",
+    "metaDescription": "{brand} {designation}: {type}, otvor ø {d} mm, vonkajší ø {D} mm, šírka {B} mm. K dispozícii u B&B Unikoop.",
+    "metaTitlePlain": "{designation} {brand} – {type}",
+    "metaDescriptionPlain": "{brand} {designation}: {type}. K dispozícii u B&B Unikoop."
+  },
+  "IndustryDetail": {
+    "titlePrefix": "Ložiská pre odvetvie",
+    "catalogLink": "Otvoriť v katalógu s filtrami →"
+  },
+  "ProductCategoryDetail": {
+    "back": "← Späť na úvod",
+    "contactIntro": "Táto kategória je súčasťou kompletnej ponuky SKF spoločnosti B&B Unikoop. Pre technické parametre, dostupnosť a cenovú ponuku nás kontaktujte.",
+    "contactCta": "Kontaktujte nás →"
+  },
+  "CompanyValues": {
+    "items": [
+      {
+        "title": "Čestnosť a integrita",
+        "blurb": "S každým zákazníkom pracujeme transparentne a zodpovedne."
+      },
+      {
+        "title": "Transparentnosť",
+        "blurb": "Jasné podmienky, originálne produkty a overiteľná dokumentácia."
+      },
+      {
+        "title": "Pevné vzťahy",
+        "blurb": "Dlhoročné partnerstvá postavené na dôvere."
+      },
+      {
+        "title": "Osobná zodpovednosť",
+        "blurb": "Každý člen tímu ručí za kvalitu svojej práce."
+      }
+    ],
+    "mobileService": "Mobilný servis 24/7"
+  },
+  "Contact": {
+    "titlePrefix": "KONTAKTUJTE",
+    "titleHighlight": "NÁS",
+    "subtitle": "Vyžiadajte si cenovú ponuku alebo poradenstvo pri výbere ložiska. Odpovieme čo najskôr.",
+    "availability": "24/7",
+    "office": "Kancelária Skopje",
+    "locations": "Pobočky",
+    "locationsValue": "Prilep · Skopje, Severné Macedónsko",
+    "form": {
+      "name": "Meno a priezvisko *",
+      "email": "E-mail *",
+      "phone": "Telefón",
+      "message": "Správa *",
+      "messagePlaceholder": "Označenie ložiska, množstvo, odvetvie…",
+      "consent": "Súhlasím so spracovaním mojich údajov za účelom odpovede na túto požiadavku v súlade so <link>Zásadami ochrany osobných údajov</link>. *",
+      "submit": "Odoslať",
+      "sending": "Odosiela sa…",
+      "thanksTitle": "Ďakujeme!",
+      "thanksBody": "Vaša správa bola odoslaná. Ozveme sa vám čo najskôr.",
+      "genericError": "Niečo sa pokazilo. Skúste to prosím znova.",
+      "errors": {
+        "invalid": "Neplatná požiadavka.",
+        "required": "Vyplňte prosím všetky povinné polia.",
+        "send": "Správu sa nepodarilo odoslať. Skúste to prosím znova."
+      }
+    }
+  },
+  "Privacy": {
+    "title": "Zásady ochrany osobných údajov",
+    "updatedLabel": "Posledná aktualizácia:",
+    "sections": [
+      {
+        "h": "1. Prevádzkovateľ",
+        "p": "B&B Unikoop („my“) je prevádzkovateľom osobných údajov získaných prostredníctvom tejto webovej stránky. Kontakt: <link>/contact</link>."
+      },
+      {
+        "h": "2. Aké údaje zhromažďujeme",
+        "p": "Keď nám napíšete cez kontaktný formulár: meno, e-mail, telefón (nepovinné) a obsah správy. Citlivé údaje nepožadujeme ani nezhromažďujeme."
+      },
+      {
+        "h": "3. Účel a právny základ",
+        "p": "Údaje používame výlučne na odpoveď na vašu požiadavku a prípravu cenovej ponuky, a to na základe vášho súhlasu a nášho oprávneného záujmu na obchodnej komunikácii."
+      },
+      {
+        "h": "4. Doba uchovávania",
+        "p": "Údaje uchovávame len tak dlho, ako je potrebné pre komunikáciu a splnenie zákonných povinností, potom sa vymažú."
+      },
+      {
+        "h": "5. Poskytovanie údajov",
+        "p": "Vaše údaje nepredávame. Môžu ich spracúvať poskytovatelia služieb (hosting, doručovanie e-mailov) výlučne podľa našich pokynov."
+      },
+      {
+        "h": "6. Súbory cookie",
+        "p": "Táto webová stránka nepoužíva sledovacie ani reklamné súbory cookie. Môžu sa používať technicky nevyhnutné súbory cookie."
+      },
+      {
+        "h": "7. Vaše práva",
+        "p": "Máte právo na prístup, opravu, vymazanie, obmedzenie spracúvania, prenosnosť a namietanie, ako aj právo podať sťažnosť Agentúre na ochranu osobných údajov. Žiadosti posielajte cez kontaktnú stránku."
+      }
+    ]
+  },
+  "Terms": {
+    "title": "Podmienky používania",
+    "updatedLabel": "Posledná aktualizácia:",
+    "sections": [
+      {
+        "h": "1. Prijatie",
+        "p": "Používaním tejto webovej stránky prijímate tieto podmienky. Ak s nimi nesúhlasíte, stránku prosím nepoužívajte."
+      },
+      {
+        "h": "2. Informačný účel",
+        "p": "Katalóg slúži na informačné účely. Rozmery, označenia a popisy sú uvedené v dobrej viere, môžu však obsahovať chyby. Pred objednaním si údaje overte u nás. Informácie na stránke nepredstavujú záväznú ponuku."
+      },
+      {
+        "h": "3. Ceny a dostupnosť",
+        "p": "Ceny a skladové zásoby sa na stránke nezverejňujú a dohodujú sa individuálne prostredníctvom cenovej ponuky."
+      },
+      {
+        "h": "4. Duševné vlastníctvo",
+        "p": "Obsah stránky je vlastníctvom B&B Unikoop alebo príslušných držiteľov práv. SKF a ostatné značky patria svojim príslušným vlastníkom. Kopírovanie bez nášho súhlasu nie je povolené."
+      },
+      {
+        "h": "5. Obmedzenie zodpovednosti",
+        "p": "V rozsahu povolenom zákonom nezodpovedáme za škody vzniknuté použitím informácií na stránke."
+      },
+      {
+        "h": "6. Zmeny a rozhodné právo",
+        "p": "Podmienky sa môžu meniť; platí verzia zverejnená na stránke. Rozhodným právom je právo Republiky Severné Macedónsko."
+      }
+    ]
+  },
+  "ThemeToggle": {
+    "client": "Farby stránky klienta",
+    "demo": "Demo farby"
+  },
+  "LanguageSwitcher": {
+    "label": "Jazyk"
+  }
+}

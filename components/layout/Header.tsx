@@ -3,10 +3,10 @@
 import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import LanguageSwitcher from "./LanguageSwitcher";
-import BearingIcon from "./BearingIcon";
+import LanguageSwitcher from "@/components/layout/LanguageSwitcher";
+import BearingIcon from "@/components/brand/BearingIcon";
 import { Button } from "@/components/ui/button";
-import HeaderSearch from "./HeaderSearch";
+import HeaderSearch from "@/components/search/HeaderSearch";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 
 const nav = [

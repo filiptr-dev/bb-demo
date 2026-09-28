@@ -2,18 +2,20 @@ import type { Metadata, Viewport } from "next";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { Montserrat, Syne, Bebas_Neue, Geist_Mono } from "next/font/google";
+import { Montserrat, Noto_Sans, Syne, Bebas_Neue, Geist_Mono } from "next/font/google";
 import "../globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import ThemeVariantToggle from "@/components/ThemeVariantToggle";
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import ThemeVariantToggle from "@/components/layout/ThemeVariantToggle";
 import { cn } from "@/lib/utils";
 import { site } from "@/lib/site";
 import { locales, routing, type Locale } from "@/i18n/routing";
 import { alternatesFor } from "@/i18n/metadata";
 
 const montserrat = Montserrat({ variable: "--font-montserrat", subsets: ["latin", "latin-ext", "cyrillic"] });
-const syne = Syne({ variable: "--font-syne", subsets: ["latin", "latin-ext"] });
+const syne = Syne({ variable: "--font-syne", subsets: ["latin", "latin-ext", "greek"] });
+// Montserrat has no Greek glyphs; the browser only downloads this when Greek text is on the page.
+const notoSans = Noto_Sans({ variable: "--font-noto", subsets: ["greek"], preload: false });
 const bebas = Bebas_Neue({ variable: "--font-bebas", subsets: ["latin", "latin-ext"], weight: "400" });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin", "latin-ext"] });
 
@@ -57,7 +59,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   setRequestLocale(locale as Locale);
 
   return (
-    <html lang={locale} suppressHydrationWarning className={cn("dark antialiased", montserrat.variable, syne.variable, bebas.variable, geistMono.variable, "font-sans")}>
+    <html lang={locale} suppressHydrationWarning className={cn("dark antialiased", montserrat.variable, notoSans.variable, syne.variable, bebas.variable, geistMono.variable, "font-sans")}>
       <body className="min-h-screen flex flex-col font-sans">
         <script
           dangerouslySetInnerHTML={{

@@ -10,7 +10,8 @@
 import vm from "node:vm";
 import { readFileSync } from "node:fs";
 import postgres from "postgres";
-import { seedProducts, slugify, type Product, type SealCode } from "../lib/data.ts";
+import { slugify, type Product, type SealCode } from "../lib/domain/product.ts";
+import { seedProducts } from "../lib/domain/seed.ts";
 
 const ORIGIN = "https://bearingworld.com.sa";
 const dry = process.argv.includes("--dry");

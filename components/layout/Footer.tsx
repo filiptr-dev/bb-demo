@@ -1,8 +1,8 @@
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { industries } from "@/lib/data";
+import { industries } from "@/lib/domain/taxonomy";
 import { site } from "@/lib/site";
-import Reveal from "./Reveal";
+import Reveal from "@/components/motion/Reveal";
 
 export default async function Footer() {
   const t = await getTranslations("Footer");
