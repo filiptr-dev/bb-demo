@@ -41,6 +41,7 @@ export default async function ProductCategoryPage({ params }: PageProps<"/[local
   if (!c) notFound();
   const t = await getTranslations("ProductCategoryDetail");
   const tp = await getTranslations("ProductCategories");
+  const tf = await getTranslations("CategoryFacts");
   const name = tp(`${c.slug}.name`);
   const catalogHref = c.catalog === undefined ? null : c.catalog ? `/catalog?type=${c.catalog}` : "/catalog";
 
@@ -69,6 +70,20 @@ export default async function ProductCategoryPage({ params }: PageProps<"/[local
           <img src={c.image} alt={name} className="size-full object-contain p-6" />
         </div>
       </header>
+
+      {tf.has(c.slug) && (
+        <section className="mt-16">
+          <h2 className="font-display font-bold text-xl md:text-2xl tracking-tight mb-5">{t("factsHeading")}</h2>
+          <ul className="grid gap-3 md:grid-cols-2">
+            {(tf.raw(c.slug) as string[]).map((fact) => (
+              <li key={fact} className="flex gap-3 rounded-xl border border-foreground/[0.07] bg-foreground/[0.025] p-4 text-sm leading-relaxed text-foreground/75">
+                <span aria-hidden className="mt-2 size-1.5 shrink-0 rounded-full bg-brand-1" />
+                {fact}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {categoryContent[c.slug] && <CategoryContent content={categoryContent[c.slug]} />}
 

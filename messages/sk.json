@@ -525,7 +525,8 @@
     "resourcesHeading": "Katalógy a odkazy",
     "resourcePdf": "Katalóg SKF (PDF)",
     "resourceLink": "Produktová stránka SKF",
-    "inCatalog": "V katalógu"
+    "inCatalog": "V katalógu",
+    "factsHeading": "Hlavné fakty"
   },
   "CompanyValues": {
     "items": [
@@ -884,5 +885,67 @@
     "electroMechanicalLubricator": "Elektromechanický jednobodový mazací prístroj",
     "multiPointLubricator": "Viacbodový automatický mazací prístroj",
     "lubricationCalculator": "Nástroj na výpočet mazania"
+  },
+  "CategoryFacts": {
+    "housings": [
+      "Delené stojaté ložiskové telesá SNL/SNH radov 2, 3, 5 a 6 so stavebnicovou koncepciou.",
+      "Vodorovne delené na veko a spodok, takže ložisko sa dá skontrolovať alebo vymeniť bez demontáže hriadeľa.",
+      "Telesá SNH zo sivej liatiny GG 20; ťažké SSNHD z tvárnej liatiny. Rozmery podľa ISO 113/II.",
+      "Tesnenia: dvojbritové (TG), V-krúžok (TA), plsť (TC) a špeciálne labyrintové sady.",
+      "Pre voľné alebo vodiace uloženie ložiska (s vodiacimi krúžkami podľa potreby)."
+    ],
+    "sleeves": [
+      "Upínacie a sťahovacie puzdrá na montáž ložísk s kužeľovou dierou na valcové hriadele.",
+      "Všetky štandardné rozmery a rady; upínacie puzdrá sa dodávajú kompletné s maticou a poistkou.",
+      "Upínacie puzdrá majú vonkajší kužeľ 1:12 a čiernený povrch; vyhotovenia OH…H umožňujú metódu vstrekovania oleja.",
+      "Sťahovacie puzdrá pre kužeľ 1:12 a 1:30 (rady 240 K30 a 241 K30); prípona G znamená menší závit.",
+      "Rozmery podľa ISO 113/I."
+    ],
+    "speedi-sleeve": [
+      "Tenkostenné puzdro hrúbky 0,28 mm, ktoré sa nasunie na opotrebovaný hriadeľ — bez demontáže a obrábania.",
+      "Možno použiť tesnenie rovnakej veľkosti ako pôvodné.",
+      "Montážny nástroj je súčasťou každého puzdra; stačí kladivo.",
+      "Štandardný sortiment pre hriadele od 11,99 do 203,33 mm (0,472–8 in); iné rozmery na požiadanie."
+    ],
+    "shim-packs": [
+      "Vopred narezané podložky s jednou drážkou na presné vertikálne vyrovnanie strojov.",
+      "Päť rozmerov a desať hrúbok, plus súpravy s najpoužívanejšími kombináciami.",
+      "Kvalitná nehrdzavejúca oceľ — opakovane použiteľné, ľahko sa vkladajú a vyberajú, úzke tolerancie.",
+      "Hrúbka je zreteľne vyznačená na každej podložke."
+    ],
+    "vibracon": [
+      "Samonivelačné nastaviteľné podpery na uloženie rotačných strojov na rámy alebo oceľové a betónové základy.",
+      "Vyrovnajú uhol až 4° medzi strojom a základom bez obrábania základu.",
+      "Odstraňujú „mäkkú pätku“; vysoká únosnosť a široký rozsah nastavenia pri nízkej výške.",
+      "Typické stroje: plynové a dieselové motory, kompresory, elektromotory, prevodovky, generátory, čerpadlá, ventilátory a turbíny.",
+      "Používajú sa v potravinárstve, papierenstve, ropnom a plynárenskom priemysle, lodiarstve, železnici a energetike."
+    ],
+    "y-bearings": [
+      "Guľkové ložiská naplnené mazivom a utesnené z oboch strán, s guľovou vonkajšou plochou, ktorá vyrovná počiatočnú nesúosovosť.",
+      "Upevnenie na hriadeli excentrickým krúžkom alebo skrutkami (rady YAR, YAJ, YET); aj s upínacím puzdrom a v palcových rozmeroch.",
+      "Štandardne lítiové mazivo; klietky z polyamidu 6,6 vystuženého sklenými vláknami do +110 °C.",
+      "Ložiskové jednotky Y s telesami z liatiny, pozinkovaného lisovaného plechu alebo kompozitu: stojaté, prírubové a napínacie.",
+      "Rozmery jednotiek podľa ISO 3228."
+    ],
+    "composite-housing-units": [
+      "Telesá z polyamidu vystuženého sklenými vláknami (PA6): ľahké a odolné voči korózii, chemikáliám a zriedeným kyselinám.",
+      "Znesú vysoké aj nízke teploty, odolné voči UV a recyklovateľné; k dispozícii sú koncové kryty.",
+      "Rozmerovo zameniteľné s liatinovými jednotkami.",
+      "Ložiská sú namazané na celú životnosť vodeodolným mazivom — bez domazávania.",
+      "ISO stojaté, štvorcové a oválne prírubové jednotky s ľubovoľným ložiskom SKF vhodnej veľkosti."
+    ],
+    "seals": [
+      "Radiálne hriadeľové tesnenia, V-krúžky a hydraulické tesnenia vrátane CR Seals — založené v roku 1878 ako Chicago Rawhide, súčasť SKF od roku 1990.",
+      "Materiály brití s vysokou chemickou a tepelnou odolnosťou, robustná konštrukcia podľa národných a medzinárodných noriem.",
+      "Typické použitie: prevodovky, hydraulické čerpadlá, nápravy, stĺpiky riadenia, reduktory a prevody.",
+      "Aj radiálne tesnenia HMS5 a HMSA10 a tesnenia SKF Taconite pre silne znečistené prostredie."
+    ],
+    "cooper": [
+      "Delené valčekové ložisko, ktoré vynašiel Thomas Cooper v roku 1907; Cooper je spoločnosť SKF.",
+      "Delené až po hriadeľ — montuje sa bez odstránenia spojok, ozubených kolies či susedných ložísk, odstávky sú oveľa kratšie.",
+      "Vôle sú prednastavené: bez nastavovania na mieste a bez špeciálneho náradia.",
+      "Ideálne pre ťažko prístupné miesta a dlhé hriadele s viacerými podperami.",
+      "Jednotky majú zdvíhacie skrutky, kontrolné otvory a závitové otvory pre snímače teploty a vibrácií."
+    ]
   }
 }

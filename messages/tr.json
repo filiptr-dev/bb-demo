@@ -525,7 +525,8 @@
     "resourcesHeading": "Kataloglar ve bağlantılar",
     "resourcePdf": "SKF kataloğu (PDF)",
     "resourceLink": "SKF ürün sayfası",
-    "inCatalog": "Katalogda"
+    "inCatalog": "Katalogda",
+    "factsHeading": "Temel bilgiler"
   },
   "CompanyValues": {
     "items": [
@@ -884,5 +885,67 @@
     "electroMechanicalLubricator": "Elektromekanik tek noktalı yağlayıcı",
     "multiPointLubricator": "Çok noktalı otomatik yağlayıcı",
     "lubricationCalculator": "Yağlama hesaplama aracı"
+  },
+  "CategoryFacts": {
+    "housings": [
+      "Modüler yapıda, 2, 3, 5 ve 6 serisi SNL/SNH bölünmüş yatak gövdeleri.",
+      "Yatay olarak kapak ve tabana ayrılır; rulman mil sökülmeden kontrol edilir veya değiştirilir.",
+      "SNH gövdeler GG 20 gri dökme demirden; ağır hizmet SSNHD gövdeler küresel grafitli dökme demirden. Ölçüler ISO 113/II'ye göre.",
+      "Sızdırmazlık seçenekleri: çift dudaklı (TG), V-ring (TA), keçe (TC) ve özel labirent setleri.",
+      "Serbest veya sabit rulman düzenleri için (gerektiğinde tespit halkalarıyla)."
+    ],
+    "sleeves": [
+      "Konik delikli rulmanları silindirik millere monte etmek için adaptör ve çektirme kovanları.",
+      "Tüm standart ölçü ve seriler; adaptör kovanları somun ve emniyet pulu ile komple gelir.",
+      "Adaptör kovanları 1:12 dış koniklikte ve siyah oksit kaplıdır; OH…H versiyonları yağ enjeksiyon yöntemine uygundur.",
+      "1:12 ve 1:30 koniklik için çektirme kovanları (240 K30 ve 241 K30 serileri); G eki daha küçük dişi belirtir.",
+      "Ölçüler ISO 113/I'e göre."
+    ],
+    "speedi-sleeve": [
+      "Aşınmış milin üzerine geçirilen 0,28 mm ince cidarlı kovan — sökme veya talaşlı işlem gerekmez.",
+      "Orijinal ile aynı ölçüde keçe kullanılabilir.",
+      "Montaj aleti her kovanla birlikte gelir; yalnızca bir çekiç yeterlidir.",
+      "11,99–203,33 mm (0,472–8 in) mil çapları için standart seri; diğer ölçüler talep üzerine."
+    ],
+    "shim-packs": [
+      "Makinelerin hassas dikey hizalaması için önceden kesilmiş tek yarıklı şimler.",
+      "Beş ölçü ve on kalınlık, ayrıca en çok kullanılan kombinasyonları içeren setler.",
+      "Yüksek kaliteli paslanmaz çelik — tekrar kullanılabilir, kolay takılıp çıkarılır, dar toleranslı.",
+      "Kalınlık her şimin üzerinde açıkça yazılıdır."
+    ],
+    "vibracon": [
+      "Dönen ekipmanı şasilere veya çelik ve beton temellere monte etmek için kendinden ayarlı ayarlanabilir takozlar.",
+      "Makine ile temel arasında 4°'ye kadar açıyı, temeli işlemeden karşılar.",
+      "Yumuşak ayağı ortadan kaldırır; düşük profille yüksek yük kapasitesi ve geniş ayar aralığı.",
+      "Tipik makineler: gaz ve dizel motorlar, kompresörler, elektrik motorları, redüktörler, jeneratörler, pompalar, fanlar ve türbinler.",
+      "Gıda ve içecek, kâğıt, petrol ve gaz, denizcilik ve açık deniz, demiryolu ve enerji üretiminde kullanılır."
+    ],
+    "y-bearings": [
+      "Her iki tarafı gresli ve sızdırmaz, başlangıç eksen kaçıklığını karşılayan küresel dış bilezikli bilyalı rulmanlar.",
+      "Mile eksantrik bilezik veya setuskurlarla sabitlenir (YAR, YAJ, YET serileri); adaptör kovanlı ve inç versiyonları da vardır.",
+      "Standart olarak lityum sabunlu gres; +110 °C'ye kadar cam elyaf takviyeli poliamid 6,6 kafesler.",
+      "Dökme demir, çinko kaplı pres sac veya kompozit gövdeli Y rulman üniteleri: ayaklı, flanşlı ve gergi tipi.",
+      "Ünite ölçüleri ISO 3228'e göre."
+    ],
+    "composite-housing-units": [
+      "Cam elyaf takviyeli poliamid (PA6) gövdeler: hafif; korozyona, kimyasallara ve seyreltik asitlere dayanıklı.",
+      "Yüksek ve düşük sıcaklıklara dayanır, UV dayanımlı ve geri dönüştürülebilir; uç kapakları mevcuttur.",
+      "Dökme demir ünitelerle ölçüsel olarak değiştirilebilir.",
+      "Rulmanlar suya dayanıklı gresle ömür boyu greslenmiştir — yeniden yağlama gerekmez.",
+      "ISO ayaklı, kare ve oval flanşlı üniteler; uygun ölçüdeki her SKF rulmanıyla."
+    ],
+    "seals": [
+      "Radyal mil keçeleri, V-ringler ve hidrolik keçeler; 1878'de Chicago Rawhide olarak kurulan ve 1990'dan beri SKF'nin parçası olan CR Seals dahil.",
+      "Yüksek kimyasal ve ısıl dayanımlı dudak malzemeleri, sağlam tasarım, ulusal ve uluslararası standartlara uygun.",
+      "Tipik uygulamalar: redüktörler, hidrolik pompalar, akslar, direksiyon kolonları, hız düşürücüler ve şanzımanlar.",
+      "Ayrıca HMS5 ve HMSA10 radyal mil keçeleri ile yoğun kirlilik için SKF Taconite keçeleri."
+    ],
+    "cooper": [
+      "Thomas Cooper'ın 1907'de icat ettiği bölünmüş makaralı rulman; Cooper bir SKF şirketidir.",
+      "Mile kadar bölünür; kaplin, dişli veya komşu rulmanlar sökülmeden takılır, duruşlar çok kısalır.",
+      "Boşluklar önceden ayarlıdır: sahada ayar veya özel alet gerekmez.",
+      "Ulaşılması zor noktalar ve birden çok yerden desteklenen uzun miller için ideal.",
+      "Ünitelerde kaldırma vidaları, muayene delikleri ve sıcaklık ile titreşim sensörleri için dişli delikler bulunur."
+    ]
   }
 }

@@ -525,7 +525,8 @@
     "resourcesHeading": "Katalogë dhe lidhje",
     "resourcePdf": "Katalog SKF (PDF)",
     "resourceLink": "Faqja e produktit SKF",
-    "inCatalog": "Në katalog"
+    "inCatalog": "Në katalog",
+    "factsHeading": "Të dhëna kryesore"
   },
   "CompanyValues": {
     "items": [
@@ -884,5 +885,67 @@
     "electroMechanicalLubricator": "Lubrifikues elektromekanik me një pikë",
     "multiPointLubricator": "Lubrifikues automatik me shumë pika",
     "lubricationCalculator": "Mjet llogaritjeje për lubrifikim"
+  },
+  "CategoryFacts": {
+    "housings": [
+      "Shtëpiza të ndara SNL/SNH në seritë 2, 3, 5 dhe 6, të ndërtuara mbi parim modular.",
+      "Të ndara horizontalisht në kapak dhe bazë, ndaj kushineta kontrollohet ose ndërrohet pa hequr boshtin.",
+      "Shtëpizat SNH prej gize gri GG 20; SSNHD për ngarkesa të rënda prej gize nodulare. Përmasat sipas ISO 113/II.",
+      "Opsione izolimi: me dy buzë (TG), unazë V (TA), shajak (TC) dhe komplete speciale labirinti.",
+      "Për rregullim të lirë ose fiksues të kushinetës (me unaza fiksuese sipas nevojës)."
+    ],
+    "sleeves": [
+      "Bokola adaptuese dhe tërheqëse për montimin e kushinetave me vrimë konike në boshte cilindrike.",
+      "Të gjitha përmasat dhe seritë standarde; bokolat adaptuese vijnë me dado dhe pajisje kyçëse.",
+      "Bokolat adaptuese kanë kon të jashtëm 1:12 dhe sipërfaqe të oksiduar në të zezë; versionet OH…H mbështesin metodën me injektim vaji.",
+      "Bokola tërheqëse për kon 1:12 dhe 1:30 (seritë 240 K30 dhe 241 K30); prapashtesa G tregon filetë më të vogël.",
+      "Përmasat sipas ISO 113/I."
+    ],
+    "speedi-sleeve": [
+      "Mbështjellës me mur të hollë 0,28 mm që shtyhet mbi boshtin e konsumuar — pa çmontim dhe pa përpunim.",
+      "Mund të përdoret izolues me të njëjtën madhësi si origjinali.",
+      "Vegla e montimit vjen me çdo mbështjellës; mjafton një çekiç.",
+      "Gama standarde për boshte nga 11,99 deri 203,33 mm (0,472–8 in); madhësi të tjera sipas kërkesës."
+    ],
+    "shim-packs": [
+      "Rondele të prera paraprakisht me një çarje për shtrirje të saktë vertikale të makinave.",
+      "Pesë përmasa dhe dhjetë trashësi, plus komplete me kombinimet më të përdorura.",
+      "Çelik inoks cilësor — i ripërdorshëm, vendoset dhe hiqet lehtë, me toleranca të ngushta.",
+      "Trashësia është e shënuar qartë në çdo rondele."
+    ],
+    "vibracon": [
+      "Mbajtëse të rregullueshme vetënivelizuese për montimin e pajisjeve rrotulluese në korniza ose themele çeliku dhe betoni.",
+      "Pranojnë deri në 4° kënd mes makinës dhe themelit pa përpunuar themelin.",
+      "Eliminojnë „këmbën e butë“; kapacitet i lartë ngarkese dhe gamë e gjerë rregullimi me lartësi të ulët.",
+      "Makina tipike: motorë me gaz dhe naftë, kompresorë, motorë elektrikë, reduktorë, gjeneratorë, pompa, ventilatorë dhe turbina.",
+      "Përdoren në industrinë ushqimore, letrës, naftës dhe gazit, detare, hekurudhore dhe energjetike."
+    ],
+    "y-bearings": [
+      "Kushineta radiale me sfera, me graso dhe të mbyllura nga të dy anët, me unazë të jashtme sferike që pranon devijim fillestar.",
+      "Fiksohen në bosht me unazë ekscentrike ose vida (seritë YAR, YAJ, YET); ka edhe versione me bokol dhe në inç.",
+      "Graso me bazë litiumi si standard; kafaze prej poliamidi 6,6 të përforcuar me fibër qelqi deri në +110 °C.",
+      "Njësi Y me shtëpiza prej gize, llamarine të presuar të zinkuar ose kompozite: me këmbë, me fllanxhë dhe tendosëse.",
+      "Përmasat e njësive sipas ISO 3228."
+    ],
+    "composite-housing-units": [
+      "Shtëpiza prej poliamidi të përforcuar me fibër qelqi (PA6): të lehta dhe rezistente ndaj korrozionit, kimikateve dhe acideve të holluara.",
+      "Durojnë temperatura të larta dhe të ulëta, rezistente ndaj UV dhe të riciklueshme; ka edhe kapakë fundorë.",
+      "Të ndërrueshme dimensionalisht me njësitë prej gize.",
+      "Kushinetat janë me graso për gjithë jetëgjatësinë, me graso rezistente ndaj ujit — pa rilubrifikim.",
+      "Njësi ISO me këmbë, me fllanxhë katrore dhe ovale, me çdo kushinetë SKF të madhësisë përkatëse."
+    ],
+    "seals": [
+      "Izolues radialë boshti, unaza V dhe izolues hidraulikë, përfshirë CR Seals — themeluar më 1878 si Chicago Rawhide, pjesë e SKF që nga 1990.",
+      "Materiale buzësh me rezistencë të lartë kimike dhe termike, dizajn i fortë, sipas standardeve kombëtare dhe ndërkombëtare.",
+      "Përdorime tipike: reduktorë, pompa hidraulike, akse, kolona drejtimi, reduktues shpejtësie dhe transmisione.",
+      "Gjithashtu izolues radialë HMS5 dhe HMSA10 dhe izolues SKF Taconite për kushte shumë të ndotura."
+    ],
+    "cooper": [
+      "Kushinetë me rula e ndarë, shpikur nga Thomas Cooper më 1907; Cooper është kompani e SKF.",
+      "E ndarë deri te boshti, ndaj montohet pa hequr bashkues, ingranazhe apo kushineta fqinje — ndalesë shumë më e shkurtër.",
+      "Luftërat janë të paracaktuara: pa rregullim në vend dhe pa vegla speciale.",
+      "Ideale për pozicione të vështira për t'u arritur dhe boshte të gjata me disa mbështetje.",
+      "Njësitë kanë vida ngritëse, vrima inspektimi dhe vrima të filetuara për sensorë temperature dhe dridhjesh."
+    ]
   }
 }

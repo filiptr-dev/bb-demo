@@ -525,7 +525,8 @@
     "resourcesHeading": "Cataloghi e link",
     "resourcePdf": "Catalogo SKF (PDF)",
     "resourceLink": "Pagina prodotto SKF",
-    "inCatalog": "Nel catalogo"
+    "inCatalog": "Nel catalogo",
+    "factsHeading": "In sintesi"
   },
   "CompanyValues": {
     "items": [
@@ -884,5 +885,67 @@
     "electroMechanicalLubricator": "Lubrificatore monopunto elettromeccanico",
     "multiPointLubricator": "Lubrificatore automatico multipunto",
     "lubricationCalculator": "Strumento di calcolo della lubrificazione"
+  },
+  "CategoryFacts": {
+    "housings": [
+      "Supporti ritti in due metà SNL/SNH delle serie 2, 3, 5 e 6, a struttura modulare.",
+      "Divisi orizzontalmente in cappello e base: il cuscinetto si ispeziona o sostituisce senza smontare l'albero.",
+      "Supporti SNH in ghisa grigia GG 20; SSNHD per impieghi gravosi in ghisa sferoidale. Dimensioni secondo ISO 113/II.",
+      "Tenute: a doppio labbro (TG), V-ring (TA), feltro (TC) e set speciali a labirinto.",
+      "Per disposizioni di cuscinetto libero o bloccato (con anelli di fermo secondo necessità)."
+    ],
+    "sleeves": [
+      "Bussole di trazione e di smontaggio per montare cuscinetti a foro conico su alberi cilindrici.",
+      "Tutte le dimensioni e serie standard; le bussole di trazione sono fornite complete di ghiera e rosetta di sicurezza.",
+      "Bussole di trazione con conicità esterna 1:12 e brunitura; le versioni OH…H consentono il metodo a iniezione d'olio.",
+      "Bussole di smontaggio per conicità 1:12 e 1:30 (serie 240 K30 e 241 K30); il suffisso G indica una filettatura più piccola.",
+      "Dimensioni secondo ISO 113/I."
+    ],
+    "speedi-sleeve": [
+      "Camicia a parete sottile da 0,28 mm che si calza sull'albero usurato — senza smontaggi né lavorazioni.",
+      "Si può usare una tenuta della stessa misura dell'originale.",
+      "L'attrezzo di montaggio è fornito con ogni camicia; basta un martello.",
+      "Gamma standard per alberi da 11,99 a 203,33 mm (0,472–8 in); altre misure su richiesta."
+    ],
+    "shim-packs": [
+      "Spessori pretagliati a una fessura per l'allineamento verticale preciso delle macchine.",
+      "Cinque dimensioni e dieci spessori, più kit con le combinazioni più usate.",
+      "Acciaio inox di alta qualità — riutilizzabili, facili da inserire e rimuovere, tolleranze strette.",
+      "Lo spessore è indicato chiaramente su ogni lamierino."
+    ],
+    "vibracon": [
+      "Supporti regolabili autolivellanti per montare macchine rotanti su telai o fondazioni in acciaio e calcestruzzo.",
+      "Compensano fino a 4° tra macchina e fondazione senza lavorare la fondazione.",
+      "Eliminano il «piede zoppo»; elevata portata e ampio campo di regolazione con ingombro in altezza ridotto.",
+      "Macchine tipiche: motori a gas e diesel, compressori, motori elettrici, riduttori, generatori, pompe, ventilatori e turbine.",
+      "Impiegati in alimentare, carta, oil & gas, navale e offshore, ferroviario e produzione di energia."
+    ],
+    "y-bearings": [
+      "Cuscinetti a sfere ingrassati e schermati su entrambi i lati, con anello esterno sferico che assorbe i disallineamenti iniziali.",
+      "Fissaggio all'albero con anello eccentrico o grani (serie YAR, YAJ, YET); anche con bussola di trazione e in pollici.",
+      "Grasso al litio di serie; gabbie in poliammide 6,6 rinforzata con fibra di vetro fino a +110 °C.",
+      "Supporti Y in ghisa, lamiera stampata zincata o composito: ritti, flangiati e tenditori.",
+      "Dimensioni dei supporti secondo ISO 3228."
+    ],
+    "composite-housing-units": [
+      "Supporti in poliammide rinforzata con fibra di vetro (PA6): leggeri e resistenti a corrosione, prodotti chimici e acidi diluiti.",
+      "Sopportano alte e basse temperature, resistenti ai raggi UV e riciclabili; disponibili coperchi terminali.",
+      "Intercambiabili dimensionalmente con i supporti in ghisa.",
+      "Cuscinetti ingrassati a vita con grasso idrorepellente — nessuna rilubrificazione.",
+      "Supporti ISO ritti, flangiati quadri e ovali, con qualsiasi cuscinetto SKF della misura adatta."
+    ],
+    "seals": [
+      "Anelli di tenuta radiali, V-ring e tenute idrauliche, incluso CR Seals — fondata nel 1878 come Chicago Rawhide, parte di SKF dal 1990.",
+      "Materiali del labbro ad alta resistenza chimica e termica, struttura robusta, conformi alle norme nazionali e internazionali.",
+      "Applicazioni tipiche: riduttori, pompe idrauliche, assali, piantoni sterzo, riduttori di velocità e trasmissioni.",
+      "Anche anelli radiali HMS5 e HMSA10 e tenute SKF Taconite per ambienti molto contaminati."
+    ],
+    "cooper": [
+      "Cuscinetto a rulli scomponibile inventato da Thomas Cooper nel 1907; Cooper è un'azienda SKF.",
+      "Diviso fino all'albero: si monta senza togliere giunti, ingranaggi o cuscinetti adiacenti, con fermi molto più brevi.",
+      "I giochi sono preimpostati: nessuna regolazione in loco né attrezzi speciali.",
+      "Ideale per posizioni difficili da raggiungere e alberi lunghi con più appoggi.",
+      "I supporti hanno viti di sollevamento, fori di ispezione e fori filettati per sensori di temperatura e vibrazioni."
+    ]
   }
 }

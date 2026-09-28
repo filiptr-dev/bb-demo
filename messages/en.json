@@ -525,7 +525,8 @@
     "resourcesHeading": "Catalogues and links",
     "resourcePdf": "SKF catalogue (PDF)",
     "resourceLink": "SKF product page",
-    "inCatalog": "In the catalog"
+    "inCatalog": "In the catalog",
+    "factsHeading": "Key facts"
   },
   "CompanyValues": {
     "items": [
@@ -884,5 +885,67 @@
     "electroMechanicalLubricator": "Electro-mechanical single-point lubricator",
     "multiPointLubricator": "Multi-point automatic lubricator",
     "lubricationCalculator": "Lubrication calculation tool"
+  },
+  "CategoryFacts": {
+    "housings": [
+      "SNL/SNH split plummer block housings in series 2, 3, 5 and 6, built on a modular principle.",
+      "Split horizontally into cap and base, so the bearing can be inspected or replaced without taking the shaft out.",
+      "SNH housings in grey cast iron GG 20; heavy-duty SSNHD housings in spheroidal graphite cast iron. Dimensions to ISO 113/II.",
+      "Seal options: double-lip (TG), V-ring (TA), felt (TC) and special labyrinth sets.",
+      "Supports free or locating bearing arrangements (locating rings fitted as needed)."
+    ],
+    "sleeves": [
+      "Adapter and withdrawal sleeves for mounting tapered-bore bearings on cylindrical shafts.",
+      "All standard dimensions and series; adapter sleeves come complete with lock nut and locking device.",
+      "Adapter sleeves have a 1:12 outer taper and black-oxide finish; OH…H versions support the oil-injection method.",
+      "Withdrawal sleeves for 1:12 and 1:30 tapers (240 K30 and 241 K30 series); suffix G means a smaller thread.",
+      "Dimensions to ISO 113/I."
+    ],
+    "speedi-sleeve": [
+      "Thin-walled 0.28 mm wear sleeve pushed over the worn shaft — no disassembly or shaft machining.",
+      "A seal of the same size as the original can be used.",
+      "The installation tool comes with each sleeve; a hammer is all you need.",
+      "Standard range for shaft diameters from 11.99 to 203.33 mm (0.472–8 in); other sizes on request."
+    ],
+    "shim-packs": [
+      "Pre-cut single-slot shims for accurate vertical machine alignment.",
+      "Five dimensions and ten thicknesses, plus kits with the most popular combinations.",
+      "High-quality stainless steel — reusable, easy to fit and remove, with close tolerances.",
+      "The thickness is clearly marked on every shim."
+    ],
+    "vibracon": [
+      "Self-levelling adjustable chocks for mounting rotating equipment on base frames or steel and concrete foundations.",
+      "Accept up to 4° of angle between machine and foundation without machining the foundation.",
+      "Eliminate soft foot; high load capacity and a wide adjustment range with a low profile.",
+      "Typical machines: gas and diesel engines, compressors, electric motors, gearboxes, generators, pumps, fans and turbines.",
+      "Used in food and beverage, pulp and paper, oil and gas, marine and offshore, railways and power generation."
+    ],
+    "y-bearings": [
+      "Deep groove ball bearings, greased and sealed on both sides, with a sphered outer ring that accepts initial misalignment.",
+      "Locked to the shaft by eccentric collar or grub screws (YAR, YAJ, YET series); adapter-sleeve and inch versions available.",
+      "Lithium-based grease as standard; glass-fibre reinforced polyamide 6,6 cages up to +110 °C.",
+      "Y-bearing units in cast iron, zinc-coated pressed steel or composite housings: pillow block, flanged and take-up.",
+      "Unit dimensions to ISO 3228."
+    ],
+    "composite-housing-units": [
+      "Housings in glass-fibre reinforced polyamide (PA6): light and resistant to corrosion, chemicals and diluted acids.",
+      "Tolerate high and low temperatures, UV resistant and recyclable; end caps available.",
+      "Dimensionally interchangeable with cast-iron units.",
+      "Bearings are greased for life with water-resistant grease — no relubrication needed.",
+      "ISO pillow block, square and oval flanged units, with any SKF insert bearing of matching size."
+    ],
+    "seals": [
+      "Radial shaft seals, V-rings and hydraulic seals, including CR Seals — founded in 1878 as Chicago Rawhide and part of SKF since 1990.",
+      "Lip materials with high chemical and thermal resistance, robust design, built to national and international standards.",
+      "Typical applications: gearboxes, hydraulic pumps, axles, power-steering columns, speed reducers and transmissions.",
+      "Also HMS5 and HMSA10 radial shaft seals and SKF Taconite seals for heavily contaminated conditions."
+    ],
+    "cooper": [
+      "Split roller bearing invented by Thomas Cooper in 1907; Cooper is an SKF company.",
+      "Split to the shaft, so it fits without removing couplings, gears or neighbouring bearings — far shorter downtime.",
+      "Clearances are preset: no on-site adjustment or special tools needed.",
+      "Ideal for hard-to-reach positions and long shafts supported at several points.",
+      "Units offer lifting screws, inspection holes and tapped holes for temperature and vibration sensors."
+    ]
   }
 }

@@ -525,7 +525,8 @@
     "resourcesHeading": "Kataloge und Links",
     "resourcePdf": "SKF-Katalog (PDF)",
     "resourceLink": "SKF-Produktseite",
-    "inCatalog": "Im Katalog"
+    "inCatalog": "Im Katalog",
+    "factsHeading": "Das Wichtigste"
   },
   "CompanyValues": {
     "items": [
@@ -884,5 +885,67 @@
     "electroMechanicalLubricator": "Elektromechanischer Einpunkt-Schmierstoffgeber",
     "multiPointLubricator": "Mehrpunkt-Schmierstoffgeber",
     "lubricationCalculator": "Schmierungs-Berechnungsprogramm"
+  },
+  "CategoryFacts": {
+    "housings": [
+      "Geteilte Stehlagergehäuse SNL/SNH der Reihen 2, 3, 5 und 6 im Baukastenprinzip.",
+      "Horizontal in Deckel und Unterteil geteilt – das Lager lässt sich prüfen oder wechseln, ohne die Welle auszubauen.",
+      "SNH-Gehäuse aus Grauguss GG 20, schwere SSNHD-Gehäuse aus Sphäroguss. Abmessungen nach ISO 113/II.",
+      "Dichtungen: Zweilippendichtung (TG), V-Ring (TA), Filz (TC) und Sonder-Labyrinthsätze.",
+      "Für Los- oder Festlageranordnung (mit Festringen nach Bedarf)."
+    ],
+    "sleeves": [
+      "Spann- und Abziehhülsen zur Montage von Lagern mit kegeliger Bohrung auf zylindrischen Wellen.",
+      "Alle Standardabmessungen und -reihen; Spannhülsen werden komplett mit Nutmutter und Sicherung geliefert.",
+      "Spannhülsen mit Außenkegel 1:12 und brünierter Oberfläche; Ausführungen OH…H für das Druckölverfahren.",
+      "Abziehhülsen für Kegel 1:12 und 1:30 (Reihen 240 K30 und 241 K30); Nachsetzzeichen G bedeutet kleineres Gewinde.",
+      "Abmessungen nach ISO 113/I."
+    ],
+    "speedi-sleeve": [
+      "Dünnwandige Laufhülse (0,28 mm), die über die verschlissene Welle geschoben wird – ohne Demontage oder Nacharbeit.",
+      "Es kann ein Dichtring in Originalgröße verwendet werden.",
+      "Das Montagewerkzeug liegt jeder Hülse bei; ein Hammer genügt.",
+      "Standardprogramm für Wellen von 11,99 bis 203,33 mm (0,472–8 in); weitere Größen auf Anfrage."
+    ],
+    "shim-packs": [
+      "Vorgeschnittene Passscheiben mit einem Schlitz für die genaue vertikale Maschinenausrichtung.",
+      "Fünf Größen und zehn Dicken, dazu Sätze mit den gängigsten Kombinationen.",
+      "Hochwertiger Edelstahl – wiederverwendbar, leicht ein- und auszubauen, enge Toleranzen.",
+      "Die Dicke ist auf jeder Scheibe deutlich angegeben."
+    ],
+    "vibracon": [
+      "Selbstnivellierende, einstellbare Keilelemente zur Aufstellung rotierender Maschinen auf Grundrahmen oder Stahl- und Betonfundamenten.",
+      "Gleichen bis zu 4° Winkel zwischen Maschine und Fundament aus, ohne das Fundament zu bearbeiten.",
+      "Beseitigen den „Soft Foot“; hohe Tragfähigkeit und großer Einstellbereich bei geringer Bauhöhe.",
+      "Typische Maschinen: Gas- und Dieselmotoren, Verdichter, Elektromotoren, Getriebe, Generatoren, Pumpen, Lüfter und Turbinen.",
+      "Im Einsatz in Lebensmittel, Papier, Öl und Gas, Schiffbau und Offshore, Bahn und Energieerzeugung."
+    ],
+    "y-bearings": [
+      "Rillenkugellager, befettet und beidseitig abgedichtet, mit kugeligem Außenring, der Anfangsfluchtfehler ausgleicht.",
+      "Befestigung auf der Welle per Exzenterring oder Gewindestiften (Reihen YAR, YAJ, YET); auch mit Spannhülse und in Zoll.",
+      "Standardmäßig Lithiumseifenfett; Käfige aus glasfaserverstärktem Polyamid 6,6 bis +110 °C.",
+      "Y-Lagereinheiten mit Gehäusen aus Guss, verzinktem Stahlblech oder Verbundwerkstoff: Steh-, Flansch- und Spannlagereinheiten.",
+      "Abmessungen der Einheiten nach ISO 3228."
+    ],
+    "composite-housing-units": [
+      "Gehäuse aus glasfaserverstärktem Polyamid (PA6): leicht und beständig gegen Korrosion, Chemikalien und verdünnte Säuren.",
+      "Vertragen hohe und tiefe Temperaturen, UV-beständig und recycelbar; Endkappen erhältlich.",
+      "Maßlich austauschbar mit Gusseinheiten.",
+      "Lager mit wasserbeständigem Fett lebensdauergeschmiert – kein Nachschmieren.",
+      "ISO-Steh-, Vierloch- und Ovalflanscheinheiten mit jedem passenden SKF-Y-Lager."
+    ],
+    "seals": [
+      "Radial-Wellendichtringe, V-Ringe und Hydraulikdichtungen, darunter CR Seals – 1878 als Chicago Rawhide gegründet, seit 1990 Teil von SKF.",
+      "Lippenwerkstoffe mit hoher chemischer und thermischer Beständigkeit, robust, nach nationalen und internationalen Normen.",
+      "Typische Anwendungen: Getriebe, Hydraulikpumpen, Achsen, Lenksäulen, Untersetzungsgetriebe und Antriebe.",
+      "Außerdem Radial-Wellendichtringe HMS5 und HMSA10 sowie SKF Taconite-Dichtungen für starke Verschmutzung."
+    ],
+    "cooper": [
+      "Geteiltes Rollenlager, 1907 von Thomas Cooper erfunden; Cooper ist ein SKF-Unternehmen.",
+      "Bis zur Welle geteilt – Einbau ohne Ausbau von Kupplungen, Zahnrädern oder Nachbarlagern, dadurch deutlich kürzere Stillstände.",
+      "Lagerluft ist voreingestellt: keine Einstellung vor Ort, keine Spezialwerkzeuge.",
+      "Ideal für schwer zugängliche Stellen und lange, mehrfach gelagerte Wellen.",
+      "Einheiten mit Abdrückschrauben, Inspektionsbohrungen und Gewindebohrungen für Temperatur- und Schwingungssensoren."
+    ]
   }
 }
