@@ -37,6 +37,10 @@
     "decoder": {
       "title": "Dekodér označení SKF",
       "description": "Dekódujte akékoľvek označenie ložiska SKF — vysvetlená séria, priemer otvoru a kódy prípon. Bezplatný nástroj od B&B Unikoop, oficiálneho distribútora SKF."
+    },
+    "sizeFinder": {
+      "title": "Vyhľadávanie ložísk podľa rozmeru",
+      "description": "Nájdite ložisko SKF podľa nameraného vnútorného priemeru, vonkajšieho priemeru a šírky v mm. Bezplatný nástroj od B&B Unikoop, oficiálneho distribútora SKF."
     }
   },
   "Nav": {
@@ -50,7 +54,8 @@
     "menu": "Menu",
     "searchNoResults": "Žiadne zodpovedajúce produkty.",
     "searchViewAll": "Zobraziť všetky výsledky ({count})",
-    "decoder": "Dekodér"
+    "decoder": "Dekodér",
+    "sizeFinder": "Hľadať podľa rozmeru"
   },
   "Footer": {
     "tagline": "Oficiálny distribútor SKF pre Severné Macedónsko už 35 rokov. Ložiská, tesnenia, prenos výkonu a mazivá.",
@@ -685,5 +690,19 @@
       "w64": "W64 – špeciálna náplň mazivom",
       "w203": "W203 – plnené tuhým mazivom"
     }
+  },
+  "SizeFinder": {
+    "title": "Vyhľadávanie podľa rozmeru",
+    "subtitle": "Odmerali ste staré ložisko? Zadajte rozmery v milimetroch a nájdite zodpovedajúce ložiská SKF.",
+    "bore": "Vnútorný priemer",
+    "outer": "Vonkajší priemer",
+    "width": "Šírka",
+    "tolerance": "Tolerancia",
+    "exact": "Presne",
+    "empty": "Zadajte hore aspoň jeden rozmer.",
+    "none": "Žiadne ložiská s týmito rozmermi.",
+    "noneTryTolerance": "Žiadna presná zhoda — skúste väčšiu toleranciu.",
+    "found": "{count, plural, one {Vyhovuje # ložisko} few {Vyhovujú # ložiská} other {Vyhovuje # ložísk}}",
+    "viewAll": "Všetkých {count} v katalógu →"
   }
 }

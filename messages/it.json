@@ -37,6 +37,10 @@
     "decoder": {
       "title": "Decodificatore sigle SKF",
       "description": "Decodifica qualsiasi sigla cuscinetto SKF — serie, diametro del foro e codici suffisso spiegati. Strumento gratuito di B&B Unikoop, distributore ufficiale SKF."
+    },
+    "sizeFinder": {
+      "title": "Ricerca cuscinetti per misura",
+      "description": "Trova un cuscinetto SKF in base a foro, diametro esterno e larghezza misurati in mm. Strumento gratuito di B&B Unikoop, distributore ufficiale SKF."
     }
   },
   "Nav": {
@@ -50,7 +54,8 @@
     "menu": "Menu",
     "searchNoResults": "Nessun prodotto corrispondente.",
     "searchViewAll": "Vedi tutti i {count} risultati",
-    "decoder": "Decoder"
+    "decoder": "Decoder",
+    "sizeFinder": "Cerca per misura"
   },
   "Footer": {
     "tagline": "Da 35 anni distributore ufficiale SKF per la Macedonia del Nord. Cuscinetti, tenute, trasmissione di potenza e lubrificanti.",
@@ -685,5 +690,19 @@
       "w64": "W64 – lubrificante speciale",
       "w203": "W203 – riempito con lubrificante solido"
     }
+  },
+  "SizeFinder": {
+    "title": "Ricerca per misura",
+    "subtitle": "Hai misurato un vecchio cuscinetto? Inserisci le dimensioni in millimetri per trovare i cuscinetti SKF corrispondenti.",
+    "bore": "Foro",
+    "outer": "Diametro esterno",
+    "width": "Larghezza",
+    "tolerance": "Tolleranza",
+    "exact": "Esatta",
+    "empty": "Inserisci almeno una dimensione qui sopra.",
+    "none": "Nessun cuscinetto con queste dimensioni.",
+    "noneTryTolerance": "Nessuna corrispondenza esatta — prova una tolleranza più ampia.",
+    "found": "{count, plural, one {# cuscinetto corrisponde} other {# cuscinetti corrispondono}}",
+    "viewAll": "Vedi tutti i {count} nel catalogo →"
   }
 }

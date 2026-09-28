@@ -37,6 +37,10 @@
     "decoder": {
       "title": "Dekodues i shenjave SKF",
       "description": "Dekodoni çdo shenjë kushineti SKF — seria, diametri i vrimës dhe kodet e prapashtesave të shpjeguara. Mjet falas nga B&B Unikoop, distributor zyrtar i SKF."
+    },
+    "sizeFinder": {
+      "title": "Kërkimi i kushinetave sipas masës",
+      "description": "Gjeni një kushinetë SKF sipas diametrit të brendshëm, diametrit të jashtëm dhe gjerësisë së matur në mm. Mjet falas nga B&B Unikoop, distributor zyrtar i SKF."
     }
   },
   "Nav": {
@@ -50,7 +54,8 @@
     "menu": "Menyja",
     "searchNoResults": "Nuk u gjetën produkte.",
     "searchViewAll": "Shiko të gjitha {count} rezultatet",
-    "decoder": "Dekoduesi"
+    "decoder": "Dekoduesi",
+    "sizeFinder": "Kërko sipas masës"
   },
   "Footer": {
     "tagline": "Distributor zyrtar i SKF për Maqedoninë e Veriut prej 35 vitesh. Rulmane, guarnicione, transmetim fuqie dhe lubrifikantë.",
@@ -685,5 +690,19 @@
       "w64": "W64 – yndyrë speciale",
       "w203": "W203 – i mbushur me vaj të ngurtë"
     }
+  },
+  "SizeFinder": {
+    "title": "Kërkimi sipas masës",
+    "subtitle": "Keni matur një kushinetë të vjetër? Shkruani përmasat në milimetra për të gjetur kushinetat SKF që përputhen.",
+    "bore": "Diametri i brendshëm",
+    "outer": "Diametri i jashtëm",
+    "width": "Gjerësia",
+    "tolerance": "Toleranca",
+    "exact": "Saktë",
+    "empty": "Shkruani të paktën një përmasë më sipër.",
+    "none": "Asnjë kushinetë nuk përputhet me këto përmasa.",
+    "noneTryTolerance": "Asnjë përputhje e saktë — provoni një tolerancë më të gjerë.",
+    "found": "{count, plural, one {# kushinetë përputhet} other {# kushineta përputhen}}",
+    "viewAll": "Shihni të gjitha {count} në katalog →"
   }
 }

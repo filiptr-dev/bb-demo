@@ -37,6 +37,10 @@
     "decoder": {
       "title": "SKF-Bezeichnungsdecoder",
       "description": "Jede SKF-Lagerbezeichnung entschlüsseln — Baureihe, Bohrungsdurchmesser und Suffixcodes erklärt. Kostenloses Tool von B&B Unikoop, offizieller SKF-Vertriebspartner."
+    },
+    "sizeFinder": {
+      "title": "Lager-Größensuche",
+      "description": "Finden Sie ein SKF-Lager anhand von gemessenem Bohrungsdurchmesser, Außendurchmesser und Breite in mm. Kostenloses Tool von B&B Unikoop, offizieller SKF-Vertriebspartner."
     }
   },
   "Nav": {
@@ -50,7 +54,8 @@
     "menu": "Menü",
     "searchNoResults": "Keine passenden Produkte.",
     "searchViewAll": "Alle {count} Ergebnisse anzeigen",
-    "decoder": "Decoder"
+    "decoder": "Decoder",
+    "sizeFinder": "Größensuche"
   },
   "Footer": {
     "tagline": "Seit 35 Jahren offizieller SKF-Vertragshändler für Nordmazedonien. Wälzlager, Dichtungen, Antriebstechnik und Schmierstoffe.",
@@ -685,5 +690,19 @@
       "w64": "W64 – Spezialfettfüllung",
       "w203": "W203 – mit Festöl gefüllt"
     }
+  },
+  "SizeFinder": {
+    "title": "Lager-Größensuche",
+    "subtitle": "Ein altes Lager vermessen? Geben Sie die Maße in Millimetern ein, um passende SKF-Lager zu finden.",
+    "bore": "Bohrung",
+    "outer": "Außendurchmesser",
+    "width": "Breite",
+    "tolerance": "Toleranz",
+    "exact": "Exakt",
+    "empty": "Geben Sie oben mindestens ein Maß ein.",
+    "none": "Keine Lager mit diesen Maßen.",
+    "noneTryTolerance": "Kein exakter Treffer — versuchen Sie eine größere Toleranz.",
+    "found": "{count, plural, one {# passendes Lager} other {# passende Lager}}",
+    "viewAll": "Alle {count} im Katalog →"
   }
 }

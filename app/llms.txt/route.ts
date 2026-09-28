@@ -31,6 +31,9 @@ export async function GET() {
 - Search URL: ${link("/catalog")}?search=<designation or d x D x B>, for example ${link("/catalog")}?search=6205 or ${link("/catalog")}?search=25x52x15
 - Product page URL: ${link("/catalog")}/<designation-slug>, for example ${link("/catalog/6205")}. Each page lists the bore diameter d, outside diameter D and width B in mm, the bearing type, seal and bore type, and has Product JSON-LD.
 - Type filter: ${link("/catalog")}?type=<type-slug>
+- Dimension ranges (mm): ${link("/catalog")}?dmin=&dmax=&Dmin=&Dmax=&Bmin=&Bmax=
+- [Designation decoder](${link("/decoder")}): ${en.Metadata.decoder.description}
+- [Bearing size finder](${link("/size-finder")}): ${en.Metadata.sizeFinder.description}
 
 ### Bearing types
 

@@ -16,6 +16,8 @@ const nav = [
   { href: "/decoder", key: "decoder" },
   { href: "/contact", key: "contact" },
 ] as const;
+// the desktop bar has no room for more; the tool pages link to each other
+const mobileNav = [...nav.slice(0, 4), { href: "/size-finder", key: "sizeFinder" }, nav[4]] as const;
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -38,7 +40,7 @@ export default function Header() {
           <span className="font-display font-extrabold tracking-tight">{tc("brandFirst")} <span className="text-gradient-brand">{tc("brandSecond")}</span></span>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-7 text-[13px] uppercase tracking-wider text-foreground/70">
+        <nav className="hidden lg:flex items-center gap-5 xl:gap-7 whitespace-nowrap text-[13px] uppercase tracking-wider text-foreground/70">
           {nav.map((n) => (
             <Link key={n.href} href={n.href} className="hover:text-brand-2 transition-colors">{t(n.key)}</Link>
           ))}
@@ -60,7 +62,7 @@ export default function Header() {
           <SheetHeader><SheetTitle>{t("menu")}</SheetTitle></SheetHeader>
           <div className="px-4 space-y-4">
             <HeaderSearch placeholder={tc("searchShort")} inputClassName="h-10 rounded-full px-4" onNavigate={() => setOpen(false)} />
-            {nav.map((n) => (
+            {mobileNav.map((n) => (
               <Link key={n.href} href={n.href} onClick={() => setOpen(false)} className="block text-sm uppercase tracking-wider text-foreground/80">{t(n.key)}</Link>
             ))}
             <Button nativeButton={false} render={<Link href="/catalog" onClick={() => setOpen(false)} />} className="rounded-full bg-brand-gradient text-white text-xs font-semibold uppercase">{t("eCatalog")}</Button>

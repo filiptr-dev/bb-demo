@@ -37,6 +37,10 @@
     "decoder": {
       "title": "Bearing designation decoder",
       "description": "Decode any SKF bearing designation — series, bore size and suffix codes explained. Free tool from B&B Unikoop, official SKF distributor."
+    },
+    "sizeFinder": {
+      "title": "Bearing size finder",
+      "description": "Find an SKF bearing by its measured bore, outside diameter and width in mm. Free tool from B&B Unikoop, official SKF distributor."
     }
   },
   "Nav": {
@@ -50,7 +54,8 @@
     "menu": "Menu",
     "searchNoResults": "No matching products.",
     "searchViewAll": "View all {count} results",
-    "decoder": "Decoder"
+    "decoder": "Decoder",
+    "sizeFinder": "Size finder"
   },
   "Footer": {
     "tagline": "Official SKF distributor for North Macedonia for 35 years. Bearings, seals, power transmission and lubricants.",
@@ -685,5 +690,19 @@
       "w64": "W64 – special grease fill",
       "w203": "W203 – solid oil filled"
     }
+  },
+  "SizeFinder": {
+    "title": "Bearing size finder",
+    "subtitle": "Measured an old bearing? Enter its dimensions in millimetres to find matching SKF bearings.",
+    "bore": "Bore",
+    "outer": "Outside diameter",
+    "width": "Width",
+    "tolerance": "Tolerance",
+    "exact": "Exact",
+    "empty": "Enter at least one dimension above.",
+    "none": "No bearings match these dimensions.",
+    "noneTryTolerance": "No exact match — try a wider tolerance.",
+    "found": "{count, plural, one {# bearing matches} other {# bearings match}}",
+    "viewAll": "View all {count} in the catalog →"
   }
 }

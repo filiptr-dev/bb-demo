@@ -37,6 +37,10 @@
     "decoder": {
       "title": "SKF kod çözücü",
       "description": "Herhangi bir SKF rulman kodunu çözün — seri, iç çap ve son ek kodları açıklanır. B&B Unikoop'tan, resmi SKF distribütöründen ücretsiz araç."
+    },
+    "sizeFinder": {
+      "title": "Rulman ölçü bulucu",
+      "description": "Ölçülen iç çap, dış çap ve genişliğe (mm) göre SKF rulmanı bulun. Resmi SKF distribütörü B&B Unikoop'tan ücretsiz araç."
     }
   },
   "Nav": {
@@ -50,7 +54,8 @@
     "menu": "Menü",
     "searchNoResults": "Eşleşen ürün bulunamadı.",
     "searchViewAll": "{count} sonucun tümünü görüntüle",
-    "decoder": "Kod Çözücü"
+    "decoder": "Kod Çözücü",
+    "sizeFinder": "Ölçüye göre bul"
   },
   "Footer": {
     "tagline": "35 yıldır Kuzey Makedonya'nın resmi SKF distribütörü. Rulmanlar, keçeler, güç aktarımı ve yağlayıcılar.",
@@ -685,5 +690,19 @@
       "w64": "W64 – özel gres dolgusu",
       "w203": "W203 – katı yağ dolgulu"
     }
+  },
+  "SizeFinder": {
+    "title": "Rulman ölçü bulucu",
+    "subtitle": "Eski bir rulmanı mı ölçtünüz? Uyan SKF rulmanlarını bulmak için ölçüleri milimetre olarak girin.",
+    "bore": "İç çap",
+    "outer": "Dış çap",
+    "width": "Genişlik",
+    "tolerance": "Tolerans",
+    "exact": "Tam",
+    "empty": "Yukarıya en az bir ölçü girin.",
+    "none": "Bu ölçülere uyan rulman yok.",
+    "noneTryTolerance": "Tam eşleşme yok — daha geniş bir tolerans deneyin.",
+    "found": "{count, plural, one {# rulman uyuyor} other {# rulman uyuyor}}",
+    "viewAll": "Katalogdaki {count} rulmanın tümü →"
   }
 }
