@@ -516,7 +516,10 @@
   "ProductCategoryDetail": {
     "back": "← Kthehu në ballinë",
     "contactIntro": "Kjo kategori është pjesë e ofertës së plotë SKF të B&B Unikoop. Për specifikime teknike, disponueshmëri dhe ofertë, na kontaktoni.",
-    "contactCta": "Na kontaktoni →"
+    "eyebrow": "Oferta origjinale SKF",
+    "quoteCta": "Kërkoni ofertë",
+    "catalogCta": "Shihni në katalog",
+    "moreHeading": "Më shumë nga oferta SKF"
   },
   "CompanyValues": {
     "items": [

@@ -47,6 +47,7 @@ export type ProductCategory = {
   slug: string;
   pageType: "hub" | "article" | "showcase" | "data-table";
   image: string;
+  catalog?: string; // bearing-type slug to filter /catalog by; "" = the whole catalog
 };
 
 // Demo only: product photos are hotlinked from the client's own media library (seals has none there, so it stays local).
@@ -54,14 +55,14 @@ const skfOffer = "https://bbunikoop.com.mk/wp-content/uploads/";
 
 // Mirrors the "Original SKF Offer" category grid on the legacy site (bbunikoop.com.mk). Names/blurbs live in messages/*.json under ProductCategories.
 export const productCategories: ProductCategory[] = [
-  { slug: "bearings", pageType: "hub", image: `${skfOffer}2022/04/SINGLE-ROW-BALL-BEARINGS__66409.1605765209.jpg` },
-  { slug: "housings", pageType: "article", image: `${skfOffer}2022/04/kukjishta-2.jpg` },
+  { slug: "bearings", pageType: "hub", image: `${skfOffer}2022/04/SINGLE-ROW-BALL-BEARINGS__66409.1605765209.jpg`, catalog: "" },
+  { slug: "housings", pageType: "article", image: `${skfOffer}2022/04/kukjishta-2.jpg`, catalog: "housing" },
   { slug: "cooper", pageType: "article", image: `${skfOffer}2022/05/split-cooper3.png` },
-  { slug: "seals", pageType: "article", image: "/images/products/seals.jpg" },
-  { slug: "sleeves", pageType: "article", image: `${skfOffer}2022/05/hilzni-adapteri1.jpg` },
+  { slug: "seals", pageType: "article", image: "/images/products/seals.jpg", catalog: "seal" },
+  { slug: "sleeves", pageType: "article", image: `${skfOffer}2022/05/hilzni-adapteri1.jpg`, catalog: "sleeve-nut" },
   { slug: "belts-chains", pageType: "hub", image: `${skfOffer}2022/04/Power-Transmission-1.jpg` },
   { slug: "bushings", pageType: "hub", image: `${skfOffer}2022/05/chauri1.jpg` },
-  { slug: "nuts", pageType: "showcase", image: `${skfOffer}2022/05/navrtki1.png` },
+  { slug: "nuts", pageType: "showcase", image: `${skfOffer}2022/05/navrtki1.png`, catalog: "sleeve-nut" },
   { slug: "speedi-sleeve", pageType: "article", image: `${skfOffer}2022/05/speedi-sleeve1.jpg` },
   { slug: "food-industry", pageType: "hub", image: `${skfOffer}2022/06/food-line-topchesti.jpg` },
   { slug: "pulley-alignment", pageType: "hub", image: `${skfOffer}2022/05/tkba-40-1.jpg` },
@@ -73,8 +74,8 @@ export const productCategories: ProductCategory[] = [
   { slug: "lubrication-systems", pageType: "hub", image: `${skfOffer}2022/06/tlgh-1.jpg` },
   { slug: "automatic-lubricators", pageType: "hub", image: `${skfOffer}2022/06/skf-24-1.jpg` },
   { slug: "vibracon", pageType: "article", image: `${skfOffer}2022/06/prilagodlivi-prikluchoci-za-skf-vibracon-1.jpg` },
-  { slug: "composite-housing-units", pageType: "article", image: `${skfOffer}2022/04/edinici-so-kompozitni-kukjishta-2.jpg` },
-  { slug: "y-bearings", pageType: "article", image: `${skfOffer}2022/04/y-5.jpg` },
+  { slug: "composite-housing-units", pageType: "article", image: `${skfOffer}2022/04/edinici-so-kompozitni-kukjishta-2.jpg`, catalog: "unit" },
+  { slug: "y-bearings", pageType: "article", image: `${skfOffer}2022/04/y-5.jpg`, catalog: "unit" },
 ];
 
 // SKF product lines shown in the brands strip, each linked to the category page that carries it.

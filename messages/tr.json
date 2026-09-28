@@ -516,7 +516,10 @@
   "ProductCategoryDetail": {
     "back": "← Ana sayfaya dön",
     "contactIntro": "Bu kategori, B&B Unikoop'un eksiksiz SKF ürün yelpazesinin bir parçasıdır. Teknik özellikler, stok durumu ve teklif için bizimle iletişime geçin.",
-    "contactCta": "Bize ulaşın →"
+    "eyebrow": "Orijinal SKF ürünleri",
+    "quoteCta": "Teklif isteyin",
+    "catalogCta": "Katalogda görün",
+    "moreHeading": "SKF ürünlerinden daha fazlası"
   },
   "CompanyValues": {
     "items": [

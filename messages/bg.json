@@ -516,7 +516,10 @@
   "ProductCategoryDetail": {
     "back": "← Обратно към началото",
     "contactIntro": "Тази категория е част от пълната гама SKF на B&B Unikoop. За технически характеристики, наличност и оферта се свържете с нас.",
-    "contactCta": "Свържете се с нас →"
+    "eyebrow": "Оригинална оферта на SKF",
+    "quoteCta": "Поискайте оферта",
+    "catalogCta": "Вижте в каталога",
+    "moreHeading": "Още от офертата на SKF"
   },
   "CompanyValues": {
     "items": [

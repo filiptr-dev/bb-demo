@@ -516,7 +516,10 @@
   "ProductCategoryDetail": {
     "back": "← Späť na úvod",
     "contactIntro": "Táto kategória je súčasťou kompletnej ponuky SKF spoločnosti B&B Unikoop. Pre technické parametre, dostupnosť a cenovú ponuku nás kontaktujte.",
-    "contactCta": "Kontaktujte nás →"
+    "eyebrow": "Originálna ponuka SKF",
+    "quoteCta": "Vyžiadať ponuku",
+    "catalogCta": "Zobraziť v katalógu",
+    "moreHeading": "Viac z ponuky SKF"
   },
   "CompanyValues": {
     "items": [

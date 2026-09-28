@@ -2,9 +2,11 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import { Button } from "@/components/ui/button";
 import { alternatesFor } from "@/i18n/metadata";
 import type { Locale } from "@/i18n/routing";
 import { productCategories, getProductCategory } from "@/lib/domain/taxonomy";
+import CategoryCard from "@/components/product/CategoryCard";
 import CompanyValuesFooter from "@/components/layout/CompanyValuesFooter";
 
 export function generateStaticParams() {
@@ -20,7 +22,14 @@ export async function generateMetadata({ params }: PageProps<"/[locale]/products
     title: tp(`${c.slug}.name`),
     description: tp(`${c.slug}.blurb`),
     alternates: alternatesFor(`/products/${c.slug}`, locale),
+    openGraph: { images: [c.image] },
   };
+}
+
+// The next few categories in homepage order, wrapping around, so every page links onward.
+function neighbours(slug: string, count = 4) {
+  const i = productCategories.findIndex((c) => c.slug === slug);
+  return Array.from({ length: count }, (_, k) => productCategories[(i + k + 1) % productCategories.length]);
 }
 
 export default async function ProductCategoryPage({ params }: PageProps<"/[locale]/products/[slug]">) {
@@ -30,20 +39,44 @@ export default async function ProductCategoryPage({ params }: PageProps<"/[local
   if (!c) notFound();
   const t = await getTranslations("ProductCategoryDetail");
   const tp = await getTranslations("ProductCategories");
+  const name = tp(`${c.slug}.name`);
+  const catalogHref = c.catalog === undefined ? null : c.catalog ? `/catalog?type=${c.catalog}` : "/catalog";
 
   return (
-    <div className="container mx-auto px-6 lg:px-10 pt-24 pb-14">
+    <div className="container mx-auto max-w-6xl px-6 lg:px-10 pt-24 pb-14">
       <Link href="/#skf-offer" className="text-xs uppercase tracking-wide text-foreground/50 hover:text-brand-2 transition-colors">
         {t("back")}
       </Link>
-      <h1 className="mt-4 font-display text-3xl md:text-4xl font-bold">{tp(`${c.slug}.name`)}</h1>
-      <p className="mt-2 text-foreground/60 max-w-2xl leading-relaxed">{tp(`${c.slug}.blurb`)}</p>
-      <div className="mt-8 p-6 rounded-2xl border border-foreground/[0.07] bg-foreground/[0.025] max-w-2xl">
-        <p className="text-sm text-foreground/60 leading-relaxed">{t("contactIntro")}</p>
-        <Link href="/contact" className="mt-4 inline-block text-brand-2 text-sm font-semibold uppercase tracking-wide hover:underline">
-          {t("contactCta")}
-        </Link>
-      </div>
+
+      <header className="mt-6 grid gap-8 md:grid-cols-[1fr_minmax(0,400px)] md:items-center">
+        <div>
+          <p className="text-brand-2 text-xs tracking-[0.25em] uppercase font-semibold mb-3">{t("eyebrow")}</p>
+          <h1 className="font-display font-black text-3xl md:text-5xl tracking-tighter">{name}</h1>
+          <p className="mt-3 text-foreground/70 max-w-xl leading-relaxed">{tp(`${c.slug}.blurb`)}</p>
+          <p className="mt-3 text-sm text-foreground/55 max-w-xl leading-relaxed">{t("contactIntro")}</p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Button nativeButton={false} render={<Link href="/contact" />} className="rounded-full bg-brand-gradient text-white">{t("quoteCta")}</Button>
+            {catalogHref && (
+              <Button nativeButton={false} render={<Link href={catalogHref} />} variant="outline" className="rounded-full">{t("catalogCta")}</Button>
+            )}
+          </div>
+        </div>
+        {/* product shots are cut out on white, so the plate stays white in every theme */}
+        <div className="order-first md:order-none aspect-[4/3] rounded-2xl border border-foreground/[0.08] bg-white overflow-hidden">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={c.image} alt={name} className="size-full object-contain p-6" />
+        </div>
+      </header>
+
+      <section className="mt-16">
+        <h2 className="font-display font-bold text-xl md:text-2xl tracking-tight mb-5">{t("moreHeading")}</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {neighbours(c.slug).map((n) => (
+            <CategoryCard key={n.slug} category={n} name={tp(`${n.slug}.name`)} />
+          ))}
+        </div>
+      </section>
+
       <CompanyValuesFooter />
     </div>
   );

@@ -516,7 +516,10 @@
   "ProductCategoryDetail": {
     "back": "← Back to home",
     "contactIntro": "This category is part of B&B Unikoop's complete SKF offer. For technical specifications, availability and a quote, contact us.",
-    "contactCta": "Contact us →"
+    "eyebrow": "Original SKF offer",
+    "quoteCta": "Request a quote",
+    "catalogCta": "View in the catalog",
+    "moreHeading": "More from the SKF offer"
   },
   "CompanyValues": {
     "items": [
