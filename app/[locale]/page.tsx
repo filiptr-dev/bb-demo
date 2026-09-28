@@ -5,7 +5,6 @@ import Hero from "@/components/Hero";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import CountUp from "@/components/CountUp";
-import BearingIcon from "@/components/BearingIcon";
 import SkfLogo from "@/components/SkfLogo";
 import { site } from "@/lib/site";
 import ParallaxLayer from "@/components/ParallaxLayer";
@@ -53,9 +52,8 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           </SectionHeading>
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
             <Reveal x={-50} y={0} duration={1} className="relative">
-              <div className="relative overflow-hidden rounded-2xl h-[320px] lg:h-[380px] bg-gradient-to-br from-[var(--about-img-a)] to-[var(--about-img-b)] border border-foreground/[0.06] flex items-center justify-center">
-                <BearingIcon className="w-56 h-56 opacity-90" spin />
-                <div className="absolute inset-0 bg-gradient-to-t from-surface/70 to-transparent" />
+              <div className="relative overflow-hidden rounded-2xl h-[320px] lg:h-[380px] bg-gradient-to-br from-[var(--about-img-a)] to-[var(--about-img-b)] border border-foreground/[0.06]">
+                <img src="/images/about/team.png" alt={t("about.imageAlt")} className="absolute inset-x-0 bottom-0 h-[92%] w-full object-contain object-bottom" />
               </div>
               <div className="absolute -bottom-5 -right-3 md:-right-5 bg-brand-gradient rounded-2xl p-5 shadow-2xl shadow-brand-1/20">
                 <div className="font-numbers text-4xl">{t("about.years")}</div>

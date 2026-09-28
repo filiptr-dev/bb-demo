@@ -65,10 +65,12 @@
     "description": "B&B Unikoop furnizon rulmane industriale, pajisje për transmetim fuqie dhe zgjidhje mirëmbajtjeje në të gjithë Maqedoninë e Veriut. Si distributor zyrtar i SKF, ofrojmë produkte 100% origjinale.",
     "ctaQuote": "Kërko ofertë",
     "ctaAbout": "Mëso më shumë",
-    "scroll": "Zbrit"
+    "scroll": "Zbrit",
+    "badgeAlt": "B&B Unikoop - distributor i autorizuar i SKF"
   },
   "Home": {
     "about": {
+      "imageAlt": "Ekipi i B&B Unikoop",
       "eyebrow": "Rreth nesh",
       "headingPrefix": "Kush",
       "headingHighlight": "jemi ne",

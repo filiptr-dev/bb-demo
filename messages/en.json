@@ -65,10 +65,12 @@
     "description": "B&B Unikoop supplies industrial bearings, power transmission equipment and maintenance solutions across North Macedonia. As an official SKF distributor, we deliver 100% genuine products.",
     "ctaQuote": "Request a quote",
     "ctaAbout": "Learn more",
-    "scroll": "Scroll"
+    "scroll": "Scroll",
+    "badgeAlt": "B&B Unikoop - authorised SKF distributor"
   },
   "Home": {
     "about": {
+      "imageAlt": "The B&B Unikoop team",
       "eyebrow": "About us",
       "headingPrefix": "Who",
       "headingHighlight": "we are",

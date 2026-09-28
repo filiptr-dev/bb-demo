@@ -81,6 +81,7 @@ export default function CatalogClient() {
   const page = Math.max(1, parseInt(g("page") || "1", 10) || 1);
 
   const [q, setQ] = useState(urlSearch);
+  const [dq, setDq] = useState(urlSearch); // q after the typing pause; drives results and the URL
   const [open, setOpen] = useState(true);
   const written = useRef(urlSearch);
 
@@ -88,8 +89,17 @@ export default function CatalogClient() {
     if (urlSearch !== written.current) {
       written.current = urlSearch;
       setQ(urlSearch);
+      setDq(urlSearch);
     }
   }, [urlSearch]);
+
+  useEffect(() => {
+    const id = setTimeout(() => {
+      setDq(q);
+      if (q !== written.current) update({ search: q });
+    }, 300);
+    return () => clearTimeout(id);
+  }, [q]);
 
   const filterCount =
     inds.length + [type, bore, seal, dmin || dmax, Dmin || Dmax, Bmin || Bmax].filter(Boolean).length;
@@ -110,6 +120,7 @@ export default function CatalogClient() {
   const reset = () => {
     written.current = "";
     setQ("");
+    setDq("");
     window.history.replaceState(null, "", window.location.pathname);
   };
 
@@ -126,7 +137,7 @@ export default function CatalogClient() {
   const boreTypes = useMemo(() => [...new Set(products.map((p) => p.boreType))], []);
 
   const results = useMemo(() => {
-    let r = searchProducts(products, q, wordsFor);
+    let r = searchProducts(products, dq, wordsFor);
     if (inds.length) r = r.filter((p) => p.industries.some((i) => inds.includes(i)));
     if (type) r = r.filter((p) => p.type === type);
     if (bore) r = r.filter((p) => p.boreType === bore);
@@ -143,7 +154,7 @@ export default function CatalogClient() {
     }
     return r;
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [q, sp]);
+  }, [dq, sp]);
 
   const pages = Math.max(1, Math.ceil(results.length / PAGE));
   const cur = Math.min(page, pages);
@@ -177,7 +188,7 @@ export default function CatalogClient() {
             type="search"
             value={q}
             autoFocus={!!urlSearch}
-            onChange={(e) => { setQ(e.target.value); update({ search: e.target.value }); }}
+            onChange={(e) => setQ(e.target.value)}
             placeholder={t("searchPlaceholder")}
             aria-label={t("searchLabel")}
             className="flex-1 min-w-0 h-12 rounded-xl px-4 text-sm"
