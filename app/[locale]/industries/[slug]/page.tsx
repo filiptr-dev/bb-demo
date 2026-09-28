@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
-import { alternatesFor } from "@/i18n/metadata";
+import { alternatesFor, notFoundMetadata } from "@/i18n/metadata";
 import type { Locale } from "@/i18n/routing";
 import { industries, getIndustry } from "@/lib/domain/taxonomy";
 import { productsByIndustry } from "@/server/products";
@@ -17,7 +17,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps<"/[locale]/industries/[slug]">): Promise<Metadata> {
   const { locale, slug } = await params;
   const i = getIndustry(slug);
-  if (!i) return {};
+  if (!i) return notFoundMetadata(locale);
   const t = await getTranslations({ locale, namespace: "IndustryDetail" });
   const ti = await getTranslations({ locale, namespace: "Industries" });
   return {

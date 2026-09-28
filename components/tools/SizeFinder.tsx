@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import ProductCard from "@/components/product/ProductCard";
 import { useDebounced } from "@/hooks/useDebounced";
 import { useProductSearch } from "@/hooks/useProductSearch";
+import SearchError from "@/components/shared/SearchError";
 import type { Dim } from "@/lib/catalog-query";
 
 const LIMIT = 24;
@@ -44,7 +45,7 @@ export default function SizeFinder() {
 
   const range = rangeParams(vals, tol);
   const query = useDebounced(range ? new URLSearchParams({ ...range, sort: "d", limit: String(LIMIT) }).toString() : null, 300);
-  const { data, loading } = useProductSearch(query);
+  const { data, loading, error, retry } = useProductSearch(query);
   const catalogHref = range ? `/catalog?${new URLSearchParams({ ...range, sort: "d" })}` : "/catalog";
 
   return (
@@ -89,7 +90,9 @@ export default function SizeFinder() {
       <div className="mt-8 min-h-[8rem]">
         {!range && <p className="text-sm text-muted-foreground">{t("empty")}</p>}
 
-        {range && data && (
+        {range && error && <SearchError onRetry={retry} />}
+
+        {range && !error && data && (
           <div className={loading ? "opacity-60 transition-opacity" : "transition-opacity"}>
             {data.total === 0 ? (
               <p className="text-sm text-muted-foreground">{tol < 2 ? t("noneTryTolerance") : t("none")}</p>

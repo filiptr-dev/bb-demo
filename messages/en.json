@@ -946,5 +946,35 @@
     },
     "levelsLegend": "Temperature, speed and load: VL very low · L low · M medium · H high · VH very high · EH extremely high.",
     "viscosityNote": "Viscosity: base oil at 40 °C, mm²/s. Source: SKF bearing grease selection chart."
+  },
+  "Errors": {
+    "notFound": {
+      "title": "Page not found",
+      "text": "The page you are looking for doesn't exist or has moved. Search the catalog by designation or go back to the home page."
+    },
+    "error": {
+      "title": "Something went wrong",
+      "text": "The page could not be loaded. Try again, or call us and we'll help you directly.",
+      "reference": "Error reference: {digest}"
+    },
+    "forbidden": {
+      "title": "Access denied",
+      "text": "You don't have permission to view this page."
+    },
+    "unauthorized": {
+      "title": "Sign-in required",
+      "text": "You need to be signed in to view this page."
+    },
+    "actions": {
+      "retry": "Try again",
+      "home": "Home page",
+      "catalog": "Product catalog",
+      "contact": "Contact us"
+    },
+    "search": {
+      "title": "Couldn't load products",
+      "text": "The product search is temporarily unavailable. Check your connection and try again.",
+      "retry": "Try again"
+    }
   }
 }

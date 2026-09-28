@@ -31,12 +31,17 @@ export default function ContactForm({ items, onSent }: { items?: { designation: 
           body: JSON.stringify({ name: f.get("name"), email: f.get("email"), phone: f.get("phone"), message: f.get("message"), website: f.get("website"), consent: f.get("consent") === "on" }),
         });
         const j = await r.json().catch(() => ({}));
-        if (!r.ok) throw new Error(["invalid", "required", "send"].includes(j.code) ? t(`errors.${j.code}`) : t("genericError"));
+        if (!r.ok) {
+          setError(["invalid", "required", "send"].includes(j.code) ? t(`errors.${j.code}`) : t("genericError"));
+          setState("idle");
+          return;
+        }
       }
       setState("done");
       onSent?.();
-    } catch (err) {
-      setError(err instanceof Error ? err.message : t("genericError"));
+    } catch {
+      // network failure: the browser's own message ("Failed to fetch") is not for visitors
+      setError(t("genericError"));
       setState("idle");
     }
   }

@@ -946,5 +946,35 @@
     },
     "levelsLegend": "Temperatura, velocità e carico: VL molto basso · L basso · M medio · H alto · VH molto alto · EH estremamente alto.",
     "viscosityNote": "Viscosità: olio base a 40 °C, mm²/s. Fonte: tabella SKF di selezione dei grassi per cuscinetti."
+  },
+  "Errors": {
+    "notFound": {
+      "title": "Pagina non trovata",
+      "text": "La pagina che cercate non esiste o è stata spostata. Cercate nel catalogo per sigla oppure tornate alla home page."
+    },
+    "error": {
+      "title": "Si è verificato un errore",
+      "text": "Impossibile caricare la pagina. Riprovate oppure chiamateci e vi aiuteremo direttamente.",
+      "reference": "Riferimento errore: {digest}"
+    },
+    "forbidden": {
+      "title": "Accesso negato",
+      "text": "Non avete l'autorizzazione per visualizzare questa pagina."
+    },
+    "unauthorized": {
+      "title": "Accesso richiesto",
+      "text": "Dovete effettuare l'accesso per visualizzare questa pagina."
+    },
+    "actions": {
+      "retry": "Riprova",
+      "home": "Home page",
+      "catalog": "Catalogo prodotti",
+      "contact": "Contattateci"
+    },
+    "search": {
+      "title": "Impossibile caricare i prodotti",
+      "text": "La ricerca prodotti è temporaneamente non disponibile. Controllate la connessione e riprovate.",
+      "retry": "Riprova"
+    }
   }
 }

@@ -11,6 +11,7 @@ import { Badge } from "@/components/ui/badge";
 import Pagination from "@/components/shared/Pagination";
 import { useDebounced } from "@/hooks/useDebounced";
 import { useProductSearch } from "@/hooks/useProductSearch";
+import SearchError from "@/components/shared/SearchError";
 import FilterPanel from "./FilterPanel";
 import ResultsTable from "./ResultsTable";
 import ResultsGrid from "./ResultsGrid";
@@ -95,7 +96,7 @@ export default function CatalogClient({ catalogTotal }: { catalogTotal: number }
     params.set("limit", String(PAGE_SIZE));
     return params.toString();
   }, [sp, dq, locale]);
-  const { data, loading } = useProductSearch(apiQuery); // previous results stay visible (dimmed) until the new ones arrive
+  const { data, loading, error, retry } = useProductSearch(apiQuery); // previous results stay visible (dimmed) until the new ones arrive
 
   const total = data?.total ?? 0;
   const rows = data?.rows ?? [];
@@ -145,7 +146,9 @@ export default function CatalogClient({ catalogTotal }: { catalogTotal: number }
         <p className="text-foreground/40">{t("pageLabel")} {cur} {t("of")} {pages}</p>
       </div>
 
-      {!data ? (
+      {error ? (
+        <SearchError onRetry={retry} />
+      ) : !data ? (
         <p className="py-10 text-center text-foreground/50">{t("loading")}</p>
       ) : total === 0 ? (
         <div className="rounded-xl border border-dashed border-foreground/15 p-10 text-center">

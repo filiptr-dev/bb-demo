@@ -946,5 +946,35 @@
     },
     "levelsLegend": "Temperatur, Drehzahl und Last: VL sehr niedrig · L niedrig · M mittel · H hoch · VH sehr hoch · EH extrem hoch.",
     "viscosityNote": "Viskosität: Grundöl bei 40 °C, mm²/s. Quelle: SKF Auswahltabelle für Wälzlagerfette."
+  },
+  "Errors": {
+    "notFound": {
+      "title": "Seite nicht gefunden",
+      "text": "Die gesuchte Seite existiert nicht oder wurde verschoben. Suchen Sie im Katalog nach der Bezeichnung oder kehren Sie zur Startseite zurück."
+    },
+    "error": {
+      "title": "Etwas ist schiefgelaufen",
+      "text": "Die Seite konnte nicht geladen werden. Versuchen Sie es erneut oder rufen Sie uns an – wir helfen direkt weiter.",
+      "reference": "Fehlerreferenz: {digest}"
+    },
+    "forbidden": {
+      "title": "Zugriff verweigert",
+      "text": "Sie haben keine Berechtigung, diese Seite anzuzeigen."
+    },
+    "unauthorized": {
+      "title": "Anmeldung erforderlich",
+      "text": "Sie müssen angemeldet sein, um diese Seite anzuzeigen."
+    },
+    "actions": {
+      "retry": "Erneut versuchen",
+      "home": "Startseite",
+      "catalog": "Produktkatalog",
+      "contact": "Kontakt"
+    },
+    "search": {
+      "title": "Produkte konnten nicht geladen werden",
+      "text": "Die Produktsuche ist vorübergehend nicht verfügbar. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
+      "retry": "Erneut versuchen"
+    }
   }
 }

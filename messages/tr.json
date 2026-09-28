@@ -946,5 +946,35 @@
     },
     "levelsLegend": "Sıcaklık, hız ve yük: VL çok düşük · L düşük · M orta · H yüksek · VH çok yüksek · EH aşırı yüksek.",
     "viscosityNote": "Viskozite: 40 °C'de baz yağ, mm²/s. Kaynak: SKF rulman gresi seçim tablosu."
+  },
+  "Errors": {
+    "notFound": {
+      "title": "Sayfa bulunamadı",
+      "text": "Aradığınız sayfa mevcut değil veya taşınmış. Katalogda tanıma göre arama yapın ya da ana sayfaya dönün."
+    },
+    "error": {
+      "title": "Bir hata oluştu",
+      "text": "Sayfa yüklenemedi. Tekrar deneyin veya bizi arayın, size doğrudan yardımcı olalım.",
+      "reference": "Hata referansı: {digest}"
+    },
+    "forbidden": {
+      "title": "Erişim reddedildi",
+      "text": "Bu sayfayı görüntüleme izniniz yok."
+    },
+    "unauthorized": {
+      "title": "Giriş gerekli",
+      "text": "Bu sayfayı görüntülemek için giriş yapmanız gerekiyor."
+    },
+    "actions": {
+      "retry": "Tekrar dene",
+      "home": "Ana sayfa",
+      "catalog": "Ürün kataloğu",
+      "contact": "Bize ulaşın"
+    },
+    "search": {
+      "title": "Ürünler yüklenemedi",
+      "text": "Ürün araması geçici olarak kullanılamıyor. Bağlantınızı kontrol edip tekrar deneyin.",
+      "retry": "Tekrar dene"
+    }
   }
 }

@@ -946,5 +946,35 @@
     },
     "levelsLegend": "Temperatura, shpejtësia dhe ngarkesa: VL shumë e ulët · L e ulët · M mesatare · H e lartë · VH shumë e lartë · EH jashtëzakonisht e lartë.",
     "viscosityNote": "Viskoziteti: vaji bazë në 40 °C, mm²/s. Burimi: tabela SKF e zgjedhjes së yndyrave për kushineta."
+  },
+  "Errors": {
+    "notFound": {
+      "title": "Faqja nuk u gjet",
+      "text": "Faqja që kërkoni nuk ekziston ose është zhvendosur. Kërkoni në katalog sipas shenjës ose kthehuni në faqen kryesore."
+    },
+    "error": {
+      "title": "Ndodhi një gabim",
+      "text": "Faqja nuk mund të ngarkohej. Provoni përsëri ose na telefononi dhe do t'ju ndihmojmë drejtpërdrejt.",
+      "reference": "Referenca e gabimit: {digest}"
+    },
+    "forbidden": {
+      "title": "Qasja u refuzua",
+      "text": "Nuk keni leje për ta parë këtë faqe."
+    },
+    "unauthorized": {
+      "title": "Kërkohet identifikimi",
+      "text": "Duhet të jeni të identifikuar për ta parë këtë faqe."
+    },
+    "actions": {
+      "retry": "Provo përsëri",
+      "home": "Faqja kryesore",
+      "catalog": "Katalogu i produkteve",
+      "contact": "Na kontaktoni"
+    },
+    "search": {
+      "title": "Produktet nuk mund të ngarkoheshin",
+      "text": "Kërkimi i produkteve është përkohësisht i padisponueshëm. Kontrolloni lidhjen dhe provoni përsëri.",
+      "retry": "Provo përsëri"
+    }
   }
 }

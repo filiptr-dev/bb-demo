@@ -946,5 +946,35 @@
     },
     "levelsLegend": "Teplota, otáčky a zaťaženie: VL veľmi nízke · L nízke · M stredné · H vysoké · VH veľmi vysoké · EH extrémne vysoké.",
     "viscosityNote": "Viskozita: základový olej pri 40 °C, mm²/s. Zdroj: tabuľka SKF pre výber ložiskových mazív."
+  },
+  "Errors": {
+    "notFound": {
+      "title": "Stránka sa nenašla",
+      "text": "Hľadaná stránka neexistuje alebo bola presunutá. Vyhľadajte v katalógu podľa označenia alebo sa vráťte na úvodnú stránku."
+    },
+    "error": {
+      "title": "Niečo sa pokazilo",
+      "text": "Stránku sa nepodarilo načítať. Skúste to znova alebo nám zavolajte a pomôžeme vám priamo.",
+      "reference": "Referencia chyby: {digest}"
+    },
+    "forbidden": {
+      "title": "Prístup zamietnutý",
+      "text": "Nemáte oprávnenie zobraziť túto stránku."
+    },
+    "unauthorized": {
+      "title": "Vyžaduje sa prihlásenie",
+      "text": "Na zobrazenie tejto stránky musíte byť prihlásený."
+    },
+    "actions": {
+      "retry": "Skúsiť znova",
+      "home": "Úvodná stránka",
+      "catalog": "Katalóg produktov",
+      "contact": "Kontaktujte nás"
+    },
+    "search": {
+      "title": "Produkty sa nepodarilo načítať",
+      "text": "Vyhľadávanie produktov je dočasne nedostupné. Skontrolujte pripojenie a skúste to znova.",
+      "retry": "Skúsiť znova"
+    }
   }
 }

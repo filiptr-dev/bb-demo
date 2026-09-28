@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
-import { alternatesFor } from "@/i18n/metadata";
+import { alternatesFor, notFoundMetadata } from "@/i18n/metadata";
 import type { Locale } from "@/i18n/routing";
 import { productCategories, getProductCategory } from "@/lib/domain/taxonomy";
 import { categoryContent } from "@/lib/domain/category-content";
@@ -19,7 +19,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps<"/[locale]/products/[slug]">): Promise<Metadata> {
   const { locale, slug } = await params;
   const c = getProductCategory(slug);
-  if (!c) return {};
+  if (!c) return notFoundMetadata(locale);
   const tp = await getTranslations({ locale, namespace: "ProductCategories" });
   return {
     title: tp(`${c.slug}.name`),

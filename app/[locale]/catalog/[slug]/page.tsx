@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link, getPathname } from "@/i18n/navigation";
-import { alternatesFor } from "@/i18n/metadata";
+import { alternatesFor, notFoundMetadata } from "@/i18n/metadata";
 import type { Locale } from "@/i18n/routing";
 import { site } from "@/lib/site";
 import { dim, dims } from "@/lib/domain/product";
@@ -21,7 +21,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps<"/[locale]/catalog/[slug]">): Promise<Metadata> {
   const { locale, slug } = await params;
   const p = await getProduct(slug);
-  if (!p) return {};
+  if (!p) return notFoundMetadata(locale);
   const t = await getTranslations({ locale, namespace: "ProductDetail" });
   const tt = await getTranslations({ locale, namespace: "BearingTypes" });
   const values = { designation: p.designation, brand: p.brand, d: dim(p.d), D: dim(p.D), B: dim(p.B), type: tt(`${p.type}.name`).toLowerCase() };

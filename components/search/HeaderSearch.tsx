@@ -9,6 +9,7 @@ import ProductTypeImage from "@/components/product/ProductTypeImage";
 import { useProductLabels } from "@/components/product/useProductLabels";
 import { useDebounced } from "@/hooks/useDebounced";
 import { useProductSearch } from "@/hooks/useProductSearch";
+import SearchError from "@/components/shared/SearchError";
 
 const MAX = 6;
 
@@ -43,11 +44,11 @@ export default function HeaderSearch({ placeholder, className = "", inputClassNa
     return () => document.removeEventListener("pointerdown", onDown);
   }, []);
 
-  const { data } = useProductSearch(dq ? new URLSearchParams({ search: dq, locale, limit: String(MAX) }).toString() : null);
+  const { data, error, retry } = useProductSearch(dq ? new URLSearchParams({ search: dq, locale, limit: String(MAX) }).toString() : null);
   // keep showing the previous results until the new ones arrive
-  const results = dq ? data?.rows ?? [] : [];
-  const total = dq ? data?.total ?? 0 : 0;
-  const show = open && dq.length > 0 && data !== null;
+  const results = dq && !error ? data?.rows ?? [] : [];
+  const total = dq && !error ? data?.total ?? 0 : 0;
+  const show = open && dq.length > 0 && (data !== null || error);
 
   const go = (href: string) => {
     setOpen(false);
@@ -86,7 +87,9 @@ export default function HeaderSearch({ placeholder, className = "", inputClassNa
 
       {show && (
         <div className="absolute right-0 top-full mt-2 w-[min(24rem,calc(100vw-2rem))] rounded-2xl border border-border bg-background/95 backdrop-blur-xl shadow-2xl overflow-hidden z-50">
-          {results.length ? (
+          {error ? (
+            <SearchError onRetry={retry} compact />
+          ) : results.length ? (
             <ul id={listId} role="listbox" className="p-2 space-y-1 max-h-[60vh] overflow-y-auto">
               {results.map((p, i) => (
                   <li key={p.slug} id={`${listId}-${i}`} role="option" aria-selected={i === active}>
