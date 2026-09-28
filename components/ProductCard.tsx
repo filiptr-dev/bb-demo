@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
-import type { Product } from "@/lib/data";
+import { dims, type Product } from "@/lib/data";
 import BearingIcon from "./BearingIcon";
 
 export default function ProductCard({ p }: { p: Product }) {
@@ -17,7 +17,7 @@ export default function ProductCard({ p }: { p: Product }) {
           <p className="text-xs text-foreground/50 truncate">{tt(`${p.type}.name`)}</p>
         </div>
       </div>
-      <p className="mt-3 text-xs font-mono text-foreground/60">{p.d} × {p.D} × {p.B} mm</p>
+      <p className="mt-3 text-xs font-mono text-foreground/60">{dims(p)} mm</p>
     </Link>
   );
 }

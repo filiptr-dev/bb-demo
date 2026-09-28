@@ -368,13 +368,50 @@
       "name": "Bearing units",
       "short": "Ball bearing units",
       "blurb": "A bearing unit with housing, ready for mounting."
+    },
+    "toroidal": {
+      "name": "CARB toroidal roller bearings",
+      "short": "CARB toroidal roller",
+      "blurb": "A CARB toroidal roller bearing that accommodates both misalignment and axial displacement."
+    },
+    "needle-roller": {
+      "name": "Needle roller bearings",
+      "short": "Needle roller",
+      "blurb": "A needle roller bearing with a low cross section for high loads in tight spaces."
+    },
+    "track-runner": {
+      "name": "Track runner bearings",
+      "short": "Track runner",
+      "blurb": "A track runner bearing (cam follower) with a thick outer ring for rolling on tracks."
+    },
+    "plain": {
+      "name": "Plain bearings, bushings and rod ends",
+      "short": "Plain bearings",
+      "blurb": "A plain bearing, bushing or rod end for slow oscillating movements and heavy loads."
+    },
+    "housing": {
+      "name": "Housings and accessories",
+      "short": "Housings",
+      "blurb": "A bearing housing or housing accessory for mounting and protecting the bearing."
+    },
+    "sleeve-nut": {
+      "name": "Sleeves and lock nuts",
+      "short": "Sleeves and nuts",
+      "blurb": "An adapter or withdrawal sleeve, lock nut or locking device for securing bearings on the shaft."
+    },
+    "seal": {
+      "name": "Radial shaft seals",
+      "short": "Seals",
+      "blurb": "A radial shaft seal that keeps lubricant in and contaminants out."
     }
   },
   "ProductAttrs": {
     "seal": {
       "open": "Open",
       "shields": "Shields on both sides",
-      "both": "Seal on both sides"
+      "both": "Seal on both sides",
+      "one-side": "Seal or shield on one side",
+      "other": "Other sealing"
     },
     "boreType": {
       "tapered": "Tapered",
@@ -386,7 +423,7 @@
     "page": {
       "titlePrefix": "BEARING",
       "titleHighlight": "CATALOG",
-      "subtitle": "Search by designation (6205), dimensions (25x52x15), type, sealing or industry – and find exactly what you need.",
+      "subtitle": "Browse our complete catalog of {count} products. Search by designation, filter by type, dimensions or sealing – and find exactly what you need.",
       "loading": "Loading…"
     },
     "client": {
@@ -433,7 +470,8 @@
       "pagination": "Pages",
       "prev": "Previous",
       "next": "Next",
-      "viewAria": "View: {designation}"
+      "viewAria": "View: {designation}",
+      "loading": "Loading…"
     }
   },
   "ProductDetail": {
@@ -452,7 +490,9 @@
     "industriesHeading": "Used across industries",
     "relatedHeading": "Related products",
     "metaTitle": "{designation} {brand} bearing – {d}×{D}×{B} mm",
-    "metaDescription": "{brand} {designation}: {type}, bore ø {d} mm, outer ø {D} mm, width {B} mm. Available from B&B Unikoop."
+    "metaDescription": "{brand} {designation}: {type}, bore ø {d} mm, outer ø {D} mm, width {B} mm. Available from B&B Unikoop.",
+    "metaTitlePlain": "{designation} {brand} – {type}",
+    "metaDescriptionPlain": "{brand} {designation}: {type}. Available from B&B Unikoop."
   },
   "IndustryDetail": {
     "titlePrefix": "Bearings for",

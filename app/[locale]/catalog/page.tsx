@@ -4,6 +4,9 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import CatalogClient from "@/components/CatalogClient";
 import { alternatesFor } from "@/i18n/metadata";
 import type { Locale } from "@/i18n/routing";
+import { productCount } from "@/lib/products";
+
+export const revalidate = 3600;
 
 export async function generateMetadata({ params }: PageProps<"/[locale]/catalog">): Promise<Metadata> {
   const { locale } = await params;
@@ -15,6 +18,7 @@ export default async function CatalogPage({ params }: PageProps<"/[locale]/catal
   const { locale } = await params;
   setRequestLocale(locale as Locale);
   const t = await getTranslations("Catalog.page");
+  const count = await productCount();
   return (
     <div className="pt-16">
       <section className="relative overflow-hidden py-10 lg:py-12">
@@ -23,11 +27,11 @@ export default async function CatalogPage({ params }: PageProps<"/[locale]/catal
           <h1 className="font-display font-black text-3xl md:text-5xl tracking-tighter mb-2">
             {t("titlePrefix")} <span className="text-gradient-brand">{t("titleHighlight")}</span>
           </h1>
-          <p className="text-foreground/55 max-w-2xl text-sm md:text-base">{t("subtitle")}</p>
+          <p className="text-foreground/55 max-w-2xl text-sm md:text-base">{t("subtitle", { count: count.toLocaleString(locale) })}</p>
         </div>
       </section>
       <Suspense fallback={<p className="container mx-auto px-6 text-foreground/50">{t("loading")}</p>}>
-        <CatalogClient />
+        <CatalogClient catalogTotal={count} />
       </Suspense>
     </div>
   );

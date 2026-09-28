@@ -368,13 +368,50 @@
       "name": "Njësi rulmanesh",
       "short": "Ball bearing units",
       "blurb": "Njësi rulmani me kuti, gati për montim."
+    },
+    "toroidal": {
+      "name": "Kushineta toroidale me rula CARB",
+      "short": "Toroidale CARB",
+      "blurb": "Kushinetë toroidale me rula CARB që kompenson mospërputhjen dhe zhvendosjen aksiale."
+    },
+    "needle-roller": {
+      "name": "Kushineta me gjilpëra",
+      "short": "Me gjilpëra",
+      "blurb": "Kushinetë me gjilpëra me prerje të ulët për ngarkesa të larta në hapësira të ngushta."
+    },
+    "track-runner": {
+      "name": "Kushineta rrotulluese për shina",
+      "short": "Për shina",
+      "blurb": "Kushinetë për shina me unazë të jashtme të trashë për rrotullim mbi shina."
+    },
+    "plain": {
+      "name": "Kushineta rrëshqitëse, bokola dhe koka artikulare",
+      "short": "Rrëshqitëse",
+      "blurb": "Kushinetë rrëshqitëse, bokolë ose kokë artikulare për lëvizje të ngadalta lëkundëse dhe ngarkesa të rënda."
+    },
+    "housing": {
+      "name": "Shtëpiza dhe aksesorë",
+      "short": "Shtëpiza",
+      "blurb": "Shtëpizë kushinete ose aksesor për montimin dhe mbrojtjen e kushinetës."
+    },
+    "sleeve-nut": {
+      "name": "Bokola dhe dado",
+      "short": "Bokola dhe dado",
+      "blurb": "Bokolë adaptuese ose tërheqëse, dado ose pajisje bllokuese për fiksimin e kushinetave në bosht."
+    },
+    "seal": {
+      "name": "Guarnicione radiale boshti",
+      "short": "Guarnicione",
+      "blurb": "Guarnicion radial boshti që mban lubrifikantin brenda dhe papastërtitë jashtë."
     }
   },
   "ProductAttrs": {
     "seal": {
       "open": "I hapur",
       "shields": "Mbrojtëse në të dyja anët",
-      "both": "Guarnicion në të dyja anët"
+      "both": "Guarnicion në të dyja anët",
+      "one-side": "Guarnicion ose mburojë në njërën anë",
+      "other": "Tjetër izolim"
     },
     "boreType": {
       "tapered": "Konik",
@@ -386,7 +423,7 @@
     "page": {
       "titlePrefix": "KATALOGU I",
       "titleHighlight": "PRODUKTEVE",
-      "subtitle": "Kërkoni sipas shenjës (6205), dimensioneve (25x52x15), tipit, izolimit ose industrisë – dhe gjeni saktësisht atë që ju nevojitet.",
+      "subtitle": "Shfletoni katalogun tonë të plotë me {count} produkte. Kërkoni sipas shenjës, filtroni sipas tipit, dimensioneve ose izolimit – dhe gjeni saktësisht atë që ju nevojitet.",
       "loading": "Duke u ngarkuar…"
     },
     "client": {
@@ -433,7 +470,8 @@
       "pagination": "Faqet",
       "prev": "Mbrapa",
       "next": "Përpara",
-      "viewAria": "Shiko: {designation}"
+      "viewAria": "Shiko: {designation}",
+      "loading": "Duke u ngarkuar…"
     }
   },
   "ProductDetail": {
@@ -452,7 +490,9 @@
     "industriesHeading": "Përdorimi sipas industrive",
     "relatedHeading": "Produkte të ngjashme",
     "metaTitle": "Rulman {designation} {brand} – {d}×{D}×{B} mm",
-    "metaDescription": "{brand} {designation}: {type}, vrima ø {d} mm, diametri i jashtëm ø {D} mm, gjerësia {B} mm. I disponueshëm te B&B Unikoop."
+    "metaDescription": "{brand} {designation}: {type}, vrima ø {d} mm, diametri i jashtëm ø {D} mm, gjerësia {B} mm. I disponueshëm te B&B Unikoop.",
+    "metaTitlePlain": "{designation} {brand} – {type}",
+    "metaDescriptionPlain": "{brand} {designation}: {type}. I disponueshëm te B&B Unikoop."
   },
   "IndustryDetail": {
     "titlePrefix": "Rulmane për",

@@ -5,24 +5,33 @@ export type Industry = {
 
 export type BearingType = {
   slug: string;
-  image: string;
+  image?: string;
+  banner?: boolean; // legacy type banner: product photo left, SKF logo panel right
 };
 
-export type SealCode = "open" | "shields" | "both";
-export type BoreCode = "tapered" | "cylindrical";
+export const sealCodes = ["open", "shields", "both", "one-side", "other"] as const;
+export const boreCodes = ["cylindrical", "tapered"] as const;
+export type SealCode = (typeof sealCodes)[number];
+export type BoreCode = (typeof boreCodes)[number];
 
+// Rows live in the Postgres `products` table (scripts/schema.sql); query them through lib/products.ts.
+// Non-bearing items (housings, nuts, seals, …) have no seal/bore type, and some have no bore diameter.
 export type Product = {
   slug: string;
   designation: string;
   brand: string;
   type: string;
-  d: number;
-  D: number;
-  B: number;
-  seal: SealCode;
-  boreType: BoreCode;
+  classification: string | null;
+  d: number | null;
+  D: number | null;
+  B: number | null;
+  seal: SealCode | null;
+  boreType: BoreCode | null;
   industries: string[];
 };
+
+export const dim = (v: number | null) => (v == null ? "–" : String(v));
+export const dims = (p: Pick<Product, "d" | "D" | "B">) => `${dim(p.d)} × ${dim(p.D)} × ${dim(p.B)}`;
 
 export const industries: Industry[] = [
   { slug: "cement", image: "/images/industries/cement.jpg" },
@@ -38,18 +47,26 @@ export const industries: Industry[] = [
 // Demo only: type photos are hotlinked from the legacy site's bearings page.
 const legacyBearings = "https://bbunikoop.com.mk/wp-content/uploads/2022/04/";
 
+const b = (slug: string, file: string): BearingType => ({ slug, image: `${legacyBearings}${file}`, banner: true });
+
 export const bearingTypes: BearingType[] = [
-  { slug: "deep-groove", image: `${legacyBearings}radijalno-topchesti-lezhishta.jpg` },
-  { slug: "angular-contact", image: `${legacyBearings}ednoredni-topchesti-lezhishta-so-kos-dopir.jpg` },
-  { slug: "self-aligning", image: `${legacyBearings}samopodeslivi-topchesti-lezhishta.jpg` },
-  { slug: "spherical-roller", image: `${legacyBearings}buresto-valchesti-lezhishta.jpg` },
-  { slug: "tapered-roller", image: `${legacyBearings}konusno-valchesti-lezhishta.jpg` },
-  { slug: "cylindrical-roller", image: `${legacyBearings}ednoredni-cilindrichno-valchesti-lezhishta.jpg` },
-  { slug: "thrust-ball", image: `${legacyBearings}aksijalni-lezhishta.jpg` },
-  { slug: "unit", image: `${legacyBearings}y-lezhishta-i-lezhishni-edinici.jpg` },
+  b("deep-groove", "radijalno-topchesti-lezhishta.jpg"),
+  b("angular-contact", "ednoredni-topchesti-lezhishta-so-kos-dopir.jpg"),
+  b("self-aligning", "samopodeslivi-topchesti-lezhishta.jpg"),
+  b("spherical-roller", "buresto-valchesti-lezhishta.jpg"),
+  b("tapered-roller", "konusno-valchesti-lezhishta.jpg"),
+  b("cylindrical-roller", "ednoredni-cilindrichno-valchesti-lezhishta.jpg"),
+  b("thrust-ball", "aksijalni-lezhishta.jpg"),
+  b("unit", "y-lezhishta-i-lezhishni-edinici.jpg"),
+  { slug: "toroidal" }, // no CARB photo on the legacy site
+  b("needle-roller", "iglesti-lezhishta.jpg"),
+  b("track-runner", "traektorni-lezhishta.jpg"),
+  b("plain", "zglobni-lezhishta.jpg"),
+  b("housing", "kukjishta.jpg"),
+  { slug: "sleeve-nut", image: "https://bbunikoop.com.mk/wp-content/uploads/2022/05/hilzni-adapteri1.jpg" },
+  { slug: "seal", image: "/images/products/seals.jpg" },
 ];
 
-export const typeImage = (type: string) => bearingTypes.find((t) => t.slug === type)?.image;
 
 const DG = "deep-groove", AC = "angular-contact", SA = "self-aligning", SR = "spherical-roller",
   TR = "tapered-roller", CR = "cylindrical-roller", TB = "thrust-ball", UN = "unit";
@@ -139,11 +156,13 @@ const raw: Raw[] = [
 export const slugify = (s: string) =>
   s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 
-export const products: Product[] = raw.map(([designation, type, d, D, B, seal, inds]) => ({
+// B&B Unikoop's own curated list; scripts/import-products.mts merges it with the scraped catalog.
+export const seedProducts: Product[] = raw.map(([designation, type, d, D, B, seal, inds]) => ({
   slug: slugify(designation),
   designation,
   brand: "SKF",
   type,
+  classification: null,
   d,
   D,
   B,
@@ -186,7 +205,6 @@ export const productCategories: ProductCategory[] = [
   { slug: "y-bearings", pageType: "article", image: `${skfOffer}2022/04/y-5.jpg` },
 ];
 
-export const getProduct = (slug: string) => products.find((p) => p.slug === slug);
 export const getType = (slug: string) => bearingTypes.find((t) => t.slug === slug);
 export const getIndustry = (slug: string) => industries.find((i) => i.slug === slug);
 export const getProductCategory = (slug: string) => productCategories.find((c) => c.slug === slug);

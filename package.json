@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "db:import": "node --env-file=.env.local --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/import-products.mts"
   },
   "dependencies": {
     "@base-ui/react": "^1.8.0",
@@ -16,6 +17,7 @@
     "motion": "^13.4.2",
     "next": "16.3.6",
     "next-intl": "^4.14.7",
+    "postgres": "^3.4.9",
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "shadcn": "^4.21.0",

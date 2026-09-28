@@ -1,11 +1,10 @@
 "use client";
 
-import { useEffect, useId, useMemo, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { Link, getPathname, useRouter } from "@/i18n/navigation";
 import { Input } from "@/components/ui/input";
-import { products, typeImage, type Product } from "@/lib/data";
-import { searchProducts } from "@/lib/search";
+import { dims, getType, type Product } from "@/lib/data";
 
 const MAX = 6;
 
@@ -17,7 +16,6 @@ export default function HeaderSearch({ placeholder, className = "", inputClassNa
 }) {
   const t = useTranslations("Nav");
   const tt = useTranslations("BearingTypes");
-  const ti = useTranslations("Industries");
   const locale = useLocale();
   const router = useRouter();
   const catalogAction = getPathname({ href: "/catalog", locale });
@@ -42,12 +40,20 @@ export default function HeaderSearch({ placeholder, className = "", inputClassNa
     return () => document.removeEventListener("pointerdown", onDown);
   }, []);
 
-  const wordsFor = (p: Product) =>
-    [p.type, tt(`${p.type}.name`), tt(`${p.type}.short`), ...p.industries, ...p.industries.map((s) => ti(`${s}.name`))].join(" ");
-
-  const all = useMemo(() => (dq ? searchProducts(products, dq, wordsFor) : []), [dq]); // eslint-disable-line react-hooks/exhaustive-deps
-  const results = all.slice(0, MAX);
-  const show = open && dq.length > 0;
+  const [found, setFound] = useState<{ q: string; rows: Product[]; total: number }>({ q: "", rows: [], total: 0 });
+  useEffect(() => {
+    if (!dq) return;
+    const ctl = new AbortController();
+    fetch(`/api/products?${new URLSearchParams({ search: dq, locale, limit: String(MAX) })}`, { signal: ctl.signal })
+      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+      .then((d) => setFound({ q: dq, rows: d.rows, total: d.total }))
+      .catch((e) => { if (e?.name !== "AbortError") setFound({ q: dq, rows: [], total: 0 }); });
+    return () => ctl.abort();
+  }, [dq, locale]);
+  // keep showing the previous results until the new ones arrive
+  const results = dq ? found.rows : [];
+  const total = dq ? found.total : 0;
+  const show = open && dq.length > 0 && found.q !== "";
 
   const go = (href: string) => {
     setOpen(false);
@@ -89,7 +95,7 @@ export default function HeaderSearch({ placeholder, className = "", inputClassNa
           {results.length ? (
             <ul id={listId} role="listbox" className="p-2 space-y-1 max-h-[60vh] overflow-y-auto">
               {results.map((p, i) => {
-                const img = typeImage(p.type);
+                const bt = getType(p.type);
                 return (
                   <li key={p.slug} id={`${listId}-${i}`} role="option" aria-selected={i === active}>
                     <Link
@@ -100,12 +106,14 @@ export default function HeaderSearch({ placeholder, className = "", inputClassNa
                     >
                       {/* legacy type banners: product photo on the left ~55%, logo panel on the right — show only the product */}
                       <span className="relative w-16 h-14 shrink-0 rounded-lg bg-white overflow-hidden">
-                        {img && <img src={img} alt="" className="absolute left-0 top-1/2 -translate-y-1/2 w-[185%] max-w-none" />}
+                        {bt?.image && (bt.banner
+                          ? <img src={bt.image} alt="" className="absolute left-0 top-1/2 -translate-y-1/2 w-[185%] max-w-none" />
+                          : <img src={bt.image} alt="" className="absolute inset-0 size-full object-cover" />)}
                       </span>
                       <span className="min-w-0">
                         <span className="block font-mono font-bold text-sm truncate">{p.designation}</span>
                         <span className="block text-xs text-foreground/55 truncate">{tt(`${p.type}.name`)}</span>
-                        <span className="block text-[11px] font-mono text-foreground/45">{p.d} × {p.D} × {p.B} mm</span>
+                        <span className="block text-[11px] font-mono text-foreground/45">{dims(p)} mm</span>
                       </span>
                     </Link>
                   </li>
@@ -115,13 +123,13 @@ export default function HeaderSearch({ placeholder, className = "", inputClassNa
           ) : (
             <p className="px-4 py-5 text-sm text-foreground/60">{t("searchNoResults")}</p>
           )}
-          {all.length > 0 && (
+          {total > 0 && (
             <button
               type="button"
               onClick={() => go(`/catalog?search=${encodeURIComponent(dq)}`)}
               className="w-full border-t border-border px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-brand-2 hover:bg-foreground/[0.04] transition-colors"
             >
-              {t("searchViewAll", { count: all.length })} →
+              {t("searchViewAll", { count: total.toLocaleString(locale) })} →
             </button>
           )}
         </div>

@@ -4,8 +4,11 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { alternatesFor } from "@/i18n/metadata";
 import type { Locale } from "@/i18n/routing";
-import { industries, getIndustry, products } from "@/lib/data";
+import { industries, getIndustry } from "@/lib/data";
+import { productsByIndustry } from "@/lib/products";
 import ProductCard from "@/components/ProductCard";
+
+export const revalidate = 3600;
 
 export function generateStaticParams() {
   return industries.map((i) => ({ slug: i.slug }));
@@ -31,7 +34,7 @@ export default async function IndustryPage({ params }: PageProps<"/[locale]/indu
   if (!i) notFound();
   const t = await getTranslations("IndustryDetail");
   const ti = await getTranslations("Industries");
-  const list = products.filter((p) => p.industries.includes(i.slug));
+  const list = await productsByIndustry(i.slug, 24);
   return (
     <div className="container mx-auto px-6 lg:px-10 pt-24 pb-14">
       <h1 className="font-display text-3xl md:text-4xl font-bold">{t("titlePrefix")} {ti(`${i.slug}.name`).toLowerCase()}</h1>

@@ -1,12 +1,11 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { AnimatePresence, motion } from "motion/react";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { bearingTypes, industries, products, type Product, type SealCode, type BoreCode } from "@/lib/data";
-import { searchProducts } from "@/lib/search";
+import { bearingTypes, boreCodes, dim, industries, sealCodes, type Product, type SealCode, type BoreCode } from "@/lib/data";
 import { ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -17,7 +16,6 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 
 const PAGE = 15;
 const list = (v: string | null) => (v ? v.split(",").filter(Boolean) : []);
-const num = (v: string) => (v === "" || isNaN(Number(v)) ? null : Number(v));
 
 const boreRanges = [
   { label: "", min: "", max: "" }, // "all" - label comes from translations
@@ -56,19 +54,15 @@ function Pick({ value, onChange, allLabel, options }: { value: string; onChange:
   );
 }
 
-export default function CatalogClient() {
+export default function CatalogClient({ catalogTotal }: { catalogTotal: number }) {
   const t = useTranslations("Catalog.client");
   const tt = useTranslations("BearingTypes");
   const ta = useTranslations("ProductAttrs");
   const ti = useTranslations("Industries");
+  const locale = useLocale();
   const typeName = (p: Product) => tt(`${p.type}.name`);
-  const sealName = (c: SealCode) => ta(`seal.${c}`);
-  const boreName = (c: BoreCode) => ta(`boreType.${c}`);
-  // localized text a free-word search matches against (slugs keep English keywords working in every locale)
-  const wordsFor = (p: Product) =>
-    [p.brand, p.type, typeName(p), tt(`${p.type}.short`), sealName(p.seal), boreName(p.boreType), ...p.industries, ...p.industries.map((s) => ti(`${s}.name`))].join(" ");
-  const sortVal = (p: Product, k: SortKey): string | number =>
-    k === "type" ? typeName(p) : k === "seal" ? sealName(p.seal) : k === "boreType" ? boreName(p.boreType) : p[k];
+  const sealName = (c: SealCode | null) => (c ? ta(`seal.${c}`) : "–");
+  const boreName = (c: BoreCode | null) => (c ? ta(`boreType.${c}`) : "–");
   const sp = useSearchParams();
   const g = (k: string) => sp.get(k) ?? "";
   const urlSearch = g("search");
@@ -79,6 +73,7 @@ export default function CatalogClient() {
   const dir = g("dir") === "desc" ? "desc" : "asc";
   const view = g("view") === "grid" ? "grid" : "table";
   const page = Math.max(1, parseInt(g("page") || "1", 10) || 1);
+  const [data, setData] = useState<{ query: string; rows: Product[]; total: number; page: number } | null>(null);
 
   const [q, setQ] = useState(urlSearch);
   const [dq, setDq] = useState(urlSearch); // q after the typing pause; drives results and the URL
@@ -133,32 +128,30 @@ export default function CatalogClient() {
     else update({ sort: "", dir: "" });
   };
 
-  const sealTypes = useMemo(() => [...new Set(products.map((p) => p.seal))], []);
-  const boreTypes = useMemo(() => [...new Set(products.map((p) => p.boreType))], []);
+  // the URL's filter keys are the API's; search comes from the debounced input, not the URL
+  const apiQuery = useMemo(() => {
+    const params = new URLSearchParams(sp.toString());
+    params.delete("view");
+    params.set("search", dq);
+    params.set("locale", locale);
+    params.set("limit", String(PAGE));
+    return params.toString();
+  }, [sp, dq, locale]);
 
-  const results = useMemo(() => {
-    let r = searchProducts(products, dq, wordsFor);
-    if (inds.length) r = r.filter((p) => p.industries.some((i) => inds.includes(i)));
-    if (type) r = r.filter((p) => p.type === type);
-    if (bore) r = r.filter((p) => p.boreType === bore);
-    if (seal) r = r.filter((p) => p.seal === seal);
-    const inRange = (v: number, lo: string, hi: string) => (num(lo) === null || v >= num(lo)!) && (num(hi) === null || v <= num(hi)!);
-    r = r.filter((p) => inRange(p.d, dmin, dmax) && inRange(p.D, Dmin, Dmax) && inRange(p.B, Bmin, Bmax));
-    if (sort) {
-      const k = sort as SortKey;
-      r = [...r].sort((a, b) => {
-        const x = sortVal(a, k), y = sortVal(b, k);
-        const c = typeof x === "number" && typeof y === "number" ? x - y : String(x).localeCompare(String(y), undefined, { numeric: true });
-        return dir === "desc" ? -c : c;
-      });
-    }
-    return r;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dq, sp]);
+  useEffect(() => {
+    const ctl = new AbortController();
+    fetch(`/api/products?${apiQuery}`, { signal: ctl.signal })
+      .then((r) => (r.ok ? r.json() : Promise.reject(r.status)))
+      .then((d) => setData({ query: apiQuery, ...d }))
+      .catch((e) => { if (e?.name !== "AbortError") setData({ query: apiQuery, rows: [], total: 0, page: 1 }); });
+    return () => ctl.abort();
+  }, [apiQuery]);
+  const loading = data?.query !== apiQuery; // previous results stay visible (dimmed) until the new ones arrive
 
-  const pages = Math.max(1, Math.ceil(results.length / PAGE));
-  const cur = Math.min(page, pages);
-  const rows = results.slice((cur - 1) * PAGE, cur * PAGE);
+  const total = data?.total ?? 0;
+  const rows = data?.rows ?? [];
+  const pages = Math.max(1, Math.ceil(total / PAGE));
+  const cur = data?.page ?? page;
   const pageNums: (number | "…")[] = [];
   if (pages <= 7) for (let i = 1; i <= pages; i++) pageNums.push(i);
   else {
@@ -224,11 +217,11 @@ export default function CatalogClient() {
                 </div>
                 <div>
                   <Label className={label}>{t("boreTypeLabel")}</Label>
-                  <Pick value={bore} onChange={(v) => update({ bore: v })} allLabel={t("allBoreTypes")} options={boreTypes.map((b) => ({ value: b, label: boreName(b) }))} />
+                  <Pick value={bore} onChange={(v) => update({ bore: v })} allLabel={t("allBoreTypes")} options={boreCodes.map((b) => ({ value: b, label: boreName(b) }))} />
                 </div>
                 <div>
                   <Label className={label}>{t("sealLabel")}</Label>
-                  <Pick value={seal} onChange={(v) => update({ seal: v })} allLabel={t("allSeals")} options={sealTypes.map((c) => ({ value: c, label: sealName(c) }))} />
+                  <Pick value={seal} onChange={(v) => update({ seal: v })} allLabel={t("allSeals")} options={sealCodes.map((c) => ({ value: c, label: sealName(c) }))} />
                 </div>
                 <div>
                   <Label className={label}>{t("quickBoreRange")}</Label>
@@ -255,20 +248,24 @@ export default function CatalogClient() {
         </AnimatePresence>
 
       <div className="flex items-center justify-between py-4 text-sm">
-        <p className="text-foreground/50" aria-live="polite">
-          {t("showing")} <span className="text-foreground font-semibold">{results.length}</span> {results.length === 1 ? t("productSingular") : t("productPlural")}
+        <p className={`text-foreground/50 ${data ? "" : "invisible"}`} aria-live="polite">
+          {t("showing")} <span className="text-foreground font-semibold">{total.toLocaleString(locale)}</span>
+          {total !== catalogTotal && <> {t("of")} <span className="text-foreground/70">{catalogTotal.toLocaleString(locale)}</span></>}
+          {" "}{total === 1 && total === catalogTotal ? t("productSingular") : t("productPlural")}
           {filterCount > 0 && <span className="text-foreground/35"> {t("filteredSuffix")}</span>}
         </p>
         <p className="text-foreground/40">{t("pageLabel")} {cur} {t("of")} {pages}</p>
       </div>
 
-      {results.length === 0 ? (
+      {!data ? (
+        <p className="py-10 text-center text-foreground/50">{t("loading")}</p>
+      ) : total === 0 ? (
         <div className="rounded-xl border border-dashed border-foreground/15 p-10 text-center">
           <p className="text-lg font-semibold">{t("noResultsTitle")}</p>
           <p className="text-foreground/50 mt-1 text-sm">{t("noResultsHint")}</p>
         </div>
       ) : view === "table" ? (
-        <div className="rounded-xl border bg-card/50 overflow-hidden">
+        <div className={`rounded-xl border bg-card/50 overflow-hidden transition-opacity ${loading ? "opacity-60" : ""}`}>
           <Table>
             <TableHeader>
               <TableRow className="bg-muted/60 hover:bg-muted/60 text-[11px] uppercase tracking-wider">
@@ -292,9 +289,9 @@ export default function CatalogClient() {
                   </TableCell>
                   <TableCell className="px-2.5 py-3 text-muted-foreground text-xs whitespace-nowrap">{boreName(p.boreType)}</TableCell>
                   <TableCell className="px-2.5 py-3 text-muted-foreground text-xs whitespace-nowrap">{sealName(p.seal)}</TableCell>
-                  <TableCell className="px-2.5 py-3 text-right font-mono text-foreground/80">{p.d}</TableCell>
-                  <TableCell className="px-2.5 py-3 text-right font-mono text-foreground/80">{p.D}</TableCell>
-                  <TableCell className="px-2.5 py-3 text-right font-mono text-foreground/80">{p.B}</TableCell>
+                  <TableCell className="px-2.5 py-3 text-right font-mono text-foreground/80">{dim(p.d)}</TableCell>
+                  <TableCell className="px-2.5 py-3 text-right font-mono text-foreground/80">{dim(p.D)}</TableCell>
+                  <TableCell className="px-2.5 py-3 text-right font-mono text-foreground/80">{dim(p.B)}</TableCell>
                   <TableCell className="px-2.5 py-3">
                     <Link href={`/catalog/${p.slug}`} aria-label={t("viewAria", { designation: p.designation })} className="text-muted-foreground group-hover:text-brand-2 transition-colors"><ShoppingCart className="size-[18px]" /></Link>
                   </TableCell>
@@ -304,7 +301,7 @@ export default function CatalogClient() {
           </Table>
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+        <div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 transition-opacity ${loading ? "opacity-60" : ""}`}>
           {rows.map((p, i) => (
             <motion.div key={p.slug} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.02 }}>
               <Link href={`/catalog/${p.slug}`} className="group block rounded-xl bg-foreground/[0.03] border border-foreground/5 p-5 hover:border-brand-1/20 hover:bg-foreground/[0.05] transition-all">
@@ -312,7 +309,7 @@ export default function CatalogClient() {
                 <Badge variant="secondary" className="text-brand-2 mb-3">{typeName(p)}</Badge>
                 <div className="space-y-1.5 text-xs text-foreground/45">
                   {([["d ⌀", p.d], ["D ⌀", p.D], ["B", p.B]] as const).map(([k, v]) => (
-                    <div key={k} className="flex justify-between"><span>{k}</span><span className="font-mono text-foreground/70">{v} mm</span></div>
+                    <div key={k} className="flex justify-between"><span>{k}</span><span className="font-mono text-foreground/70">{dim(v)} mm</span></div>
                   ))}
                   <div className="flex justify-between"><span>{t("columns.seal")}</span><span className="text-foreground/70 truncate ml-2">{sealName(p.seal)}</span></div>
                 </div>

@@ -5,24 +5,29 @@ import { Link, getPathname } from "@/i18n/navigation";
 import { alternatesFor } from "@/i18n/metadata";
 import type { Locale } from "@/i18n/routing";
 import { site } from "@/lib/site";
-import { products, getProduct } from "@/lib/data";
+import { dim, dims } from "@/lib/data";
+import { getProduct, relatedProducts } from "@/lib/products";
 import BearingIcon from "@/components/BearingIcon";
 import ProductCard from "@/components/ProductCard";
 
+// ~15k products: render each on first visit, then serve it cached for an hour
+export const revalidate = 3600;
+
 export function generateStaticParams() {
-  return products.map((p) => ({ slug: p.slug }));
+  return [];
 }
 
 export async function generateMetadata({ params }: PageProps<"/[locale]/catalog/[slug]">): Promise<Metadata> {
   const { locale, slug } = await params;
-  const p = getProduct(slug);
+  const p = await getProduct(slug);
   if (!p) return {};
   const t = await getTranslations({ locale, namespace: "ProductDetail" });
   const tt = await getTranslations({ locale, namespace: "BearingTypes" });
-  const values = { designation: p.designation, brand: p.brand, d: p.d, D: p.D, B: p.B, type: tt(`${p.type}.name`).toLowerCase() };
+  const values = { designation: p.designation, brand: p.brand, d: dim(p.d), D: dim(p.D), B: dim(p.B), type: tt(`${p.type}.name`).toLowerCase() };
+  const plain = p.d == null && p.D == null && p.B == null;
   return {
-    title: t("metaTitle", values),
-    description: t("metaDescription", values),
+    title: t(plain ? "metaTitlePlain" : "metaTitle", values),
+    description: t(plain ? "metaDescriptionPlain" : "metaDescription", values),
     alternates: alternatesFor(`/catalog/${p.slug}`, locale),
   };
 }
@@ -30,24 +35,25 @@ export async function generateMetadata({ params }: PageProps<"/[locale]/catalog/
 export default async function ProductPage({ params }: PageProps<"/[locale]/catalog/[slug]">) {
   const { locale, slug } = await params;
   setRequestLocale(locale as Locale);
-  const p = getProduct(slug);
+  const p = await getProduct(slug);
   if (!p) notFound();
   const t = await getTranslations("ProductDetail");
   const tt = await getTranslations("BearingTypes");
   const ta = await getTranslations("ProductAttrs");
   const ti = await getTranslations("Industries");
   const typeName = tt(`${p.type}.name`);
-  const description = `${tt(`${p.type}.blurb`)} ${ta("dimensionsLabel")} ${p.d} × ${p.D} × ${p.B} mm.`;
-  const related = products.filter((x) => x.slug !== p.slug && (x.type === p.type || x.d === p.d)).slice(0, 4);
+  const hasDims = p.d != null || p.D != null || p.B != null;
+  const description = hasDims ? `${tt(`${p.type}.blurb`)} ${ta("dimensionsLabel")} ${dims(p)} mm.` : tt(`${p.type}.blurb`);
+  const related = await relatedProducts(p);
 
   const specs: [string, string][] = [
     [t("specs.designation"), p.designation],
     [t("specs.brand"), p.brand],
     [t("specs.type"), typeName],
-    [t("specs.dInner"), `${p.d} mm`],
-    [t("specs.dOuter"), `${p.D} mm`],
-    [t("specs.width"), `${p.B} mm`],
-    [t("specs.seal"), ta(`seal.${p.seal}`)],
+    ...([[t("specs.dInner"), p.d], [t("specs.dOuter"), p.D], [t("specs.width"), p.B]] as const)
+      .filter(([, v]) => v != null)
+      .map(([k, v]) => [k, `${v} mm`] as [string, string]),
+    ...(p.seal ? [[t("specs.seal"), ta(`seal.${p.seal}`)] as [string, string]] : []),
   ];
   const url = (path: string) => site.url + getPathname({ href: path, locale: locale as Locale });
 
@@ -61,11 +67,9 @@ export default async function ProductPage({ params }: PageProps<"/[locale]/catal
       brand: { "@type": "Brand", name: p.brand },
       category: tt(`${p.type}.short`),
       description,
-      additionalProperty: [
-        { "@type": "PropertyValue", name: "Bore diameter", value: p.d, unitCode: "MMT" },
-        { "@type": "PropertyValue", name: "Outside diameter", value: p.D, unitCode: "MMT" },
-        { "@type": "PropertyValue", name: "Width", value: p.B, unitCode: "MMT" },
-      ],
+      additionalProperty: ([["Bore diameter", p.d], ["Outside diameter", p.D], ["Width", p.B]] as const)
+        .filter(([, value]) => value != null)
+        .map(([name, value]) => ({ "@type": "PropertyValue", name, value, unitCode: "MMT" })),
     },
     {
       "@context": "https://schema.org",
