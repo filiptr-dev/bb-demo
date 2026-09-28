@@ -9,6 +9,7 @@ import { productCategories, getProductCategory } from "@/lib/domain/taxonomy";
 import { categoryContent } from "@/lib/domain/category-content";
 import CategoryCard from "@/components/product/CategoryCard";
 import CategoryContent from "@/components/product/CategoryContent";
+import GreaseSelection from "@/components/product/GreaseSelection";
 import CompanyValuesFooter from "@/components/layout/CompanyValuesFooter";
 
 export function generateStaticParams() {
@@ -84,6 +85,8 @@ export default async function ProductCategoryPage({ params }: PageProps<"/[local
           </ul>
         </section>
       )}
+
+      {c.slug === "greases" && <GreaseSelection />}
 
       {categoryContent[c.slug] && <CategoryContent content={categoryContent[c.slug]} />}
 

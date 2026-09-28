@@ -947,5 +947,42 @@
       "Ideálne pre ťažko prístupné miesta a dlhé hriadele s viacerými podperami.",
       "Jednotky majú zdvíhacie skrutky, kontrolné otvory a závitové otvory pre snímače teploty a vibrácií."
     ]
+  },
+  "Greases": {
+    "basicHeading": "Ktoré mazivo?",
+    "basicIntro": "Pri bežných otáčkach, teplote a zaťažení je štandardnou voľbou SKF LGMT 2. Iné mazivo zvoľte, ak platí niektorá z týchto podmienok.",
+    "condition": {
+      "allPurpose": "Univerzálne: stredné otáčky, teplota a zaťaženie",
+      "highTemp": "Teplota ložiska trvalo nad 100 °C",
+      "extremeTemp": "Teplota ložiska trvalo nad 150 °C alebo požadovaná odolnosť voči žiareniu",
+      "lowTemp": "Nízka okolitá teplota do −50 °C, ložisko pod 50 °C",
+      "highLoad": "Rázové alebo vysoké zaťaženie, časté rozbehy a zastavenia",
+      "food": "Potravinársky priemysel",
+      "green": "Biologicky odbúrateľné, požadovaná nízka toxicita"
+    },
+    "lgmt3Note": "V prostredí s relatívne vysokou okolitou teplotou použite LGMT 3 namiesto LGMT 2.",
+    "chartHeading": "Tabuľka výberu mazív SKF",
+    "chartIntro": "Prevádzkový rozsah, viskozita základového oleja a vhodnosť ložiskových mazív SKF pre osobitné prevádzkové podmienky.",
+    "col": {
+      "grease": "Mazivo",
+      "range": "Rozsah",
+      "viscosity": "Viskozita",
+      "temp": "Tepl.",
+      "speed": "Otáčky",
+      "load": "Zaťaž.",
+      "verticalShaft": "Zvislý hriadeľ",
+      "outerRing": "Rýchla rotácia vonkajšieho krúžku",
+      "oscillating": "Kmitavé pohyby",
+      "vibration": "Silné vibrácie",
+      "shockLoad": "Rázové zaťaženie / časté rozbehy",
+      "rust": "Ochrana proti hrdzi"
+    },
+    "fit": {
+      "recommended": "Odporúčané",
+      "suitable": "Vhodné",
+      "notSuitable": "Nevhodné"
+    },
+    "levelsLegend": "Teplota, otáčky a zaťaženie: VL veľmi nízke · L nízke · M stredné · H vysoké · VH veľmi vysoké · EH extrémne vysoké.",
+    "viscosityNote": "Viskozita: základový olej pri 40 °C, mm²/s. Zdroj: tabuľka SKF pre výber ložiskových mazív."
   }
 }

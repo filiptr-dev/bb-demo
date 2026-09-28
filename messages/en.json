@@ -947,5 +947,42 @@
       "Ideal for hard-to-reach positions and long shafts supported at several points.",
       "Units offer lifting screws, inspection holes and tapped holes for temperature and vibration sensors."
     ]
+  },
+  "Greases": {
+    "basicHeading": "Which grease?",
+    "basicIntro": "For normal speed, temperature and load, SKF LGMT 2 is the default. Pick another grease when one of these conditions applies.",
+    "condition": {
+      "allPurpose": "General purpose: medium speed, temperature and load",
+      "highTemp": "Bearing temperature continuously above 100 °C",
+      "extremeTemp": "Bearing temperature continuously above 150 °C, or radiation resistance required",
+      "lowTemp": "Low ambient temperature down to −50 °C, bearing below 50 °C",
+      "highLoad": "Shock or heavy loads, frequent start-up and shutdown",
+      "food": "Food processing industry",
+      "green": "Biodegradable, low toxicity required"
+    },
+    "lgmt3Note": "In areas with relatively high ambient temperatures, use LGMT 3 instead of LGMT 2.",
+    "chartHeading": "SKF grease selection chart",
+    "chartIntro": "Operating range, base oil viscosity and suitability for special working conditions of the SKF bearing greases.",
+    "col": {
+      "grease": "Grease",
+      "range": "Range",
+      "viscosity": "Viscosity",
+      "temp": "Temp.",
+      "speed": "Speed",
+      "load": "Load",
+      "verticalShaft": "Vertical shaft",
+      "outerRing": "Fast outer ring rotation",
+      "oscillating": "Oscillating movements",
+      "vibration": "Severe vibration",
+      "shockLoad": "Shock load / frequent start-up",
+      "rust": "Rust inhibition"
+    },
+    "fit": {
+      "recommended": "Recommended",
+      "suitable": "Suitable",
+      "notSuitable": "Not suitable"
+    },
+    "levelsLegend": "Temperature, speed and load: VL very low · L low · M medium · H high · VH very high · EH extremely high.",
+    "viscosityNote": "Viscosity: base oil at 40 °C, mm²/s. Source: SKF bearing grease selection chart."
   }
 }

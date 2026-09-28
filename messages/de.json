@@ -947,5 +947,42 @@
       "Ideal für schwer zugängliche Stellen und lange, mehrfach gelagerte Wellen.",
       "Einheiten mit Abdrückschrauben, Inspektionsbohrungen und Gewindebohrungen für Temperatur- und Schwingungssensoren."
     ]
+  },
+  "Greases": {
+    "basicHeading": "Welches Fett?",
+    "basicIntro": "Bei normaler Drehzahl, Temperatur und Belastung ist SKF LGMT 2 die Standardwahl. Wählen Sie ein anderes Fett, wenn eine dieser Bedingungen zutrifft.",
+    "condition": {
+      "allPurpose": "Mehrzweck: mittlere Drehzahl, Temperatur und Belastung",
+      "highTemp": "Lagertemperatur dauerhaft über 100 °C",
+      "extremeTemp": "Lagertemperatur dauerhaft über 150 °C oder Strahlungsbeständigkeit gefordert",
+      "lowTemp": "Niedrige Umgebungstemperatur bis −50 °C, Lager unter 50 °C",
+      "highLoad": "Stoß- oder hohe Belastungen, häufiges Anfahren und Stoppen",
+      "food": "Lebensmittelindustrie",
+      "green": "Biologisch abbaubar, geringe Toxizität gefordert"
+    },
+    "lgmt3Note": "In Bereichen mit relativ hoher Umgebungstemperatur LGMT 3 statt LGMT 2 verwenden.",
+    "chartHeading": "SKF Schmierfett-Auswahltabelle",
+    "chartIntro": "Einsatzbereich, Grundölviskosität und Eignung der SKF Wälzlagerfette für besondere Betriebsbedingungen.",
+    "col": {
+      "grease": "Fett",
+      "range": "Bereich",
+      "viscosity": "Viskosität",
+      "temp": "Temp.",
+      "speed": "Drehzahl",
+      "load": "Last",
+      "verticalShaft": "Senkrechte Welle",
+      "outerRing": "Schnell drehender Außenring",
+      "oscillating": "Oszillierende Bewegungen",
+      "vibration": "Starke Vibrationen",
+      "shockLoad": "Stoßlast / häufiges Anfahren",
+      "rust": "Korrosionsschutz"
+    },
+    "fit": {
+      "recommended": "Empfohlen",
+      "suitable": "Geeignet",
+      "notSuitable": "Nicht geeignet"
+    },
+    "levelsLegend": "Temperatur, Drehzahl und Last: VL sehr niedrig · L niedrig · M mittel · H hoch · VH sehr hoch · EH extrem hoch.",
+    "viscosityNote": "Viskosität: Grundöl bei 40 °C, mm²/s. Quelle: SKF Auswahltabelle für Wälzlagerfette."
   }
 }

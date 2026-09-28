@@ -947,5 +947,42 @@
       "Ideale per posizioni difficili da raggiungere e alberi lunghi con più appoggi.",
       "I supporti hanno viti di sollevamento, fori di ispezione e fori filettati per sensori di temperatura e vibrazioni."
     ]
+  },
+  "Greases": {
+    "basicHeading": "Quale grasso?",
+    "basicIntro": "Per velocità, temperatura e carico normali, SKF LGMT 2 è la scelta standard. Scegliete un altro grasso quando si verifica una di queste condizioni.",
+    "condition": {
+      "allPurpose": "Uso generale: velocità, temperatura e carico medi",
+      "highTemp": "Temperatura del cuscinetto costantemente sopra 100 °C",
+      "extremeTemp": "Temperatura del cuscinetto costantemente sopra 150 °C o resistenza alle radiazioni richiesta",
+      "lowTemp": "Bassa temperatura ambiente fino a −50 °C, cuscinetto sotto 50 °C",
+      "highLoad": "Carichi d'urto o pesanti, avviamenti e arresti frequenti",
+      "food": "Industria alimentare",
+      "green": "Biodegradabile, bassa tossicità richiesta"
+    },
+    "lgmt3Note": "In zone con temperatura ambiente relativamente alta, usate LGMT 3 invece di LGMT 2.",
+    "chartHeading": "Tabella SKF di selezione dei grassi",
+    "chartIntro": "Campo di funzionamento, viscosità dell'olio base e idoneità a condizioni operative particolari dei grassi SKF per cuscinetti.",
+    "col": {
+      "grease": "Grasso",
+      "range": "Campo",
+      "viscosity": "Viscosità",
+      "temp": "Temp.",
+      "speed": "Velocità",
+      "load": "Carico",
+      "verticalShaft": "Albero verticale",
+      "outerRing": "Rotazione rapida dell'anello esterno",
+      "oscillating": "Movimenti oscillanti",
+      "vibration": "Vibrazioni forti",
+      "shockLoad": "Carichi d'urto / avviamenti frequenti",
+      "rust": "Protezione antiruggine"
+    },
+    "fit": {
+      "recommended": "Consigliato",
+      "suitable": "Idoneo",
+      "notSuitable": "Non idoneo"
+    },
+    "levelsLegend": "Temperatura, velocità e carico: VL molto basso · L basso · M medio · H alto · VH molto alto · EH estremamente alto.",
+    "viscosityNote": "Viscosità: olio base a 40 °C, mm²/s. Fonte: tabella SKF di selezione dei grassi per cuscinetti."
   }
 }

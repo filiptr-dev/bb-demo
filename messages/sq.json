@@ -947,5 +947,42 @@
       "Ideale për pozicione të vështira për t'u arritur dhe boshte të gjata me disa mbështetje.",
       "Njësitë kanë vida ngritëse, vrima inspektimi dhe vrima të filetuara për sensorë temperature dhe dridhjesh."
     ]
+  },
+  "Greases": {
+    "basicHeading": "Cilën yndyrë?",
+    "basicIntro": "Për shpejtësi, temperaturë dhe ngarkesë normale, SKF LGMT 2 është zgjedhja standarde. Zgjidhni një yndyrë tjetër kur vlen një nga këto kushte.",
+    "condition": {
+      "allPurpose": "Përdorim i përgjithshëm: shpejtësi, temperaturë dhe ngarkesë mesatare",
+      "highTemp": "Temperatura e kushinetës vazhdimisht mbi 100 °C",
+      "extremeTemp": "Temperatura e kushinetës vazhdimisht mbi 150 °C, ose kërkohet rezistencë ndaj rrezatimit",
+      "lowTemp": "Temperaturë e ulët e ambientit deri në −50 °C, kushineta nën 50 °C",
+      "highLoad": "Ngarkesa goditëse ose të rënda, ndezje dhe ndalime të shpeshta",
+      "food": "Industria ushqimore",
+      "green": "E biodegradueshme, kërkohet toksicitet i ulët"
+    },
+    "lgmt3Note": "Në zona me temperaturë relativisht të lartë të ambientit, përdorni LGMT 3 në vend të LGMT 2.",
+    "chartHeading": "Tabela SKF e zgjedhjes së yndyrave",
+    "chartIntro": "Diapazoni i punës, viskoziteti i vajit bazë dhe përshtatshmëria për kushte të veçanta pune të yndyrave SKF për kushineta.",
+    "col": {
+      "grease": "Yndyra",
+      "range": "Diapazoni",
+      "viscosity": "Viskoziteti",
+      "temp": "Temp.",
+      "speed": "Shpejtësia",
+      "load": "Ngarkesa",
+      "verticalShaft": "Bosht vertikal",
+      "outerRing": "Rrotullim i shpejtë i unazës së jashtme",
+      "oscillating": "Lëvizje osciluese",
+      "vibration": "Dridhje të forta",
+      "shockLoad": "Ngarkesë goditëse / ndezje të shpeshta",
+      "rust": "Mbrojtje nga ndryshku"
+    },
+    "fit": {
+      "recommended": "E rekomanduar",
+      "suitable": "E përshtatshme",
+      "notSuitable": "Jo e përshtatshme"
+    },
+    "levelsLegend": "Temperatura, shpejtësia dhe ngarkesa: VL shumë e ulët · L e ulët · M mesatare · H e lartë · VH shumë e lartë · EH jashtëzakonisht e lartë.",
+    "viscosityNote": "Viskoziteti: vaji bazë në 40 °C, mm²/s. Burimi: tabela SKF e zgjedhjes së yndyrave për kushineta."
   }
 }

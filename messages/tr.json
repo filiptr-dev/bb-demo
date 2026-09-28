@@ -947,5 +947,42 @@
       "Ulaşılması zor noktalar ve birden çok yerden desteklenen uzun miller için ideal.",
       "Ünitelerde kaldırma vidaları, muayene delikleri ve sıcaklık ile titreşim sensörleri için dişli delikler bulunur."
     ]
+  },
+  "Greases": {
+    "basicHeading": "Hangi gres?",
+    "basicIntro": "Normal hız, sıcaklık ve yük için standart seçim SKF LGMT 2'dir. Aşağıdaki koşullardan biri geçerliyse başka bir gres seçin.",
+    "condition": {
+      "allPurpose": "Genel amaçlı: orta hız, sıcaklık ve yük",
+      "highTemp": "Rulman sıcaklığı sürekli 100 °C'nin üzerinde",
+      "extremeTemp": "Rulman sıcaklığı sürekli 150 °C'nin üzerinde veya radyasyon direnci gerekli",
+      "lowTemp": "−50 °C'ye kadar düşük ortam sıcaklığı, rulman 50 °C'nin altında",
+      "highLoad": "Darbeli veya ağır yükler, sık kalkış ve duruş",
+      "food": "Gıda işleme endüstrisi",
+      "green": "Biyolojik olarak parçalanabilir, düşük toksisite gerekli"
+    },
+    "lgmt3Note": "Ortam sıcaklığının görece yüksek olduğu yerlerde LGMT 2 yerine LGMT 3 kullanın.",
+    "chartHeading": "SKF gres seçim tablosu",
+    "chartIntro": "SKF rulman greslerinin çalışma aralığı, baz yağ viskozitesi ve özel çalışma koşullarına uygunluğu.",
+    "col": {
+      "grease": "Gres",
+      "range": "Aralık",
+      "viscosity": "Viskozite",
+      "temp": "Sıcaklık",
+      "speed": "Hız",
+      "load": "Yük",
+      "verticalShaft": "Dikey mil",
+      "outerRing": "Hızlı dış bilezik dönüşü",
+      "oscillating": "Salınım hareketleri",
+      "vibration": "Şiddetli titreşim",
+      "shockLoad": "Darbeli yük / sık kalkış",
+      "rust": "Pas önleme"
+    },
+    "fit": {
+      "recommended": "Önerilir",
+      "suitable": "Uygun",
+      "notSuitable": "Uygun değil"
+    },
+    "levelsLegend": "Sıcaklık, hız ve yük: VL çok düşük · L düşük · M orta · H yüksek · VH çok yüksek · EH aşırı yüksek.",
+    "viscosityNote": "Viskozite: 40 °C'de baz yağ, mm²/s. Kaynak: SKF rulman gresi seçim tablosu."
   }
 }
