@@ -59,13 +59,14 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   setRequestLocale(locale as Locale);
 
   return (
-    <html lang={locale} suppressHydrationWarning className={cn("dark antialiased", montserrat.variable, notoSans.variable, syne.variable, bebas.variable, geistMono.variable, "font-sans")}>
+    // data-theme="client" is the default (the client's own SKF-blue palette); ThemeVariantToggle's effect
+    // removes it if the visitor has explicitly opted into the "demo" AI-design colors (localStorage). This is a
+    // JSX prop (not an inline <script>) so it survives the full <html>/<body> remount a locale switch triggers
+    // — the [locale] layout owns html/body and Next tears that subtree down when its own dynamic segment
+    // changes, and React doesn't re-execute dangerouslySetInnerHTML <script> tags on such a client remount,
+    // which is why the old script-based theme restore used to silently lose the choice on language switch.
+    <html lang={locale} data-theme="client" suppressHydrationWarning className={cn("dark antialiased", montserrat.variable, notoSans.variable, syne.variable, bebas.variable, geistMono.variable, "font-sans")}>
       <body className="min-h-screen flex flex-col font-sans">
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `try{if(localStorage.getItem('theme-variant')==='client'){document.documentElement.dataset.theme='client'}}catch(e){}`,
-          }}
-        />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
         <NextIntlClientProvider>
           <Header />

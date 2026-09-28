@@ -7,12 +7,19 @@ import { cn } from "@/lib/utils";
 
 const STORAGE_KEY = "theme-variant";
 
+// The <html> tag ships with data-theme="client" (the real client colors) by default — see app/[locale]/layout.tsx.
+// This effect only needs to *remove* it for a visitor who explicitly opted into the "demo" colors, and it must
+// run as a real effect (not a <script> tag): a locale switch remounts <html>/<body> fresh each time, and React
+// does not re-execute inline scripts on a client-driven remount, only actual component effects.
 export default function ThemeVariantToggle() {
   const t = useTranslations("ThemeToggle");
-  const [isClientTheme, setIsClientTheme] = useState(false);
+  const [isClientTheme, setIsClientTheme] = useState(true);
 
   useEffect(() => {
-    setIsClientTheme(document.documentElement.dataset.theme === "client");
+    if (localStorage.getItem(STORAGE_KEY) === "demo") {
+      setIsClientTheme(false);
+      document.documentElement.removeAttribute("data-theme");
+    }
   }, []);
 
   function toggle() {
@@ -22,8 +29,8 @@ export default function ThemeVariantToggle() {
       document.documentElement.dataset.theme = "client";
       localStorage.setItem(STORAGE_KEY, "client");
     } else {
-      delete document.documentElement.dataset.theme;
-      localStorage.setItem(STORAGE_KEY, "default");
+      document.documentElement.removeAttribute("data-theme");
+      localStorage.setItem(STORAGE_KEY, "demo");
     }
   }
 
