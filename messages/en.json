@@ -43,7 +43,9 @@
     "searchPlaceholder": "Search designation, e.g. 6205…",
     "searchLabel": "Search bearing",
     "eCatalog": "E-catalog",
-    "menu": "Menu"
+    "menu": "Menu",
+    "searchNoResults": "No matching products.",
+    "searchViewAll": "View all {count} results"
   },
   "Footer": {
     "tagline": "Official SKF distributor for North Macedonia for 35 years. Bearings, seals, power transmission and lubricants.",

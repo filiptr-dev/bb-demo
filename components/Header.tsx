@@ -1,12 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useLocale, useTranslations } from "next-intl";
-import { Link, getPathname } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import LanguageSwitcher from "./LanguageSwitcher";
 import BearingIcon from "./BearingIcon";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import HeaderSearch from "./HeaderSearch";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 
 const nav = [
@@ -21,8 +21,6 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const t = useTranslations("Nav");
   const tc = useTranslations("Common");
-  const locale = useLocale();
-  const catalogAction = getPathname({ href: "/catalog", locale });
 
   useEffect(() => {
     const on = () => setScrolled(window.scrollY > 20);
@@ -45,10 +43,7 @@ export default function Header() {
           ))}
         </nav>
 
-        <form action={catalogAction} className="ml-auto hidden md:block w-64">
-          <label htmlFor="hs" className="sr-only">{t("searchLabel")}</label>
-          <Input id="hs" name="search" type="search" placeholder={t("searchPlaceholder")} className="h-9 rounded-full px-4" />
-        </form>
+        <HeaderSearch placeholder={t("searchPlaceholder")} className="ml-auto hidden md:block w-64" inputClassName="h-9 rounded-full px-4" />
 
         <LanguageSwitcher className="ml-auto md:ml-0 hidden sm:inline-flex" />
 
@@ -63,9 +58,7 @@ export default function Header() {
         <SheetContent side="right" className="lg:hidden">
           <SheetHeader><SheetTitle>{t("menu")}</SheetTitle></SheetHeader>
           <div className="px-4 space-y-4">
-            <form action={catalogAction}>
-              <Input name="search" type="search" placeholder={tc("searchShort")} className="h-10 rounded-full px-4" />
-            </form>
+            <HeaderSearch placeholder={tc("searchShort")} inputClassName="h-10 rounded-full px-4" onNavigate={() => setOpen(false)} />
             {nav.map((n) => (
               <Link key={n.href} href={n.href} onClick={() => setOpen(false)} className="block text-sm uppercase tracking-wider text-foreground/80">{t(n.key)}</Link>
             ))}

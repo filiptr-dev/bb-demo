@@ -43,7 +43,9 @@
     "searchPlaceholder": "Kërko shenjën, p.sh. 6205…",
     "searchLabel": "Kërko rulman",
     "eCatalog": "E-katalog",
-    "menu": "Menyja"
+    "menu": "Menyja",
+    "searchNoResults": "Nuk u gjetën produkte.",
+    "searchViewAll": "Shiko të gjitha {count} rezultatet"
   },
   "Footer": {
     "tagline": "Distributor zyrtar i SKF për Maqedoninë e Veriut prej 35 vitesh. Rulmane, guarnicione, transmetim fuqie dhe lubrifikantë.",

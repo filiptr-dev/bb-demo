@@ -5,6 +5,7 @@ export type Industry = {
 
 export type BearingType = {
   slug: string;
+  image: string;
 };
 
 export type SealCode = "open" | "shields" | "both";
@@ -34,16 +35,21 @@ export const industries: Industry[] = [
   { slug: "recycling", image: "/images/industries/recycling.jpg" },
 ];
 
+// Demo only: type photos are hotlinked from the legacy site's bearings page.
+const legacyBearings = "https://bbunikoop.com.mk/wp-content/uploads/2022/04/";
+
 export const bearingTypes: BearingType[] = [
-  { slug: "deep-groove" },
-  { slug: "angular-contact" },
-  { slug: "self-aligning" },
-  { slug: "spherical-roller" },
-  { slug: "tapered-roller" },
-  { slug: "cylindrical-roller" },
-  { slug: "thrust-ball" },
-  { slug: "unit" },
+  { slug: "deep-groove", image: `${legacyBearings}radijalno-topchesti-lezhishta.jpg` },
+  { slug: "angular-contact", image: `${legacyBearings}ednoredni-topchesti-lezhishta-so-kos-dopir.jpg` },
+  { slug: "self-aligning", image: `${legacyBearings}samopodeslivi-topchesti-lezhishta.jpg` },
+  { slug: "spherical-roller", image: `${legacyBearings}buresto-valchesti-lezhishta.jpg` },
+  { slug: "tapered-roller", image: `${legacyBearings}konusno-valchesti-lezhishta.jpg` },
+  { slug: "cylindrical-roller", image: `${legacyBearings}ednoredni-cilindrichno-valchesti-lezhishta.jpg` },
+  { slug: "thrust-ball", image: `${legacyBearings}aksijalni-lezhishta.jpg` },
+  { slug: "unit", image: `${legacyBearings}y-lezhishta-i-lezhishni-edinici.jpg` },
 ];
+
+export const typeImage = (type: string) => bearingTypes.find((t) => t.slug === type)?.image;
 
 const DG = "deep-groove", AC = "angular-contact", SA = "self-aligning", SR = "spherical-roller",
   TR = "tapered-roller", CR = "cylindrical-roller", TB = "thrust-ball", UN = "unit";
