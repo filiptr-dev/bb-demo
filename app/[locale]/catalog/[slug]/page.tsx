@@ -7,7 +7,7 @@ import type { Locale } from "@/i18n/routing";
 import { site } from "@/lib/site";
 import { dim, dims } from "@/lib/domain/product";
 import { getProduct, relatedProducts } from "@/server/products";
-import BearingIcon from "@/components/brand/BearingIcon";
+import ProductTypeImage from "@/components/product/ProductTypeImage";
 import ProductCard from "@/components/product/ProductCard";
 
 // ~15k products: render each on first visit, then serve it cached for an hour
@@ -90,9 +90,7 @@ export default async function ProductPage({ params }: PageProps<"/[locale]/catal
       </nav>
 
       <div className="mt-5 grid md:grid-cols-[300px_1fr] gap-8">
-        <div className="rounded-2xl bg-foreground/[0.03] border border-foreground/[0.07] p-8 flex items-center justify-center">
-          <BearingIcon className="w-56 h-56" spin />
-        </div>
+        <ProductTypeImage type={p.type} className="aspect-square rounded-2xl border border-foreground/[0.07]" />
         <div>
           <p className="text-brand-2 font-semibold text-sm">{p.brand}</p>
           <h1 className="font-mono text-3xl md:text-4xl font-extrabold">{p.designation}</h1>
