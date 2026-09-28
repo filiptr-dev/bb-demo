@@ -10,7 +10,7 @@ export default async function Footer() {
   const ti = await getTranslations("Industries");
   const th = await getTranslations("Hero");
   return (
-    <footer id="contact" className="relative scroll-mt-16 bg-background border-t border-foreground/[0.06] overflow-hidden">
+    <footer className="relative bg-background border-t border-foreground/[0.06] overflow-hidden">
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[700px] h-[260px] bg-brand-1/[0.05] rounded-full blur-[130px] pointer-events-none" />
       <div className="relative container mx-auto px-6 lg:px-10 py-14 grid gap-10 md:grid-cols-3">
         <Reveal>

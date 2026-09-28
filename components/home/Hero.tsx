@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "motion/react";
 import { useRef } from "react";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 
 export default function Hero() {
   const t = useTranslations("Hero");
@@ -61,9 +62,9 @@ export default function Hero() {
         </motion.p>
 
         <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 1.2 }} className="flex flex-wrap gap-3">
-          <a href="#contact" className="px-7 py-3.5 bg-brand-gradient font-semibold rounded-full hover:shadow-[0_0_40px_rgba(var(--brand-glow-1-rgb),0.5)] transition-all duration-300 text-xs tracking-wide uppercase">
+          <Link href="/contact" className="px-7 py-3.5 bg-brand-gradient font-semibold rounded-full hover:shadow-[0_0_40px_rgba(var(--brand-glow-1-rgb),0.5)] transition-all duration-300 text-xs tracking-wide uppercase">
             {t("ctaQuote")}
-          </a>
+          </Link>
           <a href="#about" className="px-7 py-3.5 border border-foreground/25 font-medium rounded-full hover:bg-foreground/10 hover:border-foreground/40 transition-all duration-300 text-xs tracking-wide uppercase">
             {t("ctaAbout")}
           </a>

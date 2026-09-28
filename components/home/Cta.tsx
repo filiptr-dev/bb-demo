@@ -20,7 +20,7 @@ export default async function Cta() {
           <p className="text-foreground/60 max-w-xl mx-auto mb-8">{t("cta.blurb")}</p>
         </Reveal>
         <Reveal delay={0.3} className="flex flex-wrap justify-center gap-3">
-          <a href="#contact" className="px-7 py-3.5 bg-brand-gradient font-semibold rounded-full hover:shadow-[0_0_45px_rgba(var(--brand-glow-1-rgb),0.5)] transition-shadow text-xs tracking-wide uppercase">{t("cta.contact")}</a>
+          <Link href="/contact" className="px-7 py-3.5 bg-brand-gradient font-semibold rounded-full hover:shadow-[0_0_45px_rgba(var(--brand-glow-1-rgb),0.5)] transition-shadow text-xs tracking-wide uppercase">{t("cta.contact")}</Link>
           <Link href="/catalog" className="px-7 py-3.5 border border-foreground/25 rounded-full hover:bg-foreground/10 transition-colors text-xs tracking-wide uppercase">{t("cta.catalog")}</Link>
         </Reveal>
       </div>
