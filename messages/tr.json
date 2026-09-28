@@ -1,0 +1,625 @@
+{
+  "Common": {
+    "brandFirst": "B&B",
+    "brandSecond": "UNIKOOP",
+    "brandName": "B&B Unikoop",
+    "cities": {
+      "prilep": "Prilep",
+      "skopje": "Skopje"
+    },
+    "hours": "Pzt–Cum 09:00–16:00",
+    "updated": "24 Eylül 2026",
+    "scrollAria": "Aşağı kaydır",
+    "searchShort": "Tanım ara…"
+  },
+  "Metadata": {
+    "site": {
+      "title": "B&B UNIKOOP – SKF rulmanları ve endüstriyel çözümler",
+      "titleTemplate": "%s | B&B UNIKOOP",
+      "description": "Kuzey Makedonya'daki resmi SKF distribütörü. Tanıma göre arama ve sektöre göre filtreleme özellikli rulman kataloğu."
+    },
+    "catalog": {
+      "title": "Rulman kataloğu",
+      "description": "SKF rulmanlarını tanıma veya ölçülere göre arayın ve sektöre göre filtreleyin."
+    },
+    "contact": {
+      "title": "İletişim",
+      "description": "Kuzey Makedonya'daki resmi SKF distribütörü B&B Unikoop ile iletişime geçin. 7/24 telefon desteği, Prilep ve Skopje."
+    },
+    "privacy": {
+      "title": "Gizlilik politikası",
+      "description": "B&B Unikoop'un kişisel verilerinizi nasıl topladığı, kullandığı ve koruduğu."
+    },
+    "terms": {
+      "title": "Kullanım koşulları",
+      "description": "B&B Unikoop web sitesinin kullanım koşulları."
+    }
+  },
+  "Nav": {
+    "about": "Hakkımızda",
+    "products": "Ürünler",
+    "industries": "Sektörler",
+    "contact": "İletişim",
+    "searchPlaceholder": "Tanım arayın, ör. 6205…",
+    "searchLabel": "Rulman ara",
+    "eCatalog": "E-katalog",
+    "menu": "Menü",
+    "searchNoResults": "Eşleşen ürün bulunamadı.",
+    "searchViewAll": "{count} sonucun tümünü görüntüle"
+  },
+  "Footer": {
+    "tagline": "35 yıldır Kuzey Makedonya'nın resmi SKF distribütörü. Rulmanlar, keçeler, güç aktarımı ve yağlayıcılar.",
+    "industriesHeading": "Sektörler",
+    "contactHeading": "İletişim · 7/24",
+    "officeHours": "Skopje ofisi: Pzt–Cum 09:00–16:00",
+    "sendMessage": "Mesaj gönderin →",
+    "copyright": "B&B Unikoop · Demo sürümü",
+    "privacy": "Gizlilik politikası",
+    "terms": "Kullanım koşulları"
+  },
+  "Hero": {
+    "eyebrow": "1991'den beri · SKF distribütörü",
+    "heading": [
+      "ENTEGRE",
+      "ENDÜSTRİYEL",
+      "ÇÖZÜMLER"
+    ],
+    "description": "B&B Unikoop, Kuzey Makedonya genelinde endüstriyel rulmanlar, güç aktarım ekipmanları ve bakım çözümleri tedarik eder. Resmi SKF distribütörü olarak %100 orijinal ürünler sunuyoruz.",
+    "ctaQuote": "Teklif isteyin",
+    "ctaAbout": "Daha fazla bilgi",
+    "scroll": "Kaydır",
+    "badgeAlt": "B&B Unikoop - yetkili SKF distribütörü"
+  },
+  "Home": {
+    "about": {
+      "imageAlt": "B&B Unikoop ekibi",
+      "eyebrow": "Hakkımızda",
+      "headingPrefix": "Biz",
+      "headingHighlight": "kimiz",
+      "years": "35+",
+      "yearsLabel": "Yıllık deneyim",
+      "p1": "B&B Unikoop, Kuzey Makedonya'nın resmi SKF distribütörüdür. 35 yıldır sanayiye rulmanlar, rulman yatakları, keçeler, kayışlar, zincirler ve yağlama sistemleri tedarik ediyoruz.",
+      "p2": "Misyonumuz, orijinal ürünler ve 7/24 uzman destekle duruş sürelerini azaltmak ve müşterilerimizin operasyonlarında sürekliliği sağlamaktır.",
+      "badges": [
+        "Resmi SKF distribütörü",
+        "Sertifikalar",
+        "Orijinallik doğrulaması"
+      ],
+      "ctaCatalog": "Kataloğu görüntüleyin →",
+      "stats": [
+        {
+          "value": 35,
+          "suffix": "+",
+          "label": "Yıllık deneyim"
+        },
+        {
+          "value": 2,
+          "suffix": "",
+          "label": "Lokasyon"
+        },
+        {
+          "value": 24,
+          "suffix": "/7",
+          "label": "Mobil servis"
+        },
+        {
+          "value": 100,
+          "suffix": "%",
+          "label": "Orijinal ürünler"
+        }
+      ]
+    },
+    "products": {
+      "eyebrow": "Ürünlerimiz",
+      "headingPrefix": "Eksiksiz",
+      "headingHighlight": "endüstriyel çözümler",
+      "more": "Daha fazla bilgi →",
+      "categories": [
+        {
+          "name": "Rulmanlar",
+          "blurb": "Bilyalı, makaralı, eksenel rulmanlar ve rulman üniteleri.",
+          "href": "/catalog"
+        },
+        {
+          "name": "Rulman yatakları",
+          "blurb": "Her uygulama için rulman yatakları ve rulman üniteleri.",
+          "href": "#contact"
+        },
+        {
+          "name": "Keçeler",
+          "blurb": "Endüstriyel keçeler ve sızdırmazlık sistemleri.",
+          "href": "#contact"
+        },
+        {
+          "name": "Kayışlar ve zincirler",
+          "blurb": "Güç aktarım bileşenleri.",
+          "href": "#contact"
+        },
+        {
+          "name": "Yağlama sistemleri",
+          "blurb": "Ekipman ömrünü uzatan otomatik yağlama.",
+          "href": "#contact"
+        },
+        {
+          "name": "Bakım aletleri",
+          "blurb": "Montaj, demontaj ve arıza teşhisi için aletler.",
+          "href": "#contact"
+        }
+      ]
+    },
+    "skfOffer": {
+      "eyebrow": "Orijinal SKF ürünleri",
+      "headingPrefix": "Eksiksiz",
+      "headingHighlight": "SKF ürün yelpazesi",
+      "lead": "Rulmanlar, rulman yatakları, keçeler, yağlama, hizalama ve durum izleme: yetkili distribütör olarak doğrudan tedarik edilen tüm SKF ürün grupları.",
+      "view": "Görüntüle"
+    },
+    "industries": {
+      "eyebrow": "Hizmet verdiğimiz sektörler",
+      "headingPrefix": "Her sektörü",
+      "headingHighlight": "hareket halinde tutuyoruz",
+      "openCatalog": "Kataloğu açın"
+    },
+    "brands": {
+      "eyebrow": "Yetkili distribütör",
+      "headingPrefix": "Arkamızda",
+      "headingHighlight": "dünya çapında bir marka",
+      "title": "Rulman ve keçede dünya lideri",
+      "blurb": "Resmi distribütör olarak SKF Mount ve DialSet ile birlikte eksiksiz SKF ürün yelpazesini sunuyoruz: rulmanlar, rulman yatakları, keçeler, yağlama sistemleri ve bakım aletleri."
+    },
+    "why": {
+      "eyebrow": "Neden B&B Unikoop",
+      "headingPrefix": "Temelimiz",
+      "headingHighlight1": "güven",
+      "headingMiddle": ", itici gücümüz",
+      "headingHighlight2": "kalite",
+      "items": [
+        {
+          "title": "Orijinal ürünler",
+          "blurb": "Orijinallik doğrulamalı %100 orijinal SKF rulmanları."
+        },
+        {
+          "title": "Geniş stok",
+          "blurb": "Rulmanlar, rulman yatakları, keçeler, kayışlar, zincirler ve yağlayıcılar tek bir yerde."
+        },
+        {
+          "title": "Uzman destek",
+          "blurb": "Doğru çözümü seçmenize yardımcı olan mühendisler."
+        },
+        {
+          "title": "Hızlı teslimat",
+          "blurb": "Kuzey Makedonya genelinde teslimat ve 7/24 acil servis."
+        },
+        {
+          "title": "35 yıllık deneyim",
+          "blurb": "Ülkenin en büyük sanayi kuruluşlarıyla köklü iş ortaklıkları."
+        },
+        {
+          "title": "Sertifikalar",
+          "blurb": "Her ürün için dokümantasyon ve sertifikalar."
+        }
+      ]
+    },
+    "cta": {
+      "heading1": "Güvenilir",
+      "headingHighlight": "endüstriyel çözümler mi arıyorsunuz?",
+      "blurb": "Bugün teklif isteyin. Ekibimiz doğru çözümü bulmanıza yardımcı olmaya hazır.",
+      "contact": "Bize ulaşın →",
+      "catalog": "Katalog"
+    }
+  },
+  "Industries": {
+    "cement": {
+      "name": "Çimento",
+      "blurb": "Döner fırınlar, değirmenler ve fanlar için toza ve yüksek sıcaklıklara dayanıklı rulmanlar."
+    },
+    "metallurgy": {
+      "name": "Metalurji",
+      "blurb": "Ekstrem koşullarda merdaneler, sürekli döküm ve ağır yükler için çözümler."
+    },
+    "paper": {
+      "name": "Kâğıt",
+      "blurb": "Kâğıt makineleri, kurutucular ve kalenderler için hassas rulmanlar."
+    },
+    "power": {
+      "name": "Enerji üretimi",
+      "blurb": "Jeneratörler, türbinler, pompalar ve elektrik motorları için güvenilir rulmanlar."
+    },
+    "mining": {
+      "name": "Madencilik",
+      "blurb": "Ekskavatörler, konveyörler, kırıcılar ve titreşimli elekler için dayanıklı rulmanlar."
+    },
+    "chemical": {
+      "name": "Kimya",
+      "blurb": "Agresif ortamlarda çalışan pompalar, karıştırıcılar ve kompresörler için rulmanlar ve keçeler."
+    },
+    "food": {
+      "name": "Gıda ve içecek",
+      "blurb": "Gıdaya uygun yağlayıcılı sızdırmaz rulmanlar – kolay temizlik ve uzun kullanım ömrü."
+    },
+    "recycling": {
+      "name": "Geri dönüşüm",
+      "blurb": "Darbe yükleri altında çalışan kırıcılar, parçalayıcılar ve presler için rulmanlar."
+    }
+  },
+  "ProductCategories": {
+    "bearings": {
+      "name": "Rulmanlar",
+      "blurb": "Eksiksiz SKF rulman yelpazesi – sabit bilyalı, eğik bilyalı, oynak bilyalı, oynak makaralı, konik makaralı, silindirik makaralı ve eksenel rulmanlar."
+    },
+    "housings": {
+      "name": "Rulman yatakları",
+      "blurb": "Rulman üniteleri için SNH, SNL ve SSNHD yatakları – ürün yelpazesi, ölçüler ve malzemeler."
+    },
+    "cooper": {
+      "name": "Cooper",
+      "blurb": "Cooper Bearings bölünmüş makaralı rulmanları – mili sökmeden montaj."
+    },
+    "seals": {
+      "name": "Keçeler",
+      "blurb": "Çok çeşitli endüstriyel uygulamalar için radyal mil keçeleri (CR Seals) ve V-ringler."
+    },
+    "sleeves": {
+      "name": "Gergi manşonları",
+      "blurb": "Rulmanların düz millere montajı için konik delikli gergi manşonları."
+    },
+    "belts-chains": {
+      "name": "Kayışlar, zincirler",
+      "blurb": "Kayışlar, kasnaklar, zincirler, zincir dişlileri, burçlar ve kaplinler – güç aktarım bileşenleri."
+    },
+    "bushings": {
+      "name": "Burçlar",
+      "blurb": "Kilit somunları ve SKF Speedi-Sleeve çözümleri dahil güç aktarım burçları."
+    },
+    "nuts": {
+      "name": "Kilit somunları",
+      "blurb": "Rulmanları mil üzerinde sabitlemek için kilit somunu serileri."
+    },
+    "speedi-sleeve": {
+      "name": "SKF Speedi-Sleeve",
+      "blurb": "Keçe altındaki aşınmış mil yüzeylerini yenilemek için ince cidarlı manşon."
+    },
+    "food-industry": {
+      "name": "Gıda endüstrisi ürünleri",
+      "blurb": "Gıdaya uygun rulmanlar, yağlayıcılar ve keçeler – gıda endüstrisi gerekliliklerine uygun."
+    },
+    "pulley-alignment": {
+      "name": "Kasnak hizalama aletleri",
+      "blurb": "Hassas kasnak hizalama aletleri – daha az aşınma ve enerji tüketimi."
+    },
+    "monitoring-instruments": {
+      "name": "İzleme cihazları",
+      "blurb": "Endoskoplar, yağ izleme cihazları, termometreler, takometreler, akustik aletler ve analiz sistemleri (Microlog, IMx)."
+    },
+    "mounting-tools": {
+      "name": "Montaj ve demontaj aletleri",
+      "blurb": "Güvenli rulman montajı ve demontajı için alet setleri."
+    },
+    "maintenance": {
+      "name": "Bakım",
+      "blurb": "İndüksiyonlu ısıtıcılar ve rulman yaşam döngüsü hakkında eğitim kaynakları."
+    },
+    "shim-packs": {
+      "name": "SKF TMAS şim paketleri",
+      "blurb": "Hassas hizalama için farklı boyut ve kalınlıklarda hassas şimler."
+    },
+    "greases": {
+      "name": "Gresler",
+      "blurb": "Gıdaya uygun seriler (LGFP, LGFQ, LGFG) dahil SKF gresleri – çalışma koşullarına göre seçim."
+    },
+    "lubrication-systems": {
+      "name": "Yağlama sistemleri",
+      "blurb": "Ekipman ömrünü uzatan merkezi yağlama sistemleri."
+    },
+    "automatic-lubricators": {
+      "name": "Otomatik yağlayıcılar",
+      "blurb": "Sürekli ve hassas gres dozajı için otomatik yağlayıcılar."
+    },
+    "vibracon": {
+      "name": "SKF VIBRACON",
+      "blurb": "Ağır ekipmanların hassas hizalanması için ayarlanabilir takozlar."
+    },
+    "composite-housing-units": {
+      "name": "Kompozit yataklı üniteler",
+      "blurb": "Kompozit yataklı bilyalı rulman üniteleri – hafif ve korozyona dayanıklı."
+    },
+    "y-bearings": {
+      "name": "Y-rulmanlar ve üniteler",
+      "blurb": "Y-rulmanlar ve rulman üniteleri – ürün yelpazesi, toleranslar, iç boşluk ve kafesler."
+    }
+  },
+  "BearingTypes": {
+    "deep-groove": {
+      "name": "Sabit bilyalı rulmanlar",
+      "short": "Sabit bilyalı",
+      "blurb": "Hafif ve orta yükler için genel amaçlı radyal bilyalı rulman."
+    },
+    "angular-contact": {
+      "name": "Eğik bilyalı rulmanlar",
+      "short": "Eğik bilyalı",
+      "blurb": "Birleşik radyal ve eksenel yükler için eğik bilyalı rulman."
+    },
+    "self-aligning": {
+      "name": "Oynak bilyalı rulmanlar",
+      "short": "Oynak bilyalı",
+      "blurb": "Mil eksen kaçıklığını telafi eden oynak rulman."
+    },
+    "spherical-roller": {
+      "name": "Oynak makaralı rulmanlar",
+      "short": "Oynak makaralı",
+      "blurb": "Ağır yükler ve eksen kaçıklığı için oynak makaralı rulman."
+    },
+    "tapered-roller": {
+      "name": "Konik makaralı rulmanlar",
+      "short": "Konik makaralı",
+      "blurb": "Birleşik radyal ve eksenel yükler için konik makaralı rulman."
+    },
+    "cylindrical-roller": {
+      "name": "Silindirik makaralı rulmanlar",
+      "short": "Silindirik makaralı",
+      "blurb": "Yüksek radyal yükler için silindirik makaralı rulman."
+    },
+    "thrust-ball": {
+      "name": "Eksenel bilyalı rulmanlar",
+      "short": "Eksenel bilyalı",
+      "blurb": "Yalnızca eksenel yükler için eksenel bilyalı rulman."
+    },
+    "unit": {
+      "name": "Rulman üniteleri",
+      "short": "Bilyalı rulman üniteleri",
+      "blurb": "Montaja hazır, yataklı rulman ünitesi."
+    },
+    "toroidal": {
+      "name": "CARB toroidal makaralı rulmanlar",
+      "short": "CARB toroidal makaralı",
+      "blurb": "Hem eksen kaçıklığını hem de eksenel yer değiştirmeyi karşılayan CARB toroidal makaralı rulman."
+    },
+    "needle-roller": {
+      "name": "İğneli rulmanlar",
+      "short": "İğneli",
+      "blurb": "Dar alanlarda yüksek yükler için düşük kesitli iğneli rulman."
+    },
+    "track-runner": {
+      "name": "Makara rulmanları",
+      "short": "Makara rulmanları",
+      "blurb": "Raylar üzerinde yuvarlanmak için kalın dış bilezikli makara rulmanı (kam takipçisi)."
+    },
+    "plain": {
+      "name": "Kaymalı yataklar, burçlar ve rot başları",
+      "short": "Kaymalı yataklar",
+      "blurb": "Yavaş salınım hareketleri ve ağır yükler için kaymalı yatak, burç veya rot başı."
+    },
+    "housing": {
+      "name": "Rulman yatakları ve aksesuarları",
+      "short": "Rulman yatakları",
+      "blurb": "Rulmanın montajı ve korunması için rulman yatağı veya yatak aksesuarı."
+    },
+    "sleeve-nut": {
+      "name": "Manşonlar ve kilit somunları",
+      "short": "Manşonlar ve somunlar",
+      "blurb": "Rulmanları mil üzerinde sabitlemek için gergi veya çektirme manşonu, kilit somunu ya da kilitleme elemanı."
+    },
+    "seal": {
+      "name": "Radyal mil keçeleri",
+      "short": "Keçeler",
+      "blurb": "Yağlayıcıyı içeride, kirleticileri dışarıda tutan radyal mil keçesi."
+    }
+  },
+  "ProductAttrs": {
+    "seal": {
+      "open": "Açık",
+      "shields": "Her iki tarafta metal kapak",
+      "both": "Her iki tarafta keçe",
+      "one-side": "Bir tarafta keçe veya metal kapak",
+      "other": "Diğer sızdırmazlık"
+    },
+    "boreType": {
+      "tapered": "Konik",
+      "cylindrical": "Silindirik"
+    },
+    "dimensionsLabel": "Ölçüler"
+  },
+  "Catalog": {
+    "page": {
+      "titlePrefix": "RULMAN",
+      "titleHighlight": "KATALOĞU",
+      "subtitle": "{count} ürünlük eksiksiz kataloğumuza göz atın. Tanıma göre arayın, tipe, ölçülere veya sızdırmazlığa göre filtreleyin – tam ihtiyacınız olanı bulun.",
+      "loading": "Yükleniyor…"
+    },
+    "client": {
+      "searchPlaceholder": "Tanım (6205, 22220), ölçüler (25x52x15), bir sayı (25) veya bir kelime (çimento, konik)…",
+      "searchLabel": "Tanıma göre ara",
+      "filters": "Filtreler",
+      "viewToggleLabel": "Görünümü değiştir",
+      "viewGrid": "Izgara",
+      "viewTable": "Tablo",
+      "resetFilters": "Sıfırla",
+      "allIndustries": "Tüm sektörler",
+      "classification": "Sınıflandırma",
+      "allClassifications": "Tüm sınıflandırmalar",
+      "boreTypeLabel": "Delik tipi",
+      "allBoreTypes": "Tüm tipler",
+      "sealLabel": "Sızdırmazlık tipi",
+      "allSeals": "Tüm tipler",
+      "quickBoreRange": "Hızlı delik aralığı (mm)",
+      "boreRangeAll": "Tümü",
+      "dInner": "Delik çapı d (mm)",
+      "dOuter": "Dış çap D (mm)",
+      "width": "Genişlik B (mm)",
+      "min": "Min",
+      "max": "Maks",
+      "clearAllFilters": "✕ Tüm filtreleri temizle",
+      "showing": "Gösterilen:",
+      "productSingular": "ürün",
+      "productPlural": "ürün",
+      "filteredSuffix": "(filtrelenmiş)",
+      "pageLabel": "Sayfa",
+      "of": "/",
+      "noResultsTitle": "Ürün bulunamadı",
+      "noResultsHint": "Tanımı kontrol edin veya filtreleri sıfırlayın. Bizi arayın – size uygun rulmanı bulalım.",
+      "columns": {
+        "designation": "Tanım",
+        "classification": "Sınıflandırma",
+        "boreType": "Delik tipi",
+        "seal": "Sızdırmazlık",
+        "dInner": "Delik d (mm)",
+        "dOuter": "Dış D (mm)",
+        "width": "Genişlik B (mm)"
+      },
+      "viewProduct": "Görüntüle",
+      "pagination": "Sayfalar",
+      "prev": "Önceki",
+      "next": "Sonraki",
+      "viewAria": "Görüntüle: {designation}",
+      "loading": "Yükleniyor…"
+    }
+  },
+  "ProductDetail": {
+    "breadcrumbHome": "Ana sayfa",
+    "breadcrumbCatalog": "Katalog",
+    "specsHeading": "Teknik özellikler",
+    "specs": {
+      "designation": "Tanım",
+      "brand": "Marka",
+      "type": "Tip",
+      "dInner": "Delik çapı (d)",
+      "dOuter": "Dış çap (D)",
+      "width": "Genişlik (B)",
+      "seal": "Sızdırmazlık"
+    },
+    "industriesHeading": "Kullanıldığı sektörler",
+    "relatedHeading": "İlgili ürünler",
+    "metaTitle": "{designation} {brand} rulman – {d}×{D}×{B} mm",
+    "metaDescription": "{brand} {designation}: {type}, delik ø {d} mm, dış ø {D} mm, genişlik {B} mm. B&B Unikoop'ta mevcuttur.",
+    "metaTitlePlain": "{designation} {brand} – {type}",
+    "metaDescriptionPlain": "{brand} {designation}: {type}. B&B Unikoop'ta mevcuttur."
+  },
+  "IndustryDetail": {
+    "titlePrefix": "Rulman çözümleri:",
+    "catalogLink": "Katalogda filtrelerle açın →"
+  },
+  "ProductCategoryDetail": {
+    "back": "← Ana sayfaya dön",
+    "contactIntro": "Bu kategori, B&B Unikoop'un eksiksiz SKF ürün yelpazesinin bir parçasıdır. Teknik özellikler, stok durumu ve teklif için bizimle iletişime geçin.",
+    "contactCta": "Bize ulaşın →"
+  },
+  "CompanyValues": {
+    "items": [
+      {
+        "title": "Dürüstlük ve doğruluk",
+        "blurb": "Her müşterimizle şeffaf ve sorumlu bir şekilde çalışıyoruz."
+      },
+      {
+        "title": "Şeffaflık",
+        "blurb": "Açık koşullar, orijinal ürünler ve doğrulanabilir dokümantasyon."
+      },
+      {
+        "title": "Güçlü ilişkiler",
+        "blurb": "Güvene dayalı köklü iş ortaklıkları."
+      },
+      {
+        "title": "Kişisel sorumluluk",
+        "blurb": "Ekibimizin her üyesi işinin kalitesinin arkasında durur."
+      }
+    ],
+    "mobileService": "7/24 mobil servis"
+  },
+  "Contact": {
+    "titlePrefix": "BİZE",
+    "titleHighlight": "ULAŞIN",
+    "subtitle": "Teklif veya rulman seçimi konusunda danışmanlık isteyin. En kısa sürede yanıt veriyoruz.",
+    "availability": "7/24",
+    "office": "Skopje ofisi",
+    "locations": "Lokasyonlar",
+    "locationsValue": "Prilep · Skopje, Kuzey Makedonya",
+    "form": {
+      "name": "Ad soyad *",
+      "email": "E-posta *",
+      "phone": "Telefon",
+      "message": "Mesaj *",
+      "messagePlaceholder": "Rulman tanımı, miktar, sektör…",
+      "consent": "Verilerimin bu talebe yanıt verilmesi amacıyla <link>Gizlilik politikası</link> uyarınca işlenmesini kabul ediyorum. *",
+      "submit": "Gönder",
+      "sending": "Gönderiliyor…",
+      "thanksTitle": "Teşekkür ederiz!",
+      "thanksBody": "Mesajınız gönderildi. En kısa sürede size dönüş yapacağız.",
+      "genericError": "Bir sorun oluştu. Lütfen tekrar deneyin.",
+      "errors": {
+        "invalid": "Geçersiz talep.",
+        "required": "Lütfen tüm zorunlu alanları doldurun.",
+        "send": "Mesaj gönderilemedi. Lütfen tekrar deneyin."
+      }
+    }
+  },
+  "Privacy": {
+    "title": "Gizlilik politikası",
+    "updatedLabel": "Son güncelleme:",
+    "sections": [
+      {
+        "h": "1. Veri sorumlusu",
+        "p": "B&B Unikoop (\"biz\"), bu web sitesi aracılığıyla toplanan kişisel verilerin sorumlusudur. İletişim: <link>/contact</link>."
+      },
+      {
+        "h": "2. Topladığımız veriler",
+        "p": "İletişim formu aracılığıyla bize yazdığınızda: ad, e-posta, telefon (isteğe bağlı) ve mesaj içeriği. Hassas veri talep etmiyor ve toplamıyoruz."
+      },
+      {
+        "h": "3. Amaç ve hukuki dayanak",
+        "p": "Verileri, onayınıza ve ticari iletişimdeki meşru menfaatimize dayanarak yalnızca talebinize yanıt vermek ve teklif hazırlamak için kullanırız."
+      },
+      {
+        "h": "4. Saklama süresi",
+        "p": "Verileri yalnızca iletişim ve yasal yükümlülükler için gerekli olduğu süre boyunca saklarız; ardından silinir."
+      },
+      {
+        "h": "5. Paylaşım",
+        "p": "Verilerinizi satmayız. Veriler yalnızca talimatlarımız doğrultusunda hizmet sağlayıcılar (barındırma, e-posta gönderimi) tarafından işlenebilir."
+      },
+      {
+        "h": "6. Çerezler",
+        "p": "Bu web sitesi izleme veya reklam çerezleri kullanmaz. Teknik olarak zorunlu çerezler kullanılabilir."
+      },
+      {
+        "h": "7. Haklarınız",
+        "p": "Erişim, düzeltme, silme, kısıtlama, taşıma ve itiraz hakkına, ayrıca Kişisel Verilerin Korunması Ajansı'na şikâyette bulunma hakkına sahipsiniz. Taleplerinizi iletişim sayfası üzerinden gönderin."
+      }
+    ]
+  },
+  "Terms": {
+    "title": "Kullanım koşulları",
+    "updatedLabel": "Son güncelleme:",
+    "sections": [
+      {
+        "h": "1. Kabul",
+        "p": "Bu web sitesini kullanarak bu koşulları kabul etmiş olursunuz. Kabul etmiyorsanız lütfen siteyi kullanmayın."
+      },
+      {
+        "h": "2. Bilgilendirme amacı",
+        "p": "Katalog bilgilendirme amaçlıdır. Ölçüler, tanımlar ve açıklamalar iyi niyetle sunulmakla birlikte hata içerebilir. Sipariş vermeden önce bilgileri bizimle doğrulayın. Sitedeki bilgiler bağlayıcı bir teklif niteliği taşımaz."
+      },
+      {
+        "h": "3. Fiyatlar ve stok durumu",
+        "p": "Fiyatlar ve stok bilgileri sitede yayımlanmaz; teklif yoluyla bireysel olarak belirlenir."
+      },
+      {
+        "h": "4. Fikri mülkiyet",
+        "p": "Sitenin içeriği B&B Unikoop'a veya hak sahiplerine aittir. SKF ve diğer markalar ilgili sahiplerine aittir. İznimiz olmadan kopyalanması yasaktır."
+      },
+      {
+        "h": "5. Sorumluluğun sınırlandırılması",
+        "p": "Yasaların izin verdiği ölçüde, sitedeki bilgilerin kullanımından doğan zararlardan sorumluluk kabul etmiyoruz."
+      },
+      {
+        "h": "6. Değişiklikler ve uygulanacak hukuk",
+        "p": "Koşullar değişebilir; sitede yayımlanan sürüm geçerlidir. Kuzey Makedonya Cumhuriyeti hukuku uygulanır."
+      }
+    ]
+  },
+  "ThemeToggle": {
+    "client": "Müşteri sitesi renkleri",
+    "demo": "Demo renkleri"
+  },
+  "LanguageSwitcher": {
+    "label": "Dil"
+  }
+}

@@ -7,8 +7,10 @@ import type { Locale } from "@/i18n/routing";
 import mk from "@/messages/mk.json";
 import en from "@/messages/en.json";
 import sq from "@/messages/sq.json";
+import de from "@/messages/de.json";
+import tr from "@/messages/tr.json";
 
-const messages = { mk, en, sq } as const;
+const messages = { mk, en, sq, de, tr } as const;
 
 const columns = sql`slug, designation, brand, type, classification, d, outer_d as "D", width as "B", seal, bore_type as "boreType", industries`;
 const natural = sql`designation collate natural_sort`;

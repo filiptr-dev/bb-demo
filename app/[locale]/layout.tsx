@@ -9,13 +9,13 @@ import Footer from "@/components/Footer";
 import ThemeVariantToggle from "@/components/ThemeVariantToggle";
 import { cn } from "@/lib/utils";
 import { site } from "@/lib/site";
-import { routing, type Locale } from "@/i18n/routing";
+import { locales, routing, type Locale } from "@/i18n/routing";
 import { alternatesFor } from "@/i18n/metadata";
 
-const montserrat = Montserrat({ variable: "--font-montserrat", subsets: ["latin", "cyrillic"] });
-const syne = Syne({ variable: "--font-syne", subsets: ["latin"] });
-const bebas = Bebas_Neue({ variable: "--font-bebas", subsets: ["latin"], weight: "400" });
-const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
+const montserrat = Montserrat({ variable: "--font-montserrat", subsets: ["latin", "latin-ext", "cyrillic"] });
+const syne = Syne({ variable: "--font-syne", subsets: ["latin", "latin-ext"] });
+const bebas = Bebas_Neue({ variable: "--font-bebas", subsets: ["latin", "latin-ext"], weight: "400" });
+const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin", "latin-ext"] });
 
 export const viewport: Viewport = { themeColor: "#1a1a1a", colorScheme: "dark" };
 
@@ -48,7 +48,7 @@ const jsonLd = {
   url: site.url,
   description: site.description,
   areaServed: "MK",
-  contactPoint: site.phones.map((p) => ({ "@type": "ContactPoint", telephone: p.tel.replace("+389", "+389 "), contactType: "sales", areaServed: "MK", availableLanguage: ["mk", "en", "sq"] })),
+  contactPoint: site.phones.map((p) => ({ "@type": "ContactPoint", telephone: p.tel.replace("+389", "+389 "), contactType: "sales", areaServed: "MK", availableLanguage: [...locales] })),
 };
 
 export default async function LocaleLayout({ children, params }: { children: React.ReactNode; params: Promise<{ locale: string }> }) {

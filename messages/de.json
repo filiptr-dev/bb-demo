@@ -1,0 +1,625 @@
+{
+  "Common": {
+    "brandFirst": "B&B",
+    "brandSecond": "UNIKOOP",
+    "brandName": "B&B Unikoop",
+    "cities": {
+      "prilep": "Prilep",
+      "skopje": "Skopje"
+    },
+    "hours": "Mo–Fr 09:00–16:00",
+    "updated": "24. September 2026",
+    "scrollAria": "Nach unten scrollen",
+    "searchShort": "Kurzzeichen suchen…"
+  },
+  "Metadata": {
+    "site": {
+      "title": "B&B UNIKOOP – SKF Wälzlager und Industrielösungen",
+      "titleTemplate": "%s | B&B UNIKOOP",
+      "description": "Offizieller SKF-Vertragshändler in Nordmazedonien. Wälzlagerkatalog mit Suche nach Kurzzeichen und Filterung nach Branche."
+    },
+    "catalog": {
+      "title": "Wälzlagerkatalog",
+      "description": "Suchen Sie SKF-Wälzlager nach Kurzzeichen oder Abmessungen und filtern Sie nach Branche."
+    },
+    "contact": {
+      "title": "Kontakt",
+      "description": "Kontaktieren Sie B&B Unikoop – offizieller SKF-Vertragshändler in Nordmazedonien. Telefonischer Support rund um die Uhr, Prilep und Skopje."
+    },
+    "privacy": {
+      "title": "Datenschutzerklärung",
+      "description": "Wie B&B Unikoop Ihre personenbezogenen Daten erhebt, verwendet und schützt."
+    },
+    "terms": {
+      "title": "Nutzungsbedingungen",
+      "description": "Nutzungsbedingungen für die Website von B&B Unikoop."
+    }
+  },
+  "Nav": {
+    "about": "Über uns",
+    "products": "Produkte",
+    "industries": "Branchen",
+    "contact": "Kontakt",
+    "searchPlaceholder": "Kurzzeichen suchen, z. B. 6205…",
+    "searchLabel": "Wälzlager suchen",
+    "eCatalog": "E-Katalog",
+    "menu": "Menü",
+    "searchNoResults": "Keine passenden Produkte.",
+    "searchViewAll": "Alle {count} Ergebnisse anzeigen"
+  },
+  "Footer": {
+    "tagline": "Seit 35 Jahren offizieller SKF-Vertragshändler für Nordmazedonien. Wälzlager, Dichtungen, Antriebstechnik und Schmierstoffe.",
+    "industriesHeading": "Branchen",
+    "contactHeading": "Kontakt · 24/7",
+    "officeHours": "Büro Skopje: Mo–Fr 09:00–16:00",
+    "sendMessage": "Nachricht senden →",
+    "copyright": "B&B Unikoop · Demoversion",
+    "privacy": "Datenschutzerklärung",
+    "terms": "Nutzungsbedingungen"
+  },
+  "Hero": {
+    "eyebrow": "Seit 1991 · SKF-Vertragshändler",
+    "heading": [
+      "INTEGRIERTE",
+      "INDUSTRIELLE",
+      "LÖSUNGEN"
+    ],
+    "description": "B&B Unikoop liefert Industriewälzlager, Antriebstechnik und Instandhaltungslösungen in ganz Nordmazedonien. Als offizieller SKF-Vertragshändler liefern wir zu 100 % Originalprodukte.",
+    "ctaQuote": "Angebot anfordern",
+    "ctaAbout": "Mehr erfahren",
+    "scroll": "Scrollen",
+    "badgeAlt": "B&B Unikoop – autorisierter SKF-Vertragshändler"
+  },
+  "Home": {
+    "about": {
+      "imageAlt": "Das Team von B&B Unikoop",
+      "eyebrow": "Über uns",
+      "headingPrefix": "Wer",
+      "headingHighlight": "wir sind",
+      "years": "35+",
+      "yearsLabel": "Jahre Erfahrung",
+      "p1": "B&B Unikoop ist der offizielle SKF-Vertragshändler für Nordmazedonien. Seit 35 Jahren beliefern wir die Industrie mit Wälzlagern, Gehäusen, Dichtungen, Riemen, Ketten und Schmiersystemen.",
+      "p2": "Unser Ziel ist es, Stillstandszeiten zu reduzieren und den kontinuierlichen Betrieb unserer Kunden sicherzustellen – mit Originalprodukten und fachkundiger Unterstützung, rund um die Uhr.",
+      "badges": [
+        "Offizieller SKF-Vertragshändler",
+        "Zertifikate",
+        "Echtheitsprüfung"
+      ],
+      "ctaCatalog": "Zum Katalog →",
+      "stats": [
+        {
+          "value": 35,
+          "suffix": "+",
+          "label": "Jahre Erfahrung"
+        },
+        {
+          "value": 2,
+          "suffix": "",
+          "label": "Standorte"
+        },
+        {
+          "value": 24,
+          "suffix": "/7",
+          "label": "Mobiler Service"
+        },
+        {
+          "value": 100,
+          "suffix": "%",
+          "label": "Originalprodukte"
+        }
+      ]
+    },
+    "products": {
+      "eyebrow": "Unsere Produkte",
+      "headingPrefix": "Komplette",
+      "headingHighlight": "Industrielösungen",
+      "more": "Mehr erfahren →",
+      "categories": [
+        {
+          "name": "Wälzlager",
+          "blurb": "Kugellager, Rollenlager, Axiallager und Lagereinheiten.",
+          "href": "/catalog"
+        },
+        {
+          "name": "Gehäuse",
+          "blurb": "Lagergehäuse und Lagereinheiten für jede Anwendung.",
+          "href": "#contact"
+        },
+        {
+          "name": "Dichtungen",
+          "blurb": "Industriedichtungen und Dichtungssysteme.",
+          "href": "#contact"
+        },
+        {
+          "name": "Riemen und Ketten",
+          "blurb": "Komponenten der Antriebstechnik.",
+          "href": "#contact"
+        },
+        {
+          "name": "Schmiersysteme",
+          "blurb": "Automatische Schmierung, die die Lebensdauer Ihrer Anlagen verlängert.",
+          "href": "#contact"
+        },
+        {
+          "name": "Instandhaltungswerkzeuge",
+          "blurb": "Werkzeuge für Montage, Demontage und Diagnose.",
+          "href": "#contact"
+        }
+      ]
+    },
+    "skfOffer": {
+      "eyebrow": "Original SKF-Angebot",
+      "headingPrefix": "Das komplette",
+      "headingHighlight": "SKF-Sortiment",
+      "lead": "Wälzlager, Gehäuse, Dichtungen, Schmierung, Ausrichtung und Zustandsüberwachung: alle SKF-Produktlinien, direkt bezogen über einen autorisierten Vertragshändler.",
+      "view": "Ansehen"
+    },
+    "industries": {
+      "eyebrow": "Branchen, die wir beliefern",
+      "headingPrefix": "Wir halten",
+      "headingHighlight": "jede Branche in Bewegung",
+      "openCatalog": "Katalog öffnen"
+    },
+    "brands": {
+      "eyebrow": "Autorisierter Vertragshändler",
+      "headingPrefix": "Im Vertrauen einer",
+      "headingHighlight": "Weltklasse-Marke",
+      "title": "Weltmarktführer für Wälzlager und Dichtungen",
+      "blurb": "Als offizieller Vertragshändler bieten wir das komplette SKF-Sortiment: Wälzlager, Gehäuse, Dichtungen, Schmiersysteme und Instandhaltungswerkzeuge, einschließlich SKF Mount und DialSet."
+    },
+    "why": {
+      "eyebrow": "Warum B&B Unikoop",
+      "headingPrefix": "Gebaut auf",
+      "headingHighlight1": "Vertrauen",
+      "headingMiddle": ", angetrieben von",
+      "headingHighlight2": "Qualität",
+      "items": [
+        {
+          "title": "Originalprodukte",
+          "blurb": "100 % originale SKF-Wälzlager mit Echtheitsprüfung."
+        },
+        {
+          "title": "Große Verfügbarkeit",
+          "blurb": "Wälzlager, Gehäuse, Dichtungen, Riemen, Ketten und Schmierstoffe aus einer Hand."
+        },
+        {
+          "title": "Fachkundige Beratung",
+          "blurb": "Ingenieure, die Ihnen bei der Auswahl der richtigen Lösung helfen."
+        },
+        {
+          "title": "Schnelle Lieferung",
+          "blurb": "Lieferung in ganz Nordmazedonien, mit Notdienst rund um die Uhr."
+        },
+        {
+          "title": "35 Jahre Erfahrung",
+          "blurb": "Langjährige Partnerschaften mit den größten Industrieunternehmen des Landes."
+        },
+        {
+          "title": "Zertifikate",
+          "blurb": "Dokumentation und Zertifikate für jedes Produkt."
+        }
+      ]
+    },
+    "cta": {
+      "heading1": "Sie suchen zuverlässige",
+      "headingHighlight": "Industrielösungen?",
+      "blurb": "Fordern Sie noch heute ein Angebot an. Unser Team hilft Ihnen gerne, die richtige Lösung zu finden.",
+      "contact": "Kontakt aufnehmen →",
+      "catalog": "Katalog"
+    }
+  },
+  "Industries": {
+    "cement": {
+      "name": "Zement",
+      "blurb": "Wälzlager für Drehrohröfen, Mühlen und Ventilatoren – beständig gegen Staub und hohe Temperaturen."
+    },
+    "metallurgy": {
+      "name": "Metallurgie",
+      "blurb": "Lösungen für Walzen, Stranggießanlagen und hohe Belastungen unter extremen Bedingungen."
+    },
+    "paper": {
+      "name": "Papier",
+      "blurb": "Präzisionswälzlager für Papiermaschinen, Trockenzylinder und Kalander."
+    },
+    "power": {
+      "name": "Energieerzeugung",
+      "blurb": "Zuverlässige Wälzlager für Generatoren, Turbinen, Pumpen und Elektromotoren."
+    },
+    "mining": {
+      "name": "Bergbau",
+      "blurb": "Robuste Wälzlager für Bagger, Förderanlagen, Brecher und Schwingsiebe."
+    },
+    "chemical": {
+      "name": "Chemie",
+      "blurb": "Wälzlager und Dichtungen für Pumpen, Mischer und Verdichter in aggressiven Umgebungen."
+    },
+    "food": {
+      "name": "Lebensmittel & Getränke",
+      "blurb": "Abgedichtete Wälzlager mit lebensmitteltauglichen Schmierstoffen – einfache Reinigung und lange Lebensdauer."
+    },
+    "recycling": {
+      "name": "Recycling",
+      "blurb": "Wälzlager für Brecher, Schredder und Pressen unter Stoßbelastung."
+    }
+  },
+  "ProductCategories": {
+    "bearings": {
+      "name": "Wälzlager",
+      "blurb": "Das komplette SKF-Wälzlagersortiment – Rillenkugellager, Schrägkugellager, Pendelkugellager, Pendelrollenlager, Kegelrollenlager, Zylinderrollenlager und Axiallager."
+    },
+    "housings": {
+      "name": "Gehäuse",
+      "blurb": "Stehlagergehäuse SNH, SNL und SSNHD für Lagereinheiten – Sortiment, Abmessungen und Werkstoffe."
+    },
+    "cooper": {
+      "name": "Cooper",
+      "blurb": "Geteilte Rollenlager von Cooper Bearings – Montage ohne Ausbau der Welle."
+    },
+    "seals": {
+      "name": "Dichtungen",
+      "blurb": "Radial-Wellendichtringe (CR Seals) und V-Ringe für vielfältige industrielle Anwendungen."
+    },
+    "sleeves": {
+      "name": "Spannhülsen",
+      "blurb": "Spannhülsen mit kegeliger Bohrung zur Montage von Wälzlagern auf glatten Wellen."
+    },
+    "belts-chains": {
+      "name": "Riemen, Ketten",
+      "blurb": "Riemen, Riemenscheiben, Ketten, Kettenräder, Buchsen und Kupplungen – Komponenten der Antriebstechnik."
+    },
+    "bushings": {
+      "name": "Buchsen",
+      "blurb": "Buchsen für die Antriebstechnik, einschließlich Nutmuttern und SKF Speedi-Sleeve-Lösungen."
+    },
+    "nuts": {
+      "name": "Nutmuttern",
+      "blurb": "Nutmutter-Baureihen zur Befestigung von Wälzlagern auf der Welle."
+    },
+    "speedi-sleeve": {
+      "name": "SKF Speedi-Sleeve",
+      "blurb": "Dünnwandige Hülse zur Instandsetzung verschlissener Wellenlaufflächen unter einer Dichtung."
+    },
+    "food-industry": {
+      "name": "Produkte für die Lebensmittelindustrie",
+      "blurb": "Lebensmitteltaugliche Wälzlager, Schmierstoffe und Dichtungen – konform mit den Anforderungen der Lebensmittelindustrie."
+    },
+    "pulley-alignment": {
+      "name": "Werkzeuge zur Riemenscheibenausrichtung",
+      "blurb": "Werkzeuge zur präzisen Ausrichtung von Riemenscheiben – weniger Verschleiß und geringerer Energieverbrauch."
+    },
+    "monitoring-instruments": {
+      "name": "Messgeräte zur Zustandsüberwachung",
+      "blurb": "Endoskope, Ölmonitore, Thermometer, Drehzahlmesser, akustische Prüfgeräte und Analysesysteme (Microlog, IMx)."
+    },
+    "mounting-tools": {
+      "name": "Montage- und Demontagewerkzeuge",
+      "blurb": "Werkzeugsätze für die sichere Montage und Demontage von Wälzlagern."
+    },
+    "maintenance": {
+      "name": "Instandhaltung",
+      "blurb": "Induktions-Anwärmgeräte und Schulungsunterlagen zum Lebenszyklus von Wälzlagern."
+    },
+    "shim-packs": {
+      "name": "SKF TMAS Passscheiben-Sets",
+      "blurb": "Präzisions-Passscheiben in verschiedenen Größen und Dicken für eine exakte Ausrichtung."
+    },
+    "greases": {
+      "name": "Schmierfette",
+      "blurb": "SKF-Schmierfette, einschließlich lebensmitteltauglicher Serien (LGFP, LGFQ, LGFG) – Auswahl nach Betriebsbedingungen."
+    },
+    "lubrication-systems": {
+      "name": "Schmiersysteme",
+      "blurb": "Zentralschmiersysteme, die die Lebensdauer Ihrer Anlagen verlängern."
+    },
+    "automatic-lubricators": {
+      "name": "Automatische Schmierstoffgeber",
+      "blurb": "Automatische Schmierstoffgeber für eine kontinuierliche, präzise Fettdosierung."
+    },
+    "vibracon": {
+      "name": "SKF VIBRACON",
+      "blurb": "Einstellbare Maschinenunterlagen zur präzisen Ausrichtung schwerer Maschinen."
+    },
+    "composite-housing-units": {
+      "name": "Lagereinheiten mit Verbundwerkstoffgehäuse",
+      "blurb": "Kugellagereinheiten in Verbundwerkstoffgehäusen – leicht und korrosionsbeständig."
+    },
+    "y-bearings": {
+      "name": "Y-Lager und Y-Lagereinheiten",
+      "blurb": "Y-Lager und Lagereinheiten – Sortiment, Toleranzen, Lagerluft und Käfige."
+    }
+  },
+  "BearingTypes": {
+    "deep-groove": {
+      "name": "Rillenkugellager",
+      "short": "Rillenkugellager",
+      "blurb": "Ein Radial-Kugellager für den allgemeinen Einsatz bei leichten bis mittleren Belastungen."
+    },
+    "angular-contact": {
+      "name": "Schrägkugellager",
+      "short": "Schrägkugellager",
+      "blurb": "Ein Schrägkugellager für kombinierte Radial- und Axialbelastungen."
+    },
+    "self-aligning": {
+      "name": "Pendelkugellager",
+      "short": "Pendelkugellager",
+      "blurb": "Ein winkeleinstellbares Lager, das Fluchtungsfehler der Welle ausgleicht."
+    },
+    "spherical-roller": {
+      "name": "Pendelrollenlager",
+      "short": "Pendelrollenlager",
+      "blurb": "Ein Pendelrollenlager für hohe Belastungen und Fluchtungsfehler."
+    },
+    "tapered-roller": {
+      "name": "Kegelrollenlager",
+      "short": "Kegelrollenlager",
+      "blurb": "Ein Kegelrollenlager für kombinierte Radial- und Axialbelastungen."
+    },
+    "cylindrical-roller": {
+      "name": "Zylinderrollenlager",
+      "short": "Zylinderrollenlager",
+      "blurb": "Ein Zylinderrollenlager für hohe Radialbelastungen."
+    },
+    "thrust-ball": {
+      "name": "Axial-Rillenkugellager",
+      "short": "Axial-Rillenkugellager",
+      "blurb": "Ein Axial-Rillenkugellager für rein axiale Belastungen."
+    },
+    "unit": {
+      "name": "Lagereinheiten",
+      "short": "Kugellagereinheiten",
+      "blurb": "Eine einbaufertige Lagereinheit mit Gehäuse."
+    },
+    "toroidal": {
+      "name": "CARB Toroidalrollenlager",
+      "short": "CARB Toroidalrollenlager",
+      "blurb": "Ein CARB Toroidalrollenlager, das sowohl Fluchtungsfehler als auch axiale Verschiebungen aufnimmt."
+    },
+    "needle-roller": {
+      "name": "Nadellager",
+      "short": "Nadellager",
+      "blurb": "Ein Nadellager mit geringer Querschnittshöhe für hohe Belastungen bei beengten Platzverhältnissen."
+    },
+    "track-runner": {
+      "name": "Laufrollen",
+      "short": "Laufrollen",
+      "blurb": "Eine Laufrolle (Kurvenrolle) mit dickwandigem Außenring zum Abrollen auf Laufbahnen."
+    },
+    "plain": {
+      "name": "Gleitlager, Buchsen und Gelenkköpfe",
+      "short": "Gleitlager",
+      "blurb": "Ein Gleitlager, eine Buchse oder ein Gelenkkopf für langsame Schwenkbewegungen und hohe Belastungen."
+    },
+    "housing": {
+      "name": "Gehäuse und Zubehör",
+      "short": "Gehäuse",
+      "blurb": "Ein Lagergehäuse oder Gehäusezubehör zur Montage und zum Schutz des Lagers."
+    },
+    "sleeve-nut": {
+      "name": "Hülsen und Nutmuttern",
+      "short": "Hülsen und Muttern",
+      "blurb": "Eine Spann- oder Abziehhülse, Nutmutter oder Sicherungselement zur Befestigung von Wälzlagern auf der Welle."
+    },
+    "seal": {
+      "name": "Radial-Wellendichtringe",
+      "short": "Dichtungen",
+      "blurb": "Ein Radial-Wellendichtring, der den Schmierstoff zurückhält und Verunreinigungen fernhält."
+    }
+  },
+  "ProductAttrs": {
+    "seal": {
+      "open": "Offen",
+      "shields": "Deckscheiben beidseitig",
+      "both": "Dichtscheiben beidseitig",
+      "one-side": "Dicht- oder Deckscheibe einseitig",
+      "other": "Sonstige Abdichtung"
+    },
+    "boreType": {
+      "tapered": "Kegelig",
+      "cylindrical": "Zylindrisch"
+    },
+    "dimensionsLabel": "Abmessungen"
+  },
+  "Catalog": {
+    "page": {
+      "titlePrefix": "WÄLZLAGER",
+      "titleHighlight": "KATALOG",
+      "subtitle": "Durchsuchen Sie unseren kompletten Katalog mit {count} Produkten. Suchen Sie nach Kurzzeichen, filtern Sie nach Bauart, Abmessungen oder Abdichtung – und finden Sie genau das, was Sie brauchen.",
+      "loading": "Wird geladen…"
+    },
+    "client": {
+      "searchPlaceholder": "Kurzzeichen (6205, 22220), Abmessungen (25x52x15), eine Zahl (25) oder ein Begriff (Zement, kegelig)…",
+      "searchLabel": "Nach Kurzzeichen suchen",
+      "filters": "Filter",
+      "viewToggleLabel": "Ansicht wechseln",
+      "viewGrid": "Raster",
+      "viewTable": "Tabelle",
+      "resetFilters": "Zurücksetzen",
+      "allIndustries": "Alle Branchen",
+      "classification": "Klassifizierung",
+      "allClassifications": "Alle Klassifizierungen",
+      "boreTypeLabel": "Bohrungsart",
+      "allBoreTypes": "Alle Arten",
+      "sealLabel": "Abdichtungsart",
+      "allSeals": "Alle Arten",
+      "quickBoreRange": "Schnellauswahl Bohrung (mm)",
+      "boreRangeAll": "Alle",
+      "dInner": "Bohrungsdurchmesser d (mm)",
+      "dOuter": "Außendurchmesser D (mm)",
+      "width": "Breite B (mm)",
+      "min": "Min.",
+      "max": "Max.",
+      "clearAllFilters": "✕ Alle Filter löschen",
+      "showing": "Angezeigt:",
+      "productSingular": "Produkt",
+      "productPlural": "Produkte",
+      "filteredSuffix": "(gefiltert)",
+      "pageLabel": "Seite",
+      "of": "von",
+      "noResultsTitle": "Keine Produkte gefunden",
+      "noResultsHint": "Prüfen Sie das Kurzzeichen oder setzen Sie die Filter zurück. Rufen Sie uns an – wir finden das passende Wälzlager für Sie.",
+      "columns": {
+        "designation": "Kurzzeichen",
+        "classification": "Klassifizierung",
+        "boreType": "Bohrungsart",
+        "seal": "Abdichtung",
+        "dInner": "Bohrung d (mm)",
+        "dOuter": "Außen-Ø D (mm)",
+        "width": "Breite B (mm)"
+      },
+      "viewProduct": "Ansehen",
+      "pagination": "Seiten",
+      "prev": "Zurück",
+      "next": "Weiter",
+      "viewAria": "Ansehen: {designation}",
+      "loading": "Wird geladen…"
+    }
+  },
+  "ProductDetail": {
+    "breadcrumbHome": "Startseite",
+    "breadcrumbCatalog": "Katalog",
+    "specsHeading": "Technische Daten",
+    "specs": {
+      "designation": "Kurzzeichen",
+      "brand": "Marke",
+      "type": "Bauart",
+      "dInner": "Bohrungsdurchmesser (d)",
+      "dOuter": "Außendurchmesser (D)",
+      "width": "Breite (B)",
+      "seal": "Abdichtung"
+    },
+    "industriesHeading": "Eingesetzt in folgenden Branchen",
+    "relatedHeading": "Ähnliche Produkte",
+    "metaTitle": "{designation} {brand} Wälzlager – {d}×{D}×{B} mm",
+    "metaDescription": "{brand} {designation}: {type}, Bohrung ø {d} mm, Außen-ø {D} mm, Breite {B} mm. Erhältlich bei B&B Unikoop.",
+    "metaTitlePlain": "{designation} {brand} – {type}",
+    "metaDescriptionPlain": "{brand} {designation}: {type}. Erhältlich bei B&B Unikoop."
+  },
+  "IndustryDetail": {
+    "titlePrefix": "Wälzlager für",
+    "catalogLink": "Im Katalog mit Filtern öffnen →"
+  },
+  "ProductCategoryDetail": {
+    "back": "← Zurück zur Startseite",
+    "contactIntro": "Diese Kategorie ist Teil des kompletten SKF-Angebots von B&B Unikoop. Für technische Daten, Verfügbarkeit und ein Angebot kontaktieren Sie uns.",
+    "contactCta": "Kontaktieren Sie uns →"
+  },
+  "CompanyValues": {
+    "items": [
+      {
+        "title": "Ehrlichkeit und Integrität",
+        "blurb": "Wir arbeiten transparent und verantwortungsvoll mit jedem Kunden."
+      },
+      {
+        "title": "Transparenz",
+        "blurb": "Klare Konditionen, Originalprodukte und nachprüfbare Dokumentation."
+      },
+      {
+        "title": "Starke Beziehungen",
+        "blurb": "Langjährige Partnerschaften, die auf Vertrauen beruhen."
+      },
+      {
+        "title": "Persönliche Verantwortung",
+        "blurb": "Jedes Teammitglied steht für die Qualität seiner Arbeit ein."
+      }
+    ],
+    "mobileService": "Mobiler Service rund um die Uhr"
+  },
+  "Contact": {
+    "titlePrefix": "KONTAKT",
+    "titleHighlight": "AUFNEHMEN",
+    "subtitle": "Fordern Sie ein Angebot oder eine Beratung zur Auswahl eines Wälzlagers an. Wir antworten so schnell wie möglich.",
+    "availability": "24/7",
+    "office": "Büro Skopje",
+    "locations": "Standorte",
+    "locationsValue": "Prilep · Skopje, Nordmazedonien",
+    "form": {
+      "name": "Vollständiger Name *",
+      "email": "E-Mail *",
+      "phone": "Telefon",
+      "message": "Nachricht *",
+      "messagePlaceholder": "Lagerkurzzeichen, Menge, Branche…",
+      "consent": "Ich willige ein, dass meine Daten zur Beantwortung dieser Anfrage gemäß der <link>Datenschutzerklärung</link> verarbeitet werden. *",
+      "submit": "Senden",
+      "sending": "Wird gesendet…",
+      "thanksTitle": "Vielen Dank!",
+      "thanksBody": "Ihre Nachricht wurde gesendet. Wir melden uns so schnell wie möglich bei Ihnen.",
+      "genericError": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
+      "errors": {
+        "invalid": "Ungültige Anfrage.",
+        "required": "Bitte füllen Sie alle Pflichtfelder aus.",
+        "send": "Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut."
+      }
+    }
+  },
+  "Privacy": {
+    "title": "Datenschutzerklärung",
+    "updatedLabel": "Zuletzt aktualisiert:",
+    "sections": [
+      {
+        "h": "1. Verantwortlicher",
+        "p": "B&B Unikoop („wir“) ist Verantwortlicher für die über diese Website erhobenen personenbezogenen Daten. Kontakt: <link>/contact</link>."
+      },
+      {
+        "h": "2. Welche Daten wir erheben",
+        "p": "Wenn Sie uns über das Kontaktformular schreiben: Name, E-Mail-Adresse, Telefonnummer (optional) und den Inhalt der Nachricht. Wir fordern keine sensiblen Daten an und erheben diese nicht."
+      },
+      {
+        "h": "3. Zweck und Rechtsgrundlage",
+        "p": "Wir verwenden die Daten ausschließlich zur Beantwortung Ihrer Anfrage und zur Erstellung eines Angebots, auf Grundlage Ihrer Einwilligung und unseres berechtigten Interesses an geschäftlicher Kommunikation."
+      },
+      {
+        "h": "4. Speicherdauer",
+        "p": "Wir speichern die Daten nur so lange, wie es für die Kommunikation und die Erfüllung gesetzlicher Pflichten erforderlich ist; danach werden sie gelöscht."
+      },
+      {
+        "h": "5. Weitergabe",
+        "p": "Wir verkaufen Ihre Daten nicht. Sie können von Dienstleistern (Hosting, E-Mail-Versand) ausschließlich nach unserer Weisung verarbeitet werden."
+      },
+      {
+        "h": "6. Cookies",
+        "p": "Diese Website verwendet keine Tracking- oder Werbe-Cookies. Technisch notwendige Cookies können verwendet werden."
+      },
+      {
+        "h": "7. Ihre Rechte",
+        "p": "Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch sowie das Recht auf Beschwerde bei der Agentur für den Schutz personenbezogener Daten. Senden Sie Ihre Anfragen über die Kontaktseite."
+      }
+    ]
+  },
+  "Terms": {
+    "title": "Nutzungsbedingungen",
+    "updatedLabel": "Zuletzt aktualisiert:",
+    "sections": [
+      {
+        "h": "1. Annahme",
+        "p": "Mit der Nutzung dieser Website akzeptieren Sie diese Bedingungen. Wenn Sie nicht einverstanden sind, nutzen Sie die Website bitte nicht."
+      },
+      {
+        "h": "2. Informationszweck",
+        "p": "Der Katalog dient ausschließlich Informationszwecken. Abmessungen, Kurzzeichen und Beschreibungen werden nach bestem Wissen bereitgestellt, können jedoch Fehler enthalten. Bitte prüfen Sie die Angaben vor einer Bestellung mit uns. Die Informationen auf der Website stellen kein verbindliches Angebot dar."
+      },
+      {
+        "h": "3. Preise und Verfügbarkeit",
+        "p": "Preise und Lagerbestände werden auf der Website nicht veröffentlicht und individuell im Rahmen eines Angebots vereinbart."
+      },
+      {
+        "h": "4. Geistiges Eigentum",
+        "p": "Die Inhalte der Website sind Eigentum von B&B Unikoop oder der jeweiligen Rechteinhaber. SKF und andere Marken gehören ihren jeweiligen Inhabern. Eine Vervielfältigung ohne unsere Zustimmung ist nicht gestattet."
+      },
+      {
+        "h": "5. Haftungsbeschränkung",
+        "p": "Soweit gesetzlich zulässig, übernehmen wir keine Haftung für Schäden, die aus der Nutzung der Informationen auf der Website entstehen."
+      },
+      {
+        "h": "6. Änderungen und anwendbares Recht",
+        "p": "Die Bedingungen können geändert werden; es gilt die auf der Website veröffentlichte Fassung. Es gilt das Recht der Republik Nordmazedonien."
+      }
+    ]
+  },
+  "ThemeToggle": {
+    "client": "Farben der Kundenwebsite",
+    "demo": "Demo-Farben"
+  },
+  "LanguageSwitcher": {
+    "label": "Sprache"
+  }
+}
