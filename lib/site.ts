@@ -8,4 +8,9 @@ export const site = {
     { city: "prilep" as const, tel: "+38970353619", label: "+389 70 353 619" },
     { city: "skopje" as const, tel: "+38970266179", label: "+389 70 266 179" },
   ],
+  // key = Footer.social.<key> (accessible label) and the icon in SocialLinks
+  socials: [
+    { key: "facebook" as const, href: "https://www.facebook.com/people/BiB-Unikoop/61586984173642/" },
+    { key: "linkedinCeo" as const, href: "https://www.linkedin.com/in/blagoja-dimeski-b2b534353" },
+  ],
 };
