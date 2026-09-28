@@ -6,7 +6,9 @@ import { Button } from "@/components/ui/button";
 import { alternatesFor } from "@/i18n/metadata";
 import type { Locale } from "@/i18n/routing";
 import { productCategories, getProductCategory } from "@/lib/domain/taxonomy";
+import { categoryContent } from "@/lib/domain/category-content";
 import CategoryCard from "@/components/product/CategoryCard";
+import CategoryContent from "@/components/product/CategoryContent";
 import CompanyValuesFooter from "@/components/layout/CompanyValuesFooter";
 
 export function generateStaticParams() {
@@ -67,6 +69,8 @@ export default async function ProductCategoryPage({ params }: PageProps<"/[local
           <img src={c.image} alt={name} className="size-full object-contain p-6" />
         </div>
       </header>
+
+      {categoryContent[c.slug] && <CategoryContent content={categoryContent[c.slug]} />}
 
       <section className="mt-16">
         <h2 className="font-display font-bold text-xl md:text-2xl tracking-tight mb-5">{t("moreHeading")}</h2>
