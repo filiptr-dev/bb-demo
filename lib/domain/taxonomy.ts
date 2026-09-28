@@ -77,6 +77,25 @@ export const productCategories: ProductCategory[] = [
   { slug: "y-bearings", pageType: "article", image: `${skfOffer}2022/04/y-5.jpg` },
 ];
 
-export const getType = (slug: string) => bearingTypes.find((t) => t.slug === slug);
+// SKF product lines shown in the brands strip, each linked to the category page that carries it.
+// Brand names stay untranslated.
+export const skfLines: { name: string; category: string }[] = [
+  { name: "SKF Explorer", category: "bearings" },
+  { name: "SKF Y-bearings", category: "y-bearings" },
+  { name: "SKF Cooper", category: "cooper" },
+  { name: "SKF SNL", category: "housings" },
+  { name: "SKF Speedi-Sleeve", category: "speedi-sleeve" },
+  { name: "SKF Vibracon", category: "vibracon" },
+  { name: "SKF TMAS", category: "shim-packs" },
+  { name: "SKF LGMT 2", category: "greases" },
+  { name: "SKF SYSTEM 24", category: "automatic-lubricators" },
+  { name: "SKF Food Line", category: "food-industry" },
+  { name: "SKF TKBA", category: "pulley-alignment" },
+  { name: "SKF TIH", category: "maintenance" },
+  { name: "SKF Microlog", category: "monitoring-instruments" },
+  { name: "SKF KM", category: "nuts" },
+];
+
+export const getType =(slug: string) => bearingTypes.find((t) => t.slug === slug);
 export const getIndustry = (slug: string) => industries.find((i) => i.slug === slug);
 export const getProductCategory = (slug: string) => productCategories.find((c) => c.slug === slug);

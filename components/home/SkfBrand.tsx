@@ -2,6 +2,9 @@ import { getTranslations } from "next-intl/server";
 import Reveal from "@/components/motion/Reveal";
 import SectionHeading from "@/components/shared/SectionHeading";
 import SkfLogo from "@/components/brand/SkfLogo";
+import Marquee from "@/components/shared/Marquee";
+import { Link } from "@/i18n/navigation";
+import { skfLines } from "@/lib/domain/taxonomy";
 import { sectionBg } from "./layout";
 
 export default async function SkfBrand() {
@@ -27,6 +30,23 @@ export default async function SkfBrand() {
           </div>
         </Reveal>
       </div>
+      <Reveal y={20} className="mt-12 lg:mt-14">
+        <p className="container mx-auto px-6 lg:px-10 mb-5 text-xs uppercase tracking-[0.25em] text-foreground/45 font-semibold">{t("brands.linesLabel")}</p>
+        <Marquee
+          label={t("brands.linesLabel")}
+          className="border-y border-foreground/[0.07] py-6"
+          items={skfLines.map((line) => (
+            <Link
+              key={line.name}
+              href={`/products/${line.category}`}
+              className="flex items-center gap-10 pr-10 font-display font-bold text-xl lg:text-2xl whitespace-nowrap text-foreground/35 transition-colors hover:text-foreground focus-visible:text-foreground"
+            >
+              {line.name}
+              <span aria-hidden className="size-1.5 rounded-full bg-foreground/20" />
+            </Link>
+          ))}
+        />
+      </Reveal>
     </section>
   );
 }

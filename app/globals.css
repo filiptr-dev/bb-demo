@@ -107,8 +107,18 @@ html { scroll-behavior: smooth; }
 
 @keyframes hero-bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(8px); } }
 
+.marquee { mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent); }
+.marquee-track { animation: marquee linear infinite; }
+.marquee:hover .marquee-track, .marquee:focus-within .marquee-track { animation-play-state: paused; }
+
+@keyframes marquee { to { transform: translateX(-50%); } }
+
 @media (prefers-reduced-motion: reduce) {
   .hero-scroll-bounce { animation: none; }
+  /* no movement: the strip becomes a plain scrollable row */
+  .marquee { overflow-x: auto; }
+  .marquee-track { animation: none; }
+  .marquee-copy { display: none; }
 }
 
 /* dark-only theme (navy + blue/cyan/violet) */
