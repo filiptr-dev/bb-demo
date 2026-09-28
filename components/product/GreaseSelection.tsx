@@ -1,5 +1,13 @@
 import { getTranslations } from "next-intl/server";
-import { basicGreaseSelection, greaseChart, greaseChartColumns, type Suitability } from "@/lib/domain/greases";
+import {
+  basicGreaseSelection,
+  compatibility,
+  compatibilityGroups,
+  greaseChart,
+  greaseChartColumns,
+  type Compatibility,
+  type Suitability,
+} from "@/lib/domain/greases";
 
 const heading = "font-display font-bold text-xl md:text-2xl tracking-tight mb-2";
 const th = "px-2.5 py-2.5 font-semibold text-[11px] uppercase tracking-wider text-foreground/60 align-bottom";
@@ -20,9 +28,27 @@ function Mark({ value, label }: { value: Suitability; label: string }) {
   );
 }
 
+const compatMark: Record<Compatibility, { symbol: string; className: string }> = {
+  "+": { symbol: "+", className: "bg-brand-1 text-white" },
+  "-": { symbol: "×", className: "bg-destructive/15 text-destructive" },
+  "=": { symbol: "", className: "bg-foreground/[0.06]" },
+};
+
+function CompatMark({ value, label }: { value: Compatibility; label: string }) {
+  const m = compatMark[value];
+  return (
+    <span title={label} className={`inline-flex size-6 items-center justify-center rounded-full font-bold text-xs ${m.className}`}>
+      <span aria-hidden>{m.symbol}</span>
+      <span className="sr-only">{label}</span>
+    </span>
+  );
+}
+
 export default async function GreaseSelection() {
   const t = await getTranslations("Greases");
   const fitLabel: Record<Suitability, string> = { "+": t("fit.recommended"), o: t("fit.suitable"), "-": t("fit.notSuitable") };
+  const tc = await getTranslations("GreaseCompat");
+  const compatLabel: Record<Compatibility, string> = { "+": tc("compatible"), "-": tc("incompatible"), "=": tc("same") };
 
   return (
     <>
@@ -87,6 +113,46 @@ export default async function GreaseSelection() {
         </div>
         <p className="mt-2 text-xs text-foreground/50 leading-relaxed">{t("levelsLegend")}</p>
         <p className="mt-1 text-xs text-foreground/50 leading-relaxed">{t("viscosityNote")}</p>
+      </section>
+
+      <section className="mt-16">
+        <h2 className={heading}>{tc("heading")}</h2>
+        <p className="mb-5 text-sm text-foreground/60 max-w-2xl leading-relaxed">{tc("intro")}</p>
+        <div className="rounded-2xl border border-foreground/[0.08] overflow-x-auto">
+          <table className="text-sm">
+            <thead className="bg-muted border-b border-foreground/[0.08]">
+              <tr>
+                <th scope="col" className={`${th} text-left sticky left-0 bg-muted`}>{t("col.grease")}</th>
+                {compatibilityGroups.map((g) => (
+                  <th key={g} scope="col" className="px-1.5 py-3 align-bottom font-display font-bold text-xs whitespace-nowrap">
+                    <span className="inline-block [writing-mode:vertical-rl] rotate-180">{g}</span>
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {compatibilityGroups.map((g, r) => (
+                <tr key={g} className="border-b border-foreground/[0.06] last:border-0 hover:bg-foreground/[0.02]">
+                  <th scope="row" className="px-2.5 py-1.5 text-left font-display font-bold whitespace-nowrap sticky left-0 bg-background">{g}</th>
+                  {compatibility[r].map((value, c) => (
+                    <td key={compatibilityGroups[c]} className="px-1.5 py-1.5 text-center">
+                      <CompatMark value={value} label={compatLabel[value]} />
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-foreground/55">
+          {(["+", "-"] as const).map((v) => (
+            <span key={v} className="inline-flex items-center gap-2">
+              <CompatMark value={v} label={compatLabel[v]} />
+              <span aria-hidden>{compatLabel[v]}</span>
+            </span>
+          ))}
+        </div>
+        <p className="mt-2 text-xs text-foreground/50 leading-relaxed">{tc("note")}</p>
       </section>
     </>
   );

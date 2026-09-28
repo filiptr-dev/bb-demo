@@ -7,8 +7,10 @@ import { alternatesFor, notFoundMetadata } from "@/i18n/metadata";
 import type { Locale } from "@/i18n/routing";
 import { productCategories, getProductCategory } from "@/lib/domain/taxonomy";
 import { categoryContent } from "@/lib/domain/category-content";
+import { categoryComparisons } from "@/lib/domain/comparisons";
 import CategoryCard from "@/components/product/CategoryCard";
 import CategoryContent from "@/components/product/CategoryContent";
+import ComparisonTable from "@/components/product/ComparisonTable";
 import GreaseSelection from "@/components/product/GreaseSelection";
 import CompanyValuesFooter from "@/components/layout/CompanyValuesFooter";
 
@@ -87,6 +89,8 @@ export default async function ProductCategoryPage({ params }: PageProps<"/[local
       )}
 
       {c.slug === "greases" && <GreaseSelection />}
+
+      {categoryComparisons[c.slug]?.map((table) => <ComparisonTable key={table.id} table={table} />)}
 
       {categoryContent[c.slug] && <CategoryContent content={categoryContent[c.slug]} />}
 

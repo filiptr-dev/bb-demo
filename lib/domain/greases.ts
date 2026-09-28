@@ -48,3 +48,31 @@ export const greaseChart: GreaseChartRow[] = [
   { code: "LGHP 2", tempC: [-40, 150], viscosity: 96, temp: "M–H", speed: "M–H", load: "L–M", fit: ["+", "-", "-", "o", "o", "+"] },
   { code: "LGET 2", tempC: [-40, 260], viscosity: 400, temp: "VH", speed: "L–M", load: "H–VH", fit: ["o", "+", "+", "o", "o", "o"] },
 ];
+
+// SKF bearing grease compatibility chart. Greases sharing a column behave the same (e.g. LGMT 2 and LGMT 3).
+// "+" compatible, "-" incompatible. The chart is symmetric; each row lists the other columns in order.
+export const compatibilityGroups = ["LGMT 2 · LGMT 3", "LGEP 2 · LGWM 1", "LGLT 2", "LGHP 2", "LGWA 2", "LGFP 2", "LGGB 2", "LGFB 2 · LGFL 1", "LGHB 2 · LGWM 2", "LGET 2", "LGEM 2", "LGEV 2"];
+
+const others: Record<string, string> = {
+  "LGMT 2 · LGMT 3": "+ + + + - + - + - + +",
+  "LGEP 2 · LGWM 1": "+ + + + - + - + - + +",
+  "LGLT 2": "+ + + + - + - + - + +",
+  "LGHP 2": "+ + + + - + - + - + +",
+  "LGWA 2": "+ + + + + + + + - + +",
+  "LGFP 2": "- - - - + - + - - - -",
+  "LGGB 2": "+ + + + + - + + - + +",
+  "LGFB 2 · LGFL 1": "- - - - + + + - - - -",
+  "LGHB 2 · LGWM 2": "+ + + + + - + - - + +",
+  "LGET 2": "- - - - - - - - - - -",
+  "LGEM 2": "+ + + + + - + - + - +",
+  "LGEV 2": "+ + + + + - + - + - +",
+};
+
+// "+" compatible, "-" incompatible, "=" the same grease (diagonal)
+export type Compatibility = "+" | "-" | "=";
+
+// full matrix with the diagonal filled in: compatibility[row][col]
+export const compatibility: Compatibility[][] = compatibilityGroups.map((g, r) => {
+  const rest = others[g].split(" ") as ("+" | "-")[];
+  return compatibilityGroups.map((_, c) => (c === r ? "=" : rest[c < r ? c : c - 1]));
+});
