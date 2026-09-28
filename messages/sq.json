@@ -146,7 +146,9 @@
     "skfOffer": {
       "eyebrow": "Oferta origjinale SKF",
       "headingPrefix": "Asortimani i plotë",
-      "headingHighlight": "SKF"
+      "headingHighlight": "SKF",
+      "lead": "Kushineta, shtëpiza, guarnicione, lubrifikim, centrim dhe monitorim i gjendjes: çdo linjë produktesh SKF, drejtpërdrejt nga distributori i autorizuar.",
+      "view": "Shiko"
     },
     "industries": {
       "eyebrow": "Industritë që i shërbejmë",

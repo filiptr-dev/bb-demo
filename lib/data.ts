@@ -149,31 +149,35 @@ export const products: Product[] = raw.map(([designation, type, d, D, B, seal, i
 export type ProductCategory = {
   slug: string;
   pageType: "hub" | "article" | "showcase" | "data-table";
+  image: string;
 };
+
+// Demo only: product photos are hotlinked from the client's own media library (seals has none there, so it stays local).
+const skfOffer = "https://bbunikoop.com.mk/wp-content/uploads/";
 
 // Mirrors the "Original SKF Offer" category grid on the legacy site (bbunikoop.com.mk). Names/blurbs live in messages/*.json under ProductCategories.
 export const productCategories: ProductCategory[] = [
-  { slug: "bearings", pageType: "hub" },
-  { slug: "housings", pageType: "article" },
-  { slug: "cooper", pageType: "article" },
-  { slug: "seals", pageType: "article" },
-  { slug: "sleeves", pageType: "article" },
-  { slug: "belts-chains", pageType: "hub" },
-  { slug: "bushings", pageType: "hub" },
-  { slug: "nuts", pageType: "showcase" },
-  { slug: "speedi-sleeve", pageType: "article" },
-  { slug: "food-industry", pageType: "hub" },
-  { slug: "pulley-alignment", pageType: "hub" },
-  { slug: "monitoring-instruments", pageType: "data-table" },
-  { slug: "mounting-tools", pageType: "hub" },
-  { slug: "maintenance", pageType: "hub" },
-  { slug: "shim-packs", pageType: "article" },
-  { slug: "greases", pageType: "data-table" },
-  { slug: "lubrication-systems", pageType: "hub" },
-  { slug: "automatic-lubricators", pageType: "hub" },
-  { slug: "vibracon", pageType: "article" },
-  { slug: "composite-housing-units", pageType: "article" },
-  { slug: "y-bearings", pageType: "article" },
+  { slug: "bearings", pageType: "hub", image: `${skfOffer}2022/04/SINGLE-ROW-BALL-BEARINGS__66409.1605765209.jpg` },
+  { slug: "housings", pageType: "article", image: `${skfOffer}2022/04/kukjishta-2.jpg` },
+  { slug: "cooper", pageType: "article", image: `${skfOffer}2022/05/split-cooper3.png` },
+  { slug: "seals", pageType: "article", image: "/images/products/seals.jpg" },
+  { slug: "sleeves", pageType: "article", image: `${skfOffer}2022/05/hilzni-adapteri1.jpg` },
+  { slug: "belts-chains", pageType: "hub", image: `${skfOffer}2022/04/Power-Transmission-1.jpg` },
+  { slug: "bushings", pageType: "hub", image: `${skfOffer}2022/05/chauri1.jpg` },
+  { slug: "nuts", pageType: "showcase", image: `${skfOffer}2022/05/navrtki1.png` },
+  { slug: "speedi-sleeve", pageType: "article", image: `${skfOffer}2022/05/speedi-sleeve1.jpg` },
+  { slug: "food-industry", pageType: "hub", image: `${skfOffer}2022/06/food-line-topchesti.jpg` },
+  { slug: "pulley-alignment", pageType: "hub", image: `${skfOffer}2022/05/tkba-40-1.jpg` },
+  { slug: "monitoring-instruments", pageType: "data-table", image: `${skfOffer}2022/05/instrumenti-za-sledenje-1.png` },
+  { slug: "mounting-tools", pageType: "hub", image: `${skfOffer}2022/05/skf-tmmp1.jpg` },
+  { slug: "maintenance", pageType: "hub", image: `${skfOffer}2022/05/induktivni2.jpg` },
+  { slug: "shim-packs", pageType: "article", image: `${skfOffer}2022/06/paketi-so-podloshki-skf-tmas-2.jpg` },
+  { slug: "greases", pageType: "data-table", image: `${skfOffer}2022/04/0901d1968063f674-LGFQ2-1x1_tcm_12-296405.webp` },
+  { slug: "lubrication-systems", pageType: "hub", image: `${skfOffer}2022/06/tlgh-1.jpg` },
+  { slug: "automatic-lubricators", pageType: "hub", image: `${skfOffer}2022/06/skf-24-1.jpg` },
+  { slug: "vibracon", pageType: "article", image: `${skfOffer}2022/06/prilagodlivi-prikluchoci-za-skf-vibracon-1.jpg` },
+  { slug: "composite-housing-units", pageType: "article", image: `${skfOffer}2022/04/edinici-so-kompozitni-kukjishta-2.jpg` },
+  { slug: "y-bearings", pageType: "article", image: `${skfOffer}2022/04/y-5.jpg` },
 ];
 
 export const getProduct = (slug: string) => products.find((p) => p.slug === slug);

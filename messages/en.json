@@ -146,7 +146,9 @@
     "skfOffer": {
       "eyebrow": "Original SKF offer",
       "headingPrefix": "Complete",
-      "headingHighlight": "SKF range"
+      "headingHighlight": "SKF range",
+      "lead": "Bearings, housings, seals, lubrication, alignment and condition monitoring: every SKF product line, sourced directly as an authorized distributor.",
+      "view": "View"
     },
     "industries": {
       "eyebrow": "Industries we serve",

@@ -6,6 +6,8 @@ import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import CountUp from "@/components/CountUp";
 import BearingIcon from "@/components/BearingIcon";
+import SkfLogo from "@/components/SkfLogo";
+import { site } from "@/lib/site";
 import ParallaxLayer from "@/components/ParallaxLayer";
 import { industries, productCategories } from "@/lib/data";
 
@@ -107,20 +109,55 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         </div>
       </section>
 
-      <section id="skf-offer" className="relative scroll-mt-16 py-16 lg:py-20 overflow-hidden">
+      <section id="skf-offer" className="relative scroll-mt-16 py-16 lg:py-24 overflow-hidden">
+        <ParallaxLayer range={60} className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[720px] h-[420px] bg-brand-1/[0.035] rounded-full blur-[200px] pointer-events-none" />
         <div className="relative container mx-auto px-6 lg:px-10">
           <SectionHeading eyebrow={t("skfOffer.eyebrow")} num="03" center>
             {t("skfOffer.headingPrefix")} <span className="text-gradient-brand">{t("skfOffer.headingHighlight")}</span>
           </SectionHeading>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+          <Reveal delay={0.2}>
+            <p className="max-w-2xl mx-auto -mt-4 text-center text-foreground/60 leading-relaxed">{t("skfOffer.lead")}</p>
+            <div className="mt-6 mb-12 flex justify-center">
+              <span className="inline-flex items-center gap-3 rounded-full border border-foreground/10 bg-foreground/[0.03] pl-1.5 pr-4 py-1.5">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={site.skfLogo} alt="SKF" className="h-8 w-8 rounded-lg" />
+                <span className="text-[11px] uppercase tracking-[0.2em] text-foreground/60 font-semibold">{t("brands.eyebrow")}</span>
+              </span>
+            </div>
+          </Reveal>
+          {/* flex-wrap + justify-center so the last, partial row sits centred instead of hugging the left edge */}
+          <div className="max-w-6xl mx-auto flex flex-wrap justify-center gap-4 lg:gap-5">
             {productCategories.map((c, idx) => (
-              <Reveal key={c.slug} delay={idx * 0.03} {...dir4[idx % 4]}>
+              <Reveal
+                key={c.slug}
+                delay={(idx % 4) * 0.06}
+                {...dir4[idx % 4]}
+                className="w-[calc(50%-0.5rem)] md:w-[calc((100%-2rem)/3)] lg:w-[calc((100%-3.75rem)/4)]"
+              >
                 <Link
                   href={`/products/${c.slug}`}
-                  className="group relative flex flex-col justify-between h-28 rounded-xl border border-foreground/[0.07] bg-foreground/[0.025] hover:bg-foreground/[0.05] hover:border-brand-1/25 p-4 transition-all duration-300 hover:-translate-y-1"
+                  className="group flex flex-col h-full rounded-2xl overflow-hidden border border-foreground/[0.08] bg-card hover:border-brand-1/40 hover:-translate-y-1 hover:shadow-xl hover:shadow-brand-1/10 transition-all duration-300"
                 >
-                  <span className="font-numbers text-xl text-brand-1/60 group-hover:text-brand-2 transition-colors">0{idx + 1}</span>
-                  <span className="text-xs font-semibold leading-snug group-hover:text-brand-2 transition-colors">{tp(`${c.slug}.name`)}</span>
+                  {/* product shots are cut out on white, so the plate stays white in every theme */}
+                  <div className="relative aspect-[4/3] bg-white overflow-hidden">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={c.image}
+                      alt={tp(`${c.slug}.name`)}
+                      loading="lazy"
+                      className="absolute inset-0 w-full h-full object-contain p-3 md:p-4 transition-transform duration-500 group-hover:scale-[1.06]"
+                    />
+                    <span className="absolute top-2.5 left-3 font-numbers text-base tracking-wide text-neutral-400">{String(idx + 1).padStart(2, "0")}</span>
+                  </div>
+                  <div className="flex flex-1 items-center justify-between gap-3 px-4 py-3.5 border-t border-foreground/[0.06]">
+                    <span className="text-xs md:text-sm font-semibold leading-snug group-hover:text-brand-2 transition-colors">{tp(`${c.slug}.name`)}</span>
+                    <span
+                      aria-hidden
+                      className="shrink-0 grid place-items-center w-7 h-7 rounded-full border border-foreground/15 text-xs text-foreground/50 group-hover:bg-brand-1 group-hover:border-brand-1 group-hover:text-white transition-colors"
+                    >
+                      →
+                    </span>
+                  </div>
                 </Link>
               </Reveal>
             ))}
@@ -142,11 +179,11 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
                   href={`/catalog?industry=${i.slug}`}
                   className="group relative h-36 rounded-xl overflow-hidden border border-foreground/[0.07] hover:border-brand-1/30 flex flex-col items-center justify-center gap-2 p-4 text-center transition-all duration-300 hover:-translate-y-1 hover:scale-[1.03]"
                 >
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-cover bg-center" style={{ backgroundImage: `url(${i.image})` }} />
+                  <div className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" style={{ backgroundImage: `url(${i.image})` }} />
                   {/* dark scrim + literal white text: always overlaid on a real photo, so it stays theme-independent for legibility */}
-                  <div className="absolute inset-0 bg-foreground/[0.03] group-hover:bg-black/45 transition-colors" />
-                  <span className="relative font-numbers text-2xl text-foreground/40 group-hover:text-white transition-colors">0{idx + 1}</span>
-                  <span className="relative text-xs uppercase tracking-wide text-foreground/65 group-hover:text-white group-hover:font-semibold transition-all">{ti(`${i.slug}.name`)}</span>
+                  <div className="absolute inset-0 bg-black/50 group-hover:bg-black/35 transition-colors" />
+                  <span className="relative font-numbers text-2xl text-white/75 group-hover:text-white transition-colors">0{idx + 1}</span>
+                  <span className="relative text-xs uppercase tracking-wide font-semibold text-white">{ti(`${i.slug}.name`)}</span>
                 </Link>
               </Reveal>
             ))}
@@ -164,7 +201,11 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           </SectionHeading>
           <Reveal>
             <div className="rounded-2xl border border-foreground/[0.07] bg-foreground/[0.025] p-8 lg:p-10 grid md:grid-cols-[auto_1fr] gap-8 items-center">
-              <div className="font-display font-extrabold text-6xl lg:text-7xl tracking-tighter text-gradient-brand">SKF</div>
+              {/* SKF's own blue, not a theme token: the badge must match the brand in every theme */}
+              <div className="w-56 lg:w-64 rounded-xl bg-[#0068b0] px-7 py-6 shadow-lg shadow-[#0068b0]/20">
+                <SkfLogo className="w-full text-white" />
+                <div className="mt-4 pt-3 border-t border-white/25 text-[11px] uppercase tracking-[0.25em] text-white/90 font-semibold">{t("brands.eyebrow")}</div>
+              </div>
               <div>
                 <h3 className="font-display font-bold text-xl mb-2">{t("brands.title")}</h3>
                 <p className="text-foreground/60 leading-relaxed">{t("brands.blurb")}</p>
