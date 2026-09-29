@@ -1143,6 +1143,9 @@
     "photoLimit": "Al massimo {max} foto per messaggio.",
     "photoError": "Impossibile leggere il file. Usa una foto JPG, PNG o WebP.",
     "photoAlt": "Foto allegata",
+    "voice": "Detta la tua domanda",
+    "voiceStop": "Smetti di ascoltare",
+    "voiceError": "Il microfono non ha funzionato. Verifica che il sito abbia il permesso di usarlo.",
     "status": {
       "thinking": "Sto pensando…",
       "searching": "Cerco nel catalogo…",

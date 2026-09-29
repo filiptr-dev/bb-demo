@@ -1143,6 +1143,9 @@
     "photoLimit": "Mesaj başına en fazla {max} fotoğraf.",
     "photoError": "Dosya okunamadı. JPG, PNG veya WebP fotoğraf kullanın.",
     "photoAlt": "Eklenen fotoğraf",
+    "voice": "Sorunuzu söyleyin",
+    "voiceStop": "Dinlemeyi durdur",
+    "voiceError": "Mikrofon çalışmadı. Sitenin mikrofonu kullanma izni olup olmadığını kontrol edin.",
     "status": {
       "thinking": "Düşünüyorum…",
       "searching": "Katalogda arıyorum…",

@@ -2,11 +2,12 @@
 
 import { useEffect, useRef, useState, type ClipboardEvent, type DragEvent, type KeyboardEvent } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { ArrowUp, Droplet, FileText, ImagePlus, MapPin, PanelRightClose, PanelRightOpen, Search, Sparkles, Square, SquarePen, Tag, X } from "lucide-react";
+import { ArrowUp, Droplet, FileText, ImagePlus, MapPin, Mic, PanelRightClose, PanelRightOpen, Search, Sparkles, Square, SquarePen, Tag, X } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { MAX_MESSAGE, type FlowId } from "@/lib/api/assistant";
 import { useAssistantChat } from "@/hooks/useAssistantChat";
+import { useSpeechInput } from "@/hooks/useSpeechInput";
 import AssistantTurnView from "./AssistantTurn";
 import { MAX_PHOTOS, preparePhoto, type Photo } from "./photos";
 
@@ -63,10 +64,21 @@ export default function AssistantPanel({ open, onClose }: { open: boolean; onClo
     el.style.height = `${Math.min(el.scrollHeight, 160)}px`;
   }, [input]);
 
+  // speech goes after what was already typed; the user checks the text and sends it
+  const typed = useRef("");
+  const speech = useSpeechInput(locale, (heard) => setInput(`${typed.current}${typed.current && heard ? " " : ""}${heard}`));
+  function toggleSpeech() {
+    if (speech.listening) return speech.stop();
+    typed.current = input.trim();
+    speech.start();
+    inputRef.current?.focus();
+  }
+
   const canSend = !!input.trim() || photos.length > 0;
 
   function submit() {
     if (streaming || !canSend) return;
+    speech.stop();
     stick.current = true;
     send(input, undefined, undefined, photos);
     setInput("");
@@ -238,7 +250,7 @@ export default function AssistantPanel({ open, onClose }: { open: boolean; onClo
             ))}
           </ul>
         )}
-        {photoError && <p role="alert" className="mb-1.5 text-[11px] text-destructive">{photoError}</p>}
+        {(photoError || speech.error) && <p role="alert" className="mb-1.5 text-[11px] text-destructive">{photoError ?? t("voiceError")}</p>}
         <div className="flex items-end gap-1 rounded-xl border border-border bg-background/40 py-1.5 pl-1.5 pr-1.5 focus-within:border-brand-2/60">
           <button
             type="button"
@@ -273,6 +285,21 @@ export default function AssistantPanel({ open, onClose }: { open: boolean; onClo
             aria-label={t("inputAria")}
             className="max-h-40 min-h-8 flex-1 resize-none bg-transparent px-1 py-1.5 text-sm outline-none placeholder:text-foreground/40"
           />
+          {speech.supported && (
+            <button
+              type="button"
+              onClick={toggleSpeech}
+              aria-pressed={speech.listening}
+              aria-label={speech.listening ? t("voiceStop") : t("voice")}
+              title={speech.listening ? t("voiceStop") : t("voice")}
+              className={cn(
+                "flex size-8 shrink-0 items-center justify-center rounded-lg transition-colors",
+                speech.listening ? "animate-pulse bg-destructive/10 text-destructive" : "text-foreground/50 hover:bg-foreground/[0.06] hover:text-foreground",
+              )}
+            >
+              <Mic className="size-4" />
+            </button>
+          )}
           {streaming ? (
             <button type="button" onClick={stop} aria-label={t("stop")} title={t("stop")} className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-foreground/10 text-foreground hover:bg-foreground/15">
               <Square className="size-3.5 fill-current" />

@@ -1143,6 +1143,9 @@
     "photoLimit": "Deri në {max} foto për mesazh.",
     "photoError": "Skedari nuk mund të lexohej. Përdorni një foto JPG, PNG ose WebP.",
     "photoAlt": "Foto e bashkëngjitur",
+    "voice": "Thoni pyetjen tuaj",
+    "voiceStop": "Ndalo dëgjimin",
+    "voiceError": "Mikrofoni nuk funksionoi. Kontrolloni nëse faqja ka leje ta përdorë.",
     "status": {
       "thinking": "Duke menduar…",
       "searching": "Duke kërkuar në katalog…",

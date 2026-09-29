@@ -1143,6 +1143,9 @@
     "photoLimit": "Najviac {max} fotografie v jednej správe.",
     "photoError": "Súbor sa nepodarilo načítať. Použite fotografiu vo formáte JPG, PNG alebo WebP.",
     "photoAlt": "Priložená fotografia",
+    "voice": "Povedzte svoju otázku",
+    "voiceStop": "Prestať počúvať",
+    "voiceError": "Mikrofón nefungoval. Skontrolujte, či ho stránka môže používať.",
     "status": {
       "thinking": "Premýšľam…",
       "searching": "Hľadám v katalógu…",
