@@ -3,7 +3,7 @@
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 
-// Shown when /api/products fails, so a failed request never reads as "no products found".
+// Shown when a product search request fails, so a failed request never reads as "no products found".
 export default function SearchError({ onRetry, compact = false }: { onRetry: () => void; compact?: boolean }) {
   const t = useTranslations("Errors.search");
   return (

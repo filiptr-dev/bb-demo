@@ -4,7 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import CatalogClient from "@/components/catalog/CatalogClient";
 import { alternatesFor } from "@/i18n/metadata";
 import type { Locale } from "@/i18n/routing";
-import { productCount } from "@/server/products";
+import { productCount } from "@/lib/api/products";
 
 export const revalidate = 3600;
 

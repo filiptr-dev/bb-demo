@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
-import { fetchProducts, type ProductPage } from "@/lib/api-client";
+import { fetchProducts, type ProductPage } from "@/lib/api/search";
 
-// Fetches /api/products for a query string (null = don't search). A newer query aborts the older request, and the
+// Searches the API (GET /api/v1/products) for a catalog query string (null = don't search). A newer query aborts the older request, and the
 // previous results stay available until the new ones arrive, so lists can dim instead of flashing empty.
 // A failed request sets `error` (instead of pretending there were no results); `retry` re-runs the same query.
 export function useProductSearch(query: string | null) {

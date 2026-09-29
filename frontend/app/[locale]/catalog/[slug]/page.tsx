@@ -6,7 +6,7 @@ import { alternatesFor, notFoundMetadata } from "@/i18n/metadata";
 import type { Locale } from "@/i18n/routing";
 import { site } from "@/lib/site";
 import { dim, dims } from "@/lib/domain/product";
-import { getProduct, relatedProducts } from "@/server/products";
+import { getProduct, relatedProducts } from "@/lib/api/products";
 import ProductTypeImage from "@/components/product/ProductTypeImage";
 import ProductCard from "@/components/product/ProductCard";
 import AddToQuoteButton from "@/components/quote/AddToQuoteButton";

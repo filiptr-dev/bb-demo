@@ -1,0 +1,44 @@
+name: contract
+
+# The API contract: backend/openapi.json is exported from the FastAPI app, and frontend/lib/api/schema.d.ts is
+# generated from it. Fails when either is stale, so the frontend's types always match the deployed API.
+on:
+  push:
+    branches: [main]
+    paths: ["backend/**", "frontend/lib/api/**", "frontend/package.json", "frontend/package-lock.json", ".github/workflows/contract.yml"]
+  pull_request:
+    paths: ["backend/**", "frontend/lib/api/**", "frontend/package.json", "frontend/package-lock.json", ".github/workflows/contract.yml"]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  openapi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.12.20"
+          enable-cache: true
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - name: Export openapi.json
+        working-directory: backend
+        run: uv sync --locked && uv run python -m app.export_openapi
+      - name: Generate schema.d.ts
+        working-directory: frontend
+        run: npm ci && npm run api:types
+      - name: Both are committed and current
+        run: |
+          git diff --exit-code -- backend/openapi.json frontend/lib/api/schema.d.ts || {
+            echo "::error::The API contract changed. Run 'uv run python -m app.export_openapi' in backend/ and 'npm run api:types' in frontend/, then commit both files."
+            exit 1
+          }

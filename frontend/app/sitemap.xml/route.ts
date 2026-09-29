@@ -1,5 +1,5 @@
-import { productsUpdatedAt } from "@/server/products";
-import { sitemapIds, sitemapUrl } from "@/server/sitemap";
+import { productsUpdatedAt } from "@/lib/api/products";
+import { sitemapIds, sitemapUrl } from "@/lib/sitemap";
 
 // Sitemap index: Next doesn't generate one for generateSitemaps, so list the chunks here.
 export const revalidate = 86400;

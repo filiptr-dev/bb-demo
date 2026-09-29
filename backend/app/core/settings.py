@@ -29,6 +29,9 @@ class Settings(BaseSettings):
 
     # Comma-separated list of origins allowed to call the API from a browser.
     cors_allowed_origins: Annotated[list[str], NoDecode] = Field(default_factory=lambda: ["http://localhost:3000"])
+    # Optional regex for origins that can't be listed, e.g. Vercel preview deployments:
+    # https://bb-demo-[a-z0-9-]+\.vercel\.app
+    cors_allowed_origin_regex: str | None = None
 
     @field_validator("database_url")
     @classmethod

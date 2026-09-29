@@ -2,6 +2,7 @@ from fastapi.testclient import TestClient
 
 from app.core.pagination import Page, PageParams
 from app.core.schemas import ApiModel
+from app.main import create_app
 from tests.conftest import ORIGIN, make_settings
 
 
@@ -46,3 +47,12 @@ def test_page_envelope() -> None:
         "meta": {"total": 21, "page": 2, "perPage": 10, "pages": 3},
     }
     assert Page[Row].of([], total=0, params=PageParams()).meta.pages == 0
+
+
+def test_cors_origin_regex_allows_preview_deployments() -> None:
+    app = create_app(make_settings(cors_allowed_origin_regex=r"https://bb-demo-[a-z0-9-]+\.vercel\.app"))
+    with TestClient(app) as client:
+        ok = client.get("/api/v1/health/live", headers={"Origin": "https://bb-demo-git-main-x.vercel.app"})
+        bad = client.get("/api/v1/health/live", headers={"Origin": "https://bb-demo.evil.app"})
+    assert ok.headers["access-control-allow-origin"] == "https://bb-demo-git-main-x.vercel.app"
+    assert "access-control-allow-origin" not in bad.headers

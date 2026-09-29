@@ -1,7 +1,7 @@
 import { locales, routing, type Locale } from "@/i18n/routing";
 
-// The /catalog URL and GET /api/products share these query keys, so the catalog forwards its search params as-is:
-// search, type, bore, seal, industry=a,b, dmin/dmax, Dmin/Dmax, Bmin/Bmax, sort, dir, page (+ locale, limit for the API).
+// The /catalog URL keys: search, type, bore, seal, industry=a,b, dmin/dmax, Dmin/Dmax, Bmin/Bmax, sort, dir, page
+// (+ locale, limit for searches). lib/api/search.ts turns a parsed query into the API's GET /api/v1/products query.
 
 export const sortKeys = ["designation", "type", "boreType", "seal", "d", "D", "B"] as const;
 export type SortKey = (typeof sortKeys)[number];

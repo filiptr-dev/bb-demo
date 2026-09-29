@@ -5,7 +5,7 @@ import { Link } from "@/i18n/navigation";
 import { alternatesFor, notFoundMetadata } from "@/i18n/metadata";
 import type { Locale } from "@/i18n/routing";
 import { industries, getIndustry } from "@/lib/domain/taxonomy";
-import { productsByIndustry } from "@/server/products";
+import { productsByIndustry } from "@/lib/api/products";
 import ProductCard from "@/components/product/ProductCard";
 
 export const revalidate = 3600;

@@ -1,7 +1,7 @@
 import { bearingTypes, industries, productCategories } from "@/lib/domain/taxonomy";
-import { productCount } from "@/server/products";
+import { productCount } from "@/lib/api/products";
 import { localeNames, locales } from "@/i18n/routing";
-import { localeUrl } from "@/server/sitemap";
+import { localeUrl } from "@/lib/sitemap";
 import { site } from "@/lib/site";
 import en from "@/messages/en.json";
 

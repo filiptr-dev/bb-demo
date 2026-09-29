@@ -4,10 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node --env-file-if-exists=.env.local scripts/wake-api.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
     "db:import": "node --env-file=.env.local --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/import-products.mts",
+    "api:types": "openapi-typescript ../backend/openapi.json -o lib/api/schema.d.ts",
     "search-vocabulary": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/export-search-vocabulary.mts"
   },
   "dependencies": {
@@ -18,7 +20,7 @@
     "motion": "^13.4.2",
     "next": "16.3.6",
     "next-intl": "^4.14.7",
-    "postgres": "^3.4.9",
+    "openapi-fetch": "^0.17.0",
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "react-markdown": "^10.1.0",
@@ -35,6 +37,8 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.3.6",
+    "openapi-typescript": "^7.13.0",
+    "postgres": "^3.4.9",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

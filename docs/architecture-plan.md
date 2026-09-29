@@ -1,6 +1,6 @@
 # B&B Unikoop: architecture and migration plan
 
-Status: **in progress** (started 2026-09-29). Phases 1 (monorepo move), 2 (backend skeleton + CI/CD), 3 (baseline migration) and 4 (products module) are built. Next: Phase 5.
+Status: **in progress** (started 2026-09-29). Phases 1 (monorepo move), 2 (backend skeleton + CI/CD), 3 (baseline migration), 4 (products module) and 5 (frontend on the API) are built. Next: Phase 6 (deploy).
 
 History: the first version of this plan (2026-09-28) used Laravel. On 2026-09-29 the backend was switched to **Python (FastAPI)**. Nothing had been built yet, so only the plan changed. The goals are the same: a separate API that owns the DB, and nothing Supabase-specific.
 
@@ -170,6 +170,7 @@ modules/assistant/
 - App: `APP_ENV=production`, `LOG_LEVEL=info`
 - Database: `DATABASE_URL=postgresql://…<supabase session pooler :5432>` (the app switches the driver to psycopg itself)
 - CORS: `CORS_ALLOWED_ORIGINS=https://<vercel domain>,http://localhost:3000`
+- CORS for previews (optional): `CORS_ALLOWED_ORIGIN_REGEX=https://<project>-[a-z0-9-]+\.vercel\.app`
 - Revalidation: `FRONTEND_REVALIDATE_URL`, `REVALIDATE_SECRET`
 - Gemini: `GEMINI_API_KEY`, `GEMINI_MODEL=gemini-3.5-flash-lite`, `GEMINI_FALLBACK_MODEL=gemini-3.8-flash`
 
@@ -224,6 +225,9 @@ modules/assistant/
 - Add `/api/revalidate`, the `wake-api` prebuild step, and `SearchError` handling for API outages (already exists).
 - Delete `frontend/server/`.
 - ✅ Done when: every page renders the same (screenshots en + mk, desktop + mobile), and the build passes with the API as the only data source.
+- Built 2026-09-29: `lib/api/{client,search,products}.ts` + generated `schema.d.ts` (`npm run api:types` from `backend/openapi.json`, exported by `uv run python -m app.export_openapi`), `contract.yml`. Every fetch has a 10 s timeout and one retry on network errors / 502–504; server fetches are ISR-cached and tagged `products` (+ `product:<slug>`). `Product` is now the generated type. `/api/products`, `server/{db,products}.ts` and `lib/api-client.ts` are gone; `server/sitemap.ts` moved to `lib/sitemap.ts`. `server/contact.ts` stays (email, not DB) until the quotes module (Phase 11). `postgres` is a devDependency now (importer only).
+- Checked: the visible text of 17 pages/routes (en + mk; home, catalog + queries, 3 product pages, 2 industries, size finder, bearings hub, sitemaps, llms.txt) is identical before/after; only the sitemap `lastmod` dates differ (Supabase vs local import time). The four old `/api/products` responses equal the new API's. In Chrome: catalog search + filter, size finder (25×52×15 → 111), header search and a Macedonian word search all call `localhost:8000` directly (CORS), no console errors. The mobile width wasn't re-screenshotted (no layout code changed).
+- New backend setting `CORS_ALLOWED_ORIGIN_REGEX` for Vercel preview URLs.
 
 **Phase 6: deploy**
 - Render: New → Blueprint → this repo (reads `render.yaml`), then fill `DATABASE_URL` and `CORS_ALLOWED_ORIGINS`.

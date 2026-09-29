@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { industries, productCategories } from "@/lib/domain/taxonomy";
-import { productSitemapRows } from "@/server/products";
-import { productChunk, sitemapIds, withAlternates } from "@/server/sitemap";
+import { productSitemapRows } from "@/lib/api/products";
+import { productChunk, sitemapIds, withAlternates } from "@/lib/sitemap";
 
 const pages = [
   "/",
@@ -25,5 +25,5 @@ export default async function sitemap(props: { id: Promise<string> }): Promise<M
   const id = Number(await props.id);
   if (id === 0) return pages.map(withAlternates);
   const rows = await productSitemapRows((id - 1) * productChunk, productChunk);
-  return rows.map((r) => ({ ...withAlternates(`/catalog/${r.slug}`), lastModified: r.updated_at }));
+  return rows.map((r) => ({ ...withAlternates(`/catalog/${r.slug}`), lastModified: r.updatedAt }));
 }

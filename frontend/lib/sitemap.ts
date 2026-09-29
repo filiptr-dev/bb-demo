@@ -1,7 +1,7 @@
 import "server-only";
 import { getPathname } from "@/i18n/navigation";
 import { routing, type Locale } from "@/i18n/routing";
-import { productCount } from "./products";
+import { productCount } from "@/lib/api/products";
 import { site } from "@/lib/site";
 
 // Products per sitemap file. Each URL carries hreflang links for every locale, so 5,000 keeps a file around 2 MB.
