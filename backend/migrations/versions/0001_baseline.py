@@ -1,9 +1,11 @@
 """Baseline: the products catalog, as first created by frontend/scripts/schema.sql (removed since; see git history).
 
-The Supabase database already has all of this, so it is stamped (`alembic stamp 0001`) instead of upgraded.
+The Supabase database already has all of this (it was created by that file). There, upgrading to 0001 only records
+the version: the tables are adopted as they are, so no manual `alembic stamp` is needed.
+
 Supabase-only parts of that file are deliberately left out: they stay on the Supabase database and have no meaning
-on a plain Postgres. For the record, Supabase also has row level security on `products` with a
-`"public read"` select policy, and the anon/authenticated roles are read-only.
+on a plain Postgres. For the record, Supabase also has row level security on `products` with a `"public read"`
+select policy, and the anon/authenticated roles are read-only.
 
 Revision ID: 0001
 Revises:
@@ -23,6 +25,8 @@ depends_on: str | Sequence[str] | None = None
 
 
 def upgrade() -> None:
+    if sa.inspect(op.get_bind()).has_table("products"):
+        return  # a database from before Alembic (Supabase): adopt it as is
     # Trigram index for "contains" search on designations.
     op.execute("create extension if not exists pg_trgm")
     # Numeric-aware ordering, so "6205" < "6210" < "62010" (used as `order by designation collate natural_sort`).

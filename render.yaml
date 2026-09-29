@@ -16,6 +16,7 @@ services:
     healthCheckPath: /api/v1/health/live
     # CD: deploy a backend commit on main only after its GitHub checks (.github/workflows/backend.yml) pass.
     autoDeployTrigger: checksPass
+    # The container runs `alembic upgrade head` before the API starts (Dockerfile CMD). Setup: docs/deploy.md.
     envVars:
       - key: APP_ENV
         value: production

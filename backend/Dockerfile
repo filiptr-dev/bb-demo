@@ -25,6 +25,7 @@ USER api
 
 EXPOSE 8000
 
-# Render sets PORT. One worker: the free instance has 512 MB and 0.1 CPU. --proxy-headers: the real client IP
-# comes from Render's proxy (needed for per-IP rate limits).
-CMD ["sh", "-c", "exec uvicorn app.main:create_app --factory --host 0.0.0.0 --port \"$PORT\" --proxy-headers --forwarded-allow-ips='*' --no-server-header"]
+# Migrations first (Render's free plan has no pre-deploy step; a failed migration fails the deploy and the old
+# instance keeps serving), then the API. Render sets PORT. One worker: the free instance has 512 MB and 0.1 CPU.
+# --proxy-headers: the real client IP comes from Render's proxy (needed for per-IP rate limits).
+CMD ["sh", "-c", "alembic upgrade head && exec uvicorn app.main:create_app --factory --host 0.0.0.0 --port \"$PORT\" --proxy-headers --forwarded-allow-ips='*' --no-server-header"]

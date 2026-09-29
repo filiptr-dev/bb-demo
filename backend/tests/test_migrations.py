@@ -87,3 +87,17 @@ def test_baseline_search_key_and_natural_sort(scratch_db: str) -> None:
         conn.execute("set enable_seqscan = off")
         plan = conn.execute("explain select slug from products where search_key like '%2RS%'").fetchall()
         assert "products_search_key_trgm" in " ".join(r[0] for r in plan)
+
+
+def test_baseline_adopts_a_database_from_before_alembic(scratch_db: str) -> None:
+    """Supabase was created by the old frontend/scripts/schema.sql: upgrading it records 0001 and changes nothing."""
+    with psycopg.connect(scratch_db) as conn:
+        conn.execute("create extension pg_trgm")
+        conn.execute("create table products (slug text primary key, designation text not null)")
+        conn.execute("insert into products values ('6205', '6205')")
+
+    command.upgrade(alembic_config(scratch_db), "head")
+
+    with psycopg.connect(scratch_db) as conn:
+        assert conn.execute("select version_num from alembic_version").fetchall() == [("0001",)]
+        assert conn.execute("select * from products").fetchall() == [("6205", "6205")]

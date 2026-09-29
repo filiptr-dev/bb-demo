@@ -41,4 +41,4 @@ API, so the API must be running. To fill a local database with the real catalog:
   - Vercel deploys `frontend/` through its Git integration, with a preview URL for every PR.
 - **Dependabot:** weekly update PRs for npm, uv, Docker and Actions.
 
-Architecture and roadmap: [docs/architecture-plan.md](docs/architecture-plan.md).
+Architecture and roadmap: [docs/architecture-plan.md](docs/architecture-plan.md). First deploy: [docs/deploy.md](docs/deploy.md).

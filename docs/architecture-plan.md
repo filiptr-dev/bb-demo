@@ -206,9 +206,9 @@ modules/assistant/
 **Phase 3: baseline migration**
 - Convert `schema.sql` to the first Alembic revision: pg_trgm, the `natural_sort` ICU collation, `products` with the generated `search_key`, 4 indexes.
 - Supabase-only statements (RLS, anon/authenticated grants) are **not** in migrations. They stay on the current Supabase DB and don't exist on your own server.
-- On the existing Supabase DB, mark the baseline as already run: `alembic stamp <baseline>` (one `alembic_version` row). On a fresh Postgres, `alembic upgrade head` creates everything.
+- On the existing Supabase DB, the baseline only records its version (it adopts the existing table; see Phase 6). On a fresh Postgres, `alembic upgrade head` creates everything.
 - ✅ Done when: the schema-only `pg_dump` of a fresh local DB and of Supabase `products` match.
-- Built 2026-09-29: `backend/alembic.ini`, async `migrations/env.py` (URL from the settings), `0001_baseline.py`, `Base` with Postgres-default constraint names in `core/db.py`. The schema-only `pg_dump` of a fresh local DB matches Supabase `products` except the two RLS lines, which are left out on purpose. `tests/test_migrations.py` runs upgrade → downgrade → upgrade on a throwaway database, and checks `search_key`, `natural_sort` and the trigram index. The Supabase `alembic stamp 0001` is still to do (it needs your OK). Phase 4 then deleted `frontend/scripts/schema.sql`: the Node importer only fills the table and fails if it's missing.
+- Built 2026-09-29: `backend/alembic.ini`, async `migrations/env.py` (URL from the settings), `0001_baseline.py`, `Base` with Postgres-default constraint names in `core/db.py`. The schema-only `pg_dump` of a fresh local DB matches Supabase `products` except the two RLS lines, which are left out on purpose. `tests/test_migrations.py` runs upgrade → downgrade → upgrade on a throwaway database, and checks `search_key`, `natural_sort` and the trigram index. Phase 4 then deleted `frontend/scripts/schema.sql`: the Node importer only fills the table and fails if it's missing.
 
 **Phase 4: Products module + parity**
 - **Before** touching anything, record "golden" JSON from the current `/api/products` and page queries. That's ~30 cases: text search, each filter, dimension ranges, paging, detail, related, industry, sitemap rows, count.
@@ -234,6 +234,7 @@ modules/assistant/
 - The cron-job.org ping on `/api/v1/health`, and the Vercel env vars.
 - Push once you've verified locally.
 - ✅ Done when: the live site works, and the first request after 20 min idle still works (ping) or gets a clear loading state.
+- Prepared 2026-09-29: the container runs `alembic upgrade head` before uvicorn (Render free has no pre-deploy step), and `0001` adopts a pre-Alembic database that already has `products`, so Supabase needs no manual `alembic stamp`. Step-by-step setup: [deploy.md](deploy.md). Left for you: the Render Blueprint, cron-job.org, the Vercel env vars, then the push.
 
 **Phase 7: Specs + importers**
 - `specs` table + migration.
