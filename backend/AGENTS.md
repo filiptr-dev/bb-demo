@@ -14,6 +14,8 @@ The B&B Unikoop API. It owns the database and all business logic. The frontend o
 | New migration | `uv run alembic revision --autogenerate -m "add specs" --rev-id 0002` (next number; review it before committing) |
 | Lint + format | `uv run ruff check . && uv run ruff format .` |
 | Types | `uv run mypy .` (strict) |
+| Import the catalog | `uv run python -m app.cli products-import [--dry]` (bearingworld + `products/seed.py`) |
+| Scrape SKF data sheets | `uv run python -m app.cli specs-scrape [--all] [--limit N] [DESIGNATION ...]` (resumable) |
 | Add a dependency | `uv add <pkg>` / `uv add --dev <pkg>` (never edit uv.lock by hand) |
 
 CI (`.github/workflows/backend.yml`) runs format check, ruff, mypy, pytest and a Docker build. Keep all of them green.
@@ -27,6 +29,8 @@ CI (`.github/workflows/backend.yml`) runs format check, ruff, mypy, pytest and a
   - `errors.py`: `ApiError` → RFC 9457 problem+json.
   - `pagination.py`: `Page[T]` envelope + `Paging` params.
   - `schemas.py`: `ApiModel` base.
+  - `revalidator.py`: tells the frontend to refresh cached pages (Next.js tags) after a data change.
+- `app/cli.py`: the data jobs (`python -m app.cli ...`), run by hand against `DATABASE_URL`.
 - `migrations/`: Alembic. `env.py` takes the URL from the app settings and the tables from `Base.metadata` (`app/core/db.py`). Revisions are numbered `0001_baseline.py`, `0002_...`.
 - `app/modules/<name>/`, one folder per feature:
   - `router.py`: thin. Validated input in → service → response schema out.
@@ -39,7 +43,8 @@ CI (`.github/workflows/backend.yml`) runs format check, ruff, mypy, pytest and a
 ## Modules
 
 - `health`: `/health` (checks the DB, for the keep-alive cron) and `/health/live` (no DB, for Render's health check).
-- `products`: catalog search, detail, related, per-industry lists, stats, sitemap rows. `search.py` reads the search text (designation, dimensions, words) into `SearchCriteria`, and `repository.py` turns that into SQL. Free-text words are matched against `search_vocabulary.json`, which is generated from the frontend's messages: after changing type/seal/bore/industry names there, run `npm run search-vocabulary` in `frontend/` (CI fails otherwise). `tests/products/test_parity.py` checks the output against golden files recorded from the old TypeScript query layer, on `tests/products/data/products.csv.gz` (the real 15,420 rows).
+- `products`: catalog search, detail, related, per-industry lists, stats, sitemap rows. `search.py` reads the search text (designation, dimensions, words) into `SearchCriteria`, and `repository.py` turns that into SQL. Free-text words are matched against `search_vocabulary.json`, which is generated from the frontend's messages: after changing type/seal/bore/industry names there, run `npm run search-vocabulary` in `frontend/` (CI fails otherwise). `tests/products/test_parity.py` checks the output against golden files recorded from the old TypeScript query layer, on `tests/products/data/products.csv.gz` (the real 15,420 rows). `importer.py` scrapes the bearingworld SKF catalog and merges it with `seed.py` (our stocked products, which win); `replace_all` upserts and deletes rows that are gone.
+- `specs`: SKF technical data per product (C, C0, Pu, speeds, mass, calculation factors, full data sheet), `GET /products/{slug}/specs` (404 `specs_not_found`). `scraper.py` reads SKF's own search JSON; misses are stored with `found = false` so they aren't asked again. Tests use recorded responses in `tests/specs/data/`, never the live site.
 
 ## Rules
 

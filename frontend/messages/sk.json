@@ -603,8 +603,17 @@
       "dInner": "Priemer otvoru (d)",
       "dOuter": "Vonkajší priemer (D)",
       "width": "Šírka (B)",
-      "seal": "Utesnenie"
+      "seal": "Utesnenie",
+      "loadDynamic": "Dynamická únosnosť (C)",
+      "loadStatic": "Statická únosnosť (C₀)",
+      "fatigueLimit": "Medza únavového zaťaženia (Pᵤ)",
+      "referenceSpeed": "Referenčné otáčky",
+      "limitingSpeed": "Medzné otáčky",
+      "mass": "Hmotnosť",
+      "performanceClass": "Výkonnostná trieda SKF"
     },
+    "datasheetSource": "Únosnosť, otáčky a hmotnosť: technický list SKF.",
+    "datasheetLink": "Úplný technický list na skf.com",
     "industriesHeading": "Použitie v odvetviach",
     "relatedHeading": "Súvisiace produkty",
     "metaTitle": "Ložisko {designation} {brand} – {d}×{D}×{B} mm",

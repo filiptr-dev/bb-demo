@@ -3,7 +3,8 @@ from math import ceil
 
 from app.core.errors import ApiError
 from app.core.pagination import Page, PageParams
-from app.modules.products.repository import ProductRepository
+from app.modules.products.importer import ProductRecord
+from app.modules.products.repository import ImportCounts, ProductRepository
 from app.modules.products.schemas import Product, ProductSearch, SitemapRow
 from app.modules.products.search import Vocabulary, criteria
 
@@ -44,3 +45,13 @@ class ProductService:
 
     async def sitemap(self, offset: int, limit: int) -> list[SitemapRow]:
         return await self.repo.sitemap(offset, limit)
+
+    async def replace_catalog(self, rows: list[ProductRecord]) -> ImportCounts:
+        """The importer's write: the table becomes exactly `rows`."""
+        if not rows:
+            raise ValueError("refusing to replace the catalog with nothing")
+        return await self.repo.replace_all(rows)
+
+    async def designations(self, stocked_only: bool = False) -> list[tuple[str, str]]:
+        """(slug, designation) of every product, or only the ones on our curated list."""
+        return await self.repo.designations(stocked_only)

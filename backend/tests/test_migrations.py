@@ -1,39 +1,9 @@
 """The Alembic migrations, run for real against a throwaway database next to the test database."""
 
-from collections.abc import Iterator
-from pathlib import Path
-
 import psycopg
-import pytest
 from alembic import command
-from alembic.config import Config
-from sqlalchemy import make_url
 
-from tests.conftest import TEST_DATABASE_URL
-
-BACKEND = Path(__file__).resolve().parent.parent
-
-
-@pytest.fixture
-def scratch_db() -> Iterator[str]:
-    """A fresh, empty database for one test, dropped afterwards."""
-    url = make_url(TEST_DATABASE_URL)
-    name = f"{url.database}_migrations"
-    with psycopg.connect(TEST_DATABASE_URL, autocommit=True) as admin:
-        admin.execute(f'drop database if exists "{name}" with (force)')
-        admin.execute(f'create database "{name}"')
-    try:
-        yield url.set(database=name).render_as_string(hide_password=False)
-    finally:
-        with psycopg.connect(TEST_DATABASE_URL, autocommit=True) as admin:
-            admin.execute(f'drop database if exists "{name}" with (force)')
-
-
-def alembic_config(url: str) -> Config:
-    cfg = Config(BACKEND / "alembic.ini")
-    cfg.attributes["database_url"] = url
-    cfg.attributes["configure_logger"] = False  # keep pytest's logging setup
-    return cfg
+from tests.conftest import alembic_config
 
 
 def product_indexes(conn: psycopg.Connection) -> set[str]:
@@ -53,10 +23,12 @@ def test_upgrade_downgrade_upgrade(scratch_db: str) -> None:
             "products_d",
             "products_industries",
         }
+        assert conn.execute("select to_regclass('specs')").fetchone() == ("specs",)
 
     command.downgrade(cfg, "base")
     with psycopg.connect(scratch_db) as conn:
         assert conn.execute("select to_regclass('products')").fetchone() == (None,)
+        assert conn.execute("select to_regclass('specs')").fetchone() == (None,)
         assert conn.execute("select count(*) from pg_collation where collname = 'natural_sort'").fetchone() == (0,)
 
     command.upgrade(cfg, "head")  # the downgrade left nothing behind that blocks a clean re-run
@@ -99,5 +71,5 @@ def test_baseline_adopts_a_database_from_before_alembic(scratch_db: str) -> None
     command.upgrade(alembic_config(scratch_db), "head")
 
     with psycopg.connect(scratch_db) as conn:
-        assert conn.execute("select version_num from alembic_version").fetchall() == [("0001",)]
+        assert conn.execute("select version_num from alembic_version").fetchall() == [("0002",)]
         assert conn.execute("select * from products").fetchall() == [("6205", "6205")]

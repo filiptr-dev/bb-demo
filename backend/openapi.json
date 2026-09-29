@@ -792,10 +792,185 @@
           }
         }
       }
+    },
+    "/api/v1/products/{slug}/specs": {
+      "get": {
+        "tags": [
+          "specs"
+        ],
+        "summary": "Product Specs",
+        "description": "SKF technical data: load ratings, speeds, mass, calculation factors and the full data sheet.\n404 `specs_not_found` when the product has none: link to `https://www.skf.com` instead of guessing values.",
+        "operationId": "product_specs_api_v1_products__slug__specs_get",
+        "parameters": [
+          {
+            "name": "slug",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "maxLength": 200,
+              "title": "Slug"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProductSpecs"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No technical data for this product (yet)",
+            "content": {
+              "application/problem+json": {},
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Invalid request",
+            "content": {
+              "application/problem+json": {},
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/problem+json": {},
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "DatasheetRow": {
+        "properties": {
+          "name": {
+            "type": "string",
+            "title": "Name",
+            "description": "SKF's name for the value, e.g. 'Shoulder diameter' (English)"
+          },
+          "symbol": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Symbol",
+            "description": "Plain-text symbol, e.g. 'd1', 'C0', 'kr'"
+          },
+          "value": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Value"
+          },
+          "min": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Min",
+            "description": "For a range, e.g. a tolerance"
+          },
+          "max": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Max"
+          },
+          "unit": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Unit"
+          },
+          "qualifier": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Qualifier",
+            "description": "'≈' for approximate values"
+          }
+        },
+        "type": "object",
+        "required": [
+          "name"
+        ],
+        "title": "DatasheetRow"
+      },
+      "DatasheetSection": {
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "Title",
+            "description": "e.g. 'Dimensions', 'Abutment dimensions', 'Calculation data', 'Properties'"
+          },
+          "rows": {
+            "items": {
+              "$ref": "#/components/schemas/DatasheetRow"
+            },
+            "type": "array",
+            "title": "Rows"
+          }
+        },
+        "type": "object",
+        "required": [
+          "title",
+          "rows"
+        ],
+        "title": "DatasheetSection"
+      },
       "FieldError": {
         "properties": {
           "field": {
@@ -1095,6 +1270,147 @@
           "data"
         ],
         "title": "ProductList"
+      },
+      "ProductSpecs": {
+        "properties": {
+          "slug": {
+            "type": "string",
+            "title": "Slug"
+          },
+          "c": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "C",
+            "description": "Basic dynamic load rating C, kN"
+          },
+          "c0": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "C0",
+            "description": "Basic static load rating C0, kN"
+          },
+          "pu": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Pu",
+            "description": "Fatigue load limit Pu, kN"
+          },
+          "referenceSpeed": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Referencespeed",
+            "description": "r/min"
+          },
+          "limitingSpeed": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Limitingspeed",
+            "description": "r/min"
+          },
+          "mass": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Mass",
+            "description": "kg"
+          },
+          "performanceClass": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Performanceclass",
+            "description": "e.g. 'SKF Explorer'"
+          },
+          "factors": {
+            "additionalProperties": {
+              "type": "number"
+            },
+            "type": "object",
+            "title": "Factors",
+            "description": "Calculation factors by symbol: kr, f0, e, Y, Y0, Y1, Y2, ..."
+          },
+          "datasheet": {
+            "items": {
+              "$ref": "#/components/schemas/DatasheetSection"
+            },
+            "type": "array",
+            "title": "Datasheet"
+          },
+          "sourceUrl": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Sourceurl",
+            "description": "The product's page on skf.com"
+          },
+          "fetchedAt": {
+            "type": "string",
+            "format": "date-time",
+            "title": "Fetchedat"
+          }
+        },
+        "type": "object",
+        "required": [
+          "slug",
+          "c",
+          "c0",
+          "pu",
+          "referenceSpeed",
+          "limitingSpeed",
+          "mass",
+          "performanceClass",
+          "factors",
+          "datasheet",
+          "sourceUrl",
+          "fetchedAt"
+        ],
+        "title": "ProductSpecs",
+        "description": "SKF technical data for a product. Loads in kN, speeds in r/min, mass in kg."
       },
       "ProductStats": {
         "properties": {

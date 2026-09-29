@@ -603,8 +603,17 @@
       "dInner": "Diametri i brendshëm (d)",
       "dOuter": "Diametri i jashtëm (D)",
       "width": "Gjerësia (B)",
-      "seal": "Izolimi"
+      "seal": "Izolimi",
+      "loadDynamic": "Kapaciteti dinamik i ngarkesës (C)",
+      "loadStatic": "Kapaciteti statik i ngarkesës (C₀)",
+      "fatigueLimit": "Kufiri i ngarkesës së lodhjes (Pᵤ)",
+      "referenceSpeed": "Shpejtësia e referencës",
+      "limitingSpeed": "Shpejtësia kufi",
+      "mass": "Pesha",
+      "performanceClass": "Klasa e performancës SKF"
     },
+    "datasheetSource": "Kapacitetet e ngarkesës, shpejtësitë dhe pesha: fleta teknike e SKF.",
+    "datasheetLink": "Fleta e plotë teknike në skf.com",
     "industriesHeading": "Përdorimi sipas industrive",
     "relatedHeading": "Produkte të ngjashme",
     "metaTitle": "Rulman {designation} {brand} – {d}×{D}×{B} mm",

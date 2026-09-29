@@ -603,8 +603,17 @@
       "dInner": "Bore diameter (d)",
       "dOuter": "Outer diameter (D)",
       "width": "Width (B)",
-      "seal": "Sealing"
+      "seal": "Sealing",
+      "loadDynamic": "Basic dynamic load rating (C)",
+      "loadStatic": "Basic static load rating (C₀)",
+      "fatigueLimit": "Fatigue load limit (Pᵤ)",
+      "referenceSpeed": "Reference speed",
+      "limitingSpeed": "Limiting speed",
+      "mass": "Weight",
+      "performanceClass": "SKF performance class"
     },
+    "datasheetSource": "Load ratings, speeds and weight: SKF data sheet.",
+    "datasheetLink": "Full data sheet on skf.com",
     "industriesHeading": "Used across industries",
     "relatedHeading": "Related products",
     "metaTitle": "{designation} {brand} bearing – {d}×{D}×{B} mm",

@@ -33,6 +33,11 @@ class Settings(BaseSettings):
     # https://bb-demo-[a-z0-9-]+\.vercel\.app
     cors_allowed_origin_regex: str | None = None
 
+    # After a data change (importer, specs scrape) the API asks the site to refresh its cached pages:
+    # POST {tags} to the frontend's /api/revalidate. Both unset = skipped (local development, tests).
+    frontend_revalidate_url: str | None = None  # https://<vercel domain>/api/revalidate
+    revalidate_secret: str | None = None  # the same value as the frontend's REVALIDATE_SECRET
+
     @field_validator("database_url")
     @classmethod
     def _use_psycopg(cls, url: str) -> str:

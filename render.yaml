@@ -26,3 +26,8 @@ services:
         sync: false  # Supabase session pooler, port 5432 (Render is IPv4-only)
       - key: CORS_ALLOWED_ORIGINS
         sync: false  # https://<vercel domain>,http://localhost:3000
+      # After a data change the API asks the site to refresh its cached pages (optional, both or neither):
+      - key: FRONTEND_REVALIDATE_URL
+        sync: false  # https://<vercel domain>/api/revalidate
+      - key: REVALIDATE_SECRET
+        sync: false  # the same value as Vercel's REVALIDATE_SECRET

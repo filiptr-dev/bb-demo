@@ -1,0 +1,579 @@
+{
+ "stats": {
+  "totalHits": 1,
+  "searchEngineTimeInMillis": 7,
+  "searchEngineRoundTripTimeInMillis": 9,
+  "searchProcessingTimeInMillis": 10,
+  "totalHitsRelation": "EQUAL_TO"
+ },
+ "query": null,
+ "documentList": {
+  "id": "documents",
+  "displayName": "Documents",
+  "numberOfHits": 1,
+  "documents": [
+   {
+    "_id": "pim_products-v2_22212 EK_metric_en",
+    "_index": "2026-04-21-2110_external_pim_products_en",
+    "additionalphoto_url": [
+     "https://cdn.skfmediahub.skf.com/api/public/0901d196808e8910/png_highpreview/0901d196808e8910_png_highpreview.png"
+    ],
+    "buyable": true,
+    "category": "Spherical roller bearings",
+    "contentstack_page_relations": [],
+    "contentstack_taxonomy": {
+     "path": "/products/rolling-bearings/roller-bearings/spherical-roller-bearings",
+     "uid": "blt310f8ecc43c62952"
+    },
+    "designation": "22212 EK",
+    "feature_flag": {
+     "has_pdp_on_skfdotcom": true,
+     "opc": true,
+     "remanufactureable": false,
+     "skf_explorer": false
+    },
+    "mount_references": [
+     {
+      "designation": "AHX 312",
+      "type": "Recommended product"
+     },
+     {
+      "designation": "H 312",
+      "type": "Recommended product"
+     },
+     {
+      "designation": "H 312 E",
+      "type": "Recommended product"
+     }
+    ],
+    "mount_tab_available_live": true,
+    "mount_tab_available_staging": true,
+    "photo_url": "https://cdn.skfmediahub.skf.com/api/public/0901d196808e8910/png_highpreview/0901d196808e8910_png_highpreview.png",
+    "remanufacturable": false,
+    "short_description": "Spherical roller bearing with tapered bore and relubrication features",
+    "structure_group_id": "BS2_001",
+    "technical_data": [
+     {
+      "name": "Dimensions",
+      "name_en": "Dimensions",
+      "rows": [
+       {
+        "id": "PIM001",
+        "name": "Bore diameter",
+        "unit": "mm",
+        "value": 60.0
+       },
+       {
+        "id": "PIM008",
+        "name": "Outside diameter",
+        "unit": "mm",
+        "value": 110.0
+       },
+       {
+        "id": "PIM017",
+        "name": "Width",
+        "unit": "mm",
+        "value": 28.0
+       }
+      ]
+     },
+     {
+      "name": "Performance",
+      "name_en": "Performance",
+      "rows": [
+       {
+        "id": "PIM003",
+        "name": "Basic dynamic load rating",
+        "unit": "kN",
+        "value": 159.0
+       },
+       {
+        "id": "PIM004",
+        "name": "Basic static load rating",
+        "unit": "kN",
+        "value": 166.0
+       },
+       {
+        "id": "PIM006",
+        "name": "Reference speed",
+        "unit": "r/min",
+        "value": 5600.0
+       },
+       {
+        "id": "PIM005",
+        "name": "Limiting speed",
+        "unit": "r/min",
+        "value": 7500.0
+       },
+       {
+        "id": "PIM131",
+        "name": "SKF performance class",
+        "value": "SKF Explorer"
+       }
+      ]
+     },
+     {
+      "name": "Properties",
+      "name_en": "Properties",
+      "rows": [
+       {
+        "id": "PIM013",
+        "name": "Number of rows",
+        "value": "2"
+       },
+       {
+        "id": "PIM011",
+        "name": "Locating feature, bearing outer ring",
+        "value": "Without"
+       },
+       {
+        "id": "PIM009",
+        "name": "Bore type",
+        "value": "Tapered 1:12"
+       },
+       {
+        "id": "PIM010",
+        "name": "Cage",
+        "value": "Sheet metal"
+       },
+       {
+        "id": "PIM014",
+        "name": "Radial internal clearance",
+        "value": "CN"
+       },
+       {
+        "id": "PIM260",
+        "name": "Tolerance class for dimensions",
+        "value": "Normal"
+       },
+       {
+        "id": "PIM261",
+        "name": "Tolerance class for run-out",
+        "value": "P5"
+       },
+       {
+        "id": "PIM007",
+        "name": "Sealing",
+        "value": "Without"
+       },
+       {
+        "id": "PIM012",
+        "name": "Lubricant",
+        "value": "None"
+       },
+       {
+        "id": "PIM015",
+        "name": "Relubrication feature",
+        "value": "With"
+       },
+       {
+        "id": "FR_CO2_MANUFACTURE",
+        "name": "Indicative carbon footprint for new product",
+        "unit": "kg CO<sub>2</sub>e",
+        "value": 4.2
+       }
+      ]
+     },
+     {
+      "name": "Logistics",
+      "name_en": "Logistics",
+      "rows": [
+       {
+        "id": "FR_PRODUCT_NET_WEIGHT",
+        "name": "Product net weight",
+        "unit": "kg",
+        "value": 1.12
+       },
+       {
+        "id": "FR_ECLASS_CODE",
+        "name": "eClass code",
+        "value": "23-05-09-11"
+       },
+       {
+        "id": "FR_UNSPSC_CODE",
+        "name": "UNSPSC code",
+        "value": "31171510"
+       }
+      ]
+     }
+    ],
+    "technical_specification": [
+     {
+      "category": "",
+      "tables": [
+       {
+        "features": [
+         {
+          "data_type": "Character string",
+          "name": "Bore type",
+          "rendering_type": "DEFAULT",
+          "string_values": [
+           "Tapered 1:12"
+          ]
+         }
+        ],
+        "subcategory": ""
+       }
+      ],
+      "type": "PDP04B"
+     },
+     {
+      "category": "Dimensions",
+      "illustrations": [
+       "https://cdn.skfmediahub.skf.com/api/public/0901d196803c48a3/svg_preview/0901d196803c48a3_svg_preview.svg"
+      ],
+      "tables": [
+       {
+        "features": [
+         {
+          "data_type": "Floating point",
+          "description": "d",
+          "name": "Bore diameter",
+          "real_value": 60,
+          "rendering_type": "DEFAULT",
+          "unit": "mm"
+         },
+         {
+          "data_type": "Range",
+          "description": "t<sub>Δdmp</sub>",
+          "name": "Deviation limits of mid-range bore diameter",
+          "range_value": {
+           "max": 0.03,
+           "min": 0
+          },
+          "rendering_type": "DEFAULT",
+          "unit": "mm"
+         },
+         {
+          "data_type": "Range",
+          "description": "t<sub>ΔSL</sub>",
+          "name": "Deviation limits of tapered slope",
+          "range_value": {
+           "max": 0.03,
+           "min": 0
+          },
+          "rendering_type": "DEFAULT",
+          "unit": "mm"
+         },
+         {
+          "data_type": "Floating point",
+          "description": "D",
+          "name": "Outside diameter",
+          "real_value": 110,
+          "rendering_type": "DEFAULT",
+          "unit": "mm"
+         },
+         {
+          "data_type": "Range",
+          "description": "t<sub>ΔDmp</sub>",
+          "name": "Deviation limits of mid-range outside diameter",
+          "range_value": {
+           "max": 0,
+           "min": -0.015
+          },
+          "rendering_type": "DEFAULT",
+          "unit": "mm"
+         },
+         {
+          "data_type": "Floating point",
+          "description": "B",
+          "name": "Width",
+          "real_value": 28,
+          "rendering_type": "DEFAULT",
+          "unit": "mm"
+         },
+         {
+          "data_type": "Range",
+          "description": "t<sub>ΔBs</sub>",
+          "name": "Deviation limits of ring width",
+          "range_value": {
+           "max": 0,
+           "min": -0.06
+          },
+          "rendering_type": "DEFAULT",
+          "unit": "mm"
+         },
+         {
+          "data_type": "Floating point",
+          "description": "d<sub>2</sub>",
+          "name": "Shoulder diameter of inner ring",
+          "qualifier": "≈",
+          "real_value": 72.7,
+          "rendering_type": "DEFAULT",
+          "unit": "mm"
+         },
+         {
+          "data_type": "Floating point",
+          "description": "D<sub>1</sub>",
+          "name": "Shoulder/recess diameter of outer ring",
+          "qualifier": "≈",
+          "real_value": 96.5,
+          "rendering_type": "DEFAULT",
+          "unit": "mm"
+         },
+         {
+          "data_type": "Floating point",
+          "description": "b",
+          "name": "Width of lubrication groove",
+          "real_value": 6,
+          "rendering_type": "DEFAULT",
+          "unit": "mm"
+         },
+         {
+          "data_type": "Floating point",
+          "description": "K",
+          "name": "Diameter of lubrication hole",
+          "real_value": 3,
+          "rendering_type": "DEFAULT",
+          "unit": "mm"
+         },
+         {
+          "data_type": "Floating point",
+          "description": "r<sub>1,2</sub>",
+          "name": "Chamfer dimension",
+          "qualifier": "min.",
+          "real_value": 1.5,
+          "rendering_type": "DEFAULT",
+          "unit": "mm"
+         },
+         {
+          "data_type": "Character string",
+          "name": "ISO tolerance class for dimensions",
+          "rendering_type": "DEFAULT",
+          "string_values": [
+           "Normal"
+          ]
+         }
+        ],
+        "subcategory": ""
+       }
+      ],
+      "type": "PDP04A"
+     },
+     {
+      "category": "Abutment dimensions",
+      "illustrations": [
+       "https://cdn.skfmediahub.skf.com/api/public/0901d196803c48a4/svg_preview/0901d196803c48a4_svg_preview.svg"
+      ],
+      "tables": [
+       {
+        "features": [
+         {
+          "data_type": "Floating point",
+          "description": "D<sub>a</sub>",
+          "name": "Diameter of housing abutment",
+          "qualifier": "max.",
+          "real_value": 101,
+          "rendering_type": "DEFAULT",
+          "unit": "mm"
+         },
+         {
+          "data_type": "Floating point",
+          "description": "r<sub>a</sub>",
+          "name": "Radius of fillet",
+          "qualifier": "max.",
+          "real_value": 1.5,
+          "rendering_type": "DEFAULT",
+          "unit": "mm"
+         }
+        ],
+        "subcategory": ""
+       }
+      ],
+      "type": "PDP04A"
+     },
+     {
+      "category": "Calculation data",
+      "tables": [
+       {
+        "features": [
+         {
+          "data_type": "Character string",
+          "name": "SKF performance class",
+          "rendering_type": "DEFAULT",
+          "string_values": [
+           "SKF Explorer"
+          ]
+         },
+         {
+          "data_type": "Floating point",
+          "name": "Basic dynamic load rating",
+          "real_value": 159,
+          "rendering_type": "DEFAULT",
+          "symbol": "C",
+          "unit": "kN"
+         },
+         {
+          "data_type": "Floating point",
+          "name": "Basic static load rating",
+          "real_value": 166,
+          "rendering_type": "DEFAULT",
+          "symbol": "C<sub>0</sub>",
+          "unit": "kN"
+         },
+         {
+          "data_type": "Floating point",
+          "name": "Fatigue load limit",
+          "real_value": 18.6,
+          "rendering_type": "DEFAULT",
+          "symbol": "P<sub>u</sub>",
+          "unit": "kN"
+         },
+         {
+          "data_type": "Floating point",
+          "name": "Reference speed",
+          "real_value": 5600,
+          "rendering_type": "DEFAULT",
+          "unit": "r/min"
+         },
+         {
+          "data_type": "Floating point",
+          "name": "Limiting speed",
+          "real_value": 7500,
+          "rendering_type": "DEFAULT",
+          "unit": "r/min"
+         },
+         {
+          "data_type": "Floating point",
+          "name": "Limiting value",
+          "real_value": 0.24,
+          "rendering_type": "DEFAULT",
+          "symbol": "e"
+         },
+         {
+          "data_type": "Floating point",
+          "name": "Calculation factor",
+          "real_value": 2.8,
+          "rendering_type": "DEFAULT",
+          "symbol": "Y<sub>1</sub>"
+         },
+         {
+          "data_type": "Floating point",
+          "name": "Calculation factor",
+          "real_value": 4.2,
+          "rendering_type": "DEFAULT",
+          "symbol": "Y<sub>2</sub>"
+         },
+         {
+          "data_type": "Floating point",
+          "name": "Calculation factor",
+          "real_value": 2.8,
+          "rendering_type": "DEFAULT",
+          "symbol": "Y<sub>0</sub>"
+         }
+        ],
+        "subcategory": ""
+       }
+      ],
+      "type": "PDP04B"
+     },
+     {
+      "category": "Tolerances of run-out",
+      "tables": [
+       {
+        "features": [
+         {
+          "data_type": "Floating point",
+          "name": "Range of section height at inner ring of assembled bearing",
+          "real_value": 5,
+          "rendering_type": "DEFAULT",
+          "symbol": "t<sub>Kia</sub>",
+          "unit": "µm"
+         },
+         {
+          "data_type": "Floating point",
+          "name": "Maximum run-out of inner ring side face to the bore",
+          "real_value": 8,
+          "rendering_type": "DEFAULT",
+          "symbol": "t<sub>Sd</sub>",
+          "unit": "µm"
+         },
+         {
+          "data_type": "Floating point",
+          "name": "Range of section height at outer ring of assembled bearing",
+          "real_value": 10,
+          "rendering_type": "DEFAULT",
+          "symbol": "t<sub>Kea</sub>",
+          "unit": "µm"
+         },
+         {
+          "data_type": "Floating point",
+          "name": "Perpendicularity of outer ring outside surface",
+          "real_value": 4.5,
+          "rendering_type": "DEFAULT",
+          "symbol": "t<sub>SD</sub>",
+          "unit": "µm"
+         },
+         {
+          "data_type": "Character string",
+          "name": "ISO tolerance class for geometrical tolerances",
+          "rendering_type": "DEFAULT",
+          "string_values": [
+           "P5"
+          ]
+         }
+        ],
+        "subcategory": ""
+       }
+      ],
+      "type": "PDP04B"
+     },
+     {
+      "category": "Radial internal clearance",
+      "tables": [
+       {
+        "features": [
+         {
+          "data_type": "Floating point",
+          "name": "Minimum initial clearance",
+          "real_value": 55,
+          "rendering_type": "DEFAULT",
+          "unit": "µm"
+         },
+         {
+          "data_type": "Floating point",
+          "name": "Maximum initial clearance",
+          "real_value": 75,
+          "rendering_type": "DEFAULT",
+          "unit": "µm"
+         }
+        ],
+        "subcategory": ""
+       }
+      ],
+      "type": "PDP04B"
+     },
+     {
+      "category": "Mounting information",
+      "tables": [
+       {
+        "features": [
+         {
+          "data_type": "Floating point",
+          "name": "Recommended tightening angle for lock nut",
+          "real_value": 115,
+          "rendering_type": "DEFAULT",
+          "symbol": "α",
+          "unit": "°"
+         }
+        ],
+        "subcategory": ""
+       }
+      ],
+      "type": "PDP04B"
+     }
+    ],
+    "z11": "BS2",
+    "z12": "BC",
+    "z14": "KE1W33"
+   }
+  ],
+  "pagination": null,
+  "sortOptions": []
+ },
+ "facets": [],
+ "spell": null,
+ "quicklinks": null,
+ "feedback": null,
+ "errorMessages": []
+}

@@ -28,7 +28,8 @@ npm run dev                                   # http://localhost:3000
 
 `docker compose up --build` runs the database and the API in containers instead. The site reads everything from the
 API, so the API must be running. To fill a local database with the real catalog:
-`DATABASE_URL=postgresql://postgres:postgres@localhost:5433/bbunikoop npm run db:import` (in `frontend/`).
+`uv run python -m app.cli products-import`, then `uv run python -m app.cli specs-scrape` for the SKF data sheets
+(in `backend/`; more in [docs/deploy.md](docs/deploy.md#4-data-jobs-catalog-import-skf-technical-data)).
 
 ## CI/CD
 

@@ -603,8 +603,17 @@
       "dInner": "Внатрешен дијаметар (d)",
       "dOuter": "Надворешен дијаметар (D)",
       "width": "Ширина (B)",
-      "seal": "Заптивање"
+      "seal": "Заптивање",
+      "loadDynamic": "Динамичка носивост (C)",
+      "loadStatic": "Статичка носивост (C₀)",
+      "fatigueLimit": "Граница на оптоварување на замор (Pᵤ)",
+      "referenceSpeed": "Референтна брзина",
+      "limitingSpeed": "Гранична брзина",
+      "mass": "Маса",
+      "performanceClass": "SKF класа на перформанси"
     },
+    "datasheetSource": "Носивост, брзини и маса: технички лист на SKF.",
+    "datasheetLink": "Целосен технички лист на skf.com",
     "industriesHeading": "Примена по индустрии",
     "relatedHeading": "Слични производи",
     "metaTitle": "{designation} {brand} лежиште – {d}×{D}×{B} mm",

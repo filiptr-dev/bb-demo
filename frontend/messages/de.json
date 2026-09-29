@@ -603,8 +603,17 @@
       "dInner": "Bohrungsdurchmesser (d)",
       "dOuter": "Außendurchmesser (D)",
       "width": "Breite (B)",
-      "seal": "Abdichtung"
+      "seal": "Abdichtung",
+      "loadDynamic": "Dynamische Tragzahl (C)",
+      "loadStatic": "Statische Tragzahl (C₀)",
+      "fatigueLimit": "Ermüdungsgrenzbelastung (Pᵤ)",
+      "referenceSpeed": "Referenzdrehzahl",
+      "limitingSpeed": "Grenzdrehzahl",
+      "mass": "Gewicht",
+      "performanceClass": "SKF Leistungsklasse"
     },
+    "datasheetSource": "Tragzahlen, Drehzahlen und Gewicht: SKF Datenblatt.",
+    "datasheetLink": "Vollständiges Datenblatt auf skf.com",
     "industriesHeading": "Eingesetzt in folgenden Branchen",
     "relatedHeading": "Ähnliche Produkte",
     "metaTitle": "{designation} {brand} Wälzlager – {d}×{D}×{B} mm",

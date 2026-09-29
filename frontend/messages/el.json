@@ -603,8 +603,17 @@
       "dInner": "Διάμετρος οπής (d)",
       "dOuter": "Εξωτερική διάμετρος (D)",
       "width": "Πλάτος (B)",
-      "seal": "Στεγανοποίηση"
+      "seal": "Στεγανοποίηση",
+      "loadDynamic": "Δυναμική φέρουσα ικανότητα (C)",
+      "loadStatic": "Στατική φέρουσα ικανότητα (C₀)",
+      "fatigueLimit": "Όριο φορτίου κόπωσης (Pᵤ)",
+      "referenceSpeed": "Ταχύτητα αναφοράς",
+      "limitingSpeed": "Οριακή ταχύτητα",
+      "mass": "Βάρος",
+      "performanceClass": "Κατηγορία απόδοσης SKF"
     },
+    "datasheetSource": "Φέρουσες ικανότητες, ταχύτητες και βάρος: τεχνικό φύλλο SKF.",
+    "datasheetLink": "Πλήρες τεχνικό φύλλο στο skf.com",
     "industriesHeading": "Χρήση ανά κλάδο",
     "relatedHeading": "Σχετικά προϊόντα",
     "metaTitle": "Ρουλεμάν {designation} {brand} – {d}×{D}×{B} mm",

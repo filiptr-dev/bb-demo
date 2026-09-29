@@ -603,8 +603,17 @@
       "dInner": "Delik çapı (d)",
       "dOuter": "Dış çap (D)",
       "width": "Genişlik (B)",
-      "seal": "Sızdırmazlık"
+      "seal": "Sızdırmazlık",
+      "loadDynamic": "Dinamik yük sayısı (C)",
+      "loadStatic": "Statik yük sayısı (C₀)",
+      "fatigueLimit": "Yorulma yük sınırı (Pᵤ)",
+      "referenceSpeed": "Referans hız",
+      "limitingSpeed": "Limit hız",
+      "mass": "Ağırlık",
+      "performanceClass": "SKF performans sınıfı"
     },
+    "datasheetSource": "Yük sayıları, hızlar ve ağırlık: SKF teknik föyü.",
+    "datasheetLink": "skf.com'da tam teknik föy",
     "industriesHeading": "Kullanıldığı sektörler",
     "relatedHeading": "İlgili ürünler",
     "metaTitle": "{designation} {brand} rulman – {d}×{D}×{B} mm",

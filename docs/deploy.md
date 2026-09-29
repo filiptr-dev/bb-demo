@@ -19,8 +19,10 @@ database on Supabase. First-time setup, in this order:
 5. Optional, for Vercel preview deployments (their URLs change per branch): Render → service → Environment →
    add `CORS_ALLOWED_ORIGIN_REGEX` = `https://bb-demo-[a-z0-9-]+\.vercel\.app` (use the project's real prefix).
 
-`APP_ENV`, `LOG_LEVEL` come from `render.yaml`. Later phases add `REVALIDATE_SECRET`, `FRONTEND_REVALIDATE_URL`
-(phase 7) and `GEMINI_API_KEY`, `GEMINI_MODEL`, `GEMINI_FALLBACK_MODEL` (phase 9).
+`APP_ENV`, `LOG_LEVEL` come from `render.yaml`. Optional, both or neither: `FRONTEND_REVALIDATE_URL`
+(`https://<vercel domain>/api/revalidate`) and `REVALIDATE_SECRET` (the same value as Vercel's), so a data change
+made through the API refreshes the site's cached pages at once. Phase 9 adds `GEMINI_API_KEY`, `GEMINI_MODEL`,
+`GEMINI_FALLBACK_MODEL`.
 
 CD: `autoDeployTrigger: checksPass` deploys each backend commit on `main` once `backend.yml` is green. A failed
 migration or health check fails the deploy and the previous version keeps serving.
@@ -48,7 +50,32 @@ a working deployment.
 Once the site works on the API, delete `DATABASE_URL` and `DATABASE_POOL_URL` from Vercel: the site no longer
 talks to the database.
 
+## 4. Data jobs (catalog import, SKF technical data)
+
+They run from your machine, in `backend/`, against whatever `DATABASE_URL` is in the environment (without it,
+`backend/.env` = the local compose DB). For production, use the same session pooler string as Render:
+
+```sh
+export DATABASE_URL='postgresql://postgres.<ref>:<password>@aws-1-eu-west-1.pooler.supabase.com:5432/postgres'
+export FRONTEND_REVALIDATE_URL=https://<vercel domain>/api/revalidate REVALIDATE_SECRET=<Vercel's value>
+
+uv run python -m app.cli products-import --dry   # scrape bearingworld + our seed list, print stats only
+uv run python -m app.cli products-import         # upsert; rows no longer in the catalog are deleted
+uv run python -m app.cli specs-scrape            # SKF data sheets for our stocked products, 1 request/s
+uv run python -m app.cli specs-scrape --all      # the whole catalog (~15k requests, ~4–5 h; resumable)
+uv run python -m app.cli specs-scrape 6205 '22212 EK' # just these, re-fetched
+```
+
+Each job only asks for what's missing (`--max-age-days 90` also refreshes old data), so a stopped run resumes
+where it was. With the two revalidate variables set, the site's cached product pages refresh when a job changed
+something; otherwise they refresh within an hour on their own.
+
+**Supabase only, once after the deploy that creates a new table** (`specs` in phase 7): Supabase exposes every
+table in `public` through its REST API with the anon role. Supabase → Table Editor → the table → **Enable RLS**
+(no policies needed: the API connects as `postgres`, which bypasses RLS). This is dashboard-only on purpose: the
+migrations stay Supabase-free.
+
 ## Moving off Supabase later
 
 New Postgres → set `DATABASE_URL` on Render → deploy. `alembic upgrade head` creates everything on the empty
-database; then load the catalog (`npm run db:import` in `frontend/` until phase 7 ports the importer).
+database; then load the data with the jobs above (`products-import`, then `specs-scrape`).

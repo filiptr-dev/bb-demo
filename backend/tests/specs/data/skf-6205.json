@@ -1,0 +1,502 @@
+{
+ "stats": {
+  "totalHits": 1,
+  "searchEngineTimeInMillis": 34,
+  "searchEngineRoundTripTimeInMillis": 37,
+  "searchProcessingTimeInMillis": 38,
+  "totalHitsRelation": "EQUAL_TO"
+ },
+ "query": null,
+ "documentList": {
+  "id": "documents",
+  "displayName": "Documents",
+  "numberOfHits": 1,
+  "documents": [
+   {
+    "_id": "pim_products-v2_6205_metric_en",
+    "_index": "2026-04-21-2110_external_pim_products_en",
+    "additionalphoto_url": [
+     "https://cdn.skfmediahub.skf.com/api/public/0901d196807ff28b/png_highpreview/0901d196807ff28b_png_highpreview.png"
+    ],
+    "buyable": true,
+    "category": "Deep groove ball bearings",
+    "contentstack_page_relations": [],
+    "contentstack_taxonomy": {
+     "path": "/products/rolling-bearings/ball-bearings/deep-groove-ball-bearings",
+     "uid": "blt634a650a928c34a2"
+    },
+    "designation": "6205",
+    "feature_flag": {
+     "has_pdp_on_skfdotcom": true,
+     "opc": true,
+     "remanufactureable": false,
+     "skf_explorer": false
+    },
+    "mount_references": [
+     {
+      "designation": "TMMD 100",
+      "type": "Recommended tool"
+     }
+    ],
+    "mount_tab_available_live": true,
+    "mount_tab_available_staging": true,
+    "photo_url": "https://cdn.skfmediahub.skf.com/api/public/0901d196807ff28b/png_highpreview/0901d196807ff28b_png_highpreview.png",
+    "remanufacturable": false,
+    "short_description": "Deep groove ball bearing",
+    "structure_group_id": "BB1_001_101",
+    "technical_data": [
+     {
+      "name": "Dimensions",
+      "name_en": "Dimensions",
+      "rows": [
+       {
+        "id": "PIM001",
+        "name": "Bore diameter",
+        "unit": "mm",
+        "value": 25.0
+       },
+       {
+        "id": "PIM008",
+        "name": "Outside diameter",
+        "unit": "mm",
+        "value": 52.0
+       },
+       {
+        "id": "PIM017",
+        "name": "Width",
+        "unit": "mm",
+        "value": 15.0
+       }
+      ]
+     },
+     {
+      "name": "Performance",
+      "name_en": "Performance",
+      "rows": [
+       {
+        "id": "PIM003",
+        "name": "Basic dynamic load rating",
+        "unit": "kN",
+        "value": 14.8
+       },
+       {
+        "id": "PIM004",
+        "name": "Basic static load rating",
+        "unit": "kN",
+        "value": 7.8
+       },
+       {
+        "id": "PIM006",
+        "name": "Reference speed",
+        "unit": "r/min",
+        "value": 28000.0
+       },
+       {
+        "id": "PIM005",
+        "name": "Limiting speed",
+        "unit": "r/min",
+        "value": 18000.0
+       },
+       {
+        "id": "PIM131",
+        "name": "SKF performance class",
+        "value": "SKF Explorer"
+       }
+      ]
+     },
+     {
+      "name": "Properties",
+      "name_en": "Properties",
+      "rows": [
+       {
+        "id": "PIM077",
+        "name": "Filling slots",
+        "value": "Without"
+       },
+       {
+        "id": "PIM013",
+        "name": "Number of rows",
+        "value": "1"
+       },
+       {
+        "id": "PIM011",
+        "name": "Locating feature, bearing outer ring",
+        "value": "Without"
+       },
+       {
+        "id": "PIM009",
+        "name": "Bore type",
+        "value": "Cylindrical"
+       },
+       {
+        "id": "PIM010",
+        "name": "Cage",
+        "value": "Sheet metal"
+       },
+       {
+        "id": "PIM026",
+        "name": "Matched arrangement",
+        "value": "No"
+       },
+       {
+        "id": "PIM014",
+        "name": "Radial internal clearance",
+        "value": "CN"
+       },
+       {
+        "id": "PIM127",
+        "name": "Material, bearing",
+        "value": "Bearing steel"
+       },
+       {
+        "id": "PIM126",
+        "name": "Coating",
+        "value": "Without"
+       },
+       {
+        "id": "PIM007",
+        "name": "Sealing",
+        "value": "Without"
+       },
+       {
+        "id": "PIM012",
+        "name": "Lubricant",
+        "value": "None"
+       },
+       {
+        "id": "PIM015",
+        "name": "Relubrication feature",
+        "value": "Without"
+       },
+       {
+        "id": "FR_CO2_MANUFACTURE",
+        "name": "Indicative carbon footprint for new product",
+        "unit": "kg CO<sub>2</sub>e",
+        "value": 0.46
+       }
+      ]
+     },
+     {
+      "name": "Logistics",
+      "name_en": "Logistics",
+      "rows": [
+       {
+        "id": "FR_PRODUCT_NET_WEIGHT",
+        "name": "Product net weight",
+        "unit": "kg",
+        "value": 0.125
+       },
+       {
+        "id": "FR_ECLASS_CODE",
+        "name": "eClass code",
+        "value": "23-05-08-01"
+       },
+       {
+        "id": "FR_UNSPSC_CODE",
+        "name": "UNSPSC code",
+        "value": "31171504"
+       }
+      ]
+     }
+    ],
+    "technical_specification": [
+     {
+      "category": "Dimensions",
+      "illustrations": [
+       "https://cdn.skfmediahub.skf.com/api/public/0901d19680398aff/svg_preview/0901d19680398aff_svg_preview.svg"
+      ],
+      "tables": [
+       {
+        "features": [
+         {
+          "data_type": "Floating point",
+          "description": "d",
+          "name": "Bore diameter",
+          "real_value": 25,
+          "rendering_type": "DEFAULT",
+          "unit": "mm"
+         },
+         {
+          "data_type": "Range",
+          "description": "t<sub>Δdmp</sub>",
+          "name": "Deviation limits of mid-range bore diameter",
+          "range_value": {
+           "max": 0,
+           "min": -0.008
+          },
+          "rendering_type": "DEFAULT",
+          "unit": "mm"
+         },
+         {
+          "data_type": "Floating point",
+          "description": "D",
+          "name": "Outside diameter",
+          "real_value": 52,
+          "rendering_type": "DEFAULT",
+          "unit": "mm"
+         },
+         {
+          "data_type": "Range",
+          "description": "t<sub>ΔDmp</sub>",
+          "name": "Deviation limits of mid-range outside diameter",
+          "range_value": {
+           "max": 0,
+           "min": -0.011
+          },
+          "rendering_type": "DEFAULT",
+          "unit": "mm"
+         },
+         {
+          "data_type": "Floating point",
+          "description": "B",
+          "name": "Width",
+          "real_value": 15,
+          "rendering_type": "DEFAULT",
+          "unit": "mm"
+         },
+         {
+          "data_type": "Range",
+          "description": "t<sub>ΔBs</sub>",
+          "name": "Deviation limits of ring width",
+          "range_value": {
+           "max": 0,
+           "min": -0.06
+          },
+          "rendering_type": "DEFAULT",
+          "unit": "mm"
+         },
+         {
+          "data_type": "Floating point",
+          "description": "d<sub>1</sub>",
+          "name": "Shoulder diameter",
+          "qualifier": "≈",
+          "real_value": 34.35,
+          "rendering_type": "DEFAULT",
+          "unit": "mm"
+         },
+         {
+          "data_type": "Floating point",
+          "description": "D<sub>2</sub>",
+          "name": "Recess diameter",
+          "qualifier": "≈",
+          "real_value": 46.21,
+          "rendering_type": "DEFAULT",
+          "unit": "mm"
+         },
+         {
+          "data_type": "Floating point",
+          "description": "r<sub>1,2</sub>",
+          "name": "Chamfer dimension",
+          "qualifier": "min.",
+          "real_value": 1,
+          "rendering_type": "DEFAULT",
+          "unit": "mm"
+         },
+         {
+          "data_type": "Character string",
+          "name": "ISO tolerance class for dimensions",
+          "rendering_type": "DEFAULT",
+          "string_values": [
+           "P6 and tighter width tolerance"
+          ]
+         }
+        ],
+        "subcategory": ""
+       }
+      ],
+      "type": "PDP04A"
+     },
+     {
+      "category": "Abutment dimensions",
+      "illustrations": [
+       "https://cdn.skfmediahub.skf.com/api/public/0901d19680398b31/svg_preview/0901d19680398b31_svg_preview.svg"
+      ],
+      "tables": [
+       {
+        "features": [
+         {
+          "data_type": "Floating point",
+          "description": "d<sub>a</sub>",
+          "name": "Diameter of shaft abutment",
+          "qualifier": "min.",
+          "real_value": 30.6,
+          "rendering_type": "DEFAULT",
+          "unit": "mm"
+         },
+         {
+          "data_type": "Floating point",
+          "description": "D<sub>a</sub>",
+          "name": "Diameter of housing abutment",
+          "qualifier": "max.",
+          "real_value": 46.4,
+          "rendering_type": "DEFAULT",
+          "unit": "mm"
+         },
+         {
+          "data_type": "Floating point",
+          "description": "r<sub>a</sub>",
+          "name": "Radius of shaft or housing fillet",
+          "qualifier": "max.",
+          "real_value": 1,
+          "rendering_type": "DEFAULT",
+          "unit": "mm"
+         }
+        ],
+        "subcategory": ""
+       }
+      ],
+      "type": "PDP04A"
+     },
+     {
+      "category": "Calculation data",
+      "tables": [
+       {
+        "features": [
+         {
+          "data_type": "Character string",
+          "name": "SKF performance class",
+          "rendering_type": "DEFAULT",
+          "string_values": [
+           "SKF Explorer"
+          ]
+         },
+         {
+          "data_type": "Floating point",
+          "name": "Basic dynamic load rating",
+          "real_value": 14.8,
+          "rendering_type": "DEFAULT",
+          "symbol": "C",
+          "unit": "kN"
+         },
+         {
+          "data_type": "Floating point",
+          "name": "Basic static load rating",
+          "real_value": 7.8,
+          "rendering_type": "DEFAULT",
+          "symbol": "C<sub>0</sub>",
+          "unit": "kN"
+         },
+         {
+          "data_type": "Floating point",
+          "name": "Fatigue load limit",
+          "real_value": 0.335,
+          "rendering_type": "DEFAULT",
+          "symbol": "P<sub>u</sub>",
+          "unit": "kN"
+         },
+         {
+          "data_type": "Floating point",
+          "name": "Reference speed",
+          "real_value": 28000,
+          "rendering_type": "DEFAULT",
+          "unit": "r/min"
+         },
+         {
+          "data_type": "Floating point",
+          "name": "Limiting speed",
+          "real_value": 18000,
+          "rendering_type": "DEFAULT",
+          "unit": "r/min"
+         },
+         {
+          "data_type": "Floating point",
+          "name": "Minimum load factor",
+          "real_value": 0.03,
+          "rendering_type": "DEFAULT",
+          "symbol": "k<sub>r</sub>"
+         },
+         {
+          "data_type": "Floating point",
+          "name": "Calculation factor",
+          "real_value": 14,
+          "rendering_type": "DEFAULT",
+          "symbol": "f<sub>0</sub>"
+         }
+        ],
+        "subcategory": ""
+       }
+      ],
+      "type": "PDP04B"
+     },
+     {
+      "category": "Tolerances of run-out",
+      "tables": [
+       {
+        "features": [
+         {
+          "data_type": "Floating point",
+          "name": "Range of section height at inner ring of assembled bearing",
+          "real_value": 4,
+          "rendering_type": "DEFAULT",
+          "symbol": "t<sub>Kia</sub>",
+          "unit": "µm"
+         },
+         {
+          "data_type": "Floating point",
+          "name": "Maximum run-out of inner ring side face to the bore",
+          "real_value": 8,
+          "rendering_type": "DEFAULT",
+          "symbol": "t<sub>Sd</sub>",
+          "unit": "µm"
+         },
+         {
+          "data_type": "Floating point",
+          "name": "Maximum axial run-out of inner ring of assembled bearing",
+          "real_value": 8,
+          "rendering_type": "DEFAULT",
+          "symbol": "t<sub>Sia</sub>",
+          "unit": "µm"
+         },
+         {
+          "data_type": "Floating point",
+          "name": "Range of section height at outer ring of assembled bearing",
+          "real_value": 8,
+          "rendering_type": "DEFAULT",
+          "symbol": "t<sub>Kea</sub>",
+          "unit": "µm"
+         },
+         {
+          "data_type": "Floating point",
+          "name": "Perpendicularity of outer ring outside surface",
+          "real_value": 4,
+          "rendering_type": "DEFAULT",
+          "symbol": "t<sub>SD</sub>",
+          "unit": "µm"
+         },
+         {
+          "data_type": "Floating point",
+          "name": "Maximum axial run-out of outer ring of assembled bearing",
+          "real_value": 10,
+          "rendering_type": "DEFAULT",
+          "symbol": "t<sub>Sea</sub>",
+          "unit": "µm"
+         },
+         {
+          "data_type": "Character string",
+          "name": "ISO tolerance class for geometrical tolerances",
+          "rendering_type": "DEFAULT",
+          "string_values": [
+           "P5"
+          ]
+         }
+        ],
+        "subcategory": ""
+       }
+      ],
+      "type": "PDP04B"
+     }
+    ],
+    "z11": "BB1",
+    "z12": "BC",
+    "z14": "C"
+   }
+  ],
+  "pagination": null,
+  "sortOptions": []
+ },
+ "facets": [],
+ "spell": null,
+ "quicklinks": null,
+ "feedback": null,
+ "errorMessages": []
+}

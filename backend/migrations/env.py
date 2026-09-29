@@ -10,7 +10,9 @@ from alembic import context
 from sqlalchemy.engine import Connection
 from sqlalchemy.ext.asyncio import create_async_engine
 
-import app.modules.products.models  # noqa: F401  (every module's models, so autogenerate sees their tables)
+# Every module's models, so autogenerate sees their tables.
+import app.modules.products.models
+import app.modules.specs.models  # noqa: F401
 from app.core.db import Base
 from app.core.settings import get_settings, psycopg_url
 

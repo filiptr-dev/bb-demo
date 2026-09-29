@@ -6,7 +6,7 @@ import { alternatesFor, notFoundMetadata } from "@/i18n/metadata";
 import type { Locale } from "@/i18n/routing";
 import { site } from "@/lib/site";
 import { dim, dims } from "@/lib/domain/product";
-import { getProduct, relatedProducts } from "@/lib/api/products";
+import { getProduct, getProductSpecs, relatedProducts } from "@/lib/api/products";
 import ProductTypeImage from "@/components/product/ProductTypeImage";
 import ProductCard from "@/components/product/ProductCard";
 import AddToQuoteButton from "@/components/quote/AddToQuoteButton";
@@ -45,7 +45,8 @@ export default async function ProductPage({ params }: PageProps<"/[locale]/catal
   const typeName = tt(`${p.type}.name`);
   const hasDims = p.d != null || p.D != null || p.B != null;
   const description = hasDims ? `${tt(`${p.type}.blurb`)} ${ta("dimensionsLabel")} ${dims(p)} mm.` : tt(`${p.type}.blurb`);
-  const related = await relatedProducts(p);
+  const [related, sheet] = await Promise.all([relatedProducts(p), getProductSpecs(p.slug)]);
+  const num = new Intl.NumberFormat(locale, { maximumFractionDigits: 3 });
 
   const specs: [string, string][] = [
     [t("specs.designation"), p.designation],
@@ -55,6 +56,19 @@ export default async function ProductPage({ params }: PageProps<"/[locale]/catal
       .filter(([, v]) => v != null)
       .map(([k, v]) => [k, `${v} mm`] as [string, string]),
     ...(p.seal ? [[t("specs.seal"), ta(`seal.${p.seal}`)] as [string, string]] : []),
+    ...(
+      [
+        [t("specs.loadDynamic"), sheet?.c, "kN"],
+        [t("specs.loadStatic"), sheet?.c0, "kN"],
+        [t("specs.fatigueLimit"), sheet?.pu, "kN"],
+        [t("specs.referenceSpeed"), sheet?.referenceSpeed, "r/min"],
+        [t("specs.limitingSpeed"), sheet?.limitingSpeed, "r/min"],
+        [t("specs.mass"), sheet?.mass, "kg"],
+      ] as const
+    )
+      .filter(([, v]) => v != null)
+      .map(([k, v, unit]) => [k, `${num.format(v!)} ${unit}`] as [string, string]),
+    ...(sheet?.performanceClass ? [[t("specs.performanceClass"), sheet.performanceClass] as [string, string]] : []),
   ];
   const url = (path: string) => site.url + getPathname({ href: path, locale: locale as Locale });
 
@@ -68,9 +82,18 @@ export default async function ProductPage({ params }: PageProps<"/[locale]/catal
       brand: { "@type": "Brand", name: p.brand },
       category: tt(`${p.type}.short`),
       description,
-      additionalProperty: ([["Bore diameter", p.d], ["Outside diameter", p.D], ["Width", p.B]] as const)
+      additionalProperty: (
+        [
+          ["Bore diameter", p.d, "MMT"],
+          ["Outside diameter", p.D, "MMT"],
+          ["Width", p.B, "MMT"],
+          ["Basic dynamic load rating", sheet?.c, "KN"],
+          ["Basic static load rating", sheet?.c0, "KN"],
+        ] as const
+      )
         .filter(([, value]) => value != null)
-        .map(([name, value]) => ({ "@type": "PropertyValue", name, value, unitCode: "MMT" })),
+        .map(([name, value, unitCode]) => ({ "@type": "PropertyValue", name, value, unitCode })),
+      ...(sheet?.mass != null ? { weight: { "@type": "QuantitativeValue", value: sheet.mass, unitCode: "KGM" } } : {}),
     },
     {
       "@context": "https://schema.org",
@@ -110,6 +133,16 @@ export default async function ProductPage({ params }: PageProps<"/[locale]/catal
               ))}
             </tbody>
           </table>
+          {sheet && (
+            <p className="mt-2 max-w-2xl text-xs text-foreground/45">
+              {t("datasheetSource")}{" "}
+              {sheet.sourceUrl && (
+                <a href={sheet.sourceUrl} target="_blank" rel="noopener" className="underline underline-offset-2 hover:text-brand-2">
+                  {t("datasheetLink")}
+                </a>
+              )}
+            </p>
+          )}
 
           <h2 className="mt-10 font-display text-xl font-bold">{t("industriesHeading")}</h2>
           <div className="mt-3 flex flex-wrap gap-2">

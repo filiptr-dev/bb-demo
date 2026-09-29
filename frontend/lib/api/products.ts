@@ -3,6 +3,9 @@ import { cache } from "react";
 import { connection } from "next/server";
 import { api, apiConfigured, apiFetch, ApiRequestError } from "./client";
 import type { Product } from "@/lib/domain/product";
+import type { components } from "./schema";
+
+export type ProductSpecs = components["schemas"]["ProductSpecs"];
 
 // Page data for server components. Every response is cached (ISR) and tagged "products", plus "product:<slug>" for a
 // detail page, so POST /api/revalidate can refresh it when the catalog changes.
@@ -29,6 +32,17 @@ export const getProduct = cache(async (slug: string): Promise<Product | undefine
   });
   if (response.status === 404) return undefined;
   return required(data, response, "/products/{slug}");
+});
+
+// SKF technical data (load ratings, speeds, weight); undefined when the product has none yet
+export const getProductSpecs = cache(async (slug: string): Promise<ProductSpecs | undefined> => {
+  await whenApi();
+  const { data, response } = await api.GET("/api/v1/products/{slug}/specs", {
+    params: { path: { slug } },
+    fetch: cached(HOUR, `product:${slug}`),
+  });
+  if (response.status === 404) return undefined;
+  return required(data, response, "/products/{slug}/specs");
 });
 
 // same type, closest bore first

@@ -8,7 +8,7 @@ from app.core.db import Base
 
 
 class Product(Base):
-    """One catalog row. Filled by the importer (frontend/scripts/import-products.mts until phase 7)."""
+    """One catalog row. Filled by the importer (`python -m app.cli products-import`)."""
 
     __tablename__ = "products"
     __table_args__ = (

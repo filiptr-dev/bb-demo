@@ -161,10 +161,70 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v1/products/{slug}/specs": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Product Specs
+         * @description SKF technical data: load ratings, speeds, mass, calculation factors and the full data sheet.
+         *     404 `specs_not_found` when the product has none: link to `https://www.skf.com` instead of guessing values.
+         */
+        get: operations["product_specs_api_v1_products__slug__specs_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
 }
 export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
+        /** DatasheetRow */
+        DatasheetRow: {
+            /**
+             * Name
+             * @description SKF's name for the value, e.g. 'Shoulder diameter' (English)
+             */
+            name: string;
+            /**
+             * Symbol
+             * @description Plain-text symbol, e.g. 'd1', 'C0', 'kr'
+             */
+            symbol?: string | null;
+            /** Value */
+            value?: number | string | null;
+            /**
+             * Min
+             * @description For a range, e.g. a tolerance
+             */
+            min?: number | null;
+            /** Max */
+            max?: number | null;
+            /** Unit */
+            unit?: string | null;
+            /**
+             * Qualifier
+             * @description '≈' for approximate values
+             */
+            qualifier?: string | null;
+        };
+        /** DatasheetSection */
+        DatasheetSection: {
+            /**
+             * Title
+             * @description e.g. 'Dimensions', 'Abutment dimensions', 'Calculation data', 'Properties'
+             */
+            title: string;
+            /** Rows */
+            rows: components["schemas"]["DatasheetRow"][];
+        };
         /** FieldError */
         FieldError: {
             /** Field */
@@ -262,6 +322,68 @@ export interface components {
         ProductList: {
             /** Data */
             data: components["schemas"]["Product"][];
+        };
+        /**
+         * ProductSpecs
+         * @description SKF technical data for a product. Loads in kN, speeds in r/min, mass in kg.
+         */
+        ProductSpecs: {
+            /** Slug */
+            slug: string;
+            /**
+             * C
+             * @description Basic dynamic load rating C, kN
+             */
+            c: number | null;
+            /**
+             * C0
+             * @description Basic static load rating C0, kN
+             */
+            c0: number | null;
+            /**
+             * Pu
+             * @description Fatigue load limit Pu, kN
+             */
+            pu: number | null;
+            /**
+             * Referencespeed
+             * @description r/min
+             */
+            referenceSpeed: number | null;
+            /**
+             * Limitingspeed
+             * @description r/min
+             */
+            limitingSpeed: number | null;
+            /**
+             * Mass
+             * @description kg
+             */
+            mass: number | null;
+            /**
+             * Performanceclass
+             * @description e.g. 'SKF Explorer'
+             */
+            performanceClass: string | null;
+            /**
+             * Factors
+             * @description Calculation factors by symbol: kr, f0, e, Y, Y0, Y1, Y2, ...
+             */
+            factors: {
+                [key: string]: number;
+            };
+            /** Datasheet */
+            datasheet: components["schemas"]["DatasheetSection"][];
+            /**
+             * Sourceurl
+             * @description The product's page on skf.com
+             */
+            sourceUrl: string | null;
+            /**
+             * Fetchedat
+             * Format: date-time
+             */
+            fetchedAt: string;
         };
         /** ProductStats */
         ProductStats: {
@@ -711,6 +833,58 @@ export interface operations {
                 };
             };
             /** @description Not found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/problem+json": unknown;
+                    "application/json": components["schemas"]["Problem"];
+                };
+            };
+            /** @description Invalid request */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/problem+json": unknown;
+                    "application/json": components["schemas"]["Problem"];
+                };
+            };
+            /** @description Server error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/problem+json": unknown;
+                    "application/json": components["schemas"]["Problem"];
+                };
+            };
+        };
+    };
+    product_specs_api_v1_products__slug__specs_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                slug: string;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["ProductSpecs"];
+                };
+            };
+            /** @description No technical data for this product (yet) */
             404: {
                 headers: {
                     [name: string]: unknown;

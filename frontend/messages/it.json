@@ -603,8 +603,17 @@
       "dInner": "Diametro foro (d)",
       "dOuter": "Diametro esterno (D)",
       "width": "Larghezza (B)",
-      "seal": "Tenuta"
+      "seal": "Tenuta",
+      "loadDynamic": "Coefficiente di carico dinamico (C)",
+      "loadStatic": "Coefficiente di carico statico (C₀)",
+      "fatigueLimit": "Carico limite di fatica (Pᵤ)",
+      "referenceSpeed": "Velocità di riferimento",
+      "limitingSpeed": "Velocità limite",
+      "mass": "Peso",
+      "performanceClass": "Classe di prestazione SKF"
     },
+    "datasheetSource": "Coefficienti di carico, velocità e peso: scheda tecnica SKF.",
+    "datasheetLink": "Scheda tecnica completa su skf.com",
     "industriesHeading": "Impiegato nei settori",
     "relatedHeading": "Prodotti correlati",
     "metaTitle": "Cuscinetto {designation} {brand} – {d}×{D}×{B} mm",

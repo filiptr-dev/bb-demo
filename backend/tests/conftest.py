@@ -1,10 +1,16 @@
+import gzip
 import os
 from collections.abc import Iterator
+from pathlib import Path
 from typing import Any
 
+import psycopg
 import pytest
+from alembic import command
+from alembic.config import Config
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
+from sqlalchemy import make_url
 
 from app.core.settings import Settings
 from app.main import create_app
@@ -13,6 +19,7 @@ from app.main import create_app
 TEST_DATABASE_URL = os.environ.get("TEST_DATABASE_URL", "postgresql://postgres:postgres@localhost:5433/bbunikoop")
 
 ORIGIN = "http://localhost:3000"
+BACKEND = Path(__file__).resolve().parent.parent
 
 
 def make_settings(**overrides: Any) -> Settings:
@@ -35,4 +42,62 @@ def app() -> FastAPI:
 def client(app: FastAPI) -> Iterator[TestClient]:
     # raise_server_exceptions=False: assert on the 500 problem response instead of the exception
     with TestClient(app, raise_server_exceptions=False) as c:
+        yield c
+
+
+@pytest.fixture
+def scratch_db() -> Iterator[str]:
+    """A fresh, empty database for one test, dropped afterwards."""
+    url = make_url(TEST_DATABASE_URL)
+    name = f"{url.database}_migrations"
+    with psycopg.connect(TEST_DATABASE_URL, autocommit=True) as admin:
+        admin.execute(f'drop database if exists "{name}" with (force)')
+        admin.execute(f'create database "{name}"')
+    try:
+        yield url.set(database=name).render_as_string(hide_password=False)
+    finally:
+        with psycopg.connect(TEST_DATABASE_URL, autocommit=True) as admin:
+            admin.execute(f'drop database if exists "{name}" with (force)')
+
+
+def alembic_config(url: str) -> Config:
+    cfg = Config(BACKEND / "alembic.ini")
+    cfg.attributes["database_url"] = url
+    cfg.attributes["configure_logger"] = False  # keep pytest's logging setup
+    return cfg
+
+
+CATALOG_DATA = Path(__file__).parent / "products" / "data"
+COLUMNS = (
+    "slug, designation, brand, type, classification, bore_type, seal, sealing, d, outer_d, width, industries, source, "
+    "updated_at"
+)
+
+
+@pytest.fixture(scope="session")
+def catalog_db() -> Iterator[str]:
+    """A database with the real catalog: data/products.csv.gz is the 15,420 rows the golden files were recorded on
+    (frontend importer, 2026-09-29). Created once per test run, next to the test database."""
+    url = make_url(TEST_DATABASE_URL)
+    name = f"{url.database}_catalog"
+    with psycopg.connect(TEST_DATABASE_URL, autocommit=True) as admin:
+        admin.execute(f'drop database if exists "{name}" with (force)')
+        admin.execute(f'create database "{name}"')
+    db_url = url.set(database=name).render_as_string(hide_password=False)
+    try:
+        command.upgrade(alembic_config(db_url), "head")
+        with (
+            psycopg.connect(db_url) as conn,
+            conn.cursor().copy(f"copy products ({COLUMNS}) from stdin with (format csv, header)") as copy,
+        ):
+            copy.write(gzip.decompress((CATALOG_DATA / "products.csv.gz").read_bytes()))
+        yield db_url
+    finally:
+        with psycopg.connect(TEST_DATABASE_URL, autocommit=True) as admin:
+            admin.execute(f'drop database if exists "{name}" with (force)')
+
+
+@pytest.fixture(scope="session")
+def catalog(catalog_db: str) -> Iterator[TestClient]:
+    with TestClient(create_app(make_settings(database_url=catalog_db)), raise_server_exceptions=False) as c:
         yield c

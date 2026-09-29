@@ -11,6 +11,3 @@ export type Product = components["schemas"]["Product"];
 
 export const dim = (v: number | null) => (v == null ? "–" : String(v));
 export const dims = (p: Pick<Product, "d" | "D" | "B">) => `${dim(p.d)} × ${dim(p.D)} × ${dim(p.B)}`;
-
-export const slugify = (s: string) =>
-  s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");

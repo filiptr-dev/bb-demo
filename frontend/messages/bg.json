@@ -603,8 +603,17 @@
       "dInner": "Диаметър на отвора (d)",
       "dOuter": "Външен диаметър (D)",
       "width": "Ширина (B)",
-      "seal": "Уплътнение"
+      "seal": "Уплътнение",
+      "loadDynamic": "Динамична товароносимост (C)",
+      "loadStatic": "Статична товароносимост (C₀)",
+      "fatigueLimit": "Граница на натоварване при умора (Pᵤ)",
+      "referenceSpeed": "Референтна скорост",
+      "limitingSpeed": "Гранична скорост",
+      "mass": "Маса",
+      "performanceClass": "Клас на производителност SKF"
     },
+    "datasheetSource": "Товароносимост, скорости и маса: технически лист на SKF.",
+    "datasheetLink": "Пълен технически лист на skf.com",
     "industriesHeading": "Приложение в индустрии",
     "relatedHeading": "Свързани продукти",
     "metaTitle": "Лагер {designation} {brand} – {d}×{D}×{B} mm",
