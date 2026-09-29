@@ -46,8 +46,10 @@ Project → Settings → Environment Variables, for **Production and Preview**:
 | `REVALIDATE_SECRET` | a long random string (`openssl rand -hex 32`); the API gets the same one in phase 7 |
 
 `NEXT_PUBLIC_*` values are baked in at build time: redeploy after changing them. Every build first waits up to
-90 s for the API to wake (`scripts/wake-api.mjs`) and fails if it doesn't answer, so a broken API never replaces
-a working deployment.
+90 s for the API to wake (`scripts/wake-api.mjs`), then up to 15 min until the live API lists every path in
+`lib/api/schema.d.ts`: a push that changes both parts reaches Vercel at once but Render only after the backend
+checks, and pages must not prerender against the old API. Either wait failing fails the build, so a broken API
+never replaces a working deployment.
 
 Once the site works on the API, delete `DATABASE_URL` and `DATABASE_POOL_URL` from Vercel: the site no longer
 talks to the database.
