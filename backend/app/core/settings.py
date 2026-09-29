@@ -5,6 +5,14 @@ from pydantic import Field, field_validator
 from pydantic_settings import BaseSettings, NoDecode, SettingsConfigDict
 
 
+def psycopg_url(url: str) -> str:
+    """Hosts hand out postgres:// or postgresql:// URLs; SQLAlchemy needs the driver named (psycopg)."""
+    for prefix in ("postgres://", "postgresql://"):
+        if url.startswith(prefix):
+            return "postgresql+psycopg://" + url.removeprefix(prefix)
+    return url
+
+
 class Settings(BaseSettings):
     """Every environment variable the API reads. Validated once at startup, so a bad deploy fails fast."""
 
@@ -25,11 +33,7 @@ class Settings(BaseSettings):
     @field_validator("database_url")
     @classmethod
     def _use_psycopg(cls, url: str) -> str:
-        """Hosts hand out postgres:// or postgresql:// URLs; SQLAlchemy needs the driver named (psycopg)."""
-        for prefix in ("postgres://", "postgresql://"):
-            if url.startswith(prefix):
-                return "postgresql+psycopg://" + url.removeprefix(prefix)
-        return url
+        return psycopg_url(url)
 
     @field_validator("cors_allowed_origins", mode="before")
     @classmethod

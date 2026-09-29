@@ -10,6 +10,8 @@ The B&B Unikoop API. It owns the database and all business logic. The frontend o
 | Database for dev + tests | `docker compose up -d db` (from the repo root; Postgres 17 on localhost:5433) |
 | Dev server | `uv run uvicorn app.main:create_app --factory --reload` → http://localhost:8000/docs |
 | Tests | `uv run pytest` (needs the compose db, or `TEST_DATABASE_URL`) |
+| Migrate the DB | `uv run alembic upgrade head` (uses `DATABASE_URL`) |
+| New migration | `uv run alembic revision --autogenerate -m "add specs" --rev-id 0002` (next number; review it before committing) |
 | Lint + format | `uv run ruff check . && uv run ruff format .` |
 | Types | `uv run mypy .` (strict) |
 | Add a dependency | `uv add <pkg>` / `uv add --dev <pkg>` (never edit uv.lock by hand) |
@@ -21,14 +23,15 @@ CI (`.github/workflows/backend.yml`) runs format check, ruff, mypy, pytest and a
 - `app/main.py`: `create_app()` factory: middleware, CORS, error handlers, and every module router under `/api/v1`.
 - `app/core/`: shared infrastructure.
   - `settings.py`: every env var, typed.
-  - `db.py`: engine, session dependency.
+  - `db.py`: engine, session dependency, `Base` for models.
   - `errors.py`: `ApiError` → RFC 9457 problem+json.
   - `pagination.py`: `Page[T]` envelope + `Paging` params.
   - `schemas.py`: `ApiModel` base.
+- `migrations/`: Alembic. `env.py` takes the URL from the app settings and the tables from `Base.metadata` (`app/core/db.py`). Revisions are numbered `0001_baseline.py`, `0002_...`.
 - `app/modules/<name>/`, one folder per feature:
   - `router.py`: thin. Validated input in → service → response schema out.
   - `schemas.py`: Pydantic request/response models, subclass `ApiModel` (camelCase JSON). These are the public contract.
-  - `models.py`: SQLAlchemy models.
+  - `models.py`: SQLAlchemy models, subclass `Base` from `app/core/db.py`. Import them in `migrations/env.py` so autogenerate sees them.
   - `repository.py`: a `Protocol` + the Postgres implementation. **The only place with SQL.**
   - `service.py`: business rules. The module's public API.
   - `deps.py`: `Depends` wiring session → repository → service. Tests override it with `app.dependency_overrides`.

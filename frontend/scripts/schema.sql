@@ -1,4 +1,6 @@
 -- Product catalog. Filled by scripts/import-products.mts (idempotent: safe to re-run).
+-- The schema's source of truth is now the Alembic baseline (backend/migrations/versions/0001_baseline.py).
+-- This file only stays until the importer moves to the backend (architecture plan, phase 7): keep the two in sync.
 create extension if not exists pg_trgm;
 
 -- "6205" < "6210" < "62010" when ordering designations

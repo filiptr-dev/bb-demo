@@ -1,6 +1,6 @@
 # B&B Unikoop: architecture and migration plan
 
-Status: **in progress** (started 2026-09-29). Phase 1 (monorepo move) and Phase 2 (backend skeleton + CI/CD) are built. Next: Phase 3.
+Status: **in progress** (started 2026-09-29). Phases 1 (monorepo move), 2 (backend skeleton + CI/CD) and 3 (baseline migration) are built. Next: Phase 4.
 
 History: the first version of this plan (2026-09-28) used Laravel. On 2026-09-29 the backend was switched to **Python (FastAPI)**. Nothing had been built yet, so only the plan changed. The goals are the same: a separate API that owns the DB, and nothing Supabase-specific.
 
@@ -207,6 +207,7 @@ modules/assistant/
 - Supabase-only statements (RLS, anon/authenticated grants) are **not** in migrations. They stay on the current Supabase DB and don't exist on your own server.
 - On the existing Supabase DB, mark the baseline as already run: `alembic stamp <baseline>` (one `alembic_version` row). On a fresh Postgres, `alembic upgrade head` creates everything.
 - ✅ Done when: the schema-only `pg_dump` of a fresh local DB and of Supabase `products` match.
+- Built 2026-09-29: `backend/alembic.ini`, async `migrations/env.py` (URL from the settings), `0001_baseline.py`, `Base` with Postgres-default constraint names in `core/db.py`. The schema-only `pg_dump` of a fresh local DB matches Supabase `products` except the two RLS lines, which are left out on purpose. `tests/test_migrations.py` runs upgrade → downgrade → upgrade on a throwaway database, and checks `search_key`, `natural_sort` and the trigram index. The Supabase `alembic stamp 0001` is still to do (it needs your OK). Until Phase 7 the Node importer still applies `frontend/scripts/schema.sql`, which is a no-op on an existing DB.
 
 **Phase 4: Products module + parity**
 - **Before** touching anything, record "golden" JSON from the current `/api/products` and page queries. That's ~30 cases: text search, each filter, dimension ranges, paging, detail, related, industry, sitemap rows, count.

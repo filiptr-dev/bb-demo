@@ -2,10 +2,27 @@ from collections.abc import AsyncIterator
 from typing import Annotated
 
 from fastapi import Depends, Request
-from sqlalchemy import text
+from sqlalchemy import MetaData, text
 from sqlalchemy.ext.asyncio import AsyncEngine, AsyncSession, async_sessionmaker, create_async_engine
+from sqlalchemy.orm import DeclarativeBase
 
 from app.core.settings import Settings
+
+
+class Base(DeclarativeBase):
+    """Every module's models.py subclasses this, so Alembic sees all tables in one metadata.
+    Constraint names follow Postgres' own defaults (products_pkey, ...), so the names autogenerate writes
+    match the ones already on the database."""
+
+    metadata = MetaData(
+        naming_convention={
+            "ix": "%(table_name)s_%(column_0_N_name)s",
+            "uq": "%(table_name)s_%(column_0_N_name)s_key",
+            "ck": "%(table_name)s_%(constraint_name)s_check",
+            "fk": "%(table_name)s_%(column_0_N_name)s_fkey",
+            "pk": "%(table_name)s_pkey",
+        }
+    )
 
 
 def create_engine(settings: Settings) -> AsyncEngine:
