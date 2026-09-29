@@ -2,8 +2,8 @@
 
 Loop: stream a reply; if it called tools, run them (status events), append the results and ask again; at most
 MAX_TOOL_CALLS per turn, then the model must answer without tools. Text passes through the FooterFilter, so the
-confidence footer becomes a `confidence` event. Products and SKF pages the tools returned become `products` and
-`sources` events when the answer mentions them.
+confidence footer becomes a `confidence` event, and then the MarkupFilter (made-up links, LaTeX). Products and SKF
+pages the tools returned become `products` and `sources` events when the answer mentions them.
 """
 
 import re
@@ -23,6 +23,7 @@ from app.modules.assistant.llm.client import (
 )
 from app.modules.assistant.llm.model_chain import ModelChain
 from app.modules.assistant.llm.tools import AssistantTools
+from app.modules.assistant.markup import MarkupFilter
 from app.modules.assistant.schemas import (
     ConfidenceEvent,
     ProductsEvent,
@@ -78,6 +79,7 @@ class Agent:
         result = self.result
         turns: list[Turn] = [*history, UserTurn(message)]
         footer = FooterFilter()
+        markup = MarkupFilter(lambda: set(self.tools.sources))
         text: list[str] = []
         yield StatusEvent(status="thinking")
         while True:
@@ -93,7 +95,7 @@ class Agent:
             end: TurnEnd | None = None
             async for chunk in self.chain.stream(request):
                 if isinstance(chunk, TextDelta):
-                    if out := footer.feed(chunk.text):
+                    if out := markup.feed(footer.feed(chunk.text)):
                         text.append(out)
                         yield TextEvent(text=out)
                 elif isinstance(chunk, ToolCall):
@@ -113,9 +115,9 @@ class Agent:
             turns.append(ToolResults(results))
 
         finished = footer.finish()
-        if finished.text:
-            text.append(finished.text)
-            yield TextEvent(text=finished.text)
+        if rest := markup.finish(finished.text):
+            text.append(rest)
+            yield TextEvent(text=rest)
         result.text = "".join(text).strip()
         if not result.text:
             raise EmptyAnswerError

@@ -264,10 +264,11 @@ modules/assistant/
 - `components/assistant/*`: launcher, panel/dock, presets, streaming markdown, product cards, confidence badge, stop, copy, thumbs.
 - `Assistant` i18n ×10.
 - Real-browser test incl. Macedonian.
+- Built 2026-09-29: `components/assistant/{AssistantLauncher,AssistantPanel,AssistantTurn,AssistantCards,AssistantMarkdown}.tsx`, `hooks/useAssistantChat.ts`, `lib/api/assistant.ts`, `Assistant` ×10. The launcher (bottom right, in `app/[locale]/layout.tsx`) loads the panel on first open; the chat lives in sessionStorage, so it survives a reload and a language switch. Floating or docked on desktop, full screen on phones. Tried in Chrome: the 5 starters, free text in en and mk (rating life, suffix decoding, a 3-product table, buying), stop, thumbs, phone width. Fixes from that test: the empty panel scrolled its heading away, tables wrapped mid-word, and the model's inline LaTeX (`$L_{10}$`) and made-up skf.com links reached the page even though the prompt forbids both, so `assistant/markup.py` now cleans the stream (a link to another site stays only when a tool returned that url). The quote basket was removed at the same time (B&B Unikoop doesn't give quotes online): buying goes through `/contact`, which the product page, the where-to-buy card and the prompt point to.
 
 **Phase 11: later**
 - Admin login and `/admin` product and specs CRUD. Product changes → revalidate.
-- Real quotes and email.
+- Contact form email (the form is still a dummy).
 - Redis, Cloud Run or your own server when traffic needs it.
 
 ## 9. Risks

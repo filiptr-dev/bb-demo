@@ -48,7 +48,7 @@ export default function AssistantPanel({ open, onClose }: { open: boolean; onClo
   const stick = useRef(true);
   useEffect(() => {
     const el = scrollRef.current;
-    if (el && stick.current) el.scrollTop = el.scrollHeight;
+    if (el && stick.current && turns.length > 0) el.scrollTop = el.scrollHeight;
   }, [turns]);
 
   // the textarea grows with its text, up to ~6 lines

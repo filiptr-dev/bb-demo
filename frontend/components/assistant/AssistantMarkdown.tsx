@@ -48,8 +48,8 @@ function components(onNavigate: () => void): Components {
         <table className="w-full border-collapse text-xs">{children}</table>
       </div>
     ),
-    th: ({ children }) => <th className="border-b border-border bg-foreground/[0.04] px-2.5 py-1.5 text-left font-semibold">{children}</th>,
-    td: ({ children }) => <td className="border-b border-border/60 px-2.5 py-1.5 align-top">{children}</td>,
+    th: ({ children }) => <th className="whitespace-nowrap border-b border-border bg-foreground/[0.04] px-2.5 py-1.5 text-left font-semibold [overflow-wrap:normal]">{children}</th>,
+    td: ({ children }) => <td className="whitespace-nowrap border-b border-border/60 px-2.5 py-1.5 align-top [overflow-wrap:normal]">{children}</td>,
     img: () => null, // no remote images from model output
   };
 }

@@ -26,9 +26,9 @@ export default function AssistantLauncher() {
           setOpen(true);
         }}
         aria-label={t("launcherAria")}
-        className="fixed bottom-[4.25rem] right-5 z-50 flex items-center gap-2 rounded-full bg-brand-gradient px-4 py-2.5 text-xs font-semibold text-white shadow-lg transition-transform hover:-translate-y-0.5"
+        className="fixed bottom-[4.5rem] right-6 z-50 flex items-center gap-2.5 rounded-full bg-brand-gradient px-6 py-3.5 text-sm font-semibold text-white shadow-lg transition-transform hover:-translate-y-0.5 sm:right-12"
       >
-        <Sparkles className="size-4" />
+        <Sparkles className="size-5" />
         {t("launcher")}
       </button>
       {loaded && (
