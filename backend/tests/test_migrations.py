@@ -5,6 +5,9 @@ from alembic import command
 
 from tests.conftest import alembic_config
 
+# Created by the revisions after the baseline.
+LATER_TABLES = ("specs", "assistant_conversations", "assistant_messages", "assistant_feedback", "rate_limits")
+
 
 def product_indexes(conn: psycopg.Connection) -> set[str]:
     rows = conn.execute("select indexname from pg_indexes where tablename = 'products'").fetchall()
@@ -23,12 +26,14 @@ def test_upgrade_downgrade_upgrade(scratch_db: str) -> None:
             "products_d",
             "products_industries",
         }
-        assert conn.execute("select to_regclass('specs')").fetchone() == ("specs",)
+        for table in LATER_TABLES:
+            assert conn.execute("select to_regclass(%s)", (table,)).fetchone() == (table,)
 
     command.downgrade(cfg, "base")
     with psycopg.connect(scratch_db) as conn:
         assert conn.execute("select to_regclass('products')").fetchone() == (None,)
-        assert conn.execute("select to_regclass('specs')").fetchone() == (None,)
+        for table in LATER_TABLES:
+            assert conn.execute("select to_regclass(%s)", (table,)).fetchone() == (None,)
         assert conn.execute("select count(*) from pg_collation where collname = 'natural_sort'").fetchone() == (0,)
 
     command.upgrade(cfg, "head")  # the downgrade left nothing behind that blocks a clean re-run
@@ -71,5 +76,5 @@ def test_baseline_adopts_a_database_from_before_alembic(scratch_db: str) -> None
     command.upgrade(alembic_config(scratch_db), "head")
 
     with psycopg.connect(scratch_db) as conn:
-        assert conn.execute("select version_num from alembic_version").fetchall() == [("0002",)]
+        assert conn.execute("select version_num from alembic_version").fetchall() == [("0003",)]
         assert conn.execute("select * from products").fetchall() == [("6205", "6205")]

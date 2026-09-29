@@ -21,8 +21,10 @@ database on Supabase. First-time setup, in this order:
 
 `APP_ENV`, `LOG_LEVEL` come from `render.yaml`. Optional, both or neither: `FRONTEND_REVALIDATE_URL`
 (`https://<vercel domain>/api/revalidate`) and `REVALIDATE_SECRET` (the same value as Vercel's), so a data change
-made through the API refreshes the site's cached pages at once. Phase 9 adds `GEMINI_API_KEY`, `GEMINI_MODEL`,
-`GEMINI_FALLBACK_MODEL`.
+made through the API refreshes the site's cached pages at once. `GEMINI_API_KEY` (Google AI Studio) turns on the
+assistant's free-text answers; `GEMINI_MODEL` and `GEMINI_FALLBACK_MODEL` come from `render.yaml`. The limits have
+defaults (`ASSISTANT_RATE_LIMIT` 10 per `ASSISTANT_RATE_WINDOW` 600 s per IP, `ASSISTANT_DAILY_LIMIT` 500), see
+`backend/.env.example`.
 
 CD: `autoDeployTrigger: checksPass` deploys each backend commit on `main` once `backend.yml` is green. A failed
 migration or health check fails the deploy and the previous version keeps serving.
@@ -70,7 +72,8 @@ Each job only asks for what's missing (`--max-age-days 90` also refreshes old da
 where it was. With the two revalidate variables set, the site's cached product pages refresh when a job changed
 something; otherwise they refresh within an hour on their own.
 
-**Supabase only, once after the deploy that creates a new table** (`specs` in phase 7): Supabase exposes every
+**Supabase only, once after the deploy that creates a new table** (`specs` in phase 7; `assistant_conversations`,
+`assistant_messages`, `assistant_feedback`, `rate_limits` in phase 9): Supabase exposes every
 table in `public` through its REST API with the anon role. Supabase → Table Editor → the table → **Enable RLS**
 (no policies needed: the API connects as `postgres`, which bypasses RLS). This is dashboard-only on purpose: the
 migrations stay Supabase-free.

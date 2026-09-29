@@ -9,6 +9,7 @@ requires-python = ">=3.14"
 dependencies = [
     "alembic>=1.20.0",
     "fastapi>=0.141.1",
+    "google-genai>=2.25.0",
     "httpx2>=2.13.1",
     "psycopg[binary]>=3.3.6",
     "pydantic-settings>=2.15.0",
@@ -44,4 +45,6 @@ exclude = ["^\\.venv/"]
 
 [tool.pytest]
 testpaths = ["tests"]
-addopts = ["-ra", "--strict-markers"]
+addopts = ["-ra", "--strict-markers", "-m", "not live"]
+filterwarnings = ["ignore:'_UnionGenericAlias' is deprecated:DeprecationWarning:google.genai"]
+markers = ["live: calls the real Gemini API; needs GEMINI_API_KEY, run with `uv run pytest -m live`"]

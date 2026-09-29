@@ -6,7 +6,7 @@ from app.core.pagination import Page, PageParams
 from app.modules.products.importer import ProductRecord
 from app.modules.products.repository import ImportCounts, ProductRepository
 from app.modules.products.schemas import Product, ProductSearch, SitemapRow
-from app.modules.products.search import Vocabulary, criteria
+from app.modules.products.search import Vocabulary, criteria, normalize
 
 
 class ProductService:
@@ -33,6 +33,14 @@ class ProductService:
         if product is None:
             raise ApiError(404, "product_not_found", f"No product with slug '{slug}'.")
         return product
+
+    async def find_by_designation(self, designation: str) -> Product | None:
+        """The product with exactly this designation, ignoring case, spaces and punctuation ("6205 2rsh")."""
+        key = normalize(designation)
+        if not key:
+            return None
+        page = await self.search(ProductSearch(search=designation, per_page=5))
+        return next((p for p in page.data if normalize(p.designation) == key), None)
 
     async def related(self, slug: str, limit: int) -> list[Product]:
         return await self.repo.related(await self.get(slug), limit)

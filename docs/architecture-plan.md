@@ -141,28 +141,32 @@ frontend/
 
 ```
 modules/assistant/
-├─ router.py                 POST /api/v1/assistant/chat → StreamingResponse (NDJSON); POST /api/v1/assistant/feedback
-├─ service.py                pipeline: rate limit → load conversation → route → stream → persist
-├─ routing.py                preset id → scripted flow, free text → LLM agent
-├─ flows/  (Strategy, no LLM) product_search, datasheet, decode, grease, where_to_buy
+├─ router.py                 POST /api/v1/assistant/chat → JSON Lines stream (async generator, application/jsonl);
+│                             POST /api/v1/assistant/feedback. The rate limit is a dependency, so a 429 comes first.
+├─ service.py                pipeline: load conversation → save the message → route → stream → save the answer
+│                             (routing: preset → its flow; a flow waiting for input → that flow; else the agent)
+├─ flows/  (no LLM)          product_search, datasheet, decode, grease, where_to_buy; a flow can ask (`ask`) and
+│                             hands anything it can't answer to the agent
 ├─ llm/
-│  ├─ gemini_agent.py        google-genai: system prompt + function tools + streaming
-│  ├─ model_chain.py         try GEMINI_MODEL, on 429/503/timeout (15 s first token) → GEMINI_FALLBACK_MODEL
-│  └─ tools/                 search_products, get_product, decode_designation, select_grease, rating_life, relubrication
-│                             (each wraps a module service; args validated by a Pydantic model)
-├─ confidence.py             [[confidence:v1 …]] footer → confidence event
-├─ ndjson.py                 events: text | status | products | sources | confidence | done | error
-├─ prompts/system.md         SKF-only, no competitor brands, never invent numbers, reply in user language
-│                             (starting point: docs/assistant-prompt-draft.md)
-└─ models.py                 Conversation, Message, Feedback
+│  ├─ client.py              provider-neutral LlmClient protocol (tests use a fake); gemini.py = google-genai adapter
+│  ├─ agent.py               tool loop (8 calls per turn), footer filter, product cards + sources for what it names
+│  ├─ model_chain.py         try GEMINI_MODEL, on 429/503/network/15 s without a first chunk → GEMINI_FALLBACK_MODEL
+│  ├─ tools.py               search_products, get_product, decode_designation, grease_guide, rating_life,
+│  │                          relubrication (each wraps a module service; args validated by a Pydantic model)
+│  └─ prompt.py              prompts/system.md + the site language (last line, so the rest is cacheable)
+├─ confidence.py             [[confidence:v1 …]] footer → confidence event, never streamed to the browser
+├─ schemas.py                events: status | text | products | ask | specs | decode | greases | contact | sources |
+│                             confidence | error | done (codes and data; the frontend translates)
+├─ prompts/system.md         SKF-only, no other brands, never invent numbers, reply in the user's language
+└─ models.py                 Conversation, Message, Feedback (+ core/ratelimit.py: RateLimitWindow)
 ```
 
-- **Streaming:** uvicorn sends each chunk straight away. Responses carry `X-Accel-Buffering: no` and `Cache-Control: no-cache`.
+- **Streaming:** uvicorn sends each line straight away. Responses carry `X-Accel-Buffering: no` and `Cache-Control: no-cache`.
 - **Limits:**
-  - 10 messages / 10 min per IP (Postgres limiter).
-  - Input ≤ 2,000 characters, output ≤ ~1,500 tokens, 8 tool calls per turn.
-  - A daily global cap (a DB counter) so a misuse can't burn the quota.
-- **Data:** the specs come from the Specs module (scraped C, C0, Pu, speeds, mass, temperatures). When a value is missing, the answer links to the skf.com datasheet instead of inventing it.
+  - 10 messages / 10 min per IP (Postgres fixed-window limiter, IPs stored hashed).
+  - Input ≤ 2,000 characters, output ≤ 2,048 tokens, 8 tool calls per turn.
+  - A daily global cap on model-answered turns (500) so a misuse can't burn the quota. Flows don't count.
+- **Data:** the specs come from the Specs module (scraped C, C0, Pu, speeds, mass). When a value is missing, the answer links to the skf.com datasheet instead of inventing it.
 
 ## 7. Environment variables
 
@@ -189,7 +193,7 @@ modules/assistant/
 **Phase 1: monorepo move**
 - `git mv` the Next app into `frontend/`, keeping history.
 - Root `CLAUDE.md`, `docs/`, `.gitignore` split.
-- Remove `@anthropic-ai/sdk` and the Anthropic drafts (`lib/assistant.ts`, `server/assistant/`). The prompt rules are kept in `docs/assistant-prompt-draft.md`.
+- Remove `@anthropic-ai/sdk` and the Anthropic drafts (`lib/assistant.ts`, `server/assistant/`). The prompt rules were kept in `docs/assistant-prompt-draft.md` (deleted in Phase 9: `backend/app/modules/assistant/prompts/system.md` replaced it).
 - Vercel: set Root Directory = `frontend` **at the same time as this is pushed**.
 - ✅ Done when: `npm run build` in `frontend/` passes, and the Vercel preview matches production.
 
@@ -254,6 +258,7 @@ modules/assistant/
 - Tables: conversations, messages, feedback, daily counter.
 - Flows, Gemini agent + tools + model chain, confidence, rate limit.
 - Tests with a faked Gemini client; one live smoke test per model.
+- Built 2026-09-29: `app/modules/assistant/` (layout in §6), `core/ratelimit.py`, `0003_assistant.py` (assistant_conversations, assistant_messages, assistant_feedback, rate_limits). `POST /assistant/chat` is a FastAPI generator endpoint: every event is validated against the `ChatEvent` union and the OpenAPI document lists it as the stream's `itemSchema` (openapi-typescript renders that as `unknown`, so the widget builds the union from the 12 `*Event` component schemas). Starter prompts run a flow from catalog data with no model call; free text goes to the agent (Gemini through `google-genai`, manual function calling, thought signatures kept). Each turn is saved with its events, model, tool-call count and duration, so a transcript can be replayed and feedback points at one answer. Tool results go to the model with floats at 5 significant digits (it miscopied `405.22400000000005`). 59 tests with a scripted fake model (flows, tool loop and budget, footer, fallback, errors, limits, feedback) plus `-m live`, one real round trip per model. Tried live in en and mk: specs, dimensions, rating life, grease advice, another brand's part (answered with the SKF equivalent, the brand not repeated); ~3 s per answer on flash-lite. `gemini-3.8-flash` answered 503 "high demand" all day, so the fallback is untested live.
 
 **Phase 10: Assistant widget**
 - `components/assistant/*`: launcher, panel/dock, presets, streaming markdown, product cards, confidence badge, stop, copy, thumbs.

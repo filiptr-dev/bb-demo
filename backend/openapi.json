@@ -1356,10 +1356,352 @@
           }
         }
       }
+    },
+    "/api/v1/assistant/chat": {
+      "post": {
+        "tags": [
+          "assistant"
+        ],
+        "summary": "Chat",
+        "description": "A chat turn, streamed. Starter prompts (`preset`) are answered from catalog data without the model; free\ntext goes to the model with the catalog tools. Limits: 10 messages per 10 min per client, 2,000 characters.",
+        "operationId": "chat_api_v1_assistant_chat_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChatRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "JSON Lines: one event per line, ending with `done`",
+            "content": {
+              "application/jsonl": {
+                "itemSchema": {
+                  "oneOf": [
+                    {
+                      "$ref": "#/components/schemas/StatusEvent"
+                    },
+                    {
+                      "$ref": "#/components/schemas/TextEvent"
+                    },
+                    {
+                      "$ref": "#/components/schemas/ProductsEvent"
+                    },
+                    {
+                      "$ref": "#/components/schemas/AskEvent"
+                    },
+                    {
+                      "$ref": "#/components/schemas/SpecsEvent"
+                    },
+                    {
+                      "$ref": "#/components/schemas/DecodeEvent"
+                    },
+                    {
+                      "$ref": "#/components/schemas/GreasesEvent"
+                    },
+                    {
+                      "$ref": "#/components/schemas/ContactEvent"
+                    },
+                    {
+                      "$ref": "#/components/schemas/SourcesEvent"
+                    },
+                    {
+                      "$ref": "#/components/schemas/ConfidenceEvent"
+                    },
+                    {
+                      "$ref": "#/components/schemas/ErrorEvent"
+                    },
+                    {
+                      "$ref": "#/components/schemas/DoneEvent"
+                    }
+                  ],
+                  "discriminator": {
+                    "propertyName": "type",
+                    "mapping": {
+                      "status": "#/components/schemas/StatusEvent",
+                      "text": "#/components/schemas/TextEvent",
+                      "products": "#/components/schemas/ProductsEvent",
+                      "ask": "#/components/schemas/AskEvent",
+                      "specs": "#/components/schemas/SpecsEvent",
+                      "decode": "#/components/schemas/DecodeEvent",
+                      "greases": "#/components/schemas/GreasesEvent",
+                      "contact": "#/components/schemas/ContactEvent",
+                      "sources": "#/components/schemas/SourcesEvent",
+                      "confidence": "#/components/schemas/ConfidenceEvent",
+                      "error": "#/components/schemas/ErrorEvent",
+                      "done": "#/components/schemas/DoneEvent"
+                    }
+                  },
+                  "title": "Streamitem Chat Api V1 Assistant Chat Post"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/problem+json": {},
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Invalid request",
+            "content": {
+              "application/problem+json": {},
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/problem+json": {},
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "`rate_limited`",
+            "content": {
+              "application/problem+json": {},
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/assistant/feedback": {
+      "post": {
+        "tags": [
+          "assistant"
+        ],
+        "summary": "Feedback",
+        "description": "Thumbs up/down on an answer (`messageId` from its `done` event). Sending again replaces it.",
+        "operationId": "feedback_api_v1_assistant_feedback_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/FeedbackRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Successful Response"
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/problem+json": {},
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Invalid request",
+            "content": {
+              "application/problem+json": {},
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/problem+json": {},
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "429": {
+            "description": "`rate_limited`",
+            "content": {
+              "application/problem+json": {},
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
+      "AskEvent": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "ask",
+            "title": "Type",
+            "default": "ask"
+          },
+          "ask": {
+            "type": "string",
+            "enum": [
+              "product_query",
+              "designation",
+              "grease_conditions"
+            ],
+            "title": "Ask"
+          }
+        },
+        "type": "object",
+        "required": [
+          "ask"
+        ],
+        "title": "AskEvent",
+        "description": "A scripted flow asks the user for input; the next message answers it."
+      },
+      "ChatRequest": {
+        "properties": {
+          "conversationId": {
+            "anyOf": [
+              {
+                "type": "string",
+                "format": "uuid"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Conversationid",
+            "description": "From a previous `done` event; omit to start"
+          },
+          "message": {
+            "type": "string",
+            "maxLength": 2000,
+            "title": "Message",
+            "default": ""
+          },
+          "preset": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "product_search",
+                  "datasheet",
+                  "decode",
+                  "grease",
+                  "where_to_buy"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Preset",
+            "description": "A starter prompt's flow. With an empty message the flow asks for what it needs"
+          },
+          "locale": {
+            "type": "string",
+            "maxLength": 8,
+            "title": "Locale",
+            "description": "Site language; the answer follows the user's",
+            "default": "mk"
+          }
+        },
+        "type": "object",
+        "title": "ChatRequest"
+      },
+      "ConfidenceEvent": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "confidence",
+            "title": "Type",
+            "default": "confidence"
+          },
+          "score": {
+            "anyOf": [
+              {
+                "type": "integer",
+                "maximum": 100.0,
+                "minimum": 0.0
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Score"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "supported",
+              "bounded",
+              "partial",
+              "insufficient",
+              "conflicting",
+              "not_applicable"
+            ],
+            "title": "Status"
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason"
+          }
+        },
+        "type": "object",
+        "required": [
+          "score",
+          "status"
+        ],
+        "title": "ConfidenceEvent",
+        "description": "The model's own rating of its answer. None when the answer is a question back."
+      },
+      "ContactEvent": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "contact",
+            "title": "Type",
+            "default": "contact"
+          }
+        },
+        "type": "object",
+        "title": "ContactEvent",
+        "description": "Where to buy: B&B Unikoop's offices, phones, the quote basket and the contact form."
+      },
       "DatasheetRow": {
         "properties": {
           "name": {
@@ -1468,6 +1810,24 @@
         ],
         "title": "DatasheetSection"
       },
+      "DecodeEvent": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "decode",
+            "title": "Type",
+            "default": "decode"
+          },
+          "decoded": {
+            "$ref": "#/components/schemas/DecodedDesignation"
+          }
+        },
+        "type": "object",
+        "required": [
+          "decoded"
+        ],
+        "title": "DecodeEvent"
+      },
       "DecodedDesignation": {
         "properties": {
           "designation": {
@@ -1553,6 +1913,119 @@
           "boreMm"
         ],
         "title": "DesignationSegment"
+      },
+      "DoneEvent": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "done",
+            "title": "Type",
+            "default": "done"
+          },
+          "conversationId": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Conversationid"
+          },
+          "messageId": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Messageid"
+          }
+        },
+        "type": "object",
+        "required": [
+          "conversationId",
+          "messageId"
+        ],
+        "title": "DoneEvent",
+        "description": "Always the last event of a turn that was saved: keep `conversationId` for the next message and `messageId`\nfor feedback."
+      },
+      "ErrorEvent": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "error",
+            "title": "Type",
+            "default": "error"
+          },
+          "code": {
+            "type": "string",
+            "enum": [
+              "assistant_unavailable",
+              "assistant_busy",
+              "assistant_failed",
+              "conversation_not_found"
+            ],
+            "title": "Code"
+          },
+          "detail": {
+            "type": "string",
+            "title": "Detail"
+          }
+        },
+        "type": "object",
+        "required": [
+          "code",
+          "detail"
+        ],
+        "title": "ErrorEvent",
+        "description": "assistant_unavailable: no model configured or every model down; assistant_busy: the daily limit is used up;\nassistant_failed: the answer broke off; conversation_not_found: start a new one."
+      },
+      "FeedbackRequest": {
+        "properties": {
+          "messageId": {
+            "type": "string",
+            "format": "uuid",
+            "title": "Messageid",
+            "description": "From the answer's `done` event"
+          },
+          "rating": {
+            "type": "string",
+            "enum": [
+              "up",
+              "down"
+            ],
+            "title": "Rating"
+          },
+          "reason": {
+            "anyOf": [
+              {
+                "type": "string",
+                "enum": [
+                  "incorrect",
+                  "not_what_i_asked",
+                  "slow_or_buggy",
+                  "style",
+                  "safety",
+                  "other"
+                ]
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Reason"
+          },
+          "comment": {
+            "anyOf": [
+              {
+                "type": "string",
+                "maxLength": 1000
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Comment"
+          }
+        },
+        "type": "object",
+        "required": [
+          "messageId",
+          "rating"
+        ],
+        "title": "FeedbackRequest"
       },
       "FieldError": {
         "properties": {
@@ -1744,6 +2217,29 @@
           "code"
         ],
         "title": "GreaseRecommendation"
+      },
+      "GreasesEvent": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "greases",
+            "title": "Type",
+            "default": "greases"
+          },
+          "basic": {
+            "items": {
+              "$ref": "#/components/schemas/GreaseRecommendation"
+            },
+            "type": "array",
+            "title": "Basic"
+          }
+        },
+        "type": "object",
+        "required": [
+          "basic"
+        ],
+        "title": "GreasesEvent",
+        "description": "The basic SKF grease choice per condition; the full chart is on /products/greases."
       },
       "Health": {
         "properties": {
@@ -2195,6 +2691,51 @@
         ],
         "title": "ProductStats"
       },
+      "ProductsEvent": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "products",
+            "title": "Type",
+            "default": "products"
+          },
+          "products": {
+            "items": {
+              "$ref": "#/components/schemas/Product"
+            },
+            "type": "array",
+            "title": "Products"
+          },
+          "total": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Total"
+          },
+          "search": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Search"
+          }
+        },
+        "type": "object",
+        "required": [
+          "products"
+        ],
+        "title": "ProductsEvent",
+        "description": "Product cards. `search` is set by the search flow: link to /catalog?search=<search> for all `total`."
+      },
       "RatingLife": {
         "properties": {
           "designation": {
@@ -2456,6 +2997,122 @@
           "data"
         ],
         "title": "SitemapRows"
+      },
+      "Source": {
+        "properties": {
+          "title": {
+            "type": "string",
+            "title": "Title"
+          },
+          "url": {
+            "type": "string",
+            "title": "Url"
+          }
+        },
+        "type": "object",
+        "required": [
+          "title",
+          "url"
+        ],
+        "title": "Source"
+      },
+      "SourcesEvent": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "sources",
+            "title": "Type",
+            "default": "sources"
+          },
+          "sources": {
+            "items": {
+              "$ref": "#/components/schemas/Source"
+            },
+            "type": "array",
+            "title": "Sources"
+          }
+        },
+        "type": "object",
+        "required": [
+          "sources"
+        ],
+        "title": "SourcesEvent"
+      },
+      "SpecsEvent": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "specs",
+            "title": "Type",
+            "default": "specs"
+          },
+          "product": {
+            "$ref": "#/components/schemas/Product"
+          },
+          "specs": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/ProductSpecs"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "type": "object",
+        "required": [
+          "product",
+          "specs"
+        ],
+        "title": "SpecsEvent",
+        "description": "A product's data sheet. `specs` is null when SKF data isn't in the catalog yet: link to skf.com."
+      },
+      "StatusEvent": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "status",
+            "title": "Type",
+            "default": "status"
+          },
+          "status": {
+            "type": "string",
+            "enum": [
+              "thinking",
+              "searching",
+              "reading",
+              "calculating"
+            ],
+            "title": "Status"
+          }
+        },
+        "type": "object",
+        "required": [
+          "status"
+        ],
+        "title": "StatusEvent",
+        "description": "What the assistant is doing, until the first text arrives."
+      },
+      "TextEvent": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "text",
+            "title": "Type",
+            "default": "text"
+          },
+          "text": {
+            "type": "string",
+            "title": "Text"
+          }
+        },
+        "type": "object",
+        "required": [
+          "text"
+        ],
+        "title": "TextEvent",
+        "description": "A piece of the model's Markdown answer; append in order."
       }
     }
   }

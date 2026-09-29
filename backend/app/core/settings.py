@@ -1,7 +1,7 @@
 from functools import lru_cache
 from typing import Annotated, Literal
 
-from pydantic import Field, field_validator
+from pydantic import Field, SecretStr, field_validator
 from pydantic_settings import BaseSettings, NoDecode, SettingsConfigDict
 
 
@@ -37,6 +37,18 @@ class Settings(BaseSettings):
     # POST {tags} to the frontend's /api/revalidate. Both unset = skipped (local development, tests).
     frontend_revalidate_url: str | None = None  # https://<vercel domain>/api/revalidate
     revalidate_secret: str | None = None  # the same value as the frontend's REVALIDATE_SECRET
+
+    # Assistant (Gemini). Without a key the scripted flows still work and free-text questions get an error event.
+    gemini_api_key: SecretStr | None = None
+    gemini_model: str = "gemini-3.5-flash-lite"
+    # Tried when the first model is overloaded (429/503) or silent for gemini_first_token_timeout seconds.
+    gemini_fallback_model: str | None = "gemini-3.8-flash"
+    gemini_first_token_timeout: float = Field(default=15.0, gt=0)
+    gemini_thinking_level: Literal["minimal", "low", "medium", "high"] | None = "low"
+    # Chat messages per client IP per window, and model-answered turns per day for everyone (protects the quota).
+    assistant_rate_limit: int = Field(default=10, ge=1)
+    assistant_rate_window: int = Field(default=600, ge=1, description="seconds")
+    assistant_daily_limit: int = Field(default=500, ge=1)
 
     @field_validator("database_url")
     @classmethod

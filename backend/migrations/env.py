@@ -11,6 +11,8 @@ from sqlalchemy.engine import Connection
 from sqlalchemy.ext.asyncio import create_async_engine
 
 # Every module's models, so autogenerate sees their tables.
+import app.core.ratelimit
+import app.modules.assistant.models
 import app.modules.products.models
 import app.modules.specs.models  # noqa: F401
 from app.core.db import Base

@@ -11,6 +11,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.core.db import create_engine, create_sessionmaker
 from app.core.errors import problem_responses, register_error_handlers
 from app.core.settings import Settings, get_settings
+from app.modules.assistant.deps import make_llm_client
+from app.modules.assistant.router import router as assistant_router
 from app.modules.catalog.router import router as catalog_router
 from app.modules.health.router import router as health_router
 from app.modules.products.router import router as products_router
@@ -53,6 +55,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         openapi_url="/openapi.json",
     )
     app.state.settings = settings
+    app.state.llm = make_llm_client(settings)  # None without GEMINI_API_KEY
 
     register_error_handlers(app)  # before CORS, so error responses still carry CORS headers
     app.add_middleware(
@@ -69,5 +72,6 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     api.include_router(products_router)
     api.include_router(specs_router)
     api.include_router(catalog_router)
+    api.include_router(assistant_router)
     app.include_router(api)
     return app

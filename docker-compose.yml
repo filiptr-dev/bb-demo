@@ -20,6 +20,9 @@ services:
 
   api:
     build: ./backend
+    env_file:  # GEMINI_API_KEY and friends; the values under `environment` win
+      - path: ./backend/.env
+        required: false
     environment:
       APP_ENV: development
       DATABASE_URL: postgresql://postgres:postgres@db:5432/bbunikoop

@@ -40,11 +40,14 @@ class Problem(ApiModel):
 class ApiError(Exception):
     """Raise from services for expected failures, e.g. ApiError(404, "product_not_found", "No product 6205-XYZ")."""
 
-    def __init__(self, status: int, code: str, detail: str | None = None) -> None:
+    def __init__(
+        self, status: int, code: str, detail: str | None = None, headers: Mapping[str, str] | None = None
+    ) -> None:
         super().__init__(detail or code)
         self.status = status
         self.code = code
         self.detail = detail
+        self.headers = headers  # e.g. Retry-After on a 429
 
 
 # Codes for plain HTTP errors (unknown route, wrong method, ...), so the frontend never has to parse `title`.
@@ -81,7 +84,7 @@ def _problem(status: int, code: str | None = None, detail: str | None = None, **
 
 async def _api_error(request: Request, exc: Exception) -> JSONResponse:
     assert isinstance(exc, ApiError)
-    return problem_response(request, _problem(exc.status, exc.code, exc.detail))
+    return problem_response(request, _problem(exc.status, exc.code, exc.detail), headers=exc.headers)
 
 
 async def _http_error(request: Request, exc: Exception) -> JSONResponse:

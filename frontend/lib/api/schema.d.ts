@@ -262,10 +262,122 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v1/assistant/chat": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Chat
+         * @description A chat turn, streamed. Starter prompts (`preset`) are answered from catalog data without the model; free
+         *     text goes to the model with the catalog tools. Limits: 10 messages per 10 min per client, 2,000 characters.
+         */
+        post: operations["chat_api_v1_assistant_chat_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/assistant/feedback": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /**
+         * Feedback
+         * @description Thumbs up/down on an answer (`messageId` from its `done` event). Sending again replaces it.
+         */
+        post: operations["feedback_api_v1_assistant_feedback_post"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
 }
 export type webhooks = Record<string, never>;
 export interface components {
     schemas: {
+        /**
+         * AskEvent
+         * @description A scripted flow asks the user for input; the next message answers it.
+         */
+        AskEvent: {
+            /**
+             * @description discriminator enum property added by openapi-typescript
+             * @enum {string}
+             */
+            type: "ask";
+            /**
+             * Ask
+             * @enum {string}
+             */
+            ask: "product_query" | "designation" | "grease_conditions";
+        };
+        /** ChatRequest */
+        ChatRequest: {
+            /**
+             * Conversationid
+             * @description From a previous `done` event; omit to start
+             */
+            conversationId?: string | null;
+            /**
+             * Message
+             * @default
+             */
+            message: string;
+            /**
+             * Preset
+             * @description A starter prompt's flow. With an empty message the flow asks for what it needs
+             */
+            preset?: ("product_search" | "datasheet" | "decode" | "grease" | "where_to_buy") | null;
+            /**
+             * Locale
+             * @description Site language; the answer follows the user's
+             * @default mk
+             */
+            locale: string;
+        };
+        /**
+         * ConfidenceEvent
+         * @description The model's own rating of its answer. None when the answer is a question back.
+         */
+        ConfidenceEvent: {
+            /**
+             * @description discriminator enum property added by openapi-typescript
+             * @enum {string}
+             */
+            type: "confidence";
+            /** Score */
+            score: number | null;
+            /**
+             * Status
+             * @enum {string}
+             */
+            status: "supported" | "bounded" | "partial" | "insufficient" | "conflicting" | "not_applicable";
+            /** Reason */
+            reason?: string | null;
+        };
+        /**
+         * ContactEvent
+         * @description Where to buy: B&B Unikoop's offices, phones, the quote basket and the contact form.
+         */
+        ContactEvent: {
+            /**
+             * @description discriminator enum property added by openapi-typescript
+             * @enum {string}
+             */
+            type: "contact";
+        };
         /** DatasheetRow */
         DatasheetRow: {
             /**
@@ -305,6 +417,15 @@ export interface components {
             /** Rows */
             rows: components["schemas"]["DatasheetRow"][];
         };
+        /** DecodeEvent */
+        DecodeEvent: {
+            /**
+             * @description discriminator enum property added by openapi-typescript
+             * @enum {string}
+             */
+            type: "decode";
+            decoded: components["schemas"]["DecodedDesignation"];
+        };
         /**
          * DecodedDesignation
          * @description An empty `segments` list means nothing could be read (blank or separators only).
@@ -339,6 +460,65 @@ export interface components {
              * @description Bore diameter for a bore segment, mm
              */
             boreMm: number | null;
+        };
+        /**
+         * DoneEvent
+         * @description Always the last event of a turn that was saved: keep `conversationId` for the next message and `messageId`
+         *     for feedback.
+         */
+        DoneEvent: {
+            /**
+             * @description discriminator enum property added by openapi-typescript
+             * @enum {string}
+             */
+            type: "done";
+            /**
+             * Conversationid
+             * Format: uuid
+             */
+            conversationId: string;
+            /**
+             * Messageid
+             * Format: uuid
+             */
+            messageId: string;
+        };
+        /**
+         * ErrorEvent
+         * @description assistant_unavailable: no model configured or every model down; assistant_busy: the daily limit is used up;
+         *     assistant_failed: the answer broke off; conversation_not_found: start a new one.
+         */
+        ErrorEvent: {
+            /**
+             * @description discriminator enum property added by openapi-typescript
+             * @enum {string}
+             */
+            type: "error";
+            /**
+             * Code
+             * @enum {string}
+             */
+            code: "assistant_unavailable" | "assistant_busy" | "assistant_failed" | "conversation_not_found";
+            /** Detail */
+            detail: string;
+        };
+        /** FeedbackRequest */
+        FeedbackRequest: {
+            /**
+             * Messageid
+             * Format: uuid
+             * @description From the answer's `done` event
+             */
+            messageId: string;
+            /**
+             * Rating
+             * @enum {string}
+             */
+            rating: "up" | "down";
+            /** Reason */
+            reason?: ("incorrect" | "not_what_i_asked" | "slow_or_buggy" | "style" | "safety" | "other") | null;
+            /** Comment */
+            comment?: string | null;
         };
         /** FieldError */
         FieldError: {
@@ -420,6 +600,19 @@ export interface components {
             condition: "allPurpose" | "highTemp" | "extremeTemp" | "lowTemp" | "highLoad" | "food" | "green";
             /** Code */
             code: string;
+        };
+        /**
+         * GreasesEvent
+         * @description The basic SKF grease choice per condition; the full chart is on /products/greases.
+         */
+        GreasesEvent: {
+            /**
+             * @description discriminator enum property added by openapi-typescript
+             * @enum {string}
+             */
+            type: "greases";
+            /** Basic */
+            basic: components["schemas"]["GreaseRecommendation"][];
         };
         /** Health */
         Health: {
@@ -585,6 +778,23 @@ export interface components {
             updatedAt: string | null;
         };
         /**
+         * ProductsEvent
+         * @description Product cards. `search` is set by the search flow: link to /catalog?search=<search> for all `total`.
+         */
+        ProductsEvent: {
+            /**
+             * @description discriminator enum property added by openapi-typescript
+             * @enum {string}
+             */
+            type: "products";
+            /** Products */
+            products: components["schemas"]["Product"][];
+            /** Total */
+            total?: number | null;
+            /** Search */
+            search?: string | null;
+        };
+        /**
          * RatingLife
          * @description ISO 281 basic rating life, without the SKF life modification factor (aSKF = 1).
          */
@@ -716,6 +926,65 @@ export interface components {
         SitemapRows: {
             /** Data */
             data: components["schemas"]["SitemapRow"][];
+        };
+        /** Source */
+        Source: {
+            /** Title */
+            title: string;
+            /** Url */
+            url: string;
+        };
+        /** SourcesEvent */
+        SourcesEvent: {
+            /**
+             * @description discriminator enum property added by openapi-typescript
+             * @enum {string}
+             */
+            type: "sources";
+            /** Sources */
+            sources: components["schemas"]["Source"][];
+        };
+        /**
+         * SpecsEvent
+         * @description A product's data sheet. `specs` is null when SKF data isn't in the catalog yet: link to skf.com.
+         */
+        SpecsEvent: {
+            /**
+             * @description discriminator enum property added by openapi-typescript
+             * @enum {string}
+             */
+            type: "specs";
+            product: components["schemas"]["Product"];
+            specs: components["schemas"]["ProductSpecs"] | null;
+        };
+        /**
+         * StatusEvent
+         * @description What the assistant is doing, until the first text arrives.
+         */
+        StatusEvent: {
+            /**
+             * @description discriminator enum property added by openapi-typescript
+             * @enum {string}
+             */
+            type: "status";
+            /**
+             * Status
+             * @enum {string}
+             */
+            status: "thinking" | "searching" | "reading" | "calculating";
+        };
+        /**
+         * TextEvent
+         * @description A piece of the model's Markdown answer; append in order.
+         */
+        TextEvent: {
+            /**
+             * @description discriminator enum property added by openapi-typescript
+             * @enum {string}
+             */
+            type: "text";
+            /** Text */
+            text: string;
         };
     };
     responses: never;
@@ -1432,6 +1701,132 @@ export interface operations {
             };
             /** @description Invalid fields, or a case the formulas don't cover (`load_case_unsupported`, ...) */
             422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/problem+json": unknown;
+                    "application/json": components["schemas"]["Problem"];
+                };
+            };
+            /** @description Server error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/problem+json": unknown;
+                    "application/json": components["schemas"]["Problem"];
+                };
+            };
+        };
+    };
+    chat_api_v1_assistant_chat_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ChatRequest"];
+            };
+        };
+        responses: {
+            /** @description JSON Lines: one event per line, ending with `done` */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/jsonl": unknown;
+                };
+            };
+            /** @description Not found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/problem+json": unknown;
+                    "application/json": components["schemas"]["Problem"];
+                };
+            };
+            /** @description Invalid request */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/problem+json": unknown;
+                    "application/json": components["schemas"]["Problem"];
+                };
+            };
+            /** @description `rate_limited` */
+            429: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/problem+json": unknown;
+                    "application/json": components["schemas"]["Problem"];
+                };
+            };
+            /** @description Server error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/problem+json": unknown;
+                    "application/json": components["schemas"]["Problem"];
+                };
+            };
+        };
+    };
+    feedback_api_v1_assistant_feedback_post: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["FeedbackRequest"];
+            };
+        };
+        responses: {
+            /** @description Successful Response */
+            204: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content?: never;
+            };
+            /** @description Not found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/problem+json": unknown;
+                    "application/json": components["schemas"]["Problem"];
+                };
+            };
+            /** @description Invalid request */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/problem+json": unknown;
+                    "application/json": components["schemas"]["Problem"];
+                };
+            };
+            /** @description `rate_limited` */
+            429: {
                 headers: {
                     [name: string]: unknown;
                 };
