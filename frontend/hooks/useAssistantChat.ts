@@ -2,13 +2,14 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { ChatRequestError, streamChat, type ChatEvent, type ChatRequest, type FlowId } from "@/lib/api/assistant";
+import type { Photo } from "@/components/assistant/photos";
 
 type StatusName = Extract<ChatEvent, { type: "status" }>["status"];
 // What the widget shows for an event stream: statuses and `done` are folded into the turn itself.
 export type ShownEvent = Exclude<ChatEvent, { type: "status" } | { type: "done" } | { type: "error" }>;
 export type TurnError = { code: string; retryAfter?: number | null };
 
-export type UserTurn = { id: string; role: "user"; text: string };
+export type UserTurn = { id: string; role: "user"; text: string; photos?: string[] }; // photos: thumbnail data URLs
 export type AssistantTurn = {
   id: string;
   role: "assistant";
@@ -18,7 +19,7 @@ export type AssistantTurn = {
   stopped?: boolean;
   messageId?: string; // from `done`: feedback goes to this answer
   error?: TurnError;
-  request: Omit<ChatRequest, "conversationId" | "locale">; // to send again after an error
+  request: Omit<ChatRequest, "conversationId" | "locale">; // to send again after an error (photos only until a reload)
 };
 export type Turn = UserTurn | AssistantTurn;
 
@@ -55,7 +56,9 @@ export function useAssistantChat(locale: string) {
   useEffect(() => {
     if (streaming) return;
     try {
-      sessionStorage.setItem(STORAGE_KEY, JSON.stringify({ conversationId: conversationId.current, turns } satisfies Saved));
+      // full-size photos would fill the storage quota: only their thumbnails are kept
+      const kept = turns.map((t) => (t.role === "assistant" && t.request.images?.length ? { ...t, request: { ...t.request, images: [] } } : t));
+      sessionStorage.setItem(STORAGE_KEY, JSON.stringify({ conversationId: conversationId.current, turns: kept } satisfies Saved));
     } catch {
       /* storage blocked: the chat lasts for this page view */
     }
@@ -99,13 +102,15 @@ export function useAssistantChat(locale: string) {
 
   // `label` is what the user bubble shows for a starter prompt (its flow gets no text of its own).
   const send = useCallback(
-    (message: string, preset?: FlowId, label?: string) => {
+    (message: string, preset?: FlowId, label?: string, photos: Photo[] = []) => {
       if (streaming) return;
       const text = message.trim();
-      if (!text && !preset) return;
-      const request = { message: text, preset: preset ?? null };
+      if (!text && !preset && !photos.length) return;
+      const images = photos.map(({ mimeType, data }) => ({ mimeType, data }));
+      const request = { message: text, preset: preset ?? null, images };
       const answer: AssistantTurn = { id: newId(), role: "assistant", events: [], status: null, streaming: true, request };
-      setTurns((all) => [...all, { id: newId(), role: "user", text: text || label || "" }, answer]);
+      const user: UserTurn = { id: newId(), role: "user", text: text || label || "", ...(photos.length ? { photos: photos.map((p) => p.thumb) } : {}) };
+      setTurns((all) => [...all, user, answer]);
       void run(answer.id, request);
     },
     [run, streaming],

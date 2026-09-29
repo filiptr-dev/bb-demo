@@ -104,7 +104,10 @@ def _contents(request: LlmRequest) -> list[types.Content]:
     contents: list[types.Content] = []
     for turn in request.turns:
         if isinstance(turn, UserTurn):
-            contents.append(types.Content(role="user", parts=[types.Part(text=turn.text)]))
+            parts = [types.Part.from_bytes(data=i.data, mime_type=i.mime_type) for i in turn.images]
+            if turn.text or not parts:
+                parts.append(types.Part(text=turn.text))
+            contents.append(types.Content(role="user", parts=parts))
         elif isinstance(turn, ModelTurn):
             if turn.raw is not None:
                 contents.extend(turn.raw)  # as received: keeps Gemini's thought signatures

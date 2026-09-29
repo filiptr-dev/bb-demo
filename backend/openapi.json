@@ -1589,6 +1589,32 @@
         "title": "AskEvent",
         "description": "A scripted flow asks the user for input; the next message answers it."
       },
+      "ChatImage": {
+        "properties": {
+          "mimeType": {
+            "type": "string",
+            "enum": [
+              "image/jpeg",
+              "image/png",
+              "image/webp"
+            ],
+            "title": "Mimetype"
+          },
+          "data": {
+            "type": "string",
+            "maxLength": 4194304,
+            "title": "Data",
+            "description": "Base64, without a data: prefix"
+          }
+        },
+        "type": "object",
+        "required": [
+          "mimeType",
+          "data"
+        ],
+        "title": "ChatImage",
+        "description": "A photo sent with the message, e.g. of a bearing's markings or its box. Only passed to the model, never\nstored. The widget sends JPEGs of at most 1600 px."
+      },
       "ChatRequest": {
         "properties": {
           "conversationId": {
@@ -1635,6 +1661,15 @@
             "title": "Locale",
             "description": "Site language; the answer follows the user's",
             "default": "mk"
+          },
+          "images": {
+            "items": {
+              "$ref": "#/components/schemas/ChatImage"
+            },
+            "type": "array",
+            "maxItems": 3,
+            "title": "Images",
+            "description": "Photos for the model; a message with photos skips the flows"
           }
         },
         "type": "object",

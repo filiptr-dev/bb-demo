@@ -1138,6 +1138,11 @@
     "send": "Senden",
     "stop": "Stopp",
     "tooLong": "{count} / {max} Zeichen",
+    "attach": "Foto anhängen",
+    "removePhoto": "Foto entfernen",
+    "photoLimit": "Bis zu {max} Fotos pro Nachricht.",
+    "photoError": "Die Datei konnte nicht gelesen werden. Bitte ein JPG-, PNG- oder WebP-Foto verwenden.",
+    "photoAlt": "Angehängtes Foto",
     "status": {
       "thinking": "Denke nach…",
       "searching": "Durchsuche den Katalog…",

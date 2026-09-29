@@ -15,7 +15,7 @@ from app.core.ratelimit import RateLimiter, client_key
 from app.core.settings import Settings
 from app.modules.assistant.flows import Flow, FlowContext, FlowReply, flows
 from app.modules.assistant.llm.agent import Agent, EmptyAnswerError
-from app.modules.assistant.llm.client import LlmClient, ModelTurn, ModelUnavailableError, Turn, UserTurn
+from app.modules.assistant.llm.client import Image, LlmClient, ModelTurn, ModelUnavailableError, Turn, UserTurn
 from app.modules.assistant.llm.model_chain import ModelChain
 from app.modules.assistant.llm.prompt import system_prompt
 from app.modules.assistant.llm.tools import AssistantTools
@@ -89,7 +89,7 @@ class AssistantService:
             NewMessage(
                 conversation_id=conversation.id,
                 role="user",
-                content=message or f"[{request.preset}]",
+                content=_saved_text(message, len(request.images)) or f"[{request.preset}]",
                 preset=request.preset,
             )
         )
@@ -114,7 +114,8 @@ class AssistantService:
 
         if conversation.pending_flow:  # a flow asked, but this message is for the model
             await self.repo.set_flow(conversation.id, None, {})
-        async for answer_event in self._answer(conversation, message, started):
+        images = tuple(Image(mime_type=i.mime_type, data=i.bytes()) for i in request.images)
+        async for answer_event in self._answer(conversation, message, images, started):
             yield answer_event
 
     async def _conversation(self, request: ChatRequest) -> ConversationRecord | None:
@@ -127,7 +128,7 @@ class AssistantService:
     ) -> tuple[Flow | None, FlowReply | None]:
         name = request.preset or conversation.pending_flow
         flow = self.flows.get(name) if name else None
-        if flow is None:
+        if flow is None or request.images:  # the flows can't look at photos
             return None, None
         ctx = FlowContext(message=message, locale=request.locale, state=conversation.flow_state)
         if request.preset and not message:
@@ -135,7 +136,7 @@ class AssistantService:
         return flow, await flow.reply(ctx)
 
     async def _answer(
-        self, conversation: ConversationRecord, message: str, started: float
+        self, conversation: ConversationRecord, message: str, images: tuple[Image, ...], started: float
     ) -> AsyncIterator[ChatEventModel]:
         agent: Agent | None = None
         error: ErrorEvent | None = None
@@ -147,7 +148,7 @@ class AssistantService:
             history = await self._history(conversation.id)
             agent = Agent(self._chain(self.llm), self._tools(conversation.locale), system_prompt(conversation.locale))
             try:
-                async for event in agent.run(history, message):
+                async for event in agent.run(history, message, images):
                     yield event
             except ModelUnavailableError as e:
                 log.warning("assistant: no model answered: %s", e)
@@ -191,6 +192,14 @@ class AssistantService:
 
     def _tools(self, locale: str) -> AssistantTools:
         return AssistantTools(self.products, self.specs, self.catalog, locale)
+
+
+def _saved_text(message: str, images: int) -> str:
+    """The user message as saved and replayed to the model later: photos aren't kept, only that there were some."""
+    if not images:
+        return message
+    note = "[photo]" if images == 1 else f"[{images} photos]"
+    return f"{note} {message}".strip()
 
 
 def _error(code: ErrorCode, detail: str) -> ErrorEvent:

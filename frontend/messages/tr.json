@@ -1138,6 +1138,11 @@
     "send": "Gönder",
     "stop": "Durdur",
     "tooLong": "{count} / {max} karakter",
+    "attach": "Fotoğraf ekle",
+    "removePhoto": "Fotoğrafı kaldır",
+    "photoLimit": "Mesaj başına en fazla {max} fotoğraf.",
+    "photoError": "Dosya okunamadı. JPG, PNG veya WebP fotoğraf kullanın.",
+    "photoAlt": "Eklenen fotoğraf",
     "status": {
       "thinking": "Düşünüyorum…",
       "searching": "Katalogda arıyorum…",

@@ -323,6 +323,23 @@ export interface components {
              */
             ask: "product_query" | "designation" | "grease_conditions";
         };
+        /**
+         * ChatImage
+         * @description A photo sent with the message, e.g. of a bearing's markings or its box. Only passed to the model, never
+         *     stored. The widget sends JPEGs of at most 1600 px.
+         */
+        ChatImage: {
+            /**
+             * Mimetype
+             * @enum {string}
+             */
+            mimeType: "image/jpeg" | "image/png" | "image/webp";
+            /**
+             * Data
+             * @description Base64, without a data: prefix
+             */
+            data: string;
+        };
         /** ChatRequest */
         ChatRequest: {
             /**
@@ -346,6 +363,11 @@ export interface components {
              * @default mk
              */
             locale: string;
+            /**
+             * Images
+             * @description Photos for the model; a message with photos skips the flows
+             */
+            images?: components["schemas"]["ChatImage"][];
         };
         /**
          * ConfidenceEvent

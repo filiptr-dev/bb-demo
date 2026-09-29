@@ -1138,6 +1138,11 @@
     "send": "Invia",
     "stop": "Ferma",
     "tooLong": "{count} / {max} caratteri",
+    "attach": "Allega una foto",
+    "removePhoto": "Rimuovi foto",
+    "photoLimit": "Al massimo {max} foto per messaggio.",
+    "photoError": "Impossibile leggere il file. Usa una foto JPG, PNG o WebP.",
+    "photoAlt": "Foto allegata",
     "status": {
       "thinking": "Sto pensando…",
       "searching": "Cerco nel catalogo…",

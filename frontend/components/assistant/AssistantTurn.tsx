@@ -197,12 +197,24 @@ function Answer({ turn, last, onRetry, onSend, onNavigate }: AnswerProps) {
 
 type TurnProps = { turn: Turn; last: boolean; onRetry: (id: string) => void; onSend: (q: string) => void; onNavigate: () => void };
 
+function UserMessage({ text, photos }: { text: string; photos?: string[] }) {
+  const t = useTranslations("Assistant");
+  return (
+    <div className="flex flex-col items-end gap-1.5">
+      {photos?.length ? (
+        <div className="flex gap-1.5">
+          {photos.map((src, i) => (
+            // eslint-disable-next-line @next/next/no-img-element -- a local data URL, nothing to optimize
+            <img key={i} src={src} alt={t("photoAlt")} className="size-20 rounded-xl border border-border object-cover" />
+          ))}
+        </div>
+      ) : null}
+      {text && <p className="max-w-[85%] whitespace-pre-wrap rounded-2xl rounded-br-md bg-foreground/[0.07] px-3.5 py-2 text-sm [overflow-wrap:anywhere]">{text}</p>}
+    </div>
+  );
+}
+
 export default function AssistantTurnView({ turn, last, onRetry, onSend, onNavigate }: TurnProps) {
-  if (turn.role === "user")
-    return (
-      <div className="flex justify-end">
-        <p className="max-w-[85%] whitespace-pre-wrap rounded-2xl rounded-br-md bg-foreground/[0.07] px-3.5 py-2 text-sm [overflow-wrap:anywhere]">{turn.text}</p>
-      </div>
-    );
+  if (turn.role === "user") return <UserMessage text={turn.text} photos={turn.photos} />;
   return <Answer turn={turn} last={last} onRetry={() => onRetry(turn.id)} onSend={onSend} onNavigate={onNavigate} />;
 }

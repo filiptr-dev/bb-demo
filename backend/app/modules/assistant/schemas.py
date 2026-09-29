@@ -4,10 +4,12 @@ The frontend renders every event with its own translations, so events carry code
 `text`, the model's own answer in the user's language).
 """
 
+import base64
+import binascii
 import uuid
 from typing import Annotated, Literal, Self
 
-from pydantic import Field, model_validator
+from pydantic import Field, field_validator, model_validator
 
 from app.core.schemas import ApiModel
 from app.modules.catalog.schemas import DecodedDesignation, GreaseRecommendation
@@ -15,9 +17,46 @@ from app.modules.products.schemas import Product
 from app.modules.specs.schemas import ProductSpecs
 
 MAX_MESSAGE = 2000
+MAX_IMAGES = 3
+MAX_IMAGE_BYTES = 3 * 1024 * 1024
 
 # Starter prompts that run a scripted flow instead of the model.
 FlowId = Literal["product_search", "datasheet", "decode", "grease", "where_to_buy"]
+
+
+ImageType = Literal["image/jpeg", "image/png", "image/webp"]
+_MAGIC: dict[str, tuple[bytes, ...]] = {
+    "image/jpeg": (b"\xff\xd8\xff",),
+    "image/png": (b"\x89PNG\r\n\x1a\n",),
+    "image/webp": (b"RIFF",),  # + "WEBP" at byte 8
+}
+
+
+class ChatImage(ApiModel):
+    """A photo sent with the message, e.g. of a bearing's markings or its box. Only passed to the model, never
+    stored. The widget sends JPEGs of at most 1600 px."""
+
+    mime_type: ImageType
+    data: str = Field(description="Base64, without a data: prefix", max_length=(MAX_IMAGE_BYTES + 2) // 3 * 4)
+
+    @field_validator("data")
+    @classmethod
+    def _base64(cls, value: str) -> str:
+        try:
+            base64.b64decode(value, validate=True)
+        except binascii.Error, ValueError:
+            raise ValueError("not base64") from None
+        return value
+
+    @model_validator(mode="after")
+    def _is_that_image(self) -> Self:
+        head = self.bytes()[:12]
+        if not head.startswith(_MAGIC[self.mime_type]) or (self.mime_type == "image/webp" and head[8:12] != b"WEBP"):
+            raise ValueError(f"the data isn't a {self.mime_type} image")
+        return self
+
+    def bytes(self) -> bytes:
+        return base64.b64decode(self.data)
 
 
 class ChatRequest(ApiModel):
@@ -27,11 +66,16 @@ class ChatRequest(ApiModel):
         default=None, description="A starter prompt's flow. With an empty message the flow asks for what it needs"
     )
     locale: str = Field(default="mk", max_length=8, description="Site language; the answer follows the user's")
+    images: list[ChatImage] = Field(
+        default_factory=list,
+        max_length=MAX_IMAGES,
+        description="Photos for the model; a message with photos skips the flows",
+    )
 
     @model_validator(mode="after")
     def _something_to_answer(self) -> Self:
-        if not self.message.strip() and self.preset is None:
-            raise ValueError("give a message or a preset")
+        if not self.message.strip() and self.preset is None and not self.images:
+            raise ValueError("give a message, a preset or an image")
         return self
 
 

@@ -14,8 +14,15 @@ class ToolSpec:
 
 
 @dataclass(frozen=True)
+class Image:
+    mime_type: str
+    data: bytes
+
+
+@dataclass(frozen=True)
 class UserTurn:
     text: str
+    images: tuple[Image, ...] = ()  # only on the message being answered; the history keeps text
 
 
 @dataclass(frozen=True)

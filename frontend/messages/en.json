@@ -1138,6 +1138,11 @@
     "send": "Send",
     "stop": "Stop",
     "tooLong": "{count} / {max} characters",
+    "attach": "Attach a photo",
+    "removePhoto": "Remove photo",
+    "photoLimit": "Up to {max} photos per message.",
+    "photoError": "This file couldn't be read. Use a JPG, PNG or WebP photo.",
+    "photoAlt": "Attached photo",
     "status": {
       "thinking": "Thinking…",
       "searching": "Searching the catalog…",

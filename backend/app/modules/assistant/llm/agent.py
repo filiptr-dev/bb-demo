@@ -12,6 +12,7 @@ from dataclasses import dataclass, field
 
 from app.modules.assistant.confidence import FooterFilter
 from app.modules.assistant.llm.client import (
+    Image,
     LlmRequest,
     ModelTurn,
     TextDelta,
@@ -71,14 +72,14 @@ class Agent:
         self.system = system
         self.result = AgentResult()
 
-    async def run(self, history: list[Turn], message: str) -> AsyncIterator[AgentEvent]:
-        async for event in self._run(history, message):
+    async def run(self, history: list[Turn], message: str, images: tuple[Image, ...] = ()) -> AsyncIterator[AgentEvent]:
+        async for event in self._run(history, message, images):
             self.result.events.append(event)
             yield event
 
-    async def _run(self, history: list[Turn], message: str) -> AsyncIterator[AgentEvent]:
+    async def _run(self, history: list[Turn], message: str, images: tuple[Image, ...]) -> AsyncIterator[AgentEvent]:
         result = self.result
-        turns: list[Turn] = [*history, UserTurn(message)]
+        turns: list[Turn] = [*history, UserTurn(message, images)]
         footer = FooterFilter()
         markup = MarkupFilter(lambda: set(self.tools.sources))
         text: list[str] = []

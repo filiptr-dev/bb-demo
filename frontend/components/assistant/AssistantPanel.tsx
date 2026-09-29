@@ -1,13 +1,14 @@
 "use client";
 
-import { useEffect, useRef, useState, type KeyboardEvent } from "react";
+import { useEffect, useRef, useState, type ClipboardEvent, type DragEvent, type KeyboardEvent } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { ArrowUp, Droplet, FileText, MapPin, PanelRightClose, PanelRightOpen, Search, Sparkles, Square, SquarePen, Tag, X } from "lucide-react";
+import { ArrowUp, Droplet, FileText, ImagePlus, MapPin, PanelRightClose, PanelRightOpen, Search, Sparkles, Square, SquarePen, Tag, X } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import { MAX_MESSAGE, type FlowId } from "@/lib/api/assistant";
 import { useAssistantChat } from "@/hooks/useAssistantChat";
 import AssistantTurnView from "./AssistantTurn";
+import { MAX_PHOTOS, preparePhoto, type Photo } from "./photos";
 
 const STARTERS: { id: FlowId; icon: typeof Search }[] = [
   { id: "product_search", icon: Search },
@@ -35,6 +36,9 @@ export default function AssistantPanel({ open, onClose }: { open: boolean; onClo
   const locale = useLocale();
   const { turns, streaming, send, retry, stop, reset } = useAssistantChat(locale);
   const [input, setInput] = useState("");
+  const [photos, setPhotos] = useState<Photo[]>([]);
+  const [photoError, setPhotoError] = useState<string | null>(null);
+  const fileRef = useRef<HTMLInputElement>(null);
   const [docked, setDocked] = useState(readDocked);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -59,11 +63,41 @@ export default function AssistantPanel({ open, onClose }: { open: boolean; onClo
     el.style.height = `${Math.min(el.scrollHeight, 160)}px`;
   }, [input]);
 
+  const canSend = !!input.trim() || photos.length > 0;
+
   function submit() {
-    if (streaming || !input.trim()) return;
+    if (streaming || !canSend) return;
     stick.current = true;
-    send(input);
+    send(input, undefined, undefined, photos);
     setInput("");
+    setPhotos([]);
+    setPhotoError(null);
+  }
+
+  async function addPhotos(files: File[]) {
+    const images = files.filter((f) => f.type.startsWith("image/"));
+    if (!images.length) return;
+    const room = MAX_PHOTOS - photos.length;
+    setPhotoError(images.length > room ? t("photoLimit", { max: MAX_PHOTOS }) : null);
+    const ready = await Promise.allSettled(images.slice(0, Math.max(room, 0)).map(preparePhoto));
+    const ok = ready.flatMap((r) => (r.status === "fulfilled" ? [r.value] : []));
+    if (ok.length < ready.length) setPhotoError(t("photoError"));
+    setPhotos((all) => [...all, ...ok].slice(0, MAX_PHOTOS));
+    inputRef.current?.focus();
+  }
+
+  function onPaste(e: ClipboardEvent<HTMLTextAreaElement>) {
+    const files = [...e.clipboardData.files];
+    if (files.some((f) => f.type.startsWith("image/"))) {
+      e.preventDefault();
+      void addPhotos(files);
+    }
+  }
+
+  function onDrop(e: DragEvent) {
+    if (!e.dataTransfer.types.includes("Files")) return;
+    e.preventDefault();
+    void addPhotos([...e.dataTransfer.files]);
   }
 
   // an example or a suggested follow-up: sent as it is
@@ -184,18 +218,60 @@ export default function AssistantPanel({ open, onClose }: { open: boolean; onClo
         )}
       </div>
 
-      <div className="border-t border-border px-3 pb-2 pt-3">
-        <div className="flex items-end gap-2 rounded-xl border border-border bg-background/40 py-1.5 pl-3 pr-1.5 focus-within:border-brand-2/60">
+      <div className="border-t border-border px-3 pb-2 pt-3" onDragOver={(e) => e.dataTransfer.types.includes("Files") && e.preventDefault()} onDrop={onDrop}>
+        {photos.length > 0 && (
+          <ul className="mb-2 flex gap-2">
+            {photos.map((p) => (
+              <li key={p.id} className="relative">
+                {/* eslint-disable-next-line @next/next/no-img-element -- a local data URL, nothing to optimize */}
+                <img src={p.thumb} alt={t("photoAlt")} className="size-14 rounded-lg border border-border object-cover" />
+                <button
+                  type="button"
+                  onClick={() => setPhotos((all) => all.filter((x) => x.id !== p.id))}
+                  aria-label={t("removePhoto")}
+                  title={t("removePhoto")}
+                  className="absolute -right-1.5 -top-1.5 flex size-5 items-center justify-center rounded-full bg-foreground text-background shadow"
+                >
+                  <X className="size-3" />
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
+        {photoError && <p role="alert" className="mb-1.5 text-[11px] text-destructive">{photoError}</p>}
+        <div className="flex items-end gap-1 rounded-xl border border-border bg-background/40 py-1.5 pl-1.5 pr-1.5 focus-within:border-brand-2/60">
+          <button
+            type="button"
+            onClick={() => fileRef.current?.click()}
+            disabled={photos.length >= MAX_PHOTOS}
+            aria-label={t("attach")}
+            title={t("attach")}
+            className="flex size-8 shrink-0 items-center justify-center rounded-lg text-foreground/50 transition-colors hover:bg-foreground/[0.06] hover:text-foreground disabled:opacity-30"
+          >
+            <ImagePlus className="size-4" />
+          </button>
+          <input
+            ref={fileRef}
+            type="file"
+            accept="image/*"
+            multiple
+            hidden
+            onChange={(e) => {
+              void addPhotos([...(e.target.files ?? [])]);
+              e.target.value = ""; // the same photo can be picked again
+            }}
+          />
           <textarea
             ref={inputRef}
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={onKeyDown}
+            onPaste={onPaste}
             rows={1}
             maxLength={MAX_MESSAGE}
             placeholder={t("placeholder")}
             aria-label={t("inputAria")}
-            className="max-h-40 min-h-8 flex-1 resize-none bg-transparent py-1.5 text-sm outline-none placeholder:text-foreground/40"
+            className="max-h-40 min-h-8 flex-1 resize-none bg-transparent px-1 py-1.5 text-sm outline-none placeholder:text-foreground/40"
           />
           {streaming ? (
             <button type="button" onClick={stop} aria-label={t("stop")} title={t("stop")} className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-foreground/10 text-foreground hover:bg-foreground/15">
@@ -205,7 +281,7 @@ export default function AssistantPanel({ open, onClose }: { open: boolean; onClo
             <button
               type="button"
               onClick={submit}
-              disabled={!input.trim()}
+              disabled={!canSend}
               aria-label={t("send")}
               title={t("send")}
               className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-brand-gradient text-white transition-opacity disabled:opacity-30"

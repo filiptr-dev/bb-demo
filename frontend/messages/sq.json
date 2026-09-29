@@ -1138,6 +1138,11 @@
     "send": "Dërgo",
     "stop": "Ndalo",
     "tooLong": "{count} / {max} karaktere",
+    "attach": "Bashkëngjit një foto",
+    "removePhoto": "Hiq foton",
+    "photoLimit": "Deri në {max} foto për mesazh.",
+    "photoError": "Skedari nuk mund të lexohej. Përdorni një foto JPG, PNG ose WebP.",
+    "photoAlt": "Foto e bashkëngjitur",
     "status": {
       "thinking": "Duke menduar…",
       "searching": "Duke kërkuar në katalog…",
