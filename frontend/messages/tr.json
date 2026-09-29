@@ -1127,5 +1127,107 @@
       "text": "Ürün araması geçici olarak kullanılamıyor. Bağlantınızı kontrol edip tekrar deneyin.",
       "retry": "Tekrar dene"
     }
+  },
+  "Assistant": {
+    "launcher": "AI'a sor",
+    "launcherAria": "Ürün asistanını aç",
+    "title": "Ürün asistanı",
+    "subtitle": "SKF rulmanlar, keçeler ve yağlama",
+    "newChat": "Yeni sohbet",
+    "dock": "Yana sabitle",
+    "undock": "Ayır",
+    "close": "Kapat",
+    "welcomeTitle": "Nasıl yardımcı olabiliriz?",
+    "welcomeBody": "SKF ürünleri, ölçüler, teknik veriler, yağlama veya sipariş hakkında sorun. Bir konu seçin veya sorunuzu yazın.",
+    "starters": {
+      "product_search": "Ürün bul",
+      "datasheet": "Teknik veriler",
+      "decode": "Kodu açıkla",
+      "grease": "Gres seç",
+      "where_to_buy": "Nereden alınır"
+    },
+    "examplesHeading": "Veya örneğin şunu sorun",
+    "examples": [
+      "Her iki tarafı keçeli 25 × 52 × 15 mm rulman hangisi?",
+      "Bir 6205, 1500 d/dak ve 2 kN radyal yükte ne kadar dayanır?",
+      "C3 son eki ne anlama gelir?",
+      "Bir 22212 EK, 1000 d/dak'da ne sıklıkla yeniden greslenmeli?"
+    ],
+    "placeholder": "SKF ürünleri hakkında sorun…",
+    "inputAria": "Sorunuz",
+    "send": "Gönder",
+    "stop": "Durdur",
+    "tooLong": "{count} / {max} karakter",
+    "status": {
+      "thinking": "Düşünüyorum…",
+      "searching": "Katalogda arıyorum…",
+      "reading": "SKF verilerini okuyorum…",
+      "calculating": "Hesaplıyorum…"
+    },
+    "stopped": "Durduruldu.",
+    "ask": {
+      "product_query": "Hangi ürünü arıyorsunuz? Bir kod (ör. 6205-2RSH) veya mm cinsinden d × D × B ölçülerini (ör. 25x52x15) yazın.",
+      "designation": "Hangi kod? Örneğin 6205-2RSH/C3.",
+      "grease_conditions": "Daha net bir seçim için çalışma koşullarını yazın: sıcaklık, hız, yük ve uygulama."
+    },
+    "products": {
+      "found": "“{search}” için {total, plural, one {# ürün} other {# ürün}}",
+      "showAll": "Tümünü katalogda göster"
+    },
+    "specs": {
+      "noData": "Bu ürünün SKF teknik verileri henüz kataloğumuzda yok.",
+      "productPage": "Ürün sayfası"
+    },
+    "decode": {
+      "openDecoder": "Kod çözücüyü aç"
+    },
+    "greases": {
+      "heading": "Temel SKF gres seçimi",
+      "chart": "Tam gres tablosu"
+    },
+    "contact": {
+      "heading": "B&B Unikoop, Kuzey Makedonya resmi SKF distribütörü",
+      "phones": "Telefonlar 7/24 açık",
+      "quote": "Teklif talebi",
+      "form": "İletişim formu"
+    },
+    "sources": "Kaynaklar",
+    "confidence": {
+      "label": "Güven: {level}",
+      "veryHigh": "çok yüksek",
+      "high": "yüksek",
+      "medium": "orta",
+      "low": "düşük",
+      "veryLow": "çok düşük"
+    },
+    "copy": "Kopyala",
+    "copied": "Kopyalandı",
+    "helpful": "Faydalı",
+    "notHelpful": "Faydalı değil",
+    "thanks": "Geri bildiriminiz için teşekkürler",
+    "reasons": {
+      "heading": "Sorun neydi?",
+      "incorrect": "Yanlış veya eksik",
+      "not_what_i_asked": "Sorduğum bu değildi",
+      "slow_or_buggy": "Yavaş veya hatalı",
+      "style": "Üslup veya ton",
+      "safety": "Güvenlik veya hukuki endişe",
+      "other": "Diğer"
+    },
+    "errors": {
+      "rate_limited": "Çok fazla mesaj. {seconds} sn sonra tekrar deneyin.",
+      "rate_limited_later": "Çok fazla mesaj. Birkaç dakika sonra tekrar deneyin.",
+      "assistant_unavailable": "Asistan şu anda kullanılamıyor. Bir dakika sonra tekrar deneyin.",
+      "assistant_busy": "Asistan bugünkü sınıra ulaştı. Lütfen bizi arayın veya yazın.",
+      "assistant_failed": "Yanıt yarıda kesildi. Lütfen tekrar sorun.",
+      "conversation_not_found": "Bu sohbetin süresi doldu. Yeni bir sohbet başlatın.",
+      "network": "Asistana ulaşılamadı. Bağlantınızı kontrol edin.",
+      "request_failed": "Mesaj gönderilemedi.",
+      "validation_failed": "Mesaj gönderilemedi. Çok uzun olabilir.",
+      "retry": "Tekrar dene"
+    },
+    "disclaimer": "Yanıtlar SKF katalog verilerimizden yapay zekâ ile üretilir ve hata içerebilir. Önemli değerleri mühendislerimizle doğrulayın.",
+    "terms": "Koşullar",
+    "privacy": "Gizlilik"
   }
 }

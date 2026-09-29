@@ -1127,5 +1127,107 @@
       "text": "La ricerca prodotti è temporaneamente non disponibile. Controllate la connessione e riprovate.",
       "retry": "Riprova"
     }
+  },
+  "Assistant": {
+    "launcher": "Chiedi all'AI",
+    "launcherAria": "Apri l'assistente prodotti",
+    "title": "Assistente prodotti",
+    "subtitle": "Cuscinetti, tenute e lubrificazione SKF",
+    "newChat": "Nuova chat",
+    "dock": "Aggancia di lato",
+    "undock": "Sgancia",
+    "close": "Chiudi",
+    "welcomeTitle": "Come possiamo aiutarti?",
+    "welcomeBody": "Chiedi di prodotti SKF, dimensioni, dati tecnici, lubrificazione o ordini. Scegli un argomento o scrivi la tua domanda.",
+    "starters": {
+      "product_search": "Trova un prodotto",
+      "datasheet": "Dati tecnici",
+      "decode": "Spiega una sigla",
+      "grease": "Scegli un grasso",
+      "where_to_buy": "Dove acquistare"
+    },
+    "examplesHeading": "Oppure chiedi, per esempio",
+    "examples": [
+      "Quale cuscinetto misura 25 × 52 × 15 mm con tenute su entrambi i lati?",
+      "Quanto dura un 6205 a 1500 giri/min con un carico radiale di 2 kN?",
+      "Cosa significa il suffisso C3?",
+      "Ogni quanto va rilubrificato un 22212 EK a 1000 giri/min?"
+    ],
+    "placeholder": "Chiedi dei prodotti SKF…",
+    "inputAria": "La tua domanda",
+    "send": "Invia",
+    "stop": "Ferma",
+    "tooLong": "{count} / {max} caratteri",
+    "status": {
+      "thinking": "Sto pensando…",
+      "searching": "Cerco nel catalogo…",
+      "reading": "Leggo i dati SKF…",
+      "calculating": "Sto calcolando…"
+    },
+    "stopped": "Interrotto.",
+    "ask": {
+      "product_query": "Quale prodotto cerchi? Scrivi una sigla (es. 6205-2RSH) o le dimensioni d × D × B in mm (es. 25x52x15).",
+      "designation": "Quale sigla? Per esempio 6205-2RSH/C3.",
+      "grease_conditions": "Per una scelta più precisa, indicami le condizioni di esercizio: temperatura, velocità, carico e applicazione."
+    },
+    "products": {
+      "found": "{total, plural, one {# prodotto} other {# prodotti}} per “{search}”",
+      "showAll": "Mostra tutti nel catalogo"
+    },
+    "specs": {
+      "noData": "I dati tecnici SKF di questo prodotto non sono ancora nel nostro catalogo.",
+      "productPage": "Pagina del prodotto"
+    },
+    "decode": {
+      "openDecoder": "Apri il decodificatore sigle"
+    },
+    "greases": {
+      "heading": "Scelta di base dei grassi SKF",
+      "chart": "Tabella completa dei grassi"
+    },
+    "contact": {
+      "heading": "B&B Unikoop, distributore ufficiale SKF per la Macedonia del Nord",
+      "phones": "Telefoni attivi 24 ore su 24",
+      "quote": "Richiesta di preventivo",
+      "form": "Modulo di contatto"
+    },
+    "sources": "Fonti",
+    "confidence": {
+      "label": "Affidabilità: {level}",
+      "veryHigh": "molto alta",
+      "high": "alta",
+      "medium": "media",
+      "low": "bassa",
+      "veryLow": "molto bassa"
+    },
+    "copy": "Copia",
+    "copied": "Copiato",
+    "helpful": "Utile",
+    "notHelpful": "Non utile",
+    "thanks": "Grazie per il feedback",
+    "reasons": {
+      "heading": "Cosa non andava?",
+      "incorrect": "Errata o incompleta",
+      "not_what_i_asked": "Non è ciò che ho chiesto",
+      "slow_or_buggy": "Lenta o con errori",
+      "style": "Stile o tono",
+      "safety": "Problema di sicurezza o legale",
+      "other": "Altro"
+    },
+    "errors": {
+      "rate_limited": "Troppi messaggi. Riprova tra {seconds} s.",
+      "rate_limited_later": "Troppi messaggi. Riprova tra qualche minuto.",
+      "assistant_unavailable": "L'assistente non è disponibile ora. Riprova tra un minuto.",
+      "assistant_busy": "L'assistente ha raggiunto il limite di oggi. Chiamaci o scrivici.",
+      "assistant_failed": "La risposta si è interrotta. Chiedi di nuovo.",
+      "conversation_not_found": "Questa conversazione è scaduta. Inizia una nuova chat.",
+      "network": "Impossibile raggiungere l'assistente. Controlla la connessione.",
+      "request_failed": "Impossibile inviare il messaggio.",
+      "validation_failed": "Impossibile inviare il messaggio. Potrebbe essere troppo lungo.",
+      "retry": "Riprova"
+    },
+    "disclaimer": "Le risposte sono generate dall'AI a partire dai dati del nostro catalogo SKF e possono contenere errori. Verifica i valori importanti con i nostri ingegneri.",
+    "terms": "Condizioni",
+    "privacy": "Privacy"
   }
 }

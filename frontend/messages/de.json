@@ -1127,5 +1127,107 @@
       "text": "Die Produktsuche ist vorübergehend nicht verfügbar. Prüfen Sie Ihre Verbindung und versuchen Sie es erneut.",
       "retry": "Erneut versuchen"
     }
+  },
+  "Assistant": {
+    "launcher": "KI fragen",
+    "launcherAria": "Produktassistenten öffnen",
+    "title": "Produktassistent",
+    "subtitle": "SKF Lager, Dichtungen und Schmierung",
+    "newChat": "Neuer Chat",
+    "dock": "Seitlich andocken",
+    "undock": "Lösen",
+    "close": "Schließen",
+    "welcomeTitle": "Wie können wir helfen?",
+    "welcomeBody": "Fragen Sie nach SKF Produkten, Abmessungen, technischen Daten, Schmierung oder Bestellung. Wählen Sie ein Thema oder schreiben Sie Ihre Frage.",
+    "starters": {
+      "product_search": "Produkt finden",
+      "datasheet": "Technische Daten",
+      "decode": "Bezeichnung erklären",
+      "grease": "Fett auswählen",
+      "where_to_buy": "Wo kaufen"
+    },
+    "examplesHeading": "Oder fragen Sie zum Beispiel",
+    "examples": [
+      "Welches Lager hat 25 × 52 × 15 mm mit Dichtungen auf beiden Seiten?",
+      "Wie lange hält ein 6205 bei 1500 min⁻¹ und 2 kN Radiallast?",
+      "Was bedeutet das Nachsetzzeichen C3?",
+      "Wie oft muss ein 22212 EK bei 1000 min⁻¹ nachgeschmiert werden?"
+    ],
+    "placeholder": "Fragen zu SKF Produkten…",
+    "inputAria": "Ihre Frage",
+    "send": "Senden",
+    "stop": "Stopp",
+    "tooLong": "{count} / {max} Zeichen",
+    "status": {
+      "thinking": "Denke nach…",
+      "searching": "Durchsuche den Katalog…",
+      "reading": "Lese SKF Daten…",
+      "calculating": "Berechne…"
+    },
+    "stopped": "Gestoppt.",
+    "ask": {
+      "product_query": "Welches Produkt suchen Sie? Geben Sie eine Bezeichnung (z. B. 6205-2RSH) oder die Abmessungen d × D × B in mm ein (z. B. 25x52x15).",
+      "designation": "Welche Bezeichnung? Zum Beispiel 6205-2RSH/C3.",
+      "grease_conditions": "Für eine genauere Auswahl nennen Sie mir die Betriebsbedingungen: Temperatur, Drehzahl, Belastung und Anwendung."
+    },
+    "products": {
+      "found": "{total, plural, one {# Produkt} other {# Produkte}} für „{search}“",
+      "showAll": "Alle im Katalog anzeigen"
+    },
+    "specs": {
+      "noData": "Die technischen SKF Daten für dieses Produkt sind noch nicht in unserem Katalog.",
+      "productPage": "Produktseite"
+    },
+    "decode": {
+      "openDecoder": "Bezeichnungsdecoder öffnen"
+    },
+    "greases": {
+      "heading": "Grundauswahl der SKF Fette",
+      "chart": "Vollständige Fetttabelle"
+    },
+    "contact": {
+      "heading": "B&B Unikoop, offizieller SKF Vertriebspartner für Nordmazedonien",
+      "phones": "Telefonisch erreichbar rund um die Uhr",
+      "quote": "Angebotsanfrage",
+      "form": "Kontaktformular"
+    },
+    "sources": "Quellen",
+    "confidence": {
+      "label": "Zuverlässigkeit: {level}",
+      "veryHigh": "sehr hoch",
+      "high": "hoch",
+      "medium": "mittel",
+      "low": "niedrig",
+      "veryLow": "sehr niedrig"
+    },
+    "copy": "Kopieren",
+    "copied": "Kopiert",
+    "helpful": "Hilfreich",
+    "notHelpful": "Nicht hilfreich",
+    "thanks": "Danke für Ihr Feedback",
+    "reasons": {
+      "heading": "Was war falsch?",
+      "incorrect": "Falsch oder unvollständig",
+      "not_what_i_asked": "Nicht meine Frage",
+      "slow_or_buggy": "Langsam oder fehlerhaft",
+      "style": "Stil oder Ton",
+      "safety": "Sicherheits- oder Rechtsbedenken",
+      "other": "Sonstiges"
+    },
+    "errors": {
+      "rate_limited": "Zu viele Nachrichten. Versuchen Sie es in {seconds} s erneut.",
+      "rate_limited_later": "Zu viele Nachrichten. Versuchen Sie es in ein paar Minuten erneut.",
+      "assistant_unavailable": "Der Assistent ist gerade nicht verfügbar. Versuchen Sie es in einer Minute erneut.",
+      "assistant_busy": "Der Assistent hat das heutige Limit erreicht. Bitte rufen Sie uns an oder schreiben Sie uns.",
+      "assistant_failed": "Die Antwort wurde abgebrochen. Bitte fragen Sie erneut.",
+      "conversation_not_found": "Dieses Gespräch ist abgelaufen. Starten Sie einen neuen Chat.",
+      "network": "Der Assistent ist nicht erreichbar. Prüfen Sie Ihre Verbindung.",
+      "request_failed": "Die Nachricht konnte nicht gesendet werden.",
+      "validation_failed": "Die Nachricht konnte nicht gesendet werden. Sie ist vielleicht zu lang.",
+      "retry": "Erneut versuchen"
+    },
+    "disclaimer": "Die Antworten werden von KI aus unseren SKF Katalogdaten erzeugt und können Fehler enthalten. Prüfen Sie wichtige Werte mit unseren Ingenieuren.",
+    "terms": "Bedingungen",
+    "privacy": "Datenschutz"
   }
 }

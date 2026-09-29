@@ -64,6 +64,7 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         allow_origin_regex=settings.cors_allowed_origin_regex,
         allow_methods=["GET", "POST", "PUT", "PATCH", "DELETE"],
         allow_headers=["Content-Type", "Authorization"],
+        expose_headers=["Retry-After"],  # the assistant's 429: the widget shows when to try again
         max_age=600,
     )
 

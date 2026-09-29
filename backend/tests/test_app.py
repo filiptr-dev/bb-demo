@@ -12,6 +12,11 @@ def test_cors_allows_the_frontend_origin(client: TestClient) -> None:
     assert res.headers["access-control-allow-origin"] == ORIGIN
 
 
+def test_cors_exposes_retry_after(client: TestClient) -> None:
+    res = client.get("/api/v1/health/live", headers={"Origin": ORIGIN})
+    assert res.headers["access-control-expose-headers"] == "Retry-After"
+
+
 def test_cors_rejects_other_origins(client: TestClient) -> None:
     res = client.get("/api/v1/health", headers={"Origin": "https://evil.example"})
     assert "access-control-allow-origin" not in res.headers

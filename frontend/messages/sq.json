@@ -1127,5 +1127,107 @@
       "text": "Kërkimi i produkteve është përkohësisht i padisponueshëm. Kontrolloni lidhjen dhe provoni përsëri.",
       "retry": "Provo përsëri"
     }
+  },
+  "Assistant": {
+    "launcher": "Pyet AI",
+    "launcherAria": "Hap asistentin e produkteve",
+    "title": "Asistenti i produkteve",
+    "subtitle": "Kushineta, guarnicione dhe lubrifikim SKF",
+    "newChat": "Bisedë e re",
+    "dock": "Ngjit anash",
+    "undock": "Shkëput",
+    "close": "Mbyll",
+    "welcomeTitle": "Si mund t'ju ndihmojmë?",
+    "welcomeBody": "Pyetni për produktet SKF, dimensionet, të dhënat teknike, lubrifikimin ose porositë. Zgjidhni një temë ose shkruani pyetjen tuaj.",
+    "starters": {
+      "product_search": "Gjej një produkt",
+      "datasheet": "Të dhëna teknike",
+      "decode": "Shpjego një shenjë",
+      "grease": "Zgjidh një yndyrë",
+      "where_to_buy": "Ku të blej"
+    },
+    "examplesHeading": "Ose pyetni, për shembull",
+    "examples": [
+      "Cila kushinetë është 25 × 52 × 15 mm me guarnicione në të dyja anët?",
+      "Sa do të zgjasë një 6205 në 1500 rrot/min me ngarkesë radiale 2 kN?",
+      "Çfarë do të thotë prapashtesa C3?",
+      "Sa shpesh duhet lubrifikuar një 22212 EK në 1000 rrot/min?"
+    ],
+    "placeholder": "Pyetni për produktet SKF…",
+    "inputAria": "Pyetja juaj",
+    "send": "Dërgo",
+    "stop": "Ndalo",
+    "tooLong": "{count} / {max} karaktere",
+    "status": {
+      "thinking": "Duke menduar…",
+      "searching": "Duke kërkuar në katalog…",
+      "reading": "Duke lexuar të dhënat SKF…",
+      "calculating": "Duke llogaritur…"
+    },
+    "stopped": "U ndal.",
+    "ask": {
+      "product_query": "Cilin produkt kërkoni? Shkruani një shenjë (p.sh. 6205-2RSH) ose dimensionet d × D × B në mm (p.sh. 25x52x15).",
+      "designation": "Cila shenjë? Për shembull 6205-2RSH/C3.",
+      "grease_conditions": "Për një zgjedhje më të saktë, shkruani kushtet e punës: temperaturën, shpejtësinë, ngarkesën dhe përdorimin."
+    },
+    "products": {
+      "found": "{total, plural, one {# produkt} other {# produkte}} për „{search}“",
+      "showAll": "Shfaqi të gjitha në katalog"
+    },
+    "specs": {
+      "noData": "Të dhënat teknike SKF për këtë produkt nuk janë ende në katalogun tonë.",
+      "productPage": "Faqja e produktit"
+    },
+    "decode": {
+      "openDecoder": "Hap dekoduesin e shenjave"
+    },
+    "greases": {
+      "heading": "Zgjedhja bazë e yndyrave SKF",
+      "chart": "Tabela e plotë e yndyrave"
+    },
+    "contact": {
+      "heading": "B&B Unikoop, distributor zyrtar i SKF për Maqedoninë e Veriut",
+      "phones": "Telefonat janë në dispozicion 24/7",
+      "quote": "Kërkesë për ofertë",
+      "form": "Formulari i kontaktit"
+    },
+    "sources": "Burimet",
+    "confidence": {
+      "label": "Besueshmëria: {level}",
+      "veryHigh": "shumë e lartë",
+      "high": "e lartë",
+      "medium": "mesatare",
+      "low": "e ulët",
+      "veryLow": "shumë e ulët"
+    },
+    "copy": "Kopjo",
+    "copied": "U kopjua",
+    "helpful": "E dobishme",
+    "notHelpful": "Jo e dobishme",
+    "thanks": "Faleminderit për komentin",
+    "reasons": {
+      "heading": "Çfarë nuk shkoi mirë?",
+      "incorrect": "E pasaktë ose e paplotë",
+      "not_what_i_asked": "Nuk është ajo që pyeta",
+      "slow_or_buggy": "E ngadaltë ose me gabime",
+      "style": "Stili ose toni",
+      "safety": "Shqetësim sigurie ose ligjor",
+      "other": "Tjetër"
+    },
+    "errors": {
+      "rate_limited": "Shumë mesazhe. Provoni përsëri pas {seconds} s.",
+      "rate_limited_later": "Shumë mesazhe. Provoni përsëri pas disa minutash.",
+      "assistant_unavailable": "Asistenti nuk është i disponueshëm tani. Provoni përsëri pas një minute.",
+      "assistant_busy": "Asistenti arriti kufirin e sotëm. Na telefononi ose na shkruani.",
+      "assistant_failed": "Përgjigjja u ndërpre. Pyetni përsëri.",
+      "conversation_not_found": "Kjo bisedë ka skaduar. Filloni një bisedë të re.",
+      "network": "Asistenti nuk u arrit. Kontrolloni lidhjen.",
+      "request_failed": "Mesazhi nuk mund të dërgohej.",
+      "validation_failed": "Mesazhi nuk mund të dërgohej. Mund të jetë shumë i gjatë.",
+      "retry": "Provo përsëri"
+    },
+    "disclaimer": "Përgjigjet gjenerohen nga AI nga të dhënat e katalogut tonë SKF dhe mund të përmbajnë gabime. Kontrolloni vlerat e rëndësishme me inxhinierët tanë.",
+    "terms": "Kushtet",
+    "privacy": "Privatësia"
   }
 }

@@ -1127,5 +1127,107 @@
       "text": "Vyhľadávanie produktov je dočasne nedostupné. Skontrolujte pripojenie a skúste to znova.",
       "retry": "Skúsiť znova"
     }
+  },
+  "Assistant": {
+    "launcher": "Opýtať sa AI",
+    "launcherAria": "Otvoriť produktového asistenta",
+    "title": "Produktový asistent",
+    "subtitle": "Ložiská, tesnenia a mazanie SKF",
+    "newChat": "Nový rozhovor",
+    "dock": "Pripnúť nabok",
+    "undock": "Odopnúť",
+    "close": "Zavrieť",
+    "welcomeTitle": "Ako vám môžeme pomôcť?",
+    "welcomeBody": "Pýtajte sa na produkty SKF, rozmery, technické údaje, mazanie alebo objednávky. Vyberte tému alebo napíšte otázku.",
+    "starters": {
+      "product_search": "Nájsť produkt",
+      "datasheet": "Technické údaje",
+      "decode": "Vysvetliť označenie",
+      "grease": "Vybrať mazivo",
+      "where_to_buy": "Kde kúpiť"
+    },
+    "examplesHeading": "Alebo sa opýtajte napríklad",
+    "examples": [
+      "Ktoré ložisko má 25 × 52 × 15 mm s tesneniami na oboch stranách?",
+      "Ako dlho vydrží 6205 pri 1500 ot/min a radiálnom zaťažení 2 kN?",
+      "Čo znamená prípona C3?",
+      "Ako často treba domazávať 22212 EK pri 1000 ot/min?"
+    ],
+    "placeholder": "Opýtajte sa na produkty SKF…",
+    "inputAria": "Vaša otázka",
+    "send": "Odoslať",
+    "stop": "Zastaviť",
+    "tooLong": "{count} / {max} znakov",
+    "status": {
+      "thinking": "Premýšľam…",
+      "searching": "Hľadám v katalógu…",
+      "reading": "Čítam údaje SKF…",
+      "calculating": "Počítam…"
+    },
+    "stopped": "Zastavené.",
+    "ask": {
+      "product_query": "Aký produkt hľadáte? Zadajte označenie (napr. 6205-2RSH) alebo rozmery d × D × B v mm (napr. 25x52x15).",
+      "designation": "Aké označenie? Napríklad 6205-2RSH/C3.",
+      "grease_conditions": "Pre presnejší výber napíšte prevádzkové podmienky: teplotu, otáčky, zaťaženie a použitie."
+    },
+    "products": {
+      "found": "{total, plural, one {# produkt} few {# produkty} many {# produktu} other {# produktov}} pre „{search}“",
+      "showAll": "Zobraziť všetky v katalógu"
+    },
+    "specs": {
+      "noData": "Technické údaje SKF pre tento produkt zatiaľ nie sú v našom katalógu.",
+      "productPage": "Stránka produktu"
+    },
+    "decode": {
+      "openDecoder": "Otvoriť dekodér označení"
+    },
+    "greases": {
+      "heading": "Základný výber mazív SKF",
+      "chart": "Úplná tabuľka mazív"
+    },
+    "contact": {
+      "heading": "B&B Unikoop, oficiálny distribútor SKF pre Severné Macedónsko",
+      "phones": "Telefóny sú dostupné 24/7",
+      "quote": "Žiadosť o cenovú ponuku",
+      "form": "Kontaktný formulár"
+    },
+    "sources": "Zdroje",
+    "confidence": {
+      "label": "Spoľahlivosť: {level}",
+      "veryHigh": "veľmi vysoká",
+      "high": "vysoká",
+      "medium": "stredná",
+      "low": "nízka",
+      "veryLow": "veľmi nízka"
+    },
+    "copy": "Kopírovať",
+    "copied": "Skopírované",
+    "helpful": "Užitočné",
+    "notHelpful": "Neužitočné",
+    "thanks": "Ďakujeme za spätnú väzbu",
+    "reasons": {
+      "heading": "Čo nebolo v poriadku?",
+      "incorrect": "Nesprávne alebo neúplné",
+      "not_what_i_asked": "Nie je to, na čo som sa pýtal",
+      "slow_or_buggy": "Pomalé alebo s chybami",
+      "style": "Štýl alebo tón",
+      "safety": "Bezpečnostný alebo právny problém",
+      "other": "Iné"
+    },
+    "errors": {
+      "rate_limited": "Príliš veľa správ. Skúste to znova o {seconds} s.",
+      "rate_limited_later": "Príliš veľa správ. Skúste to znova o pár minút.",
+      "assistant_unavailable": "Asistent teraz nie je dostupný. Skúste to znova o minútu.",
+      "assistant_busy": "Asistent dosiahol dnešný limit. Zavolajte nám alebo nám napíšte.",
+      "assistant_failed": "Odpoveď sa prerušila. Opýtajte sa znova.",
+      "conversation_not_found": "Tento rozhovor vypršal. Začnite nový rozhovor.",
+      "network": "Asistent je nedostupný. Skontrolujte pripojenie.",
+      "request_failed": "Správu sa nepodarilo odoslať.",
+      "validation_failed": "Správu sa nepodarilo odoslať. Možno je príliš dlhá.",
+      "retry": "Skúsiť znova"
+    },
+    "disclaimer": "Odpovede generuje AI z údajov nášho katalógu SKF a môžu obsahovať chyby. Dôležité hodnoty si overte u našich inžinierov.",
+    "terms": "Podmienky",
+    "privacy": "Súkromie"
   }
 }

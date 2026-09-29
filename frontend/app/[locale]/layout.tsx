@@ -7,6 +7,7 @@ import "../globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ThemeVariantToggle from "@/components/layout/ThemeVariantToggle";
+import AssistantLauncher from "@/components/assistant/AssistantLauncher";
 import { cn } from "@/lib/utils";
 import { site } from "@/lib/site";
 import { locales, routing, type Locale } from "@/i18n/routing";
@@ -73,6 +74,7 @@ export default async function LocaleLayout({ children, params }: { children: Rea
           <main className="flex-1">{children}</main>
           <Footer />
           <ThemeVariantToggle />
+          <AssistantLauncher />
         </NextIntlClientProvider>
       </body>
     </html>
