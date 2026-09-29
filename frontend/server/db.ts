@@ -11,7 +11,7 @@ if (!url) console.error("DATABASE_POOL_URL / DATABASE_URL is not set: database-b
 // Transaction pooler (port 6543): hands out a server connection per query, so `next build`'s ~11 prerender
 // workers and every serverless instance can each keep a small pool. It can't hold prepared statements.
 export const sql = (g.sql ??= postgres(url ?? "", {
-  ssl: "require",
+  ssl: url && /@(localhost|127\.0\.0\.1)[:/]/.test(url) ? false : "require", // the local compose database has no TLS
   prepare: false,
   max: 5,
   idle_timeout: 20,

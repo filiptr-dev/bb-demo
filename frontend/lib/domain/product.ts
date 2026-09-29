@@ -3,7 +3,7 @@ export const boreCodes = ["cylindrical", "tapered"] as const;
 export type SealCode = (typeof sealCodes)[number];
 export type BoreCode = (typeof boreCodes)[number];
 
-// Rows live in the Postgres `products` table (scripts/schema.sql); query them through server/products.ts.
+// Rows live in the Postgres `products` table (backend/migrations); query them through server/products.ts.
 // Non-bearing items (housings, nuts, seals, …) have no seal/bore type, and some have no bore diameter.
 export type Product = {
   slug: string;

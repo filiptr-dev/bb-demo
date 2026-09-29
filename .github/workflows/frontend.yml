@@ -30,6 +30,9 @@ jobs:
           cache-dependency-path: frontend/package-lock.json
       - run: npm ci
       - run: npm run lint
+      # The API's search words come from messages/*.json: fail if the exported copy in backend/ is out of date.
+      - name: Search vocabulary is up to date
+        run: npm run search-vocabulary && git diff --exit-code ../backend/app/modules/products/search_vocabulary.json
       - run: npx next typegen && npx tsc --noEmit
       # No database in CI: DB-backed pages are deferred to request time (server/db.ts whenDatabase), so this
       # checks that the app compiles and the static pages render.

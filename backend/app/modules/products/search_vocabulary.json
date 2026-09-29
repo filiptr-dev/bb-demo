@@ -1,0 +1,1455 @@
+{
+  "defaultLocale": "mk",
+  "locales": {
+    "mk": {
+      "types": {
+        "deep-groove": [
+          "deep-groove",
+          "радијални куглични лежишта",
+          "deep groove ball"
+        ],
+        "angular-contact": [
+          "angular-contact",
+          "аголни куглични лежишта",
+          "angular contact ball"
+        ],
+        "self-aligning": [
+          "self-aligning",
+          "самоместечки куглични лежишта",
+          "self-aligning ball"
+        ],
+        "spherical-roller": [
+          "spherical-roller",
+          "сферни валчести лежишта",
+          "spherical roller"
+        ],
+        "tapered-roller": [
+          "tapered-roller",
+          "конусни валчести лежишта",
+          "tapered roller"
+        ],
+        "cylindrical-roller": [
+          "cylindrical-roller",
+          "цилиндрични валчести лежишта",
+          "cylindrical roller"
+        ],
+        "thrust-ball": [
+          "thrust-ball",
+          "аксијални куглични лежишта",
+          "thrust ball"
+        ],
+        "unit": [
+          "unit",
+          "лежишни единици",
+          "ball bearing units"
+        ],
+        "toroidal": [
+          "toroidal",
+          "carb тороидални валчести лежишта",
+          "carb тороидални валчести"
+        ],
+        "needle-roller": [
+          "needle-roller",
+          "иглести лежишта",
+          "иглести"
+        ],
+        "track-runner": [
+          "track-runner",
+          "траекторни лежишта",
+          "траекторни"
+        ],
+        "plain": [
+          "plain",
+          "зглобни лежишта, чаури и зглобни глави",
+          "зглобни лежишта"
+        ],
+        "housing": [
+          "housing",
+          "куќишта и додатоци",
+          "куќишта"
+        ],
+        "sleeve-nut": [
+          "sleeve-nut",
+          "хилзни и навртки",
+          "хилзни и навртки"
+        ],
+        "seal": [
+          "seal",
+          "радијални семеринзи",
+          "семеринзи"
+        ]
+      },
+      "seals": {
+        "open": [
+          "open",
+          "отворено"
+        ],
+        "shields": [
+          "shields",
+          "штитови на двете страни"
+        ],
+        "both": [
+          "both",
+          "заптивка на двете страни"
+        ],
+        "one-side": [
+          "one-side",
+          "заптивка или штит од едната страна"
+        ],
+        "other": [
+          "other",
+          "друго заптивање"
+        ]
+      },
+      "bores": {
+        "cylindrical": [
+          "cylindrical",
+          "цилиндричен"
+        ],
+        "tapered": [
+          "tapered",
+          "конусен"
+        ]
+      },
+      "industries": {
+        "cement": [
+          "cement",
+          "цемент"
+        ],
+        "metallurgy": [
+          "metallurgy",
+          "металургија"
+        ],
+        "paper": [
+          "paper",
+          "хартија"
+        ],
+        "power": [
+          "power",
+          "енергетика"
+        ],
+        "mining": [
+          "mining",
+          "рудници"
+        ],
+        "chemical": [
+          "chemical",
+          "хемиска индустрија"
+        ],
+        "food": [
+          "food",
+          "прехранбена индустрија"
+        ],
+        "recycling": [
+          "recycling",
+          "рециклирање"
+        ]
+      }
+    },
+    "en": {
+      "types": {
+        "deep-groove": [
+          "deep-groove",
+          "deep groove ball bearings",
+          "deep groove ball"
+        ],
+        "angular-contact": [
+          "angular-contact",
+          "angular contact ball bearings",
+          "angular contact ball"
+        ],
+        "self-aligning": [
+          "self-aligning",
+          "self-aligning ball bearings",
+          "self-aligning ball"
+        ],
+        "spherical-roller": [
+          "spherical-roller",
+          "spherical roller bearings",
+          "spherical roller"
+        ],
+        "tapered-roller": [
+          "tapered-roller",
+          "tapered roller bearings",
+          "tapered roller"
+        ],
+        "cylindrical-roller": [
+          "cylindrical-roller",
+          "cylindrical roller bearings",
+          "cylindrical roller"
+        ],
+        "thrust-ball": [
+          "thrust-ball",
+          "thrust ball bearings",
+          "thrust ball"
+        ],
+        "unit": [
+          "unit",
+          "bearing units",
+          "ball bearing units"
+        ],
+        "toroidal": [
+          "toroidal",
+          "carb toroidal roller bearings",
+          "carb toroidal roller"
+        ],
+        "needle-roller": [
+          "needle-roller",
+          "needle roller bearings",
+          "needle roller"
+        ],
+        "track-runner": [
+          "track-runner",
+          "track runner bearings",
+          "track runner"
+        ],
+        "plain": [
+          "plain",
+          "plain bearings, bushings and rod ends",
+          "plain bearings"
+        ],
+        "housing": [
+          "housing",
+          "housings and accessories",
+          "housings"
+        ],
+        "sleeve-nut": [
+          "sleeve-nut",
+          "sleeves and lock nuts",
+          "sleeves and nuts"
+        ],
+        "seal": [
+          "seal",
+          "radial shaft seals",
+          "seals"
+        ]
+      },
+      "seals": {
+        "open": [
+          "open",
+          "open"
+        ],
+        "shields": [
+          "shields",
+          "shields on both sides"
+        ],
+        "both": [
+          "both",
+          "seal on both sides"
+        ],
+        "one-side": [
+          "one-side",
+          "seal or shield on one side"
+        ],
+        "other": [
+          "other",
+          "other sealing"
+        ]
+      },
+      "bores": {
+        "cylindrical": [
+          "cylindrical",
+          "cylindrical"
+        ],
+        "tapered": [
+          "tapered",
+          "tapered"
+        ]
+      },
+      "industries": {
+        "cement": [
+          "cement",
+          "cement"
+        ],
+        "metallurgy": [
+          "metallurgy",
+          "metallurgy"
+        ],
+        "paper": [
+          "paper",
+          "paper"
+        ],
+        "power": [
+          "power",
+          "power generation"
+        ],
+        "mining": [
+          "mining",
+          "mining"
+        ],
+        "chemical": [
+          "chemical",
+          "chemical"
+        ],
+        "food": [
+          "food",
+          "food & beverage"
+        ],
+        "recycling": [
+          "recycling",
+          "recycling"
+        ]
+      }
+    },
+    "sq": {
+      "types": {
+        "deep-groove": [
+          "deep-groove",
+          "rulmane radiale me bila",
+          "deep groove ball"
+        ],
+        "angular-contact": [
+          "angular-contact",
+          "rulmane këndore me bila",
+          "angular contact ball"
+        ],
+        "self-aligning": [
+          "self-aligning",
+          "rulmane vetëpërqendrues me bila",
+          "self-aligning ball"
+        ],
+        "spherical-roller": [
+          "spherical-roller",
+          "rulmane sferike me rula",
+          "spherical roller"
+        ],
+        "tapered-roller": [
+          "tapered-roller",
+          "rulmane konike me rula",
+          "tapered roller"
+        ],
+        "cylindrical-roller": [
+          "cylindrical-roller",
+          "rulmane cilindrike me rula",
+          "cylindrical roller"
+        ],
+        "thrust-ball": [
+          "thrust-ball",
+          "rulmane aksiale me bila",
+          "thrust ball"
+        ],
+        "unit": [
+          "unit",
+          "njësi rulmanesh",
+          "ball bearing units"
+        ],
+        "toroidal": [
+          "toroidal",
+          "kushineta toroidale me rula carb",
+          "toroidale carb"
+        ],
+        "needle-roller": [
+          "needle-roller",
+          "kushineta me gjilpëra",
+          "me gjilpëra"
+        ],
+        "track-runner": [
+          "track-runner",
+          "kushineta rrotulluese për shina",
+          "për shina"
+        ],
+        "plain": [
+          "plain",
+          "kushineta rrëshqitëse, bokola dhe koka artikulare",
+          "rrëshqitëse"
+        ],
+        "housing": [
+          "housing",
+          "shtëpiza dhe aksesorë",
+          "shtëpiza"
+        ],
+        "sleeve-nut": [
+          "sleeve-nut",
+          "bokola dhe dado",
+          "bokola dhe dado"
+        ],
+        "seal": [
+          "seal",
+          "guarnicione radiale boshti",
+          "guarnicione"
+        ]
+      },
+      "seals": {
+        "open": [
+          "open",
+          "i hapur"
+        ],
+        "shields": [
+          "shields",
+          "mbrojtëse në të dyja anët"
+        ],
+        "both": [
+          "both",
+          "guarnicion në të dyja anët"
+        ],
+        "one-side": [
+          "one-side",
+          "guarnicion ose mburojë në njërën anë"
+        ],
+        "other": [
+          "other",
+          "tjetër izolim"
+        ]
+      },
+      "bores": {
+        "cylindrical": [
+          "cylindrical",
+          "cilindrik"
+        ],
+        "tapered": [
+          "tapered",
+          "konik"
+        ]
+      },
+      "industries": {
+        "cement": [
+          "cement",
+          "çimento"
+        ],
+        "metallurgy": [
+          "metallurgy",
+          "metalurgji"
+        ],
+        "paper": [
+          "paper",
+          "letër"
+        ],
+        "power": [
+          "power",
+          "energjetikë"
+        ],
+        "mining": [
+          "mining",
+          "minierat"
+        ],
+        "chemical": [
+          "chemical",
+          "industria kimike"
+        ],
+        "food": [
+          "food",
+          "industria ushqimore"
+        ],
+        "recycling": [
+          "recycling",
+          "riciklimi"
+        ]
+      }
+    },
+    "de": {
+      "types": {
+        "deep-groove": [
+          "deep-groove",
+          "rillenkugellager",
+          "rillenkugellager"
+        ],
+        "angular-contact": [
+          "angular-contact",
+          "schrägkugellager",
+          "schrägkugellager"
+        ],
+        "self-aligning": [
+          "self-aligning",
+          "pendelkugellager",
+          "pendelkugellager"
+        ],
+        "spherical-roller": [
+          "spherical-roller",
+          "pendelrollenlager",
+          "pendelrollenlager"
+        ],
+        "tapered-roller": [
+          "tapered-roller",
+          "kegelrollenlager",
+          "kegelrollenlager"
+        ],
+        "cylindrical-roller": [
+          "cylindrical-roller",
+          "zylinderrollenlager",
+          "zylinderrollenlager"
+        ],
+        "thrust-ball": [
+          "thrust-ball",
+          "axial-rillenkugellager",
+          "axial-rillenkugellager"
+        ],
+        "unit": [
+          "unit",
+          "lagereinheiten",
+          "kugellagereinheiten"
+        ],
+        "toroidal": [
+          "toroidal",
+          "carb toroidalrollenlager",
+          "carb toroidalrollenlager"
+        ],
+        "needle-roller": [
+          "needle-roller",
+          "nadellager",
+          "nadellager"
+        ],
+        "track-runner": [
+          "track-runner",
+          "laufrollen",
+          "laufrollen"
+        ],
+        "plain": [
+          "plain",
+          "gleitlager, buchsen und gelenkköpfe",
+          "gleitlager"
+        ],
+        "housing": [
+          "housing",
+          "gehäuse und zubehör",
+          "gehäuse"
+        ],
+        "sleeve-nut": [
+          "sleeve-nut",
+          "hülsen und nutmuttern",
+          "hülsen und muttern"
+        ],
+        "seal": [
+          "seal",
+          "radial-wellendichtringe",
+          "dichtungen"
+        ]
+      },
+      "seals": {
+        "open": [
+          "open",
+          "offen"
+        ],
+        "shields": [
+          "shields",
+          "deckscheiben beidseitig"
+        ],
+        "both": [
+          "both",
+          "dichtscheiben beidseitig"
+        ],
+        "one-side": [
+          "one-side",
+          "dicht- oder deckscheibe einseitig"
+        ],
+        "other": [
+          "other",
+          "sonstige abdichtung"
+        ]
+      },
+      "bores": {
+        "cylindrical": [
+          "cylindrical",
+          "zylindrisch"
+        ],
+        "tapered": [
+          "tapered",
+          "kegelig"
+        ]
+      },
+      "industries": {
+        "cement": [
+          "cement",
+          "zement"
+        ],
+        "metallurgy": [
+          "metallurgy",
+          "metallurgie"
+        ],
+        "paper": [
+          "paper",
+          "papier"
+        ],
+        "power": [
+          "power",
+          "energieerzeugung"
+        ],
+        "mining": [
+          "mining",
+          "bergbau"
+        ],
+        "chemical": [
+          "chemical",
+          "chemie"
+        ],
+        "food": [
+          "food",
+          "lebensmittel & getränke"
+        ],
+        "recycling": [
+          "recycling",
+          "recycling"
+        ]
+      }
+    },
+    "tr": {
+      "types": {
+        "deep-groove": [
+          "deep-groove",
+          "sabit bilyalı rulmanlar",
+          "sabit bilyalı"
+        ],
+        "angular-contact": [
+          "angular-contact",
+          "eğik bilyalı rulmanlar",
+          "eğik bilyalı"
+        ],
+        "self-aligning": [
+          "self-aligning",
+          "oynak bilyalı rulmanlar",
+          "oynak bilyalı"
+        ],
+        "spherical-roller": [
+          "spherical-roller",
+          "oynak makaralı rulmanlar",
+          "oynak makaralı"
+        ],
+        "tapered-roller": [
+          "tapered-roller",
+          "konik makaralı rulmanlar",
+          "konik makaralı"
+        ],
+        "cylindrical-roller": [
+          "cylindrical-roller",
+          "silindirik makaralı rulmanlar",
+          "silindirik makaralı"
+        ],
+        "thrust-ball": [
+          "thrust-ball",
+          "eksenel bilyalı rulmanlar",
+          "eksenel bilyalı"
+        ],
+        "unit": [
+          "unit",
+          "rulman üniteleri",
+          "bilyalı rulman üniteleri"
+        ],
+        "toroidal": [
+          "toroidal",
+          "carb toroidal makaralı rulmanlar",
+          "carb toroidal makaralı"
+        ],
+        "needle-roller": [
+          "needle-roller",
+          "i̇ğneli rulmanlar",
+          "i̇ğneli"
+        ],
+        "track-runner": [
+          "track-runner",
+          "makara rulmanları",
+          "makara rulmanları"
+        ],
+        "plain": [
+          "plain",
+          "kaymalı yataklar, burçlar ve rot başları",
+          "kaymalı yataklar"
+        ],
+        "housing": [
+          "housing",
+          "rulman yatakları ve aksesuarları",
+          "rulman yatakları"
+        ],
+        "sleeve-nut": [
+          "sleeve-nut",
+          "manşonlar ve kilit somunları",
+          "manşonlar ve somunlar"
+        ],
+        "seal": [
+          "seal",
+          "radyal mil keçeleri",
+          "keçeler"
+        ]
+      },
+      "seals": {
+        "open": [
+          "open",
+          "açık"
+        ],
+        "shields": [
+          "shields",
+          "her iki tarafta metal kapak"
+        ],
+        "both": [
+          "both",
+          "her iki tarafta keçe"
+        ],
+        "one-side": [
+          "one-side",
+          "bir tarafta keçe veya metal kapak"
+        ],
+        "other": [
+          "other",
+          "diğer sızdırmazlık"
+        ]
+      },
+      "bores": {
+        "cylindrical": [
+          "cylindrical",
+          "silindirik"
+        ],
+        "tapered": [
+          "tapered",
+          "konik"
+        ]
+      },
+      "industries": {
+        "cement": [
+          "cement",
+          "çimento"
+        ],
+        "metallurgy": [
+          "metallurgy",
+          "metalurji"
+        ],
+        "paper": [
+          "paper",
+          "kâğıt"
+        ],
+        "power": [
+          "power",
+          "enerji üretimi"
+        ],
+        "mining": [
+          "mining",
+          "madencilik"
+        ],
+        "chemical": [
+          "chemical",
+          "kimya"
+        ],
+        "food": [
+          "food",
+          "gıda ve içecek"
+        ],
+        "recycling": [
+          "recycling",
+          "geri dönüşüm"
+        ]
+      }
+    },
+    "ru": {
+      "types": {
+        "deep-groove": [
+          "deep-groove",
+          "радиальные шариковые подшипники",
+          "радиальные шариковые"
+        ],
+        "angular-contact": [
+          "angular-contact",
+          "радиально-упорные шариковые подшипники",
+          "радиально-упорные шариковые"
+        ],
+        "self-aligning": [
+          "self-aligning",
+          "самоустанавливающиеся шариковые подшипники",
+          "самоустанавливающиеся шариковые"
+        ],
+        "spherical-roller": [
+          "spherical-roller",
+          "сферические роликовые подшипники",
+          "сферические роликовые"
+        ],
+        "tapered-roller": [
+          "tapered-roller",
+          "конические роликовые подшипники",
+          "конические роликовые"
+        ],
+        "cylindrical-roller": [
+          "cylindrical-roller",
+          "цилиндрические роликовые подшипники",
+          "цилиндрические роликовые"
+        ],
+        "thrust-ball": [
+          "thrust-ball",
+          "упорные шариковые подшипники",
+          "упорные шариковые"
+        ],
+        "unit": [
+          "unit",
+          "подшипниковые узлы",
+          "шарикоподшипниковые узлы"
+        ],
+        "toroidal": [
+          "toroidal",
+          "тороидальные роликовые подшипники carb",
+          "тороидальные роликовые carb"
+        ],
+        "needle-roller": [
+          "needle-roller",
+          "игольчатые роликовые подшипники",
+          "игольчатые роликовые"
+        ],
+        "track-runner": [
+          "track-runner",
+          "опорные ролики",
+          "опорные ролики"
+        ],
+        "plain": [
+          "plain",
+          "подшипники скольжения, втулки и шарнирные наконечники",
+          "подшипники скольжения"
+        ],
+        "housing": [
+          "housing",
+          "корпуса и принадлежности",
+          "корпуса"
+        ],
+        "sleeve-nut": [
+          "sleeve-nut",
+          "втулки и стопорные гайки",
+          "втулки и гайки"
+        ],
+        "seal": [
+          "seal",
+          "радиальные уплотнения валов",
+          "уплотнения"
+        ]
+      },
+      "seals": {
+        "open": [
+          "open",
+          "открытый"
+        ],
+        "shields": [
+          "shields",
+          "защитные шайбы с обеих сторон"
+        ],
+        "both": [
+          "both",
+          "уплотнения с обеих сторон"
+        ],
+        "one-side": [
+          "one-side",
+          "уплотнение или защитная шайба с одной стороны"
+        ],
+        "other": [
+          "other",
+          "другое уплотнение"
+        ]
+      },
+      "bores": {
+        "cylindrical": [
+          "cylindrical",
+          "цилиндрическое"
+        ],
+        "tapered": [
+          "tapered",
+          "коническое"
+        ]
+      },
+      "industries": {
+        "cement": [
+          "cement",
+          "цементная промышленность"
+        ],
+        "metallurgy": [
+          "metallurgy",
+          "металлургия"
+        ],
+        "paper": [
+          "paper",
+          "целлюлозно-бумажная промышленность"
+        ],
+        "power": [
+          "power",
+          "энергетика"
+        ],
+        "mining": [
+          "mining",
+          "горнодобывающая промышленность"
+        ],
+        "chemical": [
+          "chemical",
+          "химическая промышленность"
+        ],
+        "food": [
+          "food",
+          "пищевая промышленность и производство напитков"
+        ],
+        "recycling": [
+          "recycling",
+          "переработка отходов"
+        ]
+      }
+    },
+    "it": {
+      "types": {
+        "deep-groove": [
+          "deep-groove",
+          "cuscinetti radiali a sfere",
+          "radiali a sfere"
+        ],
+        "angular-contact": [
+          "angular-contact",
+          "cuscinetti a sfere a contatto obliquo",
+          "a sfere a contatto obliquo"
+        ],
+        "self-aligning": [
+          "self-aligning",
+          "cuscinetti orientabili a sfere",
+          "orientabili a sfere"
+        ],
+        "spherical-roller": [
+          "spherical-roller",
+          "cuscinetti orientabili a rulli",
+          "orientabili a rulli"
+        ],
+        "tapered-roller": [
+          "tapered-roller",
+          "cuscinetti a rulli conici",
+          "a rulli conici"
+        ],
+        "cylindrical-roller": [
+          "cylindrical-roller",
+          "cuscinetti a rulli cilindrici",
+          "a rulli cilindrici"
+        ],
+        "thrust-ball": [
+          "thrust-ball",
+          "cuscinetti assiali a sfere",
+          "assiali a sfere"
+        ],
+        "unit": [
+          "unit",
+          "unità cuscinetto",
+          "unità cuscinetto a sfere"
+        ],
+        "toroidal": [
+          "toroidal",
+          "cuscinetti toroidali a rulli carb",
+          "toroidali a rulli carb"
+        ],
+        "needle-roller": [
+          "needle-roller",
+          "cuscinetti a rullini",
+          "a rullini"
+        ],
+        "track-runner": [
+          "track-runner",
+          "rotelle di appoggio",
+          "rotelle di appoggio"
+        ],
+        "plain": [
+          "plain",
+          "cuscinetti radenti, boccole e teste a snodo",
+          "cuscinetti radenti"
+        ],
+        "housing": [
+          "housing",
+          "supporti e accessori",
+          "supporti"
+        ],
+        "sleeve-nut": [
+          "sleeve-nut",
+          "bussole e ghiere di bloccaggio",
+          "bussole e ghiere"
+        ],
+        "seal": [
+          "seal",
+          "anelli di tenuta radiali",
+          "tenute"
+        ]
+      },
+      "seals": {
+        "open": [
+          "open",
+          "aperto"
+        ],
+        "shields": [
+          "shields",
+          "schermi su entrambi i lati"
+        ],
+        "both": [
+          "both",
+          "tenute su entrambi i lati"
+        ],
+        "one-side": [
+          "one-side",
+          "tenuta o schermo su un lato"
+        ],
+        "other": [
+          "other",
+          "altra tenuta"
+        ]
+      },
+      "bores": {
+        "cylindrical": [
+          "cylindrical",
+          "cilindrico"
+        ],
+        "tapered": [
+          "tapered",
+          "conico"
+        ]
+      },
+      "industries": {
+        "cement": [
+          "cement",
+          "cemento"
+        ],
+        "metallurgy": [
+          "metallurgy",
+          "metallurgia"
+        ],
+        "paper": [
+          "paper",
+          "carta"
+        ],
+        "power": [
+          "power",
+          "produzione di energia"
+        ],
+        "mining": [
+          "mining",
+          "settore minerario"
+        ],
+        "chemical": [
+          "chemical",
+          "chimica"
+        ],
+        "food": [
+          "food",
+          "alimentare e bevande"
+        ],
+        "recycling": [
+          "recycling",
+          "riciclaggio"
+        ]
+      }
+    },
+    "el": {
+      "types": {
+        "deep-groove": [
+          "deep-groove",
+          "σφαιρικά ρουλεμάν βαθέος αυλακιού",
+          "βαθέος αυλακιού"
+        ],
+        "angular-contact": [
+          "angular-contact",
+          "σφαιρικά ρουλεμάν γωνιακής επαφής",
+          "γωνιακής επαφής"
+        ],
+        "self-aligning": [
+          "self-aligning",
+          "αυτορρυθμιζόμενα σφαιρικά ρουλεμάν",
+          "αυτορρυθμιζόμενα σφαιρικά"
+        ],
+        "spherical-roller": [
+          "spherical-roller",
+          "αυτορρυθμιζόμενα ρουλεμάν κυλίνδρων",
+          "αυτορρυθμιζόμενα κυλίνδρων"
+        ],
+        "tapered-roller": [
+          "tapered-roller",
+          "κωνικά ρουλεμάν",
+          "κωνικά"
+        ],
+        "cylindrical-roller": [
+          "cylindrical-roller",
+          "κυλινδρικά ρουλεμάν",
+          "κυλινδρικά"
+        ],
+        "thrust-ball": [
+          "thrust-ball",
+          "ωστικά σφαιρικά ρουλεμάν",
+          "ωστικά σφαιρικά"
+        ],
+        "unit": [
+          "unit",
+          "μονάδες ρουλεμάν",
+          "μονάδες σφαιρικών ρουλεμάν"
+        ],
+        "toroidal": [
+          "toroidal",
+          "τοροειδή ρουλεμάν κυλίνδρων carb",
+          "τοροειδή carb"
+        ],
+        "needle-roller": [
+          "needle-roller",
+          "βελονοειδή ρουλεμάν",
+          "βελονοειδή"
+        ],
+        "track-runner": [
+          "track-runner",
+          "ρουλεμάν κυλιόμενων τροχών",
+          "κυλιόμενων τροχών"
+        ],
+        "plain": [
+          "plain",
+          "έδρανα ολίσθησης, δακτύλιοι και ακρόμπαρα",
+          "έδρανα ολίσθησης"
+        ],
+        "housing": [
+          "housing",
+          "έδρανα και εξαρτήματα",
+          "έδρανα"
+        ],
+        "sleeve-nut": [
+          "sleeve-nut",
+          "χιτώνια και περικόχλια ασφάλισης",
+          "χιτώνια και περικόχλια"
+        ],
+        "seal": [
+          "seal",
+          "τσιμούχες ακτινικής στεγανοποίησης άξονα",
+          "στεγανοποιητικά"
+        ]
+      },
+      "seals": {
+        "open": [
+          "open",
+          "ανοιχτό"
+        ],
+        "shields": [
+          "shields",
+          "μεταλλικά καλύμματα και στις δύο πλευρές"
+        ],
+        "both": [
+          "both",
+          "στεγανοποίηση και στις δύο πλευρές"
+        ],
+        "one-side": [
+          "one-side",
+          "στεγανοποίηση ή κάλυμμα στη μία πλευρά"
+        ],
+        "other": [
+          "other",
+          "άλλη στεγανοποίηση"
+        ]
+      },
+      "bores": {
+        "cylindrical": [
+          "cylindrical",
+          "κυλινδρική"
+        ],
+        "tapered": [
+          "tapered",
+          "κωνική"
+        ]
+      },
+      "industries": {
+        "cement": [
+          "cement",
+          "τσιμέντο"
+        ],
+        "metallurgy": [
+          "metallurgy",
+          "μεταλλουργία"
+        ],
+        "paper": [
+          "paper",
+          "χαρτοβιομηχανία"
+        ],
+        "power": [
+          "power",
+          "παραγωγή ενέργειας"
+        ],
+        "mining": [
+          "mining",
+          "εξόρυξη"
+        ],
+        "chemical": [
+          "chemical",
+          "χημική βιομηχανία"
+        ],
+        "food": [
+          "food",
+          "τρόφιμα και ποτά"
+        ],
+        "recycling": [
+          "recycling",
+          "ανακύκλωση"
+        ]
+      }
+    },
+    "bg": {
+      "types": {
+        "deep-groove": [
+          "deep-groove",
+          "радиални сачмени лагери",
+          "радиални сачмени"
+        ],
+        "angular-contact": [
+          "angular-contact",
+          "радиално-аксиални сачмени лагери",
+          "радиално-аксиални сачмени"
+        ],
+        "self-aligning": [
+          "self-aligning",
+          "самонастройващи се сачмени лагери",
+          "самонастройващи се сачмени"
+        ],
+        "spherical-roller": [
+          "spherical-roller",
+          "сферични ролкови лагери",
+          "сферични ролкови"
+        ],
+        "tapered-roller": [
+          "tapered-roller",
+          "конусни ролкови лагери",
+          "конусни ролкови"
+        ],
+        "cylindrical-roller": [
+          "cylindrical-roller",
+          "цилиндрични ролкови лагери",
+          "цилиндрични ролкови"
+        ],
+        "thrust-ball": [
+          "thrust-ball",
+          "аксиални сачмени лагери",
+          "аксиални сачмени"
+        ],
+        "unit": [
+          "unit",
+          "лагерни възли",
+          "сачмени лагерни възли"
+        ],
+        "toroidal": [
+          "toroidal",
+          "тороидални ролкови лагери carb",
+          "тороидални ролкови carb"
+        ],
+        "needle-roller": [
+          "needle-roller",
+          "иглени лагери",
+          "иглени"
+        ],
+        "track-runner": [
+          "track-runner",
+          "опорни ролки",
+          "опорни ролки"
+        ],
+        "plain": [
+          "plain",
+          "плъзгащи лагери, втулки и шарнирни накрайници",
+          "плъзгащи лагери"
+        ],
+        "housing": [
+          "housing",
+          "корпуси и аксесоари",
+          "корпуси"
+        ],
+        "sleeve-nut": [
+          "sleeve-nut",
+          "втулки и осигурителни гайки",
+          "втулки и гайки"
+        ],
+        "seal": [
+          "seal",
+          "радиални уплътнения за валове",
+          "уплътнения"
+        ]
+      },
+      "seals": {
+        "open": [
+          "open",
+          "отворен"
+        ],
+        "shields": [
+          "shields",
+          "защитни шайби от двете страни"
+        ],
+        "both": [
+          "both",
+          "уплътнение от двете страни"
+        ],
+        "one-side": [
+          "one-side",
+          "уплътнение или защитна шайба от едната страна"
+        ],
+        "other": [
+          "other",
+          "друго уплътнение"
+        ]
+      },
+      "bores": {
+        "cylindrical": [
+          "cylindrical",
+          "цилиндричен"
+        ],
+        "tapered": [
+          "tapered",
+          "конусен"
+        ]
+      },
+      "industries": {
+        "cement": [
+          "cement",
+          "циментова индустрия"
+        ],
+        "metallurgy": [
+          "metallurgy",
+          "металургия"
+        ],
+        "paper": [
+          "paper",
+          "хартиена индустрия"
+        ],
+        "power": [
+          "power",
+          "енергетика"
+        ],
+        "mining": [
+          "mining",
+          "минна индустрия"
+        ],
+        "chemical": [
+          "chemical",
+          "химическа индустрия"
+        ],
+        "food": [
+          "food",
+          "храни и напитки"
+        ],
+        "recycling": [
+          "recycling",
+          "рециклиране"
+        ]
+      }
+    },
+    "sk": {
+      "types": {
+        "deep-groove": [
+          "deep-groove",
+          "jednoradové guľkové ložiská",
+          "jednoradové guľkové"
+        ],
+        "angular-contact": [
+          "angular-contact",
+          "guľkové ložiská s kosouhlým stykom",
+          "s kosouhlým stykom"
+        ],
+        "self-aligning": [
+          "self-aligning",
+          "naklápacie guľkové ložiská",
+          "naklápacie guľkové"
+        ],
+        "spherical-roller": [
+          "spherical-roller",
+          "súdkové ložiská",
+          "súdkové"
+        ],
+        "tapered-roller": [
+          "tapered-roller",
+          "kužeľové valčekové ložiská",
+          "kužeľové valčekové"
+        ],
+        "cylindrical-roller": [
+          "cylindrical-roller",
+          "valčekové ložiská",
+          "valčekové"
+        ],
+        "thrust-ball": [
+          "thrust-ball",
+          "axiálne guľkové ložiská",
+          "axiálne guľkové"
+        ],
+        "unit": [
+          "unit",
+          "ložiskové jednotky",
+          "guľkové ložiskové jednotky"
+        ],
+        "toroidal": [
+          "toroidal",
+          "toroidné valčekové ložiská carb",
+          "toroidné carb"
+        ],
+        "needle-roller": [
+          "needle-roller",
+          "ihlové ložiská",
+          "ihlové"
+        ],
+        "track-runner": [
+          "track-runner",
+          "vodiace kladky",
+          "vodiace kladky"
+        ],
+        "plain": [
+          "plain",
+          "klzné ložiská, puzdrá a kĺbové hlavy",
+          "klzné ložiská"
+        ],
+        "housing": [
+          "housing",
+          "telesá a príslušenstvo",
+          "telesá"
+        ],
+        "sleeve-nut": [
+          "sleeve-nut",
+          "puzdrá a poistné matice",
+          "puzdrá a matice"
+        ],
+        "seal": [
+          "seal",
+          "radiálne hriadeľové tesnenia",
+          "tesnenia"
+        ]
+      },
+      "seals": {
+        "open": [
+          "open",
+          "otvorené"
+        ],
+        "shields": [
+          "shields",
+          "krycie plechy na oboch stranách"
+        ],
+        "both": [
+          "both",
+          "tesnenie na oboch stranách"
+        ],
+        "one-side": [
+          "one-side",
+          "tesnenie alebo krycí plech na jednej strane"
+        ],
+        "other": [
+          "other",
+          "iné utesnenie"
+        ]
+      },
+      "bores": {
+        "cylindrical": [
+          "cylindrical",
+          "valcový"
+        ],
+        "tapered": [
+          "tapered",
+          "kužeľový"
+        ]
+      },
+      "industries": {
+        "cement": [
+          "cement",
+          "cementárne"
+        ],
+        "metallurgy": [
+          "metallurgy",
+          "hutníctvo"
+        ],
+        "paper": [
+          "paper",
+          "papierenský priemysel"
+        ],
+        "power": [
+          "power",
+          "energetika"
+        ],
+        "mining": [
+          "mining",
+          "baníctvo"
+        ],
+        "chemical": [
+          "chemical",
+          "chemický priemysel"
+        ],
+        "food": [
+          "food",
+          "potraviny a nápoje"
+        ],
+        "recycling": [
+          "recycling",
+          "recyklácia"
+        ]
+      }
+    }
+  }
+}

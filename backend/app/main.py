@@ -12,6 +12,7 @@ from app.core.db import create_engine, create_sessionmaker
 from app.core.errors import problem_responses, register_error_handlers
 from app.core.settings import Settings, get_settings
 from app.modules.health.router import router as health_router
+from app.modules.products.router import router as products_router
 
 API_PREFIX = "/api/v1"
 
@@ -62,5 +63,6 @@ def create_app(settings: Settings | None = None) -> FastAPI:
 
     api = APIRouter(prefix=API_PREFIX, responses=problem_responses)
     api.include_router(health_router)
+    api.include_router(products_router)
     app.include_router(api)
     return app

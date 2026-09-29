@@ -8,7 +8,6 @@
 // as compact tuples: [designation, classificationIdx, boreTypeIdx, sealingIdx, d, D, B]. We fetch the page,
 // follow the bundle to that chunk and evaluate just the array literals. No per-page crawling, no /api/ calls.
 import vm from "node:vm";
-import { readFileSync } from "node:fs";
 import postgres from "postgres";
 import { slugify, type Product, type SealCode } from "../lib/domain/product.ts";
 import { seedProducts } from "../lib/domain/seed.ts";
@@ -155,10 +154,15 @@ console.log(byType.join(", "));
 if (unmapped.size) console.warn("skipped unmapped classifications:", [...unmapped]);
 if (dry) process.exit(0);
 
-if (!process.env.DATABASE_URL) throw new Error("DATABASE_URL is not set (see .env.local)");
-const sql = postgres(process.env.DATABASE_URL, { ssl: "require", max: 1, onnotice: () => {} });
+const url = process.env.DATABASE_URL;
+if (!url) throw new Error("DATABASE_URL is not set (see .env.local)");
+// The local compose database (docker compose up -d db) has no TLS; every hosted one needs it.
+const local = /@(localhost|127\.0\.0\.1)[:/]/.test(url);
+const sql = postgres(url, { ssl: local ? false : "require", max: 1, onnotice: () => {} });
 try {
-  await sql.unsafe(readFileSync(new URL("./schema.sql", import.meta.url), "utf8"));
+  // The schema belongs to the backend's Alembic migrations (backend/migrations): this script only fills the table.
+  const [{ exists }] = await sql`select to_regclass('public.products') is not null as exists`;
+  if (!exists) throw new Error("no products table: run `uv run alembic upgrade head` in backend/ first");
   await sql.begin(async (tx) => {
     await tx`delete from products`;
     const cols = rows.map((r) => ({

@@ -36,6 +36,11 @@ CI (`.github/workflows/backend.yml`) runs format check, ruff, mypy, pytest and a
   - `service.py`: business rules. The module's public API.
   - `deps.py`: `Depends` wiring session → repository → service. Tests override it with `app.dependency_overrides`.
 
+## Modules
+
+- `health`: `/health` (checks the DB, for the keep-alive cron) and `/health/live` (no DB, for Render's health check).
+- `products`: catalog search, detail, related, per-industry lists, stats, sitemap rows. `search.py` reads the search text (designation, dimensions, words) into `SearchCriteria`, and `repository.py` turns that into SQL. Free-text words are matched against `search_vocabulary.json`, which is generated from the frontend's messages: after changing type/seal/bore/industry names there, run `npm run search-vocabulary` in `frontend/` (CI fails otherwise). `tests/products/test_parity.py` checks the output against golden files recorded from the old TypeScript query layer, on `tests/products/data/products.csv.gz` (the real 15,420 rows).
+
 ## Rules
 
 1. Router → Service → Repository. Modules call each other only through services, never another module's repository or models.

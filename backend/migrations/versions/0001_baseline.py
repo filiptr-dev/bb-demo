@@ -1,8 +1,9 @@
-"""Baseline: the products catalog, as first created by frontend/scripts/schema.sql.
+"""Baseline: the products catalog, as first created by frontend/scripts/schema.sql (removed since; see git history).
 
 The Supabase database already has all of this, so it is stamped (`alembic stamp 0001`) instead of upgraded.
-Supabase-only parts of schema.sql (row level security, grants to anon/authenticated) are deliberately left out:
-they stay on the Supabase database and have no meaning on a plain Postgres.
+Supabase-only parts of that file are deliberately left out: they stay on the Supabase database and have no meaning
+on a plain Postgres. For the record, Supabase also has row level security on `products` with a
+`"public read"` select policy, and the anon/authenticated roles are read-only.
 
 Revision ID: 0001
 Revises:

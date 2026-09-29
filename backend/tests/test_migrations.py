@@ -62,6 +62,13 @@ def test_upgrade_downgrade_upgrade(scratch_db: str) -> None:
     command.upgrade(cfg, "head")  # the downgrade left nothing behind that blocks a clean re-run
 
 
+def test_models_match_the_migrations(scratch_db: str) -> None:
+    """Fails when a model changed without a migration (or the other way round): write the migration."""
+    cfg = alembic_config(scratch_db)
+    command.upgrade(cfg, "head")
+    command.check(cfg)
+
+
 def test_baseline_search_key_and_natural_sort(scratch_db: str) -> None:
     command.upgrade(alembic_config(scratch_db), "head")
     with psycopg.connect(scratch_db) as conn:
