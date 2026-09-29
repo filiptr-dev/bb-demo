@@ -4,7 +4,10 @@ import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { decodeDesignation, type Segment } from "@/lib/domain/designation";
+import { Button } from "@/components/ui/button";
+import { useDebounced } from "@/hooks/useDebounced";
+import { useDecodedDesignation } from "@/hooks/useDecodedDesignation";
+import type { Segment } from "@/lib/api/decoder";
 
 const kindVariant: Record<Segment["kind"], "default" | "secondary" | "outline"> = {
   prefix: "secondary",
@@ -16,9 +19,14 @@ const kindVariant: Record<Segment["kind"], "default" | "secondary" | "outline"> 
 
 export default function DesignationDecoder() {
   const t = useTranslations("Decoder");
+  const ta = useTranslations("Errors.actions");
   const [value, setValue] = useState("");
   const trimmed = value.trim();
-  const result = trimmed ? decodeDesignation(trimmed) : null;
+  // decoded by the API, 300 ms after typing stops; the last result stays (dimmed) until the next one arrives
+  const query = useDebounced(trimmed || null, 300);
+  const { data, loading, error, retry } = useDecodedDesignation(trimmed ? query : null);
+  const result = trimmed ? data : null;
+  const pending = loading || query !== trimmed;
 
   return (
     <div>
@@ -35,10 +43,21 @@ export default function DesignationDecoder() {
       <div className="mt-8 min-h-[8rem]">
         {!trimmed && <p className="text-sm text-muted-foreground">{t("empty")}</p>}
 
-        {trimmed && !result?.segments.length && <p className="text-sm text-muted-foreground">{t("notFound")}</p>}
+        {trimmed && error && (
+          <div role="alert" className="text-sm">
+            <p className="text-foreground/70">{t("error")}</p>
+            <Button type="button" size="sm" variant="outline" onClick={retry} className="mt-2 rounded-full">
+              {ta("retry")}
+            </Button>
+          </div>
+        )}
 
-        {result != null && result.segments.length > 0 && (
-          <div className="space-y-6">
+        {!error && result != null && !result.segments.length && !pending && (
+          <p className="text-sm text-muted-foreground">{t("notFound")}</p>
+        )}
+
+        {!error && result != null && result.segments.length > 0 && (
+          <div className={`space-y-6 transition-opacity ${pending ? "opacity-50" : ""}`} aria-busy={pending}>
             <div className="flex flex-wrap gap-2 font-mono text-lg">
               {result.segments.map((seg, i) => (
                 <Badge key={i} variant={kindVariant[seg.kind]} className="h-auto px-3 py-1.5 text-sm">

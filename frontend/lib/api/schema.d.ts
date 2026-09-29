@@ -182,6 +182,86 @@ export interface paths {
         patch?: never;
         trace?: never;
     };
+    "/api/v1/catalog/decode": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Decode Designation
+         * @description Splits an SKF designation (6205-2RSH/C3, 22212 EK, NU 208 ECP) into prefix, series, bore code and suffixes.
+         */
+        get: operations["decode_designation_api_v1_catalog_decode_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/catalog/greases": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /** Grease Guide */
+        get: operations["grease_guide_api_v1_catalog_greases_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/catalog/rating-life": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Rating Life
+         * @description ISO 281 basic rating life L10 and the life at a higher reliability (a1), for a catalog product or a given C.
+         *     Loads in kN. Errors: `rating_life_unsupported` (not a rolling bearing), `load_case_unsupported` (e.g. an axial
+         *     load without SKF factors).
+         */
+        get: operations["rating_life_api_v1_catalog_rating_life_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/api/v1/catalog/relubrication": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        /**
+         * Relubrication
+         * @description SKF's simplified grease relubrication interval and replenishment quantity. Errors: `relubrication_unsupported`,
+         *     `relubrication_out_of_range` (too fast for grease).
+         */
+        get: operations["relubrication_api_v1_catalog_relubrication_get"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
 }
 export type webhooks = Record<string, never>;
 export interface components {
@@ -225,12 +305,121 @@ export interface components {
             /** Rows */
             rows: components["schemas"]["DatasheetRow"][];
         };
+        /**
+         * DecodedDesignation
+         * @description An empty `segments` list means nothing could be read (blank or separators only).
+         */
+        DecodedDesignation: {
+            /** Designation */
+            designation: string;
+            /** Segments */
+            segments: components["schemas"]["DesignationSegment"][];
+            /** Boremm */
+            boreMm: number | null;
+        };
+        /** DesignationSegment */
+        DesignationSegment: {
+            /**
+             * Token
+             * @description The part as typed, e.g. '62', '05', '2RSH'
+             */
+            token: string;
+            /**
+             * Kind
+             * @enum {string}
+             */
+            kind: "prefix" | "series" | "bore" | "suffix" | "unknown";
+            /**
+             * Id
+             * @description Meaning key (frontend `Decoder.codes.<id>`); null for unknown parts
+             */
+            id: string | null;
+            /**
+             * Boremm
+             * @description Bore diameter for a bore segment, mm
+             */
+            boreMm: number | null;
+        };
         /** FieldError */
         FieldError: {
             /** Field */
             field: string;
             /** Message */
             message: string;
+        };
+        /** GreaseChartRow */
+        GreaseChartRow: {
+            /** Code */
+            code: string;
+            /**
+             * Tempc
+             * @description Operating temperature range, °C
+             */
+            tempC: [
+                number,
+                number
+            ];
+            /**
+             * Viscosity
+             * @description Base oil viscosity at 40 °C, mm²/s
+             */
+            viscosity: number;
+            /**
+             * Temp
+             * @description Temperature level: L, M, H, VH (ranges like 'L–M')
+             */
+            temp: string;
+            /**
+             * Speed
+             * @description Speed level: VL, L, M, H, EH
+             */
+            speed: string;
+            /**
+             * Load
+             * @description Load level: L, M, H, VH
+             */
+            load: string;
+            /**
+             * Fit
+             * @description One mark per `columns` entry: + recommended, o suitable, - not
+             */
+            fit: ("+" | "o" | "-")[];
+        };
+        /** GreaseCompatibility */
+        GreaseCompatibility: {
+            /**
+             * Groups
+             * @description Greases in one group behave the same, e.g. 'LGMT 2 · LGMT 3'
+             */
+            groups: string[];
+            /**
+             * Matrix
+             * @description matrix[row][col]: + compatible, - not, = same grease
+             */
+            matrix: ("+" | "-" | "=")[][];
+        };
+        /**
+         * GreaseGuide
+         * @description SKF bearing grease selection: the basic choice per condition, the selection chart and compatibility.
+         */
+        GreaseGuide: {
+            /** Basic */
+            basic: components["schemas"]["GreaseRecommendation"][];
+            /** Columns */
+            columns: ("verticalShaft" | "outerRing" | "oscillating" | "vibration" | "shockLoad" | "rust")[];
+            /** Chart */
+            chart: components["schemas"]["GreaseChartRow"][];
+            compatibility: components["schemas"]["GreaseCompatibility"];
+        };
+        /** GreaseRecommendation */
+        GreaseRecommendation: {
+            /**
+             * Condition
+             * @enum {string}
+             */
+            condition: "allPurpose" | "highTemp" | "extremeTemp" | "lowTemp" | "highLoad" | "food" | "green";
+            /** Code */
+            code: string;
         };
         /** Health */
         Health: {
@@ -394,6 +583,124 @@ export interface components {
              * @description When the catalog was last imported
              */
             updatedAt: string | null;
+        };
+        /**
+         * RatingLife
+         * @description ISO 281 basic rating life, without the SKF life modification factor (aSKF = 1).
+         */
+        RatingLife: {
+            /**
+             * Designation
+             * @description When computed for a catalog product
+             */
+            designation: string | null;
+            /**
+             * Type
+             * @enum {string}
+             */
+            type: "deep-groove" | "angular-contact" | "self-aligning" | "thrust-ball" | "unit" | "cylindrical-roller" | "spherical-roller" | "tapered-roller" | "needle-roller" | "toroidal";
+            /**
+             * C
+             * @description kN
+             */
+            c: number;
+            /**
+             * P
+             * @description Equivalent dynamic load P = x·Fr + y·Fa, kN
+             */
+            p: number;
+            /** X */
+            x: number;
+            /** Y */
+            y: number;
+            /**
+             * E
+             * @description Fa/Fr limit that selected x and y
+             */
+            e: number | null;
+            /**
+             * Exponent
+             * @description 3 for ball bearings, 10/3 for roller bearings
+             */
+            exponent: number;
+            /**
+             * L10
+             * @description Basic rating life, million revolutions
+             */
+            l10: number;
+            /**
+             * L10Hours
+             * @description Basic rating life, operating hours
+             */
+            l10Hours: number;
+            /**
+             * Reliability
+             * @enum {integer}
+             */
+            reliability: 90 | 95 | 96 | 97 | 98 | 99;
+            /** A1 */
+            a1: number;
+            /**
+             * Lnm
+             * @description Life at the requested reliability, million revolutions
+             */
+            lnm: number;
+            /**
+             * Lnmhours
+             * @description Life at the requested reliability, operating hours
+             */
+            lnmHours: number;
+            /**
+             * Warnings
+             * @description heavy_load: P > 0.5 C, outside the equation's range; above_limiting_speed: rpm > SKF's limit
+             */
+            warnings: ("heavy_load" | "above_limiting_speed")[];
+        };
+        /**
+         * Relubrication
+         * @description SKF's simplified relubrication interval for a lithium-base grease. An estimate: conditions like
+         *     contamination, water or vibration shorten it.
+         */
+        Relubrication: {
+            /** Designation */
+            designation: string | null;
+            /**
+             * Type
+             * @enum {string}
+             */
+            type: "deep-groove" | "angular-contact" | "self-aligning" | "unit" | "cylindrical-roller" | "needle-roller" | "spherical-roller" | "tapered-roller" | "thrust-ball";
+            /** D */
+            d: number;
+            /**
+             * K
+             * @description Bearing type factor: 10 ball, 5 cylindrical/needle roller, 1 other roller/thrust
+             */
+            k: number;
+            /**
+             * Basehours
+             * @description Interval at 70 °C on a horizontal shaft, operating hours
+             */
+            baseHours: number;
+            /**
+             * Hours
+             * @description Interval for the given temperature and shaft, at most 30,000 h
+             */
+            hours: number;
+            /**
+             * Capped
+             * @description The formula gave more than 30,000 h
+             */
+            capped: boolean;
+            /**
+             * Greasesideg
+             * @description Replenishment from the side, 0.005·D·B, g
+             */
+            greaseSideG: number | null;
+            /**
+             * Greasecenterg
+             * @description Replenishment through the outer ring, 0.002·D·B, g
+             */
+            greaseCenterG: number | null;
         };
         /** SitemapRow */
         SitemapRow: {
@@ -895,6 +1202,235 @@ export interface operations {
                 };
             };
             /** @description Invalid request */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/problem+json": unknown;
+                    "application/json": components["schemas"]["Problem"];
+                };
+            };
+            /** @description Server error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/problem+json": unknown;
+                    "application/json": components["schemas"]["Problem"];
+                };
+            };
+        };
+    };
+    decode_designation_api_v1_catalog_decode_get: {
+        parameters: {
+            query: {
+                designation: string;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["DecodedDesignation"];
+                };
+            };
+            /** @description Not found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/problem+json": unknown;
+                    "application/json": components["schemas"]["Problem"];
+                };
+            };
+            /** @description Invalid request */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/problem+json": unknown;
+                    "application/json": components["schemas"]["Problem"];
+                };
+            };
+            /** @description Server error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/problem+json": unknown;
+                    "application/json": components["schemas"]["Problem"];
+                };
+            };
+        };
+    };
+    grease_guide_api_v1_catalog_greases_get: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["GreaseGuide"];
+                };
+            };
+            /** @description Not found */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/problem+json": unknown;
+                    "application/json": components["schemas"]["Problem"];
+                };
+            };
+            /** @description Invalid request */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/problem+json": unknown;
+                    "application/json": components["schemas"]["Problem"];
+                };
+            };
+            /** @description Server error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/problem+json": unknown;
+                    "application/json": components["schemas"]["Problem"];
+                };
+            };
+        };
+    };
+    rating_life_api_v1_catalog_rating_life_get: {
+        parameters: {
+            query: {
+                slug?: string | null;
+                type?: ("deep-groove" | "angular-contact" | "self-aligning" | "thrust-ball" | "unit" | "cylindrical-roller" | "spherical-roller" | "tapered-roller" | "needle-roller" | "toroidal") | null;
+                /** @description Basic dynamic load rating, kN */
+                c?: number | null;
+                /** @description Radial load, kN */
+                fr?: number;
+                /** @description Axial load, kN */
+                fa?: number;
+                /** @description Rotational speed, r/min */
+                rpm: number;
+                /** @description %, for the a1 factor (ISO 281) */
+                reliability?: 90 | 95 | 96 | 97 | 98 | 99;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["RatingLife"];
+                };
+            };
+            /** @description `product_not_found`, or `specs_not_found` (no load rating yet) */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/problem+json": unknown;
+                    "application/json": components["schemas"]["Problem"];
+                };
+            };
+            /** @description Invalid fields, or a case the formulas don't cover (`load_case_unsupported`, ...) */
+            422: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/problem+json": unknown;
+                    "application/json": components["schemas"]["Problem"];
+                };
+            };
+            /** @description Server error */
+            500: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/problem+json": unknown;
+                    "application/json": components["schemas"]["Problem"];
+                };
+            };
+        };
+    };
+    relubrication_api_v1_catalog_relubrication_get: {
+        parameters: {
+            query: {
+                slug?: string | null;
+                type?: ("deep-groove" | "angular-contact" | "self-aligning" | "unit" | "cylindrical-roller" | "needle-roller" | "spherical-roller" | "tapered-roller" | "thrust-ball") | null;
+                /** @description Bore diameter, mm */
+                d?: number | null;
+                /** @description Outside diameter, mm */
+                D?: number | null;
+                /** @description Width, mm */
+                B?: number | null;
+                /** @description Rotational speed, r/min */
+                rpm: number;
+                /** @description Operating temperature, °C */
+                temperature?: number;
+                verticalShaft?: boolean;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            /** @description Successful Response */
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["Relubrication"];
+                };
+            };
+            /** @description `product_not_found`, or `specs_not_found` (no load rating yet) */
+            404: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/problem+json": unknown;
+                    "application/json": components["schemas"]["Problem"];
+                };
+            };
+            /** @description Invalid fields, or a case the formulas don't cover (`load_case_unsupported`, ...) */
             422: {
                 headers: {
                     [name: string]: unknown;

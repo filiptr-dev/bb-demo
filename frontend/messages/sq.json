@@ -768,6 +768,7 @@
     "placeholder": "p.sh. 6205-2RSH/C3",
     "empty": "Filloni të shkruani një shenjë më lart.",
     "notFound": "Kjo shenjë nuk u kuptua — kontrolloni shkrimin.",
+    "error": "Dekoduesi është përkohësisht i padisponueshëm. Kontrolloni lidhjen dhe provoni përsëri.",
     "boreLabel": "Diametri i vrimës",
     "kinds": {
       "prefix": "Parashtesë",

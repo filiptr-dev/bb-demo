@@ -11,6 +11,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.core.db import create_engine, create_sessionmaker
 from app.core.errors import problem_responses, register_error_handlers
 from app.core.settings import Settings, get_settings
+from app.modules.catalog.router import router as catalog_router
 from app.modules.health.router import router as health_router
 from app.modules.products.router import router as products_router
 from app.modules.specs.router import router as specs_router
@@ -67,5 +68,6 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     api.include_router(health_router)
     api.include_router(products_router)
     api.include_router(specs_router)
+    api.include_router(catalog_router)
     app.include_router(api)
     return app

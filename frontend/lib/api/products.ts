@@ -1,28 +1,14 @@
 import "server-only";
 import { cache } from "react";
-import { connection } from "next/server";
-import { api, apiConfigured, apiFetch, ApiRequestError } from "./client";
+import { api } from "./client";
+import { cachedFetch, DAY, HOUR, required, whenApi } from "./server";
 import type { Product } from "@/lib/domain/product";
 import type { components } from "./schema";
 
 export type ProductSpecs = components["schemas"]["ProductSpecs"];
 
-// Page data for server components. Every response is cached (ISR) and tagged "products", plus "product:<slug>" for a
-// detail page, so POST /api/revalidate can refresh it when the catalog changes.
-const HOUR = 3600;
-const DAY = 86400;
-const cached = (revalidate: number, ...tags: string[]) => apiFetch({ next: { revalidate, tags: ["products", ...tags] } });
-
-// Without an API URL (a build whose env vars are missing, e.g. CI) the page is deferred to request time instead of
-// failing the build, so the error shows up where the missing variable matters.
-async function whenApi() {
-  if (!apiConfigured) await connection();
-}
-
-function required<T>(data: T | undefined, response: Response, path: string): T {
-  if (data === undefined) throw new ApiRequestError(response.status, path);
-  return data;
-}
+// Page data for server components, tagged "products", plus "product:<slug>" for a detail page.
+const cached = (revalidate: number, ...tags: string[]) => cachedFetch(revalidate, ["products", ...tags]);
 
 export const getProduct = cache(async (slug: string): Promise<Product | undefined> => {
   await whenApi();

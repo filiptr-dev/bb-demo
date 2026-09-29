@@ -1,0 +1,2065 @@
+{
+ "decode": [
+  {
+   "input": "6205",
+   "output": {
+    "segments": [
+     {
+      "token": "62",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "6205-2RSH",
+   "output": {
+    "segments": [
+     {
+      "token": "62",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     },
+     {
+      "token": "2RSH",
+      "kind": "suffix",
+      "id": "2rsh"
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "6205-2RSH/C3",
+   "output": {
+    "segments": [
+     {
+      "token": "62",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     },
+     {
+      "token": "2RSH",
+      "kind": "suffix",
+      "id": "2rsh"
+     },
+     {
+      "token": "C3",
+      "kind": "suffix",
+      "id": "c3"
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "6205-2rsh/c3",
+   "output": {
+    "segments": [
+     {
+      "token": "62",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     },
+     {
+      "token": "2rsh",
+      "kind": "suffix",
+      "id": "2rsh"
+     },
+     {
+      "token": "c3",
+      "kind": "suffix",
+      "id": "c3"
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "  6205-2Z/C3  ",
+   "output": {
+    "segments": [
+     {
+      "token": "62",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     },
+     {
+      "token": "2Z",
+      "kind": "suffix",
+      "id": "2z"
+     },
+     {
+      "token": "C3",
+      "kind": "suffix",
+      "id": "c3"
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "6205-Z/C3",
+   "output": {
+    "segments": [
+     {
+      "token": "62",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     },
+     {
+      "token": "Z",
+      "kind": "suffix",
+      "id": "z"
+     },
+     {
+      "token": "C3",
+      "kind": "suffix",
+      "id": "c3"
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "6205-RS1",
+   "output": {
+    "segments": [
+     {
+      "token": "62",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     },
+     {
+      "token": "RS1",
+      "kind": "suffix",
+      "id": "rs1"
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "6205-2RS1/C3HT",
+   "output": {
+    "segments": [
+     {
+      "token": "62",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     },
+     {
+      "token": "2RS1",
+      "kind": "suffix",
+      "id": "2rs1"
+     },
+     {
+      "token": "C3HT",
+      "kind": "unknown"
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "6205/P6",
+   "output": {
+    "segments": [
+     {
+      "token": "62",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     },
+     {
+      "token": "P6",
+      "kind": "suffix",
+      "id": "p6"
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "6205/C3/HT",
+   "output": {
+    "segments": [
+     {
+      "token": "62",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     },
+     {
+      "token": "C3",
+      "kind": "suffix",
+      "id": "c3"
+     },
+     {
+      "token": "HT",
+      "kind": "suffix",
+      "id": "ht"
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "6205-2RSL",
+   "output": {
+    "segments": [
+     {
+      "token": "62",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     },
+     {
+      "token": "2RSL",
+      "kind": "suffix",
+      "id": "2rsl"
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "6205-RSH",
+   "output": {
+    "segments": [
+     {
+      "token": "62",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     },
+     {
+      "token": "RSH",
+      "kind": "suffix",
+      "id": "rsh"
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "6205-N",
+   "output": {
+    "segments": [
+     {
+      "token": "62",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     },
+     {
+      "token": "N",
+      "kind": "suffix",
+      "id": "snap-ring-groove"
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "6205-NR",
+   "output": {
+    "segments": [
+     {
+      "token": "62",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     },
+     {
+      "token": "NR",
+      "kind": "suffix",
+      "id": "snap-ring"
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "6205 M",
+   "output": {
+    "segments": [
+     {
+      "token": "6205 M",
+      "kind": "unknown"
+     }
+    ],
+    "boreMm": null
+   }
+  },
+  {
+   "input": "6205-M/C3",
+   "output": {
+    "segments": [
+     {
+      "token": "62",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     },
+     {
+      "token": "M",
+      "kind": "suffix",
+      "id": "brass-cage"
+     },
+     {
+      "token": "C3",
+      "kind": "suffix",
+      "id": "c3"
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "6205-TN9/C3",
+   "output": {
+    "segments": [
+     {
+      "token": "62",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     },
+     {
+      "token": "TN9",
+      "kind": "suffix",
+      "id": "tn9-cage"
+     },
+     {
+      "token": "C3",
+      "kind": "suffix",
+      "id": "c3"
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "6000",
+   "output": {
+    "segments": [
+     {
+      "token": "60",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "00",
+      "kind": "bore",
+      "boreMm": 10
+     }
+    ],
+    "boreMm": 10
+   }
+  },
+  {
+   "input": "6001",
+   "output": {
+    "segments": [
+     {
+      "token": "60",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "01",
+      "kind": "bore",
+      "boreMm": 12
+     }
+    ],
+    "boreMm": 12
+   }
+  },
+  {
+   "input": "6002",
+   "output": {
+    "segments": [
+     {
+      "token": "60",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "02",
+      "kind": "bore",
+      "boreMm": 15
+     }
+    ],
+    "boreMm": 15
+   }
+  },
+  {
+   "input": "6003",
+   "output": {
+    "segments": [
+     {
+      "token": "60",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "03",
+      "kind": "bore",
+      "boreMm": 17
+     }
+    ],
+    "boreMm": 17
+   }
+  },
+  {
+   "input": "6004",
+   "output": {
+    "segments": [
+     {
+      "token": "60",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "04",
+      "kind": "bore",
+      "boreMm": 20
+     }
+    ],
+    "boreMm": 20
+   }
+  },
+  {
+   "input": "6300",
+   "output": {
+    "segments": [
+     {
+      "token": "63",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "00",
+      "kind": "bore",
+      "boreMm": 10
+     }
+    ],
+    "boreMm": 10
+   }
+  },
+  {
+   "input": "16005",
+   "output": {
+    "segments": [
+     {
+      "token": "160",
+      "kind": "series",
+      "id": "unknown-series"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "61805",
+   "output": {
+    "segments": [
+     {
+      "token": "618",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "62/22",
+   "output": {
+    "segments": [
+     {
+      "token": "62",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "62",
+      "kind": "bore",
+      "boreMm": 310
+     },
+     {
+      "token": "22",
+      "kind": "unknown"
+     }
+    ],
+    "boreMm": 310
+   }
+  },
+  {
+   "input": "W6205-2Z",
+   "output": {
+    "segments": [
+     {
+      "token": "W",
+      "kind": "prefix",
+      "id": "w-stainless"
+     },
+     {
+      "token": "62",
+      "kind": "series",
+      "id": "dimension-series"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     },
+     {
+      "token": "2Z",
+      "kind": "suffix",
+      "id": "2z"
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "w 6205",
+   "output": {
+    "segments": [
+     {
+      "token": "W",
+      "kind": "prefix",
+      "id": "w-stainless"
+     },
+     {
+      "token": " 6205",
+      "kind": "unknown"
+     }
+    ],
+    "boreMm": null
+   }
+  },
+  {
+   "input": "7205",
+   "output": {
+    "segments": [
+     {
+      "token": "72",
+      "kind": "series",
+      "id": "angular-contact"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "7205 BE",
+   "output": {
+    "segments": [
+     {
+      "token": "7205 BE",
+      "kind": "unknown"
+     }
+    ],
+    "boreMm": null
+   }
+  },
+  {
+   "input": "7205-B",
+   "output": {
+    "segments": [
+     {
+      "token": "72",
+      "kind": "series",
+      "id": "angular-contact"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     },
+     {
+      "token": "B",
+      "kind": "unknown"
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "30208",
+   "output": {
+    "segments": [
+     {
+      "token": "302",
+      "kind": "series",
+      "id": "tapered-roller"
+     },
+     {
+      "token": "08",
+      "kind": "bore",
+      "boreMm": 40
+     }
+    ],
+    "boreMm": 40
+   }
+  },
+  {
+   "input": "32208",
+   "output": {
+    "segments": [
+     {
+      "token": "322",
+      "kind": "series",
+      "id": "tapered-roller"
+     },
+     {
+      "token": "08",
+      "kind": "bore",
+      "boreMm": 40
+     }
+    ],
+    "boreMm": 40
+   }
+  },
+  {
+   "input": "1205",
+   "output": {
+    "segments": [
+     {
+      "token": "12",
+      "kind": "series",
+      "id": "self-aligning"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "2205",
+   "output": {
+    "segments": [
+     {
+      "token": "22",
+      "kind": "series",
+      "id": "self-aligning"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "1205-E",
+   "output": {
+    "segments": [
+     {
+      "token": "12",
+      "kind": "series",
+      "id": "self-aligning"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     },
+     {
+      "token": "E",
+      "kind": "suffix",
+      "id": "e-design"
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "22212",
+   "output": {
+    "segments": [
+     {
+      "token": "222",
+      "kind": "series",
+      "id": "spherical-roller"
+     },
+     {
+      "token": "12",
+      "kind": "bore",
+      "boreMm": 60
+     }
+    ],
+    "boreMm": 60
+   }
+  },
+  {
+   "input": "22212-E/C3",
+   "output": {
+    "segments": [
+     {
+      "token": "222",
+      "kind": "series",
+      "id": "spherical-roller"
+     },
+     {
+      "token": "12",
+      "kind": "bore",
+      "boreMm": 60
+     },
+     {
+      "token": "E",
+      "kind": "suffix",
+      "id": "e-design"
+     },
+     {
+      "token": "C3",
+      "kind": "suffix",
+      "id": "c3"
+     }
+    ],
+    "boreMm": 60
+   }
+  },
+  {
+   "input": "22212-E/W33",
+   "output": {
+    "segments": [
+     {
+      "token": "222",
+      "kind": "series",
+      "id": "spherical-roller"
+     },
+     {
+      "token": "12",
+      "kind": "bore",
+      "boreMm": 60
+     },
+     {
+      "token": "E",
+      "kind": "suffix",
+      "id": "e-design"
+     },
+     {
+      "token": "W33",
+      "kind": "unknown"
+     }
+    ],
+    "boreMm": 60
+   }
+  },
+  {
+   "input": "23022-E/C3/W33",
+   "output": {
+    "segments": [
+     {
+      "token": "230",
+      "kind": "series",
+      "id": "spherical-roller"
+     },
+     {
+      "token": "22",
+      "kind": "bore",
+      "boreMm": 110
+     },
+     {
+      "token": "E",
+      "kind": "suffix",
+      "id": "e-design"
+     },
+     {
+      "token": "C3",
+      "kind": "suffix",
+      "id": "c3"
+     },
+     {
+      "token": "W33",
+      "kind": "unknown"
+     }
+    ],
+    "boreMm": 110
+   }
+  },
+  {
+   "input": "51105",
+   "output": {
+    "segments": [
+     {
+      "token": "511",
+      "kind": "series",
+      "id": "thrust-ball"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "51205",
+   "output": {
+    "segments": [
+     {
+      "token": "512",
+      "kind": "series",
+      "id": "thrust-ball"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "NU208",
+   "output": {
+    "segments": [
+     {
+      "token": "NU",
+      "kind": "prefix",
+      "id": "nu"
+     },
+     {
+      "token": "2",
+      "kind": "series",
+      "id": "dimension-series"
+     },
+     {
+      "token": "08",
+      "kind": "bore",
+      "boreMm": 40
+     }
+    ],
+    "boreMm": 40
+   }
+  },
+  {
+   "input": "nu208",
+   "output": {
+    "segments": [
+     {
+      "token": "NU",
+      "kind": "prefix",
+      "id": "nu"
+     },
+     {
+      "token": "2",
+      "kind": "series",
+      "id": "dimension-series"
+     },
+     {
+      "token": "08",
+      "kind": "bore",
+      "boreMm": 40
+     }
+    ],
+    "boreMm": 40
+   }
+  },
+  {
+   "input": "NU208-E",
+   "output": {
+    "segments": [
+     {
+      "token": "NU",
+      "kind": "prefix",
+      "id": "nu"
+     },
+     {
+      "token": "2",
+      "kind": "series",
+      "id": "dimension-series"
+     },
+     {
+      "token": "08",
+      "kind": "bore",
+      "boreMm": 40
+     },
+     {
+      "token": "E",
+      "kind": "suffix",
+      "id": "e-design"
+     }
+    ],
+    "boreMm": 40
+   }
+  },
+  {
+   "input": "NJ2208",
+   "output": {
+    "segments": [
+     {
+      "token": "NJ",
+      "kind": "prefix",
+      "id": "nj"
+     },
+     {
+      "token": "22",
+      "kind": "series",
+      "id": "dimension-series"
+     },
+     {
+      "token": "08",
+      "kind": "bore",
+      "boreMm": 40
+     }
+    ],
+    "boreMm": 40
+   }
+  },
+  {
+   "input": "NUP310",
+   "output": {
+    "segments": [
+     {
+      "token": "NUP",
+      "kind": "prefix",
+      "id": "nup"
+     },
+     {
+      "token": "3",
+      "kind": "series",
+      "id": "dimension-series"
+     },
+     {
+      "token": "10",
+      "kind": "bore",
+      "boreMm": 50
+     }
+    ],
+    "boreMm": 50
+   }
+  },
+  {
+   "input": "N210",
+   "output": {
+    "segments": [
+     {
+      "token": "N",
+      "kind": "prefix",
+      "id": "n"
+     },
+     {
+      "token": "2",
+      "kind": "series",
+      "id": "dimension-series"
+     },
+     {
+      "token": "10",
+      "kind": "bore",
+      "boreMm": 50
+     }
+    ],
+    "boreMm": 50
+   }
+  },
+  {
+   "input": "NN3010",
+   "output": {
+    "segments": [
+     {
+      "token": "NN",
+      "kind": "prefix",
+      "id": "nn"
+     },
+     {
+      "token": "30",
+      "kind": "series",
+      "id": "dimension-series"
+     },
+     {
+      "token": "10",
+      "kind": "bore",
+      "boreMm": 50
+     }
+    ],
+    "boreMm": 50
+   }
+  },
+  {
+   "input": "QJ310",
+   "output": {
+    "segments": [
+     {
+      "token": "QJ",
+      "kind": "prefix",
+      "id": "qj"
+     },
+     {
+      "token": "3",
+      "kind": "series",
+      "id": "dimension-series"
+     },
+     {
+      "token": "10",
+      "kind": "bore",
+      "boreMm": 50
+     }
+    ],
+    "boreMm": 50
+   }
+  },
+  {
+   "input": "GE20",
+   "output": {
+    "segments": [
+     {
+      "token": "GE",
+      "kind": "prefix",
+      "id": "ge"
+     },
+     {
+      "token": "20",
+      "kind": "bore",
+      "boreMm": 100
+     }
+    ],
+    "boreMm": 100
+   }
+  },
+  {
+   "input": "GE 20",
+   "output": {
+    "segments": [
+     {
+      "token": "GE",
+      "kind": "prefix",
+      "id": "ge"
+     },
+     {
+      "token": " 20",
+      "kind": "unknown"
+     }
+    ],
+    "boreMm": null
+   }
+  },
+  {
+   "input": "6205-VA201",
+   "output": {
+    "segments": [
+     {
+      "token": "62",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     },
+     {
+      "token": "VA201",
+      "kind": "suffix",
+      "id": "va201"
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "6205-VA208",
+   "output": {
+    "segments": [
+     {
+      "token": "62",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     },
+     {
+      "token": "VA208",
+      "kind": "suffix",
+      "id": "va208"
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "6205-2Z/W64",
+   "output": {
+    "segments": [
+     {
+      "token": "62",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     },
+     {
+      "token": "2Z",
+      "kind": "suffix",
+      "id": "2z"
+     },
+     {
+      "token": "W64",
+      "kind": "suffix",
+      "id": "w64"
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "6205/W203",
+   "output": {
+    "segments": [
+     {
+      "token": "62",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     },
+     {
+      "token": "W203",
+      "kind": "suffix",
+      "id": "w203"
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "6205-MA/P5",
+   "output": {
+    "segments": [
+     {
+      "token": "62",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     },
+     {
+      "token": "MA",
+      "kind": "suffix",
+      "id": "brass-cage-outer"
+     },
+     {
+      "token": "P5",
+      "kind": "suffix",
+      "id": "p5"
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "6205/P4/C4",
+   "output": {
+    "segments": [
+     {
+      "token": "62",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     },
+     {
+      "token": "P4",
+      "kind": "suffix",
+      "id": "p4"
+     },
+     {
+      "token": "C4",
+      "kind": "suffix",
+      "id": "c4"
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "6205/C2",
+   "output": {
+    "segments": [
+     {
+      "token": "62",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     },
+     {
+      "token": "C2",
+      "kind": "suffix",
+      "id": "c2"
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "6205/C5",
+   "output": {
+    "segments": [
+     {
+      "token": "62",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     },
+     {
+      "token": "C5",
+      "kind": "suffix",
+      "id": "c5"
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "6",
+   "output": {
+    "segments": [
+     {
+      "token": "6",
+      "kind": "unknown"
+     }
+    ],
+    "boreMm": null
+   }
+  },
+  {
+   "input": "62",
+   "output": {
+    "segments": [
+     {
+      "token": "62",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "62",
+      "kind": "bore",
+      "boreMm": 310
+     }
+    ],
+    "boreMm": 310
+   }
+  },
+  {
+   "input": "6x",
+   "output": {
+    "segments": [
+     {
+      "token": "6X",
+      "kind": "unknown"
+     }
+    ],
+    "boreMm": null
+   }
+  },
+  {
+   "input": "abc",
+   "output": {
+    "segments": [
+     {
+      "token": "ABC",
+      "kind": "unknown"
+     }
+    ],
+    "boreMm": null
+   }
+  },
+  {
+   "input": "SKF",
+   "output": {
+    "segments": [
+     {
+      "token": "SKF",
+      "kind": "unknown"
+     }
+    ],
+    "boreMm": null
+   }
+  },
+  {
+   "input": "-",
+   "output": null
+  },
+  {
+   "input": "/",
+   "error": "TypeError: Cannot read properties of undefined (reading 'split')"
+  },
+  {
+   "input": "6205--2RS1",
+   "output": {
+    "segments": [
+     {
+      "token": "62",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     },
+     {
+      "token": "2RS1",
+      "kind": "suffix",
+      "id": "2rs1"
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "6205//C3",
+   "output": {
+    "segments": [
+     {
+      "token": "62",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     },
+     {
+      "token": "C3",
+      "kind": "suffix",
+      "id": "c3"
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "6205-2RSH-XYZ",
+   "output": {
+    "segments": [
+     {
+      "token": "62",
+      "kind": "series",
+      "id": "deep-groove"
+     },
+     {
+      "token": "05",
+      "kind": "bore",
+      "boreMm": 25
+     },
+     {
+      "token": "2RSH",
+      "kind": "suffix",
+      "id": "2rsh"
+     },
+     {
+      "token": "XYZ",
+      "kind": "unknown"
+     }
+    ],
+    "boreMm": 25
+   }
+  },
+  {
+   "input": "NU",
+   "output": {
+    "segments": [
+     {
+      "token": "NU",
+      "kind": "prefix",
+      "id": "nu"
+     },
+     {
+      "token": "NU",
+      "kind": "unknown"
+     }
+    ],
+    "boreMm": null
+   }
+  },
+  {
+   "input": "N",
+   "output": {
+    "segments": [
+     {
+      "token": "N",
+      "kind": "prefix",
+      "id": "n"
+     },
+     {
+      "token": "N",
+      "kind": "unknown"
+     }
+    ],
+    "boreMm": null
+   }
+  },
+  {
+   "input": "22212 EK",
+   "output": {
+    "segments": [
+     {
+      "token": "22212 EK",
+      "kind": "unknown"
+     }
+    ],
+    "boreMm": null
+   }
+  },
+  {
+   "input": "YAR 205-2F",
+   "output": {
+    "segments": [
+     {
+      "token": "YAR 205",
+      "kind": "unknown"
+     },
+     {
+      "token": "2F",
+      "kind": "unknown"
+     }
+    ],
+    "boreMm": null
+   }
+  },
+  {
+   "input": "SY 25 TF",
+   "output": {
+    "segments": [
+     {
+      "token": "SY 25 TF",
+      "kind": "unknown"
+     }
+    ],
+    "boreMm": null
+   }
+  },
+  {
+   "input": "LGMT 2",
+   "output": {
+    "segments": [
+     {
+      "token": "LGMT 2",
+      "kind": "unknown"
+     }
+    ],
+    "boreMm": null
+   }
+  }
+ ],
+ "greases": {
+  "basic": [
+   {
+    "condition": "allPurpose",
+    "code": "LGMT 2"
+   },
+   {
+    "condition": "highTemp",
+    "code": "LGHP 2"
+   },
+   {
+    "condition": "extremeTemp",
+    "code": "LGET 2"
+   },
+   {
+    "condition": "lowTemp",
+    "code": "LGLT 2"
+   },
+   {
+    "condition": "highLoad",
+    "code": "LGEP 2"
+   },
+   {
+    "condition": "food",
+    "code": "LGFP 2"
+   },
+   {
+    "condition": "green",
+    "code": "LGGB 2"
+   }
+  ],
+  "columns": [
+   "verticalShaft",
+   "outerRing",
+   "oscillating",
+   "vibration",
+   "shockLoad",
+   "rust"
+  ],
+  "chart": [
+   {
+    "code": "LGMT 2",
+    "tempC": [
+     -30,
+     120
+    ],
+    "viscosity": 110,
+    "temp": "M",
+    "speed": "M",
+    "load": "L–M",
+    "fit": [
+     "o",
+     "-",
+     "-",
+     "+",
+     "-",
+     "+"
+    ]
+   },
+   {
+    "code": "LGMT 3",
+    "tempC": [
+     -30,
+     120
+    ],
+    "viscosity": 120,
+    "temp": "M",
+    "speed": "M",
+    "load": "L–M",
+    "fit": [
+     "+",
+     "o",
+     "-",
+     "+",
+     "-",
+     "o"
+    ]
+   },
+   {
+    "code": "LGEP 2",
+    "tempC": [
+     -20,
+     110
+    ],
+    "viscosity": 200,
+    "temp": "M",
+    "speed": "L–M",
+    "load": "H",
+    "fit": [
+     "o",
+     "-",
+     "o",
+     "+",
+     "+",
+     "+"
+    ]
+   },
+   {
+    "code": "LGFP 2",
+    "tempC": [
+     -20,
+     110
+    ],
+    "viscosity": 130,
+    "temp": "M",
+    "speed": "M",
+    "load": "L–M",
+    "fit": [
+     "o",
+     "-",
+     "-",
+     "-",
+     "-",
+     "+"
+    ]
+   },
+   {
+    "code": "LGEM 2",
+    "tempC": [
+     -20,
+     120
+    ],
+    "viscosity": 500,
+    "temp": "M",
+    "speed": "VL",
+    "load": "H–VH",
+    "fit": [
+     "o",
+     "-",
+     "+",
+     "+",
+     "+",
+     "+"
+    ]
+   },
+   {
+    "code": "LGEV 2",
+    "tempC": [
+     -10,
+     120
+    ],
+    "viscosity": 1020,
+    "temp": "M",
+    "speed": "VL",
+    "load": "H–VH",
+    "fit": [
+     "o",
+     "-",
+     "+",
+     "+",
+     "+",
+     "+"
+    ]
+   },
+   {
+    "code": "LGLT 2",
+    "tempC": [
+     -50,
+     110
+    ],
+    "viscosity": 18,
+    "temp": "L–M",
+    "speed": "M–EH",
+    "load": "L",
+    "fit": [
+     "o",
+     "-",
+     "-",
+     "-",
+     "o",
+     "o"
+    ]
+   },
+   {
+    "code": "LGGB 2",
+    "tempC": [
+     -40,
+     90
+    ],
+    "viscosity": 110,
+    "temp": "L–M",
+    "speed": "L–M",
+    "load": "M–H",
+    "fit": [
+     "o",
+     "-",
+     "+",
+     "+",
+     "+",
+     "o"
+    ]
+   },
+   {
+    "code": "LGWM 1",
+    "tempC": [
+     -30,
+     110
+    ],
+    "viscosity": 200,
+    "temp": "L–M",
+    "speed": "L–M",
+    "load": "H",
+    "fit": [
+     "-",
+     "-",
+     "+",
+     "-",
+     "+",
+     "+"
+    ]
+   },
+   {
+    "code": "LGWM 2",
+    "tempC": [
+     -40,
+     110
+    ],
+    "viscosity": 80,
+    "temp": "L–M",
+    "speed": "L–M",
+    "load": "L–H",
+    "fit": [
+     "o",
+     "o",
+     "+",
+     "+",
+     "+",
+     "+"
+    ]
+   },
+   {
+    "code": "LGWA 2",
+    "tempC": [
+     -30,
+     140
+    ],
+    "viscosity": 185,
+    "temp": "M–H",
+    "speed": "L–M",
+    "load": "L–H",
+    "fit": [
+     "o",
+     "o",
+     "o",
+     "o",
+     "+",
+     "+"
+    ]
+   },
+   {
+    "code": "LGHB 2",
+    "tempC": [
+     -20,
+     150
+    ],
+    "viscosity": 400,
+    "temp": "M–H",
+    "speed": "VL–M",
+    "load": "L–VH",
+    "fit": [
+     "o",
+     "+",
+     "+",
+     "+",
+     "+",
+     "+"
+    ]
+   },
+   {
+    "code": "LGHP 2",
+    "tempC": [
+     -40,
+     150
+    ],
+    "viscosity": 96,
+    "temp": "M–H",
+    "speed": "M–H",
+    "load": "L–M",
+    "fit": [
+     "+",
+     "-",
+     "-",
+     "o",
+     "o",
+     "+"
+    ]
+   },
+   {
+    "code": "LGET 2",
+    "tempC": [
+     -40,
+     260
+    ],
+    "viscosity": 400,
+    "temp": "VH",
+    "speed": "L–M",
+    "load": "H–VH",
+    "fit": [
+     "o",
+     "+",
+     "+",
+     "o",
+     "o",
+     "o"
+    ]
+   }
+  ],
+  "compatibilityGroups": [
+   "LGMT 2 · LGMT 3",
+   "LGEP 2 · LGWM 1",
+   "LGLT 2",
+   "LGHP 2",
+   "LGWA 2",
+   "LGFP 2",
+   "LGGB 2",
+   "LGFB 2 · LGFL 1",
+   "LGHB 2 · LGWM 2",
+   "LGET 2",
+   "LGEM 2",
+   "LGEV 2"
+  ],
+  "compatibility": [
+   [
+    "=",
+    "+",
+    "+",
+    "+",
+    "+",
+    "-",
+    "+",
+    "-",
+    "+",
+    "-",
+    "+",
+    "+"
+   ],
+   [
+    "+",
+    "=",
+    "+",
+    "+",
+    "+",
+    "-",
+    "+",
+    "-",
+    "+",
+    "-",
+    "+",
+    "+"
+   ],
+   [
+    "+",
+    "+",
+    "=",
+    "+",
+    "+",
+    "-",
+    "+",
+    "-",
+    "+",
+    "-",
+    "+",
+    "+"
+   ],
+   [
+    "+",
+    "+",
+    "+",
+    "=",
+    "+",
+    "-",
+    "+",
+    "-",
+    "+",
+    "-",
+    "+",
+    "+"
+   ],
+   [
+    "+",
+    "+",
+    "+",
+    "+",
+    "=",
+    "+",
+    "+",
+    "+",
+    "+",
+    "-",
+    "+",
+    "+"
+   ],
+   [
+    "-",
+    "-",
+    "-",
+    "-",
+    "+",
+    "=",
+    "-",
+    "+",
+    "-",
+    "-",
+    "-",
+    "-"
+   ],
+   [
+    "+",
+    "+",
+    "+",
+    "+",
+    "+",
+    "-",
+    "=",
+    "+",
+    "+",
+    "-",
+    "+",
+    "+"
+   ],
+   [
+    "-",
+    "-",
+    "-",
+    "-",
+    "+",
+    "+",
+    "+",
+    "=",
+    "-",
+    "-",
+    "-",
+    "-"
+   ],
+   [
+    "+",
+    "+",
+    "+",
+    "+",
+    "+",
+    "-",
+    "+",
+    "-",
+    "=",
+    "-",
+    "+",
+    "+"
+   ],
+   [
+    "-",
+    "-",
+    "-",
+    "-",
+    "-",
+    "-",
+    "-",
+    "-",
+    "-",
+    "=",
+    "-",
+    "-"
+   ],
+   [
+    "+",
+    "+",
+    "+",
+    "+",
+    "+",
+    "-",
+    "+",
+    "-",
+    "+",
+    "-",
+    "=",
+    "+"
+   ],
+   [
+    "+",
+    "+",
+    "+",
+    "+",
+    "+",
+    "-",
+    "+",
+    "-",
+    "+",
+    "-",
+    "+",
+    "="
+   ]
+  ]
+ }
+}

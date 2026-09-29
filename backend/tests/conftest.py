@@ -1,4 +1,5 @@
 import gzip
+import json
 import os
 from collections.abc import Iterator
 from pathlib import Path
@@ -14,6 +15,7 @@ from sqlalchemy import make_url
 
 from app.core.settings import Settings
 from app.main import create_app
+from app.modules.specs.scraper import parse
 
 # The compose database (docker compose up -d db) unless CI points elsewhere.
 TEST_DATABASE_URL = os.environ.get("TEST_DATABASE_URL", "postgresql://postgres:postgres@localhost:5433/bbunikoop")
@@ -101,3 +103,34 @@ def catalog_db() -> Iterator[str]:
 def catalog(catalog_db: str) -> Iterator[TestClient]:
     with TestClient(create_app(make_settings(database_url=catalog_db)), raise_server_exceptions=False) as c:
         yield c
+
+
+SPECS_DATA = Path(__file__).parent / "specs" / "data"
+
+
+@pytest.fixture(scope="module")
+def specs_db(catalog_db: str) -> Iterator[None]:
+    """SKF data for 6205 (recorded response) and a miss for 6205-2RS1, on top of `catalog_db`."""
+    spec = parse(json.loads((SPECS_DATA / "skf-6205.json").read_text())["documentList"]["documents"][0])
+    datasheet = json.dumps([s.model_dump(mode="json") for s in spec.datasheet])
+    with psycopg.connect(catalog_db) as conn:
+        conn.execute(
+            "insert into specs (slug, found, c, c0, pu, reference_speed, limiting_speed, mass, performance_class,"
+            " factors, datasheet, source_url) values ('6205', true, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s),"
+            " ('6205-2rs1', false, null, null, null, null, null, null, null, '{}', '[]', null)",
+            (
+                spec.c,
+                spec.c0,
+                spec.pu,
+                spec.reference_speed,
+                spec.limiting_speed,
+                spec.mass,
+                spec.performance_class,
+                json.dumps(spec.factors),
+                datasheet,
+                spec.source_url,
+            ),
+        )
+    yield
+    with psycopg.connect(catalog_db) as conn:
+        conn.execute("delete from specs")

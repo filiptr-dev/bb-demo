@@ -1,13 +1,8 @@
 import { getTranslations } from "next-intl/server";
-import {
-  basicGreaseSelection,
-  compatibility,
-  compatibilityGroups,
-  greaseChart,
-  greaseChartColumns,
-  type Compatibility,
-  type Suitability,
-} from "@/lib/domain/greases";
+import { getGreaseGuide, type GreaseGuide } from "@/lib/api/catalog";
+
+type Suitability = GreaseGuide["chart"][number]["fit"][number];
+type Compatibility = GreaseGuide["compatibility"]["matrix"][number][number];
 
 const heading = "font-display font-bold text-xl md:text-2xl tracking-tight mb-2";
 const th = "px-2.5 py-2.5 font-semibold text-[11px] uppercase tracking-wider text-foreground/60 align-bottom";
@@ -45,6 +40,9 @@ function CompatMark({ value, label }: { value: Compatibility; label: string }) {
 }
 
 export default async function GreaseSelection() {
+  const { basic: basicGreaseSelection, columns: greaseChartColumns, chart: greaseChart, compatibility: compat } =
+    await getGreaseGuide();
+  const { groups: compatibilityGroups, matrix: compatibility } = compat;
   const t = await getTranslations("Greases");
   const fitLabel: Record<Suitability, string> = { "+": t("fit.recommended"), o: t("fit.suitable"), "-": t("fit.notSuitable") };
   const tc = await getTranslations("GreaseCompat");

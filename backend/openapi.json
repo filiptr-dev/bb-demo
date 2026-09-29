@@ -859,6 +859,503 @@
           }
         }
       }
+    },
+    "/api/v1/catalog/decode": {
+      "get": {
+        "tags": [
+          "catalog"
+        ],
+        "summary": "Decode Designation",
+        "description": "Splits an SKF designation (6205-2RSH/C3, 22212 EK, NU 208 ECP) into prefix, series, bore code and suffixes.",
+        "operationId": "decode_designation_api_v1_catalog_decode_get",
+        "parameters": [
+          {
+            "name": "designation",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 100,
+              "title": "Designation"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DecodedDesignation"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/problem+json": {},
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Invalid request",
+            "content": {
+              "application/problem+json": {},
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/problem+json": {},
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/catalog/greases": {
+      "get": {
+        "tags": [
+          "catalog"
+        ],
+        "summary": "Grease Guide",
+        "operationId": "grease_guide_api_v1_catalog_greases_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GreaseGuide"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not found",
+            "content": {
+              "application/problem+json": {},
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Invalid request",
+            "content": {
+              "application/problem+json": {},
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/problem+json": {},
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/catalog/rating-life": {
+      "get": {
+        "tags": [
+          "catalog"
+        ],
+        "summary": "Rating Life",
+        "description": "ISO 281 basic rating life L10 and the life at a higher reliability (a1), for a catalog product or a given C.\nLoads in kN. Errors: `rating_life_unsupported` (not a rolling bearing), `load_case_unsupported` (e.g. an axial\nload without SKF factors).",
+        "operationId": "rating_life_api_v1_catalog_rating_life_get",
+        "parameters": [
+          {
+            "name": "slug",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 200
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Slug"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "deep-groove",
+                    "angular-contact",
+                    "self-aligning",
+                    "thrust-ball",
+                    "unit",
+                    "cylindrical-roller",
+                    "spherical-roller",
+                    "tapered-roller",
+                    "needle-roller",
+                    "toroidal"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Type"
+            }
+          },
+          {
+            "name": "c",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Basic dynamic load rating, kN",
+              "title": "C"
+            },
+            "description": "Basic dynamic load rating, kN"
+          },
+          {
+            "name": "fr",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Radial load, kN",
+              "default": 0,
+              "title": "Fr"
+            },
+            "description": "Radial load, kN"
+          },
+          {
+            "name": "fa",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Axial load, kN",
+              "default": 0,
+              "title": "Fa"
+            },
+            "description": "Axial load, kN"
+          },
+          {
+            "name": "rpm",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "maximum": 1000000,
+              "exclusiveMinimum": 0,
+              "description": "Rotational speed, r/min",
+              "title": "Rpm"
+            },
+            "description": "Rotational speed, r/min"
+          },
+          {
+            "name": "reliability",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "enum": [
+                90,
+                95,
+                96,
+                97,
+                98,
+                99
+              ],
+              "type": "integer",
+              "description": "%, for the a1 factor (ISO 281)",
+              "default": 90,
+              "title": "Reliability"
+            },
+            "description": "%, for the a1 factor (ISO 281)"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RatingLife"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "`product_not_found`, or `specs_not_found` (no load rating yet)",
+            "content": {
+              "application/problem+json": {},
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Invalid fields, or a case the formulas don't cover (`load_case_unsupported`, ...)",
+            "content": {
+              "application/problem+json": {},
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/problem+json": {},
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/catalog/relubrication": {
+      "get": {
+        "tags": [
+          "catalog"
+        ],
+        "summary": "Relubrication",
+        "description": "SKF's simplified grease relubrication interval and replenishment quantity. Errors: `relubrication_unsupported`,\n`relubrication_out_of_range` (too fast for grease).",
+        "operationId": "relubrication_api_v1_catalog_relubrication_get",
+        "parameters": [
+          {
+            "name": "slug",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "maxLength": 200
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Slug"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "enum": [
+                    "deep-groove",
+                    "angular-contact",
+                    "self-aligning",
+                    "unit",
+                    "cylindrical-roller",
+                    "needle-roller",
+                    "spherical-roller",
+                    "tapered-roller",
+                    "thrust-ball"
+                  ],
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "title": "Type"
+            }
+          },
+          {
+            "name": "d",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Bore diameter, mm",
+              "title": "D"
+            },
+            "description": "Bore diameter, mm"
+          },
+          {
+            "name": "D",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Outside diameter, mm",
+              "title": "D"
+            },
+            "description": "Outside diameter, mm"
+          },
+          {
+            "name": "B",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "number",
+                  "exclusiveMinimum": 0
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "description": "Width, mm",
+              "title": "B"
+            },
+            "description": "Width, mm"
+          },
+          {
+            "name": "rpm",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "type": "number",
+              "maximum": 1000000,
+              "exclusiveMinimum": 0,
+              "description": "Rotational speed, r/min",
+              "title": "Rpm"
+            },
+            "description": "Rotational speed, r/min"
+          },
+          {
+            "name": "temperature",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "number",
+              "maximum": 300,
+              "minimum": -60,
+              "description": "Operating temperature, °C",
+              "default": 70,
+              "title": "Temperature"
+            },
+            "description": "Operating temperature, °C"
+          },
+          {
+            "name": "verticalShaft",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": false,
+              "title": "Verticalshaft"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Relubrication"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "`product_not_found`, or `specs_not_found` (no load rating yet)",
+            "content": {
+              "application/problem+json": {},
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Invalid fields, or a case the formulas don't cover (`load_case_unsupported`, ...)",
+            "content": {
+              "application/problem+json": {},
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Server error",
+            "content": {
+              "application/problem+json": {},
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
@@ -971,6 +1468,92 @@
         ],
         "title": "DatasheetSection"
       },
+      "DecodedDesignation": {
+        "properties": {
+          "designation": {
+            "type": "string",
+            "title": "Designation"
+          },
+          "segments": {
+            "items": {
+              "$ref": "#/components/schemas/DesignationSegment"
+            },
+            "type": "array",
+            "title": "Segments"
+          },
+          "boreMm": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Boremm"
+          }
+        },
+        "type": "object",
+        "required": [
+          "designation",
+          "segments",
+          "boreMm"
+        ],
+        "title": "DecodedDesignation",
+        "description": "An empty `segments` list means nothing could be read (blank or separators only)."
+      },
+      "DesignationSegment": {
+        "properties": {
+          "token": {
+            "type": "string",
+            "title": "Token",
+            "description": "The part as typed, e.g. '62', '05', '2RSH'"
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "prefix",
+              "series",
+              "bore",
+              "suffix",
+              "unknown"
+            ],
+            "title": "Kind"
+          },
+          "id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Id",
+            "description": "Meaning key (frontend `Decoder.codes.<id>`); null for unknown parts"
+          },
+          "boreMm": {
+            "anyOf": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Boremm",
+            "description": "Bore diameter for a bore segment, mm"
+          }
+        },
+        "type": "object",
+        "required": [
+          "token",
+          "kind",
+          "id",
+          "boreMm"
+        ],
+        "title": "DesignationSegment"
+      },
       "FieldError": {
         "properties": {
           "field": {
@@ -988,6 +1571,179 @@
           "message"
         ],
         "title": "FieldError"
+      },
+      "GreaseChartRow": {
+        "properties": {
+          "code": {
+            "type": "string",
+            "title": "Code"
+          },
+          "tempC": {
+            "prefixItems": [
+              {
+                "type": "integer"
+              },
+              {
+                "type": "integer"
+              }
+            ],
+            "type": "array",
+            "maxItems": 2,
+            "minItems": 2,
+            "title": "Tempc",
+            "description": "Operating temperature range, °C"
+          },
+          "viscosity": {
+            "type": "integer",
+            "title": "Viscosity",
+            "description": "Base oil viscosity at 40 °C, mm²/s"
+          },
+          "temp": {
+            "type": "string",
+            "title": "Temp",
+            "description": "Temperature level: L, M, H, VH (ranges like 'L–M')"
+          },
+          "speed": {
+            "type": "string",
+            "title": "Speed",
+            "description": "Speed level: VL, L, M, H, EH"
+          },
+          "load": {
+            "type": "string",
+            "title": "Load",
+            "description": "Load level: L, M, H, VH"
+          },
+          "fit": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "+",
+                "o",
+                "-"
+              ]
+            },
+            "type": "array",
+            "title": "Fit",
+            "description": "One mark per `columns` entry: + recommended, o suitable, - not"
+          }
+        },
+        "type": "object",
+        "required": [
+          "code",
+          "tempC",
+          "viscosity",
+          "temp",
+          "speed",
+          "load",
+          "fit"
+        ],
+        "title": "GreaseChartRow"
+      },
+      "GreaseCompatibility": {
+        "properties": {
+          "groups": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array",
+            "title": "Groups",
+            "description": "Greases in one group behave the same, e.g. 'LGMT 2 · LGMT 3'"
+          },
+          "matrix": {
+            "items": {
+              "items": {
+                "type": "string",
+                "enum": [
+                  "+",
+                  "-",
+                  "="
+                ]
+              },
+              "type": "array"
+            },
+            "type": "array",
+            "title": "Matrix",
+            "description": "matrix[row][col]: + compatible, - not, = same grease"
+          }
+        },
+        "type": "object",
+        "required": [
+          "groups",
+          "matrix"
+        ],
+        "title": "GreaseCompatibility"
+      },
+      "GreaseGuide": {
+        "properties": {
+          "basic": {
+            "items": {
+              "$ref": "#/components/schemas/GreaseRecommendation"
+            },
+            "type": "array",
+            "title": "Basic"
+          },
+          "columns": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "verticalShaft",
+                "outerRing",
+                "oscillating",
+                "vibration",
+                "shockLoad",
+                "rust"
+              ]
+            },
+            "type": "array",
+            "title": "Columns"
+          },
+          "chart": {
+            "items": {
+              "$ref": "#/components/schemas/GreaseChartRow"
+            },
+            "type": "array",
+            "title": "Chart"
+          },
+          "compatibility": {
+            "$ref": "#/components/schemas/GreaseCompatibility"
+          }
+        },
+        "type": "object",
+        "required": [
+          "basic",
+          "columns",
+          "chart",
+          "compatibility"
+        ],
+        "title": "GreaseGuide",
+        "description": "SKF bearing grease selection: the basic choice per condition, the selection chart and compatibility."
+      },
+      "GreaseRecommendation": {
+        "properties": {
+          "condition": {
+            "type": "string",
+            "enum": [
+              "allPurpose",
+              "highTemp",
+              "extremeTemp",
+              "lowTemp",
+              "highLoad",
+              "food",
+              "green"
+            ],
+            "title": "Condition"
+          },
+          "code": {
+            "type": "string",
+            "title": "Code"
+          }
+        },
+        "type": "object",
+        "required": [
+          "condition",
+          "code"
+        ],
+        "title": "GreaseRecommendation"
       },
       "Health": {
         "properties": {
@@ -1438,6 +2194,233 @@
           "updatedAt"
         ],
         "title": "ProductStats"
+      },
+      "RatingLife": {
+        "properties": {
+          "designation": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Designation",
+            "description": "When computed for a catalog product"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "deep-groove",
+              "angular-contact",
+              "self-aligning",
+              "thrust-ball",
+              "unit",
+              "cylindrical-roller",
+              "spherical-roller",
+              "tapered-roller",
+              "needle-roller",
+              "toroidal"
+            ],
+            "title": "Type"
+          },
+          "c": {
+            "type": "number",
+            "title": "C",
+            "description": "kN"
+          },
+          "p": {
+            "type": "number",
+            "title": "P",
+            "description": "Equivalent dynamic load P = x·Fr + y·Fa, kN"
+          },
+          "x": {
+            "type": "number",
+            "title": "X"
+          },
+          "y": {
+            "type": "number",
+            "title": "Y"
+          },
+          "e": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "E",
+            "description": "Fa/Fr limit that selected x and y"
+          },
+          "exponent": {
+            "type": "number",
+            "title": "Exponent",
+            "description": "3 for ball bearings, 10/3 for roller bearings"
+          },
+          "l10": {
+            "type": "number",
+            "title": "L10",
+            "description": "Basic rating life, million revolutions"
+          },
+          "l10Hours": {
+            "type": "number",
+            "title": "L10Hours",
+            "description": "Basic rating life, operating hours"
+          },
+          "reliability": {
+            "type": "integer",
+            "enum": [
+              90,
+              95,
+              96,
+              97,
+              98,
+              99
+            ],
+            "title": "Reliability"
+          },
+          "a1": {
+            "type": "number",
+            "title": "A1"
+          },
+          "lnm": {
+            "type": "number",
+            "title": "Lnm",
+            "description": "Life at the requested reliability, million revolutions"
+          },
+          "lnmHours": {
+            "type": "number",
+            "title": "Lnmhours",
+            "description": "Life at the requested reliability, operating hours"
+          },
+          "warnings": {
+            "items": {
+              "type": "string",
+              "enum": [
+                "heavy_load",
+                "above_limiting_speed"
+              ]
+            },
+            "type": "array",
+            "title": "Warnings",
+            "description": "heavy_load: P > 0.5 C, outside the equation's range; above_limiting_speed: rpm > SKF's limit"
+          }
+        },
+        "type": "object",
+        "required": [
+          "designation",
+          "type",
+          "c",
+          "p",
+          "x",
+          "y",
+          "e",
+          "exponent",
+          "l10",
+          "l10Hours",
+          "reliability",
+          "a1",
+          "lnm",
+          "lnmHours",
+          "warnings"
+        ],
+        "title": "RatingLife",
+        "description": "ISO 281 basic rating life, without the SKF life modification factor (aSKF = 1)."
+      },
+      "Relubrication": {
+        "properties": {
+          "designation": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Designation"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "deep-groove",
+              "angular-contact",
+              "self-aligning",
+              "unit",
+              "cylindrical-roller",
+              "needle-roller",
+              "spherical-roller",
+              "tapered-roller",
+              "thrust-ball"
+            ],
+            "title": "Type"
+          },
+          "d": {
+            "type": "number",
+            "title": "D"
+          },
+          "k": {
+            "type": "number",
+            "title": "K",
+            "description": "Bearing type factor: 10 ball, 5 cylindrical/needle roller, 1 other roller/thrust"
+          },
+          "baseHours": {
+            "type": "number",
+            "title": "Basehours",
+            "description": "Interval at 70 °C on a horizontal shaft, operating hours"
+          },
+          "hours": {
+            "type": "number",
+            "title": "Hours",
+            "description": "Interval for the given temperature and shaft, at most 30,000 h"
+          },
+          "capped": {
+            "type": "boolean",
+            "title": "Capped",
+            "description": "The formula gave more than 30,000 h"
+          },
+          "greaseSideG": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Greasesideg",
+            "description": "Replenishment from the side, 0.005·D·B, g"
+          },
+          "greaseCenterG": {
+            "anyOf": [
+              {
+                "type": "number"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "title": "Greasecenterg",
+            "description": "Replenishment through the outer ring, 0.002·D·B, g"
+          }
+        },
+        "type": "object",
+        "required": [
+          "designation",
+          "type",
+          "d",
+          "k",
+          "baseHours",
+          "hours",
+          "capped",
+          "greaseSideG",
+          "greaseCenterG"
+        ],
+        "title": "Relubrication",
+        "description": "SKF's simplified relubrication interval for a lithium-base grease. An estimate: conditions like\ncontamination, water or vibration shorten it."
       },
       "SitemapRow": {
         "properties": {
