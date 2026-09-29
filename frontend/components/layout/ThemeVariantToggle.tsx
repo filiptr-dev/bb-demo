@@ -27,6 +27,8 @@ export default function ThemeVariantToggle() {
 
   useEffect(() => {
     if (localStorage.getItem(STORAGE_KEY) === "demo") {
+      // Intentional: localStorage only exists after hydration, and the server always renders the client theme.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setIsClientTheme(false);
       document.documentElement.removeAttribute("data-theme");
       setFavicon(false);
