@@ -1171,13 +1171,14 @@
       "form": "Contact form"
     },
     "sources": "Sources",
-    "confidence": {
-      "label": "Confidence: {level}",
-      "veryHigh": "very high",
-      "high": "high",
-      "medium": "medium",
-      "low": "low",
-      "veryLow": "very low"
+    "followUps": {
+      "life": "How long will {designation} last at 1500 r/min with a 2 kN radial load?",
+      "regrease": "How often should I regrease {designation} at 1500 r/min?",
+      "specs": "Show the technical data for {designation}",
+      "compare": "Compare {a} and {b}",
+      "buy": "I want to buy {designation}",
+      "greaseHot": "Which SKF grease for high temperatures?",
+      "greaseMix": "Can I mix two different SKF greases?"
     },
     "copy": "Copy",
     "copied": "Copied",

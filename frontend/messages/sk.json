@@ -1171,13 +1171,14 @@
       "form": "Kontaktný formulár"
     },
     "sources": "Zdroje",
-    "confidence": {
-      "label": "Spoľahlivosť: {level}",
-      "veryHigh": "veľmi vysoká",
-      "high": "vysoká",
-      "medium": "stredná",
-      "low": "nízka",
-      "veryLow": "veľmi nízka"
+    "followUps": {
+      "life": "Ako dlho vydrží {designation} pri 1500 r/min a radiálnom zaťažení 2 kN?",
+      "regrease": "Ako často treba domazávať {designation} pri 1500 r/min?",
+      "specs": "Zobraz technické údaje pre {designation}",
+      "compare": "Porovnaj {a} a {b}",
+      "buy": "Chcem kúpiť {designation}",
+      "greaseHot": "Aký mazací tuk SKF pre vysoké teploty?",
+      "greaseMix": "Môžem zmiešať dva rôzne mazacie tuky SKF?"
     },
     "copy": "Kopírovať",
     "copied": "Skopírované",

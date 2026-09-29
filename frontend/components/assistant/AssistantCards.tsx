@@ -201,30 +201,3 @@ export function SourcesList({ event }: { event: Of<"sources"> }) {
     </p>
   );
 }
-
-type Level = "veryHigh" | "high" | "medium" | "low" | "veryLow";
-const levelColor: Record<Level, string> = {
-  veryHigh: "bg-emerald-500",
-  high: "bg-emerald-500",
-  medium: "bg-amber-500",
-  low: "bg-red-500",
-  veryLow: "bg-red-500",
-};
-
-function level({ score, status }: Of<"confidence">): Level {
-  if (score != null) return score >= 90 ? "veryHigh" : score >= 75 ? "high" : score >= 50 ? "medium" : score >= 25 ? "low" : "veryLow";
-  return status === "supported" ? "high" : status === "bounded" || status === "partial" ? "medium" : "low";
-}
-
-// The model's own rating of its answer; none when it asked back or declined (not_applicable).
-export function ConfidenceBadge({ event }: { event: Of<"confidence"> }) {
-  const t = useTranslations("Assistant.confidence");
-  if (event.status === "not_applicable") return null;
-  const l = level(event);
-  return (
-    <span title={event.reason ?? undefined} className="inline-flex cursor-default items-center gap-1.5 text-[11px] text-foreground/55">
-      <span className={`size-1.5 rounded-full ${levelColor[l]}`} aria-hidden />
-      {t("label", { level: t(l) })}
-    </span>
-  );
-}

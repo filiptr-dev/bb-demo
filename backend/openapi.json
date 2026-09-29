@@ -1413,6 +1413,9 @@
                       "$ref": "#/components/schemas/ConfidenceEvent"
                     },
                     {
+                      "$ref": "#/components/schemas/SuggestionsEvent"
+                    },
+                    {
                       "$ref": "#/components/schemas/ErrorEvent"
                     },
                     {
@@ -1432,6 +1435,7 @@
                       "contact": "#/components/schemas/ContactEvent",
                       "sources": "#/components/schemas/SourcesEvent",
                       "confidence": "#/components/schemas/ConfidenceEvent",
+                      "suggestions": "#/components/schemas/SuggestionsEvent",
                       "error": "#/components/schemas/ErrorEvent",
                       "done": "#/components/schemas/DoneEvent"
                     }
@@ -3093,6 +3097,31 @@
         ],
         "title": "StatusEvent",
         "description": "What the assistant is doing, until the first text arrives."
+      },
+      "SuggestionsEvent": {
+        "properties": {
+          "type": {
+            "type": "string",
+            "const": "suggestions",
+            "title": "Type",
+            "default": "suggestions"
+          },
+          "suggestions": {
+            "items": {
+              "type": "string",
+              "maxLength": 150
+            },
+            "type": "array",
+            "maxItems": 3,
+            "title": "Suggestions"
+          }
+        },
+        "type": "object",
+        "required": [
+          "suggestions"
+        ],
+        "title": "SuggestionsEvent",
+        "description": "Follow-up questions the user may ask next, in the user's language. A click sends one as the next message."
       },
       "TextEvent": {
         "properties": {

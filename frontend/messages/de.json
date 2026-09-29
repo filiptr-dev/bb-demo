@@ -1171,13 +1171,14 @@
       "form": "Kontaktformular"
     },
     "sources": "Quellen",
-    "confidence": {
-      "label": "Zuverlässigkeit: {level}",
-      "veryHigh": "sehr hoch",
-      "high": "hoch",
-      "medium": "mittel",
-      "low": "niedrig",
-      "veryLow": "sehr niedrig"
+    "followUps": {
+      "life": "Wie lange hält ein {designation} bei 1500 r/min und 2 kN Radiallast?",
+      "regrease": "Wie oft muss ich ein {designation} bei 1500 r/min nachschmieren?",
+      "specs": "Zeige die technischen Daten für {designation}",
+      "compare": "Vergleiche {a} und {b}",
+      "buy": "Ich möchte {designation} kaufen",
+      "greaseHot": "Welches SKF-Fett für hohe Temperaturen?",
+      "greaseMix": "Kann ich zwei verschiedene SKF-Fette mischen?"
     },
     "copy": "Kopieren",
     "copied": "Kopiert",

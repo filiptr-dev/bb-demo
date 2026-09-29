@@ -66,6 +66,14 @@ export default function AssistantPanel({ open, onClose }: { open: boolean; onClo
     setInput("");
   }
 
+  // an example or a suggested follow-up: sent as it is
+  function ask(question: string) {
+    if (streaming) return;
+    stick.current = true;
+    send(question);
+    inputRef.current?.focus();
+  }
+
   function onKeyDown(e: KeyboardEvent<HTMLTextAreaElement>) {
     if (e.key === "Enter" && !e.shiftKey && !e.nativeEvent.isComposing) {
       e.preventDefault();
@@ -141,7 +149,10 @@ export default function AssistantPanel({ open, onClose }: { open: boolean; onClo
                 <button
                   key={id}
                   type="button"
-                  onClick={() => send("", id, t(`starters.${id}`))}
+                  onClick={() => {
+                    send("", id, t(`starters.${id}`));
+                    inputRef.current?.focus(); // a starter usually asks for a designation next
+                  }}
                   className="flex items-center gap-2 rounded-xl border border-border px-3 py-2.5 text-left text-xs font-medium transition-colors hover:border-brand-2/50 hover:bg-foreground/[0.03] last:odd:col-span-2"
                 >
                   <Icon className="size-4 shrink-0 text-brand-2" />
@@ -155,10 +166,7 @@ export default function AssistantPanel({ open, onClose }: { open: boolean; onClo
                 <li key={q}>
                   <button
                     type="button"
-                    onClick={() => {
-                      setInput(q);
-                      inputRef.current?.focus();
-                    }}
+                    onClick={() => ask(q)}
                     className="w-full rounded-lg px-2 py-1.5 text-left text-sm text-foreground/70 transition-colors hover:bg-foreground/[0.04] hover:text-foreground"
                   >
                     {q}
@@ -169,8 +177,8 @@ export default function AssistantPanel({ open, onClose }: { open: boolean; onClo
           </div>
         ) : (
           <div className="space-y-5">
-            {turns.map((turn) => (
-              <AssistantTurnView key={turn.id} turn={turn} onRetry={retry} onNavigate={onNavigate} />
+            {turns.map((turn, i) => (
+              <AssistantTurnView key={turn.id} turn={turn} last={i === turns.length - 1} onRetry={retry} onSend={ask} onNavigate={onNavigate} />
             ))}
           </div>
         )}

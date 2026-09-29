@@ -31,12 +31,13 @@ def test_answer_with_a_tool(chat_client: TestClient, llm: FakeLlm, catalog_db: s
             "The **6205** is a deep groove ball bearing, ",
             "25 x 52 x 15 mm.\n\n[",
             "[confidence:v1 score=88 ",
-            "status=supported reason=From the catalog]]",
+            "status=supported reason=From the catalog]]\n[[suggestions:v1 ",
+            "How often should I regrease a 6205? | What is the 6205-2RSH?]]",
         ),
     ]
     events = stream(chat_client, message="What is the 6205?", locale="en")
 
-    assert types_of(events) == ["status", "status", "text", "text", "products", "confidence", "done"]
+    assert types_of(events) == ["status", "status", "text", "text", "products", "confidence", "suggestions", "done"]
     assert [e["status"] for e in events[:2]] == ["thinking", "searching"]
     assert text_of(events) == "The **6205** is a deep groove ball bearing, 25 x 52 x 15 mm.\n\n"
     assert [p["designation"] for p in one(events, "products")["products"]] == ["6205"]
@@ -46,6 +47,10 @@ def test_answer_with_a_tool(chat_client: TestClient, llm: FakeLlm, catalog_db: s
         "status": "supported",
         "reason": "From the catalog",
     }
+    assert one(events, "suggestions")["suggestions"] == [
+        "How often should I regrease a 6205?",
+        "What is the 6205-2RSH?",
+    ]
 
     # the second request carried the tool result back to the model
     second = llm.requests[1][1]
@@ -232,6 +237,7 @@ def test_openapi_documents_the_stream(chat_client: TestClient) -> None:
         "contact",
         "sources",
         "confidence",
+        "suggestions",
         "error",
         "done",
     }

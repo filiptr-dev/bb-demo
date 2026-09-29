@@ -1,7 +1,7 @@
 import pytest
 
-from app.modules.assistant.confidence import FooterFilter, parse_footer
-from app.modules.assistant.schemas import ConfidenceEvent
+from app.modules.assistant.confidence import FooterFilter, parse_footer, parse_suggestions
+from app.modules.assistant.schemas import ConfidenceEvent, SuggestionsEvent
 
 
 def test_parse_footer() -> None:
@@ -53,3 +53,27 @@ def test_filter_never_sends_the_footer() -> None:
 def test_filter_releases_brackets_that_are_not_a_footer() -> None:
     assert stream(["See [SKF](https://skf.com", ") and [", "x]"]) == ("See [SKF](https://skf.com) and [x]", None)
     assert stream(["a [[b]] c"]) == ("a [[b]] c", None)  # held until the end, then sent after all
+
+
+def test_suggestions_footer() -> None:
+    pieces = [
+        "The 6205 is open.\n\n[[confidence:v1 score=90 status=supported]]\n",
+        "[[suggestions:v1 How often should I regrease a 6205? |",
+        " Which 6205 has seals on both sides? | | How often should I regrease a 6205?]]",
+    ]
+    footer = FooterFilter()
+    sent = "".join(footer.feed(p) for p in pieces)
+    finished = footer.finish()
+    assert sent + finished.text == "The 6205 is open.\n\n"
+    assert finished.confidence == ConfidenceEvent(score=90, status="supported")
+    # empty and repeated questions are dropped
+    assert finished.suggestions == SuggestionsEvent(
+        suggestions=["How often should I regrease a 6205?", "Which 6205 has seals on both sides?"]
+    )
+
+
+def test_suggestions_alone_and_capped() -> None:
+    suggestions, rest = parse_suggestions("Answer. [[suggestions:v1 a? | b? | c? | d? | " + "x" * 200 + "]]")
+    assert rest == "Answer."
+    assert suggestions == SuggestionsEvent(suggestions=["a?", "b?", "c?"])
+    assert parse_suggestions("Answer. [[suggestions:v1  | ]]") == (None, "Answer.")

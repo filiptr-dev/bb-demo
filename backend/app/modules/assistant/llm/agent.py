@@ -2,7 +2,7 @@
 
 Loop: stream a reply; if it called tools, run them (status events), append the results and ask again; at most
 MAX_TOOL_CALLS per turn, then the model must answer without tools. Text passes through the FooterFilter, so the
-confidence footer becomes a `confidence` event, and then the MarkupFilter (made-up links, LaTeX). Products and SKF
+confidence and suggestions footers become events, and then the MarkupFilter (made-up links, LaTeX). Products and SKF
 pages the tools returned become `products` and `sources` events when the answer mentions them.
 """
 
@@ -29,6 +29,7 @@ from app.modules.assistant.schemas import (
     ProductsEvent,
     SourcesEvent,
     StatusEvent,
+    SuggestionsEvent,
     TextEvent,
 )
 from app.modules.products.schemas import Product
@@ -37,7 +38,7 @@ MAX_TOOL_CALLS = 8
 MAX_CARDS = 6
 MAX_OUTPUT_TOKENS = 2048
 
-AgentEvent = StatusEvent | TextEvent | ProductsEvent | SourcesEvent | ConfidenceEvent
+AgentEvent = StatusEvent | TextEvent | ProductsEvent | SourcesEvent | ConfidenceEvent | SuggestionsEvent
 
 
 class EmptyAnswerError(Exception):
@@ -131,3 +132,5 @@ class Agent:
         if finished.confidence:
             result.confidence = finished.confidence
             yield finished.confidence
+        if finished.suggestions:
+            yield finished.suggestions

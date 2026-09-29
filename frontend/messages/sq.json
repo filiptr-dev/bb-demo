@@ -1171,13 +1171,14 @@
       "form": "Formulari i kontaktit"
     },
     "sources": "Burimet",
-    "confidence": {
-      "label": "Besueshmëria: {level}",
-      "veryHigh": "shumë e lartë",
-      "high": "e lartë",
-      "medium": "mesatare",
-      "low": "e ulët",
-      "veryLow": "shumë e ulët"
+    "followUps": {
+      "life": "Sa do të zgjasë {designation} në 1500 r/min me ngarkesë radiale 2 kN?",
+      "regrease": "Sa shpesh duhet ta rilubrifikoj {designation} në 1500 r/min?",
+      "specs": "Trego të dhënat teknike për {designation}",
+      "compare": "Krahaso {a} dhe {b}",
+      "buy": "Dua të blej {designation}",
+      "greaseHot": "Cila yndyrë SKF për temperatura të larta?",
+      "greaseMix": "A mund të përziej dy yndyra të ndryshme SKF?"
     },
     "copy": "Kopjo",
     "copied": "U kopjua",

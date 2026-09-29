@@ -974,6 +974,19 @@ export interface components {
             status: "thinking" | "searching" | "reading" | "calculating";
         };
         /**
+         * SuggestionsEvent
+         * @description Follow-up questions the user may ask next, in the user's language. A click sends one as the next message.
+         */
+        SuggestionsEvent: {
+            /**
+             * @description discriminator enum property added by openapi-typescript
+             * @enum {string}
+             */
+            type: "suggestions";
+            /** Suggestions */
+            suggestions: string[];
+        };
+        /**
          * TextEvent
          * @description A piece of the model's Markdown answer; append in order.
          */

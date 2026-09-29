@@ -1171,13 +1171,14 @@
       "form": "Modulo di contatto"
     },
     "sources": "Fonti",
-    "confidence": {
-      "label": "Affidabilità: {level}",
-      "veryHigh": "molto alta",
-      "high": "alta",
-      "medium": "media",
-      "low": "bassa",
-      "veryLow": "molto bassa"
+    "followUps": {
+      "life": "Quanto durerà un {designation} a 1500 r/min con un carico radiale di 2 kN?",
+      "regrease": "Ogni quanto devo rilubrificare un {designation} a 1500 r/min?",
+      "specs": "Mostra i dati tecnici di {designation}",
+      "compare": "Confronta {a} e {b}",
+      "buy": "Voglio acquistare {designation}",
+      "greaseHot": "Quale grasso SKF per alte temperature?",
+      "greaseMix": "Posso mescolare due grassi SKF diversi?"
     },
     "copy": "Copia",
     "copied": "Copiato",

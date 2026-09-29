@@ -1171,13 +1171,14 @@
       "form": "Форма за контакт"
     },
     "sources": "Източници",
-    "confidence": {
-      "label": "Достоверност: {level}",
-      "veryHigh": "много висока",
-      "high": "висока",
-      "medium": "средна",
-      "low": "ниска",
-      "veryLow": "много ниска"
+    "followUps": {
+      "life": "Колко ще издържи {designation} при 1500 r/min и радиално натоварване 2 kN?",
+      "regrease": "Колко често да смазвам {designation} при 1500 r/min?",
+      "specs": "Покажи техническите данни за {designation}",
+      "compare": "Сравни {a} и {b}",
+      "buy": "Искам да купя {designation}",
+      "greaseHot": "Коя грес на SKF за високи температури?",
+      "greaseMix": "Мога ли да смесвам две различни греси на SKF?"
     },
     "copy": "Копирай",
     "copied": "Копирано",

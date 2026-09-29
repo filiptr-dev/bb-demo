@@ -1171,13 +1171,14 @@
       "form": "İletişim formu"
     },
     "sources": "Kaynaklar",
-    "confidence": {
-      "label": "Güven: {level}",
-      "veryHigh": "çok yüksek",
-      "high": "yüksek",
-      "medium": "orta",
-      "low": "düşük",
-      "veryLow": "çok düşük"
+    "followUps": {
+      "life": "{designation} 1500 r/min ve 2 kN radyal yükte ne kadar dayanır?",
+      "regrease": "{designation} 1500 r/min'de ne sıklıkla yeniden yağlanmalı?",
+      "specs": "{designation} için teknik verileri göster",
+      "compare": "{a} ve {b} karşılaştırması",
+      "buy": "{designation} satın almak istiyorum",
+      "greaseHot": "Yüksek sıcaklıklar için hangi SKF gresi?",
+      "greaseMix": "İki farklı SKF gresini karıştırabilir miyim?"
     },
     "copy": "Kopyala",
     "copied": "Kopyalandı",

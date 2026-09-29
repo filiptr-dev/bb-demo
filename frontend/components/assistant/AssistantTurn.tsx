@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
-import { Check, Copy, RotateCcw, ThumbsDown, ThumbsUp } from "lucide-react";
+import { ArrowRight, Check, Copy, RotateCcw, ThumbsDown, ThumbsUp } from "lucide-react";
 import { sendFeedback, type FeedbackReason } from "@/lib/api/assistant";
-import type { AssistantTurn, Turn } from "@/hooks/useAssistantChat";
+import type { AssistantTurn, ShownEvent, Turn } from "@/hooks/useAssistantChat";
 import AssistantMarkdown from "./AssistantMarkdown";
-import { ConfidenceBadge, ContactCard, DecodeCard, GreasesCard, ProductsCard, SourcesList, SpecsCard } from "./AssistantCards";
+import { ContactCard, DecodeCard, GreasesCard, ProductsCard, SourcesList, SpecsCard } from "./AssistantCards";
 
 const REASONS: FeedbackReason[] = ["incorrect", "not_what_i_asked", "slow_or_buggy", "style", "safety", "other"];
 const iconButton = "inline-flex size-7 items-center justify-center rounded-md text-foreground/45 transition-colors hover:bg-foreground/[0.06] hover:text-foreground disabled:pointer-events-none";
@@ -74,11 +74,57 @@ function CopyButton({ text }: { text: string }) {
   );
 }
 
-function Answer({ turn, onRetry, onNavigate }: { turn: AssistantTurn; onRetry: () => void; onNavigate: () => void }) {
+type T = ReturnType<typeof useTranslations<"Assistant">>;
+
+// What to ask next: the model writes its own; a scripted answer (a starter's cards) gets questions about its data.
+function followUps(events: ShownEvent[], t: T): string[] {
+  const own = events.find((e) => e.type === "suggestions");
+  if (own) return own.suggestions;
+  const last = events.at(-1);
+  switch (last?.type) {
+    case "specs": {
+      const designation = last.product.designation;
+      return [t("followUps.life", { designation }), t("followUps.regrease", { designation }), t("followUps.buy", { designation })];
+    }
+    case "decode":
+      return [t("followUps.specs", { designation: last.decoded.designation })];
+    case "products": {
+      const [a, b] = last.products;
+      if (!a) return [];
+      return [t("followUps.specs", { designation: a.designation }), ...(b ? [t("followUps.compare", { a: a.designation, b: b.designation })] : [])];
+    }
+    case "greases":
+      return [t("followUps.greaseHot"), t("followUps.greaseMix")];
+    default:
+      return [];
+  }
+}
+
+function Suggestions({ questions, onSend }: { questions: string[]; onSend: (q: string) => void }) {
+  if (!questions.length) return null;
+  return (
+    <div className="flex flex-col items-start gap-1.5">
+      {questions.map((q) => (
+        <button
+          key={q}
+          type="button"
+          onClick={() => onSend(q)}
+          className="group inline-flex max-w-full items-center gap-1.5 rounded-full border border-border px-3 py-1.5 text-left text-xs text-foreground/75 transition-colors hover:border-brand-2/50 hover:text-foreground"
+        >
+          <ArrowRight className="size-3 shrink-0 text-brand-2 transition-transform group-hover:translate-x-0.5" />
+          {q}
+        </button>
+      ))}
+    </div>
+  );
+}
+
+type AnswerProps = { turn: AssistantTurn; last: boolean; onRetry: () => void; onSend: (q: string) => void; onNavigate: () => void };
+
+function Answer({ turn, last, onRetry, onSend, onNavigate }: AnswerProps) {
   const t = useTranslations("Assistant");
   const text = turn.events.flatMap((e) => (e.type === "text" ? [e.text] : [])).join("").trim();
-  const confidence = turn.events.find((e) => e.type === "confidence");
-  const showStatus = turn.streaming && !turn.events.some((e) => e.type !== "confidence");
+  const showStatus = turn.streaming && !turn.events.some((e) => e.type !== "confidence" && e.type !== "suggestions");
   const error = turn.error;
 
   return (
@@ -112,7 +158,7 @@ function Answer({ turn, onRetry, onNavigate }: { turn: AssistantTurn; onRetry: (
           case "sources":
             return <SourcesList key={i} event={e} />;
           default:
-            return null; // confidence: in the actions row
+            return null; // confidence: kept for the logs; suggestions: below the actions
         }
       })}
 
@@ -137,27 +183,26 @@ function Answer({ turn, onRetry, onNavigate }: { turn: AssistantTurn; onRetry: (
         </div>
       )}
 
-      {!turn.streaming && (text || turn.messageId || confidence) && (
+      {!turn.streaming && (text || turn.messageId) && (
         <div className="-ml-1.5 flex flex-wrap items-center gap-0.5">
           {text && <CopyButton text={text} />}
           {turn.messageId && <Feedback messageId={turn.messageId} />}
-          {confidence && (
-            <span className="ml-auto">
-              <ConfidenceBadge event={confidence} />
-            </span>
-          )}
         </div>
       )}
+
+      {last && !turn.streaming && !turn.stopped && !error && <Suggestions questions={followUps(turn.events, t)} onSend={onSend} />}
     </div>
   );
 }
 
-export default function AssistantTurnView({ turn, onRetry, onNavigate }: { turn: Turn; onRetry: (id: string) => void; onNavigate: () => void }) {
+type TurnProps = { turn: Turn; last: boolean; onRetry: (id: string) => void; onSend: (q: string) => void; onNavigate: () => void };
+
+export default function AssistantTurnView({ turn, last, onRetry, onSend, onNavigate }: TurnProps) {
   if (turn.role === "user")
     return (
       <div className="flex justify-end">
         <p className="max-w-[85%] whitespace-pre-wrap rounded-2xl rounded-br-md bg-foreground/[0.07] px-3.5 py-2 text-sm [overflow-wrap:anywhere]">{turn.text}</p>
       </div>
     );
-  return <Answer turn={turn} onRetry={() => onRetry(turn.id)} onNavigate={onNavigate} />;
+  return <Answer turn={turn} last={last} onRetry={() => onRetry(turn.id)} onSend={onSend} onNavigate={onNavigate} />;
 }

@@ -15,6 +15,7 @@ export type ChatEvent =
   | S["ContactEvent"]
   | S["SourcesEvent"]
   | S["ConfidenceEvent"]
+  | S["SuggestionsEvent"]
   | S["ErrorEvent"]
   | S["DoneEvent"];
 export type ChatRequest = S["ChatRequest"];

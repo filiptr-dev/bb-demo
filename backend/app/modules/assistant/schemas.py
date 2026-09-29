@@ -129,6 +129,16 @@ class ConfidenceEvent(ApiModel):
     reason: str | None = None
 
 
+MAX_SUGGESTIONS = 3
+
+
+class SuggestionsEvent(ApiModel):
+    """Follow-up questions the user may ask next, in the user's language. A click sends one as the next message."""
+
+    type: Literal["suggestions"] = "suggestions"
+    suggestions: list[Annotated[str, Field(max_length=150)]] = Field(max_length=MAX_SUGGESTIONS)
+
+
 ErrorCode = Literal["assistant_unavailable", "assistant_busy", "assistant_failed", "conversation_not_found"]
 
 
@@ -161,6 +171,7 @@ ChatEventModel = (
     | ContactEvent
     | SourcesEvent
     | ConfidenceEvent
+    | SuggestionsEvent
     | ErrorEvent
     | DoneEvent
 )
