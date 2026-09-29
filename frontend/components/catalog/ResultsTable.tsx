@@ -8,7 +8,6 @@ import type { SortKey } from "@/lib/catalog-query";
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { useProductLabels } from "@/components/product/useProductLabels";
-import AddToQuoteButton from "@/components/quote/AddToQuoteButton";
 
 const columns: { key: SortKey; label: string; num?: boolean }[] = [
   { key: "designation", label: "designation" },
@@ -41,7 +40,6 @@ export default function ResultsTable({ rows, sort, dir, onSort, dimmed }: {
                 {sort === c.key && <span className="ml-1 text-brand-1">{dir === "asc" ? "▲" : "▼"}</span>}
               </TableHead>
             ))}
-            <TableHead className="w-8" />
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -58,9 +56,6 @@ export default function ResultsTable({ rows, sort, dir, onSort, dimmed }: {
               <TableCell className="px-2.5 py-3 text-right font-mono text-foreground/80">{dim(p.d)}</TableCell>
               <TableCell className="px-2.5 py-3 text-right font-mono text-foreground/80">{dim(p.D)}</TableCell>
               <TableCell className="px-2.5 py-3 text-right font-mono text-foreground/80">{dim(p.B)}</TableCell>
-              <TableCell className="px-2.5 py-3">
-                <AddToQuoteButton p={p} variant="icon" />
-              </TableCell>
             </motion.tr>
           ))}
         </TableBody>

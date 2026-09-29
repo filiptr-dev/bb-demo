@@ -6,7 +6,6 @@ import { Link } from "@/i18n/navigation";
 import { dims, type Product } from "@/lib/domain/product";
 import { site } from "@/lib/site";
 import ProductTypeImage from "@/components/product/ProductTypeImage";
-import AddToQuoteButton from "@/components/quote/AddToQuoteButton";
 import type { ShownEvent } from "@/hooks/useAssistantChat";
 
 type Of<T extends ShownEvent["type"]> = Extract<ShownEvent, { type: T }>;
@@ -26,7 +25,6 @@ function ProductRow({ p, onNavigate }: { p: Product } & Nav) {
           {tt.has(`${p.type}.name`) ? tt(`${p.type}.name`) : p.type} · {dims(p)} mm
         </span>
       </Link>
-      <AddToQuoteButton p={p} variant="icon" />
     </li>
   );
 }
@@ -179,10 +177,7 @@ export function ContactCard({ onNavigate }: Nav) {
         <li className="text-foreground/45">{t("phones")}</li>
       </ul>
       <div className="flex flex-wrap gap-2 border-t border-border px-3 py-2.5">
-        <Link href="/quote" onClick={onNavigate} className="rounded-full bg-brand-gradient px-3.5 py-1.5 text-xs font-semibold text-white">
-          {t("quote")}
-        </Link>
-        <Link href="/contact" onClick={onNavigate} className="rounded-full border border-border px-3.5 py-1.5 text-xs font-semibold hover:border-brand-2">
+        <Link href="/contact" onClick={onNavigate} className="rounded-full bg-brand-gradient px-3.5 py-1.5 text-xs font-semibold text-white">
           {t("form")}
         </Link>
       </div>

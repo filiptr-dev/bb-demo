@@ -102,7 +102,7 @@ class GreasesEvent(ApiModel):
 
 
 class ContactEvent(ApiModel):
-    """Where to buy: B&B Unikoop's offices, phones, the quote basket and the contact form."""
+    """Where to buy: B&B Unikoop's offices, phones and the contact form."""
 
     type: Literal["contact"] = "contact"
 

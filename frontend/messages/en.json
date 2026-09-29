@@ -593,6 +593,7 @@
     }
   },
   "ProductDetail": {
+    "contactCta": "Contact us",
     "breadcrumbHome": "Home",
     "breadcrumbCatalog": "Catalog",
     "specsHeading": "Technical specifications",
@@ -685,10 +686,7 @@
         "invalid": "Invalid request.",
         "required": "Please fill in all required fields.",
         "send": "The message could not be sent. Please try again."
-      },
-      "messageOptional": "Message",
-      "quotePlaceholder": "Delivery location, deadline, application…",
-      "submitQuote": "Send quote request"
+      }
     }
   },
   "Privacy": {
@@ -835,24 +833,6 @@
     "noneTryTolerance": "No exact match — try a wider tolerance.",
     "found": "{count, plural, one {# bearing matches} other {# bearings match}}",
     "viewAll": "View all {count} in the catalog →"
-  },
-  "Quote": {
-    "title": "Quote request",
-    "subtitle": "Collect the bearings you need, set quantities and send one request. We reply with prices and availability.",
-    "add": "Add to quote request",
-    "added": "In your quote request",
-    "view": "View request →",
-    "addAria": "Add {designation} to quote request",
-    "removeAria": "Remove {designation} from quote request",
-    "basketAria": "Quote request, {count, plural, one {# item} other {# items}}",
-    "empty": "Your quote request is empty. Add bearings from the catalog or the product pages.",
-    "browseCatalog": "Browse catalog",
-    "findBySize": "Find by size",
-    "itemsHeading": "{count, plural, one {# item} other {# items}}",
-    "clear": "Clear all",
-    "quantity": "Quantity",
-    "pcs": "pcs",
-    "note": "Prices and stock are not shown online — we confirm them in our reply."
   },
   "Authenticity": {
     "eyebrow": "SKF authenticity",
@@ -1188,7 +1168,6 @@
     "contact": {
       "heading": "B&B Unikoop, official SKF distributor for North Macedonia",
       "phones": "Phones available 24/7",
-      "quote": "Quote request",
       "form": "Contact form"
     },
     "sources": "Sources",

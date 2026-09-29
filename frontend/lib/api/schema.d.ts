@@ -369,7 +369,7 @@ export interface components {
         };
         /**
          * ContactEvent
-         * @description Where to buy: B&B Unikoop's offices, phones, the quote basket and the contact form.
+         * @description Where to buy: B&B Unikoop's offices, phones and the contact form.
          */
         ContactEvent: {
             /**

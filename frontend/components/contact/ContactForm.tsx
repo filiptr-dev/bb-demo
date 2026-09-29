@@ -9,36 +9,28 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 
-// With `items` (from the quote basket) the request carries them and the message becomes optional; `onSent` runs after a successful send.
-export default function ContactForm({ items, onSent }: { items?: { designation: string; qty: number }[]; onSent?: () => void } = {}) {
+export default function ContactForm() {
   const t = useTranslations("Contact.form");
   const [state, setState] = useState<"idle" | "sending" | "done">("idle");
   const [error, setError] = useState("");
-  const quote = !!items?.length;
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const f = new FormData(e.currentTarget);
     setState("sending"); setError("");
     try {
-      if (quote) {
-        // demo: quote requests are not sent anywhere yet, the form only simulates the round trip
-        await new Promise((r) => setTimeout(r, 600));
-      } else {
-        const r = await fetch("/api/contact", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ name: f.get("name"), email: f.get("email"), phone: f.get("phone"), message: f.get("message"), website: f.get("website"), consent: f.get("consent") === "on" }),
-        });
-        const j = await r.json().catch(() => ({}));
-        if (!r.ok) {
-          setError(["invalid", "required", "send"].includes(j.code) ? t(`errors.${j.code}`) : t("genericError"));
-          setState("idle");
-          return;
-        }
+      const r = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: f.get("name"), email: f.get("email"), phone: f.get("phone"), message: f.get("message"), website: f.get("website"), consent: f.get("consent") === "on" }),
+      });
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok) {
+        setError(["invalid", "required", "send"].includes(j.code) ? t(`errors.${j.code}`) : t("genericError"));
+        setState("idle");
+        return;
       }
       setState("done");
-      onSent?.();
     } catch {
       // network failure: the browser's own message ("Failed to fetch") is not for visitors
       setError(t("genericError"));
@@ -62,7 +54,7 @@ export default function ContactForm({ items, onSent }: { items?: { designation: 
         <div className="space-y-1.5"><Label htmlFor="email">{t("email")}</Label><Input id="email" name="email" type="email" required autoComplete="email" className="h-10" /></div>
       </div>
       <div className="space-y-1.5"><Label htmlFor="phone">{t("phone")}</Label><Input id="phone" name="phone" type="tel" autoComplete="tel" className="h-10" /></div>
-      <div className="space-y-1.5"><Label htmlFor="message">{t(quote ? "messageOptional" : "message")}</Label><Textarea id="message" name="message" required={!quote} minLength={quote ? undefined : 5} maxLength={3000} placeholder={t(quote ? "quotePlaceholder" : "messagePlaceholder")} /></div>
+      <div className="space-y-1.5"><Label htmlFor="message">{t("message")}</Label><Textarea id="message" name="message" required minLength={5} maxLength={3000} placeholder={t("messagePlaceholder")} /></div>
       <input name="website" tabIndex={-1} autoComplete="off" aria-hidden className="hidden" />
       <label className="flex items-start gap-2 text-xs text-muted-foreground">
         <input type="checkbox" name="consent" required className="mt-0.5 size-4 accent-brand-1" />
@@ -70,7 +62,7 @@ export default function ContactForm({ items, onSent }: { items?: { designation: 
       </label>
       {error && <p role="alert" className="text-sm text-destructive">{error}</p>}
       <Button type="submit" disabled={state === "sending"} className="h-11 rounded-full bg-brand-gradient px-7 text-xs font-semibold uppercase tracking-wide text-white">
-        <Send className="size-4" /> {state === "sending" ? t("sending") : t(quote ? "submitQuote" : "submit")}
+        <Send className="size-4" /> {state === "sending" ? t("sending") : t("submit")}
       </Button>
     </form>
   );

@@ -7,7 +7,6 @@ import LanguageSwitcher from "@/components/layout/LanguageSwitcher";
 import BearingIcon from "@/components/brand/BearingIcon";
 import { Button } from "@/components/ui/button";
 import HeaderSearch from "@/components/search/HeaderSearch";
-import QuoteHeaderLink from "@/components/quote/QuoteHeaderLink";
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet";
 
 const nav = [
@@ -58,8 +57,6 @@ export default function Header() {
         <LanguageSwitcher className="hidden sm:inline-flex" />
 
         <Button nativeButton={false} render={<Link href="/catalog" />} className="hidden sm:inline-flex rounded-full bg-brand-gradient text-white text-xs font-semibold uppercase tracking-wide h-9 px-5 hover:shadow-[0_0_30px_rgba(var(--brand-glow-1-rgb),0.45)] transition-shadow">{t("eCatalog")}</Button>
-
-        <QuoteHeaderLink onClick={() => setOpen(false)} />
 
         <button className="2xl:hidden p-2" aria-label={t("menu")} aria-expanded={open} onClick={() => setOpen(!open)}>
           <span className="block w-6 h-0.5 bg-foreground mb-1.5" /><span className="block w-6 h-0.5 bg-foreground mb-1.5" /><span className="block w-6 h-0.5 bg-foreground" />

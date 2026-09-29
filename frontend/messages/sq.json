@@ -593,6 +593,7 @@
     }
   },
   "ProductDetail": {
+    "contactCta": "Na kontaktoni",
     "breadcrumbHome": "Ballina",
     "breadcrumbCatalog": "Katalogu",
     "specsHeading": "Karakteristika teknike",
@@ -685,10 +686,7 @@
         "invalid": "Kërkesë e pavlefshme.",
         "required": "Plotësoni të gjitha fushat e detyrueshme.",
         "send": "Mesazhi nuk mund të dërgohej. Provoni përsëri."
-      },
-      "messageOptional": "Mesazhi",
-      "quotePlaceholder": "Vendi i dorëzimit, afati, përdorimi…",
-      "submitQuote": "Dërgo kërkesën për ofertë"
+      }
     }
   },
   "Privacy": {
@@ -835,24 +833,6 @@
     "noneTryTolerance": "Asnjë përputhje e saktë — provoni një tolerancë më të gjerë.",
     "found": "{count, plural, one {# kushinetë përputhet} other {# kushineta përputhen}}",
     "viewAll": "Shihni të gjitha {count} në katalog →"
-  },
-  "Quote": {
-    "title": "Kërkesë për ofertë",
-    "subtitle": "Mblidhni kushinetat që ju duhen, vendosni sasitë dhe dërgoni një kërkesë. Ne përgjigjemi me çmime dhe disponueshmëri.",
-    "add": "Shto në kërkesën për ofertë",
-    "added": "Në kërkesën tuaj për ofertë",
-    "view": "Shiko kërkesën →",
-    "addAria": "Shto {designation} në kërkesën për ofertë",
-    "removeAria": "Hiq {designation} nga kërkesa për ofertë",
-    "basketAria": "Kërkesë për ofertë, {count, plural, one {# artikull} other {# artikuj}}",
-    "empty": "Kërkesa juaj për ofertë është bosh. Shtoni kushineta nga katalogu ose nga faqet e produkteve.",
-    "browseCatalog": "Shfleto katalogun",
-    "findBySize": "Kërko sipas masës",
-    "itemsHeading": "{count, plural, one {# artikull} other {# artikuj}}",
-    "clear": "Fshi të gjitha",
-    "quantity": "Sasia",
-    "pcs": "copë",
-    "note": "Çmimet dhe stoku nuk shfaqen online — i konfirmojmë në përgjigjen tonë."
   },
   "Authenticity": {
     "eyebrow": "Autenticiteti SKF",
@@ -1188,7 +1168,6 @@
     "contact": {
       "heading": "B&B Unikoop, distributor zyrtar i SKF për Maqedoninë e Veriut",
       "phones": "Telefonat janë në dispozicion 24/7",
-      "quote": "Kërkesë për ofertë",
       "form": "Formulari i kontaktit"
     },
     "sources": "Burimet",

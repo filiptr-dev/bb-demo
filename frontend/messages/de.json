@@ -593,6 +593,7 @@
     }
   },
   "ProductDetail": {
+    "contactCta": "Kontakt",
     "breadcrumbHome": "Startseite",
     "breadcrumbCatalog": "Katalog",
     "specsHeading": "Technische Daten",
@@ -685,10 +686,7 @@
         "invalid": "Ungültige Anfrage.",
         "required": "Bitte füllen Sie alle Pflichtfelder aus.",
         "send": "Die Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut."
-      },
-      "messageOptional": "Nachricht",
-      "quotePlaceholder": "Lieferort, Termin, Anwendung…",
-      "submitQuote": "Angebotsanfrage senden"
+      }
     }
   },
   "Privacy": {
@@ -835,24 +833,6 @@
     "noneTryTolerance": "Kein exakter Treffer — versuchen Sie eine größere Toleranz.",
     "found": "{count, plural, one {# passendes Lager} other {# passende Lager}}",
     "viewAll": "Alle {count} im Katalog →"
-  },
-  "Quote": {
-    "title": "Angebotsanfrage",
-    "subtitle": "Stellen Sie die benötigten Lager zusammen, geben Sie Mengen an und senden Sie eine Anfrage. Wir antworten mit Preisen und Verfügbarkeit.",
-    "add": "Zur Angebotsanfrage hinzufügen",
-    "added": "In Ihrer Angebotsanfrage",
-    "view": "Anfrage ansehen →",
-    "addAria": "{designation} zur Angebotsanfrage hinzufügen",
-    "removeAria": "{designation} aus der Angebotsanfrage entfernen",
-    "basketAria": "Angebotsanfrage, {count, plural, one {# Position} other {# Positionen}}",
-    "empty": "Ihre Angebotsanfrage ist leer. Fügen Sie Lager aus dem Katalog oder von den Produktseiten hinzu.",
-    "browseCatalog": "Zum Katalog",
-    "findBySize": "Größensuche",
-    "itemsHeading": "{count, plural, one {# Position} other {# Positionen}}",
-    "clear": "Alle entfernen",
-    "quantity": "Menge",
-    "pcs": "Stk.",
-    "note": "Preise und Bestand werden nicht online angezeigt — wir bestätigen sie in unserer Antwort."
   },
   "Authenticity": {
     "eyebrow": "SKF-Echtheit",
@@ -1188,7 +1168,6 @@
     "contact": {
       "heading": "B&B Unikoop, offizieller SKF Vertriebspartner für Nordmazedonien",
       "phones": "Telefonisch erreichbar rund um die Uhr",
-      "quote": "Angebotsanfrage",
       "form": "Kontaktformular"
     },
     "sources": "Quellen",
