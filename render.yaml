@@ -1,0 +1,27 @@
+# Render Blueprint for the API (Dashboard → New → Blueprint → this repo). The frontend deploys on Vercel.
+services:
+  - type: web
+    name: bbunikoop-api
+    runtime: docker
+    plan: free
+    region: frankfurt
+    # Paths are relative to the repo root. No rootDir: buildFilter alone keeps frontend-only commits from deploying.
+    dockerfilePath: ./backend/Dockerfile
+    dockerContext: ./backend
+    buildFilter:
+      paths:
+        - backend/**
+    # Liveness only: a database outage shouldn't make Render restart the API or fail a deploy.
+    # The keep-alive cron (cron-job.org, every 10 min) calls /api/v1/health, which also checks the database.
+    healthCheckPath: /api/v1/health/live
+    # CD: deploy a backend commit on main only after its GitHub checks (.github/workflows/backend.yml) pass.
+    autoDeployTrigger: checksPass
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: LOG_LEVEL
+        value: info
+      - key: DATABASE_URL
+        sync: false  # Supabase session pooler, port 5432 (Render is IPv4-only)
+      - key: CORS_ALLOWED_ORIGINS
+        sync: false  # https://<vercel domain>,http://localhost:3000

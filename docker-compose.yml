@@ -1,0 +1,34 @@
+# Local development: Postgres + the API. The frontend runs on the host (cd frontend && npm run dev).
+#   docker compose up -d db        just the database (for `uv run pytest` / `uv run uvicorn ...` on the host)
+#   docker compose up --build      database + API on http://localhost:8000 (docs: /docs)
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: bbunikoop
+    ports:
+      - "5433:5432"  # 5433 on the host, so it never clashes with a locally installed Postgres
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d bbunikoop"]
+      interval: 2s
+      timeout: 3s
+      retries: 20
+
+  api:
+    build: ./backend
+    environment:
+      APP_ENV: development
+      DATABASE_URL: postgresql://postgres:postgres@db:5432/bbunikoop
+      CORS_ALLOWED_ORIGINS: http://localhost:3000
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  db-data:

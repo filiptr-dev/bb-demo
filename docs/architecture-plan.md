@@ -1,6 +1,6 @@
 # B&B Unikoop: architecture and migration plan
 
-Status: **in progress** (started 2026-09-29). Phase 1 = monorepo move, Phase 2 = backend skeleton.
+Status: **in progress** (started 2026-09-29). Phase 1 (monorepo move) and Phase 2 (backend skeleton + CI/CD) are built. Next: Phase 3.
 
 History: the first version of this plan (2026-09-28) used Laravel. On 2026-09-29 the backend was switched to **Python (FastAPI)**. Nothing had been built yet, so only the plan changed. The goals are the same: a separate API that owns the DB, and nothing Supabase-specific.
 
@@ -25,7 +25,7 @@ History: the first version of this plan (2026-09-28) used Laravel. On 2026-09-29
 |---|---|---|---|
 | Frontend | **Vercel Hobby** | Free | Root Directory = `frontend`. ⚠ Hobby is for **non-commercial** use. When the client goes live commercially → Vercel Pro ($20/mo) or self-host |
 | Backend | **Render free web service** (Docker) | No card. Sleeps after 15 min idle, ~1 min cold start. 750 instance-h/month, 512 MB RAM. Single instance, no disk, filesystem wiped on restart, may restart at any time | Keep-alive ping (below) keeps it awake: one service 24/7 ≈ 744 h < 750 h. **Only one free service** fits this way (no free staging) |
-| Keep-alive | **cron-job.org** (free) | Calls `GET /api/v1/health` every 10 min | Health runs `select 1`, which also stops **Supabase free from pausing the project after 7 days idle** |
+| Keep-alive | **cron-job.org** (free) | Calls `GET /api/v1/health` every 10 min | Health runs `select 1`, which also stops **Supabase free from pausing the project after 7 days idle**. Render's own health check uses `/api/v1/health/live` (no DB), so a DB outage doesn't block deploys |
 | DB | Supabase free (for now) | 500 MB | The API connects through the **session pooler, port 5432**. Render is IPv4-only and Supabase's direct host is IPv6-only |
 | AI | Google AI Studio Gemini API key | Free tier. Limits per project: see aistudio.google.com/rate-limit | ⚠ Free-tier prompts may be used by Google to improve its products. Before real customers use it, link billing (Tier 1, spend-capped) |
 
@@ -41,18 +41,24 @@ Alternatives, if Render's cold starts or limits get in the way:
 ├─ CLAUDE.md                 → points to frontend/AGENTS.md + backend/AGENTS.md
 ├─ docs/                     architecture-plan.md, ADRs later
 ├─ docker-compose.yml        local dev: postgres:17 + backend (frontend runs with npm run dev)
-├─ .github/workflows/
-│   ├─ backend.yml           paths: backend/**  → ruff, mypy, pytest (against a postgres service)
-│   ├─ frontend.yml          paths: frontend/** → lint, tsc, build
-│   └─ contract.yml          regenerate openapi.json + schema.d.ts, fail on git diff
-├─ render.yaml               rootDir: backend, runtime: docker, buildFilter: backend/**, healthCheckPath
+├─ .github/
+│   ├─ workflows/backend.yml  paths: backend/**  → ruff format + lint, mypy, pytest (postgres service), docker build
+│   ├─ workflows/frontend.yml paths: frontend/** → lint, typegen + tsc, build (no DB)
+│   ├─ workflows/contract.yml (Phase 5) regenerate openapi.json + schema.d.ts, fail on git diff
+│   └─ dependabot.yml         weekly grouped updates: npm, uv, docker, github-actions
+├─ render.yaml               docker, dockerfilePath/dockerContext backend/, buildFilter backend/**, autoDeployTrigger: checksPass
 ├─ backend/                  FastAPI
 └─ frontend/                 current Next app (git mv, history kept)
 ```
 
 Deploy isolation:
 - **Vercel** uses Root Directory `frontend`, and its "Ignored Build Step" is `git diff --quiet HEAD^ HEAD -- .`, so backend-only commits don't build.
-- **Render** has `buildFilter.paths: [backend/**]`, so frontend-only commits don't deploy.
+- **Render** has `buildFilter.paths: [backend/**]`, so frontend-only commits don't deploy. There's no `rootDir`: Render resolves `dockerfilePath`/`dockerContext` from the repo root, so both point at `backend/`.
+
+CI/CD:
+- CI = the GitHub Actions above. Each runs only when its folder changes.
+- CD, backend: Render auto-deploys `main` with `autoDeployTrigger: checksPass`, so a commit deploys only after `backend.yml` is green.
+- CD, frontend: Vercel's Git integration builds every push. `main` → production, PRs → preview URLs.
 
 ## 4. Backend structure and patterns
 
@@ -70,7 +76,7 @@ backend/
 │  │  ├─ ratelimit.py           (assistant phase) Postgres fixed-window limiter
 │  │  └─ revalidator.py         (products phase) POSTs tags to the frontend's /api/revalidate
 │  └─ modules/
-│     ├─ health/router.py       GET /api/v1/health → select 1
+│     ├─ health/router.py       GET /api/v1/health → select 1 (503 problem if down); GET /api/v1/health/live → no DB
 │     ├─ products/
 │     │  ├─ router.py           thin: query/body schema in → service → response schema out
 │     │  ├─ schemas.py          Pydantic request filters (frozen DTO) + response models (the public contract)
@@ -194,6 +200,7 @@ modules/assistant/
 - Dockerfile, `render.yaml`, `docker-compose.yml` (postgres:17 + backend).
 - GitHub Actions workflows.
 - ✅ Done when: `docker compose up` → `/api/v1/health` 200 and `/docs` shows the OpenAPI docs.
+- Built 2026-09-29: FastAPI 0.141, SQLAlchemy 2.1, psycopg 3.3, Pydantic 2.13, uv 0.12.20. 15 tests (health, problem+json for 404/405/409/422/500, CORS on error responses, OpenAPI, settings, pagination). Checked against Supabase (Postgres 17.6) through the session pooler. `contract.yml` waits for Phase 5, when there's a generated `schema.d.ts` to compare.
 
 **Phase 3: baseline migration**
 - Convert `schema.sql` to the first Alembic revision: pg_trgm, the `natural_sort` ICU collation, `products` with the generated `search_key`, 4 indexes.
@@ -214,7 +221,8 @@ modules/assistant/
 - ✅ Done when: every page renders the same (screenshots en + mk, desktop + mobile), and the build passes with the API as the only data source.
 
 **Phase 6: deploy**
-- Render service from `render.yaml`, env vars, the cron-job.org ping, Vercel env vars.
+- Render: New → Blueprint → this repo (reads `render.yaml`), then fill `DATABASE_URL` and `CORS_ALLOWED_ORIGINS`.
+- The cron-job.org ping on `/api/v1/health`, and the Vercel env vars.
 - Push once you've verified locally.
 - ✅ Done when: the live site works, and the first request after 20 min idle still works (ping) or gets a clear loading state.
 

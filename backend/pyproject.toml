@@ -1,0 +1,47 @@
+[project]
+name = "bbunikoop-api"
+version = "0.1.0"
+description = "B&B Unikoop API: products, catalog data and the assistant"
+authors = [
+    { name = "Filip Trajanovikj", email = "filip.tr@xgate.io" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "alembic>=1.20.0",
+    "fastapi>=0.141.1",
+    "psycopg[binary]>=3.3.6",
+    "pydantic-settings>=2.15.0",
+    "sqlalchemy[asyncio]>=2.1.1",
+    "uvicorn[standard]>=0.54.0",
+]
+
+[dependency-groups]
+dev = [
+    "httpx2>=2.13.1",
+    "mypy>=2.3.1",
+    "pytest>=9.1.1",
+    "ruff>=0.16.9",
+]
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+line-length = 120
+target-version = "py314"
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "B", "UP", "SIM", "ASYNC", "RUF", "N", "S", "PT"]
+ignore = ["S101"]  # assert is how pytest works
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S105", "S106"]  # fake secrets in tests
+
+[tool.mypy]
+strict = true
+plugins = ["pydantic.mypy"]
+exclude = ["^\\.venv/"]
+
+[tool.pytest]
+testpaths = ["tests"]
+addopts = ["-ra", "--strict-markers"]
