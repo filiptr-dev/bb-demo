@@ -1,5 +1,5 @@
 # The API image: Render (free, Docker), Cloud Run or any container host. Built from backend/ as the context.
-FROM python:3.14-slim
+FROM python:3.15-slim
 
 COPY --from=ghcr.io/astral-sh/uv:0.12.20 /uv /bin/uv
 
